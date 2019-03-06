@@ -1,0 +1,17 @@
+{
+    "name": "fangzhou-docs",
+    "version": "1.0.0",
+    "description": "fangzhou portal web docs",
+    "license": "MIT",
+    "scripts": {
+      "clean": "rimraf dist",
+      "build:gitbookWechat": "(cd ./docs/wechat && gitbook install) && gitbook build ./docs/wechat/ ./dist/view/docs/mpa/",
+      "build:gitbook": "(cd ./docs/v1 && gitbook install) && gitbook build ./docs/v1/ ./dist/view/docs/v1/",
+      "build:gitbookv2": "(cd ./docs/v2 && gitbook install) && gitbook build ./docs/v2/ ./dist/view/docs/",
+      "build": "npm run clean && cp -rf docs/v2/manual/* docs/v2 && npm run build:gitbookv2 && npm run build:gitbook && npm run build:gitbookWechat"
+    },
+    "dependencies": {
+      "rimraf": "^2.6.1"
+    }
+}
+  

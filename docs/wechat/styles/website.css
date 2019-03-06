@@ -1,0 +1,135 @@
+.book, .book .book-header, .book .book-summary, .book .book-body {
+  font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
+
+@media (min-width: 600px) {
+  .page-inner {
+    max-width: initial;
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  .book.with-summary .book-body {
+    left: 240px;
+  }
+}
+
+.book .book-summary {
+  width: 240px;
+  background-color: #222d32;
+}
+.book .book-summary .book-search {
+  color: #eee;
+  background-color: #222d32;
+}
+.book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
+  color: #eee;
+}
+.book .book-summary ul.summary li.active>a{
+  color: #35b1e6;
+}
+.book .book-summary ul.summary li a:hover {
+  text-decoration: none;
+  color: #35b1e6;
+}
+.book .book-summary .summary li a.custom-link:hover{
+  background-color: #161d21;
+  color: #eee;
+}
+.book .book-summary .summary li:nth-child(2) a.custom-link{
+}
+.book .book-summary ul.summary li.divider {
+  /* background-color: #161d21; */
+}
+.book .book-summary ul.summary {
+  background-color: #222d32;
+}
+.book .book-summary ul.summary li:first-child a.custom-link {
+  background: url(//ark.analysys.cn/portal/images/logo.png) no-repeat;
+  background: url(//ark.analysys.cn/portal/images/logo.svg) no-repeat;
+  background-size: 120px;
+  background-position: 12% center;
+  text-indent: -100px;
+  height: 50px;
+}
+#book-search-input {
+  margin-bottom: 0;
+  background: #222d32;
+  color: #fff;
+}
+.gitbook-link {
+  display: none !important;
+}
+.book .markdown-section pre {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.page-itoc.fixed {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px -2px #ccc;
+  padding: 4px 10px;
+  position: fixed;
+  background-color: #fff;
+  right: 30px;
+  top: 18px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 999;
+  cursor: pointer;
+  text-align: right;
+  max-height: 70%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.page-itoc.fixed:before {
+  content: "";
+  display: none;
+}
+.page-itoc.fixed ul {
+  display: none;
+  text-align: left;
+  padding-right: 10px;
+  display: none;
+}
+.page-itoc.fixed:hover ul { display: block; }
+.page-itoc.fixed:hover > i { color: #ddd; }
+
+@media print {
+  .book-header,
+  .navigation,
+  .anchorjs-link,
+  .book-summary,
+  .page-itoc { display: none; }
+  .book-body,
+  .book-body .body-inner { position: static; }
+  .page-inner {  padding: 0 20px 30px; }
+  .book[class*="font-size-"] .book-body .page-inner section { font-size: 1.2rem; }
+  .book { height: auto; }
+  .book.with-summary .book-body { left:0; transform: none; }
+}
+
+.versions-select select {
+  height: 2em;
+  line-height: 2em;
+  border-radius: 4px;
+  background: #1b2327;
+  border-color: #1b2327;
+  color: #fff;
+}
+
+.book-logo img{
+  width: 125px;
+}
+
+.anchor-navigation-ex-anchor i {
+  display: none !important;
+}
+
+.page-footer-ex {
+  text-align: center;
+}
+
+.page-footer-ex-footer-update {
+  display: none;
+}
