@@ -1,6 +1,6 @@
 # iOS SDK 使用说明
 
-iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_iOS_v4.1.2_20181224.zip)
+iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_iOS_v4.2.0.1_20190215.zip)
 
 |  framework |  功能描述| 是否必选 |
 | :-: | :-: | :-: |
