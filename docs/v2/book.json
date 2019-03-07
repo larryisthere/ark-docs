@@ -15,7 +15,6 @@
     "-highlight",
     "insert-logo-link",
     "alerts",
-    "versions-select",
     "baidu-tongji",
     "gtm",
     "page-footer-ex",
@@ -37,23 +36,6 @@
     "insert-logo-link": {
       "src": "//ark.analysys.cn/portal/images/logo.svg",
       "url": "https://ark.analysys.cn/"
-    },
-    "versions": {
-      "options": [
-        {
-          "value": "https://ark.analysys.cn/docs/",
-          "text": "方舟 V3.0",
-          "selected": true
-        },
-        {
-          "value": "https://ark.analysys.cn/docs/v1/",
-          "text": "方舟 V2.9"
-        },
-        {
-          "value": "https://ark.analysys.cn/docs/mpa/",
-          "text": "方舟小程序"
-        }
-      ]
     },
     "baidu-tongji": {
       "token": "d0cbe8e19339b26518dd335d5129c35f"
