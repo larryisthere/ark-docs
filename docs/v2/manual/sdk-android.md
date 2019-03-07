@@ -86,7 +86,7 @@ AndroidManifest.xml文件需要配置内容包括权限、AppKey和Channel。App
 
 如果您的应用使用了代码混淆，请添加如下配置，以避免错误混淆导致SDK不可用。
 
-``` gradle
+```
 
 -dontwarn com.analysys.**
 -keep class com.analysys** {*;}

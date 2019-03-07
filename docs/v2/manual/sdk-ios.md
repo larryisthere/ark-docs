@@ -119,7 +119,7 @@ end
 > * appKey：在网站获取的 AppKey
 > * channel：应用下发渠道
 > * autoProfile：设置是否追踪新用户的首次属性。NO：不追踪新用户首次属性；YES：追踪新用户首次属性（默认）
-> * encryptTyp：设置数据上传时的加密方式，目前只支持AES加密（AnalysysEncryptAES）；如不设置此参数，数据上传不加密。
+> * encryptType：设置数据上传时的加密方式，目前只支持AES加密（AnalysysEncryptAES）；如不设置此参数，数据上传不加密。
 
 示例：
 

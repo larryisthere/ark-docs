@@ -100,7 +100,7 @@ AnalysysAgent.setDebugMode(this, 2);
 
 **iOS**
 
-```oc
+```
 AnalysysAgent setDebugMode:AnalysysDebugButTrack
 ```
 ```
