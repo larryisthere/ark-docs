@@ -393,13 +393,8 @@ AnalysysAgent.alias("zhangsan", originalId: "lisi")
 示例：
 
 ```objectivec
-// 淘宝店铺，统计到来访用户
+// 设置设备ID为`fangke009901`，注意此方法需要在初始化之后调用
 [AnalysysAgent identify:@"fangke009901"];
-
-....
-
-// 淘宝店铺，统计到老客用户
-[AnalysysAgent identify:@"laoke008021"]
 ```
 
 Swift代码示例：
