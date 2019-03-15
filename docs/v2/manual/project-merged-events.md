@@ -12,4 +12,10 @@
 2. 点击 B 处“触发限制条件”可以为对应元事件设置过滤条件。
 3. 点击 C 处“添加事件”可以增加元事件。
 
+## 常见问题
+
+**问：虚拟事件的数量有上限么？**
+
+答：没有。虚拟事件只是规则，不需要额外计算和存储。
+
 [![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=%E6%96%87%E6%A1%A3%E6%B3%A8%E5%86%8C&utm_medium=%E8%87%AA%E5%AA%92%E4%BD%93&utm_source=%E6%96%87%E6%A1%A3&utm_content=&utm_term=)

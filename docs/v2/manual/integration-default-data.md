@@ -99,7 +99,7 @@ table th:nth-of-type(8) {
 | $carrier_name | 运营商 | 字符串 | 接入运营商名称，e.g. 中国联通| Y | Y | - | - |
 | $screen_width | 屏幕宽度 | 整数型 | 屏幕宽度/屏幕分辨率，e.g. 1920 | Y | Y | Y | Y|
 | $screen_height | 屏幕高度 | 整数型 | 屏幕高度/屏幕分辨率，e.g. 768 | Y | Y | Y | Y |
-| $is_login | 是否登录 | 布尔值 | 是否是登录状态 | Y | Y | Y | Y |
+| $is_login | 是否是注册用户 | 布尔值 | 是否是注册用户 | Y | Y | Y | Y |
 | $ip | IP | 字符串 | IP | Y | Y | Y | Y |
 | $country | 国家 | 字符串 | 事件发生时所在国家，e.g. 中国、美国 | N | N | N | N |
 | $province | 省份 | 字符串 | 事件发生时所在省份，e.g.   北京、上海、福建 | N                | N | N | N |
