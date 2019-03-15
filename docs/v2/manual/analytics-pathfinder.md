@@ -26,6 +26,10 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808201110253178.png)
 
+点击事件分组，选择按某一事件的事件维度，展开用户路径
+
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/03/201903151428012195.jpg)
+
 #### 1.2 选择目标事件
 
 选择要观察的事件，设置目标事件和限制事件间隔时间。
