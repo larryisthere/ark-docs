@@ -143,3 +143,7 @@
 .page-inner {
 margin: 0px 40px !important;
 }
+
+.navigation {
+  min-width: 50px;
+}
