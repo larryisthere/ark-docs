@@ -10,6 +10,7 @@
 2018/11/19 | V4.1.1 |1）在完善日志打印; <br>2) 增加时区字段$time_zone 类型 String; <br>3)appkey 改变 /debug 由 1 变为 0 或 2/uploadURL 改变时,重置存储内容，重新发送 profileSetOnce; <br>4) 数组类型数据仅支持元素为字符串类型的数组;<br>4.1) 增加不允许覆盖字段$first_visit_time; <br>5) 系统版本字段 $os_version 之前增加 系统名称;<br>6) channel设置逻辑修改为，当xml设置与API传值两种方式都设置时优先使用xml设置值;<br>7)key设置逻辑修改为，当xml设置与API传值两种方式设置key不相同时，提示设置异常; <br>8) 功能优化;<br>8.1) 类型判断部分做了优化。
 2018/12/17 | V4.1.2 |1)优化`session_id`相关<br>2)在首次启动中增加`$first_visit_language`字段<br>3)增加`$language`字段<br>4)优化SDK性能
 2019/03/04 | V4.2.1 |1)相关功能封装为独立模块<br>2)优化SDK性能
+2019/03/13 | v4.2.1 |1)优化多线程问题
 
 ## iOS SDK
 
