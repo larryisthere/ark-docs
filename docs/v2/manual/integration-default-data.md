@@ -101,9 +101,9 @@ table th:nth-of-type(8) {
 | $screen_height | 屏幕高度 | 整数型 | 屏幕高度/屏幕分辨率，e.g. 768 | Y | Y | Y | Y |
 | $is_login | 是否是注册用户 | 布尔值 | 是否是注册用户 | Y | Y | Y | Y |
 | $ip | IP | 字符串 | IP | Y | Y | Y | Y |
-| $country | 国家 | 字符串 | 事件发生时所在国家，e.g. 中国、美国 | N | N | N | N |
-| $province | 省份 | 字符串 | 事件发生时所在省份，e.g.   北京、上海、福建 | N                | N | N | N |
-| $city | 城市 | 字符串 | 事件发生时所在城市，e.g. 北京、厦门                          | N | N | N | N |
+| $country<sup>1</sup> | 国家 | 字符串 | 事件发生时所在国家，e.g. 中国、美国 | Y | Y | Y | Y |
+| $province<sup>2</sup> | 省份 | 字符串 | 事件发生时所在省份，e.g.   北京、上海、福建 | Y | Y | Y | Y |
+| $city<sup>3</sup> | 城市 | 字符串 | 事件发生时所在城市，e.g. 北京、厦门                          | Y | Y | Y | Y |
 | $utm_campaign_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | Y | Y | Y | Y |
 | $utm_campaign | 活动名称（广告名称） | 字符串 | 活动名称（广告名称）                                         | Y | Y | Y | Y |
 | $utm_medium | 活动媒介（广告媒介） | 字符串 | 活动媒介（广告媒介） | Y                | Y | Y | Y |
@@ -118,6 +118,8 @@ table th:nth-of-type(8) {
 | $debug | Debug模式 | 整数型 | debug模式，profile系列中不携带   0：非debug 1：debug，不入库 2：debug，入库 | Y | Y | Y | Y |
 | $language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 | $session_id | 会话标识 | 字符串 | 515950b8f1a6221c | Y | Y | Y | Y |
+
+注1、注2、注3：自动通过解析 IP 获得
 
 ### 2. 部分 Event 事件自身属性
 
