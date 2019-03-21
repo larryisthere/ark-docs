@@ -1,4 +1,4 @@
-# Part II 功能使用说明
+# 关于功能使用说明
 
 本部分将详细说明易观方舟的四大核心功能（[看板](panel.md) & [分析](analytics/) & [分群](segmentation/) & [运营](operation/)）、[项目管理](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/project-management.md)、[平台管理](enterprise-basic-function/) 的使用方法，帮助您快速开启精细化运营之旅。
 
