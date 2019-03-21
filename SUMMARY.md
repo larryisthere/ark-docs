@@ -5,7 +5,6 @@
 
 ## Part I 数据接入
 
-* [关于数据接入](integration/integration.md)
 * [接入前准备工作](integration/integration-prepare/README.md)
   * [数据模型](integration/integration-prepare/integration-data-model.md)
   * [数据格式](integration/integration-prepare/integration-data-type.md)
@@ -24,12 +23,13 @@
   * [Python SDK 使用说明](integration/sdk/sdk-python.md)
   * [PHP SDK 使用说明](integration/sdk/sdk-php.md)
   * [客户端埋点验证](integration/sdk/sdk-verification.md)
+  * [多渠道打包](integration/sdk/channel-packing.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
 * [数据批量导入工具说明](integration/tool-import.md)
 
 ## Part II 功能使用说明
 
-* [关于功能使用说明](function/function.md)
+* [产品结构](function/function.md)
 * [看板](function/panel.md)
 * [分析](function/analytics/README.md)
   * [渠道分析](function/analytics/analytics-channel.md)
@@ -57,7 +57,6 @@
   * [事件属性](function/project-manegement/project-event-properties.md)
   * [用户属性](function/project-manegement/project-user-properties.md)
   * [Session 管理](function/project-manegement/project-session.md)
-  * [多渠道打包](function/project-manegement/channel-packing.md)
   * [指标监控](function/project-manegement/zhi-biao-jian-kong.md)
   * [服务集成配置](function/project-manegement/project-integrations.md)
   * [成员管理](function/project-manegement/project-member.md)
@@ -69,17 +68,14 @@
 
 ## Part III 开放平台
 
-* [关于开放平台](part-iii-kai-fang-ping-tai/open.md)
 * [数据导出](part-iii-kai-fang-ping-tai/open-original-export.md)
 
 ## Part IV 辅助工具
 
-* [关于辅助工具](tool/tool.md)
 * [环境检测工具使用说明](tool/tool-script.md)
 
 ## Part V 常见问题
 
-* [关于常见问题](faq/faq.md)
 * [名词解释及基础指标](faq/faq-terms.md)
 * [SDK 集成问题](faq/faq-sdk.md)
 * [产品试用及采购](faq/faq-trialversion.md)
