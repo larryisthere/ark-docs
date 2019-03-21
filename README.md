@@ -80,17 +80,23 @@
 
 ![image](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151613578859.png)
 
-> **\[info\]** 说明
->
-> 电子邮件和短信服务无需集成第三方SDK，只需要保证上报相应的邮箱地址和手机号码作为用户属性，在方舟当中进行绑定配置即可。
+{% hint style="info" %}
+电子邮件和短信服务无需集成第三方SDK，只需要保证上报相应的邮箱地址和手机号码作为用户属性，在方舟当中进行绑定配置即可。
+{% endhint %}
 
 ### Step 5 发布应用
 
 以上步骤都已经完成后，保证 debugMode 模式设置为 0，即可发布应用。
 
-> **\[info\]** 关于 Debug 模式
->
-> 0 表示关闭 Debug 模式；1 表示打开 Debug 模式，但该模式下发送的数据仅用于调试，不计入平台数据统计 ；2 表示打开 Debug 模式，该模式下发送的数据可计入平台数据统计。
+{% hint style="info" %}
+**关于 Debug 模式**
+
+0 关闭 Debug 模式
+
+1 打开 Debug 模式，但该模式下发送的数据仅用于调试，不计入平台数据统计 
+
+2 打开 Debug 模式，该模式下发送的数据可计入平台数据统计
+{% endhint %}
 
 ## 开始使用
 
@@ -102,7 +108,7 @@
 
 [分群](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/segmentation.md)——多种方式细分人群，进一步分析或触达
 
-[运营](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/operation.md)——连接第三方运营服务有效触达
+[运营](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/operation.md)——连接第三方运营服务有效触
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
+![](.gitbook/assets/201901151711159657.jpg)
 

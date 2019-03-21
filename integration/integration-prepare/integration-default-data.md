@@ -39,48 +39,9 @@
 ### 1. Event 事件通用属性
 
   
-table th:first-of-type {  
-    width: 90px;  
-}  
+属性ID
 
-
-  
-table th:nth-of-type\(2\) {  
-    width: 139px;  
-}  
-
-
-  
-table th:nth-of-type\(3\) {  
-    width: 80px;  
-}  
-
-
-  
-table th:nth-of-type\(4\) {  
-    width: 215px;  
-}  
-
-
-  
-table th:nth-of-type\(5\) {  
-    width: 60px;  
-}  
-  
-table th:nth-of-type\(6\) {  
-    width: 60px;  
-}  
-  
-table th:nth-of-type\(7\) {  
-    width: 60px;  
-}  
-  
-table th:nth-of-type\(8\) {  
-    width: 75px;  
-}  
-
-
-| 属性ID | 属性名称 | 属性值 数据类型 | 属性说明 | Android自动采集 | iOS自动采集 | JS自动采集 | 小程序自动采集 |
+| 属性名称 | 属性值 数据类型 | 属性说明 | Android自动采集 | iOS自动采集 | JS自动采集 | 小程序自动采集 |  |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $platform | 平台 | 字符串 | 应用平台，枚举取值：Android/iOS/JS/WeChat | Y | Y | Y | Y |
 | $app\_version | 应用版本 | 字符串 | 应用版本，e.g. V1.0 | Y | Y | - | - |
@@ -252,5 +213,5 @@ table th:nth-of-type\(8\) {
 | $language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 | $session\_id | 会话标识 | 字符串 | 515950b8f1a6221c | Y | Y | Y | Y |
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
+![](../../.gitbook/assets/201901151711159657.jpg)
 

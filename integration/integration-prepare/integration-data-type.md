@@ -177,5 +177,5 @@ table th:nth-of-type\(2\) {
 | 有值 | 查找有属性值的数据 | 有用户标签 |
 | 无值 | 查找无属性值的数据 | 无用户标签 |
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
+![](../../.gitbook/assets/201901151711159657.jpg)
 
