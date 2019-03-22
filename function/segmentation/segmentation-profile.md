@@ -34,7 +34,7 @@ description: >-
 | :--- | :--- | :--- | :--- |
 | 实名与匿名 | 用户 | $signup\_time | 有值：实名；无值：匿名 |
 | 地理位置 | 用户 | $province | 省份名（不含“省”） |
-| 平台分布 | 用户 | $platform | Android\|iOS\|H5\|Web\|小程序 |
+| 平台分布 | 用户 | $platform | Android\|iOS\|Web/H5\|小程序 |
 | 城市分布 | 用户 | $city | 城市名（含“市”） |
 
 {% hint style="info" %}

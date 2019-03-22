@@ -43,7 +43,7 @@
 
 | 属性名称 | 属性值 数据类型 | 属性说明 | Android自动采集 | iOS自动采集 | JS自动采集 | 小程序自动采集 |  |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $platform | 平台 | 字符串 | 应用平台，枚举取值：Android/iOS/JS/WeChat | Y | Y | Y | Y |
+| $platform | 平台 | 字符串 | 应用平台，枚举取值：Android\|iOS\|Web/H5\|小程序 | Y | Y | Y | Y |
 | $app\_version | 应用版本 | 字符串 | 应用版本，e.g. V1.0 | Y | Y | - | - |
 | $device\_type | 设备类型 | 字符串 | 设备类型，e.g.  PC、移动设备 | N | N | N | N |
 | $manufacturer | 设备制造商 | 字符串 | 制造厂商， e.g. 小米 | Y | Y | - | - |
@@ -59,9 +59,9 @@
 | $screen\_height | 屏幕高度 | 整数型 | 屏幕高度/屏幕分辨率，e.g. 768 | Y | Y | Y | Y |
 | $is\_login | 是否是注册用户 | 布尔值 | 是否是注册用户 | Y | Y | Y | Y |
 | $ip | IP | 字符串 | IP | Y | Y | Y | Y |
-| $country1 | 国家 | 字符串 | 事件发生时所在国家，e.g. 中国、美国 | Y | Y | Y | Y |
-| $province2 | 省份 | 字符串 | 事件发生时所在省份，e.g.   北京、上海、福建 | Y | Y | Y | Y |
-| $city3 | 城市 | 字符串 | 事件发生时所在城市，e.g. 北京、厦门 | Y | Y | Y | Y |
+| $country | 国家 | 字符串 | 事件发生时所在国家，e.g. 中国、美国 | Y | Y | Y | Y |
+| $province | 省份 | 字符串 | 事件发生时所在省份，e.g.   北京、上海、福建 | Y | Y | Y | Y |
+| $city | 城市 | 字符串 | 事件发生时所在城市，e.g. 北京、厦门 | Y | Y | Y | Y |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | Y | Y | Y | Y |
 | $utm\_campaign | 活动名称（广告名称） | 字符串 | 活动名称（广告名称） | Y | Y | Y | Y |
 | $utm\_medium | 活动媒介（广告媒介） | 字符串 | 活动媒介（广告媒介） | Y | Y | Y | Y |
@@ -77,7 +77,7 @@
 | $language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 | $session\_id | 会话标识 | 字符串 | 515950b8f1a6221c | Y | Y | Y | Y |
 
-注1、注2、注3：自动通过解析 IP 获得
+注：其中 $county, $province, $city 是自动通过解析 IP 获得。下同。
 
 ### 2. 部分 Event 事件自身属性
 
