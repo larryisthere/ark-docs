@@ -76,7 +76,8 @@
 
 ## Part V 常见问题
 
-* [名词解释及基础指标](faq/faq-terms.md)
+* [名词解释](faq/faq-terms.md)
+* [指标说明](faq/zhi-biao-shuo-ming.md)
 * [SDK 集成问题](faq/faq-sdk.md)
 * [产品试用及采购](faq/faq-trialversion.md)
 
