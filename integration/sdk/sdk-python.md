@@ -1,4 +1,4 @@
-# Python SDK 使用说明
+# Python SDK
 
 Python SDK 主要用于服务端 Python 应用，如 Python Web 应用的后台服务。集成前请先下载[Github源码](https://ark.analysys.cn/sdk/v2/analysys_python_4.0.6_20180910)
 

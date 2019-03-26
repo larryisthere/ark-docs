@@ -1,4 +1,4 @@
-# Java SDK 使用说明
+# Java SDK
 
 Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务。集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_Java_v4.0.7_20180917.zip)
 
