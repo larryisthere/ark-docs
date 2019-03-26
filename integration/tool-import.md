@@ -1,4 +1,4 @@
-# 数据批量导入工具说明
+# 数据批量导入
 
 使用前一定请先阅读[数据格式](integration-prepare/integration-data-type.md)和[数据模型](integration-prepare/integration-data-model.md)的文档
 

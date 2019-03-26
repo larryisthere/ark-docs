@@ -20,13 +20,15 @@
   * [小程序 SDK](integration/sdk/sdk-wx.md)
   * [Java SDK](integration/sdk/sdk-java.md)
   * [Python SDK](integration/sdk/sdk-python.md)
+  * [PHP SDK](integration/sdk/sdk-php.md)
+  * [SDK更新日志](integration/sdk/sdk-update.md)
   * [Hybrid SDK](integration/sdk/hybrid-sdk/README.md)
     * [iOS Hybrid SDK](integration/sdk/hybrid-sdk/sdk-hybrid-ios.md)
     * [Android Hybrid SDK](integration/sdk/hybrid-sdk/sdk-hybrid-android.md)
-  * [PHP SDK](integration/sdk/sdk-php.md)
-  * [客户端埋点验证](integration/sdk/sdk-verification.md)
-  * [SDK更新日志](integration/sdk/sdk-update.md)
-* [数据批量导入工具说明](integration/tool-import.md)
+* [数据批量导入](integration/tool-import.md)
+* [数据验证](integration/shu-ju-yan-zheng/README.md)
+  * [客户端埋点验证](integration/shu-ju-yan-zheng/sdk-verification.md)
+* [数据如何进行验证](integration/shu-ju-ru-he-jin-hang-yan-zheng.md)
 
 ## Part II 功能使用说明
 
