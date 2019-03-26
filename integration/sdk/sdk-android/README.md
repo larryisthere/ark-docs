@@ -394,9 +394,9 @@ public static void profileSet(Context context, Map<String, Object> property);
 ```
 
 * context：应用上下文对象
-* propertyName：属性名称，约束见[属性名称](sdk-android.md#1.1)
-* propertyValue：属性值，约束见[属性值](sdk-android.md#2.1)
-* property：属性列表，约束见[属性名称](sdk-android.md#1.1)，[属性值](sdk-android.md#2.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyValue：属性值，约束见[属性值](./#2.1)
+* property：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
 
 示例：
 
@@ -423,9 +423,9 @@ public static void profileSetOnce(Context context, Map<String, Object> property)
 ```
 
 * context：应用上下文对象
-* propertyName：属性名称，约束见[属性名称](sdk-android.md#1.1)
-* propertyValue：属性值，约束见[属性值](sdk-android.md#2.1)
-* property：属性列表，约束见[属性名称](sdk-android.md#1.1)，[属性值](sdk-android.md#2.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyValue：属性值，约束见[属性值](./#2.1)
+* property：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
 
 示例：
 
@@ -450,9 +450,9 @@ public static void profileIncrement(Context context, Map<String, Number> propert
 ```
 
 * context：应用上下文对象
-* propertyName：属性名称，约束见[属性名称](sdk-android.md#1.1)
-* propertyValue：属性值，约束见[属性值](sdk-android.md#2.1)
-* property：属性列表，约束见[属性名称](sdk-android.md#1.1)，[属性值](sdk-android.md#2.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyValue：属性值，约束见[属性值](./#2.1)
+* property：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
 
 示例：
 
@@ -483,8 +483,8 @@ public static void profileAppend(Context context, String propertyName, List<Obje
 ```
 
 * context：应用上下文对象
-* propertyName：属性名称，约束见[属性名称](sdk-android.md#1.1)
-* propertyValue：属性值，约束见[属性值](sdk-android.md#2.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyValue：属性值，约束见[属性值](./#2.1)
 
 示例：
 
@@ -515,7 +515,7 @@ public static void profileDelete(Context context);
 ```
 
 * context：应用上下文对象
-* propertyName：属性名称，约束见[属性名称](sdk-android.md#1.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
 
 示例：
 
@@ -555,9 +555,9 @@ public static void registerSuperProperties(Context context, Map<String, Object> 
 ```
 
 * context：应用上下文对象
-* superPropertyName：属性名称，约束见[属性名称](sdk-android.md#1)
-* superPropertyValue：属性值，约束见[属性值](sdk-android.md#2)
-* superProperty：属性列表，约束见[属性名称](sdk-android.md#1)，[属性值](sdk-android.md#2)
+* superPropertyName：属性名称，约束见[属性名称](./#1)
+* superPropertyValue：属性值，约束见[属性值](./#2)
+* superProperty：属性列表，约束见[属性名称](./#1)，[属性值](./#2)
 
 示例：
 
@@ -588,7 +588,7 @@ public static void clearSuperProperties(Context context);
 ```
 
 * context：应用上下文对象
-* superPropertyName：属性名称，约束见[属性名称](sdk-android.md#1)
+* superPropertyName：属性名称，约束见[属性名称](./#1)
 
 示例：
 
@@ -614,7 +614,7 @@ public static Map<String, Object> getSuperProperties(Context context);
 ```
 
 * context：应用上下文对象
-* superPropertyName：属性名称，约束见[属性名称](sdk-android.md#1)
+* superPropertyName：属性名称，约束见[属性名称](./#1)
 
 示例：
 

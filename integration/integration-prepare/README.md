@@ -4,7 +4,7 @@
 
 * **客户端**
 
-  [Android SDK](../sdk/sdk-android.md)
+  [Android SDK](../sdk/sdk-android/)
 
   [iOS SDK](../sdk/sdk-ios.md)
 
@@ -12,9 +12,9 @@
 
   [小程序 SDK](../sdk/sdk-wx.md)
 
-  [Hybrid Android SDK](../sdk/sdk-hybrid-android.md)
+  [Hybrid Android SDK](../sdk/hybrid-sdk/sdk-hybrid-android.md)
 
-  [Hybrid iOS SDK](../sdk/sdk-hybrid-ios.md)
+  [Hybrid iOS SDK](../sdk/hybrid-sdk/sdk-hybrid-ios.md)
 
 * **服务端**
 
