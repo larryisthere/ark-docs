@@ -518,5 +518,5 @@ Session 是一系列用户行为的集合。来源标识的也是一个 Session 
 * 从收藏夹或书签中打开的访问；
 * 302 的重定向有时候会导致 referral 被删除
 * http 重定向成 https 时，referral 不会传递，主要是因为安全因素
-* 其他 refferal 为空的情况
+* 其他 referral 为空的情况
 
