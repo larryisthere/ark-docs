@@ -27,8 +27,8 @@
   * [SDK更新日志](integration/sdk/sdk-update.md)
 * [数据批量导入](integration/tool-import.md)
 * [数据验证](integration/shu-ju-yan-zheng/README.md)
-  * [客户端埋点验证](integration/shu-ju-yan-zheng/sdk-verification.md)
-  * [数据如何进行验证](integration/shu-ju-yan-zheng/data_debug.md)
+  * [客户端埋点检查](integration/shu-ju-yan-zheng/sdk-verification.md)
+  * [数据入库检查](integration/shu-ju-yan-zheng/data_debug.md)
 
 ## Part II 功能使用说明
 
