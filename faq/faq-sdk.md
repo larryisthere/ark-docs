@@ -20,7 +20,7 @@
 
 #### Q3. 易观方舟当前支持哪种埋点方式？代码埋点和无埋点有什么区别？
 
-方舟支持客户端埋点、服务埋点、工具导入全端数据接入，其中客户端埋点，支持代码埋点和可视化埋点两种方式，更多可参考博客[埋点系列文章](https://ark.analysys.cn/blog为了讲明白埋点的演变史，这帮技术男献出年/)。
+方舟支持客户端埋点、服务埋点、工具导入全端数据接入，其中客户端埋点，支持代码埋点和可视化埋点两种方式，更多可参考博客[埋点系列文章](https://ark.analysys.cn/blog/%E4%B8%BA%E4%BA%86%E8%AE%B2%E6%98%8E%E7%99%BD%E5%9F%8B%E7%82%B9%E7%9A%84%E6%BC%94%E5%8F%98%E5%8F%B2%EF%BC%8C%E8%BF%99%E5%B8%AE%E6%8A%80%E6%9C%AF%E7%94%B7%E7%8C%AE%E5%87%BA%E5%B9%B4-2)。
 
 #### Q4. 从集成到看到回数通常需要多长时间？
 
@@ -98,5 +98,5 @@ SDK 数据采集需要适配兼容众多机型和版本，故而研发成本较�
 
 方舟 SDK 实现了可视化埋点，可视化埋点的配置数据要实时从服务端获取。SDK 上报数据时，数据采集依赖配置文件和方舟数据模型。
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
+![](../.gitbook/assets/201901151711159657.jpg)
 
