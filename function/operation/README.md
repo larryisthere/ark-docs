@@ -10,7 +10,7 @@
 * [短信](operation-sms.md)
 * [广告跟踪](operation-utm.md)
 
-![operation](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171130512721.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171130512721.jpg)
 
 对于消息通知、电子邮件、短信等内容推送，易观方舟本身不直接去做推送，而是通过集成第三方推送服务商来进行。
 

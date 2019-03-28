@@ -6,7 +6,7 @@
 
 入口：进入事件分析，切换分析粒度到 Session
 
-![img](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808141203191074.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808141203191074.png)
 
 Session口径：方舟会预置几个通常的口径，当然也支持自定义Session口径，详见[《Session 管理》](../project-manegement/project-session.md)。
 

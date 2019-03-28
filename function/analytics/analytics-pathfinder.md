@@ -70,5 +70,7 @@ e.g. 在电商中，加入购物车是支付成功这个最终转化目标的前
 
 通过桑基图的方式查看各个路径转化，每个节点事件的访问次数，从该节点上后续有访问的留存量和直接跳出的流失量。
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2018/05/201805162115068370.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/05/201805162115068370.png)
+
+
 

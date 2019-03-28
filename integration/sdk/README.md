@@ -4,31 +4,31 @@
 
 ## SDK 相关文档
 
-* **客户端SDK**
+**客户端SDK**
 
-  [Android SDK](sdk-android/)
+[Android SDK](sdk-android/)
 
-  [iOS SDK](sdk-ios.md)
+[iOS SDK](sdk-ios.md)
 
-  [JS SDK](sdk-js.md)
+[JS SDK](sdk-js.md)
 
-  [小程序 SDK](sdk-wx.md)
+[小程序 SDK](sdk-wx.md)
 
-  [Hybrid Android SDK](hybrid-sdk/sdk-hybrid-android.md)
+[Hybrid Android SDK](hybrid-sdk/sdk-hybrid-android.md)
 
-  [Hybrid iOS SDK](hybrid-sdk/sdk-hybrid-ios.md)
+[Hybrid iOS SDK](hybrid-sdk/sdk-hybrid-ios.md)
 
-* **服务端SDK**
+**服务端SDK**
 
-  [Java SDK](sdk-java.md)
+[Java SDK](sdk-java.md)
 
-  [PHP SDK](sdk-php.md)
+[PHP SDK](sdk-php.md)
 
-  [Python SDK](sdk-python.md)
+[Python SDK](sdk-python.md)
 
-* **工具导入**
+**工具导入**
 
-  [历史数据导入](../tool-import.md)
+[历史数据导入](../tool-import.md)
 
 ## SDK 相关常见问题
 

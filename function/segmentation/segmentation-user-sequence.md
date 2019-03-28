@@ -35,7 +35,7 @@ D. 图表展示区
 
 支持按时间粒度：日、周、月细分查看。
 
-![&#x8D8B;&#x52BF;&#x5206;&#x6790;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120008567957.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120008567957.png)
 
 **分布分析**
 
@@ -43,17 +43,19 @@ D. 图表展示区
 
 > 触发次数：触发某事件的次数 占比：触发某事件的次数 / 触发所有事件的总次数
 
-![&#x5206;&#x5E03;&#x5206;&#x6790;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120019101761.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120019101761.png)
 
 ### 3. 单用户行为序列
 
 支持根据时间范围选择查看单用户的行为序列，默认近30日，最多展示时间范围里最新的50条行为，按时间倒序排列；每条事件可以查看该事件发生的平台属性，点开可展开更多事件属性，包括自定义属性和通用属性：
 
-![img](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120027023634.gif)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120027023634.gif)
 
 打开定位到指定事件时，可以选择某个事件，仅元事件，不包括虚拟事件；选择后立即生效，下方行为序列突出所选事件， 折叠前后行为，点击可以查看。
 
 例如，某电商 APP 的关键转化路径是：启动 - 浏览商品详情页 - 加入购物车 - 提交订单 - 支付订单，其中在提交订单 - 支付订单的时候有大量流失用户，这时候可以下钻查看流失用户列表，再选择其中部分用户抽样查看用户行为路径，定位到提交订单事件，查看用户提交订单之后，又发生了哪些行为。
 
-![img](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120058141990.gif)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808120058141990.gif)
+
+
 

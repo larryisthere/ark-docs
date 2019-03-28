@@ -18,7 +18,7 @@
 
 [运营](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/operation.md)——连接第三方运营服务有效触达，数据闭环验证
 
-![&#x6838;&#x5FC3;&#x4EF7;&#x503C;&#xFF1A;&#x7528;&#x6237;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x7BA1;&#x7406;](https://imguserradar.analysys.cn/fangzhou/sysImg/201706141931230718.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/sysImg/201706141931230718.png)
 
 ## 产品特点
 
@@ -46,7 +46,7 @@
 
 ### Step 3 接入数据和验证
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151449466087.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151449466087.png)
 
 **邀请工程师根据以下三项进行数据接入**
 
@@ -62,13 +62,13 @@
 * 支持点击事件查看事件属性，验证上报的属性值是否正确
 * 支持开始实时刷新，秒级更新上报的事件
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151546546394.png%20)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151546546394.png%20)
 
 **维护事件、属性显示名称**
 
 数据验证完成后， 在[元事件](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-meta-events.md)、[用户属性](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-user-properties.md)、[事件属性](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-user-properties.md)中可以查看全部上报的埋点事件和属性，支持管理显示名称、属性单位、属性维度字典等方便分析时使用，详见 [管理](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-manegement.md) 中的功能使用说明。
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101148521850.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101148521850.png)
 
 至此，用于分析的数据采集集成工作完成。
 
@@ -78,7 +78,7 @@
 
 若需要使用其中的消息通知功能，需要集成方舟推送部分的 SDK 和推送方的 SDK，同时在 [管理-服务集成配置](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-integrations.md)中进行绑定配置，保证三方数据的连通
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151613578859.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151613578859.png)
 
 {% hint style="info" %}
 电子邮件和短信服务无需集成第三方SDK，只需要保证上报相应的邮箱地址和手机号码作为用户属性，在方舟当中进行绑定配置即可。

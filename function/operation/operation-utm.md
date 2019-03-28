@@ -94,7 +94,9 @@ F. 查看效果链接
 
 #### 3.1 单条链接的访问
 
-每一条带参数的链接，都可以从列表当中进入查看其访问情况 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172139548130.png)
+每一条带参数的链接，都可以从列表当中进入查看其访问情况 
+
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172139548130.png)
 
 #### 3.2 在分析模型中分析效果
 
@@ -102,7 +104,9 @@ F. 查看效果链接
 
 示例：
 
-**不同广告跟踪的访问用户数** ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172131588219.jpg)
+**不同广告跟踪的访问用户数** 
+
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172131588219.jpg)
 
 **不同广告来源的转化漏斗**
 

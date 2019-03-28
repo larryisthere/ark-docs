@@ -14,13 +14,13 @@
 
 注：配置的过程中，需要选择上报为手机号的字段
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172147142005.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172147142005.jpg)
 
 ## 功能说明
 
 移入导航 **运营** 模块，选择进入 **短信** 页面
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172148433807.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172148433807.jpg)
 
 点击右上角 **立即创建**，进入创建页面
 
@@ -36,11 +36,11 @@
 
 支持从下拉框中选择已圈定好的目标分群。
 
-![&#x63A8;&#x9001;&#x76EE;&#x6807;](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171607599092.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171607599092.jpg)
 
 对于选定的分群支持显示有效用户数，因为发送短信需要手机号，所以圈定的目标分群中若包含没有手机号的用户，在推送时将进行过滤。
 
-![&#x63A8;&#x9001;&#x76EE;&#x6807;](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172156117531.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172156117531.png)
 
 **C. 发送通道**
 

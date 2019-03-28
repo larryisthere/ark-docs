@@ -4,7 +4,7 @@
 
 ## 功能说明
 
-![&#x5206;&#x7FA4;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111909438956.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111909438956.png)
 
 ### 1. 创建分群
 
@@ -14,13 +14,13 @@
 
 在分析模型中将任意数据节点上的用户保存为一个用户群。例如，在漏斗的某个步骤时，可以把某个关键路径流失的人群保存下来，进一步在其他分析模型中分析这个用户群的行为和特征。
 
-![&#x4E0B;&#x94BB;&#x4FDD;&#x5B58;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111636144975.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111636144975.png)
 
 **2. 通过行为/属性自定义创建**
 
 在分群列表中的点击 “ 立即创建” 进入自定义创建的页面
 
-![&#x521B;&#x5EFA;&#x7528;&#x6237;&#x7FA4;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111654151273.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111654151273.png)
 
 #### 1.1 选择分群条件
 
@@ -30,7 +30,7 @@
 
 条件之间支持 **与**、**或**、**非** 的关系，例如：在北京或上海，近30天内首次下单 且 订单金额 ≥ 3000 的 非注册用户
 
-![&#x9009;&#x62E9;&#x4EBA;&#x7FA4;&#x6761;&#x4EF6;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111740018640.gif)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111740018640.gif)
 
 #### 1.2 保存
 
@@ -72,7 +72,7 @@
 
 对于每个细分人群均可直接点击推送消息
 
-![&#x63A8;&#x9001;&#x4EBA;&#x7FA4;&#x6D88;&#x606F;1](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111829189719.gif)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111829189719.gif)
 
 #### 3.2 分群添加到看板
 
@@ -84,5 +84,5 @@
 
 每个细分人群都可以在任意模型中再次分析。
 
-![&#x5206;&#x6790;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x5E94;&#x7528;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111854512236.png)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111854512236.png)
 

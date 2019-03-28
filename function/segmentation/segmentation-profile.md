@@ -15,7 +15,7 @@ description: >-
 
 每一个用户，都可以点击进入进一步查看，详情查看[《单用户档案》](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/segmentation-user-sequence/README.md)。
 
-![&#x7528;&#x6237;&#x5217;&#x8868;](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111928163974.gif)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111928163974.gif)
 
 ### 2. 用户画像
 

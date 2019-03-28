@@ -41,7 +41,7 @@
 
 ## 功能说明
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151116397702.jpg)
+![](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151116397702.jpg)
 
 ### 1. 定义指标区
 

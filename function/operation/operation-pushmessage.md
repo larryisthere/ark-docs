@@ -2,7 +2,7 @@
 
 消息通知是运营人员对APP用户主动推送的消息，出现在设备锁定屏幕、通知中心、横幅中，用户点击后可以唤醒APP或者进入到相应页面，达到促活、增加使用粘性的运营目的。
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171426191163.jpeg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171426191163.jpeg)
 
 常见的消息通知有：
 
@@ -39,13 +39,13 @@
 
 移入导航 **运营** 模块，选择进入 **消息通知** 页面
 
-![image](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171548258977.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171548258977.jpg)
 
 点击右上角 **立即创建**，进入创建页面
 
 ### 1. 创建推送消息
 
-![&#x63A8;&#x9001;&#x9875;](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171559090334.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171559090334.jpg)
 
 **A. 消息名称**
 
@@ -55,11 +55,11 @@
 
 支持从下拉框中选择已圈定好的目标分群
 
-![&#x63A8;&#x9001;&#x76EE;&#x6807;](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171607599092.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171607599092.jpg)
 
 对于选定的分群支持显示各个平台对应用户数，因为易观方舟一个项目支持接入多个平台的数据，但消息通知仅支持移动端，所以若圈定的目标分群中包括Android、iOS之外的用户，在推送时将进行过滤
 
-![&#x63A8;&#x9001;&#x76EE;&#x6807;](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171609395878.jpg)
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171609395878.jpg)
 
 **C. 推送内容**
 
