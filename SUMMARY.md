@@ -1,17 +1,58 @@
 # Table of contents
 
-* [关于易观方舟](README.md)
+* [新手入门](README.md)
 * [产品更新日志](release-notes.md)
 
-## Part I 数据接入
+## Part I 产品使用指南
 
-* [接入前准备工作](integration/integration-prepare/README.md)
-  * [数据模型](integration/integration-prepare/integration-data-model.md)
-  * [数据格式](integration/integration-prepare/integration-data-type.md)
-  * [预置事件和属性](integration/integration-prepare/integration-default-data.md)
-  * [准确的识别用户](integration/integration-prepare/integration-user-identify.md)
-  * [如何设计埋点方案](integration/integration-prepare/integration-tracking-plan.md)
-  * [分平台上报数据 vs 跨平台打通](integration/integration-prepare/integration-cross-platform.md)
+* [名词解释](features/faq-terms.md)
+* [指标说明](features/zhi-biao-shuo-ming.md)
+* [看板](features/dashboard.md)
+* [分析](features/analytics/README.md)
+  * [渠道分析](features/analytics/analytics-channel.md)
+  * [事件分析](features/analytics/analytics-event.md)
+  * [Session 分析](features/analytics/analytics-session.md)
+  * [留存分析](features/analytics/analytics-retention.md)
+  * [转化漏斗](features/analytics/analytics-funnel.md)
+  * [智能路径](features/analytics/analytics-pathfinder.md)
+  * [实时分析](features/analytics/analytics-realtime.md)
+  * [场景偏好](features/analytics/analytics-usagepreference.md)
+  * [APP 偏好](features/analytics/analytics-apppreference.md)
+  * [领域偏好](features/analytics/analytics-categorypreference.md)
+* [分群](features/segmentation/README.md)
+  * [分群洞察](features/segmentation/segmentation-profile.md)
+  * [单用户档案](features/segmentation/segmentation-user-sequence.md)
+* [运营](features/operation/README.md)
+  * [电子邮件](features/operation/operation-email.md)
+  * [短信](features/operation/operation-sms.md)
+  * [消息通知](features/operation/operation-pushmessage.md)
+  * [广告跟踪](features/operation/operation-utm.md)
+* [项目设置](features/project-manegement/README.md)
+  * [元事件](features/project-manegement/project-meta-events.md)
+  * [可视化埋点](features/project-manegement/project-virtualizer.md)
+  * [虚拟事件](features/project-manegement/project-merged-events.md)
+  * [事件属性](features/project-manegement/project-event-properties.md)
+  * [用户属性](features/project-manegement/project-user-properties.md)
+  * [Session 管理](features/project-manegement/project-session.md)
+  * [指标监控](features/project-manegement/zhi-biao-jian-kong.md)
+  * [服务集成配置](features/project-manegement/project-integrations.md)
+  * [成员管理](features/project-manegement/project-member.md)
+* [平台管理](features/enterprise-basic-function/README.md)
+  * [企业概览](features/enterprise-basic-function/enterprise-basic-function-overview.md)
+  * [项目管理](features/enterprise-basic-function/enterprise-basic-function-project-management.md)
+  * [员工管理](features/enterprise-basic-function/enterprise-basic-function-member.md)
+  * [帐号设置](features/enterprise-basic-function/enterprise-basic-function-accountsetting.md)
+
+## Part II 技术文档
+
+* [接入前准备工作](integration/prepare/README.md)
+  * [部署环境检测工具](integration/prepare/tool-script.md)
+  * [数据模型](integration/prepare/data-model.md)
+  * [数据格式](integration/prepare/integration-data-type.md)
+  * [预置事件和属性](integration/prepare/default-data.md)
+  * [准确的识别用户](integration/prepare/user-identify.md)
+  * [如何设计埋点方案](integration/prepare/tracking-plan.md)
+  * [分平台上报数据 vs 跨平台打通](integration/prepare/integration-cross-platform.md)
 * [SDK 指南](integration/sdk/README.md)
   * [Android SDK](integration/sdk/sdk-android/README.md)
     * [多渠道打包](integration/sdk/sdk-android/channel-packing.md)
@@ -29,58 +70,10 @@
 * [数据验证](integration/shu-ju-yan-zheng/README.md)
   * [埋点上报检查](integration/shu-ju-yan-zheng/sdk-verification.md)
   * [数据入库检查](integration/shu-ju-yan-zheng/data_debug.md)
+* [数据导出](integration/open-original-export.md)
 
-## Part II 功能使用说明
+## Part III 常见问题
 
-* [产品结构](function/function.md)
-* [看板](function/panel.md)
-* [分析](function/analytics/README.md)
-  * [渠道分析](function/analytics/analytics-channel.md)
-  * [事件分析](function/analytics/analytics-event.md)
-  * [Session 分析](function/analytics/analytics-session.md)
-  * [留存分析](function/analytics/analytics-retention.md)
-  * [转化漏斗](function/analytics/analytics-funnel.md)
-  * [智能路径](function/analytics/analytics-pathfinder.md)
-  * [实时分析](function/analytics/analytics-realtime.md)
-  * [场景偏好](function/analytics/analytics-usagepreference.md)
-  * [APP 偏好](function/analytics/analytics-apppreference.md)
-  * [领域偏好](function/analytics/analytics-categorypreference.md)
-* [分群](function/segmentation/README.md)
-  * [分群洞察](function/segmentation/segmentation-profile.md)
-  * [单用户档案](function/segmentation/segmentation-user-sequence.md)
-* [运营](function/operation/README.md)
-  * [电子邮件](function/operation/operation-email.md)
-  * [短信](function/operation/operation-sms.md)
-  * [消息通知](function/operation/operation-pushmessage.md)
-  * [广告跟踪](function/operation/operation-utm.md)
-* [项目设置](function/project-manegement/README.md)
-  * [元事件](function/project-manegement/project-meta-events.md)
-  * [可视化埋点](function/project-manegement/project-virtualizer.md)
-  * [虚拟事件](function/project-manegement/project-merged-events.md)
-  * [事件属性](function/project-manegement/project-event-properties.md)
-  * [用户属性](function/project-manegement/project-user-properties.md)
-  * [Session 管理](function/project-manegement/project-session.md)
-  * [指标监控](function/project-manegement/zhi-biao-jian-kong.md)
-  * [服务集成配置](function/project-manegement/project-integrations.md)
-  * [成员管理](function/project-manegement/project-member.md)
-* [平台管理](function/enterprise-basic-function/README.md)
-  * [企业概览](function/enterprise-basic-function/enterprise-basic-function-overview.md)
-  * [项目管理](function/enterprise-basic-function/enterprise-basic-function-project-management.md)
-  * [员工管理](function/enterprise-basic-function/enterprise-basic-function-member.md)
-  * [帐号设置](function/enterprise-basic-function/enterprise-basic-function-accountsetting.md)
-
-## Part III 开放平台
-
-* [数据导出](part-iii-kai-fang-ping-tai/open-original-export.md)
-
-## Part IV 辅助工具
-
-* [环境检测工具使用说明](tool/tool-script.md)
-
-## Part V 常见问题
-
-* [名词解释](faq/faq-terms.md)
-* [指标说明](faq/zhi-biao-shuo-ming.md)
 * [SDK 集成问题](faq/faq-sdk.md)
 * [产品试用及采购](faq/faq-trialversion.md)
 

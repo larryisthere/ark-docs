@@ -64,7 +64,7 @@ bin/kafka-run-class.sh kafka.tools.SimpleConsumerShell \
 
 ### 1.4 数据格式
 
-订阅的数据的格式与导入时的[数据格式](../integration/integration-prepare/integration-data-type.md)基本一致。
+订阅的数据的格式与导入时的[数据格式](prepare/integration-data-type.md)基本一致。
 
 ## 2. 使用JDBC进行数据访问
 

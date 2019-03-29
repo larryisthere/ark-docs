@@ -1,12 +1,12 @@
 # 数据批量导入
 
-使用前一定请先阅读[数据格式](integration-prepare/integration-data-type.md)和[数据模型](integration-prepare/integration-data-model.md)的文档
+使用前一定请先阅读[数据格式](prepare/integration-data-type.md)和[数据模型](prepare/data-model.md)的文档
 
 ## 1. 概述
 
 批量导入工具用于将历史数据或外部数据以文件的形式导入易观方舟，以供分析使用。
 
-使用批量导入工具导入的数据需符合[数据格式](integration-prepare/integration-data-type.md)和[数据模型](integration-prepare/integration-data-model.md)中的模型和数据类型的要求，否则可能会造成导入的数据部分\(甚至是全部\)全部丢失。
+使用批量导入工具导入的数据需符合[数据格式](prepare/integration-data-type.md)和[数据模型](prepare/data-model.md)中的模型和数据类型的要求，否则可能会造成导入的数据部分\(甚至是全部\)全部丢失。
 
 ## 2. 运行环境
 
@@ -29,7 +29,7 @@
 
 ## 4. 使用方式
 
-1. 将每一行都是一个符合[数据格式](integration-prepare/integration-data-type.md)和[数据模型](integration-prepare/integration-data-model.md)的数据文件\(文件名称不做要求\)放置到集群最后一台机器的某个目录下，如/home/streaming。
+1. 将每一行都是一个符合[数据格式](prepare/integration-data-type.md)和[数据模型](prepare/data-model.md)的数据文件\(文件名称不做要求\)放置到集群最后一台机器的某个目录下，如/home/streaming。
 2. 使用用户streaming 切换到目录导入工具目录下： cd /opt/soft/streaming/bin。
 3. 导入profile数据： sh ./write\_demo\_profile\_data.sh。
 4. 导入event数据： sh ./write\_demo\_event\_data.sh。

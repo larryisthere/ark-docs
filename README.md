@@ -1,4 +1,4 @@
-# 关于易观方舟
+# 新手入门
 
 易观方舟是一款精细化运营分析产品。
 
@@ -100,7 +100,9 @@
 
 ## 开始使用
 
-应用发布后，当用户产生行为时，即可实时收到数据，开始以下功能的使用：
+应用发布后，当用户产生行为时，即可实时收到数据，开始使用：
+
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901260034296922.png)
 
 [看板](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/panel.md)——不同角色灵活自定义看板，实时跟踪关心的指标
 
@@ -109,6 +111,10 @@
 [分群](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/segmentation.md)——多种方式细分人群，进一步分析或触达
 
 [运营](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/operation.md)——连接第三方运营服务有效触
+
+[项目管理](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/project-management.md)——管理埋点、第三方服务配置、成员管理等
+
+[平台管理](features/enterprise-basic-function/)——企业当前计划、项目管理、成员管理、安全管理等
 
 ![](.gitbook/assets/201901151711159657.jpg)
 

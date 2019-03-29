@@ -16,7 +16,7 @@
 
 #### Q2. 不同平台的应用是否可以集成到一个项目中，使用一个 AppKey ？
 
-方舟本身支持，但是否需要集成到要给项目中，需要跟根据不同的业务需要来决定，可以参考[《分平台上报数据 vs 跨平台打通》](../integration/integration-prepare/integration-cross-platform.md)
+方舟本身支持，但是否需要集成到要给项目中，需要跟根据不同的业务需要来决定，可以参考[《分平台上报数据 vs 跨平台打通》](../integration/prepare/integration-cross-platform.md)
 
 #### Q3. 易观方舟当前支持哪种埋点方式？代码埋点和无埋点有什么区别？
 

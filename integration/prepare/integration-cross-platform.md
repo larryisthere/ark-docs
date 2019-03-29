@@ -30,7 +30,7 @@
 
 易观方舟支持通过 UserID 来识别用户的确定性方法，只需要在不同的平台中使用同一个 AppKey 即可。
 
-更多信息参考 [**《如何准确识别用户》**](integration-user-identify.md) 
+更多信息参考 [**《如何准确识别用户》**](user-identify.md) 
 
 ![](../../.gitbook/assets/201901151711159657.jpg)
 
