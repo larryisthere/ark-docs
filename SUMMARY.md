@@ -27,7 +27,7 @@
   * [短信](features/operation/operation-sms.md)
   * [消息通知](features/operation/operation-pushmessage.md)
   * [广告跟踪](features/operation/operation-utm.md)
-* [项目设置](features/project-manegement/README.md)
+* [管理](features/project-manegement/README.md)
   * [元事件](features/project-manegement/project-meta-events.md)
   * [可视化埋点](features/project-manegement/project-virtualizer.md)
   * [虚拟事件](features/project-manegement/project-merged-events.md)
