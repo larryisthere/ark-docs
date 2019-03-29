@@ -40,7 +40,7 @@
 * [平台管理](features/enterprise-basic-function/README.md)
   * [企业概览](features/enterprise-basic-function/enterprise-basic-function-overview.md)
   * [项目管理](features/enterprise-basic-function/enterprise-basic-function-project-management.md)
-  * [员工管理](features/enterprise-basic-function/enterprise-basic-function-member.md)
+  * [成员管理](features/enterprise-basic-function/enterprise-basic-function-member.md)
   * [帐号设置](features/enterprise-basic-function/enterprise-basic-function-accountsetting.md)
 
 ## Part II 技术文档
