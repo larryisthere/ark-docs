@@ -69,7 +69,9 @@
 * [数据验证](integration/shu-ju-yan-zheng/README.md)
   * [埋点上报检查](integration/shu-ju-yan-zheng/sdk-verification.md)
   * [数据入库检查](integration/shu-ju-yan-zheng/data_debug.md)
-* [数据导出](integration/open-original-export.md)
+* [数据导出](integration/open-original-export/README.md)
+  * [直接从Kafka中订阅数据](integration/open-original-export/zhi-jie-cong-kafka-zhong-ding-yue-shu-ju.md)
+  * [使用JDBC进行数据访问](integration/open-original-export/shi-yong-jdbc-jin-hang-shu-ju-fang-wen.md)
 
 ## Part III 常见问题
 
