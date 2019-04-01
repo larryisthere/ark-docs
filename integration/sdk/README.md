@@ -8,15 +8,15 @@
 
 [Android SDK](sdk-android/)
 
-[iOS SDK](sdk-ios.md)
+[iOS SDK](sdk-ios/)
 
 [JS SDK](sdk-js.md)
 
 [小程序 SDK](sdk-wx.md)
 
-[Hybrid Android SDK](hybrid-sdk/sdk-hybrid-android.md)
+[Hybrid Android SDK](sdk-android/sdk-hybrid-android.md)
 
-[Hybrid iOS SDK](hybrid-sdk/sdk-hybrid-ios.md)
+[Hybrid iOS SDK](sdk-ios/sdk-hybrid-ios.md)
 
 **服务端SDK**
 

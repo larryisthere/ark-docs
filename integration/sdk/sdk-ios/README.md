@@ -394,7 +394,7 @@ AnalysysAgent.identify("fangke009901")
 
 * **属性值**
 
-  支持部分类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`； 若为字符串，取值长度为1-255个字符； 若为数组或集合，则最多包含 100条，且 key 约束条件与[属性名称](sdk-ios.md#userPropertyKey)一致，value 取值长度为1-255个字符
+  支持部分类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`； 若为字符串，取值长度为1-255个字符； 若为数组或集合，则最多包含 100条，且 key 约束条件与[属性名称](./#userPropertyKey)一致，value 取值长度为1-255个字符
 
 #### 设置用户属性
 
@@ -406,9 +406,9 @@ AnalysysAgent.identify("fangke009901")
 + (void)profileSet:(NSString *)propertyName value:(id)propertyValue;
 ```
 
-* propertyName：属性名称，约束见[属性名称](sdk-ios.md#userPropertyKey)
-* propertyValue：属性值，约束见[属性值](sdk-ios.md#userPropertyValue)
-* property：属性列表，约束见[属性名称](sdk-ios.md#userPropertyKey)，[属性值](sdk-ios.md#userPropertyValue)
+* propertyName：属性名称，约束见[属性名称](./#userPropertyKey)
+* propertyValue：属性值，约束见[属性值](./#userPropertyValue)
+* property：属性列表，约束见[属性名称](./#userPropertyKey)，[属性值](./#userPropertyValue)
 
 示例1：
 
@@ -441,9 +441,9 @@ AnalysysAgent.profileSet(["nickName": "小叮当", "hobby": ["Singing", "Dancing
 + (void)profileSetOnce:(NSString *)propertyName propertyValue:(id)propertyValue;
 ```
 
-* propertyName：属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit)
-* propertyValue：属性值，约束见[`属性值`](sdk-ios.md#GeneralPValueLimit)
-* property：集合类型属性值，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit) 、[`属性值`](sdk-ios.md#GeneralPValueLimit)
+* propertyName：属性名称，约束见[`属性名称`](./#GeneralPNameLimit)
+* propertyValue：属性值，约束见[`属性值`](./#GeneralPValueLimit)
+* property：集合类型属性值，约束见[`属性名称`](./#GeneralPNameLimit) 、[`属性值`](./#GeneralPValueLimit)
 
 示例1：统计用户的出生日期
 
@@ -479,9 +479,9 @@ AnalysysAgent.profileSetOnce(["activationTime": "1521594686781"])
 + (void)profileIncrement:(NSString *)propertyName propertyValue:(NSNumber *)propertyValue;
 ```
 
-* propertyName：属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit)
-* propertyValue：属性值，约束见[`属性值`](sdk-ios.md#GeneralPValueLimit)
-* property：集合类型属性值，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit) 、[`属性值`](sdk-ios.md#GeneralPValueLimit)
+* propertyName：属性名称，约束见[`属性名称`](./#GeneralPNameLimit)
+* propertyValue：属性值，约束见[`属性值`](./#GeneralPValueLimit)
+* property：集合类型属性值，约束见[`属性名称`](./#GeneralPNameLimit) 、[`属性值`](./#GeneralPValueLimit)
 
 示例1：
 
@@ -521,9 +521,9 @@ AnalysysAgent.profileIncrement(["UseCount": 1])
 + (void)profileAppend:(NSString *)propertyName propertyValue:(NSSet *)propertyValue;
 ```
 
-* propertyName：属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit)
-* propertyValue：属性值，约束见[`属性值`](sdk-ios.md#GeneralPValueLimit)
-* property：集合类型属性值，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit) 、[`属性值`](sdk-ios.md#GeneralPValueLimit)
+* propertyName：属性名称，约束见[`属性名称`](./#GeneralPNameLimit)
+* propertyValue：属性值，约束见[`属性值`](./#GeneralPValueLimit)
+* property：集合类型属性值，约束见[`属性名称`](./#GeneralPNameLimit) 、[`属性值`](./#GeneralPValueLimit)
 
 示例1：
 
@@ -557,7 +557,7 @@ AnalysysAgent.profileAppend("Books", propertyValue: ["红楼梦", "水浒传"])
 + (void)profileDelete;
 ```
 
-* propertyName：属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit)
+* propertyName：属性名称，约束见[`属性名称`](./#GeneralPNameLimit)
 
 示例1：
 
@@ -593,7 +593,7 @@ AnalysysAgent.profileDelete()
 
 * **属性值**
 
-  支持部分类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`； 若为字符串，取值长度为1-255个字符； 若为数组或集合,则最多包含 100条，且 key 约束条件与[属性名称](sdk-ios.md#GeneralPNameLimit)一致，value 取值长度为1-255个字符
+  支持部分类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`； 若为字符串，取值长度为1-255个字符； 若为数组或集合,则最多包含 100条，且 key 约束条件与[属性名称](./#GeneralPNameLimit)一致，value 取值长度为1-255个字符
 
 #### 注册通用属性
 
@@ -607,9 +607,9 @@ AnalysysAgent.profileDelete()
 + (void)registerSuperProperty:(NSString *)superPropertyName value:(id)superPropertyValue;
 ```
 
-* superPropertyName：属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit)
-* superPropertyValue：属性值，约束见[`属性值`](sdk-ios.md#GeneralPValueLimit)
-* superProperties：集合类型属性值，满足[`属性名称`](sdk-ios.md#GeneralPNameLimit) 和[`属性值`](sdk-ios.md#GeneralPValueLimit)约束
+* superPropertyName：属性名称，约束见[`属性名称`](./#GeneralPNameLimit)
+* superPropertyValue：属性值，约束见[`属性值`](./#GeneralPValueLimit)
+* superProperties：集合类型属性值，满足[`属性名称`](./#GeneralPNameLimit) 和[`属性值`](./#GeneralPValueLimit)约束
 
 示例：
 
@@ -654,7 +654,7 @@ AnalysysAgent.registerSuperProperties(["member": "VIP"])
 + (void)clearSuperProperties;
 ```
 
-* superPropertyName ： 属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit) 
+* superPropertyName ： 属性名称，约束见[`属性名称`](./#GeneralPNameLimit) 
 
 示例1：
 
@@ -690,7 +690,7 @@ AnalysysAgent.clearSuperProperties()
 + (NSDictionary *)getSuperProperties;
 ```
 
-* superPropertyName：属性名称，约束见[`属性名称`](sdk-ios.md#GeneralPNameLimit)
+* superPropertyName：属性名称，约束见[`属性名称`](./#GeneralPNameLimit)
 
 示例1：
 

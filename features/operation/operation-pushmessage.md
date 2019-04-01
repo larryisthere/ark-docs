@@ -31,7 +31,7 @@
 具体方法详见：
 
 * Android应用：《Android SDK 使用说明》中 [_5 消息推送_ ](../../integration/sdk/sdk-android/#5-消息推送) 部分
-* iOS应用：《iOS SDK 使用说明》中 [_5 消息推送_ ](../../integration/sdk/sdk-ios.md#5-消息推送) 部分
+* iOS应用：《iOS SDK 使用说明》中 [_5 消息推送_ ](../../integration/sdk/sdk-ios/#5-消息推送) 部分
 
 ### 3. 在方舟中选择消息通知服务商进行[服务集成配置](../project-manegement/project-integrations.md)
 

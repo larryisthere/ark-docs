@@ -13,7 +13,7 @@ EDM 是运营人员常用的一种营销方式，在合适的时间针对不同�
 具体方法详见：
 
 * Android 应用：《[Android SDK 使用说明](../../integration/sdk/sdk-android/)》中 _3.2.3 用户属性设置_ 部分
-* iOS 应用：《[iOS SDK 使用说明](../../integration/sdk/sdk-ios.md)》中 _3.2.3 用户属性设置_ 部分
+* iOS 应用：《[iOS SDK 使用说明](../../integration/sdk/sdk-ios/)》中 _3.2.3 用户属性设置_ 部分
 * Web/H5 应用：《[JS SDK使用说明](../../integration/sdk/sdk-js.md)》中 _3.2.3 用户属性设置_ 部分
 * 小程序：《[小程序SDK 使用说明](../../integration/sdk/sdk-wx.md)》中 _3.2.3 用户属性设置_ 部分
 

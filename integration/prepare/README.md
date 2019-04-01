@@ -6,15 +6,15 @@
 
   [Android SDK](../sdk/sdk-android/)
 
-  [iOS SDK](../sdk/sdk-ios.md)
+  [iOS SDK](../sdk/sdk-ios/)
 
   [JS SDK](../sdk/sdk-js.md)
 
   [小程序 SDK](../sdk/sdk-wx.md)
 
-  [Hybrid Android SDK](../sdk/hybrid-sdk/sdk-hybrid-android.md)
+  [Hybrid Android SDK](../sdk/sdk-android/sdk-hybrid-android.md)
 
-  [Hybrid iOS SDK](../sdk/hybrid-sdk/sdk-hybrid-ios.md)
+  [Hybrid iOS SDK](../sdk/sdk-ios/sdk-hybrid-ios.md)
 
 * **服务端**
 

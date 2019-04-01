@@ -6,7 +6,7 @@ Android App中如需加载H5页面，可在H5页面中以如下方式集成[Anal
 
 ### 1.1 集成 Android SDK
 
-集成方式查看[Android SDK 使用说明](../sdk-android/)
+集成方式查看[Android SDK 使用说明](./)
 
 ### 1.2 配置JS SDK
 
@@ -141,7 +141,7 @@ public static void resetHybridModel(Context context, Object webView);
 
 ### 3.1 Android 接口
 
-与[Android SDK 使用说明](../sdk-android/)中的接口介绍相同。
+与[Android SDK 使用说明](./)中的接口介绍相同。
 
 ### 3.2 JS SDK 接口
 
