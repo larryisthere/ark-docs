@@ -562,7 +562,7 @@ AnalysysAgent.profileUnset( "age");
 AnalysysAgent.profileDelete();
 ```
 
-#### 设备ID设置
+### 设备ID设置
 
 唯一设备ID标识设置，接口如下：
 
@@ -575,7 +575,7 @@ AnalysysAgent.identify(distinctId);
 示例:
 
 ```javascript
-// 设置设备ID为`fangke009901`,注意此方法需要在初始化之前调用
+// 设置设备ID为`fangke009901`,注意此方法需要在初始化之后优先调用
 AnalysysAgent.identify("fangke009901");
 ```
 
