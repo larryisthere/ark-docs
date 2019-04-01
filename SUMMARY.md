@@ -1,6 +1,6 @@
 # Table of contents
 
-* [新手入门](README.md)
+* [快速上手](README.md)
 * [产品更新日志](release-notes.md)
 
 ## Part I 产品使用指南
