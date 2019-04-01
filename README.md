@@ -10,13 +10,13 @@
 
 通过以下四个模块，达到分析-分群-触达-闭环验证的运营过程，实现用户全生命周期的管理
 
-[看板](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/panel.md)——不同角色灵活自定义看板，实时跟踪关心的指标
+[看板](features/dashboard.md)——不同角色灵活自定义看板，实时跟踪关心的指标
 
-[分析](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/analytics.md)——多模型多维度实时查询分析，任意节点下钻分析
+[分析](features/analytics/)——多模型多维度实时查询分析，任意节点下钻分析
 
-[分群](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/segmentation.md)——多种方式细分人群，进一步分析或触达
+[分群](features/segmentation/)——多种方式细分人群，进一步分析或触达
 
-[运营](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/operation.md)——连接第三方运营服务有效触达，数据闭环验证
+[运营](features/operation/)——连接第三方运营服务有效触达，数据闭环验证
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/sysImg/201706141931230718.png)
 
@@ -51,8 +51,8 @@
 **邀请工程师根据以下三项进行数据接入**
 
 * 项目 AppKey（创建项目后生成，用于唯一标识项目的数据）
-* SDK [集成指南](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/sdk.md)
-* 埋点方案（[如何设计埋点方案](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/integration-tracking-plan.md)）
+* SDK [集成指南](integration/sdk/)
+* 埋点方案（[如何设计埋点方案](integration/prepare/tracking-plan.md)）
 
 **接入后 Debug 数据验证**
 
@@ -66,7 +66,7 @@
 
 **维护事件、属性显示名称**
 
-数据验证完成后， 在[元事件](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-meta-events.md)、[用户属性](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-user-properties.md)、[事件属性](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-user-properties.md)中可以查看全部上报的埋点事件和属性，支持管理显示名称、属性单位、属性维度字典等方便分析时使用，详见 [管理](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-manegement.md) 中的功能使用说明。
+数据验证完成后， 在[元事件](features/project-manegement/project-meta-events.md)、[用户属性](features/project-manegement/project-user-properties.md)、[事件属性](features/project-manegement/project-event-properties.md)中可以查看全部上报的埋点事件和属性，支持管理显示名称、属性单位、属性维度字典等方便分析时使用，详见 [管理 ](features/project-manegement/)中的功能使用说明。
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101148521850.png)
 
@@ -76,7 +76,7 @@
 
 易观方舟支持各种用户细分，在接入第三方服务商后通过消息通知、电子邮件、短信等多种方式触达用户。
 
-若需要使用其中的消息通知功能，需要集成方舟推送部分的 SDK 和推送方的 SDK，同时在 [管理-服务集成配置](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/project-integrations.md)中进行绑定配置，保证三方数据的连通
+若需要使用其中的消息通知功能，需要集成方舟推送部分的 SDK 和推送方的 SDK，同时在 [管理-服务集成配置](features/project-manegement/project-integrations.md)中进行绑定配置，保证三方数据的连通
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151613578859.png)
 
@@ -104,15 +104,15 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901260034296922.png)
 
-[看板](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/panel.md)——不同角色灵活自定义看板，实时跟踪关心的指标
+[看板](features/dashboard.md)——不同角色灵活自定义看板，实时跟踪关心的指标
 
-[分析](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/analytics.md)——10+ 个分析模型多维度实时查询分析
+[分析](features/analytics/)——10+ 个分析模型多维度实时查询分析
 
-[分群](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/segmentation.md)——多种方式细分人群，进一步分析或触达
+[分群](features/segmentation/)——多种方式细分人群，进一步分析或触达
 
-[运营](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/operation.md)——连接第三方运营服务有效触
+[运营](features/operation/)——连接第三方运营服务有效触
 
-[项目管理](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/project-management.md)——管理埋点、第三方服务配置、成员管理等
+[项目管理](features/enterprise-basic-function/enterprise-basic-function-project-management.md)——管理埋点、第三方服务配置、成员管理等
 
 [平台管理](features/enterprise-basic-function/)——企业当前计划、项目管理、成员管理、安全管理等
 
