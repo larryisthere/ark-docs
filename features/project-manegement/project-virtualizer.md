@@ -8,7 +8,7 @@
 
 ## 使用前准备
 
-开始使用可视化埋点之前，必须先按照 [SDK 指南](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/sdk/README.md) 正确集成相应平台的SDK。
+开始使用可视化埋点之前，必须先按照[ SDK 指南 ](../../integration/sdk/)正确集成相应平台的SDK。
 
 当已有回数时，就可以从 **管理 - 元事件** 页面的可视化埋点入口选择相应平台开始后可视化埋点。
 

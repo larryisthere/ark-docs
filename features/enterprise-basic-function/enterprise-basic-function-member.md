@@ -12,7 +12,7 @@
 | 平台运维 | 通常运维人员该角色 | √ |  | 仅创建项目和开启数据流 | √ | 在项目中获得授权时可以进入 |
 | 项目管理员 | 通常赋予项目的leader |  |  |  | √ | √ |
 
-更详细的不同角色对应的功能范围，见[《附：角色 - 权限对应表》](enterprise-basic-function-member.md#jump)。
+更详细的不同角色对应的功能范围，见[《附：角色 - 权限对应表》](enterprise-basic-function-member.md#fu-jiao-se-quan-xian-dui-ying-biao)。
 
 ## 2. 邀请成员
 

@@ -13,7 +13,7 @@ description: >-
 
 默认展示 1000 条用户详情数据，更多需要通过API导出。
 
-每一个用户，都可以点击进入进一步查看，详情查看[《单用户档案》](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/segmentation-user-sequence/README.md)。
+每一个用户，都可以点击进入进一步查看，详情查看[《单用户档案》](segmentation-user-sequence.md)。
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111928163974.gif)
 
@@ -40,7 +40,7 @@ description: >-
 {% hint style="info" %}
 **数据正常上报，但这里没有正常显示怎么办？**
 
-可以通过[元事件管理](../project-manegement/project-meta-events.md#2-cha-zhao-yuan-shi-jian)及[事件分析](../analytics/analytics-event.md#13-xi-fen-wei-du)检查用户属性中是否包含上述字段，并且字段的值是否符合上述规则。
+可以通过[元事件管理](../project-manegement/project-meta-events.md)及[事件分析](../analytics/analytics-event.md)检查用户属性中是否包含上述字段，并且字段的值是否符合上述规则。
 
 **是否可以根据自己的规则创建用户画像？**
 

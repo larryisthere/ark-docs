@@ -8,7 +8,7 @@
 
 ### 适合场景
 
-1. Android 用户的[APP领域](analytics-categorypreference.md####APP领域划分)偏好是什么样的？
+1. Android 用户的[APP领域](analytics-apppreference.md)偏好是什么样的？
 2. 投放广告时，应该选择什么标签的用户？
 3. 最近要针对老用户策划一次活动，推出什么类型的活动他们会更感兴趣呢？
 

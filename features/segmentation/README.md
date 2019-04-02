@@ -44,7 +44,7 @@
 
 #### 1.3 预览
 
-如果支持探索性的进行分群，可以在保存之前，选择预览，查看分群的用户列表和偏好，详见[《分群洞察》](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/cohorts_profile/README.md)。
+如果支持探索性的进行分群，可以在保存之前，选择预览，查看分群的用户列表和偏好，详见[《分群洞察》](segmentation-profile.md)。
 
 ### 2. 编辑分群
 
