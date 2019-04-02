@@ -63,7 +63,7 @@ C. 还可以将已保存的图表留存为新的图表
 
 **1. 获取用户**
 
-* [渠道分析](analytics-channel.md)
+* [渠道分析](analytics-channel/)
 
 **2. 了解用户**
 
