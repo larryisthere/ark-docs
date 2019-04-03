@@ -1,8 +1,8 @@
 # Python SDK
 
-Python SDK 主要用于服务端 Python 应用，如 Python Web 应用的后台服务。
+Python SDK 主要用于服务端 Python 应用，如 Python Web 应用的后台服务。集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_python_4.0.6_20180910.zip)
 
-集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-python)
+或者登录[Github下载源码](https://github.com/analysys/argo-sdk-python)
 
 ## 1. 集成准备
 
