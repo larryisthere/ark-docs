@@ -423,10 +423,7 @@ class Demo():
             "ip" : "169.169.169.169",
             "view_time" : time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()),
             "productId" : "666",
-            "productCatalog" : "electronic",
-            "$debug" : "android",
-            "$lib" : "AAAAAAA",
-             "abc" : ""
+            "productCatalog" : "electronic"
         }
         eguan.track(distinct_id,"view_product",properties,python_sdk_platform,False)
         eguan.unregisterSuperProperties("age")

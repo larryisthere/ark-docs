@@ -668,7 +668,7 @@ AnalysysAgent.setMaxEventSize(mContext,20);
 
 #### 本地缓存上限值
 
-SDK 本地默认缓存数据的上限值为 10000条，当达到此阈值值将会删除最早 10条数据。可以通过 `setMaxCacheSize` 方法来设定缓存数据的上限值（参数单位/条）。 接口如下：
+SDK 本地默认缓存数据的上限值为 10000条，最小值为100条，当达到此阈值值将会删除最早 10条数据。可以通过 `setMaxCacheSize` 方法来设定缓存数据的上限值（参数单位/条）。 接口如下：
 
 ```java
 public static void setMaxCacheSize(Context context, long size)
