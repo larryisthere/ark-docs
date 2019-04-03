@@ -2,7 +2,7 @@
 
 ## 1. 基本配置
 
-Android App中如需加载H5页面，可在H5页面中以如下方式集成[AnalysysAgent\_Hybrid\_JS\_SDK](https://ark.analysys.cn/sdk/v2/analysys_Hybrid_v4.1.2_20181228.zip)。
+Android App中如需加载H5页面，可在H5页面中以如下方式集成[AnalysysAgent\_Hybrid\_JS\_SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_Hybrid_v4.2.0.1_20190401.zip%20)。
 
 ### 1.1 集成 Android SDK
 

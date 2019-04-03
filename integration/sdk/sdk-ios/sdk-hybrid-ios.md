@@ -2,7 +2,7 @@
 
 ## 1. 基本配置
 
-iOS App 中如需加载 H5 页面，可在 H5 页面中以如下方式集成[AnalysysAgent\_Hybrid\_JS\_SDK](https://ark.analysys.cn/sdk/v2/analysys_Hybrid_v4.1.2_20181228.zip)。
+iOS App 中如需加载 H5 页面，可在 H5 页面中以如下方式集成[AnalysysAgent\_Hybrid\_JS\_SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_Hybrid_v4.2.0.1_20190401.zip%20)。
 
 ### 1.1 集成 iOS SDK
 
