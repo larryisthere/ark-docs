@@ -2,6 +2,8 @@
 
 Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务。集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_Java_v4.0.7_20180917.zip)
 
+或者登录[Github下载源码](https://github.com/analysys/argo-sdk-java)
+
 ## 1. 集成 SDK
 
 ### 1.1 JAR 包集成

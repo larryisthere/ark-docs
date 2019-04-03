@@ -2,6 +2,8 @@
 
 PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_PHP_v4.0.1_20181226.zip)
 
+或者登录[Github下载源码](https://github.com/analysys/argo-sdk-php)
+
 ## 1. 集成 SDK
 
 将PHP SDK拷贝到本地工程内并在所需要位置引用 PHP SDK。
