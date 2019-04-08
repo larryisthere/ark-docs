@@ -18,14 +18,14 @@ A区域可以查看项目的 AppKey，用于数据接入；
 
 切换 B 区域 Tab 导航，支持用户管理元数据、配置推送服务，详见各个页面的使用说明：
 
-* [元事件](project-meta-events.md)
-* [可视化埋点](project-virtualizer.md)
-* [虚拟事件](project-merged-events.md)
-* [用户属性](project-user-properties.md)
-* [事件属性](project-event-properties.md)
-* [Session管理](project-session.md)
-* [服务集成配置](project-integrations.md)
-* [成员管理](project-member.md)
+* [元事件](meta-events.md)
+* [可视化埋点](virtualizer.md)
+* [虚拟事件](merged-events.md)
+* [用户属性](user-properties.md)
+* [事件属性](event-properties.md)
+* [Session管理](session.md)
+* [服务集成配置](integrations.md)
+* [成员管理](member.md)
 
 ## C. 接入更多数据入口
 

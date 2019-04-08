@@ -17,7 +17,7 @@ EDM 是运营人员常用的一种营销方式，在合适的时间针对不同�
 * Web/H5 应用：《[JS SDK使用说明](../../integration/sdk/sdk-js.md)》中 _3.2.3 用户属性设置_ 部分
 * 小程序：《[小程序SDK 使用说明](../../integration/sdk/sdk-wx.md)》中 _3.2.3 用户属性设置_ 部分
 
-### 2. 在方舟中选择电子邮件服务商进行[服务集成配置](../project-manegement/project-integrations.md)
+### 2. 在方舟中选择电子邮件服务商进行[服务集成配置](../project-manegement/integrations.md)
 
 ## 功能说明
 

@@ -8,9 +8,9 @@
 
 #### 新增
 
-* 新增了[短信推送](features/operation/operation-sms.md)，支持自定义分群发送营销短信
-* 新增了独立的 [Session 分析](features/analytics/analytics-session.md)模型，从事件分析当中独立出来，更便捷的分析用户连续的行为、不同频次或时长的用户分布；
-* 新增了[监控告警](features/project-manegement/zhi-biao-jian-kong.md)，支持自定义监控关键指标，当指标达到设定阈值时自动发送告警消息，查看异常情况
+* 新增了[短信推送](features/operation/sms.md)，支持自定义分群发送营销短信
+* 新增了独立的 [Session 分析](features/analytics/session.md)模型，从事件分析当中独立出来，更便捷的分析用户连续的行为、不同频次或时长的用户分布；
+* 新增了[监控告警](features/project-manegement/monitoring.md)，支持自定义监控关键指标，当指标达到设定阈值时自动发送告警消息，查看异常情况
 
 #### 优化
 
@@ -26,7 +26,7 @@
 
 #### 新增
 
-* 新增了[广告跟踪](features/operation/operation-utm.md)的功能
+* 新增了[广告跟踪](features/operation/utm.md)的功能
   * 支持批量上传生成跟踪链接
   * 支持批量下载生成后的链接
   * 支持链接时同时生成带参数的二维码（可自定义 LOGO 和尺寸）
@@ -41,7 +41,7 @@
 #### 优化
 
 * 优化了主导航，移入分析 、运营 和 管理 可以快速切换二级导航
-* 拆分了[消息通知](features/operation/operation-pushmessage.md)和[电子邮件](features/operation/operation-email.md)  ，可以从二级导航进入，更方便管理和创建邮件
+* 拆分了[消息通知](features/operation/pushmessage.md)和[电子邮件](features/operation/email.md)  ，可以从二级导航进入，更方便管理和创建邮件
 * 优化了分群推送时直接选择消息通知还是电子邮件
 * 优化了点击图表元素时popup菜单位置，使得数据标签完整出现在可视范围内
 * 优化了事件分析多个指标时默认的图表

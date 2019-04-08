@@ -10,7 +10,7 @@
 
 发送短信时需要用户手机号，所以需要通过方舟SDK 上报用户手机号
 
-### 2. 在方舟中选择短信服务商进行[服务集成配置](../project-manegement/project-integrations.md)
+### 2. 在方舟中选择短信服务商进行[服务集成配置](../project-manegement/integrations.md)
 
 注：配置的过程中，需要选择上报为手机号的字段
 

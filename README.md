@@ -66,7 +66,7 @@
 
 **维护事件、属性显示名称**
 
-数据验证完成后， 在[元事件](features/project-manegement/project-meta-events.md)、[用户属性](features/project-manegement/project-user-properties.md)、[事件属性](features/project-manegement/project-event-properties.md)中可以查看全部上报的埋点事件和属性，支持管理显示名称、属性单位、属性维度字典等方便分析时使用，详见 [管理 ](features/project-manegement/)中的功能使用说明。
+数据验证完成后， 在[元事件](features/project-manegement/meta-events.md)、[用户属性](features/project-manegement/user-properties.md)、[事件属性](features/project-manegement/event-properties.md)中可以查看全部上报的埋点事件和属性，支持管理显示名称、属性单位、属性维度字典等方便分析时使用，详见 [管理 ](features/project-manegement/)中的功能使用说明。
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101148521850.png)
 
@@ -76,7 +76,7 @@
 
 易观方舟支持各种用户细分，在接入第三方服务商后通过消息通知、电子邮件、短信等多种方式触达用户。
 
-若需要使用其中的消息通知功能，需要集成方舟推送部分的 SDK 和推送方的 SDK，同时在 [管理-服务集成配置](features/project-manegement/project-integrations.md)中进行绑定配置，保证三方数据的连通
+若需要使用其中的消息通知功能，需要集成方舟推送部分的 SDK 和推送方的 SDK，同时在 [管理-服务集成配置](features/project-manegement/integrations.md)中进行绑定配置，保证三方数据的连通
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151613578859.png)
 
@@ -112,7 +112,7 @@
 
 [运营](features/operation/)——连接第三方运营服务有效触
 
-[项目管理](features/enterprise-basic-function/enterprise-basic-function-project-management.md)——管理埋点、第三方服务配置、成员管理等
+[项目管理](features/enterprise-basic-function/project-management.md)——管理埋点、第三方服务配置、成员管理等
 
 [平台管理](features/enterprise-basic-function/)——企业当前计划、项目管理、成员管理、安全管理等
 

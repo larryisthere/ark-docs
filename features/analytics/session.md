@@ -8,7 +8,7 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808141203191074.png)
 
-Session口径：方舟会预置几个通常的口径，当然也支持自定义Session口径，详见[《Session 管理》](../project-manegement/project-session.md)。
+Session口径：方舟会预置几个通常的口径，当然也支持自定义Session口径，详见[《Session 管理》](../project-manegement/session.md)。
 
 选择好口径之后，就可以选择指标来进行分析，支持细分维度和过滤条件。
 

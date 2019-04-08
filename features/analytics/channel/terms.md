@@ -15,13 +15,13 @@ HTTP Referer是header的一部分，当浏览器向web服务器发送请求的�
 
 **Link Tag**
 
-广告链接标记，通过类似 UTM 的参数来标记，在标记的目标页面 URL 中携带，可以人为配置，具体使用方法详见[《广告跟踪》](../../operation/operation-utm.md)。
+广告链接标记，通过类似 UTM 的参数来标记，在标记的目标页面 URL 中携带，可以人为配置，具体使用方法详见[《广告跟踪》](../../operation/utm.md)。
 
 **会话（Session）**
 
 Session 是一系列用户行为的集合。来源标识的也是一个 Session 的来源。
 
-怎样一些列行为算是一个Session？详见 [《附6 Session 规则》](./#附6-session-规则)
+怎样一些列行为算是一个Session？详见 [《附6 Session 规则》](session.md)
 
 **着陆页（LandingPage）**
 

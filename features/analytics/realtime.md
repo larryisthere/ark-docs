@@ -69,7 +69,7 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/11/201811281458369246.png)
 
-点击用户ID，可以查看单一用户的行为数据，详见[《单用户档案》](../segmentation/segmentation-user-sequence.md)。
+点击用户ID，可以查看单一用户的行为数据，详见[《单用户档案》](../segmentation/user-sequence.md)。
 
 ### 3. 其他功能
 

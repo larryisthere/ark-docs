@@ -4,11 +4,11 @@
 
 包括以下工具：
 
-* [消息通知](operation-pushmessage.md)
+* [消息通知](pushmessage.md)
 * 应用内消息（研发中）
-* [电子邮件](operation-email.md)
-* [短信](operation-sms.md)
-* [广告跟踪](operation-utm.md)
+* [电子邮件](email.md)
+* [短信](sms.md)
+* [广告跟踪](utm.md)
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171130512721.jpg)
 
@@ -18,14 +18,14 @@
 
 目前方舟集成的服务商如下：
 
-* [消息通知](operation-pushmessage.md)
+* [消息通知](pushmessage.md)
   * 极光推送
   * 个推
   * 百度推送
   * 小米推送
-* [电子邮件](operation-email.md)
+* [电子邮件](email.md)
   * SendCloud
-* [短信](operation-sms.md)
+* [短信](sms.md)
   * 乐信通
   * 腾讯云短信
 

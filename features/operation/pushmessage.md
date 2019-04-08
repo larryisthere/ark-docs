@@ -33,7 +33,7 @@
 * Android应用：《Android SDK 使用说明》中 [_5 消息推送_](../../integration/sdk/sdk-android/#xiao-xi-tui-song-sdk-jie-kou)  部分
 * iOS应用：《iOS SDK 使用说明》中 [_5 消息推送_](../../integration/sdk/sdk-ios/#xiao-xi-tui-song-sdk-jie-kou-jie-shao)  部分
 
-### 3. 在方舟中选择消息通知服务商进行[服务集成配置](../project-manegement/project-integrations.md)
+### 3. 在方舟中选择消息通知服务商进行[服务集成配置](../project-manegement/integrations.md)
 
 ## 功能说明
 

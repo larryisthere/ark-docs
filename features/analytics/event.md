@@ -24,7 +24,7 @@
 
 #### 1.1 选择分析粒度
 
-支持 **事件** 和 **Session** 两个分析粒度，Session 的使用说明详见[《Session 分析》](analytics-session.md)。
+支持 **事件** 和 **Session** 两个分析粒度，Session 的使用说明详见[《Session 分析》](session.md)。
 
 #### 1.2 选择指标
 

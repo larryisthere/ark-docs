@@ -58,7 +58,7 @@ Session 结束的方式分为以下3种：
 
 ### 4. Session的使用
 
-创建好 Session 规则后，就可以在分析过程中，使用不同的规则，分析指标了，详见使用说明阅读[《Session 分析》](../analytics/analytics-session.md)。
+创建好 Session 规则后，就可以在分析过程中，使用不同的规则，分析指标了，详见使用说明阅读[《Session 分析》](../analytics/session.md)。
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808122104241114.png)
 
