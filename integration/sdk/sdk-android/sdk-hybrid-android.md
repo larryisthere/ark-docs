@@ -56,7 +56,7 @@ PAAS JS SDK地址为: `http://ark.analysys.cn/sdk/v2/AnalysysAgent_Hybrid_JS_SDK
 
 ### 2.1 设置UserAgent
 
-在初始化 WebView 后，调用setHybridModel\(\)接口设置UserAgent。 注意:如项目中需要自定义设置UA，请追加UA。将setHybridModel\(\)接口放到 部分UserAgent设置请 接口如下：
+在初始化 WebView 后，调用setHybridModel\(\)接口设置UserAgent。 注意:如项目中需要自定义设置UA，请自行追加"**AnalysysAgent/Hybrid**"。将setHybridModel\(\)接口放到 部分UserAgent设置请 接口如下：
 
 ```text
 // 设置UA

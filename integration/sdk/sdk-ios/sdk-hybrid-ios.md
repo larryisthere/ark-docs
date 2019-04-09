@@ -66,7 +66,13 @@ H5 页面触发事件时，会把事件发往 iOS App 端，App SDK 端接收到
 * request: `NSURLRequest`请求对象
 * return: 若 js 触发的是 AnalysysAgent 的事件，则`setHybridModel:request:`方法会返回 YES，完成统计；否则返回 NO，不处理。
 
-注意事项： 若项目中需要使用`UserAgent`，则需要使用追加方式，而非直接覆盖已有`UserAgent`。代码参考：
+{% hint style="info" %}
+#### 您也可以场景自行设置UA标识"**AnalysysAgent/Hybrid**"，来完成相应需求
+{% endhint %}
+
+注意事项： 若项目中需要使用`UserAgent`，则需要使用追加方式，而非直接覆盖已有`UserAgent`
+
+代码参考：
 
 ```text
 // 获取已有 UserAgent
