@@ -109,6 +109,7 @@
 | $traffic\_source\_type | 流量来源类型 | 字符串 | 流量来源类型，数据处理 | - | - | N | N |
 | $search\_engine | 搜索引擎 | 字符串 | 标识搜索引擎来源 | - | - | N | N |
 | $search\_keyword | 搜索关键词 | 字符串 | 标识搜索关键词 | - | - | N | N |
+| $pagename | 自定义页面名称 | 字符串 | 用户自定义页面名称 | - | - | N | N |
 
 **$push\_receiver\_success**
 
