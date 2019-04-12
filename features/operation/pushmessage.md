@@ -92,8 +92,21 @@ e.g. 发送消息通知：
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101744187304.png)
 
 * **应用**，用户点击消息后直接打开应用
-* **应用内页面**，用户点击消息后跳转到应用内页面，要填写完整报名和 activity 名字。e.g.com.fangzhou.MainActivity
+* **应用内页面**，用户点击消息后跳转到应用内页面，要填写完整包名和 activity 名字。e.g.com.fangzhou.MainActivity
 * **URL**，要填写以 http 或 https 开头的 URL。e.g.[https://ark.analysys.cn](https://ark.analysys.cn)
+
+{% hint style="info" %}
+设置点击后应用内页面时，需要的开发做好集成准备，详见 
+
+[《Android SDK 集成指南 - 消息推送 SDK 接口》](https://docs.analysys.cn/ark/integration/sdk/sdk-android#xiao-xi-tui-song-sdk-jie-kou)
+
+[《iOS SDK 集成指南 - 消息推送 SDK 接口》](https://docs.analysys.cn/ark/integration/sdk/sdk-ios#xiao-xi-tui-song-sdk-jie-kou-jie-shao)
+
+使用时注意：
+
+1. 若打开的是 H5 页面，直接填写页面 URL 即可
+2. 若打开的是原生页面，需填写完整包名和 activity 名字（运营同学可以联系内部开发获取）
+{% endhint %}
 
 **D2. 推送通道**
 
