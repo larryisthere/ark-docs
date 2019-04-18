@@ -112,9 +112,9 @@
 
 [运营](features/operation/)——连接第三方运营服务有效触
 
-[项目管理](features/enterprise-basic-function/project-management.md)——管理埋点、第三方服务配置、成员管理等
+[项目管理](features/enterprise-management/project-management.md)——管理埋点、第三方服务配置、成员管理等
 
-[平台管理](features/enterprise-basic-function/)——企业当前计划、项目管理、成员管理、安全管理等
+[平台管理](features/enterprise-management/)——企业当前计划、项目管理、成员管理、安全管理等
 
 ![](.gitbook/assets/201901151711159657.jpg)
 

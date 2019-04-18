@@ -4,21 +4,21 @@
 
 * **客户端**
 
-  [Android SDK](../sdk/sdk-android/)
+  [Android SDK](../sdk/android/)
 
-  [iOS SDK](../sdk/sdk-ios/)
+  [iOS SDK](../sdk/ios/)
 
-  [JS SDK](../sdk/sdk-js.md)
+  [JS SDK](../sdk/js.md)
 
-  [小程序 SDK](../sdk/sdk-wx.md)
+  [小程序 SDK](../sdk/wx.md)
 
-  [Hybrid Android SDK](../sdk/sdk-android/sdk-hybrid-android.md)
+  [Hybrid Android SDK](../sdk/android/hybrid-android.md)
 
-  [Hybrid iOS SDK](../sdk/sdk-ios/sdk-hybrid-ios.md)
+  [Hybrid iOS SDK](../sdk/ios/hybrid-ios.md)
 
 * **服务端**
 
-  [Java SDK](../sdk/sdk-java.md)
+  [Java SDK](../sdk/java.md)
 
 * **工具导入**
 
@@ -35,10 +35,10 @@
 ## 接入前建议阅读
 
 1. [数据模型](data-model.md)，以便于更充分的了解数据的扩展性；
-2. [数据格式](integration-data-type.md)，以便于更准确的集成SDK，符合分析需要；
+2. [数据格式](data-type.md)，以便于更准确的集成SDK，符合分析需要；
 3. [预置事件和属性](default-data.md)，以便于确定哪些是系统默认采集，无需额外工作量就可以分析，哪些如果有分析需求需要上报到对应的预置字段中；
 4. [如何准确识别用户](user-identify.md) ，以便提高用户行为分析的准确性；
-5. [分平台上报和跨平台上报](integration-cross-platform.md) 的差异，以便确定是否将多端数据上报到同一个项目中；
+5. [分平台上报和跨平台上报](cross-platform.md) 的差异，以便确定是否将多端数据上报到同一个项目中；
 6. [如何设计埋点方案](tracking-plan.md)，以便让埋点更满足业务需要
 
 ![](../../.gitbook/assets/201901151711159657.jpg)

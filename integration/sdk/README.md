@@ -6,25 +6,25 @@
 
 **客户端SDK**
 
-[Android SDK](sdk-android/)
+[Android SDK](android/)
 
-[iOS SDK](sdk-ios/)
+[iOS SDK](ios/)
 
-[JS SDK](sdk-js.md)
+[JS SDK](js.md)
 
-[小程序 SDK](sdk-wx.md)
+[小程序 SDK](wx.md)
 
-[Hybrid Android SDK](sdk-android/sdk-hybrid-android.md)
+[Hybrid Android SDK](android/hybrid-android.md)
 
-[Hybrid iOS SDK](sdk-ios/sdk-hybrid-ios.md)
+[Hybrid iOS SDK](ios/hybrid-ios.md)
 
 **服务端SDK**
 
-[Java SDK](sdk-java.md)
+[Java SDK](java.md)
 
-[PHP SDK](sdk-php.md)
+[PHP SDK](php.md)
 
-[Python SDK](sdk-python.md)
+[Python SDK](python.md)
 
 **工具导入**
 

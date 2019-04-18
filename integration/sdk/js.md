@@ -1,98 +1,155 @@
-# 小程序 SDK
+# JS SDK
 
-## 微信小程序 SDK 使用说明
+## JS SDK 使用说明
 
-微信小程序 SDK 适用于原生微信小程序，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_WX_v4.2.0.3_20190219.zip)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_JS_v4.2.0.1_20190124.zip)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_WX\_SDK.min.js | 基础模块SDK | 必须 |
-
-注意：请您根据自身业务需求来引用相关的SDK。
+| AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 必须 |
+| AnalysysAgent\_JS\_SDK\_VISUAL.min.js | 可视化模块SDK | 可选 |
 
 ### 快速集成
 
 如果您是第一次使用易官方舟产品，可以通过阅读本文快速了解此产品
 
-#### 1. 集成 SDK
+#### 1. 选择集成方式
 
-在app.js文件的顶部引入SDK。
+目前我们提供了异步集成、同步集成的方式
 
 #### 2. 设置初始化接口
 
-通过初始化代码的配置参数配置您的AppKey。
+通过初始化代码的配置参数配置您的 AppKey
 
 #### 3. 设置上传地址
 
-通过初始化代码的配置参数uploadURL设置您上传数据的地址。
+通过初始化代码的配置参数 uploadURL 设置您上传数据的地址。
 
-#### 4. 配置上传地址域名
-
-登录微信公众平台，将上传地址域名配置到request 合法域名中。
-
-#### 5. 设置需要采集的页面或事件
+#### 4. 设置需要采集的页面或事件
 
 通过手动埋点，设置需要采集的页面或事件。
 
-#### 6. 打开 Debug 模式查看日志
+#### 5. 打开Debug模式查看日志
 
-通过设置Ddebug模式，开/关 log 查看日志。
+通过设置 Ddebug 模式，开/关 log 查看日志。
 
-通过以上6步您即可验证SDK是否已经集成成功。更多接口说明请您查看API文档。
+通过以上5步您即可验证 SDK 是否已经集成成功。更多接口说明请您查看 API 文档。
 
 ## 集成配置
 
-### 集成 SDK
+### 异步集成
 
-将 AnalysysAgent\_WX\_SDK.min.js 文件放到小程序的目录下
-
-![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614101827.png)
-
-在小程序的 app.js 文件中的第一行加入以下代码:
+将以下JS代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
 
 ```javascript
-let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.min.js")
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+<script>
+    (function(config) {
+        window.AnalysysAgent = window.AnalysysAgent || []
+        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty duplicatePost'.split(' ');
+
+        function factory(b) {
+            return function() {
+                var a = Array.prototype.slice.call(arguments);
+                a.unshift(b);
+                window.AnalysysAgent.push(a);
+                return window.AnalysysAgent;
+            }
+        };
+        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
+            var key = window.AnalysysAgent.methods[i];
+            AnalysysAgent[key] = factory(key);
+        }
+        for (var key in config) {
+            AnalysysAgent[key](config[key])
+        }
+        var date = new Date();
+        var time = new String(date.getFullYear()) + new String(date.getMonth() + 1) + new String(date.getDate());
+
+        var d = document,
+            c = d.createElement('script'),
+            n = d.getElementsByTagName('script')[0];
+        c.type = 'text/javascript';
+        c.async = true;
+        c.id = 'ARK_SDK';
+        c.src = '/*设置为JS SDK实际存放地址*/' +'?v=' +time; //JS SDK存放地址
+        n.parentNode.insertBefore(c, n);
+    })({
+        appkey: '/*设置为实际APPKEY*/', //APPKEY
+        uploadURL: '/*设置为实际地址*/',//上传数据的地址
+    })
+</script>
 ```
 
-在各个 Page 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
+### 同步集成
+
+将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
 
 ```javascript
-let app = getApp();
-let AnalysysAgent = app.AnalysysAgent;
-```
+<script>
+    (function(config) {
+        window.AnalysysAgent = window.AnalysysAgent || []
+        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty'.split(' ');
 
-请注意:
+        function factory(b) {
+            return function() {
+                var a = Array.prototype.slice.call(arguments);
+                a.unshift(b);
+                window.AnalysysAgent.push(a);
+                return window.AnalysysAgent;
+            }
+        };
+        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
+            var key = window.AnalysysAgent.methods[i];
+            AnalysysAgent[key] = factory(key);
+        }
+        for (var key in config) {
+            AnalysysAgent[key](config[key])
+        }
+    })({
+        appkey: '/*设置为实际APPKEY*/', //APPKEY
+        uploadURL: '/*设置为实际地址*/',//上传数据的地址
+    })
+</script>
 
-```text
-1.将 appkey 的值填入您具体的项目 appkey
+//引用JS SDK文件的script标签必须在初始化代码之下
 
-2.目录为您所引入微信小程序 SDK 的具体目录
+//http协议
+<script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
+
+//https协议
+<script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
 ```
 
 ### 配置参数
 
 * _appkey_\(必须\) 在网站获取的 AppKey
 * _debugMode_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
-* _uploadURL_\(必须\) 自定义上传地址
-* _auto_ 设置打开/关闭自动采集页面：false - 关闭自动采集；true - 开启自动采集\(默认\)
+* _uploadURL_\(必须\) 设置上传数据接口
+* _visitorConfigURL_\(如使用可视化埋点，则必须\) 设置可视化配置获取接口
+* _name_ 设置 JS SDK 全局对象别名
+* _auto_ 设置自动采集页面打开事件：false - 关闭自动采集；true - 开启自动采集\(默认\)
+* _hash_ 设置检测 url hash 变化：false - 关闭监测url hash变化；true - 开启监测url hash变化\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
+* _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
+* _pageProperty_ 设置自动采集时页面自定义属性
 
 #### appkey
 
-appkey 在网站获取的 AppKey。
+appkey 为在网站获取的 AppKey。
 
-* value 在网站获取的 AppKey。类型:String。取值长度 1 - 255字符。
+* value 在网站获取的 AppKey。类型:String。取值长度 1 - 255 字符。
 
 ```javascript
 // 设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
-AnalysysAgent.appkey = "77a52s552c892bn442v721"
+{
+    appkey:"77a52s552c892bn442v721"
+}
 ```
 
 #### debugMode
 
-debugMode 调试模式为接入 JS SDK 后进行数据调试的主要手段。可实时验证 JS SDK 数据监测的正确与否。
+debugMode debug 模式，默认关闭状态。发布版本时 debugMode 模式设置为`0`
 
 * 0 关闭调试模式\(默认\)。类型：Number。
 * 1 开启调试模式，数据不入库。类型：Number。
@@ -100,12 +157,17 @@ debugMode 调试模式为接入 JS SDK 后进行数据调试的主要手段。�
 
 ```javascript
 //开启调试模式且数据不入库
-AnalysysAgent.debugMode = 1
+{
+    debugMode:1
+}
 //开启调试模式且数据入库
-AnalysysAgent.debugMode = 2
+{
+    debugMode:2
+}
 //关闭调试模式
-AnalysysAgent.debugMode = 0
-//或删除该段代码
+{
+    debugMode:0 //或删除debugMode参数
+}
 ```
 
 或删除 debugMode 参数。
@@ -118,7 +180,35 @@ uploadURL 为自定义上传地址，参数设置后，所有事件信息将上�
 
 ```javascript
 //设置自定义上传地址为 scheme://host + :port
-AnalysysAgent.uploadURL = "/*设置为实际地址*/"
+{
+    uploadURL:"/*设置为实际地址*/"
+}
+```
+
+#### visitorConfigURL
+
+visitorConfigURL 为获取可视化埋点配置信息的服务器地址，参数设置后，将从该服务器地址获取可视化埋点配置信息。
+
+* value 类型：String。获取可视化埋点配置信息的服务器地址，格式为 scheme://host + :port\(不包含/后的内容\)。scheme 必须以 http:// 或 https:// 开头，host 只支持域名和 IP，取值长度 1 - 255字符，port 端口号必须携带
+
+```javascript
+//设置自定义上传地址为 scheme://host + :port
+{
+    visitorConfigURL:"/*设置为实际地址*/"
+}
+```
+
+#### name
+
+name 为设置 JS SDK全局对象的别名。可根据自身所需进行更改。
+
+* value 类型：String。取值长度 1 - 255字符。
+
+```javascript
+//设置JS SDK全局对象的别名为analysys，之后可在全局使用analysys来调用JS SDK所有的API方法。
+{
+    name:"analysys"
+}
 ```
 
 #### auto
@@ -129,10 +219,33 @@ auto 为设置打开/关闭自动采集页面的参数。可根据自身需要�
 * false 关闭自动采集页面打开事件。类型：Boolean。
 
 ```javascript
-//关闭自动采集页面打开事件，关闭后可使用微信小程序 SDK的API中的手动发送页面打开数据方法，来发送页面打开状态的数据。
-AnalysysAgent.auto = false
+//关闭自动采集页面打开事件，关闭后可使用JS SDK的API中的手动发送页面打开数据方法，来发送页面打开状态的数据。
+{
+    auto:false
+}
 //开启自动采集页面打开事件。
-AnalysysAgent.auto = true //或删除该行代码。
+{
+    appkey:"77a52s552c892bn442v721",
+    auto:true//或删除auto参数。
+}
+```
+
+#### hash
+
+hash 为设置是否自动监测 url hash 变化的参数。可根据自身需要进行更改。
+
+* true 开启自动采集监测 url hash 变化\(默认\)。类型：Boolean。
+* false 关闭自动采集监测 url hash 变化。类型：Boolean。
+
+```javascript
+//关闭自动采集监测url hash变化，关闭后可使用JS SDK的API中的手动发送页面打开数据方法，来发送url hash变化状态的数据。
+{
+    hash:false
+}
+//开启自动采集监测url hash变化。
+{
+    hash:true//或删除hash参数。
+}
 ```
 
 #### autoProfile
@@ -144,9 +257,31 @@ autoProfile 为设置是否追踪新用户的首次属性。可根据自身需�
 
 ```javascript
 //不追踪新用户的首次属性，新用户首次打开网站不上传新用户的首次属性。
-AnalysysAgent.autoProfile = false
+{
+    autoProfile:false
+}
 //追踪新用户的首次属性，新用户首次打开网站上传新用户的首次属性。
-AnalysysAgent.autoProfile = true//或删除该行代码。
+{
+    autoProfile:true//或删除autoProfile参数。
+}
+```
+
+#### autoWebstay
+
+autoWebstay 为设置是否追踪页面滚动行为。可根据自身需要进行更改。
+
+* true 追踪页面滚动行为。类型：Boolean。
+* false 不追踪页面滚动行为\(默认\)。类型：Boolean。
+
+```javascript
+//不追踪页面滚动行为。
+{
+    autoWebstay:false//或删除autoWebstay参数。
+}
+//追踪页面滚动行为。
+{
+    autoWebstay:true
+}
 ```
 
 #### encryptType
@@ -158,16 +293,29 @@ encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密�
 
 ```javascript
 //对上传数据不加密。
-AnalysysAgent.encryptType = 0//或删除该行代码。
+{
+    encryptType:0//或删除encryptType参数。
+}
 //对上传数据AES加密。
-AnalysysAgent.encryptType = 1
+{
+    encryptType:1
+}
 ```
 
-### 域名配置
+#### pageProperty
 
-登录微信公众平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
+pageProperty 为设置自动采集时页面自定义属性。可根据自身需要进行增加。
 
-![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614109548.jpg)
+* 类型：JSON。
+
+```javascript
+//设置自动采集时页面自定义属性
+{
+    pageProperty:{
+        title:'首页'
+    }
+}
+```
 
 ## 基础模块介绍
 
@@ -280,9 +428,9 @@ AnalysysAgent.profileSetOnce(propertyName, propertyValue);
 AnalysysAgent.profileSetOnce(property);
 ```
 
-* propertyName ：属性名称，约束见[属性名称](sdk-wx.md#1.1)
-* propertyValue ：属性值，约束见[属性值](sdk-wx.md#2.1)
-* property ： 属性列表，约束见[属性名称](sdk-wx.md#1.1)，[属性值](sdk-wx.md#2.1)
+* propertyName ：属性名称，约束见[属性名称](js.md#1.1)
+* propertyValue ：属性值，约束见[属性值](js.md#2.1)
+* property ： 属性列表，约束见[属性名称](js.md#1.1)，[属性值](js.md#2.1)
 
 示例：
 
@@ -309,9 +457,9 @@ AnalysysAgent.profileSet(propertyName, propertyValue);
 AnalysysAgent.profileSet(property);
 ```
 
-* propertyName ：属性名称，约束见[属性名称](sdk-wx.md#1.1)
-* propertyValue ：属性值，约束见[属性值](sdk-wx.md#2.1)
-* property ：属性列表，约束见[属性名称](sdk-wx.md#1.1)，[属性值](sdk-wx.md#2.1)
+* propertyName ：属性名称，约束见[属性名称](js.md#1.1)
+* propertyValue ：属性值，约束见[属性值](js.md#2.1)
+* property ：属性列表，约束见[属性名称](js.md#1.1)，[属性值](js.md#2.1)
 
 示例：
 
@@ -339,9 +487,9 @@ AnalysysAgent.profileIncrement(propertyName, propertyNumber)
 AnalysysAgent.profileIncrement(property);
 ```
 
-* propertyName：属性名称，约束见[属性名称](sdk-wx.md#1.1)
-* propertyValue：属性值，约束见[属性值](sdk-wx.md#2.1)
-* property：属性列表，约束见[属性名称](sdk-wx.md#1.1)，[属性值](sdk-wx.md#2.1)
+* propertyName：属性名称，约束见[属性名称](js.md#1.1)
+* propertyValue：属性值，约束见[属性值](js.md#2.1)
+* property：属性列表，约束见[属性名称](js.md#1.1)，[属性值](js.md#2.1)
 
 示例：
 
@@ -372,8 +520,8 @@ AnalysysAgent.profileAppend(propertyValue);
 AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```
 
-* propertyName：属性名称，约束见[属性名称](sdk-wx.md#1.1)
-* propertyValue：属性值，约束见[属性值](sdk-wx.md#2.1)
+* propertyName：属性名称，约束见[属性名称](js.md#1.1)
+* propertyValue：属性值，约束见[属性值](js.md#2.1)
 
 示例：
 
@@ -402,7 +550,7 @@ AnalysysAgent.profileUnset(propertyName);
 AnalysysAgent.profileDelete();
 ```
 
-* propertyName：属性名称，约束见[属性名称](sdk-wx.md#1.1)
+* propertyName：属性名称，约束见[属性名称](js.md#1.1)
 
 示例：
 
@@ -414,7 +562,7 @@ AnalysysAgent.profileUnset( "age");
 AnalysysAgent.profileDelete();
 ```
 
-#### 设备ID设置
+### 设备ID设置
 
 唯一设备ID标识设置，接口如下：
 
@@ -427,7 +575,7 @@ AnalysysAgent.identify(distinctId);
 示例:
 
 ```javascript
-// 设置设备ID为`fangke009901`,注意此方法需要在初始化之前调用
+// 设置设备ID为`fangke009901`,注意此方法需要在初始化之后优先调用
 AnalysysAgent.identify("fangke009901");
 ```
 
@@ -459,9 +607,9 @@ AnalysysAgent.registerSuperProperty(superPropertyName , superPropertyValue );
 AnalysysAgent.registerSuperProperties(superProperty);
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](sdk-wx.md#1)
-* superPropertyValue：属性值，约束见[属性值](sdk-wx.md#2)
-* superProperty：属性列表，约束见[属性名称](sdk-wx.md#1)，[属性值](sdk-wx.md#2)
+* superPropertyName：属性名称，约束见[属性名称](js.md#1)
+* superPropertyValue：属性值，约束见[属性值](js.md#2)
+* superProperty：属性列表，约束见[属性名称](js.md#1)，[属性值](js.md#2)
 
 示例：
 
@@ -492,7 +640,7 @@ AnalysysAgent.unRegisterSuperProperty(superPropertyName);
 AnalysysAgent.clearSuperProperties();
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](sdk-wx.md#1)
+* superPropertyName：属性名称，约束见[属性名称](js.md#1)
 
 示例：
 
@@ -517,7 +665,7 @@ AnalysysAgent.getSuperProperty(superPropertyName);
 AnalysysAgent.getSuperProperties();
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](sdk-wx.md#1)
+* superPropertyName：属性名称，约束见[属性名称](js.md#1)
 
 示例：
 
@@ -544,5 +692,41 @@ AnalysysAgent.reset();
 ```javascript
 // 删除设置的id和通用属性
 AnalysysAgent.reset();
+```
+
+## 可视化埋点介绍
+
+### 接入 JS SDK 可视化模块
+
+将 `AnalysysAgent_JS_SDK_VISUAL.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中。
+
+### 设置请求埋点配置地址
+
+```javascript
+{
+    visitorConfigURL:"/*设置为实际地址*/"
+}
+```
+
+### 允许 iframe 加载
+
+使用可视化埋点功能需要使用 `iframe` 来加载您的网站。如果您的网站禁止了 `iframe` 加载，就无法使用可视化埋点功能，需要在服务器配置中设置 `X-Frame-Options` 允许 `iframe` 加载。
+
+```javascript
+//您的网站为https协议，https://xxx.xxx.xxx为您的本地化产品域名
+X-Frame-Options: Allow-From https://xxx.xxx.xxx
+//您的网站为http协议，http://xxx.xxx.xxx为您的本地化产品域名
+X-Frame-Options: Allow-From http://xxx.xxx.xxx
+```
+
+### window对象
+
+以下 window 对象中的属性被复写后将导致可视化埋点功能无法正常使用。
+
+```javascript
+window.top
+window.parent
+window.name
+window.location
 ```
 

@@ -53,5 +53,5 @@ bin/kafka-run-class.sh kafka.tools.SimpleConsumerShell \
 
 ## 数据格式
 
-订阅的数据的格式与导入时的[数据格式](../prepare/integration-data-type.md)基本一致。
+订阅的数据的格式与导入时的[数据格式](../prepare/data-type.md)基本一致。
 
