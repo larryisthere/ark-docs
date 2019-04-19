@@ -6,6 +6,8 @@ description: 文档哪里不足我们会及时改进。
 
 [@gaojun416](https://github.com/gaojun416)
 
+[@larryisthere](https://www.zhihu.com/people/larryisthere)
+
 @Lear
 
 @liuhongxiang
@@ -18,7 +20,5 @@ description: 文档哪里不足我们会及时改进。
 
 @zengliang
 
-[@larryisthere](https://www.zhihu.com/people/larryisthere)
-
-@zhaoyan
+[@zhaoyan](https://www.zhihu.com/people/zhao-yan-57-5-89)
 
