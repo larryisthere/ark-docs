@@ -104,17 +104,15 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901260034296922.png)
 
-[看板](features/dashboard.md)——不同角色灵活自定义看板，实时跟踪关心的指标
+{% page-ref page="features/dashboard.md" %}
 
-[分析](features/analytics/)——10+ 个分析模型多维度实时查询分析
+{% page-ref page="features/analytics/" %}
 
-[分群](features/segmentation/)——多种方式细分人群，进一步分析或触达
+{% page-ref page="features/segmentation/" %}
 
-[运营](features/operation/)——连接第三方运营服务有效触
+{% page-ref page="features/operation/" %}
 
-[项目管理](features/enterprise-management/project-management.md)——管理埋点、第三方服务配置、成员管理等
+{% page-ref page="features/enterprise-management/project-management.md" %}
 
-[平台管理](features/enterprise-management/)——企业当前计划、项目管理、成员管理、安全管理等
-
-![](.gitbook/assets/201901151711159657.jpg)
+{% page-ref page="features/enterprise-management/" %}
 

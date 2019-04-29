@@ -51,5 +51,3 @@
 | :--- | :--- | :--- |
 | 2018/09/18 | V4.0.7 | 1\) 代码结构优化； 2\) 完善异常处理； 3\) 上报地址格式校验； 4\) 优化属性值为NULL的校验。 |
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
-

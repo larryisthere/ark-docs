@@ -50,7 +50,3 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901041749381381.png)
 
-如有更多有关问题，请随时联系我们 **4006-010-231。**
-
-![](../../.gitbook/assets/201901151711159657.jpg)
-

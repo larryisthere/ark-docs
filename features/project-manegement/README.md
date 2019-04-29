@@ -24,16 +24,21 @@ A区域可以查看项目的 AppKey，用于数据接入；
 * [用户属性](user-properties.md)
 * [事件属性](event-properties.md)
 * [Session管理](session.md)
+* [页面组管理](pagegroup.md)
 * [服务集成配置](integrations.md)
 * [成员管理](member.md)
 
-## C. 接入更多数据入口
+## C. 接入数据及数据验证
 
-C 区域展示以集成数据的平台，当需要接入更多数据时，点击进入接入数据页面。
+C 区域展示已集成数据的平台，点击可以进入数据接入和验证页面
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808121723456670.png)
+当需要接入更多数据时，可以选择相应 SDK 的集成指南查看；
 
-如有更多有关问题，请随时联系我们 **4006-010-231**。
+在调试阶段可以使用 Debug数据验证 功能验证接入数据的及时性、准确性和完整性；
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
+根据错误数据日志可以查看实际确定入库的数据中异常的情况，详见 [数据入库检查](../../integration/data-verification/data_debug.md)。
+
+![](../../.gitbook/assets/image%20%2821%29.png)
+
+如有更多有关问题，请随时联系我们 **4006-010-231**
 

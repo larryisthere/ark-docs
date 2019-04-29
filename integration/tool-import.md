@@ -45,7 +45,5 @@
 * 若 event 中的用户涉及到登录用户，请务必先导入涉及到的登录 id 的 profile 信息。
 * 导入的 profile 信息，若是登录 id 的 profile 信息，请务必保证该登录 id 已进行过身份关联操作或在导入前先导入身份绑定操作。
 * 若导入数据前，有关闭流处理时间窗口过滤的操作，请务必在导入的数据被流处理处理完成后，修改参为：FILTER=true
-* 若导入数据的格式不符合方舟环境，将导致导入的用户无法在前端展示
-
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
+* 若导入数据的格式不符合方舟环境，将导致导入的用户无法在前端展示。
 

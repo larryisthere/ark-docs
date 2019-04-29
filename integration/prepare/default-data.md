@@ -218,5 +218,3 @@
 | $language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 | $session\_id | 会话标识 | 字符串 | 515950b8f1a6221c | Y | Y | Y | Y |
 
-![](../../.gitbook/assets/201901151711159657.jpg)
-

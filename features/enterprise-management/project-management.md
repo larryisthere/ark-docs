@@ -2,7 +2,7 @@
 
 易观方舟支持在企业平台中，创建多个项目，在企业平台-项目管理中可以进行统一管理， 包括查看项目列表、创建项目、修改项目名称和LOGO、添加项目管理员等。
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 ## A. 创建项目
 
@@ -42,7 +42,5 @@
 * 分区数：1-3个，实时数据的并发算子。用于运维调配计算资源，若 DAU 比较高，同一时间上报的数据量较大，则分区数需加大。
 * 数据流状态：开启/关闭。项目创建后默认开启数据，数据开始正常接收和处理；当数据流因为升级暂时关闭或者其他意外情况没有停止时，支持再次手动开启。
 
-如有更多有关问题，请随时联系我们 **4006-010-231**。
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
 
