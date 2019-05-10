@@ -21,13 +21,13 @@ description: >-
 | username | streaming |
 | password | \(密码为空\) |
 
-如果使用代码访问，我们建议使用 0.170 版本的 Presto JDBC Driver 来进行访问，Maven 的依赖定义如下：
+如果使用代码访问，我们建议使用 0.201 版本的 Presto JDBC Driver 来进行访问，Maven 的依赖定义如下：
 
 ```markup
 <dependency>
     <groupId>com.facebook.presto</groupId>
     <artifactId>presto-jdbc</artifactId>
-    <version>0.170</version>
+    <version>0.201</version>
 </dependency>
 ```
 
