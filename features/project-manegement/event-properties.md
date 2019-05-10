@@ -52,5 +52,3 @@ E 处可以切换属性的显示状态，若关闭，则任何事件分析时�
 
 通过点击上传字典，还可以下载我们提供的“字典模版”，方便用户生成自己的字典文件。
 
-[![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901151711159657.jpeg)](https://ark.analysys.cn/view/sign/signup.html?campaign_id=2111486795&utm_campaign=文档注册&utm_medium=自媒体&utm_source=文档&utm_content=&utm_term=)
-
