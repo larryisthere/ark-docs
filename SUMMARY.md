@@ -81,7 +81,7 @@
   * [数据入库检查](integration/data-verification/data_debug.md)
 * [数据导出](integration/open-original-export/README.md)
   * [直接从Kafka中订阅数据](integration/open-original-export/kafka.md)
-  * [使用JDBC进行数据访问](integration/open-original-export/jdbc.md)
+  * [使用程序访问数据库](integration/open-original-export/jdbc.md)
 
 ## Part III 常见问题
 

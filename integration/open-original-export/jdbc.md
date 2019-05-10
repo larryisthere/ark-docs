@@ -1,13 +1,13 @@
 ---
 description: >-
-  方舟不仅提供 Kafka订阅数据的方式，还提供了更加高效、稳定的 SQL 查询方式，即直接使用 JDBC 或者 presto-cli
-  进行数据查询。关于具体如何使用 JDBC 连接 Presto 可以直接参考官方文档。
+  方舟不仅提供 Kafka订阅数据的方式，还提供了更加高效、稳定的 SQL 查询方式，即直接使用 JDBC、presto-cli、python 或 R
+  进行数据查询。
 ---
 
-# 使用JDBC进行数据访问
+# 使用程序访问数据库
 
 {% hint style="info" %}
-使用JDBC进行数据访问涉及较多的技术细节，适用于对相关功能有经验的用户参考。如果对文档内容有疑惑，请及时联系工作人员。
+使用程序直接进行数据访问涉及较多的技术细节，适用于对相关功能有经验的用户参考。如果对文档内容有疑惑，请及时联系工作人员。
 {% endhint %}
 
 ## JDBC
@@ -33,7 +33,7 @@ presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.faceboo
 </dependency>
 ```
 
-## 使用 presto-shell 进行查询
+## presto-shell
 
 除了直接使用 JDBC 接口之外，也可以直接适用 presto-shell 工具进行查询。
 
@@ -42,8 +42,6 @@ presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.faceboo
 ```bash
 bin/presto-cli --server ark2:8285
 ```
-
-## Presto-shell 常规使用
 
 ### 查询用户信息数据
 
@@ -77,7 +75,7 @@ select * from hive.db_appid.event_vd limit 10
 
 其中{appid}为要查询的appid
 
-## 数据导出
+### 数据导出
 
 #### 导出不包含表头的CSV格式的文件
 
@@ -129,5 +127,13 @@ dataFile.CSV为导出的文件路径
 
 数据第一行为表头，字段间以tab键分割
 
-#### 其他格式，请参考 presto-cli --help 命令中--output-format 选项的说明。
+其他格式，请参考 presto-cli --help 命令中--output-format 选项的说明。
+
+## Python
+
+如果你更熟悉 python，也可以通过 [presto-python-client](https://pypi.org/project/presto-python-client/) 来对数据库进行访问。
+
+## R
+
+可以尝试使用开源项目 [https://github.com/prestodb/RPresto](https://github.com/prestodb/RPresto) 来对数据库进行访问。
 
