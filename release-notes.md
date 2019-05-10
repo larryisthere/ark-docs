@@ -27,10 +27,10 @@
 * [数据明细验证，可在产品内校验数据有效性](integration/data-verification/data_debug.md)
 * [帐号安全策略设置，以提升系统安全性并且适应企业中帐号合规要求](features/enterprise-management/accountsetting.md#zhang-hao-an-quan)
 * [支持修改项目名称、上传LOGO、删除项目](features/enterprise-management/project-management.md#b-xiang-mu-xiu-gai-shan-chu)
-* 服务端支持 NTP ，以避免因可能时间差异导致的数据不准
 
 #### 改进
 
+* 服务端支持 NTP ，以避免因可能时间差异导致的数据不准
 * 进行了一些稳定性方面的优化
 * 优化了看板缓存，可以提高看板显示速度
 * 现在表格支持拖动表头调整列宽了
