@@ -24,8 +24,6 @@
 #### 新增
 
 * SQL自定义查询
-* [全新 Session 分析](features/analytics/session.md)
-* [用户触达支持对接外部短信通道](features/operation/sms.md)
 * [数据明细验证，可在产品内校验数据有效性](integration/data-verification/data_debug.md)
 * [帐号安全策略设置，以提升系统安全性并且适应企业中帐号合规要求](features/enterprise-management/accountsetting.md#zhang-hao-an-quan)
 * [支持修改项目名称、上传LOGO、删除项目](features/enterprise-management/project-management.md#b-xiang-mu-xiu-gai-shan-chu)
