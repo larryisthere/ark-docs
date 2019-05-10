@@ -2,6 +2,7 @@
 
 * [快速上手](README.md)
 * [产品更新日志](release-notes.md)
+* [指标说明](zhi-biao-shuo-ming.md)
 
 ## Part I 产品使用指南
 
