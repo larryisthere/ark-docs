@@ -21,7 +21,9 @@ description: >-
 | username | streaming |
 | password | \(密码为空\) |
 
-如果使用代码访问，我们建议使用 0.201 版本的 Presto JDBC Driver 来进行访问，Maven 的依赖定义如下：
+presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201](https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201)
+
+如果使用代码访问，可以直接通过maven添加presto-jdbc的依赖，Maven 的依赖定义如下：
 
 ```markup
 <dependency>
