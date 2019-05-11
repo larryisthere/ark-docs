@@ -6,7 +6,6 @@
 ## Part I 产品使用指南
 
 * [名词解释](features/terms.md)
-* [指标说明](features/metrics-and-dimensions.md)
 * [看板](features/dashboard.md)
 * [分析](features/analytics/README.md)
   * [渠道分析](features/analytics/channel/README.md)
@@ -25,6 +24,7 @@
   * [热图分析（alpha）](features/analytics/heatmap/README.md)
     * [Web/H5 热图](features/analytics/heatmap/web.md)
     * [APP 热图](features/analytics/heatmap/app.md)
+* [指标说明](features/metrics-and-dimensions.md)
 * [用户](features/segmentation/README.md)
   * [分群洞察](features/segmentation/profile.md)
   * [单用户档案](features/segmentation/user-sequence.md)
