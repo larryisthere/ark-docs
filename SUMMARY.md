@@ -61,7 +61,7 @@
   * [数据模型](integration/prepare/data-model.md)
   * [数据格式](integration/prepare/data-type.md)
   * [预置事件和属性](integration/prepare/default-data.md)
-  * [准确的识别用户](integration/prepare/user-identify.md)
+  * [如何准备识别用户](integration/prepare/user-identify.md)
   * [如何设计埋点方案](integration/prepare/tracking-plan.md)
   * [分平台上报数据 vs 跨平台打通](integration/prepare/cross-platform.md)
 * [SDK 指南](integration/sdk/README.md)
