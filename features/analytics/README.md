@@ -69,9 +69,9 @@ C. 还可以将已保存的图表留存为新的图表
 
 * [事件分析](event.md)
 * [实时分析](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/analytics-realtime/README.md)
-* [领域偏好](categorypreference.md)
-* [场景偏好](usagepreference.md)
-* [APP偏好](apppreference.md)
+* [领域偏好](../segmentation/categorypreference.md)
+* [场景偏好](../segmentation/usagepreference.md)
+* [APP偏好](../segmentation/apppreference.md)
 
 **3. 用户转化**
 
