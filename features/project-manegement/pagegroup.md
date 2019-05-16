@@ -1,5 +1,5 @@
 ---
-description: 该功能处于内测阶段
+description: 该功能处于内测阶段，即将在 4.3.0 版本发布
 ---
 
 # 页面组管理（alpha）

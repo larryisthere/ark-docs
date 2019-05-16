@@ -1,3 +1,7 @@
+---
+description: 目前该功能处于内测阶段，即将在 4.3.0 版本发布
+---
+
 # APP 热图
 
 APP 热图目前支持Android、iOS 原生APP 的点击位置。
