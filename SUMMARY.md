@@ -85,7 +85,7 @@
 
 ## Part III 常见问题
 
-* [SDK 集成问题](faq/sdk.md)
+* [SDK FAQ](faq/sdk.md)
 * [产品试用及采购](faq/trialversion.md)
 * [贡献者](faq/gong-xian-zhe-ming-lu.md)
 
