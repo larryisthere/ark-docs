@@ -51,3 +51,30 @@
 | :--- | :--- | :--- |
 | 2018/09/18 | V4.0.7 | 1\) 代码结构优化； 2\) 完善异常处理； 3\) 上报地址格式校验； 4\) 优化属性值为NULL的校验。 |
 
+## PHP SDK
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
+      <th style="text-align:left">&#x7248;&#x672C;&#x53F7;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">2018/12/21</td>
+      <td style="text-align:left">V4.0.1</td>
+      <td style="text-align:left">&#x5B8C;&#x6210;PHP SDK</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/5/12</td>
+      <td style="text-align:left">V4.0.9</td>
+      <td style="text-align:left">
+        <p>&#x4FEE;&#x590D;&#x5728;&#x90E8;&#x5206;&#x573A;&#x666F;&#x4E0B;&#x5F02;&#x5E38;</p>
+        <p>&#x4F18;&#x5316;&#x76F8;&#x5173;&#x67B6;&#x6784;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
