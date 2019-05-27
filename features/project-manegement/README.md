@@ -38,7 +38,7 @@ C 区域展示已集成数据的平台，点击可以进入数据接入和验证
 
 根据错误数据日志可以查看实际确定入库的数据中异常的情况，详见 [数据入库检查](../../integration/data-verification/data_debug.md)。
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
 如有更多有关问题，请随时联系我们 **4006-010-231**
 
