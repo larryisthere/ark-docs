@@ -448,23 +448,6 @@ AnalysysAgent.profileUnset( "age");
 AnalysysAgent.profileDelete();
 ```
 
-#### 设备ID设置
-
-唯一设备ID标识设置，接口如下：
-
-```javascript
-AnalysysAgent.identify(distinctId);
-```
-
-* distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String
-
-示例:
-
-```javascript
-// 设置设备ID为`fangke009901`,注意此方法需要在初始化之前调用
-AnalysysAgent.identify("fangke009901");
-```
-
 ### 通用属性
 
 > 通用属性是每次上传事件信息都会带有的属性，通用属性是一个标准的 K-V 结构，K 和 V 均有相应的约束条件，如不符合则丢弃该次操作。
