@@ -771,5 +771,5 @@ window.location
 
 ## 热图模块介绍
 
-将 `AnalysysAgent_JS_SDK_HEATMAP.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中，在方舟中调用该模块
+将 `AnalysysAgent_JS_SDK_HEATMAP.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中，展示热图的时会自动调用。
 
