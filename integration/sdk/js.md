@@ -135,6 +135,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 * _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
 * _pageProperty_ 设置自动采集时页面自定义属性
+* _sendType_ 设置上传日志方式。'img' - 使用image标签的图片链接地址上传日志\(默认\)；'post'-使用Ajax中的post请求上传日志
 
 #### appkey
 
@@ -336,6 +337,27 @@ pageProperty 为设置自动采集时页面自定义属性。可根据自身需�
     }
 }
 ```
+
+#### sendType
+
+sendType 为设置日志上传方式。可根据自身需要进行增加。
+
+* 类型：String。
+
+```javascript
+
+//设置为使用image标签的图片链接地址上传日志(默认)。
+{
+    sendType:'img'//或删除sendType参数。
+}
+//使用Ajax中的post请求上传日志。
+{
+    sendType:'post'
+}
+
+```
+
+注意：img类型支持需要方舟4.1.6版本支持，如您使用的版本低于4.2.2版本请更换发送方式
 
 ## 基础模块介绍
 
