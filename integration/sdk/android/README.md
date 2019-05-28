@@ -4,11 +4,12 @@
 
 Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_android_java_v4.2.1.2_20190313.zip)
 
-| Jar包 | 功能描述 | 是否必选 |
-| :---: | :---: | :---: |
-| analysys\_core\_xxx.jar | 基础模块 | 必选 |
-| analysys\_visual\_xxx.jar | 可视化模块 | 可选 |
-| analysys\_push\_xxx.jar | 推送模块 | 可选 |
+| Jar包 | 功能描述 | 是否必选 | 适用版本 |
+| :---: | :---: | :---: | :--- |
+| analysys\_core\_xxx.jar | 基础模块 | 必选 |  |
+| analysys\_visual\_xxx.jar | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0版本 |
+| analysys\_push\_xxx.jar | 推送模块 | 可选 |  |
+| analysys\_encrypt\_xxx.jar | 加密模块 | 可选 |  |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -324,7 +325,7 @@ AnalysysAgent.track(mContext, "buy", info);
 
 ### 设备ID与用户关联
 
-用户 id 关联接口。将 aliasID 和 originalId 关联，计算时会认为是一个用户的行为。 接口如下：
+用户 id 关联接口。将 需要绑定的业务ID 和设备ID进行关联，计算时会认为是一个用户的行为。 接口如下：
 
 ```java
 public static void alias(Context context, String aliasId, String originalId);
@@ -348,7 +349,7 @@ AnalysysAgent.alias(mContext,"zhangsan","lisi");
 
 ### 设备ID设置
 
-唯一设备ID标识设置。 接口如下：
+接口如下：
 
 ```java
 public static void identify(Context context, String distinctId);
@@ -362,6 +363,23 @@ public static void identify(Context context, String distinctId);
 ```java
 // 设置设备ID为`fangke009901`,注意此方法需要在初始化之前调用
 AnalysysAgent.identify(mContext,"fangke009901");
+```
+
+### 获取设备ID
+
+获取用户通过identify接口设置或自动生成的id。优先级如下:用户设置的id &gt; 代码自动生成的id
+
+接口如下：
+
+```java
+public static String getDistinctId(Context context);
+```
+
+示例:
+
+```java
+// 获取匿名id
+AnalysysAgent.getDistinctId(mContext);
 ```
 
 ### 用户属性设置
