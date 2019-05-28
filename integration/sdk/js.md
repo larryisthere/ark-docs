@@ -599,6 +599,25 @@ AnalysysAgent.identify(distinctId);
 AnalysysAgent.identify("fangke009901");
 ```
 
+### 设备ID获取
+
+获取用户通过identify接口设置或自动生成的id，优先级如下： 用户设置的id &gt; 代码自动生成的id
+
+接口如下：
+
+```javascript
+AnalysysAgent.getDistinctId();
+```
+
+示例:
+
+```javascript
+// 获取匿名id
+var distinctId = AnalysysAgent.getDistinctId();
+```
+
+
+
 ### 通用属性
 
 > 通用属性是每次上传事件信息都会带有的属性，通用属性是一个标准的 K-V 结构，K 和 V 均有相应的约束条件，如不符合则丢弃该次操作。
