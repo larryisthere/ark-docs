@@ -2,28 +2,187 @@
 
 ## Android SDK
 
-| 更新日期 | 版本号 | 更新内容 |
-| :--- | :--- | :--- |
-| 2018/08/02 | V4.0.5 | 1\) 增加了 init\(Context context, String key, String channel, String baseUrl,boolean autoProfile\)接口; 2\) push 对应字段类型修改;  3\) 修改端口号,上数,收数 https 由 443 修改为 4089; 4\) 修改 webSocket 链接,使用 wss 端口号为 4091。 |
-| 2018/08/24 | V4.0.6 | 1）log 输出日志增加可读性； 2）支持 Hybrid 模式； 3）优化可视化优化功能； 4）优化 reset 方法逻辑。 |
-| 2018/09/18 | V4.1.0 | 1）在初始化配置中新增`encryptType`参数，提供对上传数据可选是否进行加密功能。 |
-| 2018/11/19 | V4.1.1 | 1）在完善日志打印;  2\) 增加时区字段$time\_zone 类型 String;  3\)appkey 改变 /debug 由 1 变为 0 或 2/uploadURL 改变时,重置存储内容，重新发送 profileSetOnce;  4\) 数组类型数据仅支持元素为字符串类型的数组; 4.1\) 增加不允许覆盖字段$first\_visit\_time;  5\) 系统版本字段 $os\_version 之前增加 系统名称; 6\) channel设置逻辑修改为，当xml设置与API传值两种方式都设置时优先使用xml设置值; 7\)key设置逻辑修改为，当xml设置与API传值两种方式设置key不相同时，提示设置异常;  8\) 功能优化; 8.1\) 类型判断部分做了优化。 |
-| 2018/12/17 | V4.1.2 | 1\)优化`session_id`相关 2\)在首次启动中增加`$first_visit_language`字段 3\)增加`$language`字段 4\)优化SDK性能 |
-| 2019/03/04 | V4.2.1 | 1\)相关功能封装为独立模块 2\)优化SDK性能 |
-| 2019/03/13 | v4.2.1 | 1\)优化多线程问题 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
+      <th style="text-align:left">&#x7248;&#x672C;&#x53F7;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">2018/08/02</td>
+      <td style="text-align:left">V4.0.5</td>
+      <td style="text-align:left">1) &#x589E;&#x52A0;&#x4E86; init(Context context, String key, String channel,
+        String baseUrl,boolean autoProfile)&#x63A5;&#x53E3;;
+        <br />2) push &#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4FEE;&#x6539;;
+        <br
+        />3) &#x4FEE;&#x6539;&#x7AEF;&#x53E3;&#x53F7;,&#x4E0A;&#x6570;,&#x6536;&#x6570;
+        https &#x7531; 443 &#x4FEE;&#x6539;&#x4E3A; 4089;
+        <br />4) &#x4FEE;&#x6539; webSocket &#x94FE;&#x63A5;,&#x4F7F;&#x7528; wss &#x7AEF;&#x53E3;&#x53F7;&#x4E3A;
+        4091&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/08/24</td>
+      <td style="text-align:left">V4.0.6</td>
+      <td style="text-align:left">1&#xFF09;log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+        <br
+        />2&#xFF09;&#x652F;&#x6301; Hybrid &#x6A21;&#x5F0F;&#xFF1B;
+        <br />3&#xFF09;&#x4F18;&#x5316;&#x53EF;&#x89C6;&#x5316;&#x4F18;&#x5316;&#x529F;&#x80FD;&#xFF1B;
+        <br
+        />4&#xFF09;&#x4F18;&#x5316; reset &#x65B9;&#x6CD5;&#x903B;&#x8F91;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/09/18</td>
+      <td style="text-align:left">V4.1.0</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/11/19</td>
+      <td style="text-align:left">V4.1.1</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x5B8C;&#x5584;&#x65E5;&#x5FD7;&#x6253;&#x5370;;
+        <br
+        />2) &#x589E;&#x52A0;&#x65F6;&#x533A;&#x5B57;&#x6BB5;$time_zone &#x7C7B;&#x578B;
+        String;
+        <br />3)appkey &#x6539;&#x53D8; /debug &#x7531; 1 &#x53D8;&#x4E3A; 0 &#x6216;
+        2/uploadURL &#x6539;&#x53D8;&#x65F6;,&#x91CD;&#x7F6E;&#x5B58;&#x50A8;&#x5185;&#x5BB9;&#xFF0C;&#x91CD;&#x65B0;&#x53D1;&#x9001;
+        profileSetOnce;
+        <br />4) &#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x4EC5;&#x652F;&#x6301;&#x5143;&#x7D20;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;;
+        <br
+        />4.1) &#x589E;&#x52A0;&#x4E0D;&#x5141;&#x8BB8;&#x8986;&#x76D6;&#x5B57;&#x6BB5;$first_visit_time;
+        <br
+        />5) &#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x5B57;&#x6BB5; $os_version &#x4E4B;&#x524D;&#x589E;&#x52A0;
+        &#x7CFB;&#x7EDF;&#x540D;&#x79F0;;
+        <br />6) channel&#x8BBE;&#x7F6E;&#x903B;&#x8F91;&#x4FEE;&#x6539;&#x4E3A;&#xFF0C;&#x5F53;xml&#x8BBE;&#x7F6E;&#x4E0E;API&#x4F20;&#x503C;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x90FD;&#x8BBE;&#x7F6E;&#x65F6;&#x4F18;&#x5148;&#x4F7F;&#x7528;xml&#x8BBE;&#x7F6E;&#x503C;;
+        <br
+        />7)key&#x8BBE;&#x7F6E;&#x903B;&#x8F91;&#x4FEE;&#x6539;&#x4E3A;&#xFF0C;&#x5F53;xml&#x8BBE;&#x7F6E;&#x4E0E;API&#x4F20;&#x503C;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;key&#x4E0D;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x63D0;&#x793A;&#x8BBE;&#x7F6E;&#x5F02;&#x5E38;;
+        <br
+        />8) &#x529F;&#x80FD;&#x4F18;&#x5316;;
+        <br />8.1) &#x7C7B;&#x578B;&#x5224;&#x65AD;&#x90E8;&#x5206;&#x505A;&#x4E86;&#x4F18;&#x5316;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/12/17</td>
+      <td style="text-align:left">V4.1.2</td>
+      <td style="text-align:left">1)&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+        <br />2)&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
+        <br
+        />3)&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
+        <br />4)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/03/04</td>
+      <td style="text-align:left">V4.2.1</td>
+      <td style="text-align:left">1)&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+        <br
+        />2)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/03/13</td>
+      <td style="text-align:left">v4.2.2</td>
+      <td style="text-align:left">1)&#x4F18;&#x5316;&#x591A;&#x7EBF;&#x7A0B;&#x95EE;&#x9898;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/05/24</td>
+      <td style="text-align:left">v4.3.1</td>
+      <td style="text-align:left">
+        <p>1)&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
+        <p>2)&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
+        <p>3)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>## iOS SDK
 
-## iOS SDK
-
-| 更新日期 | 版本号 | 更新内容 |
-| :--- | :--- | :--- |
-| 2018/08/02 | V4.0.5 | 1\) campaign\_id 调整为字符串。ACTIONTYPE 默认为数值型; 2\) 增加调试模式下打印上传数据详情信息; 3\) 增加首次启动调用 profile\_set\_once 接口上传启动时间; 4\) 删除接口：startWithAppKey:channel:uploadURL:; 5\) 增加接口：startWithAppKey:channel:baseURL:autoProfile:; 6） 数据上传及可视化数据配置端口为\(默认https\)：4089; 7\) 可视化端口为（默认wss）：4091。 |
-| 2018/08/24 | V4.0.6 | 1）log 输出日志增加可读性； 2）支持 Hybrid 模式； 3）优化可视化优化功能； 4）优化 reset 方法逻辑。 |
-| 2018/09/18 | V4.1.0 | 1）在初始化配置中新增`encryptType`参数，提供对上传数据可选是否进行加密功能。 |
-| 2018/11/19 | V4.1.1 | 1）在完善日志打印;  2\) 增加时区字段$time\_zone 类型 String;  3\)appkey 改变 /debug 由 1 变为 0 或 2/uploadURL 改变时,重置存储内容，重新发送 profileSetOnce;  4\) 数组类型数据仅支持元素为字符串类型的数组;增加不允许覆盖字段$first\_visit\_time;  5\) 系统版本字段 $os\_version 之前增加 系统名称; 6\) 功能优化; 6.1\) 修复失败重传策略，间隔不生效bug； 6.2\) 修复App杀掉后无法保存end事件bug； 6.3\) 修复App退入后台无法上传bug。 |
-| 2018/12/17 | V4.1.2 | 1\)优化`session_id`相关 2\)在首次启动中增加`$first_visit_language`字段 3\)增加`$language`字段 4\)优化SDK性能 |
-| 2019/02/15 | V4.2.0 | 1\)相关功能封装为独立模块 2\)优化SDK性能 |
-
-## JS SDK
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
+      <th style="text-align:left">&#x7248;&#x672C;&#x53F7;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">2018/08/02</td>
+      <td style="text-align:left">V4.0.5</td>
+      <td style="text-align:left">1) campaign_id &#x8C03;&#x6574;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;ACTIONTYPE
+        &#x9ED8;&#x8BA4;&#x4E3A;&#x6570;&#x503C;&#x578B;;
+        <br />2) &#x589E;&#x52A0;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#x4E0B;&#x6253;&#x5370;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x8BE6;&#x60C5;&#x4FE1;&#x606F;;
+        <br
+        />3) &#x589E;&#x52A0;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x8C03;&#x7528; profile_set_once
+        &#x63A5;&#x53E3;&#x4E0A;&#x4F20;&#x542F;&#x52A8;&#x65F6;&#x95F4;;
+        <br />4) &#x5220;&#x9664;&#x63A5;&#x53E3;&#xFF1A;startWithAppKey:channel:uploadURL:;
+        <br
+        />5) &#x589E;&#x52A0;&#x63A5;&#x53E3;&#xFF1A;startWithAppKey:channel:baseURL:autoProfile:;
+        <br
+        />6&#xFF09; &#x6570;&#x636E;&#x4E0A;&#x4F20;&#x53CA;&#x53EF;&#x89C6;&#x5316;&#x6570;&#x636E;&#x914D;&#x7F6E;&#x7AEF;&#x53E3;&#x4E3A;(&#x9ED8;&#x8BA4;https)&#xFF1A;4089;
+        <br
+        />7) &#x53EF;&#x89C6;&#x5316;&#x7AEF;&#x53E3;&#x4E3A;&#xFF08;&#x9ED8;&#x8BA4;wss&#xFF09;&#xFF1A;4091&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/08/24</td>
+      <td style="text-align:left">V4.0.6</td>
+      <td style="text-align:left">1&#xFF09;log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+        <br
+        />2&#xFF09;&#x652F;&#x6301; Hybrid &#x6A21;&#x5F0F;&#xFF1B;
+        <br />3&#xFF09;&#x4F18;&#x5316;&#x53EF;&#x89C6;&#x5316;&#x4F18;&#x5316;&#x529F;&#x80FD;&#xFF1B;
+        <br
+        />4&#xFF09;&#x4F18;&#x5316; reset &#x65B9;&#x6CD5;&#x903B;&#x8F91;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/09/18</td>
+      <td style="text-align:left">V4.1.0</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/11/19</td>
+      <td style="text-align:left">V4.1.1</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x5B8C;&#x5584;&#x65E5;&#x5FD7;&#x6253;&#x5370;;
+        <br
+        />2) &#x589E;&#x52A0;&#x65F6;&#x533A;&#x5B57;&#x6BB5;$time_zone &#x7C7B;&#x578B;
+        String;
+        <br />3)appkey &#x6539;&#x53D8; /debug &#x7531; 1 &#x53D8;&#x4E3A; 0 &#x6216;
+        2/uploadURL &#x6539;&#x53D8;&#x65F6;,&#x91CD;&#x7F6E;&#x5B58;&#x50A8;&#x5185;&#x5BB9;&#xFF0C;&#x91CD;&#x65B0;&#x53D1;&#x9001;
+        profileSetOnce;
+        <br />4) &#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x4EC5;&#x652F;&#x6301;&#x5143;&#x7D20;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;;&#x589E;&#x52A0;&#x4E0D;&#x5141;&#x8BB8;&#x8986;&#x76D6;&#x5B57;&#x6BB5;$first_visit_time;
+        <br
+        />5) &#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x5B57;&#x6BB5; $os_version &#x4E4B;&#x524D;&#x589E;&#x52A0;
+        &#x7CFB;&#x7EDF;&#x540D;&#x79F0;;
+        <br />6) &#x529F;&#x80FD;&#x4F18;&#x5316;;
+        <br />6.1) &#x4FEE;&#x590D;&#x5931;&#x8D25;&#x91CD;&#x4F20;&#x7B56;&#x7565;&#xFF0C;&#x95F4;&#x9694;&#x4E0D;&#x751F;&#x6548;bug&#xFF1B;
+        <br
+        />6.2) &#x4FEE;&#x590D;App&#x6740;&#x6389;&#x540E;&#x65E0;&#x6CD5;&#x4FDD;&#x5B58;end&#x4E8B;&#x4EF6;bug&#xFF1B;
+        <br
+        />6.3) &#x4FEE;&#x590D;App&#x9000;&#x5165;&#x540E;&#x53F0;&#x65E0;&#x6CD5;&#x4E0A;&#x4F20;bug&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/12/17</td>
+      <td style="text-align:left">V4.1.2</td>
+      <td style="text-align:left">1)&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+        <br />2)&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
+        <br
+        />3)&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
+        <br />4)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/02/15</td>
+      <td style="text-align:left">V4.2.0</td>
+      <td style="text-align:left">1)&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+        <br
+        />2)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/05/24</td>
+      <td style="text-align:left">v4.3.1</td>
+      <td style="text-align:left">
+        <p>1)&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
+        <p>2)&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
+        <p>3)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>## JS SDK
 
 | 更新日期 | 版本号 | 更新内容 |
 | :--- | :--- | :--- |
