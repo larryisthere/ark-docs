@@ -375,7 +375,7 @@ AnalysysAgent.alias("zhangsan", originalId: "lisi")
 示例：
 
 ```objectivec
-// 设置设备ID为`fangke009901`，注意此方法需要在初始化之后调用
+// 设置设备ID为`fangke009901`，注意此方法需要在初始化之前调用
 [AnalysysAgent identify:@"fangke009901"];
 ```
 
