@@ -365,7 +365,7 @@ public static void identify(Context context, String distinctId);
 AnalysysAgent.identify(mContext,"fangke009901");
 ```
 
-### 获取设备ID
+### 设备ID获取
 
 获取用户通过identify接口设置或自动生成的id。优先级如下:用户设置的id &gt; 代码自动生成的id
 

@@ -2,13 +2,15 @@
 
 ##  iOS SDK 使用说明
 
-iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_iOS_v4.2.0.2_20190304.zip)
+iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.1_20190524.zip)
 
-| framework | 功能描述 | 是否必选 |
-| :---: | :---: | :---: |
-| AnalysysAgent.framework | 基础模块 | 必选 |
-| AnalysysVisual.framework | 可视化模块 | 可选 |
-| AnalysysPush.framework | 推送模块 | 可选 |
+| framework | 功能描述 | 是否必选 | 适用版本 |
+| :---: | :---: | :---: | :--- |
+| AnalysysAgent.bundle | 配置文件 | 必选 | 全部 |
+| AnalysysAgent.framework | 基础模块 | 必选 | 全部 |
+| AnalysysVisual.framework | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0版本 |
+| AnalysysPush.framework | 推送模块 | 可选 | 全部 |
+| AnalysysEncrypt.framework | 加密模块 | 可选 | 全部 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -48,7 +50,8 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 
 1. 选择 工程 - 右键 - `Add Files to "ProjectName"`
 2. 选择 `AnalysysAgent.framework`文件
-3. 勾选 `Copy items if needed`、`Create groups` - `Add` 完成添加类库
+3. 勾选 `Copy items if needed`、`Create groups`- `Add` 完成添加类库
+4. 添加`AnalysysAgent.bundle`资源文件：`Targets`-&gt;`ProjectName` -&gt; `Build Phases` -&gt; `Copy Bundle Resources` -&gt; 添加文件
 
 ### Xcode配置
 
@@ -380,6 +383,26 @@ Swift代码示例：
 
 ```swift
 AnalysysAgent.identify("fangke009901")
+```
+
+### 设备ID获取
+
+获取用户通过identify接口设置或自动生成的id，优先级如下： 用户设置的id &gt; 代码自动生成的id，接口如下：
+
+```objectivec
++ (NSString *)getDistinctId;
+```
+
+示例：
+
+```objectivec
+NSString *distinctID = [AnalysysAgent getDistinctId];
+```
+
+Swift代码示例：
+
+```swift
+let distinctID = AnalysysAgent.getDistinctId() as String
 ```
 
 ### 用户属性设置
@@ -823,7 +846,7 @@ Swift代码示例：
 AnalysysAgent.reset()
 ```
 
-## 可视化SDK接口介绍
+## 可视化热图SDK接口介绍
 
 以下接口生效依赖于可视化模块，需集成可视化相关`AnalysysVisual.framework`文件，请正确集成。
 
@@ -873,6 +896,39 @@ Swift示例:
 
 ```swift
 AnalysysAgent.setVisitorConfigURL("/*设置为实际地址*/")
+```
+
+### 设置热图采集
+
+控制是否采集用户点击热图信息。接口如下：
+
+```objectivec
++ (void)setAutomaticHeatmap:(BOOL)autoTrack;
+```
+
+* autoTrack：是否采集用户点击位置坐标，默认为NO
+
+示例：
+
+```objectivec
+//  设置采集热图信息
+[AnalysysAgent setAutomaticHeatmap:YES];
+```
+
+Swift示例:
+
+```swift
+AnalysysAgent.setAutomaticHeatmap(true)
+```
+
+## 加密模块介绍
+
+加密模块生效依赖于加密SDK模块，需集成加密SDK相关`AnalysysEncrypt.framework`文件，请正确集成。
+
+在初始化SDK时需设置加密方式即可：
+
+```text
+AnalysysConfig.encryptType = AnalysysEncryptAES;
 ```
 
 ## 消息推送SDK接口介绍
