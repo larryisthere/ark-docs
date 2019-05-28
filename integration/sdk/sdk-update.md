@@ -184,17 +184,100 @@
   </tbody>
 </table>## JS SDK
 
-| 更新日期 | 版本号 | 更新内容 |
-| :--- | :--- | :--- |
-| 2018/08/02 | V4.0.5 | 1\) 修改 `$webstay` 日志中,`$url` 参数的值超过长度 255 字符数时，将 `$url` 参数抛弃的 BUG。\(20180803\); 2\) 修改 auto 参数设为 false时 拦截 `$startup` 的上传的 BUG; 3\) 首次发送新用户的首次用户信息设置随 is\_frist\_time 参数为 true 时发送; 4\) UTM 调整 campaign\_id 调整为字符串; 5\) 增加 autoProfile 参数自动调用 profile\_set\_once 设置 `$first_visit_time`, `$first_visit_time` 采用字符串的时间类型。 格式为:  yyyy-MM-dd hh:mm:ss.SSS; 6\) debugModel 为1 与 2时的 log 输出规范化。 |
-| 2018/08/24 | V4.0.6 | 1）log 输出日志增加可读性； 2）优化 reset 方法逻辑； 3）优化可 JS SDK 启动发布顺序； 4）修复其他 BUG。 |
-| 2018/09/18 | V4.1.0 | 1）在初始化配置中新增`encryptType`参数，提供对上传数据可选是否进行加密功能； 2）增加配置参数`auto`控制启动事件与页面事件是否同时上报； 3\) 在Cookie中公开 JS 临时 ID； 4\) 优化启动事件上报逻辑。 |
-| 2018/11/02 | V4.1.1 | 1）在初始化配置中新增 `pageProperty` 参数，提供自动采集时可增加页面自定义属性； 2）优化可视化模块加载方法； 3）增加历史记录跳转页面自动采集。 |
-| 2018/11/22 | V4.1.2 | 1\)增加`$web_crawler`字段 2\)优化打印Log 3\)增加`$time_zone`字段 4）优化SDK性能 |
-| 2018/12/17 | V4.1.3 | 1）优化`session_id`相关 2\)在首次启动中增加`$first_visit_language`字段 3\)增加`$language`字段 4\)优化SDK性能 |
-| 2019/01/24 | V4.2.0 | 1\)相关功能封装为独立模块 2\)优化SDK性能 |
-
-## 小程序 SDK
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
+      <th style="text-align:left">&#x7248;&#x672C;&#x53F7;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">2018/08/02</td>
+      <td style="text-align:left">V4.0.5</td>
+      <td style="text-align:left">1) &#x4FEE;&#x6539; <code>$webstay</code> &#x65E5;&#x5FD7;&#x4E2D;,<code>$url</code> &#x53C2;&#x6570;&#x7684;&#x503C;&#x8D85;&#x8FC7;&#x957F;&#x5EA6;
+        255 &#x5B57;&#x7B26;&#x6570;&#x65F6;&#xFF0C;&#x5C06; <code>$url</code> &#x53C2;&#x6570;&#x629B;&#x5F03;&#x7684;
+        BUG&#x3002;(20180803);
+        <br />2) &#x4FEE;&#x6539; auto &#x53C2;&#x6570;&#x8BBE;&#x4E3A; false&#x65F6;
+        &#x62E6;&#x622A; <code>$startup</code> &#x7684;&#x4E0A;&#x4F20;&#x7684; BUG;
+        <br
+        />3) &#x9996;&#x6B21;&#x53D1;&#x9001;&#x65B0;&#x7528;&#x6237;&#x7684;&#x9996;&#x6B21;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8BBE;&#x7F6E;&#x968F;
+        is_frist_time &#x53C2;&#x6570;&#x4E3A; true &#x65F6;&#x53D1;&#x9001;;
+        <br
+        />4) UTM &#x8C03;&#x6574; campaign_id &#x8C03;&#x6574;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;;
+        <br
+        />5) &#x589E;&#x52A0; autoProfile &#x53C2;&#x6570;&#x81EA;&#x52A8;&#x8C03;&#x7528;
+        profile_set_once &#x8BBE;&#x7F6E; <code>$first_visit_time</code>, <code>$first_visit_time</code> &#x91C7;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x95F4;&#x7C7B;&#x578B;&#x3002;
+        &#x683C;&#x5F0F;&#x4E3A;: yyyy-MM-dd hh:mm:ss.SSS;
+        <br />6) debugModel &#x4E3A;1 &#x4E0E; 2&#x65F6;&#x7684; log &#x8F93;&#x51FA;&#x89C4;&#x8303;&#x5316;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/08/24</td>
+      <td style="text-align:left">V4.0.6</td>
+      <td style="text-align:left">1&#xFF09;log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+        <br
+        />2&#xFF09;&#x4F18;&#x5316; reset &#x65B9;&#x6CD5;&#x903B;&#x8F91;&#xFF1B;
+        <br
+        />3&#xFF09;&#x4F18;&#x5316;&#x53EF; JS SDK &#x542F;&#x52A8;&#x53D1;&#x5E03;&#x987A;&#x5E8F;&#xFF1B;
+        <br
+        />4&#xFF09;&#x4FEE;&#x590D;&#x5176;&#x4ED6; BUG&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/09/18</td>
+      <td style="text-align:left">V4.1.0</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#xFF1B;
+        <br
+        />2&#xFF09;&#x589E;&#x52A0;&#x914D;&#x7F6E;&#x53C2;&#x6570;<code>auto</code>&#x63A7;&#x5236;&#x542F;&#x52A8;&#x4E8B;&#x4EF6;&#x4E0E;&#x9875;&#x9762;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x540C;&#x65F6;&#x4E0A;&#x62A5;&#xFF1B;
+        <br
+        />3) &#x5728;Cookie&#x4E2D;&#x516C;&#x5F00; JS &#x4E34;&#x65F6; ID&#xFF1B;
+        <br
+        />4) &#x4F18;&#x5316;&#x542F;&#x52A8;&#x4E8B;&#x4EF6;&#x4E0A;&#x62A5;&#x903B;&#x8F91;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/11/02</td>
+      <td style="text-align:left">V4.1.1</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E; <code>pageProperty</code> &#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x81EA;&#x52A8;&#x91C7;&#x96C6;&#x65F6;&#x53EF;&#x589E;&#x52A0;&#x9875;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1B;
+        <br
+        />2&#xFF09;&#x4F18;&#x5316;&#x53EF;&#x89C6;&#x5316;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x65B9;&#x6CD5;&#xFF1B;
+        <br
+        />3&#xFF09;&#x589E;&#x52A0;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x8DF3;&#x8F6C;&#x9875;&#x9762;&#x81EA;&#x52A8;&#x91C7;&#x96C6;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/11/22</td>
+      <td style="text-align:left">V4.1.2</td>
+      <td style="text-align:left">1)&#x589E;&#x52A0;<code>$web_crawler</code>&#x5B57;&#x6BB5;
+        <br />2)&#x4F18;&#x5316;&#x6253;&#x5370;Log
+        <br />3)&#x589E;&#x52A0;<code>$time_zone</code>&#x5B57;&#x6BB5;
+        <br />4&#xFF09;&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/12/17</td>
+      <td style="text-align:left">V4.1.3</td>
+      <td style="text-align:left">1&#xFF09;&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+        <br />2)&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
+        <br
+        />3)&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
+        <br />4)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/01/24</td>
+      <td style="text-align:left">V4.2.0</td>
+      <td style="text-align:left">1)&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+        <br
+        />2)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/05/24</td>
+      <td style="text-align:left">v4.3.1</td>
+      <td style="text-align:left">
+        <p>1)&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
+        <p>2)&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
+        <p>3)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>## 小程序 SDK
 
 | 更新日期 | 版本号 | 更新内容 |
 | :--- | :--- | :--- |
