@@ -325,7 +325,7 @@ AnalysysAgent.track(mContext, "buy", info);
 
 ### 设备ID与用户关联
 
-用户 id 关联接口。将 需要绑定的业务ID 和设备ID进行关联，计算时会认为是一个用户的行为。 接口如下：
+用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。 接口如下：
 
 ```java
 public static void alias(Context context, String aliasId, String originalId);
@@ -789,7 +789,7 @@ public static void setAutoHeatMap(boolean autoTrack);
 
 * autoTrack：是否采集用户点击位置坐标，默认为false
 
-**注意：** 此接口请于初始化接口（ init\(\) ）前调用。
+**注意：** 此接口请于初始化接口前调用。
 
 示例：
 

@@ -335,7 +335,7 @@ AnalysysAgent.track("pay", properties: properties)
 
 ### 设备ID与用户关联
 
-用户 id 关联接口。将 aliasID 和 originalId 关联，计算时会认为是一个用户的行为。接口如下：
+用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```objectivec
 + (void)alias:(NSString *)aliasId originalId:(NSString *)originalId;
