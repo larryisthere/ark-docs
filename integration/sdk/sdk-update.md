@@ -88,7 +88,8 @@
       <td style="text-align:left">
         <p>1)&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
         <p>2)&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
-        <p>3)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+        <p>3)&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
+        <p>4)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
     </tr>
   </tbody>
@@ -178,7 +179,8 @@
       <td style="text-align:left">
         <p>1)&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
         <p>2)&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
-        <p>3)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+        <p>3)&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
+        <p>4)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
     </tr>
   </tbody>
@@ -273,21 +275,79 @@
       <td style="text-align:left">
         <p>1)&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
         <p>2)&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
-        <p>3)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+        <p>3)&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
+        <p>4)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
     </tr>
   </tbody>
 </table>## 小程序 SDK
 
-| 更新日期 | 版本号 | 更新内容 |
-| :--- | :--- | :--- |
-| 2018/08/02 | V4.0.5 | 1\) 修改 auto 参数设为 false 时拦截 `$startup` 的上传的BUG; 2\) 首次发送新用户的首次用户信息设置随 is\_frist\_time 参数为 true 时发送; 3\) UTM 调整 campaign\_id 调整为字符串且与 JS 保持一致; 4\) 增加 autoProfile 参数自动调用 profile\_set\_once 设置 `$first_visit_time`，`$first_visit_time` 采用字符串的时间类型。格式为:  yyyy-MM-dd hh:mm:ss.SSS; 5\) debugModel 为 1 与 2 时的 log 输出规范化。 |
-| 2018/08/23 | V4.0.6 | 1）log 输出日志增加可读性； 2）优化 reset 方法逻辑。 |
-| 2018/09/18 | V4.1.0 | 1）在初始化配置中新增`encryptType`参数，提供对上传数据可选是否进行加密功能； 2\) 增加配置参数`auto`控制启动事件与页面事件是否同时上报； 3\) 优化启动事件上报逻辑。 |
-| 2018/12/13 | V4.1.2 | 1）优化`session_id`相关 2\)在首次启动中增加`$first_visit_language`字段 3\)增加`$language`字段 4）优化SDK性能 |
-| 2019/02/19 | V4.2.0 | 1\)相关功能封装为独立模块 2\)优化SDK性能 |
-
-## Java SDK
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
+      <th style="text-align:left">&#x7248;&#x672C;&#x53F7;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">2018/08/02</td>
+      <td style="text-align:left">V4.0.5</td>
+      <td style="text-align:left">1) &#x4FEE;&#x6539; auto &#x53C2;&#x6570;&#x8BBE;&#x4E3A; false &#x65F6;&#x62E6;&#x622A; <code>$startup</code> &#x7684;&#x4E0A;&#x4F20;&#x7684;BUG;
+        <br
+        />2) &#x9996;&#x6B21;&#x53D1;&#x9001;&#x65B0;&#x7528;&#x6237;&#x7684;&#x9996;&#x6B21;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8BBE;&#x7F6E;&#x968F;
+        is_frist_time &#x53C2;&#x6570;&#x4E3A; true &#x65F6;&#x53D1;&#x9001;;
+        <br
+        />3) UTM &#x8C03;&#x6574; campaign_id &#x8C03;&#x6574;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x4E14;&#x4E0E;
+        JS &#x4FDD;&#x6301;&#x4E00;&#x81F4;;
+        <br />4) &#x589E;&#x52A0; autoProfile &#x53C2;&#x6570;&#x81EA;&#x52A8;&#x8C03;&#x7528;
+        profile_set_once &#x8BBE;&#x7F6E; <code>$first_visit_time</code>&#xFF0C;<code>$first_visit_time</code> &#x91C7;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x95F4;&#x7C7B;&#x578B;&#x3002;&#x683C;&#x5F0F;&#x4E3A;:
+        yyyy-MM-dd hh:mm:ss.SSS;
+        <br />5) debugModel &#x4E3A; 1 &#x4E0E; 2 &#x65F6;&#x7684; log &#x8F93;&#x51FA;&#x89C4;&#x8303;&#x5316;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/08/23</td>
+      <td style="text-align:left">V4.0.6</td>
+      <td style="text-align:left">1&#xFF09;log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+        <br
+        />2&#xFF09;&#x4F18;&#x5316; reset &#x65B9;&#x6CD5;&#x903B;&#x8F91;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/09/18</td>
+      <td style="text-align:left">V4.1.0</td>
+      <td style="text-align:left">1&#xFF09;&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#xFF1B;
+        <br
+        />2) &#x589E;&#x52A0;&#x914D;&#x7F6E;&#x53C2;&#x6570;<code>auto</code>&#x63A7;&#x5236;&#x542F;&#x52A8;&#x4E8B;&#x4EF6;&#x4E0E;&#x9875;&#x9762;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x540C;&#x65F6;&#x4E0A;&#x62A5;&#xFF1B;
+        <br
+        />3) &#x4F18;&#x5316;&#x542F;&#x52A8;&#x4E8B;&#x4EF6;&#x4E0A;&#x62A5;&#x903B;&#x8F91;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2018/12/13</td>
+      <td style="text-align:left">V4.1.2</td>
+      <td style="text-align:left">1&#xFF09;&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+        <br />2)&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
+        <br
+        />3)&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
+        <br />4&#xFF09;&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/02/19</td>
+      <td style="text-align:left">V4.2.0</td>
+      <td style="text-align:left">1)&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+        <br
+        />2)&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2019/05/25</td>
+      <td style="text-align:left">V4.2.2</td>
+      <td style="text-align:left">
+        <p>1)&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
+        <p>2)&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>## Java SDK
 
 | 更新日期 | 版本号 | 更新内容 |
 | :--- | :--- | :--- |
