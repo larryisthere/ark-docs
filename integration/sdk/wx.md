@@ -1,8 +1,8 @@
-# 小程序 SDK
+# 微信小程序 SDK
 
 ## 微信小程序 SDK 使用说明
 
-微信小程序 SDK 适用于原生微信小程序，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_WX_v4.2.0.3_20190219.zip)
+微信小程序 SDK 适用于原生微信小程序，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_WX_v4.2.2_20190525.zip)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
@@ -231,7 +231,7 @@ AnalysysAgent.track("buy", eventInfo);
 
 ### 设备ID与用户关联
 
-用户 id 关联接口。将 `aliasID` 和 `originalId` 关联，计算时会认为是一个用户的行为。接口如下：
+用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```javascript
 AnalysysAgent.alias(aliasId, originalId);
@@ -250,6 +250,40 @@ AnalysysAgent.alias("sanbo");
 
 //现在登陆账号是zhangsan，和历史上的 lisi是一个人。 此时不会关心登陆 zhangsan前的用户是谁
 AnalysysAgent.alias("zhangsan", "lisi");
+```
+
+### 设备ID设置
+
+唯一设备ID标识设置，接口如下：
+
+```javascript
+AnalysysAgent.identify(distinctId);
+```
+
+* distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String
+
+示例:
+
+```text
+// 设置设备ID为`fangke009901`,注意此方法需要在初始化之后优先调用
+AnalysysAgent.identify("fangke009901");
+```
+
+### 设备ID获取
+
+获取用户通过identify接口设置或自动生成的id，优先级如下： 用户设置的id &gt; 代码自动生成的id
+
+接口如下：
+
+```javascript
+AnalysysAgent.getDistinctId();
+```
+
+示例:
+
+```javascript
+// 获取匿名id
+var distinctId = AnalysysAgent.getDistinctId();
 ```
 
 ### 用户属性设置

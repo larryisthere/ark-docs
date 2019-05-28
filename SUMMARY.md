@@ -70,7 +70,7 @@
   * [iOS SDK](integration/sdk/ios/README.md)
     * [iOS Hybrid SDK](integration/sdk/ios/hybrid-ios.md)
   * [JS SDK](integration/sdk/js.md)
-  * [小程序 SDK](integration/sdk/wx.md)
+  * [微信小程序 SDK](integration/sdk/wx.md)
   * [Java SDK](integration/sdk/java.md)
   * [Python SDK](integration/sdk/python.md)
   * [PHP SDK](integration/sdk/php.md)
