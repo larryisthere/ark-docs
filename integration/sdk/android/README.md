@@ -6,10 +6,10 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.
 
 | Jar包 | 功能描述 | 是否必选 | 适用版本 |
 | :---: | :---: | :---: | :--- |
-| analysys\_core\_xxx.jar | 基础模块 | 必选 |  |
+| analysys\_core\_xxx.jar | 基础模块 | 必选 | 全部 |
 | analysys\_visual\_xxx.jar | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0版本 |
-| analysys\_push\_xxx.jar | 推送模块 | 可选 |  |
-| analysys\_encrypt\_xxx.jar | 加密模块 | 可选 |  |
+| analysys\_push\_xxx.jar | 推送模块 | 可选 | 全部 |
+| analysys\_encrypt\_xxx.jar | 加密模块 | 可选 | 全部 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -739,9 +739,9 @@ public static void reset(Context context);
 AnalysysAgent.reset(mContext);
 ```
 
-## 可视化 SDK 接口
+## 可视化热图SDK接口
 
-以下接口生效依赖于可视化模块，需集成可视化SDK相关analysys\_visual\_xxx.jar文件，请正确集成。
+以下接口生效依赖于可视化热图模块，需集成可视化热图SDK相关analysys\_visual\_xxx.jar文件，请正确集成。
 
 ### 设置 webSocket 地址
 
@@ -777,6 +777,25 @@ public static void setVisitorConfigURL(Context context, String url);
 ```java
 // 设置请求埋点配置的服务器地址为 scheme://host + :port
 AnalysysAgent.setVisitorConfigURL(mContext,"/*设置为实际地址*/");
+```
+
+### 设置热图采集
+
+控制是否采集用户点击热图信息。接口如下：
+
+```java
+public static void setAutoHeatMap(boolean autoTrack);
+```
+
+* autoTrack：是否采集用户点击位置坐标，默认为false
+
+**注意：** 此接口请于初始化接口（ init\(\) ）前调用。
+
+示例：
+
+```java
+// 设置采集热图信息
+AnalysysAgent.setAutoHeatMap(true);
 ```
 
 ## 消息推送 SDK 接口
