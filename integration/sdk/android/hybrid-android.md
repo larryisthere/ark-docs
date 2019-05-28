@@ -1,56 +1,16 @@
 # Android Hybrid SDK
 
-## 1. 基本配置
+## 1. SDK集成
 
-Android App中如需加载H5页面，可在H5页面中以如下方式集成[AnalysysAgent\_Hybrid\_JS\_SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_Hybrid_v4.2.0.1_20190401.zip%20)。
+Android App 中如需加载 H5 页面，需要同时集成Android SDK与JS SDK。
 
 ### 1.1 集成 Android SDK
 
 集成方式查看[Android SDK 使用说明](./)
 
-### 1.2 配置JS SDK
+### 1.2 集成 JS SDK
 
-PAAS JS SDK地址为: `http://ark.analysys.cn/sdk/v2/AnalysysAgent_Hybrid_JS_SDK.min.js`，请在接入PAAS JS SDK时更改为实际PAAS JS SDK地址
-
-将以下JS代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
-
-```javascript
-<script>
-    (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || []
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty duplicatePost'.split(' ');
-
-        function factory(b) {
-            return function() {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.AnalysysAgent.push(a);
-                return window.AnalysysAgent;
-            }
-        };
-        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
-            var key = window.AnalysysAgent.methods[i];
-            AnalysysAgent[key] = factory(key);
-        }
-        for (var key in config) {
-            AnalysysAgent[key](config[key])
-        }
-        var date = new Date();
-        var time = new String(date.getFullYear()) + new String(date.getMonth() + 1) + new String(date.getDate());
-
-        var d = document,
-            c = d.createElement('script'),
-            n = d.getElementsByTagName('script')[0];
-        c.type = 'text/javascript';
-        c.async = true;
-        c.id = 'devSDK';
-        c.src = window.location.protocol+'//sdk.analysys.cn/AnalysysAgent_Hybrid_JS_SDK.min.js?' + time //PAAS JS SDK地址
-        n.parentNode.insertBefore(c, n);
-    })({
-        appkey: '' //APPKEY
-    })
-</script>
-```
+集成方式查看[JS SDK 使用说明](https://docs.analysys.cn/ark/integration/sdk/js)
 
 ## 2. 代码集成
 
