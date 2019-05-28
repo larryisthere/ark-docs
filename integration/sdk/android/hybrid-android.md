@@ -1,4 +1,4 @@
-# Android Hybrid SDK
+# Android Hybrid模式
 
 ## 1. SDK集成
 

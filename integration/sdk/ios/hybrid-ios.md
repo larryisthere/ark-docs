@@ -1,4 +1,4 @@
-# iOS Hybrid SDK
+# iOS Hybrid模式
 
 ## 1. 基本配置
 
