@@ -286,7 +286,7 @@ autoWebstay 为设置是否追踪页面滚动行为。可根据自身需要进�
 }
 ```
 
-#### encryptType
+autoHeatmap
 
 autoHeatmap 为设置是否启用热图功能。可根据自身需要进行更改。
 
@@ -749,4 +749,8 @@ window.parent
 window.name
 window.location
 ```
+
+## 热图模块介绍
+
+将 `AnalysysAgent_JS_SDK_HEATMAP.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中，在方舟中调用该模块
 
