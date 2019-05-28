@@ -4,10 +4,11 @@
 
 JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_JS_v4.2.0.1_20190124.zip)
 
-| js文件 | 功能描述 | 是否必须 |
-| :---: | :---: | :---: |
-| AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 必须 |
-| AnalysysAgent\_JS\_SDK\_VISUAL.min.js | 可视化模块SDK | 可选 |
+| js文件 | 功能描述 | 是否必须 | 服务端版本 |
+| :---: | :---: | :---: | :--- |
+| AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 必须 | 全部 |
+| AnalysysAgent\_JS\_SDK\_VISUAL.min.js | 可视化模块SDK | 可选 | 全部 |
+| AnalysysAgent\_JS\_SDK\_HEATMAP.min.js | 热图模块SDK | 可选 | 4.3.0及以上 |
 
 ### 快速集成
 
@@ -45,7 +46,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 <script>
     (function(config) {
         window.AnalysysAgent = window.AnalysysAgent || []
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty duplicatePost'.split(' ');
+        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty autoHeatmap freeApi'.split(' ');
 
         function factory(b) {
             return function() {
@@ -88,7 +89,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 <script>
     (function(config) {
         window.AnalysysAgent = window.AnalysysAgent || []
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty'.split(' ');
+        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty autoHeatmap freeApi'.split(' ');
 
         function factory(b) {
             return function() {
@@ -131,6 +132,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 * _hash_ 设置检测 url hash 变化：false - 关闭监测url hash变化；true - 开启监测url hash变化\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
+* _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
 * _pageProperty_ 设置自动采集时页面自定义属性
 
@@ -281,6 +283,24 @@ autoWebstay 为设置是否追踪页面滚动行为。可根据自身需要进�
 //追踪页面滚动行为。
 {
     autoWebstay:true
+}
+```
+
+#### encryptType
+
+autoHeatmap 为设置是否启用热图功能。可根据自身需要进行更改。
+
+* true 启用热图功能。类型：Boolean。
+* false 不启用热图功能\(默认\)。类型：Boolean。
+
+```text
+//不启用热图功能。
+{
+    autoHeatmap:false//或删除autoHeatmap参数。
+}
+//启用热图功能。
+{
+    autoHeatmap:true
 }
 ```
 

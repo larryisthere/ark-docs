@@ -4,11 +4,11 @@
 
 iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.1_20190524.zip)
 
-| framework | 功能描述 | 是否必选 | 适用版本 |
+| framework | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
 | AnalysysAgent.bundle | 配置文件 | 必选 | 全部 |
 | AnalysysAgent.framework | 基础模块 | 必选 | 全部 |
-| AnalysysVisual.framework | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0版本 |
+| AnalysysVisual.framework | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0及以上 |
 | AnalysysPush.framework | 推送模块 | 可选 | 全部 |
 | AnalysysEncrypt.framework | 加密模块 | 可选 | 全部 |
 
