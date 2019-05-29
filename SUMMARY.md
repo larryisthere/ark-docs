@@ -1,13 +1,13 @@
 # Table of contents
 
 * [产品介绍](README.md)
-* [快速上手](kuai-su-shang-shou/README.md)
-  * [安装部署](kuai-su-shang-shou/an-zhuang-bu-shu.md)
-  * [创建项目](kuai-su-shang-shou/chuang-jian-xiang-mu.md)
-  * [设计埋点方案](kuai-su-shang-shou/mai-dian-fang-an.md)
-  * [数据接入和验证](kuai-su-shang-shou/shu-ju-jie-ru-he-yan-zheng.md)
-  * [发布应用](kuai-su-shang-shou/fa-bu-ying-yong.md)
-  * [数据分析](kuai-su-shang-shou/shu-ju-fen-xi.md)
+* [快速上手](quick-start-guide/README.md)
+  * [Step 1 安装部署](quick-start-guide/install.md)
+  * [Step 2 激活系统创建项目](quick-start-guide/creat-project.md)
+  * [Step 3 设计埋点方案](quick-start-guide/tracking-plan.md)
+  * [Step 4 集成 SDK 接入数据](quick-start-guide/instrumentation.md)
+  * [Step 5 发布应用](quick-start-guide/release.md)
+  * [Step 6 开始数据分析](quick-start-guide/getting-started.md)
 * [产品更新日志](release-notes.md)
 
 ## Part I 产品使用指南

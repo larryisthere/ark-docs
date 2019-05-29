@@ -1,14 +1,14 @@
-# 数据接入和验证
+# Step 4 集成 SDK 接入数据
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151449466087.png)
-
-## **邀请工程师根据以下三项进行数据接入**
+设计好埋点方案之后，即可邀请工程师根据以下三项进行数据接入
 
 * 项目 AppKey（创建项目后生成，用于唯一标识项目的数据）
 * SDK [集成指南](../integration/sdk/)
-* 埋点方案（[如何设计埋点方案](../integration/prepare/tracking-plan.md)）
+* 埋点方案
 
-## **接入后 Debug** [**数据验证**](../integration/data-verification/)\*\*\*\*
+![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151449466087.png)
+
+## **接入后 Debug 数据验证**
 
 集成 SDK 之后，debugMode 模式设置为 0 ，点击相应埋点位置，验证数据上报的完整性、准确性和及时性
 
@@ -22,7 +22,7 @@
 
 数据验证完成后， 在[元事件](../features/project-manegement/meta-events.md)、[用户属性](../features/project-manegement/user-properties.md)、[事件属性](../features/project-manegement/event-properties.md)中可以查看全部上报的埋点事件和属性，支持管理显示名称、属性单位、属性维度字典等方便分析时使用，详见 [管理 ](../features/project-manegement/)中的功能使用说明。
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101148521850.png)
-
 至此，用于分析的数据采集集成工作完成。
+
+{% page-ref page="release.md" %}
 
