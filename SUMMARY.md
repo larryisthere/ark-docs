@@ -1,6 +1,13 @@
 # Table of contents
 
 * [快速上手](README.md)
+* [快速上手2](kuai-su-shang-shou/README.md)
+  * [安装部署](kuai-su-shang-shou/an-zhuang-bu-shu.md)
+  * [创建项目](kuai-su-shang-shou/chuang-jian-xiang-mu.md)
+  * [设计埋点方案](kuai-su-shang-shou/mai-dian-fang-an.md)
+  * [数据接入和验证](kuai-su-shang-shou/shu-ju-jie-ru-he-yan-zheng.md)
+  * [发布应用](kuai-su-shang-shou/fa-bu-ying-yong.md)
+  * [数据分析](kuai-su-shang-shou/shu-ju-fen-xi.md)
 * [产品更新日志](release-notes.md)
 
 ## Part I 产品使用指南
