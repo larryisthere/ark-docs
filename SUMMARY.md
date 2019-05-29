@@ -1,7 +1,7 @@
 # Table of contents
 
-* [快速上手](README.md)
-* [快速上手2](kuai-su-shang-shou/README.md)
+* [产品介绍](README.md)
+* [快速上手](kuai-su-shang-shou/README.md)
   * [安装部署](kuai-su-shang-shou/an-zhuang-bu-shu.md)
   * [创建项目](kuai-su-shang-shou/chuang-jian-xiang-mu.md)
   * [设计埋点方案](kuai-su-shang-shou/mai-dian-fang-an.md)
