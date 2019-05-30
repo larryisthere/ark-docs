@@ -17,7 +17,7 @@ http\(s\)://host:port/up
 ### 请求参数
 
 | 英文名称 | 中文名称 | 参数类型 | 可选标志 | 参数说明 |
-| :--- | :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: | :---: |
 | data | 上报数据 | 字符串 | 必填 | 数据明文为JsonArray的形式，上报时需要做压缩和编码处理，具体为：先gzip，然后base64 |
 
 上报的data明文如下：
@@ -56,19 +56,19 @@ http\(s\)://host:port/up
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#x82F1;&#x6587;&#x540D;&#x79F0;</th>
-      <th style="text-align:left">&#x4E2D;&#x6587;&#x540D;&#x79F0;</th>
-      <th style="text-align:left">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
-      <th style="text-align:left">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+      <th style="text-align:center">&#x82F1;&#x6587;&#x540D;&#x79F0;</th>
+      <th style="text-align:center">&#x4E2D;&#x6587;&#x540D;&#x79F0;</th>
+      <th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
+      <th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><b>code</b>
+      <td style="text-align:center"><b>code</b>
       </td>
-      <td style="text-align:left">&#x54CD;&#x5E94;&#x7801;</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">
+      <td style="text-align:center">&#x54CD;&#x5E94;&#x7801;</td>
+      <td style="text-align:center">String</td>
+      <td style="text-align:center">
         <p>500&#xFF1A;&#x5931;&#x8D25;</p>
         <p>200&#xFF1A;&#x6210;&#x529F;</p>
         <p>400&#xFF1A;&#x4E0A;&#x4F20;&#x62A5;&#x6587;&#x683C;&#x5F0F;&#x9519;&#x8BEF;</p>
@@ -271,8 +271,6 @@ $profile\_delete:删除全部已设置的用户属性。上传报文示例：
 
 $pageview：浏览页面，打开页面时触发
 
-
-
 ```javascript
 [{
 	"xwhen": 1532757366067,
@@ -328,7 +326,7 @@ $pageview：浏览页面，打开页面时触发
 事件预置属性：
 
 | **字段名称** | **字段类型** | **字段含义** | **备注** |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | $lib | 字符串 | SDK类型 | 例如python、iOS等 |
 | $lib\_version | 字符串 | SDK版本 | 如：11.2.5 |
 | $manufacturer | 字符串 | 制造厂商 | 如：360 |
@@ -365,7 +363,7 @@ $pageview：浏览页面，打开页面时触发
 $pageiew的预置属性：
 
 | **字段名称** | **字段类型** | **字段含义** | **备注** |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | $url | 字符串 | 页面URL/页面完整路径 | 预定义事件中仅$pageiew必须设置 |
 | $title | 字符串 | 页面标题 | 预定义事件中仅$pageiew必须设置 |
 | $referrer | 字符串 | 页面来源 | 预定义事件中仅js中$pageiew必须设置 |
@@ -373,13 +371,13 @@ $pageiew的预置属性：
 $alias\(身份绑定\)的预置属性
 
 | **字段名称** | **字段类型** | **字段含义** | **备注** |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | $original\_id | 字符串 | 上一个id | 预定义事件中仅$alias事件设置且必须设置 |
 
 profile预置属性：
 
 | **字段名称** | **字段类型** | **字段含义** | **备注** |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | $lib | 字符串 | SDK类型，例如python、iOS等 |  |
 | $lib\_version | 字符串 | SDK版本 如：11.2.5 |  |
 | $country | 字符串 | 用户所在国家 |  |
