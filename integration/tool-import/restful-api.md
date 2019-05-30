@@ -81,7 +81,7 @@ http\(s\)://host:port/up
 
 ### 字段说明
 
- **上报报文必须包含`xwho`/`xwhat`/`xwhen`/`appid`/`xcontext这几个key，具体含义如下：`**
+ **上报报文必须包含`xwho`/`xwhat`/`xwhen`/`appid`/`xcontext`这几个key，具体含义如下：**
 
 `xwho`：字符串，长度大于0且小于255字符。不可以为中文。 用户定义的用户唯一性标准
 
@@ -103,18 +103,18 @@ $lib：字符串，SDK类型,选项有:Java、Python、JS、Node、PHP、Wechat�
 
 上报报文的Json数据结构中的Key值类型如下：  
 符合java命名规则： 开头约束:字母或者$ 字符类型:大小写字母、数字、下划线和 $ 最大长度125字符 上报报文的Json数据结构中的value值类型如下：  
-\*Number int/long/double/float   
-\*Boolean 数据传输中使用true/false,后端处理转换为0,1   
-\*String 字符串,后端支持时间格式: DATE/DATETIME   
-\*Array类型 List、数组\(这种格式的:\[\]\),传输给服务器全部转化为JSONArray
+`Number` ：int/long/double/float   
+`Boolean` ：数据传输中使用true/false,后端处理转换为0,1   
+`String`：字符串,后端支持时间格式: DATE/DATETIME   
+`Array`：类型 List、数组\(这种格式的:\[\]\),传输给服务器全部转化为JSONArray
 
 ### 约束条件
 
-\*上报的json中的key以及xwhat的value值需要符合Java命名规则。  
-\*key/xwhat的value约束: 以字母或$开头，可包含大小写字母/数字/\_/$，最大长度125字符，不支持乱码和中文  
-\*xwhat的value值最大长度是99字符  
-\*id限制：长度大于0且小于255字符  
-\*xcontext约束：
+上报的json中的key以及xwhat的value值需要符合Java命名规则。  
+`key/xwhat的value约束`: 以字母或$开头，可包含大小写字母/数字/\_/$，最大长度125字符，不支持乱码和中文  
+`xwhat`的value值最大长度是99字符  
+`id`限制：长度大于0且小于255字符  
+`xcontext`约束：
 
 `key约束：`符合java命名规则： 开头约束:字母或者$ 字符类型:大小写字母、数字、下划线和 $ 最大长度125字符
 
@@ -169,7 +169,6 @@ $lib：字符串，SDK类型,选项有:Java、Python、JS、Node、PHP、Wechat�
 	"xwho": "ABCDEF123456789",
 	"xwhat": "$profile_set_once"
 }]
-
 ```
 
 `$profile_unset`: 删除某个已设置的用户属性。上传报文示例：
