@@ -7,14 +7,14 @@
     <tr>
       <th style="text-align:center">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
       <th style="text-align:center">&#x7248;&#x672C;&#x53F7;</th>
-      <th style="text-align:center">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:center">2018/08/02</td>
       <td style="text-align:center">V4.0.5</td>
-      <td style="text-align:center">1.&#x589E;&#x52A0;&#x4E86; init(Context context, String key, String channel,
+      <td style="text-align:left">1.&#x589E;&#x52A0;&#x4E86; init(Context context, String key, String channel,
         String baseUrl,boolean autoProfile)&#x63A5;&#x53E3;;
         <br />2. push &#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4FEE;&#x6539;;
         <br
@@ -26,7 +26,7 @@
     <tr>
       <td style="text-align:center">2018/08/24</td>
       <td style="text-align:center">V4.0.6</td>
-      <td style="text-align:center">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+      <td style="text-align:left">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
         <br
         />2.&#x652F;&#x6301; Hybrid &#x6A21;&#x5F0F;&#xFF1B;
         <br />3.&#x4F18;&#x5316;&#x53EF;&#x89C6;&#x5316;&#x4F18;&#x5316;&#x529F;&#x80FD;&#xFF1B;
@@ -36,12 +36,12 @@
     <tr>
       <td style="text-align:center">2018/09/18</td>
       <td style="text-align:center">V4.1.0</td>
-      <td style="text-align:center">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#x3002;</td>
+      <td style="text-align:left">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#x3002;</td>
     </tr>
     <tr>
       <td style="text-align:center">2018/11/19</td>
       <td style="text-align:center">V4.1.1</td>
-      <td style="text-align:center">1.&#x5728;&#x5B8C;&#x5584;&#x65E5;&#x5FD7;&#x6253;&#x5370;;
+      <td style="text-align:left">1.&#x5728;&#x5B8C;&#x5584;&#x65E5;&#x5FD7;&#x6253;&#x5370;;
         <br />2. &#x589E;&#x52A0;&#x65F6;&#x533A;&#x5B57;&#x6BB5;$time_zone &#x7C7B;&#x578B;
         String;
         <br />3.appkey &#x6539;&#x53D8; /debug &#x7531; 1 &#x53D8;&#x4E3A; 0 &#x6216;
@@ -62,7 +62,7 @@
     <tr>
       <td style="text-align:center">2018/12/17</td>
       <td style="text-align:center">V4.1.2</td>
-      <td style="text-align:center">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+      <td style="text-align:left">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
         <br />2.&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
         <br
         />3.&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
@@ -71,19 +71,19 @@
     <tr>
       <td style="text-align:center">2019/03/04</td>
       <td style="text-align:center">V4.2.1</td>
-      <td style="text-align:center">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+      <td style="text-align:left">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
         <br
         />2.&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
     </tr>
     <tr>
       <td style="text-align:center">2019/03/13</td>
       <td style="text-align:center">v4.2.2</td>
-      <td style="text-align:center">1.&#x4F18;&#x5316;&#x591A;&#x7EBF;&#x7A0B;&#x95EE;&#x9898;</td>
+      <td style="text-align:left">1.&#x4F18;&#x5316;&#x591A;&#x7EBF;&#x7A0B;&#x95EE;&#x9898;</td>
     </tr>
     <tr>
       <td style="text-align:center">2019/05/24</td>
       <td style="text-align:center">v4.3.1</td>
-      <td style="text-align:center">
+      <td style="text-align:left">
         <p>1.&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
         <p>2.&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
         <p>3.&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
@@ -98,14 +98,14 @@
     <tr>
       <th style="text-align:center">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
       <th style="text-align:center">&#x7248;&#x672C;&#x53F7;</th>
-      <th style="text-align:center">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:center">2018/08/02</td>
       <td style="text-align:center">V4.0.5</td>
-      <td style="text-align:center">1. campaign_id &#x8C03;&#x6574;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;ACTIONTYPE
+      <td style="text-align:left">1. campaign_id &#x8C03;&#x6574;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;ACTIONTYPE
         &#x9ED8;&#x8BA4;&#x4E3A;&#x6570;&#x503C;&#x578B;;
         <br />2.&#x589E;&#x52A0;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#x4E0B;&#x6253;&#x5370;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x8BE6;&#x60C5;&#x4FE1;&#x606F;;
         <br
@@ -122,7 +122,7 @@
     <tr>
       <td style="text-align:center">2018/08/24</td>
       <td style="text-align:center">V4.0.6</td>
-      <td style="text-align:center">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+      <td style="text-align:left">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
         <br
         />2.&#x652F;&#x6301; Hybrid &#x6A21;&#x5F0F;&#xFF1B;
         <br />3.&#x4F18;&#x5316;&#x53EF;&#x89C6;&#x5316;&#x4F18;&#x5316;&#x529F;&#x80FD;&#xFF1B;
@@ -132,12 +132,12 @@
     <tr>
       <td style="text-align:center">2018/09/18</td>
       <td style="text-align:center">V4.1.0</td>
-      <td style="text-align:center">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#x3002;</td>
+      <td style="text-align:left">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#x3002;</td>
     </tr>
     <tr>
       <td style="text-align:center">2018/11/19</td>
       <td style="text-align:center">V4.1.1</td>
-      <td style="text-align:center">1.&#x5728;&#x5B8C;&#x5584;&#x65E5;&#x5FD7;&#x6253;&#x5370;;
+      <td style="text-align:left">1.&#x5728;&#x5B8C;&#x5584;&#x65E5;&#x5FD7;&#x6253;&#x5370;;
         <br />2.&#x589E;&#x52A0;&#x65F6;&#x533A;&#x5B57;&#x6BB5;$time_zone &#x7C7B;&#x578B;
         String;
         <br />3.appkey &#x6539;&#x53D8; /debug &#x7531; 1 &#x53D8;&#x4E3A; 0 &#x6216;
@@ -156,7 +156,7 @@
     <tr>
       <td style="text-align:center">2018/12/17</td>
       <td style="text-align:center">V4.1.2</td>
-      <td style="text-align:center">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+      <td style="text-align:left">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
         <br />2.&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
         <br
         />3.&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
@@ -165,14 +165,14 @@
     <tr>
       <td style="text-align:center">2019/02/15</td>
       <td style="text-align:center">V4.2.0</td>
-      <td style="text-align:center">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+      <td style="text-align:left">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
         <br
         />2.&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
     </tr>
     <tr>
       <td style="text-align:center">2019/05/24</td>
       <td style="text-align:center">v4.3.1</td>
-      <td style="text-align:center">
+      <td style="text-align:left">
         <p>1.&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
         <p>2.&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
         <p>3.&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
@@ -187,14 +187,14 @@
     <tr>
       <th style="text-align:center">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
       <th style="text-align:center">&#x7248;&#x672C;&#x53F7;</th>
-      <th style="text-align:center">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:center">2018/08/02</td>
       <td style="text-align:center">V4.0.5</td>
-      <td style="text-align:center">1.&#x4FEE;&#x6539; <code>$webstay</code> &#x65E5;&#x5FD7;&#x4E2D;,<code>$url</code> &#x53C2;&#x6570;&#x7684;&#x503C;&#x8D85;&#x8FC7;&#x957F;&#x5EA6;
+      <td style="text-align:left">1.&#x4FEE;&#x6539; <code>$webstay</code> &#x65E5;&#x5FD7;&#x4E2D;,<code>$url</code> &#x53C2;&#x6570;&#x7684;&#x503C;&#x8D85;&#x8FC7;&#x957F;&#x5EA6;
         255 &#x5B57;&#x7B26;&#x6570;&#x65F6;&#xFF0C;&#x5C06; <code>$url</code> &#x53C2;&#x6570;&#x629B;&#x5F03;&#x7684;
         BUG&#x3002;(20180803);
         <br />2.&#x4FEE;&#x6539; auto &#x53C2;&#x6570;&#x8BBE;&#x4E3A; false&#x65F6;
@@ -213,7 +213,7 @@
     <tr>
       <td style="text-align:center">2018/08/24</td>
       <td style="text-align:center">V4.0.6</td>
-      <td style="text-align:center">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+      <td style="text-align:left">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
         <br
         />2.&#x4F18;&#x5316; reset &#x65B9;&#x6CD5;&#x903B;&#x8F91;&#xFF1B;
         <br />3.&#x4F18;&#x5316;&#x53EF; JS SDK &#x542F;&#x52A8;&#x53D1;&#x5E03;&#x987A;&#x5E8F;&#xFF1B;
@@ -223,7 +223,7 @@
     <tr>
       <td style="text-align:center">2018/09/18</td>
       <td style="text-align:center">V4.1.0</td>
-      <td style="text-align:center">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#xFF1B;
+      <td style="text-align:left">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#xFF1B;
         <br
         />2.&#x589E;&#x52A0;&#x914D;&#x7F6E;&#x53C2;&#x6570;<code>auto</code>&#x63A7;&#x5236;&#x542F;&#x52A8;&#x4E8B;&#x4EF6;&#x4E0E;&#x9875;&#x9762;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x540C;&#x65F6;&#x4E0A;&#x62A5;&#xFF1B;
         <br
@@ -234,7 +234,7 @@
     <tr>
       <td style="text-align:center">2018/11/02</td>
       <td style="text-align:center">V4.1.1</td>
-      <td style="text-align:center">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E; <code>pageProperty</code> &#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x81EA;&#x52A8;&#x91C7;&#x96C6;&#x65F6;&#x53EF;&#x589E;&#x52A0;&#x9875;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1B;
+      <td style="text-align:left">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E; <code>pageProperty</code> &#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x81EA;&#x52A8;&#x91C7;&#x96C6;&#x65F6;&#x53EF;&#x589E;&#x52A0;&#x9875;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1B;
         <br
         />2.&#x4F18;&#x5316;&#x53EF;&#x89C6;&#x5316;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x65B9;&#x6CD5;&#xFF1B;
         <br
@@ -243,7 +243,7 @@
     <tr>
       <td style="text-align:center">2018/11/22</td>
       <td style="text-align:center">V4.1.2</td>
-      <td style="text-align:center">1.&#x589E;&#x52A0;<code>$web_crawler</code>&#x5B57;&#x6BB5;
+      <td style="text-align:left">1.&#x589E;&#x52A0;<code>$web_crawler</code>&#x5B57;&#x6BB5;
         <br />2.&#x4F18;&#x5316;&#x6253;&#x5370;Log
         <br />3.&#x589E;&#x52A0;<code>$time_zone</code>&#x5B57;&#x6BB5;
         <br />4.&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
@@ -251,7 +251,7 @@
     <tr>
       <td style="text-align:center">2018/12/17</td>
       <td style="text-align:center">V4.1.3</td>
-      <td style="text-align:center">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+      <td style="text-align:left">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
         <br />2.&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
         <br
         />3.&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
@@ -260,14 +260,14 @@
     <tr>
       <td style="text-align:center">2019/01/24</td>
       <td style="text-align:center">V4.2.0</td>
-      <td style="text-align:center">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+      <td style="text-align:left">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
         <br
         />2.&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
     </tr>
     <tr>
       <td style="text-align:center">2019/05/24</td>
       <td style="text-align:center">v4.3.1</td>
-      <td style="text-align:center">
+      <td style="text-align:left">
         <p>1.&#x63D0;&#x4F9B;&#x70ED;&#x56FE;&#x6A21;&#x5757;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.0&#x7248;&#x672C;&#xFF09;</p>
         <p>2.&#x4F18;&#x5316;Log&#x63D0;&#x4F9B;&#x529F;&#x80FD;</p>
         <p>3.&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;
@@ -284,14 +284,14 @@
     <tr>
       <th style="text-align:center">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
       <th style="text-align:center">&#x7248;&#x672C;&#x53F7;</th>
-      <th style="text-align:center">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:center">2018/08/02</td>
       <td style="text-align:center">V4.0.5</td>
-      <td style="text-align:center">1.&#x4FEE;&#x6539; auto &#x53C2;&#x6570;&#x8BBE;&#x4E3A; false &#x65F6;&#x62E6;&#x622A; <code>$startup</code> &#x7684;&#x4E0A;&#x4F20;&#x7684;BUG;
+      <td style="text-align:left">1.&#x4FEE;&#x6539; auto &#x53C2;&#x6570;&#x8BBE;&#x4E3A; false &#x65F6;&#x62E6;&#x622A; <code>$startup</code> &#x7684;&#x4E0A;&#x4F20;&#x7684;BUG;
         <br
         />2.&#x9996;&#x6B21;&#x53D1;&#x9001;&#x65B0;&#x7528;&#x6237;&#x7684;&#x9996;&#x6B21;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8BBE;&#x7F6E;&#x968F;
         is_frist_time &#x53C2;&#x6570;&#x4E3A; true &#x65F6;&#x53D1;&#x9001;;
@@ -306,14 +306,14 @@
     <tr>
       <td style="text-align:center">2018/08/23</td>
       <td style="text-align:center">V4.0.6</td>
-      <td style="text-align:center">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
+      <td style="text-align:left">1.log &#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;&#xFF1B;
         <br
         />2.&#x4F18;&#x5316; reset &#x65B9;&#x6CD5;&#x903B;&#x8F91;&#x3002;</td>
     </tr>
     <tr>
       <td style="text-align:center">2018/09/18</td>
       <td style="text-align:center">V4.1.0</td>
-      <td style="text-align:center">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#xFF1B;
+      <td style="text-align:left">1.&#x5728;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x4E2D;&#x65B0;&#x589E;<code>encryptType</code>&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x5BF9;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x53EF;&#x9009;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x529F;&#x80FD;&#xFF1B;
         <br
         />2.&#x589E;&#x52A0;&#x914D;&#x7F6E;&#x53C2;&#x6570;<code>auto</code>&#x63A7;&#x5236;&#x542F;&#x52A8;&#x4E8B;&#x4EF6;&#x4E0E;&#x9875;&#x9762;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x540C;&#x65F6;&#x4E0A;&#x62A5;&#xFF1B;
         <br
@@ -322,7 +322,7 @@
     <tr>
       <td style="text-align:center">2018/12/13</td>
       <td style="text-align:center">V4.1.2</td>
-      <td style="text-align:center">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
+      <td style="text-align:left">1.&#x4F18;&#x5316;<code>session_id</code>&#x76F8;&#x5173;
         <br />2.&#x5728;&#x9996;&#x6B21;&#x542F;&#x52A8;&#x4E2D;&#x589E;&#x52A0;<code>$first_visit_language</code>&#x5B57;&#x6BB5;
         <br
         />3.&#x589E;&#x52A0;<code>$language</code>&#x5B57;&#x6BB5;
@@ -331,14 +331,14 @@
     <tr>
       <td style="text-align:center">2019/02/19</td>
       <td style="text-align:center">V4.2.0</td>
-      <td style="text-align:center">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
+      <td style="text-align:left">1.&#x76F8;&#x5173;&#x529F;&#x80FD;&#x5C01;&#x88C5;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;
         <br
         />2.&#x4F18;&#x5316;SDK&#x6027;&#x80FD;</td>
     </tr>
     <tr>
       <td style="text-align:center">2019/05/25</td>
       <td style="text-align:center">V4.2.2</td>
-      <td style="text-align:center">
+      <td style="text-align:left">
         <p>1.&#x589E;&#x52A0;&#x83B7;&#x53D6;&#x8BBE;&#x5907;ID&#x63A5;&#x53E3;</p>
         <p>2.&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
@@ -347,7 +347,7 @@
 </table>## Java SDK
 
 | 更新日期 | 版本号 | 更新内容 |
-| :---: | :---: | :---: |
+| :---: | :---: | :--- |
 | 2018/09/18 | V4.0.7 | 1.代码结构优化； 2.完善异常处理； 3.上报地址格式校验； 4.优化属性值为NULL的校验。 |
 
 ## PHP SDK
@@ -357,19 +357,19 @@
     <tr>
       <th style="text-align:center">&#x66F4;&#x65B0;&#x65E5;&#x671F;</th>
       <th style="text-align:center">&#x7248;&#x672C;&#x53F7;</th>
-      <th style="text-align:center">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
+      <th style="text-align:left">&#x66F4;&#x65B0;&#x5185;&#x5BB9;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:center">2018/12/21</td>
       <td style="text-align:center">V4.0.1</td>
-      <td style="text-align:center">1.&#x5B8C;&#x6210;PHP SDK</td>
+      <td style="text-align:left">1.&#x5B8C;&#x6210;PHP SDK</td>
     </tr>
     <tr>
       <td style="text-align:center">2019/5/12</td>
       <td style="text-align:center">V4.0.9</td>
-      <td style="text-align:center">
+      <td style="text-align:left">
         <p>1.&#x4FEE;&#x590D;&#x5728;&#x90E8;&#x5206;&#x573A;&#x666F;&#x4E0B;&#x5F02;&#x5E38;</p>
         <p>2.&#x4F18;&#x5316;&#x76F8;&#x5173;&#x67B6;&#x6784;</p>
       </td>

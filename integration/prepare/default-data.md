@@ -15,6 +15,8 @@
 | $push\_click | 点击推送消息 | 设备点击了推送消息时触发 | N | N | - | - |
 | $push\_process\_success | 成功处理push消息 | 成功处理push消息 | N | N | - | - |
 | $webstay | 视区停留 | 停留在可视区域 | - | - | N | - |
+| $app\_click | App点击事件 | App热图点击事件 | N | N | - | - |
+| $web\_click | Web点击事件 | Web热图点击事件 | - | - | N | - |
 
 其中 $webstay 是用于记录用户停留在可视化区域的事件，目的是分析可视化区域，不会作为普通的事件去分析，所以不会出现在事件分析下拉框中
 
@@ -76,6 +78,7 @@
 | $debug | Debug模式 | 整数型 | debug模式，profile系列中不携带   0：非debug 1：debug，不入库 2：debug，入库 | Y | Y | Y | Y |
 | $language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 | $session\_id | 会话标识 | 字符串 | 515950b8f1a6221c | Y | Y | Y | Y |
+| $is\_time\_calibrated | 是否与服务进行时间校准 | 布尔值 |  | Y | Y | Y | Y |
 
 注：
 
@@ -187,6 +190,24 @@
 | $lib\_version | SDK版本 | 字符串 | SDK版本 如：11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
+
+**$app\_click、$web\_click**
+
+| 属性ID | 属性名称 | 属性值 数据类型 | 属性说明 | Android自动采集 | iOS自动采集 | JS自动采集 | 小程序自动采集 |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| $page\_width | 页面宽度 | 浮点型 | 热图页面宽度 | YYYY | Y | - | - |
+| $page\_height | 页面高度 | 浮点型 | 热图页面高度 | Y | Y | - | - |
+| $click\_x | 点击X坐标 | 浮点型 | 热图点击X坐标 | Y | Y | - | - |
+| $click\_y | 点击Y坐标 | 浮点型 | 热图点击Y坐标 | Y | Y | - | - |
+| $url | 页面URL | 字符串 | 点击热图时页面URL | Y | Y | - | - |
+| $element\_x | 元素X坐标 | 浮点型 | 点击元素X坐标 | Y | Y | - | - |
+| $element\_y | 元素Y坐标 | 浮点型 | 点击元素Y坐标 | Y | Y | - | - |
+| $element\_path | 元素路径 | 字符串 | 热图元素路径 | Y | Y | - | - |
+| $element\_title | 元素title | 字符串 | 热图元素元素title | Y | Y | - | - |
+| $element\_name | 元素名称 | 字符串 | 热图元素名称 | Y | Y | - | - |
+| $element\_type | 元素类型 | 字符串 | 热图元素类型 | Y | Y | - | - |
+| $element\_content | 元素内容 | 字符串 | 热图袁术的内容 | Y | Y | - | - |
+| $element\_clickable | 是否可以点击元素 | int类型 | 是否可以点击元素 | Y | Y | - | - |
 
 ## 预置用户属性
 
