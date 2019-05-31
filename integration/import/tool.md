@@ -1,4 +1,4 @@
-# 数据批量导入
+# 工具导入
 
 使用前一定请先阅读[数据格式](../prepare/data-type.md)和[数据模型](../prepare/data-model.md)的文档
 
