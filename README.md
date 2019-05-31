@@ -28,5 +28,9 @@
 * 易观第三方数据补充，全景用户画像
 * 支持私有化部署，开放的 PaaS 架构，支持二次开发
 
+## 产品功能
+
+![](.gitbook/assets/assets.png)
+
 {% page-ref page="quick-start-guide/" %}
 

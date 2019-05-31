@@ -6,11 +6,9 @@
 
 {% page-ref page="creat-project.md" %}
 
+{% page-ref page="step-3-kai-qi-nin-de-fen-xi-lv-cheng/" %}
+
 {% page-ref page="tracking-plan.md" %}
-
-{% page-ref page="instrumentation.md" %}
-
-{% page-ref page="release.md" %}
 
 {% page-ref page="getting-started.md" %}
 
