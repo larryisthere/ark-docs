@@ -58,48 +58,408 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 ### 1. Event 事件通用属性
 
-| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $platform | 平台 | 字符串 | 应用平台，枚举取值：Android、iOS、Web/H5、小程序 `` | Y | Y | Y | Y |
-| $app\_version | 应用版本 | 字符串 | 应用版本，e.g. V1.0 | Y | Y | - | - |
-| $device\_type | 设备类型 | 字符串 | 设备类型，e.g.  PC、移动设备 | N | N | N | N |
-| $manufacturer | 设备制造商 | 字符串 | 制造厂商， e.g. 小米 | Y | Y | - | - |
-| $brand | 设备品牌 | 字符串 | 设备品牌，e.g. 华为荣耀 | Y | Y | Y | Y |
-| $model | 设备型号 | 字符串 | 设备型号，e.g. iPhone8、小米4 | Y | Y | Y | Y |
-| $os | 操作系统 | 字符串 | 操作系统，e.g.Window、MacOS | Y | Y | Y | Y |
-| $os\_version | 操作系统版本 | 字符串 | 操作系统版本，e.g.Windows 10 | Y | Y | Y | Y |
-| $browser | 浏览器 | 字符串 | 浏览器名称，e.g. Chrome | - | - | Y | Y |
-| $browser\_version | 浏览器版本 | 字符串 | 浏览器版本，e.g. Chrome 62.23.23 | - | - | Y | Y |
-| $network | 网络类型 | 字符串 | 网络类型，e.g. WIFI、2G、3G、4G | Y | Y | - | Y |
-| $carrier\_name | 运营商 | 字符串 | 接入运营商名称，e.g. 中国联通 | Y | Y | - | - |
-| $screen\_width | 屏幕宽度 | 整数型 | 屏幕宽度/屏幕分辨率，e.g. 1920 | Y | Y | Y | Y |
-| $screen\_height | 屏幕高度 | 整数型 | 屏幕高度/屏幕分辨率，e.g. 768 | Y | Y | Y | Y |
-| $is\_login | 是否是注册用户 | 布尔 | 是否是注册用户 | Y | Y | Y | Y |
-| $ip | IP | 字符串 | IP地址 | N | N | N | N |
-| $country | 国家 | 字符串 | 事件发生时所在国家，e.g. 中国、美国 | N | N | N | N |
-| $province | 省份 | 字符串 | 事件发生时所在省份，e.g.   北京、上海、福建 | N | N | N | N |
-| $city | 城市 | 字符串 | 事件发生时所在城市，e.g. 北京、厦门 | N | N | N | N |
-| $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | Y | Y | Y | Y |
-| $utm\_campaign | 活动名称\广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | Y | Y | Y | Y |
-| $utm\_medium | 活动媒介\广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | Y | Y | Y | Y |
-| $utm\_source | 活动来源\广告来源） | 字符串 | 推广来源，e.g. 今日头条 | Y | Y | Y | Y |
-| $utm\_content | 活动内容\广告内容） | 字符串 | 广告内容，e.g. 优惠信息 | Y | Y | Y | Y |
-| $utm\_term | 活动关键字\广告关键字） | 字符串 | 广告关键字，e.g. 用户画像 | Y | Y | Y | Y |
-| $is\_first\_day | 是否安装后首日访问 | 布尔 | 是否安装后首日访问 | Y | Y | Y | Y |
-| $channel | 下载渠道 | 字符串 | 下载渠道，事件中携带 | Y | Y | - | - |
-| $lib | SDK类型 | 字符串 | SDK类型，例e.g.   python、iOS等 | Y | Y | Y | Y |
-| $lib\_version | SDK版本 | 字符串 | SDK版本 e.g. ：11.2.5 | Y | Y | Y | Y |
-| $time\_zone | 用户时区 | 字符串 | 用户时区，GMT+08:00 | Y | Y | Y | Y |
-| $debug | Debug模式 | 整数型 | debug模式，profile系列中不携带   0：非debug 1：debug，不入库 2：debug，入库 | Y | Y | Y | Y |
-| $language | 语言 | 字符串 | 表示所使用的系统语言，e.g. zh-cn | Y | Y | Y | Y |
-| $session\_id | SessionID | 字符串 | 表示会话ID，e.g. 515950b8f1a6221c | Y | Y | Y | Y |
-| $is\_time\_calibrated | 是否与服务进行时间校准 | 布尔 | true、false | Y | Y | Y | Y |
-| $user\_agent | UA | 字符串 |  | - | - | Y | - |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x5C5E;&#x6027;ID</th>
+      <th style="text-align:left">&#x5C5E;&#x6027;&#x663E;&#x793A;&#x540D;&#x79F0;</th>
+      <th style="text-align:left">&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x5C5E;&#x6027;&#x8BF4;&#x660E;</th>
+      <th style="text-align:center">Android</th>
+      <th style="text-align:center">iOS</th>
+      <th style="text-align:center">JS</th>
+      <th style="text-align:center">&#x5C0F;&#x7A0B;&#x5E8F;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">$platform</td>
+      <td style="text-align:left">&#x5E73;&#x53F0;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x5E94;&#x7528;&#x5E73;&#x53F0;&#xFF0C;&#x679A;&#x4E3E;&#x53D6;&#x503C;&#xFF1A;Android&#x3001;iOS&#x3001;Web/H5&#x3001;&#x5C0F;&#x7A0B;&#x5E8F;<code> </code>
+      </td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$app_version</td>
+      <td style="text-align:left">&#x5E94;&#x7528;&#x7248;&#x672C;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x5E94;&#x7528;&#x7248;&#x672C;&#xFF0C;e.g. V1.0</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$device_type</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x7C7B;&#x578B;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#xFF0C;e.g. PC&#x3001;&#x79FB;&#x52A8;&#x8BBE;&#x5907;</td>
+      <td
+      style="text-align:center">N</td>
+        <td style="text-align:center">N</td>
+        <td style="text-align:center">N</td>
+        <td style="text-align:center">N</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$manufacturer</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x5236;&#x9020;&#x5546;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x5236;&#x9020;&#x5382;&#x5546;&#xFF0C; e.g. &#x5C0F;&#x7C73;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">-</td>
+        <td style="text-align:center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$brand</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x54C1;&#x724C;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x54C1;&#x724C;&#xFF0C;e.g. &#x534E;&#x4E3A;&#x8363;&#x8000;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$model</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x578B;&#x53F7;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x578B;&#x53F7;&#xFF0C;e.g. iPhone8&#x3001;&#x5C0F;&#x7C73;4</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$os</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;e.g.Window&#x3001;MacOS</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$os_version</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#xFF0C;e.g.Windows 10</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$browser</td>
+      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x540D;&#x79F0;&#xFF0C;e.g. Chrome</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$browser_version</td>
+      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#xFF0C;e.g. Chrome 62.23.23</td>
+      <td
+      style="text-align:center">-</td>
+        <td style="text-align:center">-</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$network</td>
+      <td style="text-align:left">&#x7F51;&#x7EDC;&#x7C7B;&#x578B;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x7F51;&#x7EDC;&#x7C7B;&#x578B;&#xFF0C;e.g. WIFI&#x3001;2G&#x3001;3G&#x3001;4G</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">-</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$carrier_name</td>
+      <td style="text-align:left">&#x8FD0;&#x8425;&#x5546;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x63A5;&#x5165;&#x8FD0;&#x8425;&#x5546;&#x540D;&#x79F0;&#xFF0C;e.g. &#x4E2D;&#x56FD;&#x8054;&#x901A;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">-</td>
+        <td style="text-align:center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$screen_width</td>
+      <td style="text-align:left">&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;</td>
+      <td style="text-align:left">&#x6574;&#x6570;&#x578B;</td>
+      <td style="text-align:left">&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;/&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#xFF0C;e.g.
+        1920</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$screen_height</td>
+      <td style="text-align:left">&#x5C4F;&#x5E55;&#x9AD8;&#x5EA6;</td>
+      <td style="text-align:left">&#x6574;&#x6570;&#x578B;</td>
+      <td style="text-align:left">&#x5C4F;&#x5E55;&#x9AD8;&#x5EA6;/&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#xFF0C;e.g.
+        768</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$is_login</td>
+      <td style="text-align:left">&#x662F;&#x5426;&#x662F;&#x6CE8;&#x518C;&#x7528;&#x6237;</td>
+      <td style="text-align:left">&#x5E03;&#x5C14;</td>
+      <td style="text-align:left">&#x662F;&#x5426;&#x662F;&#x6CE8;&#x518C;&#x7528;&#x6237;</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$ip</td>
+      <td style="text-align:left">IP</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">IP&#x5730;&#x5740;</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$country</td>
+      <td style="text-align:left">&#x56FD;&#x5BB6;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">
+        <p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x6240;&#x5728;&#x56FD;&#x5BB6;&#xFF0C;</p>
+        <p>e.g. &#x4E2D;&#x56FD;&#x3001;&#x7F8E;&#x56FD;</p>
+      </td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$province</td>
+      <td style="text-align:left">&#x7701;&#x4EFD;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">
+        <p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x6240;&#x5728;&#x7701;&#x4EFD;&#xFF0C;</p>
+        <p>e.g. &#x5317;&#x4EAC;&#x3001;&#x4E0A;&#x6D77;&#x3001;&#x798F;&#x5EFA;</p>
+      </td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$city</td>
+      <td style="text-align:left">&#x57CE;&#x5E02;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">
+        <p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x6240;&#x5728;&#x57CE;&#x5E02;&#xFF0C;</p>
+        <p>e.g. &#x5317;&#x4EAC;&#x3001;&#x53A6;&#x95E8;</p>
+      </td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$utm_campaign_id</td>
+      <td style="text-align:left">&#x6D3B;&#x52A8;ID</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">
+        <p>&#x6839;&#x636E;&#x6DFB;&#x52A0;&#x7684;&#x5185;&#x5BB9;&#x81EA;&#x52A8;&#x751F;&#x6210;&#xFF0C;</p>
+        <p>&#x6807;&#x8BC6;&#x4E00;&#x6B21;&#x6D3B;&#x52A8;</p>
+      </td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$utm_campaign</td>
+      <td style="text-align:left">&#x6D3B;&#x52A8;/&#x5E7F;&#x544A;&#x540D;&#x79F0;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x7279;&#x5B9A;&#x7684;&#x63A8;&#x5E7F;&#x6D3B;&#x52A8;&#xFF0C;e.g. &#x53CC;11&#x63A8;&#x5E7F;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$utm_medium</td>
+      <td style="text-align:left">&#x6D3B;&#x52A8;/&#x5E7F;&#x544A;&#x5A92;&#x4ECB;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x63A8;&#x5E7F;&#x7C7B;&#x578B;&#xFF0C;e.g. SEM&#xFF0C;cpc</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$utm_source</td>
+      <td style="text-align:left">&#x6D3B;&#x52A8;/&#x5E7F;&#x544A;&#x6765;&#x6E90;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x63A8;&#x5E7F;&#x6765;&#x6E90;&#xFF0C;e.g. &#x4ECA;&#x65E5;&#x5934;&#x6761;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$utm_content</td>
+      <td style="text-align:left">&#x6D3B;&#x52A8;/&#x5E7F;&#x544A;&#x5185;&#x5BB9;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x5E7F;&#x544A;&#x5185;&#x5BB9;&#xFF0C;e.g. &#x4F18;&#x60E0;&#x4FE1;&#x606F;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$utm_term</td>
+      <td style="text-align:left">&#x6D3B;&#x52A8;/&#x5E7F;&#x544A;&#x5173;&#x952E;&#x5B57;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x5E7F;&#x544A;&#x5173;&#x952E;&#x5B57;&#xFF0C;e.g. &#x7528;&#x6237;&#x753B;&#x50CF;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$is_first_day</td>
+      <td style="text-align:left">&#x662F;&#x5426;&#x5B89;&#x88C5;&#x540E;&#x9996;&#x65E5;&#x8BBF;&#x95EE;</td>
+      <td
+      style="text-align:left">&#x5E03;&#x5C14;</td>
+        <td style="text-align:left">&#x662F;&#x5426;&#x5B89;&#x88C5;&#x540E;&#x9996;&#x65E5;&#x8BBF;&#x95EE;</td>
+        <td
+        style="text-align:center">Y</td>
+          <td style="text-align:center">Y</td>
+          <td style="text-align:center">Y</td>
+          <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$channel</td>
+      <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;&#xFF0C;&#x4E8B;&#x4EF6;&#x4E2D;&#x643A;&#x5E26;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">-</td>
+        <td style="text-align:center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$lib</td>
+      <td style="text-align:left">SDK&#x7C7B;&#x578B;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">SDK&#x7C7B;&#x578B;&#xFF0C;e.g. python&#x3001;iOS&#x7B49;</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$lib_version</td>
+      <td style="text-align:left">SDK&#x7248;&#x672C;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">SDK&#x7248;&#x672C;&#xFF0C; e.g. &#xFF1A;11.2.5</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$time_zone</td>
+      <td style="text-align:left">&#x7528;&#x6237;&#x65F6;&#x533A;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x7528;&#x6237;&#x65F6;&#x533A;&#xFF0C;e.g.GMT+08:00</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$language</td>
+      <td style="text-align:left">&#x8BED;&#x8A00;</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x7CFB;&#x7EDF;&#x8BED;&#x8A00;&#xFF0C;e.g. zh-cn</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$debug</td>
+      <td style="text-align:left">Debug&#x6A21;&#x5F0F;</td>
+      <td style="text-align:left">&#x6574;&#x6570;&#x578B;</td>
+      <td style="text-align:left">&#x6807;&#x8BC6;&#x6570;&#x636E;&#x5904;&#x7406;&#x65B9;&#x5F0F;</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$session_id</td>
+      <td style="text-align:left">SessionID</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x4F1A;&#x8BDD;ID&#xFF0C;e.g. 515950b8f1a6221c</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$is_time_calibrated</td>
+      <td style="text-align:left">&#x662F;&#x5426;&#x4E0E;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x65F6;&#x95F4;&#x6821;&#x51C6;</td>
+      <td
+      style="text-align:left">&#x5E03;&#x5C14;</td>
+        <td style="text-align:left">true&#x3001;false</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$user_agent</td>
+      <td style="text-align:left">UA</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">UA</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">-</td>
+    </tr>
+  </tbody>
+</table>{% hint style="info" %}
+**非自动采集的属性，会根据相应字段自动解析**
 
-{% hint style="info" %}
-其中不自动采集的属性我们也会自动解析出来的
-
-**$IP ：**通过服务端自动解析获取
+**$ip ：**通过服务端自动解析获取
 
 **$county：**通过 IP 解析
 
@@ -107,7 +467,21 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 **$city ：**通过 IP 解析
 
-**$device\_type：**通过 $user\_agent 解析
+**$device\_type：**通过 UA 解析
+{% endhint %}
+
+{% hint style="info" %}
+**部分自动采集的属性不会作为独立的属性用于分析**
+
+**$debug：**用于标识是否入库
+
+* 0：表示关闭 Debug 模式
+* 1：表示打开 Debug 模式，但该模式下发送的数据仅用于调试，不计入平台数据统计 
+* 2：表示打开 Debug 模式，该模式下发送的数据可计入平台数据统计
+
+**$session\_id：**标识一次会话
+
+**$user\_agent：**UA，用于解析设备类型、浏览器、浏览器版本、操作系统、操作系统版本
 {% endhint %}
 
 ### 2. 部分 Event 事件自身属性
@@ -129,13 +503,16 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $url | 页面URL | 字符串 | 页面URL/页面完整路径 | Y | Y | Y | Y |
+| $url | 页面URL\(含参\) | 字符串 | 页面完整路径 | Y | Y | Y | Y |
+| $url\_domain | 页面URL  | 字符串 | 去参的页面URL | N | N | N | N |
 | $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | Y |
 | $referrer | 页面来源 | 字符串 | 页面来源 | - | - | Y | Y |
 | $referrer\_domain | 页面来源域名 | 字符串 | 页面来源域名 | - | - | Y | - |
 | $traffic\_source\_type | 流量来源类型 | 字符串 | 流量来源类型，数据处理 | - | - | N | N |
 | $search\_engine | 搜索引擎 | 字符串 | 标识搜索引擎来源 | - | - | N | N |
-| $search\_keyword | 搜索关键词 | 字符串 | 标识搜索关键词 | - | - | N | N |
+| $search\_keyword | 搜索关键词 | 字符串 | 标识搜索词来源 | - | - | N | N |
+| $social\_media | 社交媒体 | 字符串 | 标识社交媒体来源 | - | - | N | N |
+| $social\_share\_from | 社交媒体分享来源 | 字符串 | 标识微信来源 | - | - | N | N |
 | $page\_name | 自定义页面名称 | 字符串 | 用户自定义页面名称 | - | - | N | N |
 
 **$push\_receiver\_success**
@@ -145,11 +522,11 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $action\_type | 操作类型 | 整数型 | 点击消息通知后的操作类型 | N | N | - | - |
 | $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
-| $utm\_campaign | 活动名称\广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
-| $utm\_medium | 活动媒介\广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
-| $utm\_source | 活动来源\广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
-| $utm\_content | 活动内容广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
-| $utm\_term | 活动关键字\广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
+| $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
+| $utm\_medium | 活动/广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
+| $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
+| $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
+| $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
 
 **$push\_click**
 
@@ -158,11 +535,11 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $action\_type | 操作类型 | 整数型 | 点击消息通知后的操作类型 | N | N | - | - |
 | $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
-| $utm\_campaign | 活动名称\广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
-| $utm\_medium | 活动媒介\广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
-| $utm\_source | 活动来源\广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
-| $utm\_content | 活动内容广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
-| $utm\_term | 活动关键字\广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
+| $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
+| $utm\_medium | 活动/广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
+| $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
+| $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
+| $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
 
 **$push\_process\_success**
 
@@ -171,15 +548,15 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $action\_type | 操作类型 | 整数型 | 点击消息通知后的操作类型 | N | N | - | - |
 | $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
-| $utm\_campaign | 活动名称\广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
-| $utm\_medium | 活动媒介\广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
-| $utm\_source | 活动来源\广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
-| $utm\_content | 活动内容广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
-| $utm\_term | 活动关键字\广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
+| $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
+| $utm\_medium | 活动/广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
+| $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
+| $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
+| $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
 
 **$webstay**
 
-| 属性ID | 属性显示名称 | 属性值 数据类型 | 属性说明 | Android自动采集 | iOS自动采集 | JS自动采集 | 小程序自动采集 |
+| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $url | 页面URL | 字符串 | 页面URL/页面完整路径 | - | - | N | - |
 | $title | 页面标题 | 字符串 | 页面标题 | - | - | N | - |
@@ -189,15 +566,32 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $viewport\_height | 视区高度 | 数值 | 视区高度 | - | - | N | - |
 | $event\_duration | 视区停留时间 | 数值 | 视区停留时间 | - | - | N | - |
 
+**$app\_click、$web\_click**
+
+| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| $page\_width | 页面宽度 | 浮点型 | 热图页面宽度 | Y | Y | Y |  |
+| $page\_height | 页面高度 | 浮点型 | 热图页面高度 | Y | Y | Y | - |
+| $click\_x | 点击X坐标 | 浮点型 | 热图点击X坐标 | Y | Y | Y | - |
+| $click\_y | 点击Y坐标 | 浮点型 | 热图点击Y坐标 | Y | Y | Y | - |
+| $url | 页面URL | 字符串 | 点击热图时页面URL | Y | Y | Y | - |
+| $element\_x | 元素X坐标 | 浮点型 | 点击元素X坐标 | Y | Y | Y | - |
+| $element\_y | 元素Y坐标 | 浮点型 | 点击元素Y坐标 | Y | Y | Y | - |
+| $element\_path | 元素路径 | 字符串 | 热图元素路径 | Y | Y | Y | - |
+| $element\_name | 元素名称 | 字符串 | 热图元素名称 | Y | Y | Y | - |
+| $element\_type | 元素类型 | 字符串 | 热图元素类型 | Y | Y | Y | - |
+| $element\_content | 元素内容 | 字符串 | 热图袁术的内容 | Y | Y | Y | - |
+| $element\_clickable | 是否可以点击元素 | 整数型 | 是否可以点击元素 | Y | Y | Y | - |
+
 ### 3. Profile 系列事件属性
 
 **$alias**
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $lib | 平台 | 字符串 | SDK类型，例如python、iOS等 | Y | Y | Y | Y |
+| $lib | 平台 | 字符串 | SDK类型，e.g. python、iOS等 | Y | Y | Y | Y |
 | $is\_login | 是否登录 | 布尔 | true/false | Y | Y | Y | Y |
-| $lib\_version | SDK版本 | 字符串 | SDK版本 如：11.2.5 | Y | Y | Y | Y |
+| $lib\_version | SDK版本 | 字符串 | SDK版本，e.g.11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
 | $original\_id | 设备id | 字符串 | 上一个id | Y | Y | Y | Y |
@@ -211,24 +605,6 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $lib\_version | SDK版本 | 字符串 | SDK版本 如：11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
-
-**$app\_click、$web\_click**
-
-| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $page\_width | 页面宽度 | 浮点型 | 热图页面宽度 | Y | Y | - | - |
-| $page\_height | 页面高度 | 浮点型 | 热图页面高度 | Y | Y | - | - |
-| $click\_x | 点击X坐标 | 浮点型 | 热图点击X坐标 | Y | Y | - | - |
-| $click\_y | 点击Y坐标 | 浮点型 | 热图点击Y坐标 | Y | Y | - | - |
-| $url | 页面URL | 字符串 | 点击热图时页面URL | Y | Y | - | - |
-| $element\_x | 元素X坐标 | 浮点型 | 点击元素X坐标 | Y | Y | - | - |
-| $element\_y | 元素Y坐标 | 浮点型 | 点击元素Y坐标 | Y | Y | - | - |
-| $element\_path | 元素路径 | 字符串 | 热图元素路径 | Y | Y | - | - |
-| $element\_title | 元素title | 字符串 | 热图元素元素title | Y | Y | - | - |
-| $element\_name | 元素名称 | 字符串 | 热图元素名称 | Y | Y | - | - |
-| $element\_type | 元素类型 | 字符串 | 热图元素类型 | Y | Y | - | - |
-| $element\_content | 元素内容 | 字符串 | 热图袁术的内容 | Y | Y | - | - |
-| $element\_clickable | 是否可以点击元素 | int类型 | 是否可以点击元素 | Y | Y | - | - |
 
 ## 预置用户属性
 
@@ -256,7 +632,5 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $signup\_time | 注册时间 | 日期时间 | 注册时间 | N | N | N | N |
 | $first\_visit\_time | 首次访问时间 | 日期时间 | 首次访问时间 | Y | Y | Y | Y |
 | $time\_zone | 用户时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
-| $debug | Debug模式 | 整数型 | debug模式，profile系列中不携带   0：非debug 1：debug，不入库 2：debug，入库 | Y | Y | Y | Y |
 | $language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
-| $session\_id | 会话标识 | 字符串 | 515950b8f1a6221c | Y | Y | Y | Y |
 
