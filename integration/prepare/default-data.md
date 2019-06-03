@@ -490,8 +490,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $is\_first\_time | 是否安装后首次访问 | 布尔 | 是否安装后首次访问 | Y | Y | Y | N |
-| $is\_from\_background | 是否从后台唤醒 | 布尔 | 是否从后台唤醒恢复 | Y | Y | N | N |
+| $is\_first\_time | 是否安装后首次访问 | 布尔 | 是否安装后首次访问 | Y | Y | Y | Y |
+| $is\_from\_background | 是否从后台唤醒 | 布尔 | 是否从后台唤醒恢复 | Y | Y | - | - |
 
 #### **$end**
 
@@ -504,16 +504,25 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $url | 页面URL\(含参\) | 字符串 | 页面完整路径 | Y | Y | Y | Y |
-| $url\_domain | 页面URL  | 字符串 | 去参的页面URL | N | N | N | N |
-| $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | Y |
+| $url\_domain | 页面URL  | 字符串 | 去参的页面URL | - | - | N | - |
+| $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | - |
 | $referrer | 页面来源 | 字符串 | 页面来源 | - | - | Y | Y |
 | $referrer\_domain | 页面来源域名 | 字符串 | 页面来源域名 | - | - | Y | - |
-| $traffic\_source\_type | 流量来源类型 | 字符串 | 流量来源类型，数据处理 | - | - | N | N |
-| $search\_engine | 搜索引擎 | 字符串 | 标识搜索引擎来源 | - | - | N | N |
-| $search\_keyword | 搜索关键词 | 字符串 | 标识搜索词来源 | - | - | N | N |
-| $social\_media | 社交媒体 | 字符串 | 标识社交媒体来源 | - | - | N | N |
-| $social\_share\_from | 社交媒体分享来源 | 字符串 | 标识微信来源 | - | - | N | N |
+| $traffic\_source\_type | 流量来源类型 | 字符串 | 流量来源类型，数据处理 | - | - | N | - |
+| $search\_engine | 搜索引擎 | 字符串 | 标识搜索引擎来源 | - | - | N | - |
+| $search\_keyword | 搜索关键词 | 字符串 | 标识搜索词来源 | - | - | N | - |
+| $social\_media | 社交媒体 | 字符串 | 标识社交媒体来源 | - | - | N | - |
+| $social\_share\_from | 社交媒体分享来源 | 字符串 | 标识微信来源，e.g. 朋友圈、单聊 | - | - | N | - |
+| $scene | 场景值 | 字符串 | 标识小程序的场景值，e.g 顶部搜索框的搜索结果页 | - | - | - | N |
+| $scene\_type | 场景值类型 | 字符串 | 标识小程序场景值类型 | - | - | - | N |
 | $page\_name | 自定义页面名称 | 字符串 | 用户自定义页面名称 | - | - | N | N |
+| $startup\_time | 启动时间 | 日期 | yyyy-MM-dd hh:mm:ss.SSS | - | - | Y | Y |
+
+{% hint style="info" %}
+**其中 $startup\_time  仅用于数据校准，不会出现在分析模型中**
+
+**$url\_domain, $traffic\_source\_type, $search\_engine 等非自动采集的属性，系统会根据url 和 referer 自动解析**
+{% endhint %}
 
 **$push\_receiver\_success**
 
@@ -610,7 +619,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| distinct\_id | 唯一ID | 字符串 | - | - | - | - | - |
+| distinct\_id | 唯一ID | 字符串 | 服务端自动生成 | N | N | N | N |
 | xwho | 用户ID | 字符串 |  | Y | Y | Y | Y |
 | xwhen | 用户属性更新时间 | 日期时间 |  | Y | Y | Y | Y |
 | $idfv | IDFV | 字符串 | IDFV | - | Y | - | - |

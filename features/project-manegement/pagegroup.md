@@ -40,7 +40,7 @@ description: 该功能处于内测阶段，即将在 4.3.0 版本发布
 
 页面组的修改、复制、删除
 
-![](../../.gitbook/assets/image%20%2838%29.png)
+![](../../.gitbook/assets/image%20%2839%29.png)
 
 ## **附 正则表达式常用语法**
 

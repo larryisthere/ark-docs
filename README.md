@@ -1,4 +1,4 @@
-# 产品介绍
+# 产品简介
 
 易观方舟是一款精细化运营分析产品。
 
@@ -30,7 +30,7 @@
 
 ## 产品功能
 
-![](.gitbook/assets/assets.png)
+![](.gitbook/assets/image%20%2843%29.png)
 
 {% page-ref page="quick-start-guide/" %}
 

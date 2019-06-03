@@ -6,29 +6,27 @@
 
 **客户端SDK**
 
-[Android SDK](android/)
+{% page-ref page="android/" %}
 
-[iOS SDK](ios/)
+{% page-ref page="ios/" %}
 
-[JS SDK](js.md)
+{% page-ref page="js.md" %}
 
-[小程序 SDK](wx.md)
-
-[Hybrid Android SDK](android/hybrid-android.md)
-
-[Hybrid iOS SDK](ios/hybrid-ios.md)
+{% page-ref page="wx.md" %}
 
 **服务端SDK**
 
-[Java SDK](java.md)
+{% page-ref page="java.md" %}
 
-[PHP SDK](php.md)
+{% page-ref page="python.md" %}
 
-[Python SDK](python.md)
+{% page-ref page="php.md" %}
 
-**工具导入**
+**数据导入**
 
-[历史数据导入](../import/tool.md)
+{% page-ref page="../import/tool.md" %}
+
+{% page-ref page="../import/restful-api.md" %}
 
 ## SDK 相关常见问题
 
@@ -49,6 +47,4 @@
 [Q8. SDK 是否需要混淆？](../../faq/sdk.md)
 
 [更多问题&gt;](../../faq/sdk.md)
-
-![](../../.gitbook/assets/201901151711159657.jpg)
 

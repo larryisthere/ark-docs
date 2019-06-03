@@ -1,6 +1,6 @@
 # Table of contents
 
-* [产品介绍](README.md)
+* [产品简介](README.md)
 * [快速上手](quick-start-guide/README.md)
   * [Step 1 安装部署](quick-start-guide/install.md)
   * [Step 2 激活系统创建项目](quick-start-guide/creat-project.md)
@@ -75,8 +75,8 @@
   * [分平台上报数据 vs 跨平台打通](integration/prepare/cross-platform.md)
 * [SDK 指南](integration/sdk/README.md)
   * [Android SDK](integration/sdk/android/README.md)
-    * [多渠道打包](integration/sdk/android/channel-packing.md)
     * [Android Hybrid模式](integration/sdk/android/hybrid-android.md)
+    * [多渠道打包](integration/sdk/android/channel-packing.md)
   * [iOS SDK](integration/sdk/ios/README.md)
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
   * [JS SDK](integration/sdk/js.md)

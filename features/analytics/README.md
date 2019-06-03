@@ -63,24 +63,27 @@ C. 还可以将已保存的图表留存为新的图表
 
 **1. 获取用户**
 
-* [渠道分析](channel/)
+{% page-ref page="channel/" %}
+
+{% page-ref page="heatmap/" %}
 
 **2. 了解用户**
 
-* [事件分析](event.md)
-* [实时分析](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/analytics-realtime/README.md)
-* [领域偏好](../segmentation/categorypreference.md)
-* [场景偏好](../segmentation/usagepreference.md)
-* [APP偏好](../segmentation/apppreference.md)
+{% page-ref page="event.md" %}
+
+{% page-ref page="session.md" %}
+
+{% page-ref page="realtime.md" %}
 
 **3. 用户转化**
 
-* [转化漏斗](funnel.md)
-* [智能路径](pathfinder.md)
+{% page-ref page="funnel.md" %}
+
+{% page-ref page="pathfinder.md" %}
 
 **4. 用户留存**
 
-* [留存分析](retention.md)
+{% page-ref page="retention.md" %}
 
 更多模型持续开发中……
 
