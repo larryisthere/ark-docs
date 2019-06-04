@@ -668,7 +668,7 @@ AnalysysAgent.setIntervalTime(mContext,20);
 
 #### 设置事件最大上传条数
 
-上传条数设置，在 debug 模式关闭后生效；当默认数据为触发实时上传，建议设置上传的条数为 10条。 并需要与setIntervalTime接口配套使用接口。接口如下：
+上传条数设置，在 debug 模式关闭后生效；当默认数据为触发实时上传，建议设置上传的条数为 10条。 并需要与setIntervalTime接口配套使用接口。
 
 ```java
 public static void setMaxEventSize(Context context, long size);
