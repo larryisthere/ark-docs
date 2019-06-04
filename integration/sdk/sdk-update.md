@@ -90,6 +90,11 @@
         <p>4.&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:center">2019/06/4</td>
+      <td style="text-align:center">v4.3.2</td>
+      <td style="text-align:left">1.&#x4F18;&#x5316;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x7684;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;</td>
+    </tr>
   </tbody>
 </table>## iOS SDK
 
