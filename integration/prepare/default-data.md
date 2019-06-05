@@ -609,9 +609,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $lib | 平台 | 字符串 | SDK类型，例如python、iOS等 | Y | Y | Y | Y |
+| $lib | 平台 | 字符串 | SDK类型，e.g. python、iOS | Y | Y | Y | Y |
 | $is\_login | 是否登录 | 布尔 | true/false | Y | Y | Y | Y |
-| $lib\_version | SDK版本 | 字符串 | SDK版本 如：11.2.5 | Y | Y | Y | Y |
+| $lib\_version | SDK版本 | 字符串 | SDK版本 e.g. 11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
 
