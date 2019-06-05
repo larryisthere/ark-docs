@@ -587,7 +587,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $element\_x | 元素X坐标 | 浮点型 | 点击元素X坐标 | Y | Y | Y | - |
 | $element\_y | 元素Y坐标 | 浮点型 | 点击元素Y坐标 | Y | Y | Y | - |
 | $element\_path | 元素路径 | 字符串 | 热图元素路径 | Y | Y | Y | - |
-| $element\_name | 元素名称 | 字符串 | 热图元素名称 | Y | Y | N | - |
+| $element\_name | 元素名称 | 字符串 | 热图元素名称 | Y | Y | - | - |
 | $element\_type | 元素类型 | 字符串 | 热图元素类型 | Y | Y | Y | - |
 | $element\_content | 元素内容 | 字符串 | 热图袁术的内容 | Y | Y | Y | - |
 | $element\_clickable | 是否可以点击元素 | 整数型 | 是否可以点击元素 | Y | Y | Y | - |
