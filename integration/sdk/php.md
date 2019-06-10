@@ -120,7 +120,7 @@ $analysys_agnet->track($distinctId,$isLogin,$eventName,$properties ,$platform);
 用户 ID 关联接口。将 `$aliasId` 和 `$distinctId`关联，计算时会认为是一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用，来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$aliasId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
 
 ```php
-$analysys_agnet->alias($registerId,$distinctId,$platform);
+$analysys_agnet->alias($aliasId,$distinctId,$platform);
 ```
 
 * `$aliasId`：用户注册 ID，长度大于 0，且小于 255字符
@@ -131,9 +131,9 @@ $analysys_agnet->alias($registerId,$distinctId,$platform);
 
 ```php
 $distinctId = '1234567890987654321';
-$registerId  = 'ABCDEF123456789';
+$aliasId  = 'ABCDEF123456789';
 $platform = 'JS';
-$analysys_agnet->alias($registerId,$distinctId,$platform);
+$analysys_agnet->alias($aliasId,$distinctId,$platform);
 ```
 
 ### 3.4 用户属性设置
