@@ -598,7 +598,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $lib | 平台 | 字符串 | SDK类型，e.g. python、iOS等 | Y | Y | Y | Y |
+| $lib | SDK类型 | 字符串 | SDK类型，e.g. python、iOS等 | Y | Y | Y | Y |
 | $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g.11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
@@ -609,7 +609,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $lib | 平台 | 字符串 | SDK类型，e.g. python、iOS | Y | Y | Y | Y |
+| $lib | SDK类型 | 字符串 | SDK类型，e.g. python、iOS | Y | Y | Y | Y |
 | $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本 e.g. 11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
@@ -632,8 +632,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $xiaomi | 小米ID | 字符串 | 小米推送ID | N | N | - | - |
 | $email | 邮箱 | 字符串 | 邮箱 | N | N | N | N |
 | $platform | 最后一次使用平台 | 字符串 | 最后一次使用平台 | Y | Y | Y | Y |
-| $lib | 最新版本的SDK类型 | 字符串 | SDK类型，e.g.  python、iOS等 | Y | Y | Y | Y |
-| $lib\_version | 最新版本的SDK版本 | 字符串 | SDK版本，e.g. 11.2.5 | Y | Y | Y | Y |
+| $lib | SDK类型 | 字符串 | SDK类型，e.g.  python、iOS等 | Y | Y | Y | Y |
+| $lib\_version | SDK版本 | 字符串 | SDK版本，e.g. 11.2.5 | Y | Y | Y | Y |
 | $country | 所在国家 | 字符串 | 用户所在国家 | N | N | N | N |
 | $province | 所在省份 | 字符串 | 用户所在省份 | N | N | N | N |
 | $city | 所在城市 | 字符串 | 用户所在城市 | N | N | N | N |
