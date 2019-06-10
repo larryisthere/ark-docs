@@ -599,7 +599,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $lib | 平台 | 字符串 | SDK类型，e.g. python、iOS等 | Y | Y | Y | Y |
-| $is\_login | 是否登录 | 布尔 | true/false | Y | Y | Y | Y |
+| $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g.11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
@@ -610,7 +610,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $lib | 平台 | 字符串 | SDK类型，e.g. python、iOS | Y | Y | Y | Y |
-| $is\_login | 是否登录 | 布尔 | true/false | Y | Y | Y | Y |
+| $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本 e.g. 11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
@@ -637,7 +637,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $country | 所在国家 | 字符串 | 用户所在国家 | N | N | N | N |
 | $province | 所在省份 | 字符串 | 用户所在省份 | N | N | N | N |
 | $city | 所在城市 | 字符串 | 用户所在城市 | N | N | N | N |
-| $is\_login | 是否是登录帐号 | 布尔值 | 是否是登录账号 | Y | Y | Y | Y |
+| $is\_login | 是否是注册用户 | 布尔值 | true，false | Y | Y | Y | Y |
 | $signup\_time | 注册时间 | 日期时间 | 注册时间 | N | N | N | N |
 | $first\_visit\_time | 首次访问时间 | 日期时间 | 首次访问时间 | Y | Y | Y | Y |
 | $time\_zone | 用户时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
