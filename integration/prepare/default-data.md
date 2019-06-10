@@ -641,5 +641,5 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $signup\_time | 注册时间 | 日期时间 | 注册时间 | N | N | N | N |
 | $first\_visit\_time | 首次访问时间 | 日期时间 | 首次访问时间 | Y | Y | Y | Y |
 | $time\_zone | 用户时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
-| $first\_visit\_language | 语言 | 字符串 | zh-cn | Y | Y | Y | Y |
+| $first\_visit\_language | 首次访问语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 
