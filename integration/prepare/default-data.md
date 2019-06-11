@@ -404,6 +404,16 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:center">Y</td>
     </tr>
     <tr>
+      <td style="text-align:left">$web_crawler</td>
+      <td style="text-align:left">&#x722C;&#x866B;</td>
+      <td style="text-align:left">&#x5E03;&#x5C14;</td>
+      <td style="text-align:left">&#x722C;&#x866B;&#x8BC6;&#x522B;</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">-</td>
+    </tr>
+    <tr>
       <td style="text-align:left">$language</td>
       <td style="text-align:left">&#x8BED;&#x8A00;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
