@@ -33,7 +33,9 @@
 * Android应用：《Android SDK 使用说明》中 [_5 消息推送_](../../integration/sdk/android/#xiao-xi-tui-song-sdk-jie-kou)  部分
 * iOS应用：《iOS SDK 使用说明》中 [_5 消息推送_](../../integration/sdk/ios/#xiao-xi-tui-song-sdk-jie-kou-jie-shao)  部分
 
-### 3. 在方舟中选择消息通知服务商进行[服务集成配置](../project-manegement/integrations.md)
+### 3. 在方舟中选择消息通知服务商进行服务集成配置
+
+{% page-ref page="../project-manegement/integrations.md" %}
 
 ## 功能说明
 
@@ -174,7 +176,13 @@ G. 查看发送效果
 
 ### 3. 效果分析
 
-每一次消息通知可以查看推送效果
+每一次消息通知可以查看推送效果，包括指标：
+
+* 目标用户：指圈定的用户数量
+* 发送用户：指实际发送成功的用户数（仅Android、iOS用户可发送）
+* 到达用户：指实际到达的用户（触发了 $push\_receiver\_success 事件）
+* 点击用户：指点击消息通知的用户（触发了 $push\_click 事件）
+* 转化用户：指通过消息通知进入之后触发了指定事件的用户
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901171836032749.jpg)
 
