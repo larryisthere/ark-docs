@@ -2,14 +2,14 @@
 
 ## Android SDK 使用说明
 
-Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_android_java_4.3.2_20190604.zip)
+Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_android_java_4.3.4_20190612.zip)
 
 | Jar包 | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
 | analysys\_core\_xxx.jar | 基础模块 | 必选 | 全部 |
-| analysys\_visual\_xxx.jar | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0及以上 |
+| analysys\_visual\_xxx.jar | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0及以上版本 |
 | analysys\_push\_xxx.jar | 推送模块 | 可选 | 全部 |
-| analysys\_encrypt\_xxx.jar | 加密模块 | 可选 | 全部 |
+| analysys\_encrypt\_xxx.jar | 加密模块 | 可选 | CBC模式适用方舟V4.2.7及以上版本 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -56,7 +56,12 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.
 
 ### 配置 Manifest
 
-AndroidManifest.xml文件需要配置内容包括权限、AppKey和Channel。AppKey和Channel也可以通过init\(\)初始化接口配置，两种方式配置任意一种即可。如果key使用以上两种方式配置，则两值必须相同，否则设置失败。如果channel使用两种方式，则优先取xml文件内配置的值。示例如下：
+AndroidManifest.xml文件需要配置内容包括权限、AppKey、Channel 和 .crt 格式证书名称（用于https网络通信）。
+
+1. AppKey和Channel也可以通过init\(\)初始化接口配置，两种方式配置任意一种即可。
+2. 如果key使用以上两种方式配置，则两值必须相同，否则设置失败。
+3. 如果channel使用两种方式，则优先取xml文件内配置的值。
+4. https 网络通信默认信任所有证书，如需使用 .crt 格式证书，请在 xml 配置证书名称，并将 .crt 格式证书添加到项目 assets 目录下。 示例如下：
 
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
@@ -74,6 +79,9 @@ AndroidManifest.xml文件需要配置内容包括权限、AppKey和Channel。App
     <meta-data
     android:name="ANALYSYS_CHANNEL"
     android:value="WanDouJia" />
+    <meta-data
+    android:name="ANALYSYS_KEYSTONE"
+    android:value="analysys.crt"/>
 </application>
 ```
 
@@ -123,7 +131,11 @@ public static void init(Context context, AnalysysConfig config);
   1. AppKey：在网站获取的 AppKey
   2. channel：应用下发的渠道
   3. autoProfile ：设置是否追踪新用户的首次属性，false：不追踪新用户的首次属性，true：追踪新用户的首次属性\(默认\)
-  4. encryptType ：设置数据上传时的加密方式,目前只支持 AES 加密（EncryptEnum.AES），如不设置此参数，数据上传不加密。
+  4. encryptType ：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为EncryptEnum.AES（128位密钥，ECB 加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC 加密模式）。
+
+{% hint style="info" %}
+EncryptEnum.AES\_CBC模式适用方舟V4.2.7及以上版本
+{% endhint %}
 
 示例：
 
@@ -139,8 +151,8 @@ public class AnalysysApplication extends Application {
         config.setChannel("豌豆荚");
         // 设置追踪新用户的首次属性
         config.setAutoProfile(true);
-        // 设置使用AES加密
-        config.setEncryptType(EncryptEnum.AES);
+        // 设置上传数据使用AES CBC模式加密，需添加加密模块
+        config.setEncryptType(EncryptEnum.AES_CBC);
         // 调用初始接口
         AnalysysAgent.init(this, config);
     }
