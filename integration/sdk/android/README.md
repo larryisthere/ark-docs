@@ -810,6 +810,19 @@ public static void setAutoHeatMap(boolean autoTrack);
 AnalysysAgent.setAutoHeatMap(true);
 ```
 
+## 加密模块介绍 <a id="toc_44"></a>
+
+加密模块生效依赖于加密SDK模块，需集成加密SDK相关analysys\_encrypt\_xxx.jar文件，请正确集成。
+
+在初始化SDK时需设置加密方式，目前只支持 AES 加密，AES加密分为EncryptEnum.AES（128位密钥，ECB加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC加密模式），如不设置此参数，数据上传不加密。
+
+示例：
+
+```java
+// 设置 AES 加密 ECB 模式
+config.setEncryptType(EncryptEnum.AES);
+```
+
 ## 消息推送 SDK 接口
 
 以下接口生效依赖于推送模块，需集成推送SDK相关analysys\_push\_xxx.jar文件，请正确集成。

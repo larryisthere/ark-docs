@@ -84,6 +84,7 @@
   * [Java SDK](integration/sdk/java.md)
   * [Python SDK](integration/sdk/python.md)
   * [PHP SDK](integration/sdk/php.md)
+  * [CPP SDK](integration/sdk/cpp.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
 * [数据验证](integration/data-verification/README.md)
   * [埋点上报检查](integration/data-verification/sdk-verification.md)
