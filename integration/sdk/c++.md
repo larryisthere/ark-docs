@@ -168,9 +168,11 @@ profiles["nickName"] = "nickeName123";
 profiles["userLevel"] = (long long)0;
 profiles["userPoint"] = (long long)0;
 JObject interestList;
-interestList[0] = "sports";interestList[1] = "football";
+interestList[0] = "sports";
+interestList[1] = "football";
 interestList[2] = "game";
-profiles["interest"] = interestList;analysys.profileSet(registerId, true, profiles, "JS");
+profiles["interest"] = interestList;
+analysys.profileSet(registerId, true, profiles, "JS");
 ```
 
 ### 2.9 设置用户固有属性
