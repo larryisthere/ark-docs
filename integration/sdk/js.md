@@ -781,7 +781,7 @@ X-Frame-Options: Allow-From http://xxx.xxx.xxx
 ```
 
 {% hint style="info" %}
-注意：客户化埋点时候需要方舟与埋点的页面协议头相同。否则会被浏览器拒绝，无法进行客户化埋点
+注意：客户化埋点时候需要方舟与埋点的页面协议头相同。否则会被浏览器拒绝，无法进行可视化埋点。
 {% endhint %}
 
 ### window对象
