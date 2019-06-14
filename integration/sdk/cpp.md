@@ -3,7 +3,7 @@
 CPP SDK主要用于服务端 CPP应用，如 CPP应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-cpp)
 
 {% hint style="info" %}
-C++版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如果需要使用https协议请参考HttpSender.cpp 276行
+CPP版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如果需要使用https协议请参考HttpSender.cpp 276行
 {% endhint %}
 
 ## 1. 第三方开源库
@@ -26,7 +26,7 @@ C++版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如
 
 ### 2.2 初始化接口
 
-在程序启动时，调用构造函数 AnalysysCPlusPlusSdk \(\) 初始化 C++ SDK 实例。如下：
+在程序启动时，调用构造函数 AnalysysCPlusPlusSdk \(\) 初始化 CPP SDK 实例。如下：
 
 ```cpp
 std::string APP_ID = "1234";
@@ -369,7 +369,7 @@ bool flush();
 
 立即发送所有收集的数据到服务器。
 
-## 3. C++ SDK示例
+## 3. CPP SDK示例
 
 ```cpp
 string APP_ID = "1234";
