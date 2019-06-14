@@ -1,9 +1,9 @@
-# CPP SDK
+# C++ SDK
 
-CPP SDK主要用于服务端 CPP应用，如 CPP应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-cpp)
+C++ SDK 主要用于服务端 C++ （也称CPP、C plus plus）应用，如 C++ 应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-cpp)
 
 {% hint style="info" %}
-CPP版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如果需要使用https协议请参考HttpSender.cpp 276行
+C++ 版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如果需要使用https协议请参考HttpSender.cpp 276行
 {% endhint %}
 
 ## 1. 第三方开源库
@@ -26,7 +26,7 @@ CPP版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如
 
 ### 2.2 初始化接口
 
-在程序启动时，调用构造函数 AnalysysCPlusPlusSdk \(\) 初始化 CPP SDK 实例。如下：
+在程序启动时，调用构造函数 AnalysysCPlusPlusSdk \(\) 初始化 C++ SDK 实例。如下：
 
 ```cpp
 std::string APP_ID = "1234";
@@ -72,7 +72,7 @@ void setDebugMode(int debug);
 
 \* DEBUG.CLOSE：表示关闭 Debug 模式
 
-\* DEBUG.OPENNOSAVE：表示打开 Debug 模式，但该模式下发送的数据仅\* 用于调试，不计入平台数据统计
+\* DEBUG.OPENNOSAVE：表示打开 Debug 模式，但该模式下发送的数据仅用于调试，不计入平台数据统计
 
 \* DEBUG.OPENANDSAVE：表示打开 Debug 模式，该模式下发送的数据可计入平台数据统计
 
@@ -98,10 +98,14 @@ void track(const std::string& strDistinctId, bool bIsLogin, const std::string& s
 
 ```cpp
 //浏览商品
-JObject trackPropertie;trackPropertie["$ip"] = "112.112.112.112";
-JObject bookList;bookList[0] = "Thinking in Java";
-trackPropertie["productName"] = bookList;trackPropertie["productType"] = "Java book";
-trackPropertie["producePrice"] = (long long)80;trackPropertie["shop"] = "xx shop";
+JObject trackPropertie;
+trackPropertie["$ip"] = "112.112.112.112";
+JObject bookList;
+bookList[0] = "Thinking in Java";
+trackPropertie["productName"] = bookList;
+trackPropertie["productType"] = "Java book";
+trackPropertie["producePrice"] = (long long)80;
+trackPropertie["shop"] = "xx shop";
 analysys.track(distinctId, false, "ViewProduct", trackPropertie, "JS");
 ```
 
@@ -122,7 +126,8 @@ void alias(const std::string& strAliasId, const std::string& strDistinctId, cons
 示例：匿名用户浏览商品到注册会员
 
 ```cpp
-string registerId = "ABCDEF123456789";analysys.alias(registerId, distinctId, "JS");
+string registerId = "ABCDEF123456789";
+analysys.alias(registerId, distinctId, "JS");
 ```
 
 ### 2.8 用户属性设置
@@ -156,12 +161,16 @@ void profileSet(const std::string& strDistinctId, bool bIsLogin, const JObject& 
 示例：用户注册后设置用户的注册信息属性
 
 ```cpp
-JObject profiles;profiles["$city"] = "beijin";profiles["$province"] = "beijin";
+JObject profiles;
+profiles["$city"] = "beijin";
+profiles["$province"] = "beijin";
 profiles["nickName"] = "nickeName123";
 profiles["userLevel"] = (long long)0;
 profiles["userPoint"] = (long long)0;
-JObject interestList;interestList[0] = "sports";interestList[1] = "football";
-interestList[2] = "game";profiles["interest"] = interestList;analysys.profileSet(registerId, true, profiles, "JS");
+JObject interestList;
+interestList[0] = "sports";interestList[1] = "football";
+interestList[2] = "game";
+profiles["interest"] = interestList;analysys.profileSet(registerId, true, profiles, "JS");
 ```
 
 ### 2.9 设置用户固有属性
@@ -280,9 +289,7 @@ analysys.profileDelete(registerId, isLogin, platform);
 
 ###  2.13 通用属性
 
-如果某个事件的属性，在所有事件中都会出现，则这个属性可以做为通用属性，通过
-
-将该属性设置为事件通用属性，则设置后每次发送事件的时候都会带有该属性。比如用户浏览/购买商品过程中的用户等级就可以作为通用属性。
+如果某个事件的属性，在所有事件中都会出现，则这个属性可以做为通用属性，通过将该属性设置为事件通用属性，则设置后每次发送事件的时候都会带有该属性。比如用户浏览/购买商品过程中的用户等级就可以作为通用属性。
 
 通用属性是一个标准的 K-V 结构，K 和 V 均有相应的约束条件，如不符合则丢弃该次操作。
 
@@ -369,7 +376,7 @@ bool flush();
 
 立即发送所有收集的数据到服务器。
 
-## 3. CPP SDK示例
+## 3. C++ SDK示例
 
 ```cpp
 string APP_ID = "1234";
