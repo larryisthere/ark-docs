@@ -33,7 +33,7 @@ Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务�
 
 需获取的配置信息为：
 
-* 数据接收地址：`http://host:port/up`
+* 数据接收地址：`http://host:port`
 
 ### 2.2 初始化接口
 
@@ -41,7 +41,7 @@ Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务�
 
 ```java
 final String APP_KEY = "APPKEY";
-final String ANALYSYS_SERVICE_URL = "http://host:port/up";
+final String ANALYSYS_SERVICE_URL = "http://host:port";
 AnalysysJavaSdk analysys = new AnalysysJavaSdk(new SyncCollecter(ANALYSYS_SERVICE_URL), APP_KEY);
 ```
 
@@ -414,7 +414,7 @@ analysys.flush();
 
 ```java
 final String APP_ID = "1234";
-final String ANALYSYS_SERVICE_URL = "http://192.168.0.3:8089/up";
+final String ANALYSYS_SERVICE_URL = "http://192.168.0.3:8089";
 AnalysysJavaSdk analysys = new AnalysysJavaSdk(new SyncCollecter(ANALYSYS_SERVICE_URL), APP_ID);
 try {
     String distinctId = "1234567890987654321";
