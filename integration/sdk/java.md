@@ -42,7 +42,7 @@ Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务�
 ```java
 final String APP_KEY = "APPKEY";
 final String ANALYSYS_SERVICE_URL = "http://host:port/up";
-AnalysysJavaSdk analysys = new AnalysysJavaSdk(new AnalysysJavaSdk.SyncCollecter(ANALYSYS_SERVICE_URL), APP_KEY);
+AnalysysJavaSdk analysys = new AnalysysJavaSdk(new SyncCollecter(ANALYSYS_SERVICE_URL), APP_KEY);
 ```
 
 APPKEY：网站获取的 Key
