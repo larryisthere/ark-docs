@@ -81,6 +81,10 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 </script>
 ```
 
+{% hint style="info" %}
+请不要修改以上初始化代码中的代码逻辑，可能会造成SDK无法正常运行。
+{% endhint %}
+
 ### 同步集成
 
 将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
@@ -120,6 +124,10 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 //https协议
 <script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
 ```
+
+{% hint style="info" %}
+请不要修改以上初始化代码中的代码逻辑，可能会造成SDK无法正常运行。
+{% endhint %}
 
 ### 配置参数
 

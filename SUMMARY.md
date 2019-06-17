@@ -34,6 +34,8 @@
   * [热图分析（alpha）](features/analytics/heatmap/README.md)
     * [Web/H5 热图](features/analytics/heatmap/web.md)
     * [APP 热图](features/analytics/heatmap/app.md)
+  * [分布分析](features/analytics/fen-bu-fen-xi.md)
+  * [间隔分析](features/analytics/jian-ge-fen-xi.md)
 * [用户](features/segmentation/README.md)
   * [分群洞察](features/segmentation/profile.md)
   * [单用户档案](features/segmentation/user-sequence.md)
