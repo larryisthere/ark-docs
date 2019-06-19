@@ -192,6 +192,11 @@
         <p>4.&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:center">2019/06/17</td>
+      <td style="text-align:center">v4.3.3</td>
+      <td style="text-align:left">1.&#x5BF9;pageview&#x91C7;&#x96C6;&#x6027;&#x80FD;&#x8FDB;&#x884C;&#x4F18;&#x5316;</td>
+    </tr>
   </tbody>
 </table>## JS SDK
 
