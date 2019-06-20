@@ -392,6 +392,11 @@
         <p>2.&#x4F18;&#x5316;&#x76F8;&#x5173;&#x67B6;&#x6784;</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:center">2019/6/19</td>
+      <td style="text-align:center">V4.0.10</td>
+      <td style="text-align:left">1.&#x4F18;&#x5316;&#x529F;&#x80FD;</td>
+    </tr>
   </tbody>
 </table>
 
