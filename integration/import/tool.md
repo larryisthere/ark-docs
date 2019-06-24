@@ -25,7 +25,7 @@
 
 * 流处理时间窗口过滤由项目 Ark Streaming 的配置参数：FILTER 控制。
 * 默认 FILTER=true，表示开启流处理时间窗口过滤；FILTER=false 时，表示关闭流处理时间窗口过滤。
-* 若修改流处理时间窗口过滤的参数，则在 Ambari 上修改该参数，并重启 Ark Streaing 服务即可。
+* 若修改流处理时间窗口过滤的参数，则在 Ambari 上修改该参数，并重启 Ark Streaming 服务即可。
 
 ## 4. 使用方式
 
