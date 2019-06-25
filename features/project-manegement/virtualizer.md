@@ -122,9 +122,7 @@ _点击确认，即可保存，但此时埋点的事件仅在调试设备上生�
 ## Web / H5 可视化埋点详情页
 
 {% hint style="warning" %}
-请注意可视化埋点需要单独集成SDK：
-
-[https://docs.analysys.cn/ark/integration/sdk/js\#ke-shi-hua-mai-dian-jie-shao](https://docs.analysys.cn/ark/integration/sdk/js#ke-shi-hua-mai-dian-jie-shao)
+开始前请确认已进行了如下操作：[https://docs.analysys.cn/ark/integration/sdk/js\#ke-shi-hua-mai-dian-jie-shao](https://docs.analysys.cn/ark/integration/sdk/js#ke-shi-hua-mai-dian-jie-shao)
 {% endhint %}
 
 Web / H5 可视化埋点需要 3 个步骤：1. 选择要埋点的页面 2. 可视化配置 3. 测试 & 部署
