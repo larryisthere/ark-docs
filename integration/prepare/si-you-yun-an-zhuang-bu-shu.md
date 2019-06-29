@@ -6,7 +6,7 @@
 
 增加DAU计算模型和公式
 
-![ ](../../.gitbook/assets/wx20190531-150118%20%281%29.png)
+![](../../.gitbook/assets/wei-xin-tu-pian-20190629171443.png)
 
 ## **软件环境**
 
