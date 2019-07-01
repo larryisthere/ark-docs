@@ -2,7 +2,7 @@
 
 ## 微信小程序 SDK 使用说明
 
-微信小程序 SDK 适用于原生微信小程序，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_WX_v4.2.2_20190525.zip)
+微信小程序 SDK 集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_WX_v4.2.2_20190525.zip)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
