@@ -12,7 +12,7 @@
   * [附：数据分析思路](quick-start-guide/getting-started.md)
 * [产品更新日志](release-notes.md)
 
-## 📘 Part I 产品使用指南 <a id="features"></a>
+## ⚪ Part I 产品使用指南 <a id="features"></a>
 
 * [名词解释](features/terms.md)
 * [指标说明](features/metrics-and-dimensions.md)
@@ -64,7 +64,7 @@
   * [成员管理](features/enterprise-management/member.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
 
-## 📘 Part II 技术文档 <a id="integration"></a>
+## ⚪ Part II 技术文档 <a id="integration"></a>
 
 * [接入前准备工作](integration/prepare/README.md)
   * [私有云安装部署](integration/prepare/si-you-yun-an-zhuang-bu-shu.md)
@@ -98,7 +98,7 @@
   * [直接从Kafka中订阅数据](integration/open-original-export/kafka.md)
   * [使用程序访问数据库](integration/open-original-export/program.md)
 
-## 📘 Part III 常见问题 <a id="faq"></a>
+## ⚪ Part III 常见问题 <a id="faq"></a>
 
 * [SDK FAQ](faq/sdk.md)
 * [产品试用及采购](faq/trialversion.md)
