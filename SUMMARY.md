@@ -59,6 +59,7 @@
   * [服务集成配置](features/project-manegement/integrations.md)
   * [成员管理](features/project-manegement/member.md)
 * [平台管理](features/enterprise-management/README.md)
+  * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [企业概览](features/enterprise-management/overview.md)
   * [项目管理](features/enterprise-management/project-management.md)
   * [成员管理](features/enterprise-management/member.md)
