@@ -52,7 +52,7 @@ APP 热图目前支持Android、iOS 原生APP 的点击位置。
 
          ****可以调整热图背景透明度，以适应默认透明度下部分背景网页可能无法识别的情况
 
-![](../../../.gitbook/assets/image%20%2835%29.png)
+![](../../../.gitbook/assets/image%20%2836%29.png)
 
 ### E 断开连接
 
