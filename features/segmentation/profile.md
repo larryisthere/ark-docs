@@ -55,3 +55,11 @@ description: >-
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111950305403.png)
 
+{% hint style="info" %}
+**为什么在我的分群中没有用户偏好？**
+
+用户偏好功能为第三方增值服务，服务提供方为易观锆云服务平台。如果您需要使用本功能，请进入服务集成配置页面，选择易观锆云进行服务接入、配置、数据同步。具体步骤请参考：[服务集成配置](https://docs.analysys.cn/ark/features/project-manegement/integrations)。
+{% endhint %}
+
+
+
