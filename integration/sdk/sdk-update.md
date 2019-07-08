@@ -103,6 +103,11 @@
         <p>2.&#x589E;&#x52A0;CBC&#x52A0;&#x5BC6;&#x6A21;&#x5F0F;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.2.7&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:center">2019/07/03</td>
+      <td style="text-align:center">v4.3.5</td>
+      <td style="text-align:left">1.&#x4F18;&#x5316;&#x81EA;&#x52A8;&#x91C7;&#x96C6;&#x6D41;&#x7A0B;&#x9632;&#x6B62;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</td>
+    </tr>
   </tbody>
 </table>## iOS SDK
 
