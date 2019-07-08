@@ -94,7 +94,7 @@
   * [工具导入](integration/import/tool.md)
   * [Restful API](integration/import/restful-api.md)
 * [数据导出](integration/open-original-export/README.md)
-  * [直接从Kafka中订阅数据](integration/open-original-export/kafka.md)
+  * [直接从Kafka中消费数据](integration/open-original-export/kafka.md)
   * [使用程序访问数据库](integration/open-original-export/program.md)
 
 ## ⚪ Part III 常见问题 <a id="faq"></a>
