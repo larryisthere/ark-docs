@@ -2,7 +2,7 @@
 
 ## Android SDK 使用说明
 
-Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_android_java_4.3.4_20190612.zip)
+Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_android_java_4.3.5_20190703.zip)
 
 | Jar包 | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
