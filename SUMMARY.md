@@ -4,15 +4,15 @@
 * [快速上手](quick-start-guide/README.md)
   * [Step 1 安装部署](quick-start-guide/install.md)
   * [Step 2 激活系统创建项目](quick-start-guide/creat-project.md)
-  * [Step 3 开启您的分析旅程](quick-start-guide/step-3-kai-qi-nin-de-fen-xi-lv-cheng/README.md)
-    * [1.  集成 SDK](quick-start-guide/step-3-kai-qi-nin-de-fen-xi-lv-cheng/instrumentation.md)
-    * [2. 可视化埋点](quick-start-guide/step-3-kai-qi-nin-de-fen-xi-lv-cheng/2.-ke-shi-hua-mai-dian.md)
-    * [3. 创建分析模型](quick-start-guide/step-3-kai-qi-nin-de-fen-xi-lv-cheng/3.-chuang-jian-shu-zhi-biao.md)
+  * [Step 3 开启您的分析旅程](quick-start-guide/getting-started/README.md)
+    * [1.  集成 SDK](quick-start-guide/getting-started/instrumentation.md)
+    * [2. 可视化埋点](quick-start-guide/getting-started/virtualizer.md)
+    * [3. 创建分析模型](quick-start-guide/getting-started/analystics.md)
   * [附：埋点方案设计](quick-start-guide/tracking-plan.md)
-  * [附：数据分析思路](quick-start-guide/getting-started.md)
+  * [附：数据分析思路](quick-start-guide/analystics-method.md)
 * [产品更新日志](release-notes.md)
 
-## ⚪ Part I 产品使用指南 <a id="features"></a>
+## 🐱 Part I 产品使用指南 <a id="features"></a>
 
 * [名词解释](features/terms.md)
 * [指标说明](features/metrics-and-dimensions.md)
@@ -37,6 +37,7 @@
   * [分布分析](features/analytics/fen-bu-fen-xi.md)
   * [间隔分析](features/analytics/jian-ge-fen-xi.md)
   * [属性分析](features/analytics/shu-xing-fen-xi.md)
+  * [自定义查询](features/analytics/zi-ding-yi-cha-xun.md)
 * [用户](features/segmentation/README.md)
   * [分群洞察](features/segmentation/profile.md)
   * [单用户档案](features/segmentation/user-sequence.md)
@@ -46,16 +47,22 @@
   * [消息通知](features/operation/pushmessage.md)
   * [广告跟踪](features/operation/utm.md)
 * [管理](features/project-manegement/README.md)
-  * [元事件](features/project-manegement/meta-events.md)
-  * [可视化埋点](features/project-manegement/virtualizer.md)
-  * [虚拟事件](features/project-manegement/merged-events.md)
-  * [事件属性](features/project-manegement/event-properties.md)
-  * [用户属性](features/project-manegement/user-properties.md)
-  * [Session 管理](features/project-manegement/session.md)
-  * [页面组管理（alpha）](features/project-manegement/pagegroup.md)
-  * [监控告警](features/project-manegement/monitoring.md)
+  * [项目成员管理](features/project-manegement/member.md)
+  * [项目概览](features/project-manegement/overview.md)
+  * [数据接入管理](features/project-manegement/data-integration/README.md)
+    * [埋点方案](features/project-manegement/data-integration/schema.md)
+    * [可视化埋点](features/project-manegement/data-integration/virtualizer.md)
+    * [集成SDK接入数据](features/project-manegement/data-integration/sdks.md)
+    * [数据验证](features/project-manegement/data-integration/validation.md)
+  * [元数据管理](features/project-manegement/yuan-shu-ju-guan-li/README.md)
+    * [元事件](features/project-manegement/yuan-shu-ju-guan-li/meta-events.md)
+    * [虚拟事件](features/project-manegement/yuan-shu-ju-guan-li/merged-events.md)
+    * [事件属性](features/project-manegement/yuan-shu-ju-guan-li/event-properties.md)
+    * [用户属性](features/project-manegement/yuan-shu-ju-guan-li/user-properties.md)
+    * [Session 管理](features/project-manegement/yuan-shu-ju-guan-li/session.md)
+    * [页面组管理（alpha）](features/project-manegement/yuan-shu-ju-guan-li/pagegroup.md)
   * [服务集成配置](features/project-manegement/integrations.md)
-  * [成员管理](features/project-manegement/member.md)
+  * [监控告警](features/project-manegement/monitoring.md)
 * [平台管理](features/enterprise-management/README.md)
   * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [企业概览](features/enterprise-management/overview.md)
@@ -63,7 +70,7 @@
   * [成员管理](features/enterprise-management/member.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
 
-## ⚪ Part II 技术文档 <a id="integration"></a>
+## 🐵 Part II 技术文档 <a id="integration"></a>
 
 * [接入前准备工作](integration/prepare/README.md)
   * [私有云安装部署](integration/prepare/si-you-yun-an-zhuang-bu-shu.md)
@@ -97,7 +104,7 @@
   * [直接从Kafka中消费数据](integration/open-original-export/kafka.md)
   * [使用程序访问数据库](integration/open-original-export/program.md)
 
-## ⚪ Part III 常见问题 <a id="faq"></a>
+## 🐋 Part III 常见问题 <a id="faq"></a>
 
 * [SDK FAQ](faq/sdk.md)
 * [产品试用及采购](faq/trialversion.md)

@@ -37,7 +37,7 @@
 
 ![](../../.gitbook/assets/untitled2.gif)
 
-{% page-ref page="3.-chuang-jian-shu-zhi-biao.md" %}
+{% page-ref page="analystics.md" %}
 
 
 

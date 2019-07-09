@@ -1,44 +1,42 @@
 ---
-description: 帮助快速了解如何进项目内的埋点管理、Session管理、服务集成配置、成员管理
+description: 管理模块支持数据接入、数据管理、服务集成配置、成员管理等数据应用的基础管理。
 ---
 
 # 管理
 
-方舟支持创建多个项目，点击管理可以进入项目的详情页，查看项目基础信息，进行元数据管理、服务配置、接入数据等等。
+{% hint style="info" %}
+4.3.0 及以上版本对管理模块中的部分功能进行了合并。
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812191122119940.png)
+原 接入数据、集成SDK、可视化埋点并入了数据接入管理
 
-## A. 项目基础信息
+原 元事件、虚拟事件、事件属性、用户属性、Session管理 并入了 元数据管理
+{% endhint %}
 
-A区域可以查看项目的 AppKey，用于数据接入；
+![](../../.gitbook/assets/image.png)
 
-移入圆圈位置，可以设置项目 LOGO，当同时接入了多个项目时，设置了 lOGO 会更容易识别。
+{% page-ref page="overview.md" %}
 
-## B. 数据管理和服务配置
+{% page-ref page="member.md" %}
 
-切换 B 区域 Tab 导航，支持用户管理元数据、配置推送服务，详见各个页面的使用说明：
+{% page-ref page="data-integration/" %}
 
-* [元事件](meta-events.md)
-* [可视化埋点](virtualizer.md)
-* [虚拟事件](merged-events.md)
-* [用户属性](user-properties.md)
-* [事件属性](event-properties.md)
-* [Session管理](session.md)
-* [页面组管理](pagegroup.md)
-* [服务集成配置](integrations.md)
-* [成员管理](member.md)
+* [埋点方案](data-integration/schema.md)
+* [可视化埋点](data-integration/virtualizer.md)
+* [集成SDK接入数据](data-integration/sdks.md)
+* [数据验证](data-integration/validation.md)
 
-## C. 接入数据及数据验证
+{% page-ref page="yuan-shu-ju-guan-li/" %}
 
-C 区域展示已集成数据的平台，点击可以进入数据接入和验证页面
+* [元事件](yuan-shu-ju-guan-li/meta-events.md)
+* [虚拟事件](yuan-shu-ju-guan-li/merged-events.md)
+* [用户属性](yuan-shu-ju-guan-li/user-properties.md)
+* [事件属性](yuan-shu-ju-guan-li/event-properties.md)
+* [Session管理](yuan-shu-ju-guan-li/session.md)
+* [页面组管理](yuan-shu-ju-guan-li/pagegroup.md)
 
-当需要接入更多数据时，可以选择相应 SDK 的集成指南查看；
+{% page-ref page="integrations.md" %}
 
-在调试阶段可以使用 Debug数据验证 功能验证接入数据的及时性、准确性和完整性；
+{% page-ref page="monitoring.md" %}
 
-根据错误数据日志可以查看实际确定入库的数据中异常的情况，详见 [数据入库检查](../../integration/data-verification/data_debug.md)。
-
-![](../../.gitbook/assets/image%20%2856%29.png)
-
-如有更多有关问题，请随时联系我们 **4006-010-231**
+如有问题，请随时联系我们 **4006-010-231**
 

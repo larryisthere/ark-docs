@@ -5,7 +5,7 @@
 * 项目 AppKey（创建项目后生成，用于唯一标识项目的数据）
 * 集成 [JS SDK ](../../integration/sdk/js.md)
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/02/201902151449466087.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 ## **接入后 Debug 数据验证**
 
@@ -21,5 +21,5 @@
 2 打开 Debug 模式，该模式下发送的数据可计入平台数据统计
 {% endhint %}
 
-{% page-ref page="2.-ke-shi-hua-mai-dian.md" %}
+{% page-ref page="virtualizer.md" %}
 
