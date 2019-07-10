@@ -220,7 +220,7 @@ AnalysysAgent.setDebugMode(.off)
 + (void)pageView:(NSString *)pageName properties:(NSDictionary *)properties;
 ```
 
-* pageName：页面标识，为字符串，以字母或 `$` 开头，只能包括字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，取值长度为1-255个字符，不支持乱码和中文
+* pageName：页面标识，为字符串，取值长度 1 - 255 字符
 * properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，只能包括字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文；value 支持类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`，若为字符串，取值长度为1-255个字符
 
 示例1：
