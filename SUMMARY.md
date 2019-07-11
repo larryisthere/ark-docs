@@ -37,7 +37,7 @@
   * [分布分析](features/analytics/fen-bu-fen-xi.md)
   * [间隔分析](features/analytics/jian-ge-fen-xi.md)
   * [属性分析](features/analytics/shu-xing-fen-xi.md)
-  * [自定义查询](features/analytics/zi-ding-yi-cha-xun.md)
+  * [自定义查询](features/analytics/sql.md)
 * [用户](features/segmentation/README.md)
   * [分群洞察](features/segmentation/profile.md)
   * [单用户档案](features/segmentation/user-sequence.md)

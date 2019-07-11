@@ -10,7 +10,7 @@
   * [分布分析](features/analytics/fen-bu-fen-xi.md)，分析某事件在不同节点上分布，比如洞察用户什么时间更愿意购买商品
   * [间隔分析](features/analytics/jian-ge-fen-xi.md)，分析两个事件的时间间隔等
   * [属性分析](features/analytics/shu-xing-fen-xi.md)，可以根据用户的属性进行分析
-  * [自定义查询](features/analytics/zi-ding-yi-cha-xun.md)，支持用户完全自定义查询满足现有分析模型无法支持的分析需求
+  * [自定义查询](features/analytics/sql.md)，支持用户完全自定义查询满足现有分析模型无法支持的分析需求
 * **分群**模块新增了分群的导出，支持将用户明细导出，再导入广告系统、CRM系统等再次使用
 * **运营**模块新增了多个短信通道
 * **管理**模块新增了项目概览、埋点管理、用户数据权限控制、更多服务商接入
