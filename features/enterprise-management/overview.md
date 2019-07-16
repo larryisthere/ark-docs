@@ -20,7 +20,13 @@
 
 展示当前部署的方舟的版本情况。
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812181535196802.png)
+![&#x66F4;&#x65B0; Licence &#x7684;&#x5165;&#x53E3;&#x4F4D;&#x7F6E;](../../.gitbook/assets/6546929b745a5389c37cc0bc4fca8ce9.jpg)
+
+{% hint style="warning" %}
+**Licence 到期后数据接收会停吗？**
+
+Licence 到期前 30 天产品里就会出现更新 Licence 的提示，但若超期产品就会无法使用。不过考虑到某些情况下 Licence 更新会滞后，为避免数据不连续，数据接收服务依然会保持一段时间的工作。这样，稍后更新 Licence 之后，就可以看到连续的数据了。
+{% endhint %}
 
 ## D. 访问记录
 
