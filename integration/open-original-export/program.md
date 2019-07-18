@@ -40,6 +40,8 @@ presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.faceboo
 直接登陆任意的方舟服务器，运行以下命令即可：
 
 ```bash
+#presto必须使用isuhadoop用户来连接
+su - isuhadoop
 bin/presto-cli --server ark2:8285
 ```
 
