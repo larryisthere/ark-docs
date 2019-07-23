@@ -568,15 +568,15 @@ Swift代码示例：
 AnalysysAgent.profileAppend("Books", propertyValue: ["红楼梦", "水浒传"])
 ```
 
-#### 删除设置的属性
+#### 删除设置的属性值
 
-删除已设置的用户属性。接口如下：
+删除已设置的用户属性值。接口如下：
 
 ```objectivec
-//  删除单个用户属性
+//  删除当前用户单个属性值
 + (void)profileUnset:(NSString *)propertyName;
 
-//  删除所有用户属性
+//  删除当前用户所有属性值
 + (void)profileDelete;
 ```
 
@@ -585,14 +585,14 @@ AnalysysAgent.profileAppend("Books", propertyValue: ["红楼梦", "水浒传"])
 示例1：
 
 ```objectivec
-//  删除已设置的`hobby`用户属性
+//  删除当前用户已设置的`hobby`用户属性值
 [AnalysysAgent profileUnset:@"hobby"];
 ```
 
 示例2：
 
 ```objectivec
-//  清除已设置的所有用户属性
+//  删除当前用户已设置的所有用户属性
 [AnalysysAgent profileDelete];
 ```
 

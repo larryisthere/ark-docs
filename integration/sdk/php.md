@@ -265,9 +265,9 @@ $properties = array(
 $analysys_agnet->profileAppend($registerId,$isLogin,$properties,$platform);
 ```
 
-#### 4.1.4 删除设置的属性
+#### 4.1.4 删除设置的属性值
 
-删除单个或所有已设置的属性。接口如下：
+删除设置的属性值。接口如下：
 
 ```php
 $analysys_agnet->profileUnSet($registerId,$isLogin,"nickName",$platform);
@@ -279,7 +279,7 @@ $analysys_agnet->profileDelete($registerId,$isLogin,$platform);
 * `$propertie`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
 
-示例1： 要删除已经设置的用户昵称这一用户属性
+示例1： 要删除已经设置的用户昵称这一用户属性的值
 
 ```php
 $registerId = 'ABCDEF123456789';
@@ -288,7 +288,7 @@ $platform = 'JS';
 $analysys_agnet->profileUnSet($registerId,$isLogin,"nickName",$platform);
 ```
 
-示例2：要清除已经设置的所有用户属性
+示例2：要删除已经设置的所有用户属性
 
 ```php
 $registerId = 'ABCDEF123456789';

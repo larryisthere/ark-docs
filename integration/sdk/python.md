@@ -290,7 +290,7 @@ eguan.profile_append(distinct_id,properties,python_sdk_platform,True)
 
 #### 4.1.4 删除设置的属性
 
-删除单个或所有已设置的属性。接口如下：
+删除设置的属性值。接口如下：
 
 ```python
 def profile_unset(self,distinct_id,profile_properties_keys,data_platform,is_login=False):
@@ -305,11 +305,11 @@ def profile_delete(self,distinct_id,data_platform,is_login=False):
 示例：
 
 ```python
-# 要删除已经设置的用户爱好这一用户属性
+#  删除当前用户单个属性值
 python_sdk_platform = "android"
 distinct_id = "HHHHH"
 eguan.profile_unset(distinct_id,["hobby"],python_sdk_platform,True)
-# 要清除已经设置的所有用户属性
+# 删除当前用户所有属性值
 eguan.profile_delete(distinct_id,python_sdk_platform,True)
 ```
 

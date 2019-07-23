@@ -535,9 +535,9 @@ list.add("music");
 AnalysysAgent.profileAppend(mContext, "hobby", list);
 ```
 
-#### 删除设置的属性
+#### 删除设置的属性值
 
-删除已设置的用户属性。 接口如下：
+删除已设置的用户属性值。 接口如下：
 
 ```java
 public static void profileUnset(Context context, String propertyName);
@@ -550,10 +550,10 @@ public static void profileDelete(Context context);
 示例：
 
 ```java
-// 删除单个用户属性
+//  删除当前用户单个属性值
 AnalysysAgent.profileUnset(mContext, "age");
 
-// 清除所有属性
+//  删除当前用户所有属性值
 AnalysysAgent.profileDelete(mContext);
 ```
 

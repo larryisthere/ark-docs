@@ -281,9 +281,9 @@ profile.put("interest", interestList);//用户兴趣爱好
 analysys.profileAppend(registerId, isLogin, profile, platform);
 ```
 
-#### 4.1.4 删除设置的属性
+#### 4.1.4 删除设置的属性值
 
-删除单个或所有已设置的属性。接口如下：
+删除设置的属性值。接口如下：
 
 ```java
 public void profileUnSet(String distinctId, boolean isLogin, String property, String platform) throws AnalysysException;
@@ -301,17 +301,17 @@ public void profileDelete(String distinctId,  boolean isLogin, String platform) 
 String registerId = "ABCDEF123456789";
 boolean isLogin = true;
 String platform = "Android";
-// 删除单个用户属性
+//  删除当前用户单个属性值
 analysys.profileUnSet(registerId, isLogin, "nickName", platform);
 ```
 
-示例2：要清除已经设置的所有用户属性
+示例2：要删除已经设置的所有用户属性
 
 ```java
 String registerId = "ABCDEF123456789";
 boolean isLogin = true;
 String platform = "Android";
-// 清除所有属性
+//  删除当前用户所有属性值
 analysys.profileDelete(registerId, isLogin, platform);
 ```
 

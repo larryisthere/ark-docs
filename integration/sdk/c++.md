@@ -257,9 +257,9 @@ profile["interest"]= interestList;
 analysys.profileAppend(registerId, isLogin, profile, platform);
 ```
 
-### 2.12 删除设置的属性
+### 2.12 删除设置的属性值
 
-删除单个或所有已设置的属性。接口如下：
+删除设置的属性值。接口如下：
 
 ```cpp
 void profileUnSet(const std::string& strDistinctId, bool bIsLogin, const std::string& strProperty, const std::string& strPlatform);
@@ -275,17 +275,17 @@ void profileDelete(const std::string& strDistinctId, bool bIsLogin, const std::s
 \* strPlatform: 平台类型,内容范围：JS、WeChat、Android、iOS
 
 ```cpp
-示例1：清除单个用户属性
+示例1：删除单个用户属性
 std::string registerId = "ABCDEF123456789";
 bool isLogin = true;
 std::string platform = "Android";
-// 删除单个用户属性
+// 删除当前用户单个属性值
 analysys.profileUnSet(registerId, isLogin, "nickName", platform);
-示例2：清除已经设置的所有用户属性
+示例2：删除已经设置的所有用户属性
 std::string registerId = "ABCDEF123456789";
 bool isLogin = true;
 std::string platform = "Android";
-// 清除所有属性
+// 删除当前用户所有属性值
 analysys.profileDelete(registerId, isLogin, platform);
 ```
 
