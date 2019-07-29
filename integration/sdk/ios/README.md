@@ -111,6 +111,15 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    //  4.3.0版本后部分设置在SDK初始化前设置
+    //  设置上传地址
+    [AnalysysAgent setUploadURL:@"https://url:port"];
+    #ifdef DEBUG
+        [AnalysysAgent setDebugMode:AnalysysDebugButTrack];
+    #else
+        [AnalysysAgent setDebugMode:AnalysysDebugOff];
+    #endif
+
     //  设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
     //  AnalysysAgent 配置信息
     AnalysysConfig.appKey = @"77a52s552c892bn442v721";
@@ -118,17 +127,11 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
     AnalysysConfig.channel = @"App Store";
     // 设置追踪新用户的首次属性
     AnalysysConfig.autoProfile = YES;
-    // 设置上传数据使用AES加密
-    AnalysysConfig.encryptType = AnalysysEncryptAES;
+    // 设置上传数据使用AES加密，需添加加密模块
+    //  AnalysysConfig.encryptType = AnalysysEncryptAES;
     //  使用配置初始化SDK
     [AnalysysAgent startWithConfig:AnalysysConfig];
 
-    //  设置上传地址
-    [AnalysysAgent setUploadURL:@"https://url:port"];
-    #ifdef DEBUG
-    //  debug模式下查看日志
-    [AnalysysAgent setDebugMode:AnalysysDebugButTrack];
-    #endif
 
     return YES;
 }
@@ -145,18 +148,24 @@ import AnalysysAgent
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-    //  AnalysysAgent 配置信息
-    AnalysysAgentConfig.shareInstance().appKey = "77a52s552c892bn442v721"
-    AnalysysAgentConfig.shareInstance().channel = "App Store"
-    AnalysysAgentConfig.shareInstance().autoProfile = true
-    AnalysysAgentConfig.shareInstance().encryptType = .AES
-    //  初始化SDK
-    AnalysysAgent.start(with: AnalysysAgentConfig.shareInstance())
+    //  4.3.0版本后部分设置在SDK初始化前设置
     //  设置上传地址
     AnalysysAgent.setUploadURL("https://url:port")
     #if DEBUG
         AnalysysAgent.setDebugMode(.butTrack)
+    #else
+        AnalysysAgent.setDebugMode(.off)
     #endif
+
+    //  AnalysysAgent 配置信息
+    AnalysysAgentConfig.shareInstance().appKey = "77a52s552c892bn442v721"
+    AnalysysAgentConfig.shareInstance().channel = "App Store"
+    AnalysysAgentConfig.shareInstance().autoProfile = true
+    //  需要加密模块
+    //  AnalysysAgentConfig.shareInstance().encryptType = .AES
+    //  初始化SDK
+    AnalysysAgent.start(with: AnalysysAgentConfig.shareInstance())
+
 }
 ```
 
