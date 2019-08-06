@@ -92,7 +92,7 @@ void track(const std::string& strDistinctId, bool bIsLogin, const std::string& s
 
 \* bIsLogin 用户 ID 是否是登录 ID
 
-\* strEventName 事件名
+\* strEventName 事件ID
 
 \* jAttributes 事件属性,最多包含 100条,且 key 以字母或 $ 开头，可包含字母、数字、下划线和 $，字母不区分大小写，$ 开头为预置事件属性, 最大长度 125字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
 
