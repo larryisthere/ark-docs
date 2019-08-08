@@ -1,5 +1,16 @@
 # Session 分析
 
+
+
+{% hint style="info" %}
+**session分析功能的使用需要相应平台集成支持该功能的SDK：**
+
+Android SDK ：v4.1.2 及以上  
+iOS SDK： v4.1.2 及以上  
+JS SDK：v4.1.3 及以上  
+小程序 SDK：v4.1.3 及以上
+{% endhint %}
+
 除了分析每一个事件之外，方舟还支持基于 Session 的分析。
 
 Session，即会话，是指在指定的时间段内在您的网站/H5/小程序/APP上发生的一系列用户行为的集合。例如，一次会话可以包含多个页面浏览、交互事件等。Session 是具备时间属性的，根据不同的切割规则，可以生成不同长度的 Session，关于方舟的 Session 的默认规则请参考：[Session 规则](channel/session.md)。
