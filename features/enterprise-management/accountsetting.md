@@ -14,5 +14,13 @@
 
 可以修改姓名、所属部门
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812181551566043.png)
+![](../../.gitbook/assets/tu-pian.png)
+
+## 用户体验计划
+
+我们会统计您对产品各项功能的使用情况，用以提升我们的产品和服务。默认为加入，也可以通过设置加入或退出用户体验计划。
+
+![](../../.gitbook/assets/tu-pian%20%281%29.png)
+
+
 
