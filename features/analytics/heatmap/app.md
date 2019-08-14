@@ -1,8 +1,10 @@
 # APP 热图
 
-APP 热图目前支持Android、iOS 原生APP 的点击位置。
+APP 热图目前支持Android、iOS 原生APP 的点击位置和点击元素热图
 
-区别于Web端直接查看页面的热图，APP端需要先链接APP，获取页面，再查看当前选择页面的热图
+{% hint style="info" %}
+区别于 Web 端直接查看页面的热图，APP 端需要先连接 APP，获取页面，再查看当前选择页面的热图
+{% endhint %}
 
 ## 使用前准备
 
@@ -18,6 +20,14 @@ APP 热图目前支持Android、iOS 原生APP 的点击位置。
 
 ![](../../../.gitbook/assets/app.gif)
 
+### 点击位置热图
+
+![](../../../.gitbook/assets/image%20%28106%29.png)
+
+### 点击元素热图
+
+![](../../../.gitbook/assets/image%20%2850%29.png)
+
 ## 2. 辅助功能
 
 ### A 过滤条件
@@ -26,13 +36,13 @@ APP 热图目前支持Android、iOS 原生APP 的点击位置。
 
 默认会选中当前连接设备的屏幕宽高和应用版本，即查看的是当前设备大小的用户访问当前版本时的行为，用户可以重新修改条件。
 
-![](../../../.gitbook/assets/image%20%2858%29.png)
+![](../../../.gitbook/assets/image%20%2868%29.png)
 
 ### B 抽样计算
 
 数据量较大时计算会慢，可以选择抽样
 
-![](../../../.gitbook/assets/image%20%2852%29.png)
+![](../../../.gitbook/assets/image%20%2861%29.png)
 
 ### C 强制刷新
 
@@ -48,9 +58,15 @@ APP 热图目前支持Android、iOS 原生APP 的点击位置。
 
          ****可以调整热图背景透明度，以适应默认透明度下部分背景网页可能无法识别的情况
 
-![](../../../.gitbook/assets/image%20%2866%29.png)
+![](../../../.gitbook/assets/image%20%2878%29.png)
 
-### E 断开连接
+### E 热门元素列表
+
+查看点击元素热图时可查看热门元素列表
+
+![](../../../.gitbook/assets/image%20%28102%29.png)
+
+### F 断开连接
 
 当不需要查看热图时，点击断开即可。
 
