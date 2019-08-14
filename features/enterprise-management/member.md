@@ -51,5 +51,5 @@
 
 ## 附：角色 - 权限对应表
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812181721476556.png)
+![](../../.gitbook/assets/qi-ye-ping-tai-guan-li-quan-xian.png)
 
