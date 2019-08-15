@@ -13,7 +13,7 @@ http://{$WEB_URL}/uba/api/{$API_URL}
 如果使用方舟公有云 服务，则对应 $WEB\_URL 如下:
 
 ```text
-https://ark-customer.analysys.cn   
+http://xxx.analysys.cn   
 ```
 
 如果用户使用的是单机版私有化部署，则对应 $WEB\_URL 如下：
