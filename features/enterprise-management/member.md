@@ -13,7 +13,9 @@
 | 项目管理员 | 通常赋予项目的leader |  |  |  |  | √ |
 | 平台成员 | 通常赋予仅可查看某些项目的普通成员 |  |  |  |  | 在项目中被添加为成员时可进入 |
 
-更详细的不同角色对应的功能范围，见[《附：角色 - 权限对应表》](member.md#fu-jiao-se-quan-xian-dui-ying-biao)。
+更详细的不同角色对应的功能范围，见下表
+
+{% file src="../../.gitbook/assets/yi-guan-fang-zhou-qi-ye-ping-tai-jiao-se-quan-xian-dui-ying-biao-190815.xlsx" caption="平台角色-权限对应表" %}
 
 ## 2. 邀请成员
 
@@ -31,25 +33,27 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812181430409286.png)
 
-**A. 修改成员**
+### **A. 修改成员**
 
 需要修改用户信息或者权限时，可以点击修改成员按钮，快速修改
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812181437381573.png)
 
-**B. 修改成员密码**
+### **B. 修改成员密码**
 
 当用户忘记密码时，可以进行重置成员密码
 
 ![image](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808101536015639.png)
 
-**C. 移除成员**
+### **C. 移除成员**
 
 当添加的成员已离职，或者不再授权时，点击移除成员，移除后将无法访问该企业数据
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/12/201812181441586846.png)
 
-## 附：角色 - 权限对应表
 
-![](../../.gitbook/assets/qi-ye-ping-tai-guan-li-quan-xian.png)
+
+
+
+
 
