@@ -109,6 +109,7 @@
   * [事件分析](integration/api/api-event.md)
   * [留存分析](integration/api/api-retention.md)
   * [转化漏斗](integration/api/api-funnel.md)
+* [脚本工具](integration/serverside-scripts.md)
 
 ## 🐋 Part III 常见问题 <a id="faq"></a>
 
