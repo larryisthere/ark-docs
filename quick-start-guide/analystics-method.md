@@ -94,5 +94,5 @@
 
 为了方便日常数据的监控，可以把日常需要查看的指标，做成可视化看板
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
 

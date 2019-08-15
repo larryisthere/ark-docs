@@ -12,7 +12,7 @@
 
 > 暂不支持小程序的可视化埋点
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/image%20%282%29.png)
 
 {% hint style="info" %}
 4.3.0 以下版本入口在 **管理 - 元事件** 页面中

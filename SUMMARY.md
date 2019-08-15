@@ -103,6 +103,12 @@
 * [数据导出](integration/open-original-export/README.md)
   * [直接从Kafka中消费数据](integration/open-original-export/kafka.md)
   * [使用程序访问数据库](integration/open-original-export/program.md)
+* [API](integration/api/README.md)
+  * [元数据管理](integration/api/api-meta.md)
+  * [用户分群](integration/api/api-cohort.md)
+  * [事件分析](integration/api/api-event.md)
+  * [留存分析](integration/api/api-retention.md)
+  * [转化漏斗](integration/api/api-funnel.md)
 
 ## 🐋 Part III 常见问题 <a id="faq"></a>
 
