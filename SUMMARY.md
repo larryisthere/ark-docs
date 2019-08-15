@@ -64,10 +64,10 @@
   * [服务集成配置](features/project-manegement/integrations.md)
   * [监控告警](features/project-manegement/monitoring.md)
 * [平台管理](features/enterprise-management/README.md)
-  * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [企业概览](features/enterprise-management/overview.md)
   * [项目管理](features/enterprise-management/project-management.md)
   * [成员管理](features/enterprise-management/member.md)
+  * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>

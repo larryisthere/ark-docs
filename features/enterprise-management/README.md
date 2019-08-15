@@ -1,7 +1,12 @@
 # 平台管理
 
-* [企业概览](overview.md)
-* [项目管理](project-management.md)
-* [成员管理](member.md)
-* [帐号设置](accountsetting.md)
+{% page-ref page="overview.md" %}
+
+{% page-ref page="project-management.md" %}
+
+{% page-ref page="member.md" %}
+
+{% page-ref page="an-quan-she-zhi.md" %}
+
+{% page-ref page="accountsetting.md" %}
 
