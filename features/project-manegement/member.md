@@ -14,7 +14,7 @@
 | 工程师 | 赋予内部协助埋点的工程师 | 仅查看 | 仅查看图表列表和已有图表详情页 | 仅查看分群列表 | 仅查看运营列表 | 集成相关功能 |
 | 普通成员 | 赋予普通查看者角色 | 仅查看 | 仅查看图表列表和已有图表详情页 | 仅查看分群列 | 仅查看运营列表 |  |
 
-更多权限明细详见《易观方舟角色-权限对应表》 [https://shimo.im/sheets/6hGxwHhHXXRktTcY/](https://shimo.im/sheets/6hGxwHhHXXRktTcY/) 
+更多权限明细详见《易观方舟角色-权限对应表》 [https://shimo.im/sheets/6hGxwHhHXXRktTcY/Icvbp](https://shimo.im/sheets/6hGxwHhHXXRktTcY/Icvbp)
 
 ## 2. 邀请成员
 

@@ -13,7 +13,7 @@
 | 项目管理员 | 通常赋予项目的leader |  |  |  |  | √ |
 | 平台成员 | 通常赋予仅可查看某些项目的普通成员 |  |  |  |  | 在项目中被添加为成员时可进入 |
 
-更多权限明细详见《易观方舟角色-权限对应表》 [https://shimo.im/sheets/6hGxwHhHXXRktTcY/](https://shimo.im/sheets/6hGxwHhHXXRktTcY/) 
+更多权限明细详见《易观方舟角色-权限对应表》 [https://shimo.im/sheets/6hGxwHhHXXRktTcY/HUvKN](https://shimo.im/sheets/6hGxwHhHXXRktTcY/HUvKN)
 
 ## 2. 邀请成员
 
