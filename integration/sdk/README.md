@@ -24,8 +24,6 @@
 
 **数据导入**
 
-{% page-ref page="../import/tool.md" %}
-
 {% page-ref page="../import/restful-api.md" %}
 
 ## SDK 相关常见问题
