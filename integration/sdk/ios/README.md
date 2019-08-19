@@ -2,7 +2,7 @@
 
 ##  iOS SDK 使用说明
 
-iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.3_20190617.zip)
+iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.4_20190819.zip)
 
 | framework | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
@@ -12,7 +12,11 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 | AnalysysPush.framework | 推送模块 | 可选 | 全部 |
 | AnalysysEncrypt.framework | 加密模块 | 可选 | 全部 |
 
-注意：请您根据自身业务需求来引用相关的SDK。
+{% hint style="info" %}
+请您根据自身业务需求来引用相关的SDK。
+
+请您关注[更新日志](https://docs.analysys.cn/ark/integration/sdk/sdk-update#ios-sdk)
+{% endhint %}
 
 ### 快速集成
 

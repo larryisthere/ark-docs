@@ -805,8 +805,14 @@ add_header X-Frame-Options: Allow-From http://example.com
 ```
 
 {% hint style="info" %}
-注意：可视化埋点时候需要方舟与埋点页面协议头相同。否则会被浏览器拒绝，无法进行可视化埋点。
+注意：
+
+X-Frame-Options更多使用方式请参考：[X-Frame-Options 响应头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options)
+
+可视化埋点时候需要方舟与埋点页面协议头相同。否则会被浏览器拒绝，无法进行可视化埋点。
 {% endhint %}
+
+
 
 ### window对象
 
