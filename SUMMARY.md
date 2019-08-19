@@ -67,8 +67,8 @@
   * [企业概览](features/enterprise-management/overview.md)
   * [项目管理](features/enterprise-management/project-management.md)
   * [成员管理](features/enterprise-management/member.md)
-  * [帐号设置](features/enterprise-management/accountsetting.md)
   * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
+  * [帐号设置](features/enterprise-management/accountsetting.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>
 
@@ -98,8 +98,8 @@
   * [埋点上报检查](integration/data-verification/sdk-verification.md)
   * [数据入库检查](integration/data-verification/data_debug.md)
 * [数据导入](integration/import/README.md)
-  * [Restful API](integration/import/restful-api.md)
   * [工具导入](integration/import/java-import.md)
+  * [Restful API](integration/import/restful-api.md)
 * [数据导出](integration/open-original-export/README.md)
   * [工具导出](integration/open-original-export/java-export.md)
   * [直接从Kafka中消费数据](integration/open-original-export/kafka.md)
