@@ -103,13 +103,5 @@ public static void resetHybridModel(Context context, Object webView);
   }
 ```
 
-## 3 接口介绍
-
-### 3.1 Android 接口
-
-与[Android SDK 使用说明](./)中的接口介绍相同。
-
-### 3.2 JS SDK 接口
-
-与[JS SDK 使用说明](../js.md)中的接口介绍相同。
+## 
 

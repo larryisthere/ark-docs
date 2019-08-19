@@ -2,11 +2,11 @@
 
 ## 1. 基本配置
 
-iOS App 中如需加载 H5 页面，需要同时集成IOS SDK与JS SDK。
+iOS App 中如需加载 H5 页面，需要同时集成iOS SDK与JS SDK。
 
 ### 1.1 集成 iOS SDK
 
-集成方式查看[iOS SDK 使用说明](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/sdk_ios.md)
+集成方式查看[iOS SDK 使用说明](https://docs.analysys.cn/ark/integration/sdk/ios)
 
 ### 1.2 集成 JS SDK
 
@@ -90,14 +90,4 @@ userAgent = [userAgent stringByAppendingString:@"追加信息"];
     [AnalysysAgent resetHybridModel];
 }
 ```
-
-## 3 接口介绍
-
-### 3.1 iOS 接口
-
-与[iOS SDK 使用说明](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/sdk_ios.md)中的接口介绍相同。
-
-### 3.2 JS SDK 接口
-
-与[JS SDK 使用说明](https://github.com/larryisthere/ark-docs/tree/03211ca894b85a2ac80a6540af9a600714d71d2c/docs/manual/sdk_js.md)中的接口介绍相同。
 
