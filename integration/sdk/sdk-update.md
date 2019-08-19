@@ -366,8 +366,24 @@
         <p>2.&#x4F18;&#x5316;&#x6027;&#x80FD;</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:center">2019/08/06</td>
+      <td style="text-align:center">V4.2.3</td>
+      <td style="text-align:left">
+        <p>1.&#x589E;&#x52A0;&#x63D2;&#x4EF6;&#x7248;SDK</p>
+        <p>2.&#x589E;&#x52A0;&#x6846;&#x67B6;&#x7248;SDK</p>
+        <p>3.&#x589E;&#x52A0;appProperty&#x3001;share&#x63A5;&#x53E3;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center"></td>
+      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
+    </tr>
   </tbody>
-</table>## Java SDK
+</table>
+
+## Java SDK
 
 | 更新日期 | 版本号 | 更新内容 |
 | :---: | :---: | :--- |

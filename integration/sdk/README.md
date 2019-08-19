@@ -12,7 +12,7 @@
 
 {% page-ref page="js.md" %}
 
-{% page-ref page="wx.md" %}
+{% page-ref page="wx/" %}
 
 **服务端SDK**
 

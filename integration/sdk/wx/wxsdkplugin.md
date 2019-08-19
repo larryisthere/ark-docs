@@ -1,12 +1,15 @@
-# 微信小程序 SDK
+---
+description: 微信小程序插件版
+---
 
-## 微信小程序 SDK 使用说明
+# 微信小程序插件版
 
-微信小程序 SDK 集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_WX_v4.2.2_20190525.zip)
+微信小程序插件版SDK集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_WX_v4.2.3_20190806.zip)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_WX\_SDK.min.js | 基础模块SDK | 必须 |
+| AnalysysAgent\_WX\_SDK.plugin.min.js | 插件版SDK | 二选一 |
+| AnalysysAgent\_WX\_SDK.plugin.es6.min.js | 插件版ES6语法SDK | 二选一 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -44,15 +47,17 @@
 
 ### 集成 SDK
 
-将 AnalysysAgent\_WX\_SDK.min.js 文件放到小程序的目录下
+将 AnalysysAgent\_WX\_SDK.plugin.min.js或AnalysysAgent\_WX\_SDK.plugines6.min.js 文件放到小程序的目录下
 
 ![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614101827.png)
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.min.js")
+let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.plugin.min.js")
+//import AnalysysAgent from "./build/AnalysysAgent_WX_SDK.plugin.es6.min.js"
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+App = AnalysysAgent.App
 ```
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
@@ -60,14 +65,16 @@ AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```javascript
 let app = getApp();
 let AnalysysAgent = app.AnalysysAgent;
+Page = AnalysysAgent.Page
 ```
 
 请注意:
 
 ```text
 1.将 appkey 的值填入您具体的项目 appkey
-
 2.目录为您所引入微信小程序 SDK 的具体目录
+3.请使用SDK所提供的App方法
+4.请使用SDK所提供的Page方法
 ```
 
 ### 配置参数
@@ -78,6 +85,7 @@ let AnalysysAgent = app.AnalysysAgent;
 * _auto_ 设置打开/关闭自动采集页面：false - 关闭自动采集；true - 开启自动采集\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
+* _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 
 #### appkey
 
@@ -163,6 +171,20 @@ AnalysysAgent.encryptType = 0//或删除该行代码。
 AnalysysAgent.encryptType = 1
 ```
 
+#### autoShare
+
+autoShare 为设置是否自动采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。可根据自身需要进行更改。
+
+* false 关闭自动采集分享按钮点击事件\(默认\)。类型：Boolean。
+* true 自动采集分享按钮点击事件。类型：Boolean。
+
+```javascript
+//关闭自动采集分享按钮点击事件。
+AnalysysAgent.autoShare = false//或删除该行代码。
+//自动采集分享按钮点击事件。
+AnalysysAgent.autoShare = true
+```
+
 ### 域名配置
 
 登录微信公众平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
@@ -185,7 +207,7 @@ AnalysysAgent.pageView(pageName, properties);
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符
-* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/JSON/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -213,7 +235,7 @@ AnalysysAgent.track(eventName, eventInfo)
 ```
 
 * eventName：事件ID，以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符
-* eventInfo：自定义属性，用于对事件描述。eventInfo 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 125字符，value 支持类型：String/Number/boolean/JSON/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* eventInfo：自定义属性，用于对事件描述。eventInfo 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 125字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -231,6 +253,53 @@ var eventInfo = {
     "count":1
 }
 AnalysysAgent.track("buy", eventInfo);
+```
+
+### 注册页面事件通用属性
+
+注册应用中所有页面通用属性，设置后当次小程序启动后所有页面都拥有该属性，直至该小程序关闭。接口如下：
+
+```javascript
+AnalysysAgent.appProperty(properties)
+```
+
+* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+
+示例：
+
+```javascript
+// 设置被分享页面所属分享群ID
+var properties ={
+    openGId:'123456789'
+}
+
+AnalysysAgent.appProperty(properties);
+```
+
+### 采集分享按钮点击事件
+
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
+
+```javascript
+AnalysysAgent.share(properties);
+```
+
+* properties：分享内容，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+
+示例：
+
+```javascript
+// 采集分享按钮点击事件
+Page({
+    onShareAppMessage:function(){
+        let shareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        let AnsShareProperties = AnalysysAgent.share(shareProperties);
+        return AnsShareProperties
+    }
+})
 ```
 
 ### 设备ID与用户关联
@@ -305,7 +374,7 @@ var distinctId = AnalysysAgent.getDistinctId();
 > **属性值**
 
 ```text
-支持部分类型：String/Number/Boolean/JSON/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+支持部分类型：String/Number/Boolean/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
 ```
 
 #### 设置用户固有属性
@@ -318,9 +387,9 @@ AnalysysAgent.profileSetOnce(propertyName, propertyValue);
 AnalysysAgent.profileSetOnce(property);
 ```
 
-* propertyName ：属性名称，约束见[属性名称](wx.md#1.1)
-* propertyValue ：属性值，约束见[属性值](wx.md#2.1)
-* property ： 属性列表，约束见[属性名称](wx.md#1.1)，[属性值](wx.md#2.1)
+* propertyName ：属性名称，约束见[属性名称](./#1.1)
+* propertyValue ：属性值，约束见[属性值](./#2.1)
+* property ： 属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
 
 示例：
 
@@ -347,9 +416,9 @@ AnalysysAgent.profileSet(propertyName, propertyValue);
 AnalysysAgent.profileSet(property);
 ```
 
-* propertyName ：属性名称，约束见[属性名称](wx.md#1.1)
-* propertyValue ：属性值，约束见[属性值](wx.md#2.1)
-* property ：属性列表，约束见[属性名称](wx.md#1.1)，[属性值](wx.md#2.1)
+* propertyName ：属性名称，约束见[属性名称](./#1.1)
+* propertyValue ：属性值，约束见[属性值](./#2.1)
+* property ：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
 
 示例：
 
@@ -377,9 +446,9 @@ AnalysysAgent.profileIncrement(propertyName, propertyNumber)
 AnalysysAgent.profileIncrement(property);
 ```
 
-* propertyName：属性名称，约束见[属性名称](wx.md#1.1)
-* propertyValue：属性值，约束见[属性值](wx.md#2.1)
-* property：属性列表，约束见[属性名称](wx.md#1.1)，[属性值](wx.md#2.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyValue：属性值，约束见[属性值](./#2.1)
+* property：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
 
 示例：
 
@@ -410,8 +479,8 @@ AnalysysAgent.profileAppend(propertyValue);
 AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```
 
-* propertyName：属性名称，约束见[属性名称](wx.md#1.1)
-* propertyValue：属性值，约束见[属性值](wx.md#2.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyValue：属性值，约束见[属性值](./#2.1)
 
 示例：
 
@@ -440,7 +509,7 @@ AnalysysAgent.profileUnset(propertyName);
 AnalysysAgent.profileDelete();
 ```
 
-* propertyName：属性名称，约束见[属性名称](wx.md#1.1)
+* propertyName：属性名称，约束见[属性名称](./#1.1)
 
 示例：
 
@@ -467,7 +536,7 @@ AnalysysAgent.profileDelete();
 > **属性值**
 
 ```text
-支持部分类型：String/Number/boolean/JSON/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON,则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+支持部分类型：String/Number/boolean/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON,则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
 ```
 
 #### 注册通用属性
@@ -480,9 +549,9 @@ AnalysysAgent.registerSuperProperty(superPropertyName , superPropertyValue );
 AnalysysAgent.registerSuperProperties(superProperty);
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](wx.md#1)
-* superPropertyValue：属性值，约束见[属性值](wx.md#2)
-* superProperty：属性列表，约束见[属性名称](wx.md#1)，[属性值](wx.md#2)
+* superPropertyName：属性名称，约束见[属性名称](./#1)
+* superPropertyValue：属性值，约束见[属性值](./#2)
+* superProperty：属性列表，约束见[属性名称](./#1)，[属性值](./#2)
 
 示例：
 
@@ -513,7 +582,7 @@ AnalysysAgent.unRegisterSuperProperty(superPropertyName);
 AnalysysAgent.clearSuperProperties();
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](wx.md#1)
+* superPropertyName：属性名称，约束见[属性名称](./#1)
 
 示例：
 
@@ -538,7 +607,7 @@ AnalysysAgent.getSuperProperty(superPropertyName);
 AnalysysAgent.getSuperProperties();
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](wx.md#1)
+* superPropertyName：属性名称，约束见[属性名称](./#1)
 
 示例：
 

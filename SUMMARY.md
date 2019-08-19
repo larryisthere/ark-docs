@@ -67,8 +67,8 @@
   * [企业概览](features/enterprise-management/overview.md)
   * [项目管理](features/enterprise-management/project-management.md)
   * [成员管理](features/enterprise-management/member.md)
-  * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
+  * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>
 
@@ -88,7 +88,10 @@
   * [iOS SDK](integration/sdk/ios/README.md)
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
   * [JS SDK](integration/sdk/js.md)
-  * [微信小程序 SDK](integration/sdk/wx.md)
+  * [微信小程序 SDK](integration/sdk/wx/README.md)
+    * [微信小程序标准版](integration/sdk/wx/wxsdk.md)
+    * [微信小程序插件版](integration/sdk/wx/wxsdkplugin.md)
+    * [微信小程序通用框架版](integration/sdk/wx/wxsdkcustom.md)
   * [Java SDK](integration/sdk/java.md)
   * [Python SDK](integration/sdk/python.md)
   * [PHP SDK](integration/sdk/php.md)
@@ -98,8 +101,8 @@
   * [埋点上报检查](integration/data-verification/sdk-verification.md)
   * [数据入库检查](integration/data-verification/data_debug.md)
 * [数据导入](integration/import/README.md)
-  * [工具导入](integration/import/java-import.md)
   * [Restful API](integration/import/restful-api.md)
+  * [工具导入](integration/import/java-import.md)
 * [数据导出](integration/open-original-export/README.md)
   * [工具导出](integration/open-original-export/java-export.md)
   * [直接从Kafka中消费数据](integration/open-original-export/kafka.md)
