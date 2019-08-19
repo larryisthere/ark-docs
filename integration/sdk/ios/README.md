@@ -65,9 +65,12 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 | `CoreTelephony.framework` | 运营商信息 |
 | `SystemConfiguration.framework` | 网络状态 |
 | `libz.tbd` | 数据压缩（Xcode7以下:libz.dylib） |
-| `libicucore.tbd` | 网络连接 |
+| `libicucore.tbd` | websocket可视化连接 |
+| `libsqlite3.tbd` | 数据存储 |
 
-* 为支持SDK中category，请在`Targets` - “项目名称” - `Build Settings` - `Other Linker Flags`，添加`-ObjC`选项（注意大小写）
+* 为支持SDK中category，请在`Targets` - “项目名称” - `Build Settings` - `Other Linker Flags`，添加`-ObjC`选项（
+
+  注意大小写）
 
 ### swift 集成配置
 
