@@ -797,10 +797,11 @@ AnalysysAgent.reset();
 使用可视化埋点功能需要使用 `iframe` 来加载您的网站。如果您的网站禁止了 `iframe` 加载，就无法使用可视化埋点功能，需要在服务器配置中设置 `X-Frame-Options` 允许 `iframe` 加载。
 
 ```javascript
-//您的网站为https协议，https://xxx.xxx.xxx为您访问的方舟的域名
-X-Frame-Options: Allow-From https://xxx.xxx.xxx
-//您的网站为http协议，http://xxx.xxx.xxx为您访问的方舟的域名
-X-Frame-Options: Allow-From http://xxx.xxx.xxx
+//配置nginx中 X-Frame-Options 响应头
+//您的网站为https协议，https://example.com/为您访问的方舟的域名
+add_header X-Frame-Options: Allow-From https://example.com
+//您的网站为http协议，http://example.com为您访问的方舟的域名
+add_header X-Frame-Options: Allow-From http://example.com
 ```
 
 {% hint style="info" %}
