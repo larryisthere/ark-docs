@@ -219,63 +219,63 @@ API中使用的指标、过滤条件、维度等都会使用表达式，所以�
 {% endtab %}
 
 {% tab title="数值" %}
-* EQ
+* **EQ**
 
   等于，当params一个值时，表示等于这个值的才满足；当params有多个值时，表示满足其中一项即可，相当于in。
 
-* NOT\_EQ
+* **NOT\_EQ**
 
   不等于，当params一个值时，表示不等于这个值的都满足；当params有多个值时，表示不能是其中任意一项，相当于not in。
 
-* GT
+* **GT**
 
   大于。
 
-* GTE
+* **GTE**
 
   大于等于。
 
-* LT
+* **LT**
 
   小于。
 
-* LTE
+* **LTE**
 
   小于等于。
 
-* RANGE
+* **RANGE**
 
   区间，在某个数据区间内的数值，相当于 &gt;= params\[0\] and &lt;= params\[1\] 或者 between params\[0\] and params\[1\]。
 
-* NOT\_NULL
+* **NOT\_NULL**
 
   有值，属性值有值，相当于 is not null。
 
-* NULL
+* **NULL**
 
   无值，属性值无值，相当于 is null。
 {% endtab %}
 
 {% tab title="布尔" %}
-* TRUE
+* **TRUE**
 
   为真。
 
-* FALSE
+* **FALSE**
 
   为假。
 
-* NOT\_NULL
+* **NOT\_NULL**
 
   有值，属性值有值，相当于 is not null。
 
-* NULL
+* **NULL**
 
   无值，属性值无值，相当于 is null。
 {% endtab %}
 
 {% tab title="日期" %}
-* ABSOLUTE\_TIME
+* **ABSOLUTE\_TIME**
 
   绝对时间，在某个具体的时间范围，相当于 &gt;= params\[0\] and &lt;= params\[1\] 或者 between params\[0\] and params\[1\]。
 
@@ -287,7 +287,7 @@ API中使用的指标、过滤条件、维度等都会使用表达式，所以�
     }
   ```
 
-* RELATIVE\_TIME\_OF\_CUURENT
+* **RELATIVE\_TIME\_OF\_CUURENT**
 
   在相对当前的某段时间里。
 
@@ -311,7 +311,7 @@ API中使用的指标、过滤条件、维度等都会使用表达式，所以�
     }
   ```
 
-* RELATIVE\_TIME\_OF\_CUURENT
+* **RELATIVE\_TIME\_OF\_CUURENT**
 
   在相对当前的时间区间。
 
@@ -325,7 +325,7 @@ API中使用的指标、过滤条件、维度等都会使用表达式，所以�
     }
   ```
 
-* RELATIVE\_TIME\_OF\_EVENT
+* **RELATIVE\_TIME\_OF\_EVENT**
 
   相对于事件发生时间。 如注册时间在事件发生时间之后（after）/之前（before）3天（day）/小时（hour）/分（minute）/秒（second）
 
@@ -347,41 +347,41 @@ API中使用的指标、过滤条件、维度等都会使用表达式，所以�
     }
   ```
 
-* NOT\_NULL
+* **NOT\_NULL**
 
   有值，属性值有值，相当于 is not null。
 
-* NULL
+* **NULL**
 
   无值，属性值无值，相当于 is null。
 {% endtab %}
 
 {% tab title="集合" %}
-* EQ
+* **EQ**
 
   等于，集合只取第一个值进行完整匹配。
 
-* CONTAIN
+* **CONTAIN**
 
   包含，集合里面包含某个值。
 
-* NOT\_CONTAIN
+* **NOT\_CONTAIN**
 
   不包含，集合里面不包含某个值。
 
-* NOT\_NULL
+* **NOT\_NULL**
 
   有值，属性值有值，相当于 is not null。
 
-* NULL
+* **NULL**
 
   无值，属性值无值，相当于 is null。
 
-* EMPTY
+* **EMPTY**
 
   为空字符串，集合里面包含空字符串。
 
-* NOT\_EMPTY
+* **NOT\_EMPTY**
 
   不为空字符串，集合里面不包含空字符串。
 {% endtab %}
