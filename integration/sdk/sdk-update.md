@@ -303,7 +303,7 @@
       <td style="text-align:center">2019/05/24</td>
       <td style="text-align:center">v4.3.4</td>
       <td style="text-align:left">
-        <p>1.&#x4E0D;&#x5728;&#x5BF9;&#x53C2;&#x6570;key&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.4&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
+        <p>1.&#x4E0D;&#x5728;&#x5BF9;&#x53C2;&#x6570;key&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.4&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
         <p>2.&#x4F18;&#x5316;&#x591A;&#x7EBF;&#x7A0B;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x98CE;&#x9669;
           <br
           />3.&#x4F18;&#x5316;SDK&#x5728;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5185;&#x5B58;&#x5360;&#x7528;&#x7684;&#x98CE;&#x9669;</p>
