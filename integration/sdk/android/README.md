@@ -45,14 +45,18 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.
 
 ## 集成配置
 
-### Eclipse SDK 集成
+### 选择集成工具
 
-将需要的 jar 包拷贝到本地工程 libs 子目录下；在Eclipse中右键工程根目录，选择 `property —> Java Build Path —> Libraries` ，然后点击 Add External JARs... 选择指向 jar 的路径，点击 OK，即导入成功。（ADT17 及以上不需要手动导入）
-
-### AndroidStudio SDK 集成
-
+{% tabs %}
+{% tab title="AndroidStudio SDK 集成" %}
 1. 选择 SDK 功能组件并下载，解压.zip 文件得到相应 jar 包（例如：x.x.x.jar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 jar 包。
 2. 右键 Android Studio 的项目工程 —&gt; 选择 Open Module Settings —&gt;在 Project Structure 弹出框中 —&gt;选择 Dependencies 选项卡 —&gt;点击左下"＋"—&gt;选择 jar 包类型—&gt;引入相应的 jar 包。
+{% endtab %}
+
+{% tab title="Eclipse SDK 集成" %}
+1.将需要的 jar 包拷贝到本地工程 libs 子目录下；在Eclipse中右键工程根目录，选择 `property —> Java Build Path —> Libraries` ，然后点击 Add External JARs... 选择指向 jar 的路径，点击 OK，即导入成功。（ADT17 及以上不需要手动导入）
+{% endtab %}
+{% endtabs %}
 
 ### 配置 Manifest
 
