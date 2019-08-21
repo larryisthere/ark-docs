@@ -1,12 +1,12 @@
 ---
-description: 标准版本SDK，本版本适用方舟4.3.0以上版本
+description: 标准版本适用方舟4.3.3以上版本
 ---
 
 # JS SDK标准版
 
 ## JS SDK 使用说明
 
-JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_zip_v4.3.4_20190821.zip)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_v4.3.4_20190821.zip)
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
