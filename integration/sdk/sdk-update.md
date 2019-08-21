@@ -124,7 +124,7 @@
       <td style="text-align:center">2019/08/19</td>
       <td style="text-align:center">v4.3.4</td>
       <td style="text-align:left">
-        <p>1.&#x4E0D;&#x5728;&#x5BF9;&#x53C2;&#x6570;key&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.4&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
+        <p>1.&#x4E0D;&#x5728;&#x5BF9;&#x53C2;&#x6570;key&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.3&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
         <p>2.&#x4F18;&#x5316;&#x591A;&#x7EBF;&#x7A0B;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x98CE;&#x9669;
           <br
           />3.&#x4F18;&#x5316;SDK&#x5728;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5185;&#x5B58;&#x5360;&#x7528;&#x7684;&#x98CE;&#x9669;</p>
@@ -225,6 +225,16 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td style="text-align:center">2019/09/21</td>
+      <td style="text-align:center">4.3.4</td>
+      <td style="text-align:left">
+        <p>1.&#x589E;&#x52A0;&#x538B;&#x7F29;&#x7248;&#xFF08;&#x5BF9;&#x529F;&#x80FD;&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF0C;&#x51CF;&#x5C11;&#x4F53;&#x79EF;&#xFF09;</p>
+        <p>2.&#x53EF;&#x89C6;&#x5316;&#x529F;&#x80FD;&#x4F18;&#x5316;</p>
+        <p>3.&#x70ED;&#x56FE;&#x529F;&#x80FD;&#x4F18;&#x5316;</p>
+        <p>4.&#x6807;&#x51C6;&#x7248;&#x3001;&#x538B;&#x7F29;&#x7248;&#x4E0D;&#x5728;&#x5BF9;&#x53C2;&#x6570;key&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.3&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
+      </td>
+    </tr>
     <tr>
       <td style="text-align:center">2019/05/24</td>
       <td style="text-align:center">v4.3.1</td>

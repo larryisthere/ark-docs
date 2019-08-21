@@ -3,7 +3,7 @@
 工程师根据以下两项项进行数据接入：
 
 * 项目 AppKey（创建项目后生成，用于唯一标识项目的数据）
-* 集成 [JS SDK ](../../integration/sdk/js.md)
+* 集成 [JS SDK ](../../integration/sdk/jssdk/js.md)
 
 ![](../../.gitbook/assets/image%20%2811%29.png)
 

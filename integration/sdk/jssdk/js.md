@@ -1,8 +1,12 @@
-# JS SDK
+---
+description: 标准版本SDK，本版本适用方舟4.3.0以上版本
+---
+
+# JS SDK标准版
 
 ## JS SDK 使用说明
 
-JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_v4.3.1_20190525.zip)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_zip_v4.3.4_20190821.zip)
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
@@ -51,8 +55,8 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 * 对于页面打开后快速跳转的网页，建议使用同步加载，因为该类网页有可能会在异步加载SDK未结束前跳转网页
 {% endhint %}
 
-### 异步集成
-
+{% tabs %}
+{% tab title="异步集成（推荐）" %}
 将以下JS代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
 
 ```javascript
@@ -93,13 +97,9 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
     })
 </script>
 ```
+{% endtab %}
 
-{% hint style="info" %}
-请不要修改以上初始化代码中的代码逻辑，可能会造成SDK无法正常运行。
-{% endhint %}
-
-### 同步集成
-
+{% tab title="同步集成" %}
 将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
 
 ```javascript
@@ -137,6 +137,8 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 //https协议
 <script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 请不要修改以上初始化代码中的代码逻辑，可能会造成SDK无法正常运行。
