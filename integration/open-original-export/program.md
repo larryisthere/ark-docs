@@ -19,7 +19,7 @@ description: >-
 | jdbc url | jdbc:presto://ark2.analysys.xyz:8285/hive/default |
 | driver | com.facebook.presto.jdbc.PrestoDriver |
 | username | streaming |
-| password | \(密码为空\) |
+| password | \(初始密码为空\) |
 
 presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201](https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201)
 
