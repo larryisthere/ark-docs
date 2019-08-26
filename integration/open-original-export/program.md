@@ -135,6 +135,24 @@ dataFile.CSV为导出的文件路径
 
 如果你更熟悉 python，也可以通过 [presto-python-client](https://pypi.org/project/presto-python-client/) 来对数据库进行访问。
 
+### 连接方法
+
+```python
+import prestodb
+conn=prestodb.dbapi.connect(
+        host='ip address of ark2',
+        port=8285,
+        user='streaming',
+        catalog='hive',
+        schema='db_{appkey}',
+)
+cur = conn.cursor()
+cur.execute('SELECT * FROM event_vd limit 10')
+rows = cur.fetchall()
+print rows
+
+```
+
 ## R
 
 可以尝试使用开源项目 [https://github.com/prestodb/RPresto](https://github.com/prestodb/RPresto) 来对数据库进行访问。
