@@ -14,8 +14,6 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 
 {% hint style="info" %}
 请您根据自身业务需求来引用相关的SDK。
-
-请您关注[更新日志](https://docs.analysys.cn/ark/integration/sdk/sdk-update#ios-sdk)
 {% endhint %}
 
 ### 快速集成
@@ -24,6 +22,7 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 
 #### 1. 选择集成方式
 
+* Cocoapods
 * 手动引入
 
 #### 2. 配置 Xcode
@@ -50,6 +49,22 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 
 ## 集成配置
 
+### Cocoapods集成
+
+1. 安装CocoaPods
+2. 工程目录下创建`Podfile`文件，并添加`pod 'AnalysysAgent'`，示例如下：
+
+```objectivec
+platform :ios, '8.0'
+use_frameworks!
+
+target 'YourApp' do
+    pod 'AnalysysAgent'
+end
+```
+
+   3. 关闭Xcode，在工程目录下执行`pod install`或`pod install --verbose --no-repo-update`，完成后打开xxx.xcworkspace工程
+
 ### 手动导入集成
 
 1. 选择 工程 - 右键 - `Add Files to "ProjectName"`
@@ -57,7 +72,9 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 3. 勾选 `Copy items if needed`、`Create groups`- `Add` 完成添加类库
 4. 添加`AnalysysAgent.bundle`资源文件：`Targets`-&gt;`ProjectName` -&gt; `Build Phases` -&gt; `Copy Bundle Resources` -&gt; 添加文件
 
-### Xcode配置
+{% tabs %}
+{% tab title="Xcode配置" %}
+
 
 * 若使用手动集成，请添加如下依赖框架：
 
@@ -73,9 +90,9 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 | `libsqlite3.tbd` | 数据存储 |
 
 * 为支持SDK中category，请在`Targets` - “项目名称” - `Build Settings` - `Other Linker Flags`，添加`-ObjC`选项（注意大小写）
+{% endtab %}
 
-### swift 集成配置
-
+{% tab title="swift 集成配置" %}
 若使用 `Swift` 语言工程开发集成，则除上述配置外还需要添加桥接文件，该文件可以使用以下两种方式之一创建：
 
 * 在工程中添加 `XXX-Bridging-Header.h` 文件（`XXX`为工程名称），并在 `Build Setting` - `Objective-C Bridging Header` 中添加桥接文件路径。
@@ -86,6 +103,10 @@ iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analy
 ```text
 #import <AnalysysAgent/AnalysysAgent.h>
 ```
+{% endtab %}
+{% endtabs %}
+
+
 
 ## 基础模块介绍
 
