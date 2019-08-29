@@ -15,7 +15,7 @@
 
 2、文档中都是以集群版为例切换机器或连接服务，如果是**单机版**，将对应的ark2/ark3**改为ark1**即可。
 
-3、在 [3.7 数据验证](java-import.md#37-shu-ju-yan-zheng) 的时候用到了 **$importFlag** 属性，如果需要用此方式验证，在每条事件记录和用户记录中，都需要添加 $importFlag 属性。
+3、在 [3.7 数据验证](tool.md#37-shu-ju-yan-zheng) 的时候用到了 **$importFlag** 属性，如果需要用此方式验证，在每条事件记录和用户记录中，都需要添加 $importFlag 属性。
 {% endhint %}
 
 {% hint style="info" %}
@@ -91,7 +91,7 @@
 
 ### 3.4 开始导入
 
-以下所有操作都是在数据导入工具根目录执行。如果部署的方舟版本低于4.3.4，导入历史数据时需要关闭数据流的时间验证，具体操作流程见 [数据流验证](java-import.md#4-shu-ju-liu-yan-zheng-kai-qi-guan-bi)。
+以下所有操作都是在数据导入工具根目录执行。如果部署的方舟版本低于4.3.4，导入历史数据时需要关闭数据流的时间验证，具体操作流程见 [数据流验证](tool.md#4-shu-ju-liu-yan-zheng-kai-qi-guan-bi)。
 
 #### 3.4.1 数据导入工具根目录
 
@@ -152,7 +152,7 @@
 
 #### 3.7.1 核对导入kafka的数据量是否正确
 
-具体操作可参考 [4.3 核对kafka中的数据量和kafka消费记录](java-import.md#43-he-dui-kafka-zhong-de-shu-ju-liang-he-kafka-xiao-fei-ji-lu)。
+具体操作可参考 [4.3 核对kafka中的数据量和kafka消费记录](tool.md#43-he-dui-kafka-zhong-de-shu-ju-liang-he-kafka-xiao-fei-ji-lu)。
 
 #### 3.7.2 核对Hive中事件数据量和Hbase中的用户数据量是否正确
 
@@ -270,7 +270,7 @@ exit 退出
 
 ### 4.6 开始导入
 
-到此截止，数据流相关操作完成，可以开始进行 [数据导入](java-import.md#34-kai-shi-dao-ru) 操作。
+到此截止，数据流相关操作完成，可以开始进行 [数据导入](tool.md#34-kai-shi-dao-ru) 操作。
 
 ### 4.7 开启SDK收数服务
 
@@ -296,11 +296,11 @@ exit 退出
 
 恢复4.4中修改的filter参数，由false改为true，保存，然后Restart All，重启所有服务让参数生效。
 
-具体操作可参考 [4.4 修改数据流验证参数](java-import.md#44-xiu-gai-shu-ju-liu-yan-zheng-can-shu)。
+具体操作可参考 [4.4 修改数据流验证参数](tool.md#44-xiu-gai-shu-ju-liu-yan-zheng-can-shu)。
 
 ### 4.10 开启项目数据流
 
-在配置恢复服务重启后，需要将因为导数将数据流关闭的所有项目数据流重新开启，具体操作见 [4.5 开启项目数据流](java-import.md#45-kai-qi-xiang-mu-shu-ju-liu)。
+在配置恢复服务重启后，需要将因为导数将数据流关闭的所有项目数据流重新开启，具体操作见 [4.5 开启项目数据流](tool.md#45-kai-qi-xiang-mu-shu-ju-liu)。
 
 ## 5. 常见问题
 
@@ -342,7 +342,7 @@ exit 退出
 
 3）建议删除 logs目录下的日志文件，方便查看最新数据导入情况，参考命令：rm -rf logs/\*
 
-4）准备导入文件，开始导入操作。流程参考和启动方法参考 [开始导入](java-import.md#34-kai-shi-dao-ru)
+4）准备导入文件，开始导入操作。流程参考和启动方法参考 [开始导入](tool.md#34-kai-shi-dao-ru)
 
 ### 5.6 导入数据量不一致，怎么查看异常数据？
 

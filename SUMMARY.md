@@ -104,7 +104,7 @@
   * [埋点上报检查](integration/data-verification/sdk-verification.md)
   * [数据入库检查](integration/data-verification/data_debug.md)
 * [数据导入](integration/import/README.md)
-  * [工具导入](integration/import/java-import.md)
+  * [工具导入](integration/import/tool.md)
   * [Restful API](integration/import/restful-api.md)
 * [数据导出](integration/open-original-export/README.md)
   * [工具导出](integration/open-original-export/java-export.md)
