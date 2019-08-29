@@ -1,6 +1,6 @@
 # iOS SDK
 
-##  iOS SDK 使用说明
+## iOS SDK 使用说明
 
 iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.4_20190819.zip)
 
@@ -74,8 +74,6 @@ end
 
 {% tabs %}
 {% tab title="Xcode配置" %}
-
-
 * 若使用手动集成，请添加如下依赖框架：
 
   选择工程 - `Targets` - “项目名称” - `Build Phase` - `Link Binary With Libraries` 依赖库如下：
@@ -105,8 +103,6 @@ end
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ## 基础模块介绍
 
