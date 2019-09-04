@@ -310,7 +310,7 @@ autoWebstay 为设置是否追踪页面滚动行为。可根据自身需要进�
 }
 ```
 
-autoHeatmap
+#### autoHeatmap
 
 autoHeatmap 为设置是否启用热图功能。可根据自身需要进行更改。
 

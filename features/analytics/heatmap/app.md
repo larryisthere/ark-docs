@@ -8,7 +8,7 @@ APP 热图目前支持Android、iOS 原生APP 的点击位置和点击元素热�
 
 ## 使用前准备
 
-需要 SDK 升级到 v4.3.0.1 及以上，设置 `autoHeap` 为 `true`，详见 [《Android SDK 集成指南》](vscode-resource:/d:/1%20%E6%98%93%E8%A7%82%E6%96%B9%E8%88%9F/fangzhou-docs/docs/v2/manual/sdk-android.md) 和 [《iOS SDK 集成指南》](vscode-resource:/d:/1%20%E6%98%93%E8%A7%82%E6%96%B9%E8%88%9F/fangzhou-docs/docs/v2/manual/sdk-ios.md)
+需要 SDK 升级到 v4.3.0.1 及以上，设置 `autoHeatMap` 为 `true`，详见 [《Android SDK 集成指南》](../../../integration/sdk/android/#she-zhi-re-tu-cai-ji) 和 [《iOS SDK 集成指南》](../../../integration/sdk/ios/#she-zhi-re-tu-cai-ji)
 
 ## 1. 连接 APP 查看热图
 
