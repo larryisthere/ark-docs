@@ -10,7 +10,7 @@
 
 {% page-ref page="ios/" %}
 
-{% page-ref page="jssdk/js.md" %}
+{% page-ref page="js/js.md" %}
 
 {% page-ref page="wx/" %}
 

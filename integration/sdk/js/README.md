@@ -10,8 +10,8 @@ description: 针对HTML 、 Css 及 Javascript 制作成的网站
 
 | 版本名称 | 不包含功能 |
 | :--- | :--- |
-| 标准版 | 无 |
-| 压缩版 | 加密功能、UTM参数中包含GBK的转码功能 |
+| [标准版](js.md) | 无 |
+| [压缩版](js-sdk-zip.md) | 加密功能、UTM参数中包含GBK的转码功能 |
 
 
 
