@@ -92,8 +92,10 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
         c.src = '/*设置为JS SDK实际存放地址*/' +'?v=' +time; //JS SDK存放地址
         n.parentNode.insertBefore(c, n);
     })({
-        appkey: '/*设置为实际APPKEY*/', //APPKEY
-        uploadURL: '/*设置为实际地址*/',//上传数据的地址
+        //开始配置SDK相关参数
+        appkey: '/*设置为实际APPKEY*/', //配置APPKEY参数
+        uploadURL: '/*设置为实际地址*/',//配置上传数据的地址
+
     })
 </script>
 ```
@@ -124,8 +126,10 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
             AnalysysAgent[key](config[key])
         }
     })({
-        appkey: '/*设置为实际APPKEY*/', //APPKEY
-        uploadURL: '/*设置为实际地址*/',//上传数据的地址
+        //开始配置SDK相关参数
+        appkey: '/*设置为实际APPKEY*/', //配置APPKEY参数
+        uploadURL: '/*设置为实际地址*/',//配置上传数据的地址
+
     })
 </script>
 
