@@ -6,7 +6,7 @@
 
 ### 1.1 接口地址
 
-> 【GET/POST】 /uba/api/meta/userProperties
+> 【GET】 /uba/api/meta/userProperties
 
 ### 1.2 请求参数说明
 
@@ -49,7 +49,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 ### 2.1 接口地址
 
-> 【GET/POST】 /uba/api/meta/event
+> 【GET】 /uba/api/meta/event
 
 ### 2.2 请求参数说明
 
@@ -92,7 +92,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 ### 3.1 接口地址
 
-> 【GET/POST】 /uba/api/meta/eventProperties
+> 【GET】 /uba/api/meta/eventProperties
 
 ### 3.2 请求参数说明
 

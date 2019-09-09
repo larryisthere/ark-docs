@@ -6,7 +6,7 @@
 
 ### 1.1 接口地址
 
-> 【GET/POST】 /uba/api/cohort
+> 【GET】 /uba/api/cohort
 
 ### 1.2 请求参数说明
 
