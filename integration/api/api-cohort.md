@@ -12,7 +12,7 @@ description: 方舟4.3.4版本中新增API
 
 > 【GET】 /uba/api/cohort
 
-### 1.2 请求参数说明
+### 1.2 请求参数示例
 
 无
 
@@ -61,7 +61,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 > 【POST】  /uba/api/cohort/users
 
-### 2.2 请求参数说明
+### 2.2 请求参数示例
 
 ```java
 {
@@ -130,7 +130,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 xwho 表示用户ID，取用户属性ID为xwho的值，传参方式：path variable，非request body
 {% endhint %}
 
-### 3.2 请求参数说明
+### 3.2 请求参数示例
 
 ```java
 {
