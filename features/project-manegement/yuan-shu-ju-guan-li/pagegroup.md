@@ -4,7 +4,7 @@
 
 ## 1. 创建页面组
 
-![](../../../.gitbook/assets/yemianzu.gif)
+![](../../../.gitbook/assets/chuang-jian-ye-mian-zu.gif)
 
 可以设定一组或多组 URL 规则快速匹配一组具有相同结构的页面，支持 5 种URL规则：包含、开头为、结尾为、等于、正则表达式：
 
@@ -36,7 +36,7 @@
 
 页面组的修改、复制、删除
 
-![](../../../.gitbook/assets/image%20%28115%29.png)
+![](../../../.gitbook/assets/image%20%28108%29.png)
 
 ## **附 正则表达式常用语法**
 

@@ -16,7 +16,7 @@ Session，即会话，是指在指定的时间段内在您的网站/H5/小程序
 
 Session管理功能，是用来创建Session口径和管理已完成创建的Session口径的。
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808141238011339.png)
+![](../../../.gitbook/assets/image%20%2845%29.png)
 
 ### 1. Session 解析
 
@@ -34,7 +34,7 @@ Session 结束的方式分为以下3种：
 
 点击右上角的创建 Session 口径，出现如下界面：
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808122100534434.png)
+![](../../../.gitbook/assets/image%20%2827%29.png)
 
 使用者可根据需求，设定不同的 Session 口径，在易观方舟中，Session 可以排除一些不重要的事件，不参与计算。
 
@@ -54,11 +54,11 @@ Session 结束的方式分为以下3种：
 
 修改和删除
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808122102315627.png)
+![](../../../.gitbook/assets/image%20%2817%29.png)
 
 ### 4. Session的使用
 
-创建好 Session 规则后，就可以在分析过程中，使用不同的规则，分析指标了，详见使用说明阅读[《Session 分析》](../../analytics/session.md)。
+创建好 Session 规则后，就可以在分析过程中，使用不同的规则，分析指标了，详见使用说明阅读[《Session 分析》](../../analytics/session.md)
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808122104241114.png)
+![](../../../.gitbook/assets/image%20%28151%29.png)
 

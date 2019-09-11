@@ -128,7 +128,7 @@
 * 执行停止脚本：sh bin/shutdown.sh
 * 查看停止日志，确认程序停止是否成功：cat logs/shutdown.log，如日志内容如下，则说明数据导入工具停止成功。 
 
-![](../../.gitbook/assets/image%20%2876%29.png)
+![](../../.gitbook/assets/image%20%2892%29.png)
 
 #### 3.5.2 强制停止（不推荐,若数据未导入完成,会导致数据丢失或重复）
 
@@ -206,9 +206,9 @@ exit 退出
 
 进入Ambari页面，选中 【SDK\_RECEIVER】导航后，在右侧区域选择【Service Actions - Stop】，截图如下：
 
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x542F;&#x52A8;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2895%29.png)
+![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x542F;&#x52A8;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%28114%29.png)
 
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x505C;&#x6B62;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2830%29.png)
+![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x505C;&#x6B62;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2838%29.png)
 
 ### 4.2 消费当前kafka中的数据
 
@@ -234,7 +234,7 @@ exit 退出
 
 示例结果如下图：
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2879%29.png)
 
 {% hint style="info" %}
 1、删除线部分 ~~**test123**~~ ****需要修改为要导入数据项目的appKey；
@@ -254,19 +254,19 @@ exit 退出
 
 1）进入Ambari页面，选中 【Ark Streaming】导航后，在右侧区域选择【Configs】，将filter参数值由true修改为false，截图如下：
 
-![](../../.gitbook/assets/image%20%2863%29.png)
+![](../../.gitbook/assets/image%20%2877%29.png)
 
 2）重启Ark Streaming服务
 
 点击Summary切换，依次选择【Service Actions - Restart All】
 
-![](../../.gitbook/assets/image%20%2838%29.png)
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 ### 4.5 开启项目数据流
 
 用管理员帳号登录方舟分析页面，开启对应项目的数据流。
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 ### 4.6 开始导入
 
@@ -276,9 +276,9 @@ exit 退出
 
 进入Ambari页面，选中 【SDK\_RECEIVER】导航后，在右侧区域选择【Service Actions - Start】，截图如下：
 
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x505C;&#x6B62;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%28109%29.png)
+![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x505C;&#x6B62;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%28130%29.png)
 
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x542F;&#x52A8;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2861%29.png)
+![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x542F;&#x52A8;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2875%29.png)
 
 ### 4.8 停止所有项目数据流
 
@@ -290,7 +290,7 @@ exit 退出
 
 4）用管理员帳号登录方舟分析页面，查看所有项目的数据流状态是否未关闭
 
-![&#x9879;&#x76EE;&#x6570;&#x636E;&#x6D41;&#x5168;&#x90E8;&#x5173;&#x95ED;](../../.gitbook/assets/image%20%2848%29.png)
+![&#x9879;&#x76EE;&#x6570;&#x636E;&#x6D41;&#x5168;&#x90E8;&#x5173;&#x95ED;](../../.gitbook/assets/image%20%2861%29.png)
 
 ### 4.9 恢复数据流验证参数
 
@@ -322,15 +322,15 @@ exit 退出
 
 在事件和用户属性导入成功后，在元事件管理中和分析模块中未找到刚刚导入成功的事件和用户属性，可能是因为埋点方案规则的影响，事件和用户属性都在计划外，需要将事件/属性添加到计划中才能在分析模块中使用。
 
-![&#x8BA1;&#x5212;&#x5916;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../.gitbook/assets/image%20%2871%29.png)
+![&#x8BA1;&#x5212;&#x5916;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../.gitbook/assets/image%20%2887%29.png)
 
-![&#x8BA1;&#x5212;&#x5916;&#x7528;&#x6237;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../.gitbook/assets/image%20%2890%29.png)
+![&#x8BA1;&#x5212;&#x5916;&#x7528;&#x6237;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../.gitbook/assets/image%20%28107%29.png)
 
 ### 5.4 su streaming提示输入密码
 
 如果出现以下情况，并且不知道密码，可以退出后使用 sudo su streaming 进行用户切换
 
-![](../../.gitbook/assets/image%20%2855%29.png)
+![](../../.gitbook/assets/image%20%2869%29.png)
 
 ### 5.5 继续导入另外一个项目怎么操作？
 

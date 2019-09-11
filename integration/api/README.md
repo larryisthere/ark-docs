@@ -491,7 +491,7 @@ API中使用的指标、过滤条件、维度等都会使用表达式，所以�
 
 API Secret 用于导出接口认证，API Secret和项目绑定，即每个API Secret只能访问当前项目，项目管理员进入方舟产品后，在 【管理】 - 【项目概览】模块中可以获取和重置API Secret，操作如下：
 
-![](../../.gitbook/assets/image%20%2856%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
 ## 4. 接口请求参数快捷获取
 
