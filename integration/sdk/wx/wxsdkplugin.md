@@ -192,7 +192,7 @@ AnalysysAgent.autoShare = true
 ![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614109548.jpg)
 
 {% hint style="info" %}
-微信小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。负责数据将无法上报。
+微信小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 {% endhint %}
 
 ## 基础模块介绍
