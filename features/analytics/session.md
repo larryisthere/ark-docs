@@ -9,11 +9,21 @@ Android SDK ：v4.1.2 及以上
 iOS SDK： v4.1.2 及以上  
 JS SDK：v4.1.3 及以上  
 小程序 SDK：v4.1.3 及以上
+
+
+
+**session分析功能支持自定切割规则：**
+
+v4.4.0 及以上
 {% endhint %}
 
 除了分析每一个事件之外，方舟还支持基于 Session 的分析。
 
-Session，即会话，是指在指定的时间段内在您的网站/H5/小程序/APP上发生的一系列用户行为的集合。例如，一次会话可以包含多个页面浏览、交互事件等。Session 是具备时间属性的，根据不同的切割规则，可以生成不同长度的 Session，关于方舟的 Session 的默认规则请参考：[Session 规则](channel/session.md)。
+Session，即会话，是指在指定的时间段内在您的网站/H5/小程序/APP上发生的一系列用户行为的集合。例如，一次会话可以包含多个页面浏览、交互事件等。Session 是具备时间属性的，根据不同的切割规则，可以生成不同长度的 Session，关于方舟的 Session 的默认规则为“系统预置规则”，具体请参考：[Session 规则](channel/session.md)。其他自定义切割规则可以在管理-元事件管理-[Session管理](https://docs.analysys.cn/ark/features/project-manegement/yuan-shu-ju-guan-li/session)中创建新的session切割规则或修改原有session切割规则。
+
+![](../../.gitbook/assets/image%20%28154%29.png)
+
+
 
 在 Session 分析中，易观方舟支持多种度量 Session 访问质量的指标，包括：
 
