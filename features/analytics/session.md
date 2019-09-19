@@ -9,10 +9,10 @@ Android SDK ：v4.1.2 及以上
 iOS SDK： v4.1.2 及以上  
 JS SDK：v4.1.3 及以上  
 小程序 SDK：v4.1.3 及以上
+{% endhint %}
 
-
-
-**session分析功能支持自定切割规则：**
+{% hint style="info" %}
+**session分析功能支持自定义切割规则：**
 
 v4.4.0 及以上
 {% endhint %}
