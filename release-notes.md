@@ -5,7 +5,7 @@
 #### **新增**
 
 * **工具**支持小版本的增量更新，大多数的时候你不用下载完整安装包来进行系统升级了
-* **分析**热图新增元素点击图：[Web](https://docs.analysys.cn/ark/features/analytics/heatmap/web#3-dian-ji-yuan-su-re-tu) [APP](https://docs.analysys.cn/ark/features/analytics/heatmap/app#dian-ji-yuan-su-re-tu)，通过元素点击图可以精确了解每个元素被点击的数量
+* **分析**热图新增元素点击图（[Web](https://docs.analysys.cn/ark/features/analytics/heatmap/web#3-dian-ji-yuan-su-re-tu)、[APP](https://docs.analysys.cn/ark/features/analytics/heatmap/app#dian-ji-yuan-su-re-tu)），通过元素点击图可以精确了解每个元素被点击的数量
 * **分析**中的**Session分析**现在同时支持预置规则及指标与自定义规则
 * **看板**预置了不同客户端的数据看板，现在只要回数正常就可以看到当前客户端的基础数据概览
 * **消息通知**支持直接将分群推送到外部平台（极光），如过你需要使用外部平台的功能，现在通过分群推送可以实现了
@@ -78,9 +78,9 @@
 * **看板**模块新增了邮件订阅，支持将数据报告定时发送到邮箱 
 * **分析**模块新增了四大分析模型和自定义查询
   * \_\_[热图分析](features/analytics/heatmap/)，支持分析 Web/H5 页面、APP 的点击位置、点击元素热度分析
-  * [分布分析](features/analytics/fen-bu-fen-xi.md)，分析某事件在不同节点上分布，比如洞察用户什么时间更愿意购买商品
-  * [间隔分析](features/analytics/jian-ge-fen-xi.md)，分析两个事件的时间间隔等
-  * [属性分析](features/analytics/shu-xing-fen-xi.md)，可以根据用户的属性进行分析
+  * [分布分析](features/analytics/distribution.md)，分析某事件在不同节点上分布，比如洞察用户什么时间更愿意购买商品
+  * [间隔分析](features/analytics/jinterval.md)，分析两个事件的时间间隔等
+  * [属性分析](features/analytics/user-attribute.md)，可以根据用户的属性进行分析
   * [自定义查询](features/analytics/sql.md)，支持用户完全自定义查询满足现有分析模型无法支持的分析需求
 * **分群**模块新增了分群的导出，支持将用户明细导出，再导入广告系统、CRM 系统等再次使用
 * **运营**模块新增了多个短信通道
