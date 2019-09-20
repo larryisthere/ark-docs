@@ -182,7 +182,7 @@
 
 #### 3.7.1 核对导入kafka的数据量是否正确
 
-具体操作可参考  4.1 核对kafka中的数据量和kafka消费记录。
+具体操作可参考 [ 4.1 核对kafka中的数据量和kafka消费记录](before-4.3.4.md#41-he-dui-kafka-zhong-de-shu-ju-liang-he-kafka-xiao-fei-ji-lu)。
 
 #### 3.7.2 核对Hive中事件数据量和Hbase中的用户数据量是否正确
 
@@ -248,7 +248,7 @@ exit 退出
 
 修改Ark Streaming服务的参数，并进行重启让参数生效。
 
-1）进入Ambari页面，选中 【Ark Streaming】导航后，在右侧区域选择【Configs】，将filter参数值由false修改为true，具体可参考3.4.3 中的操作。
+1）进入Ambari页面，选中 【Ark Streaming】导航后，在右侧区域选择【Configs】，将filter参数值由false修改为true，具体可参考 [3.4.3中的操作](before-4.3.4.md#3-4-3-xiu-gai-streaming-filter-can-shu)。
 
 2）重启Ark Streaming服务
 
@@ -258,7 +258,7 @@ exit 退出
 
 ### 4.5 重启项目数据流
 
-重复3.3.4章节的操作。
+重复[3.4.4章节的操作](before-4.3.4.md#3-4-4-zhong-qi-xiang-mu-shi-shi-liu)。
 
 ## 5. 常见问题
 
