@@ -1,8 +1,8 @@
-# 工具导入
+# 4.3.4及4.3.4以后
 
 导入工具主要是将历史数据或者外部数据转化为标准格式后导入方舟系统。
 
-使用导入工具的文件内容格式需要符合 [数据格式](../prepare/data-type.md) ，更多详情请阅读 [数据模型](../prepare/data-model.md)。
+使用导入工具的文件内容格式需要符合 [数据格式](../../prepare/data-type.md) ，更多详情请阅读 [数据模型](../../prepare/data-model.md)。
 
 ## 1. 介绍说明
 
@@ -15,7 +15,7 @@
 
 2、文档中都是以集群版为例切换机器或连接服务，如果是**单机版**，将对应的ark2/ark3**改为ark1**即可。
 
-3、在 [3.7 数据验证](tool.md#37-shu-ju-yan-zheng) 的时候用到了 **$importFlag** 属性，如果需要用此方式验证，在每条事件记录和用户记录中，都需要添加 $importFlag 属性。
+3、在 [3.7 数据验证](./#37-shu-ju-yan-zheng) 的时候用到了 **$importFlag** 属性，如果需要用此方式验证，在每条事件记录和用户记录中，都需要添加 $importFlag 属性。
 {% endhint %}
 
 {% hint style="info" %}
@@ -91,7 +91,7 @@
 
 ### 3.4 开始导入
 
-以下所有操作都是在数据导入工具根目录执行。如果部署的方舟版本低于4.3.4，导入历史数据时需要关闭数据流的时间验证，具体操作流程见 [数据流验证](tool.md#4-shu-ju-liu-yan-zheng-kai-qi-guan-bi)。
+以下所有操作都是在数据导入工具根目录执行。如果部署的方舟版本低于4.3.4，导入历史数据时需要关闭数据流的时间验证，具体操作流程见 [数据流验证](./#4-shu-ju-liu-yan-zheng-kai-qi-guan-bi)。
 
 #### 3.4.1 数据导入工具根目录
 
@@ -107,7 +107,7 @@
 **用户数据文件命名**：必须以 **profile\_** 开头，如 profile\_20190101.json。
 {% endhint %}
 
-#### 3.4.3 启动
+#### 3.4.3 启动导数
 
 执行启动脚本：sh bin/startup.sh 0 appKey /data1/ImportJsonToKafka/data
 
@@ -128,7 +128,7 @@
 * 执行停止脚本：sh bin/shutdown.sh
 * 查看停止日志，确认程序停止是否成功：cat logs/shutdown.log，如日志内容如下，则说明数据导入工具停止成功。 
 
-![](../../.gitbook/assets/image%20%2892%29.png)
+![](../../../.gitbook/assets/image%20%2892%29.png)
 
 #### 3.5.2 强制停止（不推荐,若数据未导入完成,会导致数据丢失或重复）
 
@@ -152,7 +152,7 @@
 
 #### 3.7.1 核对导入kafka的数据量是否正确
 
-具体操作可参考 [4.3 核对kafka中的数据量和kafka消费记录](tool.md#43-he-dui-kafka-zhong-de-shu-ju-liang-he-kafka-xiao-fei-ji-lu)。
+具体操作可参考  4.1 核对kafka中的数据量和kafka消费记录。
 
 #### 3.7.2 核对Hive中事件数据量和Hbase中的用户数据量是否正确
 
@@ -190,43 +190,9 @@ exit 退出
 如果在导入数据之前进行了 数据流验证关闭 操作，需要将相关服务开启，具体操作见 4.7 停止所有项目的数据流
 {% endhint %}
 
-## 4. 数据流验证开启/关闭
+## 4. 数据流验证
 
-如果部署的方舟是4.3.4（不含4.3.4）之前的版本，在导入历史数据之前需要保证streaming的时间验证功能关闭、当前kafka数据处理完成并且没有新的数据产生。
-
-对于服务启停可在Ambari界面完成，对应访问地址：[http://ark1:8080](http://ark1:8080)。登录使用的用户名和密码请联系平台管理员获取。
-
-{% hint style="info" %}
-如果本地未配置ark1 host，需要将ark1修改为ark1服务器IP地址
-{% endhint %}
-
-### 4.1 停止SDK收数服务
-
-停止SDK收数服务是用来保证kafka中不会产生新数据，避免数据流时间验证关闭后有无效数据写入项目中。
-
-进入Ambari页面，选中 【SDK\_RECEIVER】导航后，在右侧区域选择【Service Actions - Stop】，截图如下：
-
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x542F;&#x52A8;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%28114%29.png)
-
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x505C;&#x6B62;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2838%29.png)
-
-### 4.2 消费当前kafka中的数据
-
-执行dump命名，保证当前kafka中的数据消费完毕。步骤如下：
-
-1）登录ark3 机器
-
-2）su streaming （切换到streaming帳号）
-
-3）sh /opt/soft/streaming/bin/dump\_all\_project.sh
-
-4）sh /opt/soft/streaming/bin/ext/do\_dump.sh
-
-{% hint style="info" %}
-因为配置文件是公用的，所以在dump的时候，所有项目的数据流会关闭。
-{% endhint %}
-
-### 4.3 核对kafka中的数据量和kafka消费记录
+### 4.1 核对kafka中的数据量和kafka消费记录
 
 1）登录ark1机器
 
@@ -234,7 +200,7 @@ exit 退出
 
 示例结果如下图：
 
-![](../../.gitbook/assets/image%20%2879%29.png)
+![](../../../.gitbook/assets/image%20%2879%29.png)
 
 {% hint style="info" %}
 1、删除线部分 ~~**test123**~~ ****需要修改为要导入数据项目的appKey；
@@ -247,60 +213,6 @@ exit 退出
 {% hint style="info" %}
 手动记录当前项目Kafka中，事件Topic和用户Topic各自的总数据量，方便后续进行数据导入后的校验。
 {% endhint %}
-
-### 4.4 修改数据流验证参数
-
-修改Ark Streaming服务的参数，并进行重启让参数生效。
-
-1）进入Ambari页面，选中 【Ark Streaming】导航后，在右侧区域选择【Configs】，将filter参数值由true修改为false，截图如下：
-
-![](../../.gitbook/assets/image%20%2877%29.png)
-
-2）重启Ark Streaming服务
-
-点击Summary切换，依次选择【Service Actions - Restart All】
-
-![](../../.gitbook/assets/image%20%2848%29.png)
-
-### 4.5 开启项目数据流
-
-用管理员帳号登录方舟分析页面，开启对应项目的数据流。
-
-![](../../.gitbook/assets/image%20%2811%29.png)
-
-### 4.6 开始导入
-
-到此截止，数据流相关操作完成，可以开始进行 [数据导入](tool.md#34-kai-shi-dao-ru) 操作。
-
-### 4.7 开启SDK收数服务
-
-进入Ambari页面，选中 【SDK\_RECEIVER】导航后，在右侧区域选择【Service Actions - Start】，截图如下：
-
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x505C;&#x6B62;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%28130%29.png)
-
-![SDK&#x6536;&#x6570;&#x670D;&#x52A1;-&#x542F;&#x52A8;&#x72B6;&#x6001;](../../.gitbook/assets/image%20%2875%29.png)
-
-### 4.8 停止所有项目数据流
-
-1）登录ark3 机器
-
-2）su streaming （切换到streaming帳号）
-
-3）/opt/soft/streaming/bin/stop\_all\_streaming.sh
-
-4）用管理员帳号登录方舟分析页面，查看所有项目的数据流状态是否未关闭
-
-![&#x9879;&#x76EE;&#x6570;&#x636E;&#x6D41;&#x5168;&#x90E8;&#x5173;&#x95ED;](../../.gitbook/assets/image%20%2861%29.png)
-
-### 4.9 恢复数据流验证参数
-
-恢复4.4中修改的filter参数，由false改为true，保存，然后Restart All，重启所有服务让参数生效。
-
-具体操作可参考 [4.4 修改数据流验证参数](tool.md#44-xiu-gai-shu-ju-liu-yan-zheng-can-shu)。
-
-### 4.10 开启项目数据流
-
-在配置恢复服务重启后，需要将因为导数将数据流关闭的所有项目数据流重新开启，具体操作见 [4.5 开启项目数据流](tool.md#45-kai-qi-xiang-mu-shu-ju-liu)。
 
 ## 5. 常见问题
 
@@ -322,15 +234,15 @@ exit 退出
 
 在事件和用户属性导入成功后，在元事件管理中和分析模块中未找到刚刚导入成功的事件和用户属性，可能是因为埋点方案规则的影响，事件和用户属性都在计划外，需要将事件/属性添加到计划中才能在分析模块中使用。
 
-![&#x8BA1;&#x5212;&#x5916;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../.gitbook/assets/image%20%2887%29.png)
+![&#x8BA1;&#x5212;&#x5916;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../../.gitbook/assets/image%20%2887%29.png)
 
-![&#x8BA1;&#x5212;&#x5916;&#x7528;&#x6237;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../.gitbook/assets/image%20%28107%29.png)
+![&#x8BA1;&#x5212;&#x5916;&#x7528;&#x6237;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../../.gitbook/assets/image%20%28107%29.png)
 
 ### 5.4 su streaming提示输入密码
 
 如果出现以下情况，并且不知道密码，可以退出后使用 sudo su streaming 进行用户切换
 
-![](../../.gitbook/assets/image%20%2869%29.png)
+![](../../../.gitbook/assets/image%20%2869%29.png)
 
 ### 5.5 继续导入另外一个项目怎么操作？
 
@@ -342,7 +254,7 @@ exit 退出
 
 3）建议删除 logs目录下的日志文件，方便查看最新数据导入情况，参考命令：rm -rf logs/\*
 
-4）准备导入文件，开始导入操作。流程参考和启动方法参考 [开始导入](tool.md#34-kai-shi-dao-ru)
+4）准备导入文件，开始导入操作。流程参考和启动方法参考 [开始导入](./#34-kai-shi-dao-ru)
 
 ### 5.6 导入数据量不一致，怎么查看异常数据？
 
