@@ -5,7 +5,7 @@
 #### **新增**
 
 * **工具**支持小版本的增量更新，大多数的时候你不用下载完整安装包来进行系统升级了
-* **分析**热图新增元素点击图（[Web](https://docs.analysys.cn/ark/features/analytics/heatmap/web#3-dian-ji-yuan-su-re-tu)、[APP](https://docs.analysys.cn/ark/features/analytics/heatmap/app#dian-ji-yuan-su-re-tu)），通过元素点击图可以精确了解每个元素被点击的数量
+* **分析**热图新增元素点击图：[Web](https://docs.analysys.cn/ark/features/analytics/heatmap/web#3-dian-ji-yuan-su-re-tu) [APP](https://docs.analysys.cn/ark/features/analytics/heatmap/app#dian-ji-yuan-su-re-tu)，通过元素点击图可以精确了解每个元素被点击的数量
 * **分析**中的**Session分析**现在同时支持预置规则及指标与自定义规则
 * **看板**预置了不同客户端的数据看板，现在只要回数正常就可以看到当前客户端的基础数据概览
 * **消息通知**支持直接将分群推送到外部平台（极光），如过你需要使用外部平台的功能，现在通过分群推送可以实现了
