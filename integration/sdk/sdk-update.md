@@ -12,6 +12,14 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:center">2019/8/30</td>
+      <td style="text-align:center">v4.3.6</td>
+      <td style="text-align:left">
+        <p>1.&#x4E0D;&#x5728;&#x5BF9;&#x53C2;&#x6570;key&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF08;&#x9002;&#x7528;&#x65B9;&#x821F;V4.3.3&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF09;</p>
+        <p>2.&#x4F18;&#x5316;&#x70ED;&#x56FE;&#x529F;&#x80FD;</p>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:center">2019/07/03</td>
       <td style="text-align:center">v4.3.5</td>
       <td style="text-align:left">1.&#x4F18;&#x5316;&#x81EA;&#x52A8;&#x91C7;&#x96C6;&#x6D41;&#x7A0B;&#x9632;&#x6B62;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</td>
