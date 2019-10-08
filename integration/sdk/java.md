@@ -6,7 +6,11 @@ Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务�
 
 ### 1.1 JAR 包集成
 
-以 Eclipse 为例：将需要的 jar 包拷贝到本地工程 libs 子目录下；在 Eclipse 中右键工程根目录，选择 Properties -&gt; Java Build Path -&gt; Libraries ，然后点击Add External JARs... 选择指向 jar 的路径，点击 OK，即导入成功。`说明`：该版本 jar 包基于 JDK1.8 进行编译。
+以 Eclipse 为例：将需要的 jar 包拷贝到本地工程 libs 子目录下；在 Eclipse 中右键工程根目录，选择 Properties -&gt; Java Build Path -&gt; Libraries ，然后点击Add External JARs... 选择指向 jar 的路径，点击 OK，即导入成功。
+
+{% hint style="info" %}
+`说明`：该版本 jar 包基于 JDK1.8 进行编译。
+{% endhint %}
 
 有两种 JAR 包供选择：
 
@@ -102,6 +106,7 @@ public void setDebugMode(DEBUG debug);
 
 ```java
 public void track(String distinctId, boolean isLogin, String eventName, Map<String, Object> properties, String platform) throws AnalysysException;
+public void track(String distinctId, boolean isLogin, String eventName, Map<String, Object> properties, String platform, String xwhen) throws AnalysysException;
 ```
 
 * distinctId：用户 ID,长度大于 0 且小于 255字符
@@ -109,6 +114,7 @@ public void track(String distinctId, boolean isLogin, String eventName, Map<Stri
 * eventName：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * properties: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 125字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
 * platform：平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户浏览商品
 
@@ -135,11 +141,13 @@ analysys.track(distinctId, isLogin, eventName, trackPropertie, platform);
 
 ```java
 public void alias(String aliasId, String distinctId, String platform) throws AnalysysException;
+public void alias(String aliasId, String distinctId, String platform, String xwhen) throws AnalysysException;
 ```
 
 * aliasId：用户注册 ID，长度大于 0，且小于 255字符
 * distinctId：用户匿名ID，长度大于 0，且小于 255字符
 * platform：平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：匿名用户浏览商品到注册会员
 
@@ -173,12 +181,14 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 
 ```java
 public void profileSet(String distinctId, boolean isLogin, Map<String, Object> properties, String platform) throws AnalysysException;
+public void profileSet(String distinctId, boolean isLogin, Map<String, Object> properties, String platform, String xwhen) throws AnalysysException;
 ```
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册后设置用户的注册信息属性
 
@@ -211,12 +221,14 @@ analysys.profileSet(registerId, isLogin, profiles, platform);
 
 ```java
 public void profileSetOnce(String distinctId, boolean isLogin, Map<String, Object> properties, String platform) throws AnalysysException;
+public void profileSetOnce(String distinctId, boolean isLogin, Map<String, Object> properties, String platform, String xwhen) throws AnalysysException;
 ```
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：要统计用户注册时间
 
@@ -235,12 +247,14 @@ analysys.profileSetOnce(registerId, isLogin, profile_age, platform);
 
 ```java
 public void profileIncrement(String distinctId, boolean isLogin, Map<String, Object> properties, String platform) throws AnalysysException;
+public void profileIncrement(String distinctId, boolean isLogin, Map<String, Object> properties, String platform, String xwhen) throws AnalysysException;
 ```
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册初始积分为0，在用户购买商品后，用户的积分增加20，则调用该接口，用户的积分变为0+20=20了：
 
@@ -259,12 +273,14 @@ analysys.profileIncrement(registerId, isLogin, profile, platform);
 
 ```java
 public void profileAppend(String distinctId, boolean isLogin, Map<String, Object> properties, String platform) throws AnalysysException;
+public void profileAppend(String distinctId, boolean isLogin, Map<String, Object> properties, String platform, String xwhen) throws AnalysysException;
 ```
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户初始填写的兴趣爱好为\["户外活动"，"足球赛事"，"游戏"\]，调用该接口追加\["学习"，"健身"\]，则用户的爱好变为\["户外活动"，"足球赛事"，"游戏"，"学习"，"健身"\]
 
@@ -287,13 +303,16 @@ analysys.profileAppend(registerId, isLogin, profile, platform);
 
 ```java
 public void profileUnSet(String distinctId, boolean isLogin, String property, String platform) throws AnalysysException;
+public void profileUnSet(String distinctId, boolean isLogin, String property, String platform, String xwhen) throws AnalysysException;
 public void profileDelete(String distinctId,  boolean isLogin, String platform) throws AnalysysException;
+public void profileDelete(String distinctId,  boolean isLogin, String platform, String xwhen) throws AnalysysException;
 ```
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * propertie: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
+* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例1： 要删除已经设置的用户昵称这一用户属性
 
