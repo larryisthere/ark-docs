@@ -133,6 +133,9 @@ trackPropertie.put("productType", "Java书籍");//商品类别
 trackPropertie.put("producePrice", 80);      //商品价格
 trackPropertie.put("shop", "xx网上书城");     //店铺名称
 analysys.track(distinctId, isLogin, eventName, trackPropertie, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ### 3.3 用户关联
@@ -161,6 +164,10 @@ String platform = "Android";
 //用户注册登录
 String registerId = "ABCDEF123456789";
 analysys.alias(registerId, distinctId, platform);
+
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ### 3.4 用户属性设置
@@ -209,6 +216,9 @@ interestList.add("足球赛事");
 interestList.add("游戏");
 profiles.put("interest", interestList);//用户兴趣爱好
 analysys.profileSet(registerId, isLogin, profiles, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ## 4. 更多接口
@@ -239,6 +249,9 @@ String platform = "Android";
 Map<String, Object> profile_age = new HashMap<String, Object>();
 profile_age.put("registerTime", "20180101101010");
 analysys.profileSetOnce(registerId, isLogin, profile_age, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 #### 4.1.2 设置用户属性相对变化值
@@ -265,6 +278,9 @@ String platform = "Android";
 Map<String,Object> profile = new HashMap<>();
 profile.put("userPoint",20);
 analysys.profileIncrement(registerId, isLogin, profile, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 #### 4.1.3 增加列表类型的属性
@@ -295,6 +311,9 @@ interestList.add("足球赛事");
 interestList.add("游戏");
 profile.put("interest", interestList);//用户兴趣爱好
 analysys.profileAppend(registerId, isLogin, profile, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -322,6 +341,9 @@ boolean isLogin = true;
 String platform = "Android";
 //  删除当前用户单个属性值
 analysys.profileUnSet(registerId, isLogin, "nickName", platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 示例2：要删除已经设置的所有用户属性
@@ -332,6 +354,9 @@ boolean isLogin = true;
 String platform = "Android";
 //  删除当前用户所有属性值
 analysys.profileDelete(registerId, isLogin, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ### 4.2 通用属性
@@ -448,7 +473,11 @@ try {
     trackPropertie.put("productType", "Java书籍"); //商品类别
     trackPropertie.put("producePrice", 80);       //商品价格
     trackPropertie.put("shop", "xx网上书城");      //店铺名称
+    // 未使用自定义时间戳
     analysys.track(distinctId, false, "ViewProduct", trackPropertie, platForm);//用户注册登录
+    // 或者也可以使用自定义的时间戳
+    //String myxWhen = "1569859200000";
+    //analysys.track(distinctId, false, "ViewProduct", trackPropertie, platForm,myxWhen);
     String registerId = "ABCDEF123456789";
     analysys.alias(registerId, distinctId, platForm);//设置公共属性
     Map<String, Object> superPropertie = new HashMap<String, Object>();
