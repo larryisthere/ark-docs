@@ -564,11 +564,7 @@ AnalysysAgent.profileIncrement(incrementProfile);
 用户列表属性增加元素。接口如下：
 
 ```javascript
-//增加单个属性
-AnalysysAgent.profileAppend(propertyName, propertyValue);
-//增加多个属性
-AnalysysAgent.profileAppend(propertyValue);
-//增加多个属性
+//增加列表类型的属性
 AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```
 
@@ -578,16 +574,6 @@ AnalysysAgent.profileAppend(propertyName, propertyValue);
 示例：
 
 ```javascript
-// 增加用户爱好 music
-AnalysysAgent.profileAppend("hobby", "Music");
-
-// 增加多个用户属性
-var map = {
-    "hobby": "PlayBasketball",
-    "sports": "Run"
-};
-AnalysysAgent.profileAppend(mContext, map);
-
 //增加多个用户爱好
 var list = ["PlayBasketball", "music"];
 AnalysysAgent.profileAppend("hobby", list);

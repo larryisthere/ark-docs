@@ -508,11 +508,7 @@ AnalysysAgent.profileIncrement(mContext, incrementProfile);
 用户列表属性增加元素。 接口如下：
 
 ```java
-//增加单个属性
-public static void profileAppend(Context context, String propertyName, Object propertyValue);
-//增加多个属性
-public static void profileAppend(Context context, Map<String ,Object> propertyValue);
-//增加多个属性
+//增加列表类型的属性
 public static void profileAppend(Context context, String propertyName, List<Object> propertyValue);
 ```
 
@@ -523,15 +519,6 @@ public static void profileAppend(Context context, String propertyName, List<Obje
 示例：
 
 ```java
-// 增加用户爱好 music
-AnalysysAgent.profileAppend(mContext, "hobby", "Music");
-
-// 增加多个用户属性
-Map<String, Object> map = new HashMap<String, Object>();
-map.put("hobby", "PlayBasketball");
-map.put("sports", "Run");
-AnalysysAgent.profileAppend(mContext, map);
-
 //增加多个用户爱好
 List<Object> list = new ArrayList<>();
 list.add("PlayBasketball");
