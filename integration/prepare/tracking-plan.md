@@ -43,11 +43,13 @@
 | :--- | :--- | :--- | :--- |
 | UserLevel | 用户等级 | 上传用户的等级信息 | 字符型 |
 
-下载地址：
+{% hint style="info" %}
+**下载地址：**
 
-{% file src="../../.gitbook/assets/yi-guan-fang-zhou-shi-jian-mai-dian-fang-an-mo-ban-20190520.xlsx" caption="事件埋点方案模板" %}
+\*\*\*\*[事件埋点方案模版.xlsx](https://imguserradar.analysys.cn/files/ark/doc/易观方舟-事件埋点方案模板_20190520.xlsx)
 
-{% file src="../../.gitbook/assets/yi-guan-fang-zhou-yong-hu-mai-dian-fang-an-mo-ban-20190520.xlsx" caption="用户埋点方案模板" %}
+[用户埋点方案模版.xlsx](https://imguserradar.analysys.cn/files/ark/doc/易观方舟-用户埋点方案模板_20190520.xlsx)
+{% endhint %}
 
 **模板说明：**
 
