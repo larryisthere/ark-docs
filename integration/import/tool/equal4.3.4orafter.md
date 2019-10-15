@@ -15,7 +15,7 @@
 
 2、文档中都是以集群版为例切换机器或连接服务，如果是**单机版**，将对应的ark2/ark3**改为ark1**即可。
 
-3、在 [3.7 数据验证](./#37-shu-ju-yan-zheng) 的时候用到了 **$importFlag** 属性，如果需要用此方式验证，在每条事件记录和用户记录中，都需要添加 $importFlag 属性。
+3、在 [3.7 数据验证](equal4.3.4orafter.md#37-shu-ju-yan-zheng) 的时候用到了 **$importFlag** 属性，如果需要用此方式验证，在每条事件记录和用户记录中，都需要添加 $importFlag 属性。
 {% endhint %}
 
 {% hint style="info" %}

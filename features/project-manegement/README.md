@@ -4,6 +4,8 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 
 # 管理
 
+
+
 {% hint style="info" %}
 4.3.0 及以上版本对管理模块中的部分功能进行了合并。
 
@@ -35,6 +37,8 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 * [页面组管理](yuan-shu-ju-guan-li/pagegroup.md)
 
 {% page-ref page="integrations.md" %}
+
+{% page-ref page="zhi-neng-jian-kong.md" %}
 
 {% page-ref page="monitoring.md" %}
 
