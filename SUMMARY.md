@@ -62,7 +62,7 @@
     * [Session 管理](features/project-manegement/yuan-shu-ju-guan-li/session.md)
     * [页面组管理](features/project-manegement/yuan-shu-ju-guan-li/pagegroup.md)
   * [服务集成配置](features/project-manegement/integrations.md)
-  * [智能监控](features/project-manegement/zhi-neng-jian-kong.md)
+  * [智能监控](features/project-manegement/intelligent-monitoring.md)
   * [自定义监控](features/project-manegement/monitoring.md)
 * [平台管理](features/enterprise-management/README.md)
   * [企业概览](features/enterprise-management/overview.md)

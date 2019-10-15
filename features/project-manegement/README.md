@@ -38,7 +38,7 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 
 {% page-ref page="integrations.md" %}
 
-{% page-ref page="zhi-neng-jian-kong.md" %}
+{% page-ref page="intelligent-monitoring.md" %}
 
 {% page-ref page="monitoring.md" %}
 
