@@ -6,7 +6,7 @@
 
 #### 新增
 
-* 智能监控，针对上报元事件的触发次数和触发人数的异动进行智能监控
+* [智能监控](https://docs.analysys.cn/ark/features/project-manegement/intelligent-monitoring)，针对上报元事件的触发次数和触发人数的异动进行智能监控
 * 事件分析中增加触发时间作为默认筛选条件，可以查看关注的小时区间数据 
 * 新增企业设置功能，可以自由配置收数地址
 
@@ -20,6 +20,7 @@
 * SDK预置小程序分享事件及属性，并默认放到埋点方案中
 * 添加了结果为无值的说明
 * 分析模块中维度选择着陆页时，可以选择按标题或按URL展示，细化查询维度
+* [新增分群管理API](https://docs.analysys.cn/ark/integration/api)
 
 #### BUG修复
 
