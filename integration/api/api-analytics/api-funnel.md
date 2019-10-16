@@ -29,7 +29,7 @@ description: 方舟4.3.4版本中新增API
             "filter":null
         }
     ],
-    //【必填】用户分群 可以输入多个
+    //【必填】用户分群
     "crowds":[
         "$ALL"
     ],
@@ -74,11 +74,11 @@ description: 方舟4.3.4版本中新增API
 
 1、参数在示例中未标注必填的表示选填。
 
-2、请求参数可以通过方舟产品生成，具体参照 [接口请求参数获取](./#4-jie-kou-qing-qiu-can-shu-kuai-jie-huo-qu)。
+2、请求参数可以通过方舟产品生成，具体参照 [接口请求参数获取](./#3-jie-kou-qing-qiu-can-shu-kuai-jie-huo-qu)。
 
-3、细分维度只支持单维度查看。
+3、细分维度只支持单维度查看，不支持分群对比。
 
-**默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
+**认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 {% endhint %}
 
 ### 2.1 特殊参数说明

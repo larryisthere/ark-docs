@@ -16,7 +16,7 @@ description: 方舟4.3.5版本中新增API
 
 无。
 
-> **默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 
 ### 1.3 返回结果示例
 
@@ -30,13 +30,25 @@ description: 方舟4.3.5版本中新增API
         //是否可用 1为启用 0为禁用 （通过方舟系统可以控制用户属性的可用性）
         "enable":1,
         //是否可见 1为可见 0为不可见（用于方舟系统，系统预置但不用于分析的属性在页面上被隐藏了）
-        "visible":1
+        "visible":1,
+      	//【4.5.0中新增】是否预置属性 1为预置属性 0为自定义属性
+      	"preset": 1,
+      	//【4.5.0中新增】数据类型，有string、boolean、number、datetime、array<string>五种
+        "dataType": "string",
+      	//【4.5.0中新增】是否有字典 1为有字典 0为未上传字典
+        "dict": 0
     },
-    {
-        "id":"$xiaomi",
-        "name":"小米ID",
-        "enable":1,
-        "visible":0
+  	{
+        "id": "company",
+        "name": "所在公司",
+        "enable": 1,
+      	//页面不可见
+        "visible": 0,
+      	//自定义属性
+        "preset": 0,
+        "dataType": "string",
+      	//有字典
+        "dict": 1
     }
 ]
 ```
@@ -59,7 +71,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 无。
 
-> **默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 
 ### 2.3 返回结果示例
 
@@ -73,14 +85,26 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
         //是否可用 1为启用 0为禁用 （通过方舟系统可以控制事件的可用性）
         "enable":1,
         //备注，描述事件的作用
-        "remark":"APP启动 / 打开网站"
+        "remark":"APP启动 / 打开网站",
+      	//【4.5.0中新增】是否预置事件 1为预置事件 0为自定义事件
+      	"preset": 1
     },
     {
-    "id":"$end",
-    "name":"关闭",
-    "enable":1,
-    "remark":"APP关闭 / 关闭网页"
-}
+        "id":"$end",
+        "name":"关闭",
+      	//禁用
+        "enable":0,
+        "remark":"APP关闭 / 关闭网页",
+      	"preset": 1
+    },
+  	{
+        "id": "login",
+        "name": null,
+        "enable": 1,
+        "remark": null,
+      	//自定义事件
+        "preset": 0
+    }
 ]
 ```
 
@@ -105,7 +129,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 eventId=?
 ```
 
-> **默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 
 ### 3.3 返回结果示例
 
@@ -118,16 +142,25 @@ eventId=?
         "name":null,
         //是否可用 1为启用 0为禁用 （通过方舟系统可以控制事件属性的可用性）
         "enable":1,
-        //，这里表示事件自定义属性
-        "global":0
+        //是否通用属性，1为通用属性 0为事件定义属性
+        "global":0,
+      	//【4.5.0中新增】是否事件预置属性 1为预置属性 0为自定义属性
+      	"preset": 1,
+      	//【4.5.0中新增】数据类型，有string、boolean、number、datetime、array<string>五种
+        "dataType": "boolean",
+      	//【4.5.0中新增】是否有字典 1为有字典 0为未上传字典
+      	"dict": 0
     },
     {
         "id":"$platform",
         "name":"平台",
         //属性可用
         "enable":1,
-        //通用属性
-        "global":1
+        //通用属性（通用属性表示每个事件都有这个属性）
+        "global":1,
+      	"preset":1,
+        "dataType": "string",
+        "dict": 0
     }
 ]
 ```

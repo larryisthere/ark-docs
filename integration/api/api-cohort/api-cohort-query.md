@@ -2,66 +2,17 @@
 description: 方舟4.3.4版本中新增API
 ---
 
-# 用户分群
+# 分群查询
 
-## 1. 获取所有用户分群列表
-
-获取某个项目下所有的用户分群
-
-### 1.1 接口地址
-
-> 【GET】 /uba/api/cohort
-
-### 1.2 请求参数示例
-
-无
-
-> **默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
-
-### 1.3 返回结果示例
-
-```java
-[
-    // 所有用户 系统预置
-    {
-        //分群code 在查询需要用到分群时都通过code来筛选
-        "code": "$ALL",
-        //分群名称
-        "name": "所有用户",
-        //动态分群 1为动态分群 0为静态分群
-        "dynamic": "1",
-        //当前分群的用户数，全部用户默认不计算
-        "userNumber": null
-    },
-    //用户自定义分群
-    {
-        //分群code 方舟自动生成
-        "code": "arkfq_2",
-        //分群名称 用户页面定义
-        "name": "支付成功用户",
-        //静态分群
-        "dynamic": "0",
-        //当前分群对应的用户数
-        "userNumber": 3
-    }
-]
-```
-
-### 1.4 接口调用示例
-
-```java
-curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" http://127.0.0.1:4005/uba/api/cohort
-```
-
-## 2. 获取用户分群下的用户明细
+## 1. 获取用户分群下的用户明细
 
 获取某个分群下的用户明细
 
-### 2.1 接口地址
+### 1.1 接口地址
 
 > 【POST】  /uba/api/cohort/users
 
-### 2.2 请求参数示例
+### 1.2 请求参数示例
 
 ```java
 {
@@ -76,11 +27,11 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 > **limit**：获取用户分群下的用户条数，需要传正整数，不传默认为1000。
 >
-> **properties**：指定需要的用户属性列，传入用户属性ID，可以通过方舟系统或者 [元数据管理](api-meta.md)-[用户属性](api-meta.md#1-huo-qu-yong-hu-shu-xing) 接口获取用户属性列表。不指定默认查询方舟系统【元数据管理 - 用户属性】中 可见 的所有用户属性。
+> **properties**：指定需要的用户属性列，传入用户属性ID，可以通过方舟系统或者 [元数据管理](../api-manage-project/api-meta.md)-[用户属性](../api-manage-project/api-meta.md#1-huo-qu-yong-hu-shu-xing) 接口获取用户属性列表。不指定默认查询方舟系统【元数据管理 - 用户属性】中 可见 的所有用户属性。
 >
-> **默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 
-### 2.3 返回结果示例
+### 1.3 返回结果示例
 
 ```java
 {
@@ -108,7 +59,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 }
 ```
 
-### 2.4 接口调用示例
+### 1.4 接口调用示例
 
 ```java
  curl -H "Content-Type:application/json" -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" -X POST --data '{
@@ -118,11 +69,11 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 }' http://127.0.0.1:4005/uba/api/cohort/users
 ```
 
-## 3. 获取单一用户的用户明细
+## 2. 获取单一用户的用户明细
 
 根据用户ID获取用户明细数据
 
-### 3.1 接口地址
+### 2.1 接口地址
 
 > 【POST】 /uba/api/cohort/users/{xwho}
 
@@ -130,7 +81,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 xwho 表示用户ID，取用户属性ID为xwho的值，传参方式：path variable，非request body
 {% endhint %}
 
-### 3.2 请求参数示例
+### 2.2 请求参数示例
 
 ```java
 {
@@ -139,11 +90,11 @@ xwho 表示用户ID，取用户属性ID为xwho的值，传参方式：path varia
 }
 ```
 
-> **properties**：指定需要的用户属性列，传入用户属性ID，可以通过方舟系统或者 [元数据管理](api-meta.md)-[用户属性](api-meta.md#1-huo-qu-yong-hu-shu-xing) 接口获取用户属性列表。不指定默认查询方舟系统【元数据管理 - 用户属性】中 可见 的所有用户属性。
+> **properties**：指定需要的用户属性列，传入用户属性ID，可以通过方舟系统或者 [元数据管理](../api-manage-project/api-meta.md)-[用户属性](../api-manage-project/api-meta.md#1-huo-qu-yong-hu-shu-xing) 接口获取用户属性列表。不指定默认查询方舟系统【元数据管理 - 用户属性】中 可见 的所有用户属性。
 >
-> **默认参数**：每个接口都必传token和appKey两个参数，详情见 [默认参数](./#11-mo-ren-can-shu)。
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 
-### 3.3 返回结果示例
+### 2.3 返回结果示例
 
 ```java
 {
@@ -167,7 +118,7 @@ xwho 表示用户ID，取用户属性ID为xwho的值，传参方式：path varia
     }
 ```
 
-### 3.4 接口调用示例
+### 2.4 接口调用示例
 
 ```java
 curl -H "Content-Type:application/json" -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" -X POST --data '{
