@@ -40,7 +40,7 @@ description: >-
 {% hint style="info" %}
 **数据正常上报，但这里没有正常显示怎么办？**
 
-可以通过[元事件管理](../project-manegement/yuan-shu-ju-guan-li/meta-events.md)及[事件分析](../analytics/event.md)检查用户属性中是否包含上述字段，并且字段的值是否符合上述规则。
+可以通过[元事件管理](../project-manegement/meta-data/meta-events.md)及[事件分析](../analytics/event.md)检查用户属性中是否包含上述字段，并且字段的值是否符合上述规则。
 
 **是否可以根据自己的规则创建用户画像？**
 

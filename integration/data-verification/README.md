@@ -68,7 +68,7 @@ description: >-
 目前可以通过以下方式过滤：
 
 1. 在分析模型中创建指标时，添加事件条件，选择 IP 不等于内部 IP；
-2. 创建 [虚拟事件](../../features/project-manegement/yuan-shu-ju-guan-li/merged-events.md)，增加过滤条件 IP 不等于内部 IP。
+2. 创建 [虚拟事件](../../features/project-manegement/meta-data/merged-events.md)，增加过滤条件 IP 不等于内部 IP。
 
 若测试集中在少数人员上，也可以选择用户ID、邮箱或者手机号来过滤具体的用户。
 

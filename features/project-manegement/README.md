@@ -27,14 +27,14 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 * [集成SDK接入数据](data-integration/sdks.md)
 * [数据验证](data-integration/validation.md)
 
-{% page-ref page="yuan-shu-ju-guan-li/" %}
+{% page-ref page="meta-data/" %}
 
-* [元事件](yuan-shu-ju-guan-li/meta-events.md)
-* [虚拟事件](yuan-shu-ju-guan-li/merged-events.md)
-* [用户属性](yuan-shu-ju-guan-li/user-properties.md)
-* [事件属性](yuan-shu-ju-guan-li/event-properties.md)
-* [Session管理](yuan-shu-ju-guan-li/session.md)
-* [页面组管理](yuan-shu-ju-guan-li/pagegroup.md)
+* [元事件](meta-data/meta-events.md)
+* [虚拟事件](meta-data/merged-events.md)
+* [用户属性](meta-data/user-properties.md)
+* [事件属性](meta-data/event-properties.md)
+* [Session管理](meta-data/session.md)
+* [页面组管理](meta-data/pagegroup.md)
 
 {% page-ref page="integrations.md" %}
 
