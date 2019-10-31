@@ -18,7 +18,7 @@
     "userName": "api",
     //真实姓名
     "name": "接口用户",
-    //【必填】密码 
+    // 密码 【4.5.1之前的版本密码为必填，4.5.1之后为不必填】
     "password": "123456",
     // 【必填】手机号码
     "phone": "1380000000",
@@ -40,7 +40,7 @@
 | email | String | Y | 邮箱 不能重复 可用于登录 |
 | userName | String | N | 用户名：不能重复 可用于登录 |
 | name | String | N | 真实姓名：常用于展示 |
-| password | String | Y | 登录密码 |
+| password | String | N | 登录密码【 4.5.1版本修改为不必填】 |
 | phone | String | N | 手机号码：不能重复 可用于登录 |
 | department | String | N | 用户所属部门 |
 

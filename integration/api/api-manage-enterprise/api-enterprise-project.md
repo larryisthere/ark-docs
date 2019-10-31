@@ -18,18 +18,19 @@
 
 ```java
 [
-      {
-      "appKey": "streamingut1002",
-      "cname": "单元测试streamingut1002",
-      "version": "4.2.7",
-      "normalToken": "xxxxxx"
-   },
-      {
-      "appKey": "589fc0bb8cd583c9",
-      "cname": "Demo",
-      "version": "4.2.7",
-      "normalToken": "xxxxx"
-   }
+    {
+        "appKey": "streamingut608",
+        "normalToken":"xxxx",
+        "cname": "streaming单元测试项目",
+        "version": "4.2.7",
+        //以下字段在【4.5.1版本】中新增
+        "logo": "/data/static/files/logo/aaa.png",
+        "createTime": 1578901233445,
+        "sdkBack": "iOS,Android,H5",
+        "status": 1,
+        "partitionNum": 3,
+        "stream": 0
+    }
 ]
 ```
 
@@ -38,9 +39,15 @@
 | 参数名称 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | appKey | String | 项目AppKey |
+| normalToken | String | 项目内接口授权码 |
 | cname | String | 项目名称，用于展示 |
 | version | String | 项目当前版本信息 |
-| normalToken | String | 项目内接口授权码 |
+| logo | String | 项目图标访问路径，默认不显示，只有上传logo后显示 |
+| createTime | Long | 十三位时间戳 |
+| sdkBack | String | 已回数SDK接入平台\(如 Java,JS,Android \)，未回数时不显示 |
+| status | int | 项目状态；1表示正常，2表示已删除，3表示异常不可用，只返回状态值1的项目 |
+| partitionNum | int | 数据存储分区数 |
+| stream | int | 项目数据数据流状态；0表示未启动，1表示启动中，2表示已启动，3表示异常中断，5表示关闭中 |
 
 ### 1.4 接口调用示例
 
