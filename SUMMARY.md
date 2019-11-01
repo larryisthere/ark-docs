@@ -46,6 +46,7 @@
   * [短信](features/operation/sms.md)
   * [消息通知](features/operation/pushmessage.md)
   * [广告跟踪](features/operation/utm.md)
+  * [App推广监测（Beta）](features/operation/channel-monitor.md)
 * [管理](features/project-manegement/README.md)
   * [项目概览](features/project-manegement/overview.md)
   * [项目成员管理](features/project-manegement/member.md)
@@ -68,8 +69,9 @@
   * [企业概览](features/enterprise-management/overview.md)
   * [项目管理](features/enterprise-management/project-management.md)
   * [成员管理](features/enterprise-management/member.md)
-  * [帐号设置](features/enterprise-management/accountsetting.md)
   * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
+  * [企业设置](features/enterprise-management/enterprise.md)
+  * [帐号设置](features/enterprise-management/accountsetting.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>
 
