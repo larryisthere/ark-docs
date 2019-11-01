@@ -46,7 +46,7 @@
   * [短信](features/operation/sms.md)
   * [消息通知](features/operation/pushmessage.md)
   * [广告跟踪](features/operation/utm.md)
-  * [App推广监测（Beta）](features/operation/channel-monitor.md)
+  * [App 推广监测（Beta）](features/operation/channel-monitor.md)
 * [管理](features/project-manegement/README.md)
   * [项目概览](features/project-manegement/overview.md)
   * [项目成员管理](features/project-manegement/member.md)
