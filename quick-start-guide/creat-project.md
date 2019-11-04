@@ -8,7 +8,7 @@
 建议自动生成 AppKey，若手动输入时，仅支持小写字母和数字的组合，且在10~16位之间。
 {% endhint %}
 
-![](../.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 {% page-ref page="getting-started/" %}
 

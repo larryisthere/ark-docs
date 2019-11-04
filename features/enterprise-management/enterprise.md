@@ -4,7 +4,9 @@
 
 自定义上传的节假日可以下载下面的模版进行编辑后上传。
 
-{% file src="../../.gitbook/assets/jie-jia-ri-mo-ban.xlsx" caption="节假日模板" %}
+#### 点击下面链接下载节假日模板
+
+[https://imguserradar.analysys.cn/files/ark/doc/节假日模板.xlsx](https://imguserradar.analysys.cn/files/ark/doc/节假日模板.xlsx)
 
 ![](../../.gitbook/assets/image%20%2847%29.png)
 
@@ -23,6 +25,8 @@
 1.默认关闭状态。
 
 2.排除日期按钮打开后
+
+![](../../.gitbook/assets/image%20%2849%29.png)
 
      a.可以选择仅按周循环排除每周不需要看的数据。
 
