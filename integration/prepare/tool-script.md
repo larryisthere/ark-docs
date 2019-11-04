@@ -27,7 +27,7 @@
 
 ## 执行检测
 
-sh check.sh（[点击下载检测程序](http://ark.analysys.cn/sdk/check.sh)）
+sh check.sh（[点击下载检测程序](https://github.com/analysys/argo-installer/blob/master/check.sh)）
 
 ## 查看检测结果
 
