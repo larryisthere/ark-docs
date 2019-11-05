@@ -148,7 +148,7 @@ API调用是否成功都是通过HTTP状态码来识别，接口直接返回结�
 | 401 | Unauthorized | 认证失败，如token/appKey错误 |
 | 404 | Not Found | 接口不存在 |
 | 415 | Unsupported Media Type | HTTP协议的错误，如Content-Type |
-| ~~498~~ | ~~Request method not supported~~ | ~~HTTP请求方法不支持【在4.5.1版本取消，用 501代替】~~ |
+| ~~498~~ | ~~Request method not supported~~ | ~~HTTP请求方法不支持【在4.5.1版本取消，用 400代替】~~ |
 | ~~499~~ | ~~The maximum limit has been reached~~ | ~~超出限制，如项目个数超出限额，分群个数超出限额【在4.5.1版本取消，用 501代替】~~ |
 | 500 | Internal Server Error | 接口处理异常 |
 | 501 | Not Implemented | 接口未完成操作，如项目个数超出限额，分群个数超出限额【在4.5.1版本中新增】 |
