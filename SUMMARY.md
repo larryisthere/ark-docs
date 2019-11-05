@@ -121,6 +121,7 @@
     * [事件分析](integration/api/api-analytics/api-event.md)
     * [留存分析](integration/api/api-analytics/api-retention.md)
     * [转化漏斗](integration/api/api-analytics/api-funnel.md)
+    * [属性分析](integration/api/api-analytics/api-user-attribute.md)
   * [用户API](integration/api/api-cohort/README.md)
     * [分群查询](integration/api/api-cohort/api-cohort-query.md)
     * [分群管理](integration/api/api-cohort/api-cohort-base.md)
