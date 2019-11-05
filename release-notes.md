@@ -4,7 +4,7 @@
 
 #### 新增
 
-* 新增了属性分析API
+* 新增了[属性分析API](integration/api/api-analytics/api-user-attribute.md)
 
 #### 改进
 
@@ -40,7 +40,7 @@
 
 *  修复了若干BUG
 
-## 4.4.1 - 2019年9月19日
+## 4.4.1 - 2019年09月19日
 
 #### 新增
 
