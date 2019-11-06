@@ -122,7 +122,8 @@ end
 >
 > * appKey：在网站获取的 AppKey
 > * channel：应用下发渠道
-> * autoProfile：设置是否追踪新用户的首次属性。NO：不追踪新用户首次属性；YES：追踪新用户首次属性（默认）
+> * autoProfile：设置是否追踪新用户的首次属性。默认：YES
+> * autoInstallation：是否开启渠道追踪功能。默认值：NO
 > * encryptType：设置数据上传时的加密方式，目前只支持AES加密（AnalysysEncryptAES）；如不设置此参数，数据上传不加密。
 
 示例：
@@ -151,6 +152,8 @@ end
     AnalysysConfig.autoProfile = YES;
     // 设置上传数据使用AES加密，需添加加密模块
     //  AnalysysConfig.encryptType = AnalysysEncryptAES;
+    //  设置渠道追踪
+    //  AnalysysConfig.autoInstallation = YES;
     //  使用配置初始化SDK
     [AnalysysAgent startWithConfig:AnalysysConfig];
 
@@ -183,6 +186,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     AnalysysAgentConfig.shareInstance().appKey = "77a52s552c892bn442v721"
     AnalysysAgentConfig.shareInstance().channel = "App Store"
     AnalysysAgentConfig.shareInstance().autoProfile = true
+    //  AnalysysAgentConfig.shareInstance()?.autoInstallation = true
     //  需要加密模块
     //  AnalysysAgentConfig.shareInstance().encryptType = .AES
     //  初始化SDK
