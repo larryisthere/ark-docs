@@ -12,7 +12,7 @@ description: 方舟4.6.0及以上版本支持该功能。
 
 [https://imguserradar.analysys.cn/files/ark/doc/节假日模板.xlsx](https://imguserradar.analysys.cn/files/ark/doc/节假日模板.xlsx)
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 ### A.企业设置入口
 
@@ -30,7 +30,7 @@ description: 方舟4.6.0及以上版本支持该功能。
 
 2.排除日期按钮打开后
 
-![](../../.gitbook/assets/image%20%2849%29.png)
+![](../../.gitbook/assets/image%20%2850%29.png)
 
      a.可以选择仅按周循环排除每周不需要看的数据。
 

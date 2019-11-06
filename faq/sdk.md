@@ -1,8 +1,10 @@
 # SDK FAQ
 
-主要介绍方舟 SDK 集成中的常见问题以及特殊客户自研 SDK 的注意事项。若不包含您遇到的情况，可以申请加入易观开发者 QQ 交流群：**474086078**。描述清楚现象，会有技术同学协助定位问题并帮助解决。
+易观方舟及Argo使用的SDK已经全部开源，详见：[Github地址](https://github.com/analysys)，同时SDK开源社区（打造全球最好用的可视化埋点）欢迎优秀开发者加入。
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/09/201809281405302307.png)
+在SDK集成或开发中遇到问题，欢迎来到Argo社区，我们会协助你定位及解决问题。
+
+![&#x52A0;&#x5FAE;&#x4FE1;&#x540E;&#xFF0C;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../.gitbook/assets/image%20%2862%29.png)
 
 ## 易观方舟 SDK FAQ
 
