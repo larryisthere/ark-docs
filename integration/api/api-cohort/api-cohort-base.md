@@ -181,8 +181,8 @@ ruleGroup 存放的规则内容的集合以及间的逻辑关系
 > **参数说明：**
 >
 > * **expression：**用来指定具体事件/事件属性，更多介绍参照 [表达式](../api-analytics/#21-biao-da-shi)。
-> * **eventAbsoluteTimeParams：**事件发生的时间范围，绝对时间，数组格式。
-> * **eventRelativeTimeParam：**事件发生的时间范围，一般在创建动态分群时使用。需要按照指定格式传入，如近七日：6,0,day，过去七日：7,1,day，今日：0 day。
+> * **eventAbsoluteTimeParams：**事件发生的时间范围，绝对时间，**数组**（length=2），内容格式为yyyy-MM-dd。
+> * **eventRelativeTimeParam：**事件发生的时间范围，相对时间，在创建动态分群时使用。需要按照指定格式传入，如近七日：6,0,day，过去七日：7,1,day，今日：0 day。
 > * **aggregator：**聚合操作符，分群中只支持两种：
 >   * **事件的触发次数：TOTAL\_COUNT** 
 >   * **事件属性的去重数：REMOVE\_DUMPLICATE**
