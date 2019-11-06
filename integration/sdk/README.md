@@ -2,6 +2,8 @@
 
 易观方舟支持全端数据接入，接入前准备事项详见[《接入前准备》](../prepare/)
 
+易观方舟SDK已全部开源，详见：[Github上的易观方舟SDK](https://github.com/analysys)
+
 ## SDK 相关文档
 
 **客户端SDK**
