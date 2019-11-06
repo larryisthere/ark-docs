@@ -135,7 +135,8 @@ public static void init(Context context, AnalysysConfig config);
   1. AppKey：在网站获取的 AppKey
   2. channel：应用下发的渠道
   3. autoProfile ：设置是否追踪新用户的首次属性，false：不追踪新用户的首次属性，true：追踪新用户的首次属性\(默认\)
-  4. encryptType ：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为EncryptEnum.AES（128位密钥，ECB 加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC 加密模式）。
+  4. setAutoInstallation ：是否开启渠道追踪功能。默认值：false
+  5. encryptType ：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为EncryptEnum.AES（128位密钥，ECB 加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC 加密模式）。
 
 {% hint style="info" %}
 EncryptEnum.AES\_CBC模式适用方舟V4.2.7及以上版本
@@ -157,6 +158,8 @@ public class AnalysysApplication extends Application {
         config.setAutoProfile(true);
         // 设置上传数据使用AES CBC模式加密，需添加加密模块
         config.setEncryptType(EncryptEnum.AES_CBC);
+        // 设置渠道追踪
+        config.setAutoInstallation(true);
         // 调用初始接口
         AnalysysAgent.init(this, config);
     }

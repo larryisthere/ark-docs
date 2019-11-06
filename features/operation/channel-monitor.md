@@ -12,7 +12,11 @@ App 推广监测是通过系统生成二维码或链接，将生成带参数的�
 2. 某线下连锁门店想着各个门店推广本公司的线上APP，需要拉新，通过线下地推扫描二维码下载注册，各个门店的转化效果如何？
 3. 公司推广一款App，在百度SEM、新浪微博、今日头条和微信公众号上都投放了广告，哪个渠道带来的流量多，注册转化率高？
 
-    
+## 使用前准备
+
+需要 SDK 升级到 v4.3.3.1 及以上，开启渠道追踪功能，详见 [《Android SDK 集成指南》](https://docs.analysys.cn/ark/integration/sdk/ios#chu-shi-hua-jie-kou) 和 [《iOS SDK 集成指南》](../../integration/sdk/ios/#she-zhi-re-tu-cai-ji)
+
+## 1. 连接 APP 查看热图
 
 ## 功能说明
 
