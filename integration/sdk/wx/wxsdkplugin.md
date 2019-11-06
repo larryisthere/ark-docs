@@ -68,14 +68,17 @@ let AnalysysAgent = app.AnalysysAgent;
 Page = AnalysysAgent.Page
 ```
 
-请注意:
+{% hint style="info" %}
+注意：
 
-```text
 1.将 appkey 的值填入您具体的项目 appkey
+
 2.目录为您所引入微信小程序 SDK 的具体目录
+
 3.请使用SDK所提供的App方法
+
 4.请使用SDK所提供的Page方法
-```
+{% endhint %}
 
 ### 配置参数
 

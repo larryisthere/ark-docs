@@ -77,12 +77,13 @@ Page({
 })
 ```
 
-请注意:
+{% hint style="info" %}
+注意：
 
-```text
 1.将 appkey 的值填入您具体的项目 appkey
+
 2.目录为您所引入微信小程序 SDK 的具体目录
-```
+{% endhint %}
 
 ### 配置参数
 
