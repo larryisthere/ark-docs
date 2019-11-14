@@ -57,9 +57,7 @@ description: 微信小程序插件版
 
 ```javascript
 let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.plugin.min.js")
-//import AnalysysAgent from "./build/AnalysysAgent_WX_SDK.plugin.es6.min.js"
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-App = AnalysysAgent.App
 ```
 
 如需要加密模块
@@ -77,17 +75,28 @@ import * as AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.j
 AnalysysAgent.encrypt = AnalysysEncryption;
 ```
 
-app.js 和 page.js 顶部 分别调用 保证SDK的正常使用
+app.js调用以下方法
 
 ```javascript
 let App = AnalysysAgent.App
-let Page = AnalysysAgent.Page
+App({
+    onLaunch:function(){
+        // 相关操作
+    }
+})
 ```
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
 
 ```javascript
 let AnalysysAgent = wx.AnalysysAgent;
+let Page = AnalysysAgent.Page
+
+Page({
+    onShow: function () {
+        // 相关操作
+    }
+})
 ```
 
 {% hint style="info" %}
@@ -351,8 +360,7 @@ Page({
           title: '自定义转发标题',
           path: '/page/user?id=123'
         }
-        let AnsShareProperties = AnalysysAgent.share(shareProperties);
-        return AnsShareProperties
+        return shareProperties
     }
 })
 ```

@@ -336,8 +336,7 @@ Page({
           title: '自定义转发标题',
           path: '/page/user?id=123'
         }
-        let AnsShareProperties = AnalysysAgent.share(shareProperties);
-        return AnsShareProperties
+        return shareProperties
     }
 })
 ```

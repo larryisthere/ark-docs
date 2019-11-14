@@ -59,12 +59,8 @@
 
 ```javascript
 let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.cunstom.min.js")
-//import AnalysysAgent from "./build/AnalysysAgent_WX_SDK.cunstom.es6.min.js"
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 App({
-    onLaunch : function( options ){
-        this.AnalysysAgent = AnalysysAgent;
-    },
     onShow : function( options ){
         //设置微信小程序启动事件,并传输UTM等参数
         AnalysysAgent.appStart(options)
@@ -118,7 +114,6 @@ Page({
 * _uploadURL_\(必须\) 自定义上传地址
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
-* _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 
@@ -192,20 +187,6 @@ AnalysysAgent.encryptType = 0//或删除该行代码。
 AnalysysAgent.encryptType = 1
 ```
 
-#### autoShare
-
-autoShare 为设置是否自动采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。可根据自身需要进行更改。
-
-* false 关闭自动采集分享按钮点击事件\(默认\)。类型：Boolean。
-* true 自动采集分享按钮点击事件。类型：Boolean。
-
-```javascript
-//关闭自动采集分享按钮点击事件。
-AnalysysAgent.autoShare = false//或删除该行代码。
-//自动采集分享按钮点击事件。
-AnalysysAgent.autoShare = true
-```
-
 #### allowTimeCheck
 
 allowTimeCheck 为设置是否开启时间校准，开启时间校准在debug 1或者 2 的情况下会有相关提示。
@@ -244,27 +225,31 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 ## 基础模块介绍
 
+### 启动事件接口
 
-
-### 统计启动接口
-
-页面跟踪，SDK 默认设置跟踪所有页面，支持自定义页面信息。接口如下：
+启动事件 appStart\(options\),框架版本SDK启动事件需要手动调用，而且只能调用一次。
 
 ```javascript
 AnalysysAgent.appStart(options);
 ```
 
-* options：小程序启动相关属性，用于对小程序启动事件的描述。eventInfo 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 125字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
 
 示例：
 
 ```javascript
-App({
-    onShow : function( options ){
-    //设置微信小程序启动事件,并传输UTM等参数
-    AnalysysAgent.appStart(options)
-  }
-});
+//框架taro:
+
+    componentDidShow () {
+        const params = this.$router.params
+        AnalysysAgent.appStart(params);
+    }
+
+//框架mpvue:
+
+    onLaunch (options) {
+        AnalysysAgent.appStart(options);
+    },
 ```
 
 ### 统计页面接口
