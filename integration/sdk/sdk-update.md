@@ -131,6 +131,19 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:center">2019/11/12</td>
+      <td style="text-align:center">v4.3.5</td>
+      <td style="text-align:left">
+        <p>[&#x65B0;&#x589E; API] &#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;&#x6027;
+          getPresetProperties [&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
+        <p>[&#x4F18;&#x5316;]iOS 13&#x9002;&#x914D;</p>
+        <p>[&#x4F18;&#x5316;]session&#x89C4;&#x5219;</p>
+        <p>[&#x4F18;&#x5316;]&#x70ED;&#x56FE;&#x91C7;&#x96C6;</p>
+        <p>[&#x4F18;&#x5316;]Xcode&#x517C;&#x5BB9;</p>
+        <p>[bug&#x4FEE;&#x6539;]&#x591A;&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;&#x5F15;&#x8D77;&#x7684;&#x5F02;&#x5E38;&#x6570;&#x636E;</p>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:center">2019/08/19</td>
       <td style="text-align:center">v4.3.4</td>
       <td style="text-align:left">

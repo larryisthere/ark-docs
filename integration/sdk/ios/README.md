@@ -2,7 +2,7 @@
 
 ## iOS SDK 使用说明
 
-iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.4_20190819.zip)
+iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_iOS_OC_v4.3.5_20191112.zip)
 
 | framework | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
@@ -125,6 +125,8 @@ end
 > * autoProfile：设置是否追踪新用户的首次属性。默认：YES
 > * autoInstallation：是否开启渠道追踪功能。默认值：NO
 > * encryptType：设置数据上传时的加密方式，目前只支持AES加密（AnalysysEncryptAES）；如不设置此参数，数据上传不加密。
+> * allowTimeCheck：是否允许时间校准，默认值：NO
+> * maxDiffTimeInterval：最大允许时间误差，单位：秒，默认值：30秒
 
 示例：
 
@@ -135,14 +137,16 @@ end
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     //  4.3.0版本后部分设置在SDK初始化前设置
-    //  设置上传地址
-    [AnalysysAgent setUploadURL:@"https://url:port"];
+    
     #ifdef DEBUG
         [AnalysysAgent setDebugMode:AnalysysDebugButTrack];
     #else
         [AnalysysAgent setDebugMode:AnalysysDebugOff];
     #endif
 
+    //  设置上传地址
+    [AnalysysAgent setUploadURL:@"https://url:port"];
+    
     //  设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
     //  AnalysysAgent 配置信息
     AnalysysConfig.appKey = @"77a52s552c892bn442v721";
@@ -154,12 +158,16 @@ end
     //  AnalysysConfig.encryptType = AnalysysEncryptAES;
     //  设置渠道追踪
     //  AnalysysConfig.autoInstallation = YES;
+    //  设置服务器时间校验
+    //  AnalysysConfig.allowTimeCheck = YES;
+    //  设置时间最大允许偏差为5分钟
+    //  AnalysysConfig.maxDiffTimeInterval = 5 * 60;
     //  使用配置初始化SDK
     [AnalysysAgent startWithConfig:AnalysysConfig];
 
-
     return YES;
 }
+
 ```
 
 * Swift代码示例
@@ -174,23 +182,26 @@ import AnalysysAgent
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     //  4.3.0版本后部分设置在SDK初始化前设置
-    //  设置上传地址
-    AnalysysAgent.setUploadURL("https://url:port")
+    
     #if DEBUG
         AnalysysAgent.setDebugMode(.butTrack)
     #else
         AnalysysAgent.setDebugMode(.off)
     #endif
 
+    //  设置上传地址
+    AnalysysAgent.setUploadURL("https://url:port")
+    
     //  AnalysysAgent 配置信息
-    AnalysysAgentConfig.shareInstance().appKey = "77a52s552c892bn442v721"
-    AnalysysAgentConfig.shareInstance().channel = "App Store"
-    AnalysysAgentConfig.shareInstance().autoProfile = true
-    //  AnalysysAgentConfig.shareInstance()?.autoInstallation = true
-    //  需要加密模块
-    //  AnalysysAgentConfig.shareInstance().encryptType = .AES
-    //  初始化SDK
-    AnalysysAgent.start(with: AnalysysAgentConfig.shareInstance())
+        AnalysysAgentConfig.shareInstance()?.appKey = "sdktest201907"
+        AnalysysAgentConfig.shareInstance()?.channel = "App Store"
+        AnalysysAgentConfig.shareInstance()?.autoProfile = true
+//        AnalysysAgentConfig.shareInstance()?.autoInstallation = true
+//        AnalysysAgentConfig.shareInstance()?.allowTimeCheck = true
+//        AnalysysAgentConfig.shareInstance()?.maxDiffTimeInterval = 5 * 60
+        
+        //  使用配置信息初始化SDK
+        AnalysysAgent.start(with: AnalysysAgentConfig.shareInstance())
 
 }
 ```
@@ -326,6 +337,88 @@ Swift代码示例:
 
 ```swift
 AnalysysAgent.setIgnoredAutomaticCollectionControllers(["packageName.NextViewController"]);
+```
+
+#### 
+
+#### 自动采集添加自定义信息
+
+若用户开启页面自动采集功能，可将自定义页面信息添加至`$pageview`事件中。SDK对外提供一个协议`<ANSAutoPageTracker>`供继承至`UIViewController`的类使用，若类遵循该协议，则须实现`registerPageProperties`方法，并将自定义参数返回，SDK会将此部分信息添加至`$pageview`事件的自定义参数中，且自定义参数优先级高于自动采集参数（即：相同key情况下，用户key会覆盖自动采集key）。
+
+{% hint style="info" %}
+* 前提：页面自动采集功能未手动关闭
+* 自定义参数只能获取页面生命周期`viewDidAppear:`及之前的参数，之后参数无法获取到。如：需要添加页面标题，但标题是通过网络请求获取，但响应时间较长，晚于页面生命周期`viewDidAppear:`才返回标题信息，则该信息无法添加至自动采集的页面属性中。
+{% endhint %}
+
+```objectivec
+/**
+ * @protocol
+ * 页面自动采集协议
+ *
+ * @abstract
+ * 当页面开启自动采集时，追加页面自定义参数
+ *
+ * @discussion
+ * 继承至UIViewController的子类，若遵循该协议，可将自定义页面的属性信息增加至$pageview事件中
+ */
+@protocol ANSAutoPageTracker <NSObject>
+
+@optional
+- (NSDictionary *)registerPageProperties;
+
+ /** 自定义页面标识，返回信息将覆盖$url字段 */
+- (NSString *)registerPageUrl;
+
+@end
+
+```
+
+示例：
+
+```objectivec
+/** 若使用SDK自动采集功能，且需要添加页面自定义参数，遵循protocol <ANSAutoPageTracker>*/
+@interface PageDetailViewController ()<ANSAutoPageTracker>
+
+@end
+
+@implementation PageDetailViewController
+
+/**
+ 实现ANSAutoPageTracker协议
+
+ @return 页面自定义参数信息
+ */
+- (NSDictionary *)registerPageProperties {
+    //  $title为自动采集使用key，用户可覆盖
+    //  增加商品标识(productID)
+    return @{@"$title": @"详情页"};
+}
+
+/**
+ 页面$url字段，将覆盖SDK默认字段
+
+ @return 页面标识
+ */
+- (NSString *)registerPageUrl {
+    return @"HomePage";
+}
+
+@end
+```
+
+Swift代码示例:
+
+```swift
+class PageDetailViewController: UIViewController, ANSAutoPageTracker {
+    
+    func registerPageProperties() -> [AnyHashable : Any]! {
+        return ["$title": "详情页", "$url": "/homepage/detailpage", "productID": "1001"]
+    }
+    
+    func registerPageUrl() -> String! {
+        return "DetailPage"
+    }
+}
 ```
 
 ### 统计事件接口
@@ -859,6 +952,26 @@ Swift代码示例:
 
 ```swift
 AnalysysAgent.flush()
+```
+
+### 获取预置属性
+
+获取SDK默认采集的一些预置属性信息，接口如下：
+
+```objectivec
++ (NSDictionary *)getPresetProperties;
+```
+
+示例：
+
+```objectivec
+NSDictionary *preProperties = [AnalysysAgent getPresetProperties];
+```
+
+Swift代码示例:
+
+```swift
+let presetProperties = AnalysysAgent.getPresetProperties()
 ```
 
 ### 清除本地设置
