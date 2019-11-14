@@ -40,11 +40,21 @@
 
 *  修复了若干BUG
 
+## 4.4.2 - 2019年09月27日
+
+#### 新增
+
+* [平台管理类API](integration/api/api-manage-enterprise/)
+
+#### BUG修复
+
+*  修复了若干BUG
+
 ## 4.4.1 - 2019年09月19日
 
 #### 新增
 
-* 管理类API
+* [管理类API](integration/api/api-manage-project/)
 
 #### 改进
 
