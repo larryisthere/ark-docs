@@ -1,5 +1,5 @@
 ---
-description: 适用于方舟4.3.0以下版本
+description: 适用于方舟4.3.0以下版本，不推荐使用
 ---
 
 # JS SDK历史版

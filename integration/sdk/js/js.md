@@ -6,7 +6,7 @@ description: 标准版本适用方舟4.3.3以上版本
 
 ## JS SDK 使用说明
 
-JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_v4.3.4_20190821.zip)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_v4.3.5_20191111.zip)
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
@@ -62,11 +62,11 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 ```javascript
 <script>
     (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || []
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty autoHeatmap freeApi'.split(' ');
+        window.AnalysysAgent = window.AnalysysAgent || [];
+        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
 
         function factory(b) {
-            return function() {
+            return function () {
                 var a = Array.prototype.slice.call(arguments);
                 a.unshift(b);
                 window.AnalysysAgent.push(a);
@@ -78,7 +78,8 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
             AnalysysAgent[key] = factory(key);
         }
         for (var key in config) {
-            AnalysysAgent[key](config[key])
+            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
+            AnalysysAgent[key](config[key]);
         }
         var date = new Date();
         var time = new String(date.getFullYear()) + new String(date.getMonth() + 1) + new String(date.getDate());
@@ -92,11 +93,11 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
         c.src = '/*设置为JS SDK实际存放地址*/' +'?v=' +time; //JS SDK存放地址
         n.parentNode.insertBefore(c, n);
     })({
-        //开始配置SDK相关参数
-        appkey: '/*设置为实际APPKEY*/', //配置APPKEY参数
-        uploadURL: '/*设置为实际地址*/',//配置上传数据的地址
+        appkey: '/*设置为实际APPKEY*/', //APPKEY
+        uploadURL: '/*设置为实际地址*/',//上传数据的地址
     })
 </script>
+
 ```
 {% endtab %}
 
@@ -106,11 +107,11 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 ```javascript
 <script>
     (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || []
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView debugMode auto appkey name uploadURL hash visitorConfigURL autoProfile autoWebstay encryptType pageProperty autoHeatmap freeApi'.split(' ');
+        window.AnalysysAgent = window.AnalysysAgent || [];
+        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
 
         function factory(b) {
-            return function() {
+            return function () {
                 var a = Array.prototype.slice.call(arguments);
                 a.unshift(b);
                 window.AnalysysAgent.push(a);
@@ -122,13 +123,12 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
             AnalysysAgent[key] = factory(key);
         }
         for (var key in config) {
-            AnalysysAgent[key](config[key])
+            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
+            AnalysysAgent[key](config[key]);
         }
     })({
-        //开始配置SDK相关参数
-        appkey: '/*设置为实际APPKEY*/', //配置APPKEY参数
-        uploadURL: '/*设置为实际地址*/',//配置上传数据的地址
-
+        appkey: '/*设置为实际APPKEY*/', //APPKEY
+        uploadURL: '/*设置为实际地址*/',//上传数据的地址
     })
 </script>
 
@@ -452,22 +452,16 @@ AnalysysAgent.track("buy", eventInfo);
 用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```javascript
-AnalysysAgent.alias(aliasId, originalId);
+AnalysysAgent.alias(aliasId);
 ```
 
-* aliasId：新的唯一用户 id。 取值长度 1 - 255字符,支持类型：String
-* originalId：待关联的设备ID，可以是现在使用也可以是历史使用的设备ID,不局限于本地正使用的设备ID。 可以为空值，若为空时使用本地的设备ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置），支持类型：String
+* aliasId：需要关联的用户ID。 取值长度 1 - 255字符,支持类型：String
 
 示例：
 
 ```javascript
 // 登陆账号时调用，只设置当前登陆账号即可和之前行为打通
 AnalysysAgent.alias("sanbo");
-
-......
-
-//现在登陆账号是zhangsan，和历史上的 lisi是一个人。 此时不会关心登陆 zhangsan前的用户是谁
-AnalysysAgent.alias("zhangsan", "lisi");
 ```
 
 ### 用户属性设置
@@ -752,6 +746,23 @@ AnalysysAgent.getSuperProperty("member");
 
 // 查看所有已经设置的通用属性
 AnalysysAgent.getSuperProperties();
+```
+
+### 获取预置属性
+
+获取预置属性。接口如下：
+
+```javascript
+AnalysysAgent.getPresetProperties();
+```
+
+示例：获取预置属性
+
+```javascript
+// 获取预置属性
+var presetProperties = AnalysysAgent.getPresetProperties();
+
+console.log('预置属性:', presetProperties)
 ```
 
 ### 清除本地设置

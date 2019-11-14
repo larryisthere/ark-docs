@@ -117,7 +117,9 @@
         4091&#x3002;</td>
     </tr>
   </tbody>
-</table>## iOS SDK
+</table>
+
+## iOS SDK
 
 <table>
   <thead>
@@ -234,6 +236,20 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:center">2019/11/11</td>
+      <td style="text-align:center">4.3.5</td>
+      <td style="text-align:left">
+        <p>[&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
+        <p>[&#x65B0;&#x589E; API] &#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;getPresetProperties</p>
+        <p>[&#x4F18;&#x5316;] &#x53EF;&#x89C6;&#x5316;&#x91CD;&#x6784;
+          <br />[&#x4F18;&#x5316;] &#x722C;&#x866B;&#x5224;&#x65AD;&#x589E;&#x52A0;BingPreview</p>
+        <p>[&#x4F18;&#x5316;] &#x70ED;&#x56FE;&#x91CD;&#x6784;</p>
+        <p>[&#x4F18;&#x5316;] ie&#x517C;&#x5BB9; &#x4E0E; &#x5B58;&#x50A8;&#x517C;&#x5BB9;</p>
+        <p>[bug&#x4FEE;&#x6539;] hybrid&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;JS SDK &#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;&#x4F7F;&#x7528;name&#x914D;&#x7F6E;&#x3002;&#x62A5;&#x9519;&#x4E14;&#x65E0;&#x6CD5;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;</p>
+        <p>[bug&#x4FEE;&#x6539;] $first_visit_time&#x503C;&#x589E;&#x52A0;&#x5230;&#x5B58;&#x50A8;</p>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:center">2019/08/21</td>
       <td style="text-align:center">4.3.4</td>
       <td style="text-align:left">
@@ -340,6 +356,17 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td style="text-align:center">2019/11/12</td>
+      <td style="text-align:center">V4.3.0</td>
+      <td style="text-align:left">
+        <p>[&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
+        <p>[&#x65B0;&#x589E; API]&#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;&#x6027;
+          getPresetProperties</p>
+        <p>[&#x4F18;&#x5316;]&#x5C0F;&#x7A0B;&#x5E8F;&#x65B0;&#x67B6;&#x6784;&#x91CD;&#x6784;</p>
+        <p>[&#x4F18;&#x5316;]&#x52A0;&#x5BC6;&#x6A21;&#x5757;&#x548C;&#x529F;&#x80FD;&#x5206;&#x79BB;</p>
+      </td>
+    </tr>
     <tr>
       <td style="text-align:center">2019/08/06</td>
       <td style="text-align:center">V4.2.3</td>

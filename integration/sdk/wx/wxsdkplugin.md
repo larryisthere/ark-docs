@@ -4,12 +4,14 @@ description: 微信小程序插件版
 
 # 微信小程序插件版
 
-微信小程序插件版SDK集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_WX_v4.2.3_20190806.zip)
+微信小程序插件版SDK集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_pass_weChat_4.3.0_plugin_4.3.0_20191112.zip)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
 | AnalysysAgent\_WX\_SDK.plugin.min.js | 插件版SDK | 二选一 |
 | AnalysysAgent\_WX\_SDK.plugin.es6.min.js | 插件版ES6语法SDK | 二选一 |
+| AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
+| AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合插件版ES6版本使用 | 非必须 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -60,12 +62,32 @@ AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 App = AnalysysAgent.App
 ```
 
+如需要加密模块
+
+```javascript
+let AnalysysEncryption = require("./build/AnalysysAgent_encryption.min.js")
+AnalysysAgent.encrypt = AnalysysEncryption
+```
+
+对于使用 es6 版本的
+
+```javascript
+import AnalysysAgent from  './build/AnalysysAgent_WX_SDK.plugin.es6.min.js';
+import * as AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
+AnalysysAgent.encrypt = AnalysysEncryption;
+```
+
+app.js 和 page.js 顶部 分别调用 保证SDK的正常使用
+
+```javascript
+let App = AnalysysAgent.App
+let Page = AnalysysAgent.Page
+```
+
 在各个 Page 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
 
 ```javascript
-let app = getApp();
-let AnalysysAgent = app.AnalysysAgent;
-Page = AnalysysAgent.Page
+let AnalysysAgent = wx.AnalysysAgent;
 ```
 
 {% hint style="info" %}
@@ -89,6 +111,8 @@ Page = AnalysysAgent.Page
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
 * _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
+* _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
+* _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 
 #### appkey
 
@@ -164,6 +188,8 @@ AnalysysAgent.autoProfile = true//或删除该行代码。
 
 encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密，如不设置此参数，数据上传不加密。。可根据自身需要进行更改。
 
+
+
 * 0 对上传数据不加密\(默认\)。类型：Number。
 * 1 对上传数据 AES 加密。类型：Number。
 
@@ -186,6 +212,32 @@ autoShare 为设置是否自动采集分享按钮点击事件，只采集分享�
 AnalysysAgent.autoShare = false//或删除该行代码。
 //自动采集分享按钮点击事件。
 AnalysysAgent.autoShare = true
+```
+
+#### allowTimeCheck
+
+allowTimeCheck 为设置是否开启时间校准，开启时间校准在debug 1或者 2 的情况下会有相关提示。
+
+* false 关闭时间校准\(默认\)。类型：Boolean。
+* true 开启时间校准。类型：Boolean。
+
+```javascript
+//关闭时间校准。
+AnalysysAgent.allowTimeCheck = false//或删除该行代码。
+//开启时间校准。
+AnalysysAgent.allowTimeCheck = true
+```
+
+#### maxDiffTimeInterval
+
+maxDiffTimeInterval 为设置不校准时间的最大时间差值。当客户端时间和服务端时间相差在此区间内，将不进行时间校准，否则将进行时间校准。
+
+* value：类型 Number 。默认值 30。单位：秒。
+
+```javascript
+//设置最大允许时间
+AnalysysAgent.maxDiffTimeInterval = 20 
+//当服务端和客户端的时间差超过 20s 将进行时间校准 
 ```
 
 ### 域名配置
@@ -310,22 +362,16 @@ Page({
 用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```javascript
-AnalysysAgent.alias(aliasId, originalId);
+AnalysysAgent.alias(aliasId);
 ```
 
-* aliasId：新的唯一用户 id。 取值长度 1 - 255字符,支持类型：String
-* originalId：待关联的设备ID，可以是现在使用也可以是历史使用的设备ID,不局限于本地正使用的设备ID。 可以为空值，若为空时使用本地的设备ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置），支持类型：String
+* aliasId：需要关联的用户ID。 取值长度 1 - 255字符,支持类型：String
 
 示例：
 
 ```javascript
 // 登陆账号时调用，只设置当前登陆账号即可和之前行为打通
 AnalysysAgent.alias("sanbo");
-
-......
-
-//现在登陆账号是zhangsan，和历史上的 lisi是一个人。 此时不会关心登陆 zhangsan前的用户是谁
-AnalysysAgent.alias("zhangsan", "lisi");
 ```
 
 ### 设备ID设置
@@ -622,6 +668,23 @@ AnalysysAgent.getSuperProperty("member");
 
 // 查看所有已经设置的通用属性
 AnalysysAgent.getSuperProperties();
+```
+
+### 获取预置属性
+
+获取预置属性。接口如下：
+
+```javascript
+AnalysysAgent.getPresetProperties();
+```
+
+示例：获取预置属性
+
+```javascript
+// 获取预置属性
+var presetProperties = AnalysysAgent.getPresetProperties();
+
+console.log('预置属性:', presetProperties)
 ```
 
 ### 清除本地设置
