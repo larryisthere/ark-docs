@@ -2,7 +2,7 @@
 
 ## Android SDK 使用说明
 
-Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_android_java_4.3.6_20190830.zip)
+Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_android_java_4.3.7_20191112.zip)
 
 | Jar包 | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
@@ -137,6 +137,8 @@ public static void init(Context context, AnalysysConfig config);
   3. autoProfile ：设置是否追踪新用户的首次属性，false：不追踪新用户的首次属性，true：追踪新用户的首次属性\(默认\)
   4. setAutoInstallation ：是否开启渠道追踪功能。默认值：false
   5. encryptType ：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为EncryptEnum.AES（128位密钥，ECB 加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC 加密模式）。
+  6. setAllowTimeCheck ：是否允许时间校准，默认值：`false`
+  7. setMaxDiffTimeInterval ：最大允许时间误差，单位：秒，默认值：30秒
 
 {% hint style="info" %}
 EncryptEnum.AES\_CBC模式适用方舟V4.2.7及以上版本
@@ -156,10 +158,14 @@ public class AnalysysApplication extends Application {
         config.setChannel("豌豆荚");
         // 设置追踪新用户的首次属性
         config.setAutoProfile(true);
+        // 设置进行渠道跟踪
+        config.setAutoInstallation(true);
         // 设置上传数据使用AES CBC模式加密，需添加加密模块
         config.setEncryptType(EncryptEnum.AES_CBC);
-        // 设置渠道追踪
-        config.setAutoInstallation(true);
+        // 设置服务器时间校验
+        config.setAllowTimeCheck(true);
+        // 时间最大允许偏差为5分钟
+        config.setMaxDiffTimeInterval(5 * 60);
         // 调用初始接口
         AnalysysAgent.init(this, config);
     }
@@ -312,6 +318,54 @@ AnalysysAgent.setIgnoredAutomaticCollectionActivities(mContext, list);
 
 注意：设置忽略页面时，需要添加完整的页面路径（包名 + 类名名）
 
+#### 自动采集添加自定义信息
+
+若用户开启页面自动采集功能，可将自定义页面信息添加至`$pageview`事件中。SDK对外提供一个接口`ANSAutoPageTracker`供继承至`Activity`的类使用，若类遵循该协议，则须实现`registerPageProperties`方法，并将自定义参数返回，SDK会将此部分信息添加至`$pageview`事件的自定义参数中，且自定义参数优先级高于自动采集参数（即：相同key情况下，用户key会覆盖自动采集key）。
+
+{% hint style="info" %}
+前提：页面自动采集功能未手动关闭  
+自定义参数只能获取页面生命周期onStart之前的参数，之后参数无法获取到。
+{% endhint %}
+
+```java
+public interface ANSAutoPageTracker {
+    /**
+     * 获取对应页面的自定义参数
+     */
+    Map<String, Object> registerPageProperties();
+
+    /**
+     * 手动设置页面的url
+     */
+    String registerPageUrl();
+}
+```
+
+示例:
+
+```java
+public class MainActivity extends AppCompatActivity implements ANSAutoPageTracker {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    @Override
+    public Map<String, Object> registerPageProperties() {
+        //  $title为自动采集使用key，用户可覆盖
+        Map<String, Object> properties = new HashMap<String, Object>();
+        properties.put("$title", "详情页");
+        return properties;
+    }
+    @Override
+    public String registerPageUrl() {
+        // 页面$url字段，将覆盖SDK默认字段
+        return "HomePage";
+    }
+}
+```
+
 ### 统计事件接口
 
 用户行为追踪，可以设置自定义属性。 接口如下：
@@ -351,7 +405,7 @@ public static void alias(Context context, String aliasId, String originalId);
 ```
 
 * context：应用上下文对象
-* aliasId：新的唯一用户 id。 取值长度 1 - 255 字符
+* aliasId：需要关联的用户ID。 取值长度 1 - 255 字符
 * originalId ：待关联的设备ID，可以是现在使用也可以是历史使用的设备ID,不局限于本地正使用的设备ID。 可以为空值，若为空时使用本地的设备ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置）
 
 示例：
@@ -726,6 +780,21 @@ protected void onPause() {
     // 切换页面时想立即上传所有数据
     AnalysysAgent.flush(mContext);
 }
+```
+
+### 获取预置属性
+
+获取SDK默认采集的一些预置属性信息，接口如下：
+
+```java
+public static Map<String, Object> getPresetProperties(Context context) ;
+```
+
+示例：
+
+```java
+// 获取预置属性
+Map<String, Object> properties = AnalysysAgent.getPresetProperties(mContext);
 ```
 
 ### 清除本地设置

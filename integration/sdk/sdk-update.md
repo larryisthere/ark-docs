@@ -12,6 +12,21 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:center">2019/11/12</td>
+      <td style="text-align:center">v4.3.7</td>
+      <td style="text-align:left">
+        <p>[&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
+        <p>[&#x65B0;&#x589E; API]&#x9875;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;</p>
+        <p>[&#x65B0;&#x589E; API]&#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;&#x6027;getPresetProperties</p>
+        <p>[&#x4F18;&#x5316;]session id &#x5728; push &#x4E2D;&#x7684;&#x5207;&#x6362;&#x903B;&#x8F91;</p>
+        <p>[&#x4F18;&#x5316;]&#x4FEE;&#x590D;&#x4E86;&#x5728;&#x591A;&#x8FDB;&#x7A0B;&#x573A;&#x666F;&#x4E0B;
+          session id &#x5207;&#x6362;&#x5F02;&#x5E38;</p>
+        <p>[&#x4F18;&#x5316;]&#x53EF;&#x89C6;&#x5316;&#x529F;&#x80FD;</p>
+        <p>[bug&#x4FEE;&#x6539;] &#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x65F6; AppStart&#x3001;AppEnd
+          &#x4E8B;&#x4EF6;&#x6570;&#x636E;&#x987A;&#x5E8F;&#x5F02;&#x5E38;</p>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:center">2019/8/30</td>
       <td style="text-align:center">v4.3.6</td>
       <td style="text-align:left">
@@ -134,8 +149,9 @@
       <td style="text-align:center">2019/11/12</td>
       <td style="text-align:center">v4.3.5</td>
       <td style="text-align:left">
-        <p>[&#x65B0;&#x589E; API] &#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;&#x6027;
+        <p>[&#x65B0;&#x589E; API]&#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;&#x6027;
           getPresetProperties</p>
+        <p>[&#x65B0;&#x589E; API]&#x9875;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;</p>
         <p>[&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
         <p>[&#x4F18;&#x5316;]iOS 13&#x9002;&#x914D;</p>
         <p>[&#x4F18;&#x5316;]session&#x89C4;&#x5219;</p>
@@ -253,7 +269,6 @@
       <td style="text-align:center">2019/11/11</td>
       <td style="text-align:center">4.3.5</td>
       <td style="text-align:left">
-        <p>[&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
         <p>[&#x65B0;&#x589E; API] &#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;getPresetProperties</p>
         <p>[&#x4F18;&#x5316;] &#x53EF;&#x89C6;&#x5316;&#x91CD;&#x6784;
           <br />[&#x4F18;&#x5316;] &#x722C;&#x866B;&#x5224;&#x65AD;&#x589E;&#x52A0;BingPreview</p>
@@ -375,6 +390,7 @@
       <td style="text-align:center">V4.3.0</td>
       <td style="text-align:left">
         <p>[&#x65B0;&#x589E; API]&#x65B0;&#x589E;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x914D;&#x7F6E;</p>
+        <p>[&#x65B0;&#x589E; API]&#x9875;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;</p>
         <p>[&#x65B0;&#x589E; API]&#x83B7;&#x53D6;&#x9884;&#x7F6E;&#x5C5E;&#x6027;
           getPresetProperties</p>
         <p>[&#x4F18;&#x5316;]&#x5C0F;&#x7A0B;&#x5E8F;&#x65B0;&#x67B6;&#x6784;&#x91CD;&#x6784;</p>

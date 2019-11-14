@@ -469,7 +469,7 @@ AnalysysAgent.track("pay", properties: properties)
 + (void)alias:(NSString *)aliasId originalId:(NSString *)originalId;
 ```
 
-* aliasId：新的唯一用户 id。 取值长度为1-255个字符
+* aliasId：需要关联的用户ID。 取值长度为1-255个字符
 * originalId ：待关联的设备ID，可以是现在使用也可以是历史使用的设备ID,不局限于本地正使用的设备ID。 可以为空值，若为空时使用本地的设备ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置），支持类型：String
 
 示例：
