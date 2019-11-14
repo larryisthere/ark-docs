@@ -12,7 +12,7 @@
 
 {% page-ref page="ios/" %}
 
-{% page-ref page="js/js.md" %}
+{% page-ref page="js/" %}
 
 {% page-ref page="wx/" %}
 
@@ -24,7 +24,11 @@
 
 {% page-ref page="php.md" %}
 
+{% page-ref page="c++.md" %}
+
 **数据导入**
+
+{% page-ref page="../import/tool/" %}
 
 {% page-ref page="../import/restful-api.md" %}
 
