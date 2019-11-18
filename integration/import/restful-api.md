@@ -40,7 +40,8 @@ http(s)://host:port/up
         "$platform": "Android",
         "$is_login": false,
         "$lib_version": "4.0.4",
-        "$debug": 2
+        "$debug": 2,
+        "$importFlag": 1
     }
 }]
 ```
@@ -85,17 +86,23 @@ http(s)://host:port/up
 
  **上报报文必须包含`xwho`/`xwhat`/`xwhen`/`appid`/`xcontext`这几个key，具体含义如下：**
 
-`xwho`：字符串，长度大于0且小于255字符。不可以为中文。 用户定义的用户唯一性标准
+appid：字符串，等价于一个产品，推荐跨平台使用。
 
-`xwhat`：字符串， 需要符合Java命名规则： 开头约束:字母或者$ 字符类型:大小写字母、数字、下划线和 $ 最大长度是99字符。不可以为中文。任何主体主动/被动触发事件的的事件名除内置预定义事件外，其他事件全部来源用户。主要分为三种类型: 用户事件\(Profile/User\)，可以修改；普通事件\(Event/Track\) ，不允许修改；预置事件，不建议用户覆盖，但是可以强行覆盖。
+{% hint style="danger" %}
+appid为该产品特有的标识，非法值或恶意篡改的值上报至服务器会返回错误。
+{% endhint %}
 
-`xwhen`：数字型\(Long类型\)，事件触发的时间。默认使用本地时间，但是需要将时区信息放到xcontext中。
+xwho：字符串，长度大于0且小于255字符。不可以为中文。 用户定义的用户唯一性标准 xwhat：字符串， 需要符合Java命名规则： 开头约束:字母或者$ 字符类型:大小写字母、数字、下划线和 $ 最大长度是99字符。不可以为中文。任何主体主动/被动触发事件的的事件名除内置预定义事件外，其他事件全部来源用户。主要分为三种类型: 用户事件\(Profile/User\)，可以修改；普通事件\(Event/Track\) ，不允许修改；预置事件，不建议用户覆盖，但是可以强行覆盖。 
 
-`xcontext`：JSON格式，数据结构是KV结构。主要包含: 描述信息。所有事件xcontext中必须包含五个字段: $platform、$lib、$is\_login、$lib\_version、$debug。
+xwhen：数字型\(Long类型\)，事件触发的时间。默认使用本地时间，但是需要将时区信息放到xcontext中。
+
+xcontext：JSON格式，数据结构是KV结构。主要包含: 描述信息。所有事件xcontext中必须包含五个字段: $platform、$lib、$is\_login、$lib\_version、$debug 以及 $importFlag。
+
+$importFlag：数值型，必填。用于告诉方舟该条数据是历史数据，不做时间窗口校验并且允许进行查询。
+
+$lib：字符串，SDK类型，选项有:Java、Python、JS、Node、PHP、Wechat、Andorid、iOS。
 
 $platform：字符串，平台信息，和lib相同
-
-$is\_login：布尔值，是否是登录的用户
 
 $lib\_version：字符串，SDK版本号
 
@@ -109,11 +116,7 @@ $debug： 数值型，是否为DEBUG模式。
 >
 > 2==debug入库
 
-$lib：字符串，SDK类型,选项有:Java、Python、JS、Node、PHP、Wechat、Andorid、iOS
-
-`appid`：字符串，等价于一个产品，推荐跨平台使用。
-
-注意：appid为该产品特有的标识，非法值或恶意篡改的值上报至服务器会返回错误。
+$is\_login：布尔值，用于标识该事件是否有已登录用户产生
 
 ### 支持类型
 
