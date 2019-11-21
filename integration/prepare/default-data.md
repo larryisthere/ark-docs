@@ -660,11 +660,11 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $platform | 最后一次使用平台 | 字符串 | 最后一次使用平台 | Y | Y | Y | Y |
 | $lib | SDK类型 | 字符串 | SDK类型，e.g.  python、iOS等 | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g. 11.2.5 | Y | Y | Y | Y |
-| $country | 所在国家 | 字符串 | 用户所在国家 | N | N | N | N |
+| $country | 所在国家 | 字符串 | 用户所在国 | N | N | N | N |
 | $province | 所在省份 | 字符串 | 用户所在省份 | N | N | N | N |
 | $city | 所在城市 | 字符串 | 用户所在城市 | N | N | N | N |
 | $is\_login | 是否是注册用户 | 布尔值 | true，false | Y | Y | Y | Y |
-| $signup\_time | 注册时间 | 日期时间 | 注册时间 | N | N | N | N |
+| $signup\_time | 注册时间 | 日期时间 | 格式为：yyyy-MM-dd hh:mm:ss.SSS | N | N | N | N |
 | $first\_visit\_time | 首次访问时间 | 日期时间 | 首次访问时间 | Y | Y | Y | Y |
 | $time\_zone | 用户时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
 | $first\_visit\_language | 首次访问语言 | 字符串 | zh-cn | Y | Y | Y | Y |
