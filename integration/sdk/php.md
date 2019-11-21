@@ -27,7 +27,7 @@ $app_key = '9421608fd544a65e';
 $serverUrl = 'https://arksdk.analysys.cn:4089/';
 $consumer = new SyncConsumer($serverUrl); //同步
 //$consumer = new BatchConsumer($server); // 批量
-$analysys_agnet = new AnalysysAgent($consumer, $appid);
+$analysys_agent = new AnalysysAgent($consumer, $appid);
 ```
 
 app\_key：网站获取的 Key
@@ -70,7 +70,7 @@ new BatchConsumer($serverUrl, $batchNum, $batchSec);
 Debug 主要用于开发者测试，接口如下：
 
 ```php
-$analysys_agnet->setDebugMode($debug);
+$analysys_agent->setDebugMode($debug);
 ```
 
 * $debug：debug 模式,类型：Number,默认为`0`。有以下三状态：
@@ -85,7 +85,7 @@ $analysys_agnet->setDebugMode($debug);
 事件跟踪，设置事件名称和事件详细信息。接口如下：
 
 ```php
-$analysys_agnet->track($distinctId, $isLogin, $eventName, $properties,$platform);
+$analysys_agent->track($distinctId, $isLogin, $eventName, $properties,$platform);
 ```
 
 * `$distinctId`：用户 ID,长度大于 0 且小于 255字符
@@ -112,7 +112,7 @@ $properties = array(
     'producePrice'=>'60',
     'shop'=>'在线'
 );
-$analysys_agnet->track($distinctId,$isLogin,$eventName,$properties ,$platform);
+$analysys_agent->track($distinctId, $isLogin, $eventName, $properties , $platform);
 ```
 
 ### 3.3 用户关联
@@ -120,7 +120,7 @@ $analysys_agnet->track($distinctId,$isLogin,$eventName,$properties ,$platform);
 用户 ID 关联接口。将 `$aliasId` 和 `$distinctId`关联，计算时会认为是一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用，来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$aliasId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
 
 ```php
-$analysys_agnet->alias($aliasId,$distinctId,$platform);
+$analysys_agent->alias($aliasId, $distinctId, $platform);
 ```
 
 * `$aliasId`：用户注册 ID，长度大于 0，且小于 255字符
@@ -133,7 +133,7 @@ $analysys_agnet->alias($aliasId,$distinctId,$platform);
 $distinctId = '1234567890987654321';
 $aliasId  = 'ABCDEF123456789';
 $platform = 'JS';
-$analysys_agnet->alias($aliasId,$distinctId,$platform);
+$analysys_agent->alias($aliasId, $distinctId, $platform);
 ```
 
 ### 3.4 用户属性设置
@@ -153,7 +153,7 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 设置单个或多个属性，如用户所在城市，用户昵称，用户头像信息等。如果之前存在，则覆盖，否则，新创建。接口如下：
 
 ```php
-$analysys_agnet->profileSet($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
 ```
 
 * `$distinctId`: 用户ID,长度大于0且小于255字符
@@ -179,7 +179,7 @@ $properties = array(
         '游戏'
     )
 );
-$analysys_agnet->profileSet($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
 ```
 
 ## 4. 更多接口
@@ -191,7 +191,7 @@ $analysys_agnet->profileSet($registerId,$isLogin,$properties,$platform);
 只在首次设置时有效的属性。如：用户的注册时间。如果被设置的用户属性已存在，则这条记录会被忽略而不会覆盖已有数据，如果属性不存在则会自动创建。接口如下：
 
 ```php
-$analysys_agnet->profileSetOnce($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
 ```
 
 * `$distinctId`: 用户ID,长度大于0且小于255字符
@@ -208,7 +208,7 @@ $platform = 'JS';
 $properties = array(
     'registerTime'=>'20180101101010'
 );
-$analysys_agnet->profileSetOnce($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
 ```
 
 #### 4.1.2 设置用户属性相对变化值
@@ -216,7 +216,7 @@ $analysys_agnet->profileSetOnce($registerId,$isLogin,$properties,$platform);
 设置用户属性的单个相对变化值\(相对增加,减少\)，只能对数值型属性进行操作，如果这个Profile之前不存在,则初始值为0。接口如下：
 
 ```php
-$analysys_agnet->profileIncrement($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform);
 ```
 
 * `$distinctId`: 用户ID,长度大于0且小于255字符
@@ -233,7 +233,7 @@ $platform = 'JS';
 $properties = array(
     'userPoint'=>20
 );
-$analysys_agnet->profileIncrement($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform);
 ```
 
 #### 4.1.3 增加列表类型的属性
@@ -241,7 +241,7 @@ $analysys_agnet->profileIncrement($registerId,$isLogin,$properties,$platform);
 为列表类型的属性增加一个或多个元素，如：用户新增兴趣爱好，接口如下：
 
 ```php
-$analysys_agnet->profileAppend($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform);
 ```
 
 * `$distinctId`: 用户ID,长度大于0且小于255字符
@@ -262,7 +262,7 @@ $properties = array(
         '游戏'
     )
 );
-$analysys_agnet->profileAppend($registerId,$isLogin,$properties,$platform);
+$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform);
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -270,8 +270,8 @@ $analysys_agnet->profileAppend($registerId,$isLogin,$properties,$platform);
 删除设置的属性值。接口如下：
 
 ```php
-$analysys_agnet->profileUnSet($registerId,$isLogin,"nickName",$platform);
-$analysys_agnet->profileDelete($registerId,$isLogin,$platform);
+$analysys_agent->profileUnSet($registerId, $isLogin, "nickName", $platform);
+$analysys_agent->profileDelete($registerId, $isLogin, $platform);
 ```
 
 * `$distinctId`: 用户ID,长度大于0且小于255字符
@@ -285,7 +285,7 @@ $analysys_agnet->profileDelete($registerId,$isLogin,$platform);
 $registerId = 'ABCDEF123456789';
 $isLogin = true;
 $platform = 'JS';
-$analysys_agnet->profileUnSet($registerId,$isLogin,"nickName",$platform);
+$analysys_agent->profileUnSet($registerId, $isLogin, "nickName", $platform);
 ```
 
 示例2：要删除已经设置的所有用户属性
@@ -294,7 +294,7 @@ $analysys_agnet->profileUnSet($registerId,$isLogin,"nickName",$platform);
 $registerId = 'ABCDEF123456789';
 $isLogin = true;
 $platform = 'JS';
-$analysys_agnet->profileDelete($registerId,$isLogin,$platform);
+$analysys_agent->profileDelete($registerId, $isLogin, $platform);
 ```
 
 ### 4.2 通用属性
@@ -319,7 +319,7 @@ $analysys_agnet->profileDelete($registerId,$isLogin,$platform);
 以用户浏览/购买商品的过程中发生的事件为例，用户的级别/积分就可以作为通用的属性，通过把用户级别/积分注册为通用属性，就可以避免在每次收集事件属性的时候都要手工设置该属性值。接口如下：
 
 ```php
-$analysys_agnet->registerSuperProperties($properties);
+$analysys_agent->registerSuperProperties($properties);
 ```
 
 * `$properties`：设置多个属性
@@ -332,7 +332,7 @@ $properties = array(
     'userLevel'=>0,
     'userPoint'=>0
 );
-$analysys_agnet->registerSuperProperties($properties);
+$analysys_agent->registerSuperProperties($properties);
 ```
 
 #### 4.2.2 删除通用属性
@@ -340,8 +340,8 @@ $analysys_agnet->registerSuperProperties($properties);
 如果要删除某个通用属性或者删除全部的通用属性，可以分别调用 unregisterSuperProperty 或 clearSuperProperties 接口。具体接口定义如下：
 
 ```php
-$analysys_agnet->unRegisterSuperProperty($key);
-$analysys_agnet->clearSuperProperties();
+$analysys_agent->unRegisterSuperProperty($key);
+$analysys_agent->clearSuperProperties();
 ```
 
 * key：属性名称
@@ -350,14 +350,14 @@ $analysys_agnet->clearSuperProperties();
 
 ```php
 // 删除单个通用属性
-$analysys_agnet->unRegisterSuperProperty('userPoint');
+$analysys_agent->unRegisterSuperProperty('userPoint');
 ```
 
 示例2：清除所有已经设置的通用属性
 
 ```php
 // 清除所有通用属性
-$analysys_agnet->clearSuperProperties();
+$analysys_agent->clearSuperProperties();
 ```
 
 #### 4.2.3 获取通用属性
@@ -365,8 +365,8 @@ $analysys_agnet->clearSuperProperties();
 由属性名称查询获取单条通用属性，或者获取全部的通用属性。接口如下：
 
 ```php
-$analysys_agnet->getSuperProperty($key);
-$analysys_agnet->getSuperProperties();
+$analysys_agent->getSuperProperty($key);
+$analysys_agent->getSuperProperties();
 ```
 
 * key：属性名称
@@ -375,14 +375,14 @@ $analysys_agnet->getSuperProperties();
 
 ```php
 // 获取单个通用属性
-$analysys_agnet->getSuperProperty('userLevel');
+$analysys_agent->getSuperProperty('userLevel');
 ```
 
 示例2：查看所有已经设置的通用属性
 
 ```php
 // 获取所有通用属性
-$analysys_agnet->getSuperProperties();
+$analysys_agent->getSuperProperties();
 ```
 
 ### 4.3  刷新缓存
@@ -390,7 +390,7 @@ $analysys_agnet->getSuperProperties();
 立即发送所有收集的信息到服务器。
 
 ```php
-$analysys_agnet.flush();
+$analysys_agent.flush();
 ```
 
 ## 5. SDK 使用样例
@@ -422,11 +422,11 @@ $track_properties = array(
     'producePrice'=>'60',
     'shop'=>'在线'
 );
-$ans->track($distinctId,$isLogin,$eventName,$track_properties ,$platform);
+$ans->track($distinctId, $isLogin, $eventName, $track_properties, $platform);
 
 
 $registerId  = 'ABCDEF123456789';
-$ans->alias($registerId,$distinctId,$platform);
+$ans->alias($registerId, $distinctId, $platform);
 
 $fileSet_properties = array(
     '$city'=>'北京',
@@ -440,18 +440,18 @@ $fileSet_properties = array(
         '游戏'
     )
 );
-$ans->profileSet($registerId,$isLogin,$fileSet_properties,$platform);
+$ans->profileSet($registerId, $isLogin, $fileSet_properties, $platform);
 
 $fileSetOnce_properties = array(
     'registerTime'=>'20180101101010'
 );
-$ans->profileSetOnce($registerId,$isLogin,$fileSetOnce_properties,$platform);
+$ans->profileSetOnce($registerId, $isLogin, $fileSetOnce_properties, $platform);
 
 
 $fileIncrement_properties = array(
     'userPoint'=>20
 );
-$ans->profileIncrement($registerId,$isLogin,$fileIncrement_properties,$platform);
+$ans->profileIncrement($registerId, $isLogin, $fileIncrement_properties, $platform);
 
 
 $fileAppend_properties = array(
@@ -461,12 +461,12 @@ $fileAppend_properties = array(
         '游戏'
     )
 );
-$ans->profileAppend($registerId,$isLogin,$fileAppend_properties,$platform);
+$ans->profileAppend($registerId, $isLogin, $fileAppend_properties, $platform);
 
 
-$ans->profileUnSet($registerId,$isLogin,"nickName",$platform);
+$ans->profileUnSet($registerId, $isLogin, "nickName", $platform);
 
-$ans->profileDelete($registerId,$isLogin,$platform);
+$ans->profileDelete($registerId, $isLogin, $platform);
 
 $registerSuperProperties_properties = array(
     'userLevel'=>0,
