@@ -124,13 +124,13 @@ $analysys_agent->alias($aliasId, $distinctId, $platform);
 ```
 
 * `$aliasId`：用户注册 ID，长度大于 0，且小于 255字符
-* `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符
+* `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符，一般**从 Cookies 的 ARK\_ID 中获取**
 * `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
 
 示例：匿名用户浏览商品到注册会员
 
 ```php
-$distinctId = '1234567890987654321';
+$distinctId = $_COOKIE['ARK_ID'];
 $aliasId  = 'ABCDEF123456789';
 $platform = 'JS';
 $analysys_agent->alias($aliasId, $distinctId, $platform);
