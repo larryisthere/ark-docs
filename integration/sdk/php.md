@@ -112,7 +112,7 @@ $properties = array(
     'producePrice'=>'60',
     'shop'=>'在线'
 );
-$analysys_agent->track($userId, $isLogin, $eventName, $properties , $platform);
+$analysys_agent->track($distinctId, $isLogin, $eventName, $properties , $platform);
 ```
 
 ### 3.3 用户关联
