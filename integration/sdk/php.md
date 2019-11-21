@@ -20,7 +20,7 @@ PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。�
 
 ### 2.2 初始化接口
 
-在程序所需初始化位置处，调用构造函数 new AnalysysAgent\(Consumer,APP\_KEY\) 初始化 PHP SDK 实例。如下：
+在程序所需初始化位置处，调用构造函数 new AnalysysAgent\(Consumer, APP\_KEY\) 初始化 PHP SDK 实例。如下：
 
 ```php
 $app_key = '9421608fd544a65e';
@@ -88,8 +88,8 @@ $analysys_agent->setDebugMode($debug);
 $analysys_agent->track($distinctId, $isLogin, $eventName, $properties,$platform);
 ```
 
-* `$distinctId`：用户 ID,长度大于 0 且小于 255字符
-* `$isLogin`：用户 ID 是否是登录 ID
+* `$distinctId`：用户 ID，长度大于 0 且小于 255字符。若用户已登录则为用户自己的ID，通常为手机号、电子邮件等；若用户未登录则可取客户端生成的 ARK\_ID，通常会存储在 Cookie 中。
+* `$isLogin`：用户 ID 是否是登录 ID。若用户已登录则为 true，未登录则为 false。
 * `$eventName`：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * `$properties`: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 125字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
 * `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
@@ -112,18 +112,18 @@ $properties = array(
     'producePrice'=>'60',
     'shop'=>'在线'
 );
-$analysys_agent->track($distinctId, $isLogin, $eventName, $properties , $platform);
+$analysys_agent->track($userId, $isLogin, $eventName, $properties , $platform);
 ```
 
 ### 3.3 用户关联
 
-用户 ID 关联接口。将 `$aliasId` 和 `$distinctId`关联，计算时会认为是一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用，来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$aliasId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
+用户 ID 关联接口。将 `$registerId` 和 `$distinctId`关联，计算时会认为是一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用（通常为用户登录），用来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$registerId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
 
 ```php
-$analysys_agent->alias($aliasId, $distinctId, $platform);
+$analysys_agent->alias($registerId, $distinctId, $platform);
 ```
 
-* `$aliasId`：用户注册 ID，长度大于 0，且小于 255字符
+* `$registerId`：用户注册 ID，长度大于 0，且小于 255字符
 * `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符，一般**从 Cookies 的 ARK\_ID 中获取**
 * `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
 
@@ -131,16 +131,27 @@ $analysys_agent->alias($aliasId, $distinctId, $platform);
 
 ```php
 $distinctId = $_COOKIE['ARK_ID'];
-$aliasId  = 'ABCDEF123456789';
+$registerId  = 'ABCDEF123456789';
 $platform = 'JS';
-$analysys_agent->alias($aliasId, $distinctId, $platform);
+$analysys_agent->alias($registerId, $distinctId, $platform);
 ```
 
 ### 3.4 用户属性设置
 
-SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性别等信息。
+SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性别等信息。调用后会在用户表中插入一条用户ID为 $registerId 的记录，若 $registerId 的记录已存在，则覆盖。
 
-> 用户属性是一个标准的K-V结构，K和V均有相应的约束条件，如不符合则丢弃该次操作。 参数约束:
+示例：
+
+```php
+$analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
+```
+
+* `$registerId`: 用户ID,长度大于0且小于255字符
+* `$isLogin`: 用户ID是否是登录 ID
+* `$properties`: 用户属性
+* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+
+其中，$properties 是一个标准的K-V结构，K和V均有相应的约束条件，如不符合则丢弃该次操作。 参数约束：
 
 * **属性名称**
 
@@ -150,18 +161,7 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 
   支持部分类型：string/number/boolean/集合/数组; 若为字符串,则最大长度255字符; 若为数组或集合,则最多包含100条,且key约束条件与属性名称一致,value最大长度255字符
 
-设置单个或多个属性，如用户所在城市，用户昵称，用户头像信息等。如果之前存在，则覆盖，否则，新创建。接口如下：
-
-```php
-$analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
-```
-
-* `$distinctId`: 用户ID,长度大于0且小于255字符
-* `$isLogin`: 用户ID是否是登录 ID
-* `$properties`: 事件属性
-* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
-
-示例：用户注册后设置用户的注册信息属性
+用户注册后将用户ID从匿名更改为业务系统的ID，示例如下：
 
 ```php
 $registerId = '1234567890987654321';
@@ -194,7 +194,7 @@ $analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
 $analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
 ```
 
-* `$distinctId`: 用户ID,长度大于0且小于255字符
+* `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -219,7 +219,7 @@ $analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
 $analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform);
 ```
 
-* `$distinctId`: 用户ID,长度大于0且小于255字符
+* `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -244,7 +244,7 @@ $analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform)
 $analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform);
 ```
 
-* `$distinctId`: 用户ID,长度大于0且小于255字符
+* `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -274,7 +274,7 @@ $analysys_agent->profileUnSet($registerId, $isLogin, "nickName", $platform);
 $analysys_agent->profileDelete($registerId, $isLogin, $platform);
 ```
 
-* `$distinctId`: 用户ID,长度大于0且小于255字符
+* `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$propertie`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
