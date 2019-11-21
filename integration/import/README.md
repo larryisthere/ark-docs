@@ -6,12 +6,12 @@ description: 除了支持通过 SDK 集成之外，方舟还支持Restful API �
 
 如果你有历史数据需要导入，可以根据数据量级选择合适的导入工具。如下图：
 
-![&#x6570;&#x636E;&#x63A5;&#x5165;&#x5168;&#x666F;&#x56FE;](../../.gitbook/assets/dataflow%20%281%29.png)
+![](../../.gitbook/assets/overflow.png)
 
 | 数据状态 | 数据量范围 | 首选工具 |
 | :--- | :--- | :--- |
 | 历史 | 数百万 | ImportJSONToKafka |
-| 历史 | 数十万 | API  |
+| 历史 | 数十万 | API |
 | 实时 | - | SDK, API |
 
 ## ImportJSONToKafka
@@ -26,7 +26,7 @@ description: 除了支持通过 SDK 集成之外，方舟还支持Restful API �
 
 ## API
 
-通过 Restful API 可以将历史数据通过网络上报到易观方舟，这种方式适用于不方便登录方舟服务器，并且数据量不大的情况。
+通过 Restful API 可以将历史数据通过网络上报到易观方舟 Nginx 收数程序，这种方式适用于不方便登录方舟服务器，并且数据量不大的情况。
 
 | 语言 | 场景 | 数据量范围 | 输入 | 输出 |
 | :--- | :--- | :--- | :--- | :--- |
