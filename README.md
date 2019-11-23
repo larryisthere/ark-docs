@@ -48,7 +48,7 @@
 
 ## 产品功能
 
-![](.gitbook/assets/image%20%28170%29.png)
+![](.gitbook/assets/image%20%28215%29.png)
 
 {% page-ref page="quick-start-guide/" %}
 
