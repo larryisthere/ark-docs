@@ -61,7 +61,8 @@ postNumber:0
 用户触发上传，该收集器将先缓存数据，直到数量达到用户设置的阈值或者用户设置的等待时间，才会触发真正的上传：
 
 ```cpp
-postNumber:batchNum postTime:batchSecnBatchNum：
+postNumber:batchNum
+postTime:batchSecnBatchNum：
 //批量发送数量，默认值：20条
 ```
 
@@ -76,7 +77,7 @@ batchSec：批量发送等待时间\(毫秒\)，默认值：0 毫秒
 Debug 主要用于开发者测试，接口如下：
 
 ```cpp
- debugMode:debugMode
+debugMode:debug
 ```
 
 \* debug：debug 模式,Number,默认关闭状态。有以下三种枚举值：
@@ -86,7 +87,7 @@ Debug 主要用于开发者测试，接口如下：
 \* `2`：表示打开 Debug 模式，该模式下发送的数据可计入平台数据统计
 
 {% hint style="info" %}
-注意：发布版本时debug模式设置为\`DEBUG.CLOSE\`。
+注意：发布版本时debug模式设置为\`0\`。
 {% endhint %}
 
 ### 2.6 统计事件
@@ -126,7 +127,7 @@ analysys.track( distinctId, isLogin,eventName, trackPropertie,11111111111111111)
 
 ### 2.7 用户关联
 
-用户 ID 关联接口。将 aliasId和 distinctId关联，计算时会认为是一个用户的行为。该接口是在 distinctId发生变化的时候调用，来告诉 SDK distinctId变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的strDistinctId = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，strAliasId = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
+用户 ID 关联接口。将 aliasId和 distinctId关联，计算时会认为是一个用户的行为。该接口是在 distinctId发生变化的时候调用，来告诉 SDK distinctId变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的distinctId = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，aliasId = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
 
 ```cpp
 alias(aliasId, distinctId);
@@ -135,7 +136,7 @@ alias(aliasId, distinctId, upLoadTime);
 
 \* aliasId：用户注册 ID，长度大于 0，且小于 255字符
 
-\* strDistinctId：用户匿名ID，长度大于 0，且小于 255字符
+\* distinctId：用户匿名ID，长度大于 0，且小于 255字符
 
 \* upLoadTime：用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -253,7 +254,7 @@ var isLogin = true;
 var profile = {
     userPoint:20
 };
-analysys.profileIncrement("fdgdfhtyrtyru", true, profile);
+analysys.profileIncrement(registerId,isLogin,profile);
 ```
 
 ### 2.11 增加列表类型的属性
