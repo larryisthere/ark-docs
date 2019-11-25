@@ -2,7 +2,7 @@
 description: Node SDK 主要用于服务端 Node 应用，如 Node Web 应用的后台服务。
 ---
 
-# Node SDK
+# Node JS SDK
 
 集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_Node_4.0.1_20191115.zip)
 
