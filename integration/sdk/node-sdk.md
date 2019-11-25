@@ -17,7 +17,7 @@ SDK目前提供了两个版本 非es6（cjs） 和 es6 两个版本
 
 ### **1.1代码引入**
 
-```text
+```javascript
 // es6 方法引入
 import AnalysysAgent from './sdk/AnalysysAgent_NodeJS_SDK.es6.js';
 // cjs 方法引入
@@ -28,8 +28,8 @@ let AnalysysAgent = require('./sdk/AnalysysAgent_NodeJS_SDK.cjs.js');
 
 ### 2.1 获取配置信息
 
-```text
-let AgentConfig ={
+```javascript
+let AgentConfig = {
     appId : 项目对应的appkey,
     uploadURL:数据接收地址,
     platform:应用的平台,
@@ -80,11 +80,11 @@ Debug 主要用于开发者测试，接口如下：
 debugMode:debug
 ```
 
-\* debug：debug 模式,Number,默认关闭状态。有以下三种枚举值：
+debug：debug 模式,Number,默认关闭状态。有以下三种枚举值：
 
-\*`0`：表示关闭 Debug 模式  
-\*`1`：表示打开 Debug 模式，但该模式下发送的数据仅用于调试，不计入平台数据统计  
-\* `2`：表示打开 Debug 模式，该模式下发送的数据可计入平台数据统计
+`0`：表示关闭 Debug 模式  
+`1`：表示打开 Debug 模式，但该模式下发送的数据仅用于调试，不计入平台数据统计  
+`2`：表示打开 Debug 模式，该模式下发送的数据可计入平台数据统计
 
 {% hint style="info" %}
 注意：发布版本时debug模式设置为\`0\`。
@@ -94,20 +94,16 @@ debugMode:debug
 
 事件跟踪，设置事件名称和事件详细信息。接口如下：
 
-```cpp
+```javascript
 track(distinctId, isLogin, eventName, properties);
 track(distinctId, isLogin, eventName, properties,upLoadTime);
 ```
 
-\* distinctId 用户 ID,长度大于 0 且小于 255字符
-
-\* isLogin 用户 ID 是否是登录 ID
-
-\* eventName 事件名称,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
-
-\* properties 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
-
-\*upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
+* distinctId 用户 ID,长度大于 0 且小于 255字符
+* isLogin 用户 ID 是否是登录 ID
+* eventName 事件名称,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
+* properties 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 ```cpp
 // 浏览商品
@@ -134,11 +130,9 @@ alias(aliasId, distinctId);
 alias(aliasId, distinctId, upLoadTime);
 ```
 
-\* aliasId：用户注册 ID，长度大于 0，且小于 255字符
-
-\* distinctId：用户匿名ID，长度大于 0，且小于 255字符
-
-\* upLoadTime：用户自定义时间戳\(带毫秒的13位时间戳\)
+* aliasId：用户注册 ID，长度大于 0，且小于 255字符
+* distinctId：用户匿名ID，长度大于 0，且小于 255字符
+* upLoadTime：用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：匿名用户浏览商品到注册会员
 
@@ -169,18 +163,15 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 
 设置单个或多个属性，如用户所在城市，用户昵称，用户头像信息等。如果之前存在，则覆盖，否则，新创建。接口如下：
 
-```cpp
+```javascript
 profileSet(distinctId, isLogin, properties);
 profileSet(distinctId, isLogin, properties, upLoadTime);
 ```
 
-\* distinctId: 用户ID,长度大于0且小于255字符
-
-\* isLogin: 用户ID是否是登录 ID
-
-\* properties: 事件属性
-
-\* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
+* distinctId: 用户ID,长度大于0且小于255字符
+* isLogin: 用户ID是否是登录 ID
+* properties: 事件属性
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册后设置用户的注册信息属性
 
@@ -209,13 +200,10 @@ profileSetOnce(distinctId, isLogin, properties);
 profileSetOnce(distinctId, isLogin, properties, upLoadTime);
 ```
 
-\* distinctId: 用户ID,长度大于0且小于255字符
-
-\* isLogin: 用户ID是否是登录 ID
-
-\* properties: 事件属性
-
-\* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
+* distinctId: 用户ID,长度大于0且小于255字符
+* isLogin: 用户ID是否是登录 ID
+* properties: 事件属性
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：要统计用户注册时间
 
@@ -238,13 +226,10 @@ profileIncrement(distinctId, isLogin, properties);
 profileIncrement(distinctId, isLogin, properties, upLoadTime);
 ```
 
-\* distinctId: 用户ID,长度大于0且小于255字符
-
-\* isLogin: 用户ID是否是登录 ID
-
-\* properties: 事件属性
-
-\* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
+* distinctId: 用户ID,长度大于0且小于255字符
+* isLogin: 用户ID是否是登录 ID
+* properties: 事件属性
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册初始积分为0，在用户购买商品后，用户的积分增加20，则调用该接口，用户的积分变为0+20=20了：
 
@@ -266,13 +251,10 @@ profileAppend(distinctId, isLogin, properties);
 profileAppend(distinctId, isLogin, properties, upLoadTime);
 ```
 
-\* distinctId: 用户ID,长度大于0且小于255字符
-
-\* isLogin: 用户ID是否是登录 ID
-
-\* properties: 事件属性
-
-\* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
+* distinctId: 用户ID,长度大于0且小于255字符
+* isLogin: 用户ID是否是登录 ID
+* properties: 事件属性
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户初始填写的兴趣爱好为\["sports"，"football"，"game"\]，调用该接口追加\["study"，"BodyBuilding"\]，则用户的爱好变为\["sports"，"football"，"game"，"study"，"BodyBuilding"\]
 
@@ -297,13 +279,10 @@ profileDelete(distinctId, isLogin);
 profileDelete(distinctId, isLogin, upLoadTime);
 ```
 
-\* distinctId: 用户ID,长度大于0且小于255字符
-
-\* isLogin: 用户ID是否是登录 ID
-
-\* propertie: 事件属性
-
-\* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
+* distinctId: 用户ID,长度大于0且小于255字符
+* isLogin: 用户ID是否是登录 ID
+* properties: 事件属性
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 ```cpp
 示例1： 要删除已经设置的用户昵称这一用户属性
@@ -352,9 +331,9 @@ registerSuperProperty(key,value)
 registerSuperProperties(params);
 ```
 
-\* key：单个属性的key  
-\* value：单个属性的value  
-\* params：设置多个属性
+* key：单个属性的key
+* value：单个属性的value
+* params：设置多个属性
 
 示例：
 
@@ -380,7 +359,7 @@ unRegisterSuperProperty(key);
 clearSuperProperties();
 ```
 
-\* key：属性名称
+* key：属性名称
 
 示例：
 
@@ -406,7 +385,7 @@ getSuperProperty(key);
 getSuperProperties();;
 ```
 
-\* Key：属性名称
+* Key：属性名称
 
 示例：
 
