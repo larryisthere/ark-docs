@@ -261,19 +261,19 @@ auto 为设置打开/关闭自动采集页面的参数。可根据自身需要�
 
 #### hash
 
-hash 为设置是否自动监测 url hash 变化的参数。可根据自身需要进行更改。
+针对单页面网站的 $pageview 的采集，在将 hash 设置 true 后，可以自动监测 URL 的变化，改变时自动上报 $pageview 事件。
 
-* true 开启自动采集监测 url hash 变化\(默认\)。类型：Boolean。
-* false 关闭自动采集监测 url hash 变化。类型：Boolean。
+* true，默认，类型：Boolean。
+* false，默认值，类型：Boolean。
 
 ```javascript
-//关闭自动采集监测url hash变化，关闭后可使用JS SDK的API中的手动发送页面打开数据方法，来发送url hash变化状态的数据。
+//关闭自动采集监测 URL 变化，关闭后可使用JS SDK的手动上报页面浏览的方法上报 $pageview 事件。
 {
     hash:false
 }
-//开启自动采集监测url hash变化。
+//开启自动采集监测 URL 变化。
 {
-    hash:true//或删除hash参数。
+    hash:true
 }
 ```
 
