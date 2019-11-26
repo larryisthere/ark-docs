@@ -80,9 +80,38 @@ $analysys_agent->setDebugMode($debug);
 
     注意：发布版本时debug模式设置为\`0\`或删除设置Debug模式代码。
 
-### 3.2 统计事件
+### 3.2 用户关联
 
-事件跟踪，设置事件名称和事件详细信息。接口如下：
+服务端数据上报很多时候都要面对同来自客户端的用户数据进行关联的场景。如果不做数据关联，在服务端上报的数据就无法被方舟认为与客户端上报的数据是同一个人的，这时就需要在服务端上报事件前完成关联。
+
+具体来说就是将 `$registerId` 和 `$distinctId`关联，计算时方舟就会认为是二者一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用（通常为用户登录），用来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$registerId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
+
+```php
+$analysys_agent->alias($registerId, $distinctId, $platform);
+```
+
+* `$registerId`：用户注册 ID，长度大于 0，且小于 255字符
+* `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符，一般**从 Cookies 的 ARK\_ID 中获取**
+* `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
+
+示例：匿名用户浏览商品到注册会员
+
+```php
+$distinctId = $_COOKIE['ARK_ID'];
+$registerId  = 'ABCDEF123456789';
+$platform = 'JS';
+$analysys_agent->alias($registerId, $distinctId, $platform);
+```
+
+### 3.3 统计事件
+
+事件跟踪，设置事件名称和事件详细信息。
+
+{% hint style="warning" %}
+请注意若用户已登录，请在执行 track 前进行用户关联，否则前后会被当做两人。
+{% endhint %}
+
+接口如下：
 
 ```php
 $analysys_agent->track($distinctId, $isLogin, $eventName, $properties,$platform);
@@ -115,30 +144,13 @@ $properties = array(
 $analysys_agent->track($distinctId, $isLogin, $eventName, $properties , $platform);
 ```
 
-### 3.3 用户关联
-
-用户 ID 关联接口。将 `$registerId` 和 `$distinctId`关联，计算时会认为是一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用（通常为用户登录），用来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$registerId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
-
-```php
-$analysys_agent->alias($registerId, $distinctId, $platform);
-```
-
-* `$registerId`：用户注册 ID，长度大于 0，且小于 255字符
-* `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符，一般**从 Cookies 的 ARK\_ID 中获取**
-* `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
-
-示例：匿名用户浏览商品到注册会员
-
-```php
-$distinctId = $_COOKIE['ARK_ID'];
-$registerId  = 'ABCDEF123456789';
-$platform = 'JS';
-$analysys_agent->alias($registerId, $distinctId, $platform);
-```
-
 ### 3.4 用户属性设置
 
 SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性别等信息。调用后会在用户表中插入一条用户ID为 $registerId 的记录，若 $registerId 的记录已存在，则覆盖。
+
+{% hint style="warning" %}
+请注意若用户已登录，请在执行 profileSet 前进行用户关联，否则前后会被当做两人。
+{% endhint %}
 
 示例：
 
