@@ -6,7 +6,7 @@ description: 除了支持通过 SDK 集成之外，方舟还支持Restful API �
 
 如果你有历史数据需要导入，可以根据数据量级选择合适的导入工具。如下图：
 
-![](../../.gitbook/assets/overflow.png)
+![](../../.gitbook/assets/shu-ju-liu.png)
 
 | 数据状态 | 数据量范围 | 首选工具 |
 | :--- | :--- | :--- |
