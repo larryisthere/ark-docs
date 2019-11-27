@@ -4,7 +4,7 @@ description: 微信小程序标准版
 
 # 微信小程序标准版
 
-微信小程序 SDK 集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_pass_weChat_4.3.0_20191112.zip)
+微信小程序 SDK 集成前请先[下载 SDK](https://github.com/analysys/ans-wechat-sdk/releases/download/v4.3.0/analysys_pass_weChat_4.3.0_20191112.zip)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
