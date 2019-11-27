@@ -6,7 +6,7 @@ description: 压缩版本适用方舟4.3.3以上版本，缺少加密功能及UT
 
 ## JS SDK 使用说明
 
-JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://ark.analysys.cn/sdk/v2/analysys_paas_JS_zip_v4.3.5_20191111.zip)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://github.com/analysys/ans-javascript-sdk/releases/download/4.3.5/analysys_paas_JS_zip_v4.3.5_20191111.zip)
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
