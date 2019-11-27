@@ -461,16 +461,16 @@ let properties = ["type": "Phone",
 AnalysysAgent.track("pay", properties: properties)
 ```
 
-### 设备ID与用户关联
+### 匿名ID与用户关联
 
-用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。接口如下：
+用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```objectivec
 + (void)alias:(NSString *)aliasId originalId:(NSString *)originalId;
 ```
 
 * aliasId：需要关联的用户ID。 取值长度为1-255个字符
-* originalId ：待关联的设备ID，可以是现在使用也可以是历史使用的设备ID,不局限于本地正使用的设备ID。 可以为空值，若为空时使用本地的设备ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置），支持类型：String
+* originalId ：待关联的匿名ID，可以是现在使用也可以是历史使用的匿名ID,不局限于本地正使用的匿名ID。 可以为空值，若为空时使用本地的匿名ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置），支持类型：String
 
 示例：
 
@@ -490,9 +490,9 @@ Swift代码示例：
 AnalysysAgent.alias("zhangsan", originalId: "lisi")
 ```
 
-### 设备ID设置
+### 匿名ID设置
 
-唯一设备ID标识设置，接口如下：
+唯一匿名ID标识设置，接口如下：
 
 ```objectivec
 + (void)identify:(NSString *)distinctId;
@@ -503,7 +503,7 @@ AnalysysAgent.alias("zhangsan", originalId: "lisi")
 示例：
 
 ```objectivec
-// 设置设备ID为`fangke009901`，注意此方法需要在初始化之前调用
+// 设置匿名ID为`fangke009901`，注意此方法需要在初始化之前调用
 [AnalysysAgent identify:@"fangke009901"];
 ```
 
@@ -513,7 +513,7 @@ Swift代码示例：
 AnalysysAgent.identify("fangke009901")
 ```
 
-### 设备ID获取
+### 匿名ID获取
 
 获取用户通过identify接口设置或自动生成的id，优先级如下： 用户设置的id &gt; 代码自动生成的id，接口如下：
 

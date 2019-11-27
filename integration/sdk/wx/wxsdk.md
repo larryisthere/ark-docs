@@ -341,9 +341,9 @@ Page({
 })
 ```
 
-### 设备ID与用户关联
+### 匿名ID与用户关联
 
-用户 id 关联接口。将需要绑定的用户ID 和设备ID进行关联，计算时会认为是一个用户的行为。接口如下：
+用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```javascript
 AnalysysAgent.alias(aliasId);
@@ -358,9 +358,9 @@ AnalysysAgent.alias(aliasId);
 AnalysysAgent.alias("sanbo");
 ```
 
-### 设备ID设置
+### 匿名ID设置
 
-唯一设备ID标识设置，接口如下：
+唯一匿名ID标识设置，接口如下：
 
 ```javascript
 AnalysysAgent.identify(distinctId);
@@ -371,11 +371,11 @@ AnalysysAgent.identify(distinctId);
 示例:
 
 ```text
-// 设置设备ID为`fangke009901`,注意此方法需要在初始化之后优先调用
+// 设置匿名ID为`fangke009901`,注意此方法需要在初始化之后优先调用
 AnalysysAgent.identify("fangke009901");
 ```
 
-### 设备ID获取
+### 匿名ID获取
 
 获取用户通过identify接口设置或自动生成的id，优先级如下： 用户设置的id &gt; 代码自动生成的id
 
