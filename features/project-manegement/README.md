@@ -38,9 +38,9 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 
 {% page-ref page="integrations.md" %}
 
-{% page-ref page="intelligent-monitoring.md" %}
+{% page-ref page="jian-kong-gao-jing/intelligent-monitoring.md" %}
 
-{% page-ref page="monitoring.md" %}
+{% page-ref page="jian-kong-gao-jing/monitoring.md" %}
 
 如有问题，请随时联系我们 **4006-010-231**
 
