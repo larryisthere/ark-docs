@@ -212,7 +212,7 @@
 
 * 新增了[短信推送](features/operation/sms.md)，支持自定义分群发送营销短信
 * 新增了独立的 [Session 分析](features/analytics/session.md)模型，从事件分析当中独立出来，更便捷的分析用户连续的行为、不同频次或时长的用户分布；
-* 新增了[监控告警](features/project-manegement/jian-kong-gao-jing/monitoring.md)，支持自定义监控关键指标，当指标达到设定阈值时自动发送告警消息，查看异常情况
+* 新增了[监控告警](features/project-manegement/monitoring/monitoring.md)，支持自定义监控关键指标，当指标达到设定阈值时自动发送告警消息，查看异常情况
 
 #### 优化
 
