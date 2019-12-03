@@ -28,15 +28,76 @@ description: 对于常规指标的波动，我们不必每天登录系统追踪�
 
 ### 智能监控 vs 自定义监控
 
-|  | 智能监控 | 自定义监控 |
-| :--- | :--- | :--- |
-| **监控方式** | 自动监控 | 手动设置 |
-| **监控范围** | 所有事件 | 指定事件 |
-| **指标设定** | 不含维度 | 可设定维度 |
-| **计算时间** | 每日0点提醒 | 自定时间 |
-| **对比区间** | 与过往12周平均值的预测区间对比 | 与指定值对比 |
-| **阈值设定** | 百分比 | 百分比，绝对值 |
-| **告警方式** | 站内消息、邮件 | 站内消息、邮件 |
-| **告警范围** | 自己 | 指定邮件接收人 |
-| **告警详情** | 事件分析 | 事件分析 |
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"></th>
+      <th style="text-align:left">&#x667A;&#x80FD;&#x76D1;&#x63A7;</th>
+      <th style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>&#x76D1;&#x63A7;&#x65B9;&#x5F0F;</b>
+      </td>
+      <td style="text-align:left">&#x81EA;&#x52A8;&#x76D1;&#x63A7;</td>
+      <td style="text-align:left">&#x624B;&#x52A8;&#x8BBE;&#x7F6E;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x76D1;&#x63A7;&#x8303;&#x56F4;</b>
+      </td>
+      <td style="text-align:left">&#x6240;&#x6709;&#x4E8B;&#x4EF6;</td>
+      <td style="text-align:left">&#x6307;&#x5B9A;&#x4E8B;&#x4EF6;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x6307;&#x6807;&#x8BBE;&#x5B9A;</b>
+      </td>
+      <td style="text-align:left">&#x4E0D;&#x542B;&#x7EF4;&#x5EA6;</td>
+      <td style="text-align:left">&#x53EF;&#x8BBE;&#x5B9A;&#x7EF4;&#x5EA6;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x8BA1;&#x7B97;&#x65F6;&#x95F4;</b>
+      </td>
+      <td style="text-align:left">&#x6BCF;&#x65E5;0&#x70B9;&#x63D0;&#x9192;</td>
+      <td style="text-align:left">&#x81EA;&#x5B9A;&#x65F6;&#x95F4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x5BF9;&#x6BD4;&#x533A;&#x95F4;</b>
+      </td>
+      <td style="text-align:left">&#x4E0E;&#x8FC7;&#x5F80;12&#x5468;&#x5E73;&#x5747;&#x503C;&#x7684;&#x9884;&#x6D4B;&#x533A;&#x95F4;&#x5BF9;&#x6BD4;</td>
+      <td
+      style="text-align:left">&#x4E0E;&#x6307;&#x5B9A;&#x503C;&#x5BF9;&#x6BD4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x9608;&#x503C;&#x8BBE;&#x5B9A;</b>
+      </td>
+      <td style="text-align:left">
+        <p>&#x4E25;&#x683C;&#xFF1A;+/=10%</p>
+        <p>&#x4E2D;&#x7B49;&#xFF1A;+/-30%</p>
+        <p>&#x5BBD;&#x677E;&#xFF1A;+/-50%</p>
+      </td>
+      <td style="text-align:left">&#x81EA;&#x884C;&#x8BBE;&#x5B9A;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x7EDD;&#x5BF9;&#x503C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x544A;&#x8B66;&#x65B9;&#x5F0F;</b>
+      </td>
+      <td style="text-align:left">&#x7AD9;&#x5185;&#x6D88;&#x606F;&#x3001;&#x90AE;&#x4EF6;</td>
+      <td style="text-align:left">&#x7AD9;&#x5185;&#x6D88;&#x606F;&#x3001;&#x90AE;&#x4EF6;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x544A;&#x8B66;&#x8303;&#x56F4;</b>
+      </td>
+      <td style="text-align:left">
+        <p>&#x7BA1;&#x7406;&#x5458;&#x63A7;&#x5236;&#x5168;&#x5C40;&#x5F00;&#x5173;</p>
+        <p>&#x4E2A;&#x4EBA;&#x63A7;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x5F00;&#x5173;</p>
+      </td>
+      <td style="text-align:left">&#x6307;&#x5B9A;&#x90AE;&#x4EF6;&#x63A5;&#x6536;&#x4EBA;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>&#x544A;&#x8B66;&#x8BE6;&#x60C5;</b>
+      </td>
+      <td style="text-align:left">&#x4E8B;&#x4EF6;&#x5206;&#x6790;</td>
+      <td style="text-align:left">&#x4E8B;&#x4EF6;&#x5206;&#x6790;</td>
+    </tr>
+  </tbody>
+</table>
