@@ -4,7 +4,7 @@ description: 对于常规指标的波动，我们不必每天登录系统追踪�
 
 # 监控告警
 
-### 智能监控
+## 智能监控
 
 方舟会在每日0时自动计算所有事件过去12周的历史波动区间并与过去一天的实际值进行比较，如果波动超出一定的范围则会进行提醒。
 
@@ -14,7 +14,7 @@ description: 对于常规指标的波动，我们不必每天登录系统追踪�
 
 {% page-ref page="intelligent-monitoring.md" %}
 
-### 自定义监控
+## 自定义监控
 
 如果希望更灵活配置监控条件可以使用自定义监控。
 
@@ -26,7 +26,7 @@ description: 对于常规指标的波动，我们不必每天登录系统追踪�
 
 {% page-ref page="monitoring.md" %}
 
-### 智能监控 vs 自定义监控
+## 智能监控 vs 自定义监控
 
 <table>
   <thead>
@@ -46,8 +46,9 @@ description: 对于常规指标的波动，我们不必每天登录系统追踪�
     <tr>
       <td style="text-align:left"><b>&#x76D1;&#x63A7;&#x8303;&#x56F4;</b>
       </td>
-      <td style="text-align:left">&#x6240;&#x6709;&#x4E8B;&#x4EF6;</td>
-      <td style="text-align:left">&#x6307;&#x5B9A;&#x4E8B;&#x4EF6;</td>
+      <td style="text-align:left">&#x6240;&#x6709;&#x542F;&#x7528;&#x4E8B;&#x4EF6;&#x7684;&#x6B21;&#x6570;&#x548C;&#x7528;&#x6237;&#x6570;</td>
+      <td
+      style="text-align:left">&#x6307;&#x5B9A;&#x4E8B;&#x4EF6;&#x66F4;&#x591A;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#x6307;&#x6807;&#x8BBE;&#x5B9A;</b>
