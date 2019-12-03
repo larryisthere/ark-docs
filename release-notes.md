@@ -1,5 +1,16 @@
 # 产品更新日志
 
+## 4.5.3 - 2019年11月30日
+
+#### 新增
+
+* 新增了 [项目管理API](integration/api/api-manage-enterprise/api-enterprise-project.md)，获取方舟中创建的项目信息
+* 新增了 [成员管理API](integration/api/api-manage-enterprise/api-enterprise-user.md)，支持内部系统调用创建、管理用户
+
+#### BUG修复
+
+*  修复了若干BUG
+
 ## 4.5.1 - 2019年11月05日
 
 #### 新增
