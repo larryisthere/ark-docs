@@ -8,7 +8,7 @@
 
 如果想使用免费的Argo，可以在[Github上直接在线部署](https://github.com/analysys/argo-installer)，同时建议加入我们的Argo微信群，可以随时咨询部署及使用中遇到的问题。
 
-![&#x8FD9;&#x662F;Argo&#x793E;&#x7FA4;&#x7BA1;&#x7406;&#x5458;&#x6731;&#x6960;&#xFF0C;&#x52A0;&#x5979;&#x597D;&#x53CB;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../.gitbook/assets/image%20%28107%29.png)
+![&#x8FD9;&#x662F;Argo&#x793E;&#x7FA4;&#x7BA1;&#x7406;&#x5458;&#x6731;&#x6960;&#xFF0C;&#x52A0;&#x5979;&#x597D;&#x53CB;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../.gitbook/assets/image%20%28108%29.png)
 
 **咨询商业付费版：**
 
