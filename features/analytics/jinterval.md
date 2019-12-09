@@ -27,7 +27,7 @@
 
 当切换指标为【转化用户数】时，间隔分析同样支持分群下钻，可以查看人群明细信息。
 
-![](../../.gitbook/assets/image%20%28212%29.png)
+![](../../.gitbook/assets/image%20%28213%29.png)
 
 {% hint style="info" %}
 特殊场景的计算逻辑说明

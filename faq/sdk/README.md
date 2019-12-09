@@ -4,7 +4,7 @@
 
 在SDK集成或开发中遇到问题，欢迎来到Argo社区，我们会协助你定位及解决问题。
 
-![&#x52A0;&#x5FAE;&#x4FE1;&#x540E;&#xFF0C;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../.gitbook/assets/image%20%2885%29.png)
+![&#x52A0;&#x5FAE;&#x4FE1;&#x540E;&#xFF0C;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../../.gitbook/assets/image%20%2885%29.png)
 
 ## 易观方舟 SDK FAQ
 
@@ -12,11 +12,11 @@
 
 #### Q1. 易观方舟目前支持哪些平台？
 
-支持 Android、iOS、JS 和微信小程序平台的应用，详见 [SDK 指南](../integration/sdk/)。
+支持 Android、iOS、JS 和微信小程序平台的应用，详见 [SDK 指南](../../integration/sdk/)。
 
 #### Q2. 不同平台的应用是否可以集成到一个项目中，使用一个 AppKey ？
 
-方舟本身支持，但是否需要集成到要给项目中，需要根据不同的业务需要来决定，可以参考[《分平台上报数据 vs 跨平台打通》](../integration/prepare/cross-platform.md)
+方舟本身支持，但是否需要集成到要给项目中，需要根据不同的业务需要来决定，可以参考[《分平台上报数据 vs 跨平台打通》](../../integration/prepare/cross-platform.md)
 
 #### Q3. 易观方舟当前支持哪种埋点方式？代码埋点和无埋点有什么区别？
 

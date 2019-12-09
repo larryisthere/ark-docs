@@ -136,7 +136,8 @@
 
 ## 🐋 Part III 常见问题 <a id="faq"></a>
 
-* [SDK FAQ](faq/sdk.md)
+* [SDK FAQ](faq/sdk/README.md)
+  * [页面停留如何获取时间？](faq/sdk/ye-mian-ting-liu-ru-he-huo-qu-shi-jian.md)
 * [产品试用及采购](faq/trialversion.md)
 * [贡献者](faq/gong-xian-zhe-ming-lu.md)
 
