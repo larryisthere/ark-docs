@@ -16,7 +16,7 @@
 
 ## 功能说明
 
-![](../../.gitbook/assets/image%20%28234%29.png)
+![](../../.gitbook/assets/image%20%28238%29.png)
 
 ### 1. 定义指标区
 

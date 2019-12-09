@@ -5,11 +5,17 @@
 #### 新增
 
 * 新增了 [项目管理API](integration/api/api-manage-enterprise/api-enterprise-project.md)，获取方舟中创建的项目信息
-* 新增了 [成员管理API](integration/api/api-manage-enterprise/api-enterprise-user.md)，支持内部系统调用创建、管理用户
+* 新增了 [成员管理API](integration/api/api-manage-enterprise/api-enterprise-user.md)，支持内部系统调用创建、管理用户
 
 #### BUG修复
 
 *  修复了若干BUG
+
+{% hint style="info" %}
+从 4.5.3 版本起支持绑定易观方舟小程序，在移动端随时随地查看数据动态
+{% endhint %}
+
+![&#x626B;&#x4E00;&#x626B;&#x6613;&#x89C2;&#x65B9;&#x821F;&#x5C0F;&#x7A0B;&#x5E8F;&#x7801;](.gitbook/assets/image%20%2834%29.png)
 
 ## 4.5.1 - 2019年11月05日
 
