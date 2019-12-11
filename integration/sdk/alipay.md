@@ -45,7 +45,38 @@ description: 支付宝小程序 SDK 使用说明
 
 通过设置Ddebug模式，开/关 log 查看日志。
 
-通过以上6步您即可验证SDK是否已经集成成功。更多接口说明请您查看API文档。
+#### 7.调用小程序启动事件
+
+在app.js文件中调用小程序启动事件
+
+```javascript
+import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js'
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = "/*设置为实际地址*/"
+
+App({
+    onShow (options) {
+        AnalysysAgent.appStart(options);
+    }
+})
+
+```
+
+#### 8.调用小程序启动事件
+
+在每一个页面的入口js文件中调用小程序统计页面事件
+
+```javascript
+let AnalysysAgent = my.AnalysysAgent
+Page({
+    onShow () {
+        AnalysysAgent.pageView('首页');//页面名称可自定义。
+    }
+})
+
+```
+
+通过以上步骤您即可验证SDK是否已经集成成功。更多接口说明请您查看API文档。
 
 ## 集成配置
 
@@ -60,7 +91,7 @@ description: 支付宝小程序 SDK 使用说明
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-let AnalysysAgent = require("./build/AnalysysAgent_Alipay_SDK.min.js")
+import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
@@ -88,8 +119,8 @@ AnalysysAgent.encrypt = AnalysysEncryption
 对于使用 es6 版本的
 
 ```javascript
-import AnalysysAgent from  './build/AnalysysAgent_Alipay_SDK.es6.min.js';
-import * as AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
+import AnalysysAgent from  './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js';
+import * as AnalysysEncryption from  './util/sdk/AnalysysAgent_encryption.es6.min.js';
 AnalysysAgent.encrypt = AnalysysEncryption;
 ```
 
@@ -111,7 +142,7 @@ let AnalysysAgent = my.AnalysysAgent;
 * _debugMode_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
 * _uploadURL_\(必须\) 自定义上传地址
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
-* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
+* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 
@@ -176,7 +207,8 @@ AnalysysAgent.autoProfile = true//或删除该行代码。
 encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密，如不设置此参数，数据上传不加密。。可根据自身需要进行更改。
 
 * 0 对上传数据不加密\(默认\)。类型：Number。
-* 1 对上传数据 AES 加密。类型：Number。
+* 1 对上传数据进行AES 128位ECB加密。类型：Number。
+* 2 对上传数据进行AES 128位CBC加密。类型：Number。
 
 ```javascript
 //对上传数据不加密。
@@ -237,7 +269,7 @@ componentDidShow () {
     AnalysysAgent.appStart(params);
 }
 //mpvue框架示例:
-onLaunch (options) {
+onShow (options) {
     AnalysysAgent.appStart(options);
 }
 
