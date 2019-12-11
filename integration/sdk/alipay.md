@@ -98,30 +98,22 @@ AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 如需要加密模块
 
 ```javascript
-let AnalysysEncryption = require("./build/AnalysysAgent_encryption.min.js")
+import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.es6.min.js'
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
 
 es6版本不是每个框架都能用，不能使用es6的请如下使用
 
 ```javascript
-import AnalysysAgent  from "./build/AnalysysAgent_Alipay_SDK.min.js"
+let AnalysysAgent = require('./util/sdk/AnalysysAgent_Alipay_SDK.min.js')
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
 如需要加密模块
 
 ```javascript
-import * as AnalysysEncryption from "./build/AnalysysAgent_encryption.min.js"
+let AnalysysEncryption = require('./util/sdk/AnalysysAgent_encryption.min.js')
 AnalysysAgent.encrypt = AnalysysEncryption
-```
-
-对于使用 es6 版本的
-
-```javascript
-import AnalysysAgent from  './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js';
-import * as AnalysysEncryption from  './util/sdk/AnalysysAgent_encryption.es6.min.js';
-AnalysysAgent.encrypt = AnalysysEncryption;
 ```
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_Alipay\_SDK 全局函数:
