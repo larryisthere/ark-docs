@@ -1,6 +1,6 @@
 # PHP SDK
 
-PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-php)
+PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/ans-php-sdk/releases)
 
 ## 1. 集成 SDK
 
@@ -87,12 +87,13 @@ $analysys_agent->setDebugMode($debug);
 具体来说就是将 `$registerId` 和 `$distinctId`关联，计算时方舟就会认为是二者一个用户的行为。该接口是在 `$distinctId` 发生变化的时候调用（通常为用户登录），用来告诉 SDK `$distinctId` 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的`$distinctId` = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，`$registerId` = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
 
 ```php
-$analysys_agent->alias($registerId, $distinctId, $platform);
+$analysys_agent->alias($registerId, $distinctId, $platform, $xwhen);
 ```
 
 * `$registerId`：用户注册 ID，长度大于 0，且小于 255字符
 * `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符，一般**从 Cookies 的 ARK\_ID 中获取**
 * `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：匿名用户浏览商品到注册会员
 
@@ -100,7 +101,14 @@ $analysys_agent->alias($registerId, $distinctId, $platform);
 $distinctId = $_COOKIE['ARK_ID'];
 $registerId  = 'ABCDEF123456789';
 $platform = 'JS';
-$analysys_agent->alias($registerId, $distinctId, $platform);
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+
+$analysys_agent->alias($registerId,$distinctId,$platform, $xwhen);
 ```
 
 ### 3.3 统计事件
@@ -114,14 +122,15 @@ $analysys_agent->alias($registerId, $distinctId, $platform);
 接口如下：
 
 ```php
-$analysys_agent->track($distinctId, $isLogin, $eventName, $properties,$platform);
+$analysys_agent->track($distinctId, $isLogin, $eventName, $properties, $platform, $xwhen);
 ```
 
 * `$distinctId`：用户 ID，长度大于 0 且小于 255字符。若用户已登录则为用户自己的ID，通常为手机号、电子邮件等；若用户未登录则可取客户端生成的 ARK\_ID，通常会存储在 Cookie 中。
 * `$isLogin`：用户 ID 是否是登录 ID。若用户已登录则为 true，未登录则为 false。
 * `$eventName`：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
-* `$properties`: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 125字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
+* `$properties`: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
 * `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户浏览商品
 
@@ -141,7 +150,14 @@ $properties = array(
     'producePrice'=>'60',
     'shop'=>'在线'
 );
-$analysys_agent->track($distinctId, $isLogin, $eventName, $properties , $platform);
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+
+$analysys_agent->track($distinctId, $isLogin, $eventName, $properties, $platform, $xwhen);
 ```
 
 ### 3.4 用户属性设置
@@ -155,19 +171,20 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 示例：
 
 ```php
-$analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
+$analysys_agent->profileSet($registerId,$isLogin,$properties,$platform, $xwhen);
 ```
 
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 用户属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 其中，$properties 是一个标准的K-V结构，K和V均有相应的约束条件，如不符合则丢弃该次操作。 参数约束：
 
 * **属性名称**
 
-  以字母或`$`开头，可包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件属性,最大长度125字符,不支持乱码和中文
+  以字母或`$`开头，可包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件属性,最大长度99字符,不支持乱码和中文
 
 * **属性值**
 
@@ -203,13 +220,14 @@ $analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
 只在首次设置时有效的属性。如：用户的注册时间。如果被设置的用户属性已存在，则这条记录会被忽略而不会覆盖已有数据，如果属性不存在则会自动创建。接口如下：
 
 ```php
-$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
+$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform, $xwhen);
 ```
 
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：要统计用户注册时间
 
@@ -220,7 +238,15 @@ $platform = 'JS';
 $properties = array(
     'registerTime'=>'20180101101010'
 );
-$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
+
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+
+$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform, $xwhen);
 ```
 
 #### 4.1.2 设置用户属性相对变化值
@@ -228,13 +254,14 @@ $analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform);
 设置用户属性的单个相对变化值\(相对增加,减少\)，只能对数值型属性进行操作，如果这个Profile之前不存在,则初始值为0。接口如下：
 
 ```php
-$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform);
+$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform, $xwhen);
 ```
 
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册初始积分为0，在用户购买商品后，用户的积分增加20，则调用该接口，用户的积分变为0+20=20了：
 
@@ -245,7 +272,15 @@ $platform = 'JS';
 $properties = array(
     'userPoint'=>20
 );
-$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform);
+
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+
+$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform, $xwhen);
 ```
 
 #### 4.1.3 增加列表类型的属性
@@ -253,13 +288,14 @@ $analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform)
 为列表类型的属性增加一个或多个元素，如：用户新增兴趣爱好，接口如下：
 
 ```php
-$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform);
+$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform, $xwhen);
 ```
 
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户初始填写的兴趣爱好为\["户外活动"，"足球赛事"，"游戏"\]，调用该接口追加\["学习"，"健身"\]，则用户的爱好变为\["户外活动"，"足球赛事"，"游戏"，"学习"，"健身"\]
 
@@ -274,7 +310,15 @@ $properties = array(
         '游戏'
     )
 );
-$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform);
+
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+
+$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform, $xwhen);
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -282,14 +326,15 @@ $analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform);
 删除设置的属性值。接口如下：
 
 ```php
-$analysys_agent->profileUnSet($registerId, $isLogin, "nickName", $platform);
-$analysys_agent->profileDelete($registerId, $isLogin, $platform);
+$analysys_agent->profileUnSet($registerId, $isLogin, $propertie, $platform, $xwhen);
+$analysys_agent->profileDelete($registerId, $isLogin, $platform, $xwhen);
 ```
 
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$propertie`: 事件属性
 * `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例1： 要删除已经设置的用户昵称这一用户属性的值
 
@@ -297,7 +342,14 @@ $analysys_agent->profileDelete($registerId, $isLogin, $platform);
 $registerId = 'ABCDEF123456789';
 $isLogin = true;
 $platform = 'JS';
-$analysys_agent->profileUnSet($registerId, $isLogin, "nickName", $platform);
+$propertie = 'nickName';
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+$analysys_agent->profileUnSet($registerId, $isLogin, $propertie, $platform, $xwhen);
 ```
 
 示例2：要删除已经设置的所有用户属性
@@ -306,7 +358,15 @@ $analysys_agent->profileUnSet($registerId, $isLogin, "nickName", $platform);
 $registerId = 'ABCDEF123456789';
 $isLogin = true;
 $platform = 'JS';
-$analysys_agent->profileDelete($registerId, $isLogin, $platform);
+
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
+
+$analysys_agent->profileDelete($registerId, $isLogin, $platform, $xwhen);
 ```
 
 ### 4.2 通用属性
@@ -319,7 +379,7 @@ $analysys_agent->profileDelete($registerId, $isLogin, $platform);
 
 * **属性名称**
 
-  以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 125字符,不支持乱码和中文
+  以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度99字符,不支持乱码和中文
 
 * **属性值**
   * 支持部分类型：string/number/boolean/集合/数组;
@@ -408,8 +468,7 @@ $analysys_agent.flush();
 ## 5. SDK 使用样例
 
 ```php
-<?php
-<?php
+<?php 
 require_once 'AnalysysAgent_PHP_SDK.php';
 
 $appid = '9421608fd544a65e';
@@ -427,6 +486,12 @@ $platform = 'JS';
 $bookList = array(
     'is AnalysysAgent PHP SDK'
 );
+function msectime()
+{
+    list($msec, $sec) = explode(' ', microtime());
+    return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+}
+$xwhen = msectime();
 $track_properties = array(
     '$ip'=>'112.112.112.112',
     'productType'=>'PHP书籍',
@@ -434,11 +499,12 @@ $track_properties = array(
     'producePrice'=>'60',
     'shop'=>'在线'
 );
-$ans->track($distinctId, $isLogin, $eventName, $track_properties, $platform);
+
+$ans->track($distinctId, $isLogin, $eventName, $track_properties, $platform, $xwhen);
 
 
 $registerId  = 'ABCDEF123456789';
-$ans->alias($registerId, $distinctId, $platform);
+$ans->alias($registerId, $distinctId, $platform, $xwhen);
 
 $fileSet_properties = array(
     '$city'=>'北京',
@@ -452,18 +518,18 @@ $fileSet_properties = array(
         '游戏'
     )
 );
-$ans->profileSet($registerId, $isLogin, $fileSet_properties, $platform);
+$ans->profileSet($registerId,$isLogin, $fileSet_properties, $platform, $xwhen);
 
 $fileSetOnce_properties = array(
     'registerTime'=>'20180101101010'
 );
-$ans->profileSetOnce($registerId, $isLogin, $fileSetOnce_properties, $platform);
+$ans->profileSetOnce($registerId, $isLogin, $fileSetOnce_properties, $platform, $xwhen);
 
 
 $fileIncrement_properties = array(
     'userPoint'=>20
 );
-$ans->profileIncrement($registerId, $isLogin, $fileIncrement_properties, $platform);
+$ans->profileIncrement($registerId, $isLogin, $fileIncrement_properties, $platform, $xwhen);
 
 
 $fileAppend_properties = array(
@@ -473,12 +539,12 @@ $fileAppend_properties = array(
         '游戏'
     )
 );
-$ans->profileAppend($registerId, $isLogin, $fileAppend_properties, $platform);
+$ans->profileAppend($registerId, $isLogin, $fileAppend_properties, $platform, $xwhen);
 
 
-$ans->profileUnSet($registerId, $isLogin, "nickName", $platform);
+$ans->profileUnSet($registerId, $isLogin, "nickName", $platform, $xwhen);
 
-$ans->profileDelete($registerId, $isLogin, $platform);
+$ans->profileDelete($registerId, $isLogin, $platform, $xwhen);
 
 $registerSuperProperties_properties = array(
     'userLevel'=>0,
@@ -501,7 +567,6 @@ $properties = $ans->getSuperProperties();
 printf('getSuperProperties---->');
 print_r($properties);
 $ans->flush() //批量
- ?>
  ?>
 ```
 
