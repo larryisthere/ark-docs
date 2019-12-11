@@ -247,7 +247,7 @@ AnalysysAgent.pageView(pageName, properties);
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符
-* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -275,7 +275,7 @@ AnalysysAgent.track(eventName, eventInfo)
 ```
 
 * eventName：事件ID，以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符
-* eventInfo：自定义属性，用于对事件描述。eventInfo 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 125字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* eventInfo：自定义属性，用于对事件描述。eventInfo 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -303,7 +303,7 @@ AnalysysAgent.track("buy", eventInfo);
 AnalysysAgent.appProperty(properties)
 ```
 
-* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -324,7 +324,7 @@ AnalysysAgent.appProperty(properties);
 AnalysysAgent.share(properties);
 ```
 
-* properties：分享内容，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 255字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* properties：分享内容，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -401,7 +401,7 @@ var distinctId = AnalysysAgent.getDistinctId();
 > **属性名称**
 
 ```text
-以字母或`$`开头，包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件/属性，则取值长度 1 - 125 字符，不支持乱码和中文
+以字母或`$`开头，包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件/属性，则取值长度 1 - 99 字符，不支持乱码和中文
 ```
 
 > **属性值**
@@ -420,9 +420,9 @@ AnalysysAgent.profileSetOnce(propertyName, propertyValue);
 AnalysysAgent.profileSetOnce(property);
 ```
 
-* propertyName ：属性名称，约束见[属性名称](./#1.1)
-* propertyValue ：属性值，约束见[属性值](./#2.1)
-* property ： 属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
+* propertyName ：属性名称，约束见属性名称
+* propertyValue ：属性值，约束见属性值
+* property ： 属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -449,9 +449,9 @@ AnalysysAgent.profileSet(propertyName, propertyValue);
 AnalysysAgent.profileSet(property);
 ```
 
-* propertyName ：属性名称，约束见[属性名称](./#1.1)
-* propertyValue ：属性值，约束见[属性值](./#2.1)
-* property ：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
+* propertyName ：属性名称，约束见属性名称
+* propertyValue ：属性值，约束见属性值
+* property ： 属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -479,9 +479,9 @@ AnalysysAgent.profileIncrement(propertyName, propertyNumber)
 AnalysysAgent.profileIncrement(property);
 ```
 
-* propertyName：属性名称，约束见[属性名称](./#1.1)
-* propertyValue：属性值，约束见[属性值](./#2.1)
-* property：属性列表，约束见[属性名称](./#1.1)，[属性值](./#2.1)
+* propertyName ：属性名称，约束见属性名称
+* propertyValue ：属性值，约束见属性值
+* property ： 属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -512,8 +512,8 @@ AnalysysAgent.profileAppend(propertyValue);
 AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```
 
-* propertyName：属性名称，约束见[属性名称](./#1.1)
-* propertyValue：属性值，约束见[属性值](./#2.1)
+* propertyName ：属性名称，约束见属性名称
+* propertyValue ：属性值，约束见属性值
 
 示例：
 
@@ -542,7 +542,7 @@ AnalysysAgent.profileUnset(propertyName);
 AnalysysAgent.profileDelete();
 ```
 
-* propertyName：属性名称，约束见[属性名称](./#1.1)
+* propertyName：属性名称，约束见属性名称
 
 示例：
 
@@ -563,7 +563,7 @@ AnalysysAgent.profileDelete();
 > **属性名称**
 
 ```text
-以字母或`$`开头，包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件/属性，则取值长度 1 - 125 字符，不支持乱码和中文
+以字母或`$`开头，包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件/属性，则取值长度 1 - 99 字符，不支持乱码和中文
 ```
 
 > **属性值**
@@ -582,9 +582,9 @@ AnalysysAgent.registerSuperProperty(superPropertyName , superPropertyValue );
 AnalysysAgent.registerSuperProperties(superProperty);
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](./#1)
-* superPropertyValue：属性值，约束见[属性值](./#2)
-* superProperty：属性列表，约束见[属性名称](./#1)，[属性值](./#2)
+* superPropertyName：属性名称，约束见属性名称
+* superPropertyValue：属性值，约束见属性值
+* superProperty：属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -615,7 +615,7 @@ AnalysysAgent.unRegisterSuperProperty(superPropertyName);
 AnalysysAgent.clearSuperProperties();
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](./#1)
+* superPropertyName：属性名称，约束见属性名称
 
 示例：
 
@@ -640,7 +640,7 @@ AnalysysAgent.getSuperProperty(superPropertyName);
 AnalysysAgent.getSuperProperties();
 ```
 
-* superPropertyName：属性名称，约束见[属性名称](./#1)
+* superPropertyName：属性名称，约束见属性名称
 
 示例：
 
