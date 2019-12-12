@@ -124,7 +124,7 @@ end
 > * channel：应用下发渠道
 > * autoProfile：设置是否追踪新用户的首次属性。默认：YES
 > * autoInstallation：是否开启渠道追踪功能。默认值：NO
-> * encryptType：设置数据上传时的加密方式，目前只支持AES加密（AnalysysEncryptAES）；如不设置此参数，数据上传不加密。
+> * encryptType：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为AnalysysEncryptAES（128位密钥，ECB 加密模式）和 AnalysysEncryptAESCBC128（128位密钥，CBC 加密模式）；如不设置此参数，数据上传不加密。
 > * allowTimeCheck：是否允许时间校准，默认值：NO
 > * maxDiffTimeInterval：最大允许时间误差，单位：秒，默认值：30秒
 
@@ -434,7 +434,7 @@ class PageDetailViewController: UIViewController, ANSAutoPageTracker {
 ```
 
 * event：事件ID，以字母或 `$` 开头，只能包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，最大长度 99字符，不支持乱码和中文
-* properties：自定义属性，用于对事件描述。properties最多包含100对，且 key 以字母或 `$` 开头，只能包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，key长度 1 - 99 字符且支持乱码和中文；value 支持类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`，若为字符串，取值长度为1-255个字符
+* properties：自定义属性，用于对事件描述。properties最多包含100对，且 key 以字母或 `$` 开头，只能包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，key长度 1 - 99 字符且不支持乱码和中文；value 支持类型：`NSString`/`NSNumber`/`NSArray<NSString *>`/`NSSet<NSString *>`/`NSDate`/`NSURL`，若为字符串，取值长度为1-255个字符
 
 示例：
 
@@ -1078,7 +1078,16 @@ AnalysysAgent.setAutomaticHeatmap(true)
 在初始化SDK时需设置加密方式即可：
 
 ```text
-AnalysysConfig.encryptType = AnalysysEncryptAES;
+/**
+ 数据上传加密类型
+ 
+ - AnalysysEncryptAES: AES ECB加密
+ - AnalysysEncryptAESCBC128: AES CBC加密
+ */
+typedef NS_ENUM(NSInteger, AnalysysEncryptType) {
+    AnalysysEncryptAES = 1,
+    AnalysysEncryptAESCBC128 = 2
+};
 ```
 
 ## 消息推送SDK接口介绍
