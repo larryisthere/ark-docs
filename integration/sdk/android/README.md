@@ -710,7 +710,7 @@ AnalysysAgent.getSuperProperties(mContext);
 
 #### 设置上传间隔时间
 
-上传间隔时间设置，在 debug 模式关闭后生效。当前数据默认为实时上传，建议设置上传时间隔为 15s，并需要与setMaxEventSize接口配套使用 ，当设置后，数据达到设定条数或时间触发上传。 接口如下：
+上传间隔时间设置，在 debug 模式关闭后生效。默认数据为触发实时上传，建议设置上传时间隔为 15s，并需要与setMaxEventSize接口配套使用 。 接口如下：
 
 ```java
 public static void setIntervalTime(Context context, long flushInterval;);
@@ -728,7 +728,7 @@ AnalysysAgent.setIntervalTime(mContext,20);
 
 #### 设置事件最大上传条数
 
-上传条数设置，在 debug 模式关闭后生效；当前数据默认为实时上传，建议设置上传的条数为 10条。 并需要与setIntervalTime接口配套使用接口，当设置后，数据达到设定条数或时间触发上传。接口如下：
+上传条数设置，在 debug 模式关闭后生效；当默认数据为触发实时上传，建议设置上传的条数为 10条。 并需要与setIntervalTime接口配套使用接口。接口如下：
 
 ```java
 public static void setMaxEventSize(Context context, long size);
