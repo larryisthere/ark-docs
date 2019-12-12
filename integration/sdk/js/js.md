@@ -159,7 +159,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
 * _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
-* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据AES加密
+* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
 * _pageProperty_ 设置自动采集时页面自定义属性
 * _sendType_ 设置上传日志方式。'img' - 使用image标签的图片链接地址上传日志\(默认\)；'post'-使用Ajax中的post请求上传日志
 

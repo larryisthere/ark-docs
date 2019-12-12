@@ -261,7 +261,7 @@ public static void pageView(Context context,String pageName, Map<String, Object>
 
 * context：应用上下文对象
 * pageName：页面标识，为字符串，取值长度 1 - 255 字符
-* properties：页面信息，properties 最多包含 100条，且 key 以字母或`$`开头，包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件/属性，取值长度 1 - 125 字符，不支持乱码和中文，value 支持类型：String/Number/boolean/字符串集合/字符串数组，若为数组或集合，则最多包含 100条，字符串单条取值长度 1 - 255 字符
+* properties：页面信息，properties 最多包含 100条，且 key 以字母或`$`开头，包含字母、数字、下划线和`$`，字母不区分大小写，`$`开头为预置事件/属性，取值长度 1 - 99 字符，不支持乱码和中文，value 支持类型：String/Number/boolean/字符串集合/字符串数组，若为数组或集合，则最多包含 100条，字符串单条取值长度 1 - 255 字符
 
 示例：
 
