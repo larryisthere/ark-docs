@@ -8,5 +8,5 @@
 
 {% page-ref page="../../../integration/data-verification/data\_debug.md" %}
 
-![](../../../.gitbook/assets/image%20%28106%29.png)
+![](../../../.gitbook/assets/image%20%28107%29.png)
 

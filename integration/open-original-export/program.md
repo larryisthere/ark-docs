@@ -157,3 +157,11 @@ print rows
 
 可以尝试使用开源项目 [https://github.com/prestodb/RPresto](https://github.com/prestodb/RPresto) 来对数据库进行访问。
 
+## Metabase
+
+Metabase 是类似 HUE 的开源查询界面，如果你想直接通过 SQL 查询，并且不想用 HUE 的话也可以用它直接连接方舟的 Presto。
+
+下载地址：[https://www.metabase.com/](https://www.metabase.com/)
+
+![&#x914D;&#x7F6E;&#x65B9;&#x6CD5;](../../.gitbook/assets/image%20%2866%29.png)
+
