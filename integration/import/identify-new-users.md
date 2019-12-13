@@ -4,7 +4,7 @@
 
 对于导入历史数据的情况，若历史用户数据中包含首次访问的时间，则可以通过设置用户的 `$first_visit_time` 字段来将用户的首次访问事件设置为历史上真实的时间。
 
-例如：
+以 Python SDK 为例：
 
 ```python
 python_sdk_platform = "android"
@@ -14,6 +14,10 @@ properties = {
         }
 eguan.profile_set_once(alias_id, properties, python_sdk_platform, is_login=True)
 ```
+
+如果使用 Rest API，则设置方法可以参考：
+
+{% page-ref page="restful-api.md" %}
 
 
 
