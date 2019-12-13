@@ -114,6 +114,7 @@
   * [工具导入](integration/import/tool/README.md)
     * [4.3.4及以上版本适用](integration/import/tool/equal4.3.4orafter.md)
     * [4.3.4以下版本适用](integration/import/tool/before-4.3.4.md)
+  * [数据导入后原有新访用户应该如何标识？](integration/import/identify-new-users.md)
 * [数据导出](integration/open-original-export/README.md)
   * [工具导出](integration/open-original-export/java-export.md)
   * [直接从Kafka中消费数据](integration/open-original-export/kafka.md)
