@@ -266,6 +266,12 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:center">2019/12/14</td>
+      <td style="text-align:center">4.4.0</td>
+      <td style="text-align:left">&#x540E;&#x7EED;&#x8BF7;&#x67E5;&#x770B;<a href="https://github.com/analysys/ans-javascript-sdk/releases">https://github.com/analysys/ans-javascript-sdk/releases</a>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:center">2019/11/11</td>
       <td style="text-align:center">4.3.5</td>
       <td style="text-align:left">

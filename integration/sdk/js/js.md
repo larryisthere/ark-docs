@@ -6,13 +6,18 @@ description: 标准版本适用方舟4.3.3以上版本
 
 ## JS SDK 使用说明
 
-JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK](https://github.com/analysys/ans-javascript-sdk/releases)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK及更新记录](https://github.com/analysys/ans-javascript-sdk/releases)
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
-| AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 必须 | 全部 |
+| AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 非ES6必须 | 全部 |
+| AnalysysAgent\_JS\_SDK.es6.min.js | 基础模块SDK | ES6必须 | 全部 |
 | AnalysysAgent\_JS\_SDK\_VISUAL.min.js | 可视化模块SDK | 可选 | 全部 |
 | AnalysysAgent\_JS\_SDK\_HEATMAP.min.js | 热图模块SDK | 可选 | 4.3.0及以上 |
+| AnalysysAgent\_Encrypt.min.js | 加密模块SDK | 非ES6可选 | 全部 |
+| AnalysysAgent\_Encrypt.es6.min.js | 加密模块SDK | ES6可选 | 全部 |
+| AnalysysAgent\_GBK.min.js | GBK转码模块SDK | 非ES6可选 | 全部 |
+| AnalysysAgent\_GBK.es6.min.js | GBK转码模块SDK | ES6可选 | 全部 |
 
 ### 快速集成
 
@@ -43,7 +48,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 ## 集成配置
 
 {% hint style="info" %}
-**有两种集成方式：**
+**有多种集成方式：**
 
 **1 同步加载**：将 SDK 作为用户网站资源，与用户网站资源一同根据页面结构从上到下按照顺序加载，直至资源加载都完毕后，运行相关 JS 代码；
 
@@ -94,7 +99,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
         n.parentNode.insertBefore(c, n);
     })({
         appkey: '/*设置为实际APPKEY*/', //APPKEY
-        uploadURL: '/*设置为实际地址*/',//上传数据的地址
+        uploadURL: '/*设置为实际地址*/'//上传数据的地址
     })
 </script>
 
@@ -128,17 +133,29 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
         }
     })({
         appkey: '/*设置为实际APPKEY*/', //APPKEY
-        uploadURL: '/*设置为实际地址*/',//上传数据的地址
+        uploadURL: '/*设置为实际地址*/'//上传数据的地址
     })
 </script>
 
 //引用JS SDK文件的script标签必须在初始化代码之下
 
-//http协议
+//建议在script标签设置id为ARK_SDK,该ID用来引导可视化模块与热图模块的加载
 <script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
 
-//https协议
-<script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
+```
+{% endtab %}
+
+{% tab title="ES6方式集成" %}
+以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
+
+```javascript
+import AnalysysAgent from '/*设置为JS SDK ES6模块实际存放地址*/'
+
+AnalysysAgent.init({
+    appkey:'/*设置为实际APPKEY*/',//APPKEY
+    uploadURL: '/*设置为实际地址*/'//上传数据的地址
+})
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -159,9 +176,16 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
 * _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
+* _autoTrack_ 设置是否启用全埋点功能：false - 不启用全埋点功能\(默认\)；true - 启用全埋点功能（SDK 版本 4.4.0 及以后支持）
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
-* _pageProperty_ 设置自动采集时页面自定义属性
+* pageProperty 设置自动采集时页面自定义属性；类型：Object
+* pageViewBlackList 设置页面统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
+* heatMapBlackList 设置热图统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
+* autoClickBlackList 设置全埋点统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
+* SDKFileDirectory 设置可视化模块SDK与热图模块SDK存放目录。类型：String；（SDK 版本 4.4.0 及以后支持）
 * _sendType_ 设置上传日志方式。'img' - 使用image标签的图片链接地址上传日志\(默认\)；'post'-使用Ajax中的post请求上传日志
+
+\_\_
 
 #### appkey
 
@@ -313,6 +337,24 @@ autoWebstay 为设置是否追踪页面滚动行为。可根据自身需要进�
 }
 ```
 
+#### autoTrack
+
+autoTrack 为设置是否启用全埋点功能。可根据自身需要进行更改。true 启用热图功能。类型：Boolean。
+
+* true 启用全埋点功能。类型：Boolean。
+* false 不启用全埋点功能\(默认\)。类型：Boolean。
+
+```text
+//不启用全埋点功能。
+{
+    autoTrack:false//或删除autoTrack参数。
+}
+//启用全埋点功能。
+{
+    autoTrack:true
+}
+```
+
 #### autoHeatmap
 
 autoHeatmap 为设置是否启用热图功能。可根据自身需要进行更改。
@@ -337,6 +379,7 @@ encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密�
 
 * 0 对上传数据不加密\(默认\)。类型：Number。
 * 1 对上传数据 AES 加密。类型：Number。
+* 2 对上传数据进行AES 128位CBC加密。类型：Number。
 
 ```javascript
 //对上传数据不加密。
@@ -347,6 +390,11 @@ encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密�
 {
     encryptType:1
 }
+//对上传数据AES加密。
+{
+    encryptType:2
+}
+
 ```
 
 #### pageProperty
@@ -362,6 +410,142 @@ pageProperty 为设置自动采集时页面自定义属性。可根据自身需�
         title:'首页'
     }
 }
+```
+
+#### 
+
+#### pageViewBlackList
+
+pageViewBlackList 为设置页面统计黑名单。根据设置不在采集设置中的页面内所有的页面事件，包含用户手动调用pageView API。（SDK 版本 4.4.0 及以后支持） 可根据自身需要进行增加。
+
+* 类型：String/内部元素为String或Function的Array/Function。
+
+```javascript
+//设置页面地址`url`为https://xxx.xx.com不进行页面事件采集
+{
+    pageViewBlackList:'https://xxx.xx.com'
+}
+//设置页面地址`url`为https://xxx.xx.com或https://xxx.xx.com/x不进行页面事件采集
+{
+    pageViewBlackList:['https://xxx.xx.com','https://xxx.xx.com/x']
+}
+//设置页面地址`url`内包含'index'的页面不进行页面事件采集
+{
+    pageViewBlackList: function() {
+        var url = window.location.href
+        if(url.indexOf('index') > -1){
+            return true
+        }
+        return false
+    }
+}
+//设置页面地址`url`内包含'index'或页面地址`url`为https://xxx.xx.com的页面不进行页面事件采集
+{
+    pageViewBlackList: [
+    'https://xxx.xx.com',
+    function() {
+        var url = window.location.href
+        if(url.indexOf('index') > -1){
+            return true
+        }
+        return false
+    }]
+}
+
+```
+
+#### heatMapBlackList
+
+heatMapBlackList 为设置热图统计黑名单。根据设置不在采集设置中的页面内所有的热图事件。（SDK 版本 4.4.0 及以后支持） 可根据自身需要进行增加。
+
+* 类型：String/内部元素为String或Function的Array/Function。
+
+```javascript
+//设置页面地址`url`为https://xxx.xx.com不进行热图事件采集
+{
+    heatMapBlackList:'https://xxx.xx.com'
+}
+//设置页面地址`url`为https://xxx.xx.com或https://xxx.xx.com/x不进行热图事件采集
+{
+    heatMapBlackList:['https://xxx.xx.com','https://xxx.xx.com/x']
+}
+//设置页面地址`url`内包含'index'的页面不进行热图事件采集
+{
+    heatMapBlackList: function() {
+        var url = window.location.href
+        if(url.indexOf('index') > -1){
+            return true
+        }
+        return false
+    }
+}
+//设置页面地址`url`内包含'index'或页面地址`url`为https://xxx.xx.com的页面不进行热图事件采集
+{
+    heatMapBlackList: [
+    'https://xxx.xx.com',
+    function() {
+        var url = window.location.href
+        if(url.indexOf('index') > -1){
+            return true
+        }
+        return false
+    }]
+}
+
+```
+
+#### autoClickBlackList
+
+autoClickBlackList 为设置全埋点统计黑名单。根据设置不在采集设置中的页面内所有的全埋点事件。（SDK 版本 4.4.0 及以后支持） 可根据自身需要进行增加。
+
+* 类型：String/内部元素为String或Function的Array/Function。
+
+```javascript
+//设置页面地址`url`为https://xxx.xx.com不进行全埋点事件采集
+{
+    autoClickBlackList:'https://xxx.xx.com'
+}
+//设置页面地址`url`为https://xxx.xx.com或https://xxx.xx.com/x不进行全埋点事件采集
+{
+    autoClickBlackList:['https://xxx.xx.com','https://xxx.xx.com/x']
+}
+//设置页面地址`url`内包含'index'的页面不进行全埋点事件采集
+{
+    autoClickBlackList: function() {
+        var url = window.location.href
+        if(url.indexOf('index') > -1){
+            return true
+        }
+        return false
+    }
+}
+//设置页面地址`url`内包含'index'或页面地址`url`为https://xxx.xx.com的页面不进行全埋点事件采集
+{
+    autoClickBlackList: [
+    'https://xxx.xx.com',
+    function() {
+        var url = window.location.href
+        if(url.indexOf('index') > -1){
+            return true
+        }
+        return false
+    }]
+}
+
+```
+
+#### SDKFileDirectory
+
+SDKFileDirectory 设置可视化模块SDK与热图模块SDK存放目录。可根据自身需要进行增加。（SDK 版本 4.4.0 及以后支持）
+
+* 类型：JSON。
+
+```javascript
+//设置可视化模块SDK与热图模块SDK存放目录
+{
+    SDKFileDirectory:'/*设置为JS SDK 可视化模块SDK与热图模块SDK实际存放目录*/'
+}
+
 ```
 
 #### sendType
@@ -447,9 +631,9 @@ var eventInfo = {
 AnalysysAgent.track("buy", eventInfo);
 ```
 
-### 临时ID与用户关联
+### 匿名ID与用户关联
 
-用户 id 关联接口。将需要绑定的用户ID 和临时ID进行关联，计算时会认为是一个用户的行为。接口如下：
+用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```javascript
 AnalysysAgent.alias(aliasId);
@@ -780,54 +964,5 @@ AnalysysAgent.reset();
 AnalysysAgent.reset();
 ```
 
-## 可视化埋点介绍
 
-### 接入 JS SDK 可视化模块
-
-将 `AnalysysAgent_JS_SDK_VISUAL.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中。
-
-### 设置请求埋点配置地址
-
-```javascript
-{
-    visitorConfigURL:"/*设置为实际地址*/"
-}
-```
-
-### 允许 iframe 加载
-
-使用可视化埋点功能需要使用 `iframe` 来加载您的网站。如果您的网站禁止了 `iframe` 加载，就无法使用可视化埋点功能，需要在服务器配置中设置 `X-Frame-Options` 允许 `iframe` 加载。
-
-```javascript
-//配置nginx中 X-Frame-Options 响应头
-//您的网站为https协议，https://example.com/为您访问的方舟的域名
-add_header X-Frame-Options: Allow-From https://example.com
-//您的网站为http协议，http://example.com为您访问的方舟的域名
-add_header X-Frame-Options: Allow-From http://example.com
-```
-
-{% hint style="info" %}
-注意：
-
-X-Frame-Options更多使用方式请参考：[X-Frame-Options 响应头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options)
-
-可视化埋点时候需要方舟与埋点页面协议头相同。否则会被浏览器拒绝，无法进行可视化埋点。
-{% endhint %}
-
-
-
-### window对象
-
-以下 window 对象中的属性被复写后将导致可视化埋点功能无法正常使用。
-
-```javascript
-window.top
-window.parent
-window.name
-window.location
-```
-
-## 热图模块介绍
-
-将 `AnalysysAgent_JS_SDK_HEATMAP.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中，展示热图的时会自动调用。
 

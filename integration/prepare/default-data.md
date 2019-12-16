@@ -31,6 +31,7 @@
 | $webstay | 视区停留 | 停留在可视区域 | - | - | N | - |
 | $app\_click | App点击事件 | App热图点击事件 | N | N | - | - |
 | $web\_click | Web点击事件 | Web热图点击事件 | - | - | N | - |
+| $user\_click | 用户点击事件 | 用户点击可触控行为 | Y | Y | Y | Y |
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
 
 {% hint style="info" %}
@@ -554,6 +555,26 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
 | $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
 | $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
+
+
+
+$user\_click
+
+| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | N |
+| $page\_width  | 页面宽度  | 浮点型  | 页面宽度 | Y | Y | Y | N |
+| $page\_height  | 页面高度   | 浮点型 | 页面高度 | Y | Y | Y | N |
+| $parent\_url  | 父页面URL   | 字符串 | 面URL，为空则为顶级页 | Y | - | - | N |
+| $url    | 页面URL | 字符串 | 页面URL | Y | Y | Y | N |
+| $element\_path    | 元素路径 | 字符串 | APP 为元素唯一标识；JS 为元素路径 | Y | Y | Y | N |
+| $element\_class\_name    | 元素样式的类 | 字符串 | 仅 JS 有效 | - | - | Y | N |
+| $element\_target\_url    | 元素链接地址 | 字符串 | 仅 JS 有效 | - | - | Y | N |
+| $element\_id  | 元素ID |  字符串 | 元素ID | Y | Y | Y | N |
+| $element\_name  | 元素名称  | 字符串 | 仅 JS 有效 | - | - | Y | N |
+| $element\_type | 元素类型 | 字符串 | 元素类型 | Y | Y | Y | N |
+| $element\_position  |  列表控件位置 （可选） | 字符串 | 列表控件位置 （可选） | Y | Y | Y | N |
+| $element\_content  | 元素内容 | 字符串 | 元素的内容（优先级：内容&gt;描述&gt;空） | Y | Y | Y | N |
 
 **$share**
 
