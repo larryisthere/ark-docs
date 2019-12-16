@@ -93,7 +93,7 @@
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
   * [JS SDK](integration/sdk/js/README.md)
     * [JS SDK标准版](integration/sdk/js/js.md)
-    * [其他模块](integration/sdk/js/plus.md)
+    * [JS SDK插件](integration/sdk/js/plus.md)
     * [JS SDK历史版](integration/sdk/js/js-sdk-history.md)
   * [微信小程序 SDK](integration/sdk/wx/README.md)
     * [微信小程序标准版](integration/sdk/wx/wxsdk.md)

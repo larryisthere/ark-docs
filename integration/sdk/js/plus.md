@@ -1,10 +1,10 @@
 ---
-description: JS SDK 其他模块介绍
+description: JS SDK 插件介绍
 ---
 
-# 其他模块
+# JS SDK插件
 
-## 加密模块
+## 加密模块介绍
 
 加密模块SDK，根据用户初始化SDK时参数encryptType的值对上报日志进行对应加密。  
 使用加密模块SDK时，需确保证该插件在基础SDK文件前引入
@@ -20,7 +20,7 @@ import '设置为ES6加密模块SDK实际存放地址'
 ...//其他SDK代码
 ```
 
-## GBK转码模块SDK
+## GBK转码模块SDK介绍
 
 GBK转码模块SDK，针对符合UTM的参数值如为GBK/GB2312编码格式，进行UTF-8编码转换。  
 使用加密模块SDK时，需确保证该插件在基础SDK文件前引入
