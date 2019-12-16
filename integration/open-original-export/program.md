@@ -159,9 +159,23 @@ print rows
 
 ## Metabase
 
-Metabase 是类似 HUE 的开源查询界面，如果你想直接通过 SQL 查询，并且不想用 HUE 的话也可以用它直接连接方舟的 Presto。
+Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想直接通过 SQL 查询，而不想用 HUE 的话也可以用它直接连接方舟的 Presto。
 
 下载地址：[https://www.metabase.com/](https://www.metabase.com/)
 
 ![&#x914D;&#x7F6E;&#x65B9;&#x6CD5;](../../.gitbook/assets/image%20%2866%29.png)
+
+#### 参数说明
+
+> Name:任意填写
+>
+> Host: \(方舟 Presto 的服务器IP，一般为内网IP\)
+>
+> Port: 8285\(不需要修改\)
+>
+> Database Name: hive\(全小写\)
+>
+> Database password: \(默认为空\)
+
+下方的三个开关保持默认即可。点击底部的确认按钮后，如果没有看到数据表，请关闭 Metabase 重新进入。
 
