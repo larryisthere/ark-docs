@@ -55,12 +55,18 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
    选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
 
-2. **远程aar配置**`dependencies {  //添加 analysys-arkanalysys SDK 依赖 api('cn.com.analysys:analysys-arkanalysys:latest.release') }`
+2. **远程aar配置**`dependencies  
+   {  
+   //添加 analysys-arkanalysys SDK 依赖  
+   api('cn.com.analysys:analysys-arkanalysys:latest.release')`
+
+   `}`
 
 主App项目构建文件中添加插件：
 
 `apply plugin: 'com.android.application'   
-// 使用全埋点插件 apply plugin: 'com.analysys.android.plugin'`
+// 使用全埋点插件  
+apply plugin: 'com.analysys.android.plugin'`
 
 本地aar配置，需要拷贝analysys\_allgro-xxxx.aar包到libs目录；远程aar配置无需操作（analysys\_arkanalysys已包含全埋点功能）
 {% endtab %}
@@ -199,13 +205,13 @@ public class AnalysysApplication extends Application {
         // 时间最大允许偏差为5分钟
         config.setMaxDiffTimeInterval(5 * 60);
         // 设置采集热图信息
-            config.setAutoHeatMap(true);
+        config.setAutoHeatMap(true);
         // 设置pageView自动上报总开关
-            config.setAutoTrackPageView(true);
+        config.setAutoTrackPageView(true);
         // 设置fragment的pageView自动上报开关
-            config.setAutoTrackFragmentPageView(true);
+        config.setAutoTrackFragmentPageView(true);
         // 设置控件点击自动上报总开关
-            config.setAutoTrackClick(true);
+        config.setAutoTrackClick(true);
         // 调用初始接口
         AnalysysAgent.init(this, config);
 
