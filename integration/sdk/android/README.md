@@ -6,10 +6,12 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
 | Jar包 | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
-| analysys\_core\_xxx.jar | 基础模块 | 必选 | 全部 |
-| analysys\_visual\_xxx.jar | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0及以上版本 |
-| analysys\_push\_xxx.jar | 推送模块 | 可选 | 全部 |
-| analysys\_encrypt\_xxx.jar | 加密模块 | 可选 | CBC模式适用方舟V4.2.7及以上版本 |
+| analysys\_core\_xxx.jar\(aar\) | 基础模块 | 必选 | 全部 |
+| analysys\_visual\_xxx.jar\(aar\) | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0及以上版本 |
+| analysys\_push\_xxx.jar\(aar\) | 推送模块 | 可选 | 全部 |
+| analysys\_encrypt\_xxx.jar\(aar\) | 加密模块 | 可选 | CBC模式适用方舟V4.2.7及以上版本 |
+| analysys\_allgro-xxx.aar | 全埋点 | 可选 | 适用方舟V4.5.3及以上版本 |
+| analysys\_arkanalysys-xxx.aar | 全功能包含基础模块、可视化热图模块、推送模块、加密模块、全埋点模块 | 可选 | 适用方舟V4.5.3及以上版本 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
@@ -49,8 +51,18 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
 {% tabs %}
 {% tab title="AndroidStudio SDK 集成" %}
-1. 选择 SDK 功能组件并下载，解压.zip 文件得到相应 jar 包（例如：x.x.x.jar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 jar 包。
-2. 右键 Android Studio 的项目工程 —&gt; 选择 Open Module Settings —&gt;在 Project Structure 弹出框中 —&gt;选择 Dependencies 选项卡 —&gt;点击左下"＋"—&gt;选择 jar 包类型—&gt;引入相应的 jar 包。
+1. **本地aar配置**
+
+   选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
+
+2. **远程aar配置**`dependencies {  //添加 analysys-arkanalysys SDK 依赖 api('cn.com.analysys:analysys-arkanalysys:latest.release') }`
+
+主App项目构建文件中添加插件：
+
+`apply plugin: 'com.android.application'   
+// 使用全埋点插件 apply plugin: 'com.analysys.android.plugin'`
+
+本地aar配置，需要拷贝analysys\_allgro-xxxx.aar包到libs目录；远程aar配置无需操作（analysys\_arkanalysys已包含全埋点功能）
 {% endtab %}
 
 {% tab title="Eclipse SDK 集成" %}
@@ -59,6 +71,10 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 {% endtabs %}
 
 ### 配置 Manifest
+
+AndroidStudio SDK集成用户无需配置Manifest，AppKey、Channel 在Mainfest可选配置；
+
+Eclipse SDK集成用户需要按照下面文档进行配置：
 
 AndroidManifest.xml文件需要配置内容包括权限、AppKey、Channel 和 .crt 格式证书名称（用于https网络通信）。
 
@@ -76,17 +92,28 @@ AndroidManifest.xml文件需要配置内容包括权限、AppKey、Channel 和 .
 <application >
 
     ......
-
+    <!-- provider中添加的内容为4.4.0版本新增，请注意添加,否则可能会导致跨进程数据存储异常
+  -->
+    <provider
+    android:name="com.analysys.database.AnsContentProvider"
+    android:authorities="[应用包名].AnsContentProvider"
+    android:enabled="true"
+    android:exported="false" />
+    <!--  设置appKey  -->
     <meta-data
     android:name="ANALYSYS_APPKEY"
     android:value="4g6dp3d9fh5r0s3jr87j3ej94k04" />
+    <!--  设置渠道  -->
     <meta-data
     android:name="ANALYSYS_CHANNEL"
     android:value="WanDouJia" />
+    <!--  服务端加密证书（在assets上预制）  -->
     <meta-data
     android:name="ANALYSYS_KEYSTONE"
     android:value="analysys.crt"/>
+
 </application>
+
 ```
 
 权限说明:
@@ -120,7 +147,7 @@ public static final int *;
 
 ## 基础模块
 
-以下接口生效依赖于基础SDK模块，需集成基础SDK相关analysys\_core\_xxx.jar文件，请正确集成。
+以下接口生效依赖于基础SDK模块，需集成基础SDK相关analysys\_core\_xxx文件，请正确集成。
 
 ### 初始化接口
 
@@ -135,10 +162,15 @@ public static void init(Context context, AnalysysConfig config);
   1. AppKey：在网站获取的 AppKey
   2. channel：应用下发的渠道
   3. autoProfile ：设置是否追踪新用户的首次属性，false：不追踪新用户的首次属性，true：追踪新用户的首次属性\(默认\)
-  4. setAutoInstallation ：是否开启渠道追踪功能。默认值：false
-  5. encryptType ：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为EncryptEnum.AES（128位密钥，ECB 加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC 加密模式）。
+  4. encryptType ：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为EncryptEnum.AES（128位密钥，ECB 加密模式）和 EncryptEnum.AES\_CBC（128位密钥，CBC 加密模式）。
+  5. setAutoInstallation ：设置是否进行渠道跟踪，`true`为跟踪，`false`为不跟踪（默认`false`）。
   6. setAllowTimeCheck ：是否允许时间校准，默认值：`false`
-  7. setMaxDiffTimeInterval ：最大允许时间误差，单位：秒，默认值：30秒
+  7. setMaxDiffTimeInterval ：最大允许时间误差，单位：秒，默认值：`30`秒
+  8. setAutoHeatMap ：是否采集用户点击位置坐标，默认值：`false`
+  9. setAutoTrackPageView ：pageView自动上报开关，默认值：`true`
+  10. setAutoTrackFragmentPageView：fragment页面自动上报开关 默认值：`false`
+  11. setAutoTrackClick：控件点击自动上报开关 默认值：`false`
+  12. setEnableException：是否允许崩溃追踪，默认值：`false`
 
 {% hint style="info" %}
 EncryptEnum.AES\_CBC模式适用方舟V4.2.7及以上版本
@@ -166,10 +198,20 @@ public class AnalysysApplication extends Application {
         config.setAllowTimeCheck(true);
         // 时间最大允许偏差为5分钟
         config.setMaxDiffTimeInterval(5 * 60);
+        // 设置采集热图信息
+            config.setAutoHeatMap(true);
+        // 设置pageView自动上报总开关
+            config.setAutoTrackPageView(true);
+        // 设置fragment的pageView自动上报开关
+            config.setAutoTrackFragmentPageView(true);
+        // 设置控件点击自动上报总开关
+            config.setAutoTrackClick(true);
         // 调用初始接口
         AnalysysAgent.init(this, config);
+
     }
 }
+
 ```
 
 ### 设置上传地址
@@ -250,6 +292,41 @@ public class AnalysysApplication extends Application {
 }
 ```
 
+### App启动来源监测
+
+此接口需在Activity基类或应用启动首页的onCreate生命周期进行设置。 接口如下：
+
+```java
+public static void launchSource(int source);
+```
+
+* context：应用上下文对象
+* source：应用启动来源，默认值为 `1` ，
+  * 1：默认值：通过图标\(icon\)启动应用
+  * 2 ：传值为 2 ，通过点击推送消息\(msg\)启动
+  * 3 ：传值为 3 ，通过DeepLink\(url\)启动
+  * 5 ：传值为 5 ，通过其他方式启动
+
+示例：
+
+```java
+public class BasicActivity extends AppCompatActivity {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    Intent intent = getIntent();
+    if (intent != null) {
+      Uri uri = intent.getData();
+      if (uri != null) {
+        // 判断如果是deepLink启动，设置启动来源为 3
+        AnalysysCMB.launchSource(3);
+      }
+    }
+  }
+}
+```
+
 ### 统计页面接口
 
 页面跟踪，SDK 默认设置跟踪所有页面，支持自定义页面信息。 接口如下：
@@ -278,42 +355,25 @@ info.put("commodityPrice", 5000);
 AnalysysAgent.pageView(mContext, "商品页", info);
 ```
 
-#### 打开/关闭自动采集页面
-
-自动采集页面信息开关，打开时自动记录用户访问的页面。默认为打开状态。 接口如下：
-
-```java
-public static void setAutomaticCollection(Context context, boolean isAuto);
-```
-
-* context：应用上下文对象
-* isAuto：开关值，默认为 true 打开，设置 false 关闭
-
-示例：
-
-```java
-// 关闭页面中自动采集
-AnalysysAgent.setAutomaticCollection(mContext,false);
-```
-
 #### 忽略部分页面自动采集
 
 开发者可以设置某些页面不被自动采集，设置后自动采集时将会忽略这些页面。 接口如下:
 
 ```java
-public static void setIgnoredAutomaticCollectionActivities(Context context, List<String> activitiesName);
+/**
+ * PageView自动上报-设置页面级黑名单
+ * @param pages 页面名称列表
+ */
+public static void setPageViewBlackListByPages(List<String> pages);
 ```
-
-* context：应用上下文对象
-* activitiesName：多个页面名称
 
 示例:
 
 ```java
-List<String> list = new ArrayList<String>();
-list.add("com.analysys.demo.activity.MainActivity");
+List<String> pages = new ArrayList<String>();
+pages.add("com.analysys.demo.activity.MainActivity");
 // 忽略MainActivity页面自动采集
-AnalysysAgent.setIgnoredAutomaticCollectionActivities(mContext, list);
+AnalysysAgent.setPageViewBlackListByPages(pages);
 ```
 
 注意：设置忽略页面时，需要添加完整的页面路径（包名 + 类名名）
@@ -401,23 +461,17 @@ AnalysysAgent.track(mContext, "buy", info);
 用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。 接口如下：
 
 ```java
-public static void alias(Context context, String aliasId, String originalId);
+public static void alias(Context context, String aliasId);
 ```
 
 * context：应用上下文对象
 * aliasId：需要关联的用户ID。 取值长度 1 - 255 字符
-* originalId ：待关联的匿名ID，可以是现在使用也可以是历史使用的匿名ID,不局限于本地正使用的匿名ID。 可以为空值，若为空时使用本地的匿名ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置）
 
 示例：
 
 ```java
 // 登陆账号时调用，只设置当前登陆账号即可和之前行为打通
-AnalysysAgent.alias(mContext,"sanbo","");
-
-......
-
-//现在登陆账号是zhangsan，和历史上的 lisi是一个人。 此时不会关心登陆 zhangsan前的用户是谁
-AnalysysAgent.alias(mContext,"zhangsan","lisi");
+AnalysysAgent.alias(mContext,"sanbo");
 ```
 
 ### 匿名ID设置
@@ -854,23 +908,50 @@ public static void setVisitorConfigURL(Context context, String url);
 AnalysysAgent.setVisitorConfigURL(mContext,"/*设置为实际地址*/");
 ```
 
+## 热图采集
+
+热图采集生效依赖于基础SDK模块，展示依赖于可视化热图模块，需集依赖于`analysys_core_xxx.jar(aar)、analysys_visual_xxx.jar(aar)`文件，请正确集成。
+
 ### 设置热图采集
 
-控制是否采集用户点击热图信息。接口如下：
+控制是否采集用户点击热图信息。参考初始化代码如下：
 
 ```java
-public static void setAutoHeatMap(boolean autoTrack);
+public class AnalysysApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        AnalysysConfig config = new AnalysysConfig();
+        // 其他初始化带代码
+        // 设置开启采集热图信息
+            config.setAutoHeatMap(true);
+        …………
+        // 调用初始接口
+        AnalysysAgent.init(this, config);
+
+    }
+}
 ```
 
-* autoTrack：是否采集用户点击位置坐标，默认为false
+### 设置热图页面黑名单
 
-**注意：** 此接口请于初始化接口前调用。
-
-示例：
+开发者可以设置某些页面不被热图事件自动采集，设置后`setAutoHeatMap`自动采集时将会忽略这些页面。
 
 ```java
-// 设置采集热图信息
-AnalysysAgent.setAutoHeatMap(true);
+public static void setHeatMapBlackListByPages(List<String> pages);
+```
+
+* pages：忽略上报页面全路径名称集合
+
+示例:
+
+```java
+// 添加需要忽略页面的全路径名
+List<String> pages = new ArrayList<>();
+pages.add(MainActivity.class.getName());
+pages.add(UserSettingActivity.class.getName());
+// 设置热图页面级黑名单
+AnalysysAgent.setHeatMapBlackListByPages(pages);
 ```
 
 ## 加密模块介绍 <a id="toc_44"></a>

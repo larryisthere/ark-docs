@@ -172,11 +172,11 @@ AnalysysAgent.init({
 * _visitorConfigURL_\(如使用可视化埋点，则必须\) 设置可视化配置获取接口
 * _name_ 设置 JS SDK 全局对象别名
 * _auto_ 设置自动采集页面打开事件：false - 关闭自动采集；true - 开启自动采集\(默认\)
+* _autoTrack_ 设置是否启用全埋点功能：false - 不启用全埋点功能\(默认\)；true - 启用全埋点功能（SDK 版本 4.4.0 及以后支持）
+* _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
+* _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
 * _hash_ 设置检测 url hash 变化：false - 关闭监测url hash变化；true - 开启监测url hash变化\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
-* _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
-* _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
-* _autoTrack_ 设置是否启用全埋点功能：false - 不启用全埋点功能\(默认\)；true - 启用全埋点功能（SDK 版本 4.4.0 及以后支持）
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
 * pageProperty 设置自动采集时页面自定义属性；类型：Object
 * pageViewBlackList 设置页面统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）

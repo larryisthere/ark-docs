@@ -111,6 +111,7 @@ end
 ### 初始化接口
 
 * Objective-C 代码示例
+* 请确保初始化SDK在 `(BOOL)application:(UIApplication` _`)application didFinishLaunchingWithOptions:(NSDictionary`_ `)launchOptions`中主线程初始化
 
 在Xcode工程文件`~AppDelegate.m` 中导入头文件`"#import <AnalysysAgent/AnalysysAgent.h>"`。接口如下：
 
@@ -122,10 +123,11 @@ end
 >
 > * appKey：在网站获取的 AppKey
 > * channel：应用下发渠道
-> * autoProfile：设置是否追踪新用户的首次属性。默认：YES
-> * autoInstallation：是否开启渠道追踪功能。默认值：NO
+> * autoProfile：设置是否追踪新用户的首次属性。默认：`YES`
+> * autoInstallation：是否开启渠道追踪功能。默认值：`NO`
 > * encryptType：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为AnalysysEncryptAES（128位密钥，ECB 加密模式）和 AnalysysEncryptAESCBC128（128位密钥，CBC 加密模式）；如不设置此参数，数据上传不加密。
-> * allowTimeCheck：是否允许时间校准，默认值：NO
+> * allowTimeCheck：是否允许时间校准，默认值：`NO`
+> * autoTrackCrash：是否允许崩溃追踪，默认值：`NO`
 > * maxDiffTimeInterval：最大允许时间误差，单位：秒，默认值：30秒
 
 示例：
@@ -137,7 +139,7 @@ end
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     //  4.3.0版本后部分设置在SDK初始化前设置
-    
+
     #ifdef DEBUG
         [AnalysysAgent setDebugMode:AnalysysDebugButTrack];
     #else
@@ -146,7 +148,7 @@ end
 
     //  设置上传地址
     [AnalysysAgent setUploadURL:@"https://url:port"];
-    
+
     //  设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
     //  AnalysysAgent 配置信息
     AnalysysConfig.appKey = @"77a52s552c892bn442v721";
@@ -168,6 +170,7 @@ end
     return YES;
 }
 
+
 ```
 
 * Swift代码示例
@@ -182,7 +185,7 @@ import AnalysysAgent
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     //  4.3.0版本后部分设置在SDK初始化前设置
-    
+
     #if DEBUG
         AnalysysAgent.setDebugMode(.butTrack)
     #else
@@ -191,7 +194,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
     //  设置上传地址
     AnalysysAgent.setUploadURL("https://url:port")
-    
+
     //  AnalysysAgent 配置信息
         AnalysysAgentConfig.shareInstance()?.appKey = "sdktest201907"
         AnalysysAgentConfig.shareInstance()?.channel = "App Store"
@@ -199,14 +202,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 //        AnalysysAgentConfig.shareInstance()?.autoInstallation = true
 //        AnalysysAgentConfig.shareInstance()?.allowTimeCheck = true
 //        AnalysysAgentConfig.shareInstance()?.maxDiffTimeInterval = 5 * 60
-        
+
         //  使用配置信息初始化SDK
         AnalysysAgent.start(with: AnalysysAgentConfig.shareInstance())
 
 }
 ```
 
-注意：默认 SDK 为非调试模式，不能查看日志，若要查看日志请调用 setDebugMode: 方法设置。请在正式发布 App 时使用 AnalysysDebugOff 模式！
+{% hint style="warning" %}
+默认 SDK 为非调试模式，不能查看日志，若要查看日志请调用 setDebugMode: 方法设置。请在正式发布 App 时使用 AnalysysDebugOff 模式！
+{% endhint %}
 
 ### 设置上传地址
 
@@ -254,6 +259,51 @@ Swift代码示例:
 
 ```swift
 AnalysysAgent.setDebugMode(.off)
+```
+
+### App启动来源监测
+
+此接口需在SDK初始化前进行设置
+
+```objectivec
++ (void)monitorAppDelegate:(id<UIApplicationDelegate>)delegate launchOptions:(NSDictionary *)launchOptions;
+```
+
+* delegate：遵循UIApplicationDelegate的对象，iOS默认为AppDelegate类
+* launchOptions：启动参数
+
+示例：
+
+```objectivec
+#import <AnalysysAgent/AnalysysAgent.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    /*** 请在初始化易观SDK前调用 ***/
+    //  启动方式监测
+    [AnalysysAgent monitorAppDelegate:self launchOptions:launchOptions];
+
+    // 易观SDK初始化代码
+    // .....
+
+    return YES;
+}
+
+```
+
+Swift代码示例:
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool { 
+
+    /*** 请在初始化易观SDK前调用 ***/
+    //  启动方式监测       
+    AnalysysAgent.monitorAppDelegate(self, launchOptions: launchOptions)
+    // 易观SDK初始化代码
+    // ....
+    return true
+}
+
 ```
 
 ### 统计页面接口
@@ -321,6 +371,33 @@ AnalysysAgent.setAutomaticCollection(false)
 开发者可以设置某些页面不被自动采集，设置后自动采集时将会忽略这些页面。接口如下:
 
 ```objectivec
++ (void)setPageViewBlackListByPages:(NSSet<NSString *> *)controllers;
+```
+
+* controllers：需要忽略的控制器名称，字符串数组。
+
+示例：
+
+```objectivec
+//  忽略页面'NextViewController'自动采集
+[AnalysysAgent setPageViewBlackListByPages:[NSSet setWithObject:@"NextViewController"]];
+```
+
+Swift代码示例:
+
+必须使用 `包名.类名`
+
+```swift
+AnalysysAgent.setPageViewBlackListByPages(["packageName.NextViewController"]);
+```
+
+#### 
+
+#### 忽略部分页面自动采集
+
+开发者可以设置某些页面不被自动采集，设置后自动采集时将会忽略这些页面。接口如下:
+
+```objectivec
 + (void)setIgnoredAutomaticCollectionControllers:(NSArray<NSString *> *)controllers;
 ```
 
@@ -340,8 +417,6 @@ Swift代码示例:
 ```swift
 AnalysysAgent.setIgnoredAutomaticCollectionControllers(["packageName.NextViewController"]);
 ```
-
-#### 
 
 #### 自动采集添加自定义信息
 
@@ -468,28 +543,22 @@ AnalysysAgent.track("pay", properties: properties)
 用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
 ```objectivec
-+ (void)alias:(NSString *)aliasId originalId:(NSString *)originalId;
++ (void)alias:(NSString *)aliasId;
 ```
 
 * aliasId：需要关联的用户ID。 取值长度为1-255个字符
-* originalId ：待关联的匿名ID，可以是现在使用也可以是历史使用的匿名ID,不局限于本地正使用的匿名ID。 可以为空值，若为空时使用本地的匿名ID。取值长度 1 - 255 字符（如无特殊需求，不建议设置），支持类型：String
 
 示例：
 
 ```objectivec
 //  登陆账号时调用，只设置当前登陆账号即可和之前行为打通
-[AnalysysAgent alias:@"sanbo" originalId:@""];
-
-......
-
-//  现在登陆账号是zhangsan，和历史上的 lisi是一个人。 此时不会关心登陆 zhangsan前的用户是谁
-[AnalysysAgent alias:@"zhangsan" originalId:@"lisi"];
+[AnalysysAgent alias:@"sanbo"];
 ```
 
 Swift代码示例：
 
 ```swift
-AnalysysAgent.alias("zhangsan", originalId: "lisi")
+AnalysysAgent.alias("zhangsan")
 ```
 
 ### 匿名ID设置
@@ -1048,6 +1117,10 @@ Swift示例:
 AnalysysAgent.setVisitorConfigURL("/*设置为实际地址*/")
 ```
 
+## 热图采集
+
+热图采集生效依赖于基础SDK模块，展示依赖于可视化热图模块，需集依赖于`AnalysysAgent.framework、AnalysysVisual.framework`文件，请正确集成。
+
 ### 设置热图采集
 
 控制是否采集用户点击热图信息。接口如下：
@@ -1070,6 +1143,32 @@ Swift示例:
 ```swift
 AnalysysAgent.setAutomaticHeatmap(true)
 ```
+
+### 设置热图页面黑名单
+
+开发者可以设置某些页面不被热图事件自动采集，设置后`setAutomaticHeatmap`自动采集时将会忽略这些页面。接口如下:
+
+```objectivec
++ (void)setHeatMapBlackListByPages:(NSSet<NSString *> *)controllerNames;
+```
+
+* controllers：需要忽略的控制器名称，字符串集合。
+
+示例：
+
+```objectivec
+[AnalysysAgent setHeatMapBlackListByPages:[NSSet setWithObjects:@"CFHomePageController", nil]];
+```
+
+Swift代码示例:
+
+必须使用 `包名.类名`
+
+```swift
+AnalysysAgent.setHeatMapBlackListByPages(["SwiftOnlineShopDemo.CFHomePageController"]);
+```
+
+## 
 
 ## 加密模块介绍
 

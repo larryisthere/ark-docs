@@ -26,7 +26,7 @@
 
 > **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](https://app.gitbook.com/@analysys/s/ark/~/drafts/-LoxLQTQwGY5HTZzArUH/primary/integration/api#21-xiang-mu-jie-kou-ren-zheng)。
 >
-> **操作用户**：通过API创建的分群默认为API所有，如果想让某个用户在页面上对此分群进行编辑和删除操作，需要在URL上带loginUser参数，详情见 [操作用户](../#51-cao-zuo-yong-hu)。
+> **操作用户**：通过API创建的分群默认为API所有，不属于任何用户，如果想让某个用户在页面上对此分群进行操作，需要在URL上带loginUser参数，详情见 [操作用户](../#51-cao-zuo-yong-hu)。
 
 #### 1.2.1 入参说明 <a id="4-2-1-ru-can-shuo-ming"></a>
 
