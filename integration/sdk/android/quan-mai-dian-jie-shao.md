@@ -67,7 +67,7 @@ AnalysysAgent.setAutoClickBlackListByPages(pages);
 
 ### 设置全埋点控件黑名单
 
-开发者可以设置某些控件不被全埋点自动采集，设置后`setAutoTrackClick`自动采集时将会忽略这些页面。接口如下:
+开发者可以设置某些控件不被全埋点自动采集，设置后`setAutoTrackClick`自动采集时将会忽略这些控件。接口如下:
 
 ```java
 /**
