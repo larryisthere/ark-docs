@@ -8,7 +8,7 @@
 
 ## 1 编辑事件属性
 
-![](../../../.gitbook/assets/image%20%28163%29.png)
+![](../../../.gitbook/assets/image%20%28162%29.png)
 
 A 处可以修改属性显示名称
 

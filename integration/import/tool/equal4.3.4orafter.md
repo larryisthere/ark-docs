@@ -128,7 +128,7 @@
 * 执行停止脚本：sh bin/shutdown.sh
 * 查看停止日志，确认程序停止是否成功：cat logs/shutdown.log，如日志内容如下，则说明数据导入工具停止成功。 
 
-![](../../../.gitbook/assets/image%20%28153%29.png)
+![](../../../.gitbook/assets/image%20%28152%29.png)
 
 #### 3.5.2 强制停止（不推荐,若数据未导入完成,会导致数据丢失或重复）
 
@@ -236,7 +236,7 @@ exit 退出
 
 ![&#x8BA1;&#x5212;&#x5916;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../../.gitbook/assets/image%20%28145%29.png)
 
-![&#x8BA1;&#x5212;&#x5916;&#x7528;&#x6237;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../../.gitbook/assets/image%20%28172%29.png)
+![&#x8BA1;&#x5212;&#x5916;&#x7528;&#x6237;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x57CB;&#x70B9;&#x65B9;&#x6848;&#x4E2D;](../../../.gitbook/assets/image%20%28171%29.png)
 
 ### 5.4 su streaming提示输入密码
 

@@ -123,7 +123,7 @@ Page({
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 
-![](../../../.gitbook/assets/image%20%28234%29.png)
+![](../../../.gitbook/assets/image%20%28232%29.png)
 
 #### appkey
 
