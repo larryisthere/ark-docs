@@ -137,7 +137,7 @@
   * [平台管理API](integration/api/api-manage-enterprise/README.md)
     * [项目管理](integration/api/api-manage-enterprise/api-enterprise-project.md)
     * [成员管理](integration/api/api-manage-enterprise/api-enterprise-user.md)
-* [GDPR合规](integration/gdpr.md)
+* [GDPR 合规](integration/gdpr.md)
 
 ## 🐋 Part III 常见问题 <a id="faq"></a>
 
