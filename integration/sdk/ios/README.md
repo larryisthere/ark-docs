@@ -1168,8 +1168,6 @@ Swift代码示例:
 AnalysysAgent.setHeatMapBlackListByPages(["SwiftOnlineShopDemo.CFHomePageController"]);
 ```
 
-## 
-
 ## 加密模块介绍
 
 加密模块生效依赖于加密SDK模块，需集成加密SDK相关`AnalysysEncrypt.framework`文件，请正确集成。
