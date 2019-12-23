@@ -11,9 +11,10 @@ description: 此功能基于SDK建议使4.4.0及以后版本，适用方舟V4.5.
 全埋点依赖插件:项目根目录下添加全埋点插件依赖classpath classpath 'cn.com.analysys:analysys-allgro-plugin:x.x.x' \(x.x.x版本号\)  
 示例: classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0'
 
-`dependencies {  
+`dependencies   
+{  
 // 添加全埋点插件依赖  
-    classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0' }  
+    classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0'   
 }`
 {% endtab %}
 {% endtabs %}
