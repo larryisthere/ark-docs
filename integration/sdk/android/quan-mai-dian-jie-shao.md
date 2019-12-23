@@ -38,7 +38,6 @@ public class AnalysysApplication extends Application {
             config.setAutoTrackFragmentPageView(true);
         // 调用初始接口
         AnalysysAgent.init(this, config);
-
     }
 }
 ```
