@@ -1123,7 +1123,7 @@ AnalysysAgent.setAutomaticHeatmap(true)
 
 ### 设置热图页面黑名单
 
-开发者可以设置某些页面不被热图事件自动采集，设置后`setAutomaticHeatmap`自动采集时将会忽略这些页面。接口如下:
+开发者可以设置某些页面不被热图事件自动采集，自动采集时将会忽略这些页面。接口如下:
 
 ```objectivec
 + (void)setHeatMapBlackListByPages:(NSSet<NSString *> *)controllerNames;

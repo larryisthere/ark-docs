@@ -941,7 +941,7 @@ public class AnalysysApplication extends Application {
 
 ### 设置热图页面黑名单
 
-开发者可以设置某些页面不被热图事件自动采集，设置后`setAutoHeatMap`自动采集时将会忽略这些页面。
+开发者可以设置某些页面不被热图事件自动采集，自动采集时将会忽略这些页面。
 
 ```java
 public static void setHeatMapBlackListByPages(List<String> pages);
