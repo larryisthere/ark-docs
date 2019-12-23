@@ -343,29 +343,6 @@ let properties = ["commodityName": "iPhone", "commodityPrice": 5000] as [String 
 AnalysysAgent.pageView("商品页", properties: properties)
 ```
 
-#### 打开/关闭自动采集页面
-
-自动采集页面信息开关，打开时自动记录用户访问的页面。默认为打开状态。接口如下：
-
-```objectivec
-+ (void)setAutomaticCollection:(BOOL)isAuto
-```
-
-* isAuto：开关值，默认为YES打开，设置NO为关闭
-
-示例：
-
-```objectivec
-//  关闭页面自动采集
-[AnalysysAgent setAutomaticCollection:NO];
-```
-
-Swift代码示例:
-
-```swift
-AnalysysAgent.setAutomaticCollection(false)
-```
-
 #### 忽略部分页面自动采集
 
 开发者可以设置某些页面不被自动采集，设置后自动采集时将会忽略这些页面。接口如下:
@@ -1167,8 +1144,6 @@ Swift代码示例:
 ```swift
 AnalysysAgent.setHeatMapBlackListByPages(["SwiftOnlineShopDemo.CFHomePageController"]);
 ```
-
-## 
 
 ## 加密模块介绍
 
