@@ -29,7 +29,7 @@ AnalysysAgent.setAutoTrackClick(true);
 
 ### 设置全埋点页面黑名单
 
-开发者可以设置某些页面不被全埋点自动采集，设置后`setAutoTrackClick`自动采集时将会忽略这些页面。接口如下:
+开发者可以设置某些页面不被全埋点自动采集，设置后`setAutoTrackClick`自动采集时将会忽略这些页面上的事件。接口如下:
 
 ```objectivec
 + (void)setAutoClickBlackListByPages:(NSSet<NSString *> *)controllerNames;
