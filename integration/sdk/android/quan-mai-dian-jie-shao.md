@@ -11,16 +11,9 @@ description: 此功能基于SDK建议使4.4.0及以后版本，适用方舟V4.5.
 全埋点依赖插件:项目根目录下添加全埋点插件依赖classpath classpath 'cn.com.analysys:analysys-allgro-plugin:x.x.x' \(x.x.x版本号\)  
 示例: classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0'
 
-`buildscript {  
-repositories {  
-    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }  
-    jcenter { url 'http://maven.aliyun.com/nexus/content/groups/public/' }   
-    google()  
-    // 添加maven公用仓库  
-    mavenCentral()  
-}  
-dependencies {  
-    classpath 'com.android.tools.build:gradle:3.5.1' // 添加全埋点插件依赖 classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0' }  
+`dependencies {  
+// 添加全埋点插件依赖  
+    classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0' }  
 }`
 {% endtab %}
 {% endtabs %}
@@ -81,18 +74,16 @@ AnalysysAgent.setAutoClickBlackListByPages(pages);
  * 点击自动上报-设置元素类型级黑名单
  * @param element 单个控件对象
  */
-public void setAutoClickBlackListByView(View element);
+public void setAutoClickBlackListByViewTypes(List<Class> viewTypes);
 ```
 
 示例:
 
 ```java
-private View mView;
-...
-省略mView初始化逻辑
-...
-// 忽略当前控件对象自动采集
-AnalysysAgent.setAutoClickBlackListByView(mView);
+List<Class> viewTypes = new ArrayList<>();
+viewTypes.add(RatingBar.class);
+// 忽略控件类点击自动采集
+AnalysysAgent.setAutoClickBlackListByViewTypes(viewTypes);
 ```
 
 #### 
