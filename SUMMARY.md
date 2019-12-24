@@ -139,6 +139,10 @@
     * [成员管理](integration/api/api-manage-enterprise/api-enterprise-user.md)
 * [GDPR 合规](integration/gdpr.md)
 
+## 智能运营功能说明 <a id="ea"></a>
+
+* [准备中](ea/zhun-bei-zhong.md)
+
 ## 🐋 常见问题 <a id="faq"></a>
 
 * [SDK FAQ](faq/sdk/README.md)
