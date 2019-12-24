@@ -51,11 +51,10 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
 {% tabs %}
 {% tab title="AndroidStudio SDK 集成" %}
-1. **本地aar配置**
-
-   选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
-
-2. **远程aar配置**`dependencies  
+1. **本地aar配置**         选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
+2. **远程aar配置**  
+  
+   `dependencies  
    {  
    //添加 analysys-arkanalysys SDK 依赖  
    api('cn.com.analysys:analysys-arkanalysys:latest.release')`
@@ -67,8 +66,6 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 `apply plugin: 'com.android.application'   
 // 使用全埋点插件  
 apply plugin: 'com.analysys.android.plugin'`
-
-本地aar配置，需要拷贝analysys\_allgro-xxxx.aar包到libs目录；远程aar配置无需操作（analysys\_arkanalysys已包含全埋点功能）
 {% endtab %}
 
 {% tab title="Eclipse SDK 集成" %}
