@@ -57,7 +57,7 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
    `dependencies  
    {  
    //添加 analysys-arkanalysys SDK 依赖  
-   api('cn.com.analysys:analysys-arkanalysys:latest.release')`
+   api('cn.com.analysys:analysys-arkanalysys:4.4.2')`
 
    `}`
 
