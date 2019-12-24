@@ -11,6 +11,8 @@
 
 下文​将说明GDPR的核心内容和易观在合规方面的措施及对客户企业的建议。
 
+下文​将说明GDPR的核心内容和易观在合规方面的措施及对客户企业的建议。
+
 ## GDPR 中的核心内容
 
 ### 保护对象
@@ -34,8 +36,8 @@ GDPR 保护的是个人数据（personal data）。
 
 GDPR主要针对两类义务主体：
 
-* 数据控制者（data processor）：指能单独或联合决定个人数据的处理目的和方式的自然人、法人、公共机构、行政机关或其他非法人组织
-* 数据处理者（data controller）：是指为数据控制者处理个人数据的自然人、法人、公共机构、行政机关或其他非法人组织
+* 数据控制者（data controller）：指能单独或联合决定个人数据的处理目的和方式的自然人、法人、公共机构、行政机关或其他非法人组织
+* 数据处理者（data processor）：是指为数据控制者处理个人数据的自然人、法人、公共机构、行政机关或其他非法人组织
 
 也就是说GDPR赋予了欧盟在个人信息安全方面的域外管辖权，以下四类企业都会受到影响：
 
@@ -85,7 +87,7 @@ GDPR主要针对两类义务主体：
 
 ## 易观的合规方案
 
-易观实际会有数据控制者（data processor）和数据处理者（data controller）的双重角色。
+易观实际会有数据控制者和数据处理者的双重角色。
 
 在提供易观方舟官网、公有云服务时，属于数据控制者角色，我们承诺绝对不会出售用户的个人数据，同时通过明确的[服务条款](https://ark.analysys.cn/portal/about-service.html)、[隐私政策](https://ark.analysys.cn/portal/about-privacy.html) 和产品中的隐私设计、用户体验计划的开启和关闭提供提透明度和选择权来满足合规需求。
 
@@ -120,7 +122,8 @@ GDPR主要针对两类义务主体：
 
 易观方舟支持
 
-* 通过 SDK 的 $profile\_set、$profile\_delete API 更新用户属性信息（使用方法[详见帮助文档](https://docs.analysys.cn/ark/integration/prepare/default-data#3-profile-xi-lie-shi-jian-shu-xing)）
+* 通过 SDK 的 $profile\_set API 更新用户的属性信息
+* 通过 SDK 的 $profile\_delete API 删除某一用户的信息（使用方法[详见帮助文档](https://docs.analysys.cn/ark/integration/prepare/default-data#3-profile-xi-lie-shi-jian-shu-xing)）
 * 通过服务的形式支持删除用户的行为数据
 * 通过在产品中提供删除功能，支持自助删除基于个人数据衍生出的其他形式的数据，比如数据报表、用户画像等
 
@@ -147,7 +150,7 @@ GDPR主要针对两类义务主体：
 
 建议您以明确的方式询问用户，而不是默认用户授予开发者数据采集和使用的权利。
 
-![](../.gitbook/assets/image%20%28151%29.png)
+![](../.gitbook/assets/image%20%28156%29.png)
 
 * **关于数据采集的反对权**
 
@@ -161,7 +164,7 @@ GDPR主要针对两类义务主体：
 
 支持帐号注销等，需要您自行满足。
 
-![](../.gitbook/assets/image%20%28207%29.png)
+![](../.gitbook/assets/image%20%28215%29.png)
 
 **最后欢迎补充更多实践方案，在保护数据安全和用户隐私的道路上共同前进。**
 

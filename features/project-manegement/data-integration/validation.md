@@ -4,9 +4,13 @@
 
 详细使用见
 
-{% page-ref page="../../../integration/data-verification/sdk-verification.md" %}
+{% page-ref page="../../../integration/data-verification/debug-shu-ju-yan-zheng.md" %}
 
 {% page-ref page="../../../integration/data-verification/data\_debug.md" %}
 
-![](../../../.gitbook/assets/image%20%28107%29.png)
+![](../../../.gitbook/assets/image%20%28111%29.png)
+
+也可以在客户端直接查看上报情况：
+
+{% page-ref page="../../../integration/data-verification/sdk-verification.md" %}
 

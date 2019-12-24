@@ -13,13 +13,13 @@
 
 ## 功能说明
 
-![](../../.gitbook/assets/image%20%28140%29.png)
+![](../../.gitbook/assets/image%20%28145%29.png)
 
 ### 1. 定义指标区
 
 左侧为指标定义区域，选择要分析的指标，支持细分维度与条件过滤，同时支持通过分析用户群进行人群对比
 
-![](../../.gitbook/assets/image%20%2877%29.png)
+![](../../.gitbook/assets/image%20%2879%29.png)
 
 
 
