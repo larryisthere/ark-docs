@@ -52,7 +52,7 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 {% tabs %}
 {% tab title="AndroidStudio SDK 集成" %}
 **本地aar配置**  
-        选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
+         选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
 
 **远程aar配置**  
       本地aar配置或者远程aar配置只需要选择一种，请按需选择  
@@ -769,7 +769,7 @@ AnalysysAgent.getSuperProperties(mContext);
 
 #### 设置上传间隔时间
 
-上传间隔时间设置，在 debug 模式关闭后生效。当前数据默认为实时上传，建议设置上传时间隔为 15s，并需要与setMaxEventSize接口配套使用 ，当设置后，数据达到设定条数或时间触发上传。 接口如下：
+上传间隔时间设置，在 debug 模式关闭后生效。当前数据默认为实时上传，建议设置上传时间隔为`15s`，并需要与setMaxEventSize接口配套使用 ，当设置后，数据达到设定条数或时间触发上传。 接口如下：
 
 ```java
 public static void setIntervalTime(Context context, long flushInterval;);
