@@ -55,7 +55,7 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
         选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
 
 **远程aar配置**  
-      本地aar加载或者远程aar只需要选择一种，请按需选择  
+      本地aar配置或者远程aar配置只需要选择一种，请按需选择  
   
 ****`dependencies  
 {  
