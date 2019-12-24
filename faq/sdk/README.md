@@ -28,13 +28,17 @@
 
 应用正式发布后，关闭 Debug 模式，数据会在应用打开关闭时上传，数据结果会实时展现，在事件分析中可以按分钟、按小时查看，最多延迟 10 分钟；按日汇总当天数据，最多会延迟 2 个小时。
 
-#### Q5. 是否支持 Hydrid 应用的监测？Hydrid APP 中 H5 页面的数据会统计在 APP 里还是网页里？
+#### Q5. 是否支持 Hybrid APP 的数据采集？Hybrid APP 中 H5 页面的数据会统计在 APP 里还是网页里？
 
-支持。
+支持。APP 中内嵌 H5 时，需要同时在 App 和 H5 中埋点。H5 中的报文会先发送给 APP ，并由 APP 统一上报。
 
-APP 内嵌 H5，需要在相应的 H5 页面埋点，数据会同样通过 SDK 上传，计入到 APP 的行为数据中。
+具体请参考：
 
-#### Q6. Debug 模式有什么作用？
+{% page-ref page="../../integration/sdk/ios/hybrid-ios.md" %}
+
+{% page-ref page="../../integration/sdk/android/hybrid-android.md" %}
+
+**Q6. Debug 模式有什么作用？**
 
 Debug 模式下，SDK 会记录很多调试信息，日志会实时上传，更方便验证集成的正确性。
 
