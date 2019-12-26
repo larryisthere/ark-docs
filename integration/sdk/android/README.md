@@ -171,7 +171,7 @@ public static void init(Context context, AnalysysConfig config);
   5. setAutoInstallation ：设置是否进行渠道跟踪，`true`为跟踪，`false`为不跟踪（默认`false`）。
   6. setAllowTimeCheck ：是否允许时间校准，默认值：`false`
   7. setMaxDiffTimeInterval ：最大允许时间误差，单位：秒，默认值：`30`秒
-  8. setAutoHeatMap ：是否采集用户点击位置坐标，默认值：`false`
+  8. setAutoHeatMap ：是否开启热图，默认值：`false`
   9. setAutoTrackPageView ：pageView自动上报开关，默认值：`true`
   10. setAutoTrackFragmentPageView：fragment页面自动上报开关 默认值：`false`
   11. setAutoTrackClick：控件点击自动上报开关 默认值：`false`
