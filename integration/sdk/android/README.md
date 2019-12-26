@@ -51,23 +51,23 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
 {% tabs %}
 {% tab title="AndroidStudio SDK 集成" %}
-**注意：aar集成方式需要android sdk V4.4.0以上版本才支持，V4.4.0以下版本集成可参考** [**方舟gradle集成方式**](https://docs.analysys.cn/ark/integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi) **；本地aar配置和远程aar配置只需要选择一种即可。**
+**本地aar配置**  
+         选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
 
-**本地aar配置**
-
+**远程aar配置**  
+      本地aar配置或者远程aar配置只需要选择一种，请按需选择  
   
-         ****`compile files('libs/analysys_xxxx.aar')`
-
-          如本地aar配置还有有问题：参考 [方舟gradle集成方式](https://docs.analysys.cn/ark/integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi)
-
-**远程aar配置**
-
-  
-     ****`dependencies  
+****`dependencies  
 {  
-    //添加 analysys-arkanalysys SDK 依赖  
-    compile('cn.com.analysys:analysys-arkanalysys:4.4.2')  
+//添加 analysys-arkanalysys SDK 依赖  
+api('cn.com.analysys:analysys-arkanalysys:4.4.2')  
 }`
+
+**主App项目构建文件中添加插件**：
+
+`apply plugin: 'com.android.application'   
+// 使用全埋点插件  
+apply plugin: 'com.analysys.android.plugin'`
 {% endtab %}
 
 {% tab title="Eclipse SDK 集成" %}
@@ -77,17 +77,16 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
 ### 配置 Manifest
 
-AndroidStudio SDK使用aar集成用户无需配置Manifest；AppKey、Channel 在Mainfest可选配置；
+AndroidStudio SDK集成用户无需配置Manifest，AppKey、Channel 在Mainfest可选配置；
 
-远程jar包和Eclipse SDK集成用户需要按照下面文档进行配置：
+Eclipse SDK集成用户需要按照下面文档进行配置：
 
-AndroidManifest.xml文件需要配置内容包括权限、provider、AppKey、Channel 和 .crt 格式证书名称（用于https网络通信）。
+AndroidManifest.xml文件需要配置内容包括权限、AppKey、Channel 和 .crt 格式证书名称（用于https网络通信）。
 
-1. provider在SDK 4.4.0以上版本为必选配置，否则SDK无法正常工作；SDK 4.4.0以下版本无需配置；
-2. AppKey和Channel也可以通过init\(\)初始化接口配置，两种方式配置任意一种即可。
-3. 如果key使用以上两种方式配置，则两值必须相同，否则设置失败。
-4. 如果channel使用两种方式，则优先取xml文件内配置的值。
-5. https 网络通信默认信任所有证书，如需使用 .crt 格式证书，请在 xml 配置证书名称，并将 .crt 格式证书添加到项目 assets 目录下。 示例如下：
+1. AppKey和Channel也可以通过init\(\)初始化接口配置，两种方式配置任意一种即可。
+2. 如果key使用以上两种方式配置，则两值必须相同，否则设置失败。
+3. 如果channel使用两种方式，则优先取xml文件内配置的值。
+4. https 网络通信默认信任所有证书，如需使用 .crt 格式证书，请在 xml 配置证书名称，并将 .crt 格式证书添加到项目 assets 目录下。 示例如下：
 
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
@@ -98,22 +97,22 @@ AndroidManifest.xml文件需要配置内容包括权限、provider、AppKey、Ch
 <application >
 
     ......
-    <!-- provider中添加的内容为4.4.0版本新增，请注意添加,否则sdk不能正常使用，必选
+    <!-- provider中添加的内容为4.4.0版本新增，请注意添加,否则可能会导致跨进程数据存储异常
   -->
     <provider
     android:name="com.analysys.database.AnsContentProvider"
     android:authorities="[应用包名].AnsContentProvider"
     android:enabled="true"
     android:exported="false" />
-    <!--  设置appKey  可选 -->
+    <!--  设置appKey  -->
     <meta-data
     android:name="ANALYSYS_APPKEY"
     android:value="4g6dp3d9fh5r0s3jr87j3ej94k04" />
-    <!--  设置渠道  可选-->
+    <!--  设置渠道  -->
     <meta-data
     android:name="ANALYSYS_CHANNEL"
     android:value="WanDouJia" />
-    <!--  服务端加密证书（在assets上预制）  可选-->
+    <!--  服务端加密证书（在assets上预制）  -->
     <meta-data
     android:name="ANALYSYS_KEYSTONE"
     android:value="analysys.crt"/>

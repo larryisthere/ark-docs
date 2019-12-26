@@ -6,11 +6,16 @@
 
 1. 首先把aar和jar包放在libs目录下面
 
-    2. 通过以下方式导入aar
+    2. 通过以下方式导入aar或者jar
 
-         方式一： compile fileTree\(dir: 'libs', include: \['_.jar','_.aar'\]\)
+         方式一： 导入lib目录下所以的jar包和aar包
 
-         方式二： compile files\('libs/analysys\_xxxx.jar'\) compile files\('libs/analysys\_xxxx.aar'\)
+   `compile fileTree(dir: 'libs', include: ['`_`.jar','`_`.aar'])`
+
+         方式二： 导入lib下对应的jar包或者aar包
+
+    `compile files('libs/analysys_xxxx.jar')   
+    compile files('libs/analysys_xxxx.aar')`
 
 ### 远程aar和jar包集成方式
 
