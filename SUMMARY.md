@@ -90,6 +90,7 @@
     * [全埋点介绍](integration/sdk/android/quan-mai-dian-jie-shao.md)
     * [Android Hybrid模式](integration/sdk/android/hybrid-android.md)
     * [多渠道打包](integration/sdk/android/channel-packing.md)
+    * [方舟gradle集成方式](integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi.md)
   * [iOS SDK](integration/sdk/ios/README.md)
     * [全埋点介绍](integration/sdk/ios/quan-mai-dian-jie-shao.md)
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
