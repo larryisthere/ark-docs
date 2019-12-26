@@ -173,8 +173,8 @@ public static void init(Context context, AnalysysConfig config);
   7. setMaxDiffTimeInterval ：最大允许时间误差，单位：秒，默认值：`30`秒
   8. setAutoHeatMap ：是否开启热图，默认值：`false`
   9. setAutoTrackPageView ：pageView自动上报开关，默认值：`true`
-  10. setAutoTrackFragmentPageView：fragment页面自动上报开关 默认值：`false`
-  11. setAutoTrackClick：控件点击自动上报开关 默认值：`false`
+  10. setAutoTrackFragmentPageView：是否开启全埋点fragment页面自动上报， 默认值：`false`
+  11. setAutoTrackClick：是否开启全埋点点击事件， 默认值：`false`
   12. setEnableException：是否允许崩溃追踪，默认值：`false`
 
 {% hint style="info" %}
