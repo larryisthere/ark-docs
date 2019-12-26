@@ -51,23 +51,23 @@ Android SDK 用于 Android 原生 App，集成前请先[下载 SDK](https://gith
 
 {% tabs %}
 {% tab title="AndroidStudio SDK 集成" %}
-**本地aar配置**  
-         选择 SDK 功能组件并下载，解压.zip 文件得到相应 SDK 包（例如：x.x.x.jar或者x.x.x.aar等），在 Android Studio 的项目工程 libs 目录中拷入相关组件 aar 包 右键 Android Studio 的项目工程; 选择 Open Module Settings → 在 Project Structure 弹出框中 → 选择 Dependencies 选项卡 → 点击左下"＋" → 选择 aar 包类型 → 引入相应的 aar 包。
+**注意：aar集成方式需要android sdk V4.4.0以上版本才支持**
+
+**本地aar配置**
+
+  
+         ****`compile files('libs/analysys_xxxx.aar')`
+
+          如本地aar配置还有有问题：参考 [方舟gradle集成方式](https://docs.analysys.cn/ark/integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi)
 
 **远程aar配置**  
       本地aar配置或者远程aar配置只需要选择一种，请按需选择  
   
-****`dependencies  
+     ****`dependencies  
 {  
 //添加 analysys-arkanalysys SDK 依赖  
 api('cn.com.analysys:analysys-arkanalysys:4.4.2')  
 }`
-
-**主App项目构建文件中添加插件**：
-
-`apply plugin: 'com.android.application'   
-// 使用全埋点插件  
-apply plugin: 'com.analysys.android.plugin'`
 {% endtab %}
 
 {% tab title="Eclipse SDK 集成" %}

@@ -14,7 +14,7 @@
 
 ### 远程aar和jar包集成方式
 
-`compile('cn.com.analysys:analysys-arkanalysys:x.x.x')`
+`compile('cn.com.analysys:analysys-xxxx:x.x.x')`
 
 ### compile、implementation区别
 
@@ -36,7 +36,7 @@ gradle老版本使用compile方式，gradle新版本推荐使用implementation�
 
 如果不需要集成方舟sdk中的所有功能，可以单独排除某些模块，通过以下方式实现：
 
-`compile('cn.com.analysys:analysys-arkanalysys:4.4.2') {   
+`compile('cn.com.analysys:analysys-arkanalysys:x.x.x') {   
       exclude group:'cn.com.analysys',module:'analysys-xxxx'   
 }`
 
@@ -44,7 +44,7 @@ gradle老版本使用compile方式，gradle新版本推荐使用implementation�
 
 示例，不包含全埋点模块：
 
-`compile('cn.com.analysys:analysys-arkanalysys:4.4.2') {   
+`compile('cn.com.analysys:analysys-arkanalysys:x.x.x') {   
         exclude group:'cn.com.analysys',module:'analysys-allgro'   
 }`
 
