@@ -1,6 +1,10 @@
+---
+description: 微信小程序插件版（Frame）
+---
+
 # 微信小程序通用框架版
 
-微信小程序通用框架版SDK集成前请先[下载 SDK](https://github.com/analysys/ans-wechat-sdk/releases/download/v4.3.0/analysys_pass_weChat_4.3.0_Frame__4.3.0_20191112.zip)
+微信小程序通用框架版SDK集成前请先[下载 SDK](https://github.com/analysys/ans-wechat-sdk/releases/)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
@@ -79,7 +83,7 @@ AnalysysAgent.encrypt = AnalysysEncryption
 
 ```javascript
 import AnalysysAgent from  './build/build/AnalysysAgent_WX_SDK.custom.es6.min.js';
-import * as AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
+import AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
 AnalysysAgent.encrypt = AnalysysEncryption;
 
 //es6版本不是每个框架都能用，不能使用es6的请如下 使用

@@ -1,4 +1,4 @@
-# 方舟gradle集成方式
+# SDK Gradle集成方式
 
 ## aar集成方式介绍
 
@@ -10,7 +10,7 @@
 
          方式一： 导入lib目录下所以的jar包和aar包
 
-   `compile fileTree(dir: 'libs', include: ['`_`.jar','`_`.aar'])`
+   `compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])`
 
          方式二： 导入lib下对应的jar包或者aar包
 

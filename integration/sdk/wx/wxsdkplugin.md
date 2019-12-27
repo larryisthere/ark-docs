@@ -1,10 +1,10 @@
 ---
-description: 微信小程序插件版
+description: 微信小程序插件版（Plugin）
 ---
 
 # 微信小程序插件版
 
-微信小程序插件版SDK集成前请先[下载 SDK](https://github.com/analysys/ans-wechat-sdk/releases/download/v4.3.0/analysys_pass_weChat_4.3.0_plugin__4.3.0_20191113.zip)
+微信小程序插件版SDK集成前请先[下载 SDK](https://github.com/analysys/ans-wechat-sdk/releases/)
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
@@ -71,7 +71,7 @@ AnalysysAgent.encrypt = AnalysysEncryption
 
 ```javascript
 import AnalysysAgent from  './build/AnalysysAgent_WX_SDK.plugin.es6.min.js';
-import * as AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
+import AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
 AnalysysAgent.encrypt = AnalysysEncryption;
 ```
 
