@@ -102,7 +102,7 @@ AndroidManifest.xml文件需要配置内容包括权限、provider、AppKey、Ch
 <application >
 
     ......
-    <!-- provider中添加的内容为4.4.0版本新增，请注意添加,否则sdk不能正常使用，必选
+    <!-- provider中添加的内容为4.4.0以上版本新增，请注意添加,否则sdk不能正常使用，必选
   -->
     <provider
     android:name="com.analysys.database.AnsContentProvider"
