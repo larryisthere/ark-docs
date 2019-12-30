@@ -1,6 +1,14 @@
+---
+description: Java SDK使用说明
+---
+
 # Java SDK
 
-Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-java)
+Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务。集成前请先登录下载SDK
+
+{% hint style="info" %}
+[Releases包及更新说明](https://github.com/analysys/ans-java-sdk/releases)
+{% endhint %}
 
 ## 1. 集成 SDK
 
