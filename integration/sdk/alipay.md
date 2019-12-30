@@ -4,7 +4,11 @@ description: 支付宝小程序 SDK 使用说明
 
 # 支付宝小程序 SDK
 
-支付宝小程序 SDK 集成前请先[下载 SDK](https://github.com/analysys/ans-Alipay-sdk/releases/tag/4.3.0)
+支付宝小程序 SDK 集成前请先下载 SDK
+
+{% hint style="info" %}
+[Releases包及更新说明](https://github.com/analysys/ans-Alipay-sdk/releases/tag/4.3.0)
+{% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |

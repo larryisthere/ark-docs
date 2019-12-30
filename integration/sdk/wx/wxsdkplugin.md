@@ -4,7 +4,11 @@ description: 微信小程序插件版（Plugin）
 
 # 微信小程序插件版
 
-微信小程序插件版SDK集成前请先[下载 SDK](https://github.com/analysys/ans-wechat-sdk/releases/)
+微信小程序插件版SDK集成前请先下载 SDK
+
+{% hint style="info" %}
+[Releases包及更新说明](https://github.com/analysys/ans-wechat-sdk/releases)
+{% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |

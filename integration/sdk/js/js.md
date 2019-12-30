@@ -6,7 +6,11 @@ description: 标准版本适用方舟4.3.3以上版本
 
 ## JS SDK 使用说明
 
-JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先[下载 SDK及更新记录](https://github.com/analysys/ans-javascript-sdk/releases)
+JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先下载 SDK
+
+{% hint style="info" %}
+[Releases包及更新说明](https://github.com/analysys/ans-javascript-sdk/releases)
+{% endhint %}
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
 | :---: | :---: | :---: | :--- |

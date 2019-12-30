@@ -2,7 +2,11 @@
 
 ## iOS SDK 使用说明
 
-iOS SDK 适用于 iOS 原生 App，集成前请先[下载 SDK](https://github.com/analysys/ans-ios-sdk/releases)
+iOS SDK 适用于 iOS 原生 App，集成前请先下载 SDK
+
+{% hint style="info" %}
+[Releases包及更新说明](https://github.com/analysys/ans-ios-sdk/releases)
+{% endhint %}
 
 | framework | 功能描述 | 是否必选 | 服务端版本 |
 | :---: | :---: | :---: | :--- |
