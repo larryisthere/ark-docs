@@ -87,6 +87,30 @@ public BatchCollecter(String serverUrl, int batchNum, long batchSec);
 * batchNum：批量发送数量，默认值：20条
 * batchSec：批量发送等待时间\(秒\)，默认值：10秒
 
+#### 2.2.3 落地文件收集器
+
+该收集器可以把用户触发的事件经过封装处理成标准的JSON写入本地文件中。支持多线程/多进程同时写入同一文件，默认为同步一条条写入文件，可以指定是否异步批量写入以及批量写入的条数和时间间隔。
+
+```java
+public LogCollecter(String logFolder);
+
+public LogCollecter(String logFolder, boolean async);
+
+public LogCollecter(String logFolder, GeneralRule rule);
+
+public LogCollecter(String logFolder, GeneralRule rule, boolean async);
+
+public LogCollecter(String logFolder, GeneralRule rule, boolean async, int batchNum, long batchSec);
+
+```
+
+* logFolder：数据保存的目录
+* async： 是否异步批量保存\(默认为false，如果设置为true则默认20条或者10秒进行落地操作\)
+* rule： 文件切分规则\(默认为GeneralRule.HOUR\)
+* GeneralRule.DAY：按天切割 GeneralRule.HOUR：按小时切割
+* batchNum： 批量保存数量，默认值：20条
+* batchSec： 批量保存等待时间\(秒\)，默认值：10秒
+
 至此 SDK初始化完成，调用 SDK 提供的接口已可正常采集用户数据了。需要注意：在多线程环境中时，推荐使用单例模式初始化 AnalysysJavaSdk，开发者可以在不同的线程间重复使用 AnalysysJavaSdk 实例用于记录数据。  
 说明：程序结束前需要调用 `flush()` 接口，该接口可以把本地缓存的尚未发送至数据接收服务器的数据发送到数据接收服务器。
 
