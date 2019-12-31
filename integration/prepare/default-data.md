@@ -372,7 +372,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">$channel</td>
       <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;&#xFF0C;&#x4E8B;&#x4EF6;&#x4E2D;&#x643A;&#x5E26;</td>
+      <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;&#xFF0C;SDK &#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F20;&#x5165;&#x3002;&#x4EC5;
+        Android &#x901A;&#x8FC7;&#x6E20;&#x9053;&#x5305;&#x5206;&#x53D1;&#x65F6;&#x624D;&#x6709;&#x610F;&#x4E49;&#x3002;iOS
+        &#x4F1A;&#x7EDF;&#x4E00;&#x4E3A;&#x201C;App Store&#x201D;&#x3002;</td>
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
