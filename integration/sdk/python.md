@@ -72,8 +72,6 @@ collector = BatchCollecter(server_url,max_interval_time=15,queue_cache_max_size=
 * queue\_max\_size：整个队列缓存最大值
 * request\_timeout：请求超时时间
 
-
-
 #### 2.2.3 存储本地文件收集器
 
 该收集器将用户调用接口的数据写入到本地文件，支持单条写入或批量写入：
@@ -85,7 +83,7 @@ collector = LogCollecter(log_path,is_batch=True,batch_num=10,general_rule="hour"
 * log\_path: 数据落文件目录
 * is\_batch: 是否批量写入，默认为False
 * batch\_num: 批量写入时，每次写入条数。默认为20条
-* general\_rule: 文件存储规则。当传值为"day"时，文件按日写入数据（即每日生成一个文件），当传值为"hour"时，文件按小时写入数据（即每小时生成一个文件）。（默认规则为按小时）
+* general\_rule: 文件存储规则。当传值为"day"时，文件按日写入数据（即每日生成一个文件），当传值为"hour"时，文件按小时写入数据（即每小时生成一个文件）。默认规则为按小时
 
 至此 SDK 初始化完成，调用 SDK 提供的接口已可正常采集用户数据了。
 

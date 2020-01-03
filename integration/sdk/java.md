@@ -106,7 +106,7 @@ public LogCollecter(String logFolder, GeneralRule rule, boolean async, int batch
 
 * logFolder：数据保存的目录
 * async： 是否异步批量保存\(默认为false，如果设置为true则默认20条或者10秒进行落地操作\)
-* rule: 文件存储规则。当传值为"GeneralRule.DAY"时，文件按日写入数据（即每日生成一个文件），当传值为"GeneralRule.HOUR"时，文件按小时写入数据（即每小时生成一个文件）。默认规则为按小时
+* rule： 文件切分规则\(默认为GeneralRule.HOUR\) GeneralRule.DAY：按天切割 、GeneralRule.HOUR：按小时切割
 * batchNum： 批量保存数量，默认值：20条
 * batchSec： 批量保存等待时间\(秒\)，默认值：10秒
 
