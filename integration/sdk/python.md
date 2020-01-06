@@ -24,7 +24,7 @@ from analysyspythonsdk import *
 
 需获取的配置信息为：
 
-* 数据接收地址：`http://host:port/up` 或 `https://host:port/up`
+* 数据接收地址：`http://host:port` 或 `https://host:port`
 
 ### 2.2 初始化接口
 
