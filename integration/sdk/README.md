@@ -16,6 +16,8 @@
 
 {% page-ref page="wx/" %}
 
+{% page-ref page="alipay.md" %}
+
 **服务端SDK**
 
 {% page-ref page="java.md" %}
@@ -23,6 +25,8 @@
 {% page-ref page="python.md" %}
 
 {% page-ref page="php.md" %}
+
+{% page-ref page="node-sdk.md" %}
 
 {% page-ref page="c++.md" %}
 
