@@ -5,7 +5,7 @@
 Android SDK 用于 Android 原生 App，集成前请先下载 SDK
 
 {% hint style="info" %}
-[Releases包及更新说明](https://github.com/analysys/ans-android-sdk/releases)
+[Releases包下载及更新说明](https://github.com/analysys/ans-android-sdk/releases)
 {% endhint %}
 
 | Jar包 | 功能描述 | 是否必选 | 服务端版本 |

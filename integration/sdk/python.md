@@ -3,7 +3,7 @@
 Python SDK 主要用于服务端 Python 应用，如 Python Web 应用的后台服务。集成前请先登录下载SDK
 
 {% hint style="info" %}
-[Releases包及更新说明](https://github.com/analysys/ans-python-sdk/releases)
+[Releases包下载及更新说明](https://github.com/analysys/ans-python-sdk/releases)
 {% endhint %}
 
 ## 1. 集成准备
