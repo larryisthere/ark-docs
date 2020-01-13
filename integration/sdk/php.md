@@ -1,6 +1,10 @@
 # PHP SDK
 
-PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/ans-php-sdk/releases)
+PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先下载SDK
+
+{% hint style="info" %}
+[Releases包下载及更新说明](https://github.com/analysys/ans-php-sdk/releases)
+{% endhint %}
 
 ## 1. 集成 SDK
 
@@ -27,7 +31,8 @@ $app_key = '9421608fd544a65e';
 $serverUrl = 'https://arksdk.analysys.cn:4089/';
 $consumer = new SyncConsumer($serverUrl); //同步
 //$consumer = new BatchConsumer($server); // 批量
-$analysys_agent = new AnalysysAgent($consumer, $appid);
+//$consumer = new FileConsumer($file_path); // 落地文件
+$analysys_agent = new AnalysysAgent($consumer, $appid);;
 ```
 
 app\_key：网站获取的 Key
@@ -60,8 +65,28 @@ new BatchConsumer($serverUrl, $batchNum, $batchSec);
 * $batchNum：批量发送数量，默认值：20条
 * $batchSec：批量发送等待时间\(秒\)，默认值：10秒
 
-至此 SDK初始化完成，调用 SDK 。 用户需要一直持有该初始化示例，用以之后数据传输，直至用户程序退出。  
-说明：程序结束前需要调用 `close()` 接口，该接口可以把本地缓存的尚未发送至数据接收服务器的数据发送到数据接收服务器。
+#### 2.2.3 批量收集器
+
+该收集器可以把用户触发的事件经过封装处理成标准的JSON写入本地文件中。支持多线程/多进程同时写入同一文件，默认为同步一条条写入文件，可以指定是否异步批量写入以及批量写入的条数：
+
+```php
+new FileConsumer($file_path);
+
+new FileConsumer($file_path, $rule);
+
+new FileConsumer($file_path, $rule, $async);
+
+new FileConsumer($file_path, $rule, $async, $batch_num);
+```
+
+* $file\_path：数据保存的目录
+* $async： 是否异步批量保存\(默认为false，如果设置为true则默认20条进行落地操作\)
+* $rule: 文件存储规则。当传值为"DAY"时，文件按日写入数据（即每日生成一个文件），当传值为"HOUR"时，文件按小时写入数据（即每小时生成一个文件）。默认规则为按小时
+* $batch\_num： 批量保存数量，默认值：20条
+
+说明：程序结束前需要调用 flush\(\) 接口，该接口可以把本地缓存的尚未写入文件的数据写入到文件中。
+
+至此 SDK初始化完成，调用 SDK 。 用户需要一直持有该初始化实例，用以之后数据传输，直至用户程序退出。
 
 ## 3. 基础接口介绍
 
