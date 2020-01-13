@@ -611,11 +611,11 @@ AnalysysAgent.pageView("商品页", properties);
 用户行为追踪，可以设置自定义属性。接口如下：
 
 ```javascript
-AnalysysAgent.track(eventName, eventInfo)
+AnalysysAgent.track(eventName, properties)
 ```
 
 * eventName：事件ID，以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符
-* eventInfo：自定义属性，用于对事件描述。eventInfo 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/JSON/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* properties：自定义属性，用于对事件描述。properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/JSON/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
@@ -626,13 +626,13 @@ AnalysysAgent.track("back");
 ......
 
 // 用户购买手机
-var eventInfo = {
+var properties = {
     "type":"Phone",
     "name":"Apple iPhone8",
     "money":4000,
     "count":1
 }
-AnalysysAgent.track("buy", eventInfo);
+AnalysysAgent.track("buy", properties);
 ```
 
 ### 匿名ID与用户关联
