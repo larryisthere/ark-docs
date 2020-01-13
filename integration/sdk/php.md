@@ -1,6 +1,10 @@
+---
+description: PHP SDK使用说明
+---
+
 # PHP SDK
 
-PHP SDK 主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先下载SDK
+主要用于服务端 PHP 应用，如 PHP Web 应用的后台服务。集成前请先下载SDK
 
 {% hint style="info" %}
 [Releases包下载及更新说明](https://github.com/analysys/ans-php-sdk/releases)
