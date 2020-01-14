@@ -36,7 +36,7 @@
 
 #### 新增
 
-* [智能监控](https://docs.analysys.cn/ark/features/project-manegement/intelligent-monitoring)，针对上报元事件的触发次数和触发人数的异动进行智能监控
+* [智能监控](features/analytics/pathfinder.md)，针对上报元事件的触发次数和触发人数的异动进行智能监控
 * 事件分析中增加触发时间作为默认筛选条件，可以查看关注的小时区间数据 
 * 新增企业设置功能，可以自由配置收数地址
 * 新增[ 分群管理API](https://docs.analysys.cn/ark/integration/api) 
