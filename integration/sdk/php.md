@@ -15,7 +15,7 @@ description: PHP SDK使用说明
 将PHP SDK拷贝到本地工程内并在所需要位置引用 PHP SDK。
 
 ```php
-    require_once 'AnalysysAgent_PHP_SDK.php';
+require_once 'AnalysysAgent_PHP_SDK.php';
 ```
 
 ## 2. SDK 初始化
