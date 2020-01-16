@@ -155,6 +155,20 @@ public static final int *;
 }
 ```
 
+### MultiDex注意事项 <a id="multidex"></a>
+
+如果使用了MultiDex，建议通过Gradle的“`multiDexKeepFile`”配置等方式把易观的类com.analysys.\*放到主Dex，另外建议在`Application`类的"`attachBaseContext`"方法中主动加载非主dex：
+
+```text
+public class MyApplication extends Application {
+  @Override
+  protected void attachBaseContext(Context base) {
+     super.attachBaseContext(context);
+     Multidex.install(this);
+  }
+}
+```
+
 ## 基础模块
 
 以下接口生效依赖于基础SDK模块，需集成基础SDK相关analysys\_core\_xxx文件，请正确集成。
