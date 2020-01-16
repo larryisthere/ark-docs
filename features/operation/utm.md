@@ -46,7 +46,7 @@
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2019/01/201901172058304252.jpg)
 
-> 预置广告媒介和渠道见文末 [《附：预置广告媒介和渠道》](utm.md##附：预置广告媒介和渠道) 。
+> 预置广告媒介和渠道见文末 [《附：预置广告媒介和渠道》](utm.md#fu-yu-zhi-guang-gao-mei-jie-he-qu-dao) 。
 
 **C. 输入备注**
 
