@@ -12,7 +12,7 @@
   * [附：数据分析思路](quick-start-guide/analystics-method.md)
 * [产品更新日志](release-notes.md)
 
-## 🐱 智能分析功能说明 <a id="features"></a>
+## 🐱 Part I 产品功能说明 <a id="features"></a>
 
 * [名词解释](features/terms.md)
 * [指标说明](features/metrics-and-dimensions.md)
@@ -74,7 +74,7 @@
   * [企业设置](features/enterprise-management/enterprise.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
 
-## 🐵 智能分析技术文档 <a id="integration"></a>
+## 🐵 Part II 技术文档 <a id="integration"></a>
 
 * [技术接入准备工作](integration/prepare/README.md)
   * [私有云安装部署](integration/prepare/si-you-yun-an-zhuang-bu-shu.md)
@@ -141,11 +141,7 @@
     * [成员管理](integration/api/api-manage-enterprise/api-enterprise-user.md)
 * [GDPR 合规](integration/gdpr.md)
 
-## 智能运营功能说明 <a id="ea"></a>
-
-* [准备中](ea/zhun-bei-zhong.md)
-
-## 🐋 常见问题 <a id="faq"></a>
+## 🐋 Part III 常见问题 <a id="faq"></a>
 
 * [SDK FAQ](faq/sdk/README.md)
   * [页面停留如何获取时间？](faq/sdk/page-duration.md)
