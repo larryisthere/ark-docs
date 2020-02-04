@@ -18,6 +18,10 @@
 
 {% page-ref page="alipay.md" %}
 
+{% page-ref page="baidu.md" %}
+
+
+
 **服务端SDK**
 
 {% page-ref page="java.md" %}
