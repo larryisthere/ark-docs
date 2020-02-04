@@ -71,7 +71,7 @@ App({
 在每一个页面的入口js文件中调用小程序统计页面事件
 
 ```javascript
-let AnalysysAgent = my.AnalysysAgent
+let AnalysysAgent = swan.AnalysysAgent
 Page({
     onShow () {
         AnalysysAgent.pageView('首页');//页面名称可自定义。
