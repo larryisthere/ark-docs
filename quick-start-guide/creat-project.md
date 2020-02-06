@@ -8,7 +8,13 @@
 建议自动生成 AppKey，若手动输入时，仅支持小写字母和数字的组合，且在10~16位之间。
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28100%29.png)
 
 {% page-ref page="getting-started/" %}
+
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

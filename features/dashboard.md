@@ -119,7 +119,7 @@
 | 每天发送 | 时：分：秒 | 小时 | 每天 设置的时分秒发送一次 |
 | 每周发送 | 周几 时：分：秒 | 小时 | 每周几 设置的时分秒发送一次 |
 
-![](../.gitbook/assets/image%20%28140%29.png)
+![](../.gitbook/assets/image%20%28147%29.png)
 
 设置成功后，会按触发时间发送PDF文档到对应的邮箱。
 
@@ -200,4 +200,8 @@
 看板库中，记录全部看板，快速对看板进行共享、另存为、固定到导航、删除等操作。
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808111507230962.png)
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

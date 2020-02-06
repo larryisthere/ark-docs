@@ -71,3 +71,9 @@ description: >-
 用户偏好功能为第三方增值服务，服务提供方为易观锆云服务平台。如果您需要使用本功能，请进入服务集成配置页面，选择易观锆云进行服务接入、配置、数据同步。具体步骤请参考：[服务集成配置](https://docs.analysys.cn/ark/features/project-manegement/integrations)。
 {% endhint %}
 
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
+

@@ -4,8 +4,6 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 
 # 管理
 
-
-
 {% hint style="info" %}
 4.3.0 及以上版本对管理模块中的部分功能进行了合并。
 
@@ -42,5 +40,9 @@ description: 管理模块支持数据接入、数据管理、服务集成配置�
 
 {% page-ref page="monitoring/monitoring.md" %}
 
-如有问题，请随时联系我们 **4006-010-231**
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

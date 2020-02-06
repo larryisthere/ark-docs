@@ -31,3 +31,9 @@ Session 是一系列用户行为的集合。来源标识的也是一个 Session 
 
 用户来到网站后，除了浏览LandingPage之外，没有发生其他任何操作就离开了网站，被视为跳出。
 
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
+

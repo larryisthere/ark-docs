@@ -55,3 +55,7 @@ bin/kafka-run-class.sh kafka.tools.SimpleConsumerShell \
 
 消费的数据的格式与导入时的[数据格式](../prepare/data-type.md)基本一致。
 
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
+

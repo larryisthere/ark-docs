@@ -16,7 +16,7 @@ description: 本文档中描述的内容，主要针对熟悉SQL的数据分析�
 
 自定义查询工具界面如下图：
 
-![](../../.gitbook/assets/image%20%2862%29.png)
+![](../../.gitbook/assets/image%20%2866%29.png)
 
 {% hint style="info" %}
 易观方舟自定义查询工具只能查询您当前正在使用的项目。如果您在方舟中切换了项目，可以按上述步骤重新点击“自定义查询”打开新的自定义查询工具窗口。
@@ -30,7 +30,7 @@ description: 本文档中描述的内容，主要针对熟悉SQL的数据分析�
 
 然后进入PrestoSQL，即可看到当前项目的库名、表名和字段信息。查看步骤如下：
 
-![](../../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 ### 2.2 字段说明
 
@@ -69,13 +69,13 @@ distinct\_id并不是真正的用户ID，而是易观方舟基于用户真实ID�
 
 下图示例查询每天的事件量:
 
-![](../../.gitbook/assets/image%20%28195%29.png)
+![](../../.gitbook/assets/image%20%28205%29.png)
 
 默认情况下以表格的方式展示结果，为了优化性能，页面最多展示1000条数据，如果您需要查更多的数据，可以将结果下载下来，最多只能下载100w数据。如果您想下载更多数据，请使用数据导出的方式通过api来下载。
 
 #### **3.1.1 图表展示**
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 如上图，选择以图表的方式展示数据，支持多种图表。
 
@@ -83,7 +83,7 @@ distinct\_id并不是真正的用户ID，而是易观方舟基于用户真实ID�
 
 自定义查询工具支持将查询结果下载，当查询结果数据量大于1000时，页面为了性能考虑只展示1000条，但下载结果时最多可下载100w数据。
 
-![](../../.gitbook/assets/image%20%2874%29.png)
+![](../../.gitbook/assets/image%20%2879%29.png)
 
 结果下载支持菜单栏中的CSV和Excel指下载的文件格式，如果结果数据量大，建议您尽量下载CSV格式，CSV格式在相同数据量的情况下文件更小，下载更快。
 
@@ -94,4 +94,10 @@ Clipboard指将下载结果复制到粘贴板，您可以在其它文件编辑�
 ds字段是日期字段，您可以使用ds字段过滤数据。为了提高查询性能，请您尽量在SQL中添加ds字段过滤，只查询需要的数据。
 
 易观方舟使用的查询引擎是presto，关于presto的Date和Time类型的函数可以参考presto的官方文档：[https://prestodb.github.io/docs/0.201/functions/datetime.html](https://prestodb.github.io/docs/0.201/functions/datetime.html)
+
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

@@ -112,3 +112,7 @@ sh standalone\_offline\_installer.sh install Grafana\_123 4.1.17 centos7 root 'H
 
 部署完成！
 
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
+

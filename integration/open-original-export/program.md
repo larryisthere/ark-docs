@@ -163,7 +163,7 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 
 下载地址：[https://www.metabase.com/](https://www.metabase.com/)
 
-![&#x914D;&#x7F6E;&#x65B9;&#x6CD5;](../../.gitbook/assets/image%20%2868%29.png)
+![&#x914D;&#x7F6E;&#x65B9;&#x6CD5;](../../.gitbook/assets/image%20%2872%29.png)
 
 #### 参数说明
 
@@ -178,4 +178,8 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 > Database password: \(默认为空\)
 
 下方的三个开关保持默认即可。点击底部的确认按钮后，如果没有看到数据表，请关闭 Metabase 重新进入。
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

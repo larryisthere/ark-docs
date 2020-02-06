@@ -148,7 +148,7 @@ GDPR主要针对两类义务主体：
 
 建议您以明确的方式询问用户，而不是默认用户授予开发者数据采集和使用的权利。
 
-![](../.gitbook/assets/image%20%28156%29.png)
+![](../.gitbook/assets/image%20%28164%29.png)
 
 * **关于数据采集的反对权**
 
@@ -162,10 +162,13 @@ GDPR主要针对两类义务主体：
 
 支持帐号注销等，需要您自行满足。
 
-![](../.gitbook/assets/image%20%28215%29.png)
+![](../.gitbook/assets/image%20%28226%29.png)
 
 **最后欢迎补充更多实践方案，在保护数据安全和用户隐私的道路上共同前进。**
 
-**参考阅读：**[**https://gdpr-info.eu/**](https://gdpr-info.eu/)  
-****
+**参考阅读：**[**https://gdpr-info.eu/**](https://gdpr-info.eu/)\*\*\*\*
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

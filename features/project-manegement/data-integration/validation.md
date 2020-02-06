@@ -8,9 +8,15 @@
 
 {% page-ref page="../../../integration/data-verification/data\_debug.md" %}
 
-![](../../../.gitbook/assets/image%20%28111%29.png)
+![](../../../.gitbook/assets/image%20%28118%29.png)
 
 也可以在客户端直接查看上报情况：
 
 {% page-ref page="../../../integration/data-verification/sdk-verification.md" %}
+
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

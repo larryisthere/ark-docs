@@ -23,3 +23,9 @@
 5. [分平台上报和跨平台上报](cross-platform.md) 的差异，以便确定是否将多端数据上报到同一个项目中；
 6. [如何设计埋点方案](tracking-plan.md)，以便让埋点更满足业务需要。
 
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
+

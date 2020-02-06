@@ -33,3 +33,7 @@ sh check.sh（[点击下载检测程序](https://github.com/analysys/argo-instal
 
 cat ./log/HostDailyCheck-192-168-10-127-20190116.txt
 
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
+

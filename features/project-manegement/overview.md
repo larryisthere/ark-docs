@@ -17,5 +17,11 @@
   * 项目管理员，当需要再项目中添加成员或者修改权限时，可联系项目管理员
   * 项目成员，项目管理员可以将平台成员添加到项目中，并设置不同的权限
 
-![](../../.gitbook/assets/image%20%28106%29.png)
+![](../../.gitbook/assets/image%20%28113%29.png)
+
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

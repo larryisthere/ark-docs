@@ -5,7 +5,7 @@
 * 项目 AppKey（创建项目后生成，用于唯一标识项目的数据）
 * 集成 [JS SDK ](../../integration/sdk/js/js.md)
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2829%29.png)
 
 ## **接入后 Debug 数据验证**
 
@@ -22,4 +22,10 @@
 {% endhint %}
 
 {% page-ref page="virtualizer.md" %}
+
+
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 

@@ -14,7 +14,7 @@
 
 当一段时间里上报的数据量过大时，可以指定到某个小时或分钟区间来查看
 
-![](../../.gitbook/assets/image%20%28127%29.png)
+![](../../.gitbook/assets/image%20%28134%29.png)
 
 ### 实时更新最新数据
 
@@ -22,17 +22,21 @@
 
 也可以开始实时刷新按钮，实时加载数据；当实时会产生大量数据时，建议关闭，手动加载最新数据，否则自动加载过快，无法准确验证。
 
-![](../../.gitbook/assets/image%20%28105%29.png)
+![](../../.gitbook/assets/image%20%28112%29.png)
 
 ### 设置在列表中展示的列
 
 支持自定义展示的列，快速区别不同测试设备的数据
 
-![](../../.gitbook/assets/image%20%28200%29.png)
+![](../../.gitbook/assets/image%20%28210%29.png)
 
 ### 展开单条事件的属性和JSON数据
 
 点击单条事件，可以展开查看事件属性和JSON数据
 
-![](../../.gitbook/assets/image%20%28178%29.png)
+![](../../.gitbook/assets/image%20%28188%29.png)
+
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+{% endhint %}
 
