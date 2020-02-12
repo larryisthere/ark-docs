@@ -94,10 +94,16 @@ batchSec：批量发送等待时间\(毫秒\)，默认值：0 毫秒
 该收集器可以把用户触发的事件经过封装处理成标准的JSON写入本地文件中。支持多进程同时写入同一文件，默认为同步一条条写入文件，可以指定是否异步批量写入以及批量写入的条数和时间间隔，批量写入的条数和时间间隔就是 SDK 初始化设置的批量条数和时间间隔。
 
 ```cpp
-   new LogCollector({
+    let AgentConfig ={
+        appId : 项目对应的appkey,
+        debugMode:debug模式,
+        postNumber:上传条数的设置（批量写入的条数设置）,
+        postTime:自动上传间隔时间 （批量写入的时间间隔）,
+        logCollector:new LogCollector({   //落文件功能增加的参数
             gerFold:落地文件存放的路径,
             gerRule:落地文件存放的格式
         })
+    }
 ```
 
 gerFold：数据保存的目录  
