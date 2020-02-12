@@ -12,8 +12,8 @@ Node JS SDK 集成前请先下载 SDK
 
 | 文件名 | 功能描述 | 是否必须 |
 | :--- | :--- | :--- |
-| AnalysysAgent\_NodeJS\_SDK.es6.js | 基础模块 | 非ES6必须 |
-| AnalysysAgent\_NodeJS\_SDK.cjs.js | 基础模块 | ES6必须 |
+| AnalysysAgent\_NodeJS\_SDK.es6.js | 基础模块 | ES6必须 |
+| AnalysysAgent\_NodeJS\_SDK.cjs.js | 基础模块 | 非ES6必须 |
 | AnalysysAgent\_NodeJS\_SDK\_LogCollecter.es6.js | 日志收集功能 | ES6可选 |
 | AnalysysAgent\_NodeJS\_SDK\_LogCollecter.cjs.js | 日志收集功能 | 非ES6可选 |
 
@@ -84,7 +84,6 @@ postNumber:0
 ```cpp
 postNumber:batchNum
 postTime:batchSecnBatchNum：
-//批量发送数量，默认值：20条
 ```
 
 batchNum：批量发送数量，默认值：0条,实时上传  
@@ -228,6 +227,7 @@ profileSet(distinctId, isLogin, properties, platform,upLoadTime)
 ```cpp
 var registerId = "ABCDEF123456789";
 var isLogin = true;
+var platform  = "Android"
 //用户信息
 var profiles = {
     $city:"北京",         //城市
@@ -238,7 +238,10 @@ var profiles = {
 };
 var interestList = ["户外活动","足球赛事","游戏"];
 profiles.interest = interestList;//用户兴趣爱好
-analysys.profileSet(registerId, isLogin, profiles);
+analysys.profileSet(registerId, isLogin, profiles,platform);
+// 或者也可以使用自定义的时间戳
+var uploadTime = 1569859200000;
+analysys.profileSet(registerId, isLogin, profiles,platform,uploadTime);
 ```
 
 ## 4.更多接口
@@ -471,11 +474,15 @@ getSuperProperties();;
 
 ```cpp
 示例1：查看已经设置的 userLevel 通用属性
+
+```js
 // 获取单个通用属性
 analysys.getSuperProperty("userLevel");
 ```
 
 示例2：查看所有已经设置的通用属性
+
+```js
 // 获取所有通用属性
 analysys.getSuperProperties();
 ```
