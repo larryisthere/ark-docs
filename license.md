@@ -82,6 +82,12 @@ Argo 用户：登录易观官网，进入**个人中心 - 我的 License** 中�
       <td style="text-align:left">&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;</td>
       <td style="text-align:left">4.3.4&#x53CA;&#x4EE5;&#x4E0A;</td>
     </tr>
+    <tr>
+      <td style="text-align:left">&#x66F4;&#x6362;&#x4E86;&#x6838;&#x5FC3;&#x8C03;&#x5EA6;&#x8282;&#x70B9;</td>
+      <td
+      style="text-align:left">&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;</td>
+        <td style="text-align:left">4.6&#x53CA;&#x4EE5;&#x4E0A;</td>
+    </tr>
   </tbody>
 </table>## 为什么我的License无效？
 
