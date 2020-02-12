@@ -374,7 +374,7 @@ analysys.profileUnSet( registerId, isLogin,property,platform,uploadTime);
 
 示例2：要清除已经设置的所有用户属性
 
-```js
+
 var registerId = "ABCDEF123456789";
 var isLogin = true;
 var platform = "Android"
@@ -454,7 +454,7 @@ analysys.unRegisterSuperProperty("userPoint");
 
 示例2：清除所有已经设置的通用属性
 
-```js
+
 // 清除所有通用属性
 analysys.clearSuperProperties();
 ```
@@ -475,14 +475,12 @@ getSuperProperties();;
 ```cpp
 示例1：查看已经设置的 userLevel 通用属性
 
-```js
 // 获取单个通用属性
 analysys.getSuperProperty("userLevel");
 ```
 
 示例2：查看所有已经设置的通用属性
 
-```js
 // 获取所有通用属性
 analysys.getSuperProperties();
 ```
