@@ -140,7 +140,7 @@ track(distinctId, isLogin, eventName, properties,platform,upLoadTime);
 * distinctId 用户 ID,长度大于 0 且小于 255字符
 * isLogin 用户 ID 是否是登录 ID
 * eventName 事件名称,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
-* properties 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
+* properties 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符。没有请设置`null`。
 * platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -218,7 +218,7 @@ profileSet(distinctId, isLogin, properties, platform,upLoadTime)
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
-* properties: 事件属性
+* properties: 事件属性，没有请设置`null`。
 * platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -259,7 +259,7 @@ profileSetOnce(distinctId, isLogin, properties,platform,upLoadTime);
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
-* properties: 事件属性
+* properties: 事件属性，没有请设置`null`。
 * platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -290,7 +290,7 @@ profileIncrement(distinctId, isLogin, properties,platform,upLoadTime);
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
-* properties: 事件属性
+* properties: 事件属性，没有请设置`null`。
 * platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -320,7 +320,7 @@ profileAppend(distinctId, isLogin, properties,platform, upLoadTime);
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
-* properties: 事件属性
+* properties: 事件属性，没有请设置`null`。
 * platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -353,7 +353,7 @@ profileDelete(distinctId, isLogin, platform,upLoadTime);
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
-* properties: 事件属性
+* property：事件属性
 * platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
