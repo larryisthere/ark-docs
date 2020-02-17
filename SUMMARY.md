@@ -11,7 +11,7 @@
   * [附：埋点方案设计](quick-start-guide/tracking-plan.md)
   * [附：数据分析思路](quick-start-guide/analystics-method.md)
 * [产品更新日志](release-notes.md)
-* [🚀我要反馈](https://support.qq.com/products/118522?)
+* [我要反馈](https://support.qq.com/products/118522?)
 
 ## 🐱 Part I 产品功能说明 <a id="features"></a>
 
@@ -48,7 +48,7 @@
   * [消息通知](features/operation/pushmessage.md)
   * [广告跟踪](features/operation/utm.md)
   * [App 推广监测（Beta）](features/operation/channel-monitor.md)
-* [管理](features/project-manegement/README.md)
+* [项目管理](features/project-manegement/README.md)
   * [项目概览](features/project-manegement/overview.md)
   * [项目成员管理](features/project-manegement/member.md)
   * [数据接入管理](features/project-manegement/data-integration/README.md)
@@ -74,7 +74,6 @@
   * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [企业设置](features/enterprise-management/enterprise.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
-* [License 许可](features/license.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>
 
@@ -146,6 +145,7 @@
 
 ## 🐋 Part III 常见问题 <a id="faq"></a>
 
+* [License 许可](faq/license.md)
 * [SDK FAQ](faq/sdk/README.md)
   * [页面停留如何获取时间？](faq/sdk/page-duration.md)
 * [产品试用及采购](faq/trialversion.md)
