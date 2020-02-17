@@ -237,7 +237,7 @@ curl -H "Content-Type:application/json" -H "xtoken:9CF0444E9DFD9E3D9CAE49B79F939
       <td style="text-align:left">Integer</td>
       <td style="text-align:left">
         <p>0&#x8868;&#x793A;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#xFF0C;&#x65E0;&#x5F02;&#x5E38;&#x3002;</p>
-        <p>&#x5907;&#x6CE8;&#xFF1A;&#x56E0;&#x4E3A;&#x9879;&#x76EE;&#x521B;&#x5EFA;&#x9700;&#x8981;&#x8C03;&#x914D;&#x975E;&#x5E38;&#x591A;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#xFF0C;&#x6240;&#x4EE5;&#x8BE5;&#x63A5;&#x53E3;&#x4E3A;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x9879;&#x76EE;&#x771F;&#x6B63;&#x53EF;&#x7528;&#x72B6;&#x6001;&#x9700;&#x8981;&#x8C03;&#x7528;&#x3010;&#x9879;&#x76EE;&#x8BE6;&#x60C5;&#x3011;&#x63A5;&#x53E3;&#xFF0C;&#x5176;&#x4E2D;finish
+        <p>&#x5907;&#x6CE8;&#xFF1A;&#x56E0;&#x4E3A;&#x9879;&#x76EE;&#x521B;&#x5EFA;&#x9700;&#x8981;&#x8C03;&#x914D;&#x975E;&#x5E38;&#x591A;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#xFF0C;&#x6240;&#x4EE5;&#x8BE5;&#x63A5;&#x53E3;&#x4E3A;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x9879;&#x76EE;&#x771F;&#x6B63;&#x53EF;&#x7528;&#x72B6;&#x6001;&#x9700;&#x8981;&#x8C03;&#x7528;&#x3010;&#x9879;&#x76EE;&#x8BE6;&#x60C5;&#x3011;&#x63A5;&#x53E3;&#xFF0C;&#x5176;&#x4E2D;status
           &#x5B57;&#x6BB5;&#x8868;&#x793A;&#x9879;&#x76EE;&#x521B;&#x5EFA;&#x60C5;&#x51B5;</p>
       </td>
     </tr>
