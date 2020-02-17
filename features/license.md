@@ -20,23 +20,23 @@ Argo 用户：在官网上自主申请更新（即将支持）
 
 部署完成后，使用平台管理员帐号登录，系统会要求输入 License ，登录易观方舟官网，进入 **个人中心-企业 License** 中复制粘贴即可
 
-![](.gitbook/assets/tu-pian-14-1-1.png)
+![](../.gitbook/assets/tu-pian-14-1-1.png)
 
 ### 提前续期/扩容
 
 平台管理员可以登录进入企业管理后台 **企业概览-当前计划** 中随时查看限额，根据当前使用情况来确定是否提前续期/扩容
 
-![](.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 同时当临近到期前30、15、7、3、2、1 天，事件量达到限额的 80%、90%、95%、99%时，系统会发出预警消息（登录后可见弹窗消息或在 消息中心 查看） 
 
-![](.gitbook/assets/image%20%28221%29.png)
+![](../.gitbook/assets/image%20%28221%29.png)
 
 ### 到期后续期/扩容
 
 若已经到期、数据量限额、擅自扩展部署节点，则直接在弹出的窗口中输入新的 License 即可
 
-![](.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
 {% hint style="info" %}
 如何获取新的 License？

@@ -11,7 +11,6 @@
   * [附：埋点方案设计](quick-start-guide/tracking-plan.md)
   * [附：数据分析思路](quick-start-guide/analystics-method.md)
 * [产品更新日志](release-notes.md)
-* [License 许可](license.md)
 * [🚀我要反馈](https://support.qq.com/products/118522?)
 
 ## 🐱 Part I 产品功能说明 <a id="features"></a>
@@ -75,6 +74,7 @@
   * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [企业设置](features/enterprise-management/enterprise.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
+* [License 许可](features/license.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>
 
