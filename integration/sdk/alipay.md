@@ -9,7 +9,7 @@ description: 支付宝小程序 SDK 使用说明
 {% hint style="info" %}
 SDK Releases包下载：  
 Github地址\(推荐\)：[https://github.com/analysys/ans-Alipay-sdk/releases](https://github.com/analysys/ans-Alipay-sdk/releases/)  
-Gitee地址：[https://gitee.com/analysys\_sdk/ans-Alipay-sdk/releases](https://gitee.com/analysys_sdk/ans-Alipay-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-Alipay-sdk/releases](https://gitee.com/Analysys/ans-Alipay-sdk/releases)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
