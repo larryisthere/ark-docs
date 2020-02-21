@@ -476,7 +476,7 @@ AnalysysAgent.profileSet("Email", "yonghu@163.com");
 // 设置用户的邮箱和微信
 var property = {
     "Email" : "yonghu@163.com",
-    "WeChatID" : "weixinhao"
+    "ID" : "baiduhao"
 }
 AnalysysAgent.profileSet(property);
 ```

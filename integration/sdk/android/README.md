@@ -14,7 +14,7 @@ Android SDK 用于 Android 原生 App，集成前请先下载 SDK
 | analysys\_visual\_xxx.jar\(aar\) | 可视化热图模块 | 可选 | 热图模块适用方舟V4.3.0及以上版本 |
 | analysys\_push\_xxx.jar\(aar\) | 推送模块 | 可选 | 全部 |
 | analysys\_encrypt\_xxx.jar\(aar\) | 加密模块 | 可选 | CBC模式适用方舟V4.2.7及以上版本 |
-| analysys\_allgro-xxx.aar | 全埋点 | 可选 | 适用方舟V4.5.3及以上版本 |
+| analysys\_allgro-xxx.aar | 全埋点 | 可选 | 适用方舟V4.6.0及以上版本 |
 | analysys\_arkanalysys-xxx.aar | 全功能包含基础模块、可视化热图模块、推送模块、加密模块、全埋点模块 | 可选 | 适用方舟V4.5.3及以上版本 |
 
 注意：请您根据自身业务需求来引用相关的SDK。
