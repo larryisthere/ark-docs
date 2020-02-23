@@ -4,7 +4,7 @@ description: Java SDK使用说明
 
 # Java SDK
 
-Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务。集成前请先登录下载SDK。
+Java SDK 主要用于服务端 Java 应用，如 Java Web 应用的后台服务。集成前请先登录下载SDK
 
 {% hint style="info" %}
 [Releases包下载及更新说明](https://github.com/analysys/ans-java-sdk/releases)
@@ -198,7 +198,7 @@ analysys.alias(registerId, distinctId, platform);
 
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.alias(registerId, distinctId, platform, myxWhen);
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ### 3.4 用户属性设置
@@ -236,21 +236,20 @@ boolean isLogin = true;
 String platform = "Android";
 //用户信息
 Map<String, Object> profiles = new HashMap<String, Object>();
-profiles.put("$city", "北京");		//城市
+profiles.put("$city", "北京");      //城市
 profiles.put("$province", "北京");  //省份
 profiles.put("nickName", "昵称123");//昵称
-profiles.put("userLevel", 0);		//用户级别
-profiles.put("userPoint", 0);		//用户积分
+profiles.put("userLevel", 0);      //用户级别
+profiles.put("userPoint", 0);      //用户积分
 List<String> interestList = new ArrayList<String>();
 interestList.add("户外活动");
 interestList.add("足球赛事");
 interestList.add("游戏");
 profiles.put("interest", interestList);//用户兴趣爱好
 analysys.profileSet(registerId, isLogin, profiles, platform);
-
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileSet(registerId, isLogin, profiles, platform, myxWhen);;
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ## 4. 更多接口
@@ -281,6 +280,9 @@ String platform = "Android";
 Map<String, Object> profile_age = new HashMap<String, Object>();
 profile_age.put("registerTime", "20180101101010");
 analysys.profileSetOnce(registerId, isLogin, profile_age, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 #### 4.1.2 设置用户属性相对变化值
@@ -307,6 +309,9 @@ String platform = "Android";
 Map<String,Object> profile = new HashMap<>();
 profile.put("userPoint",20);
 analysys.profileIncrement(registerId, isLogin, profile, platform);
+// 或者也可以使用自定义的时间戳
+String myxWhen = "1569859200000";
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 #### 4.1.3 增加列表类型的属性
@@ -337,10 +342,9 @@ interestList.add("足球赛事");
 interestList.add("游戏");
 profile.put("interest", interestList);//用户兴趣爱好
 analysys.profileAppend(registerId, isLogin, profile, platform);
-
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileAppend(registerId, isLogin, profile, platform, myxWhen);;
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -366,12 +370,11 @@ public void profileDelete(String distinctId,  boolean isLogin, String platform, 
 String registerId = "ABCDEF123456789";
 boolean isLogin = true;
 String platform = "Android";
-// 删除单个用户属性
+//  删除当前用户单个属性值
 analysys.profileUnSet(registerId, isLogin, "nickName", platform);
-
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileUnSet(registerId, isLogin, "nickName", platform, myxWhen);
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 示例2：要删除已经设置的所有用户属性
@@ -380,12 +383,11 @@ analysys.profileUnSet(registerId, isLogin, "nickName", platform, myxWhen);
 String registerId = "ABCDEF123456789";
 boolean isLogin = true;
 String platform = "Android";
-// 清除所有属性
+//  删除当前用户所有属性值
 analysys.profileDelete(registerId, isLogin, platform);
-
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileDelete(registerId, isLogin, platform, myxWhen);;
+analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen);
 ```
 
 ### 4.2 通用属性
@@ -492,17 +494,21 @@ AnalysysJavaSdk analysys = new AnalysysJavaSdk(new SyncCollecter(ANALYSYS_SERVIC
 try {
     String distinctId = "1234567890987654321";
     String platForm = "Android";
-    analysys.setDebugMode(DEBUG.CLOSE); //设置debug模式
+    analysys.setDebugMode(DEBUG.CLOSE);            //设置debug模式
     //浏览商品
     Map<String, Object> trackPropertie = new HashMap<String, Object>();
-    trackPropertie.put("$ip", "112.112.112.112"); //IP地址
+    trackPropertie.put("$ip", "112.112.112.112");  //IP地址
     List<String> bookList = new ArrayList<String>();
     bookList.add("Thinking in Java");
-    trackPropertie.put("productName", bookList);  //商品列表
+    trackPropertie.put("productName", bookList);   //商品列表
     trackPropertie.put("productType", "Java书籍"); //商品类别
-    trackPropertie.put("producePrice", 80);		  //商品价格
-    trackPropertie.put("shop", "xx网上书城");     //店铺名称
+    trackPropertie.put("producePrice", 80);       //商品价格
+    trackPropertie.put("shop", "xx网上书城");      //店铺名称
+    // 未使用自定义时间戳
     analysys.track(distinctId, false, "ViewProduct", trackPropertie, platForm);//用户注册登录
+    // 或者也可以使用自定义的时间戳
+    //String myxWhen = "1569859200000";
+    //analysys.track(distinctId, false, "ViewProduct", trackPropertie, platForm,myxWhen);
     String registerId = "ABCDEF123456789";
     analysys.alias(registerId, distinctId, platForm);//设置公共属性
     Map<String, Object> superPropertie = new HashMap<String, Object>();
@@ -510,11 +516,11 @@ try {
     superPropertie.put("age", 23);     //年龄
     analysys.registerSuperProperties(superPropertie);//用户信息
     Map<String, Object> profiles = new HashMap<String, Object>();
-    profiles.put("$city", "北京");		//城市
+    profiles.put("$city", "北京");      //城市
     profiles.put("$province", "北京");  //省份
     profiles.put("nickName", "昵称123");//昵称
-    profiles.put("userLevel", 0);		//用户级别
-    profiles.put("userPoint", 0);		//用户积分
+    profiles.put("userLevel", 0);      //用户级别
+    profiles.put("userPoint", 0);      //用户积分
     List<String> interestList = new ArrayList<String>();
     interestList.add("户外活动");
     interestList.add("足球赛事");
@@ -536,7 +542,7 @@ try {
     abookList.add("Thinking in Java");
     trackPropertie.put("productName", bookList);  //商品列表
     trackPropertie.put("productType", "Java书籍");//商品类别
-    trackPropertie.put("producePrice", 80);		  //商品价格
+    trackPropertie.put("producePrice", 80);      //商品价格
     trackPropertie.put("shop", "xx网上书城");     //店铺名称
     analysys.track(registerId, true, "ViewProduct", trackPropertie, platForm);//订单信息
     trackPropertie.clear();
