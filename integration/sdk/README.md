@@ -20,6 +20,8 @@
 
 {% page-ref page="baidu.md" %}
 
+{% page-ref page="bytedance.md" %}
+
 
 
 **服务端SDK**
