@@ -1,24 +1,22 @@
 ---
-description: 支付宝小程序 SDK 使用说明
+description: 字节跳动小程序 SDK 使用说明
 ---
 
-# 支付宝小程序 SDK
+# 字节跳动小程序 SDK
 
-支付宝小程序SDK集成前请先下载SDK
+字节跳动小程序 SDK集成前请先下载SDK
 
 {% hint style="info" %}
 SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-Alipay-sdk/releases](https://github.com/analysys/ans-Alipay-sdk/releases/)  
-Gitee地址：[https://gitee.com/Analysys/ans-Alipay-sdk/releases](https://gitee.com/Analysys/ans-Alipay-sdk/releases)  
+Github地址\(推荐\)：[https://github.com/analysys/ans-Bytedance-sdk/releases](https://github.com/analysys/ans-Bytedance-sdk/releases)  
+Gitee地址：  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_Alipay\_SDK.min.js | 基础模块SDK | 二选一 |
-| AnalysysAgent\_Alipay\_SDK.es6.min.js | 基础模块ES6语法SDK | 二选一 |
+| AnalysysAgent\_ByteDance\_SDK.min.js | 基础模块SDK | 必须 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
-| AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
 
 {% hint style="info" %}
 注意：请您根据自身业务需求来引用相关的SDK。
@@ -42,7 +40,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 #### 4. 配置上传地址域名
 
-登录支付宝开放平台，将上传地址域名配置到服务器域名白名单中
+登录字节跳动开放平台，将上传地址域名配置到服务器域名白名单中
 
 #### 5. 设置需要采集的页面或事件
 
@@ -57,7 +55,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 在app.js文件中调用小程序启动事件
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 
@@ -74,7 +72,7 @@ App({
 在每一个页面的入口js文件中调用小程序统计页面事件
 
 ```javascript
-let AnalysysAgent = my.AnalysysAgent
+let AnalysysAgent = tt.AnalysysAgent
 Page({
     onShow () {
         AnalysysAgent.pageView('首页');//页面名称可自定义。
@@ -88,50 +86,36 @@ Page({
 
 ### 集成 SDK
 
-将 AnalysysAgent\_Alipay\_SDK.custom.min.js 文件放到小程序的目录下
+将 AnalysysAgent\_ByteDance\_SDK.min.js 文件放到小程序的目录下
 
-![](../../.gitbook/assets/1575888494726.jpg)
+![](../../.gitbook/assets/1575888494726%20%281%29.jpg)
 
 支付宝小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。负责数据将无法上报。
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
 如需要加密模块
 
 ```javascript
-import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.es6.min.js'
+import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.min.js'
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
 
-es6版本不是每个框架都能用，不能使用es6的请如下使用
+在各个 Page 内通过以下代码获取 AnalysysAgent\_ByteDance\_SDK 全局函数:
 
 ```javascript
-let AnalysysAgent = require('./util/sdk/AnalysysAgent_Alipay_SDK.min.js')
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-```
-
-如需要加密模块
-
-```javascript
-let AnalysysEncryption = require('./util/sdk/AnalysysAgent_encryption.min.js')
-AnalysysAgent.encrypt = AnalysysEncryption
-```
-
-在各个 Page 内通过以下代码获取 AnalysysAgent\_Alipay\_SDK 全局函数:
-
-```javascript
-let AnalysysAgent = my.AnalysysAgent;
+let AnalysysAgent = tt.AnalysysAgent;
 ```
 
 {% hint style="info" %}
 请注意:  
 1.将 appkey 的值填入您具体的项目 appkey  
-2.目录为您所引入支付宝小程序 SDK 的具体目录
+2.目录为您所引入字节跳动小程序 SDK 的具体目录
 {% endhint %}
 
 ### 配置参数
@@ -143,6 +127,7 @@ let AnalysysAgent = my.AnalysysAgent;
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
+* _autoShare_ 设置是否采集分享事件：false\(默认\) - 关闭采集分享事件；true - 开启采集分享事件
 
 **appkey**
 
@@ -243,11 +228,25 @@ AnalysysAgent.maxDiffTimeInterval = 20
 //当服务端和客户端的时间差超过 20s 将进行时间校准 
 ```
 
+#### autoShare
+
+autoShare 为设置是否采集分享事件，只采集分享事件，不区分分享是否成功。可根据自身需要进行更改。
+
+* false 关闭采集分享事件\(默认\)。类型：Boolean。
+* true 采集分享事件。类型：Boolean。
+
+```javascript
+//关闭采集分享事件。
+AnalysysAgent.autoShare = false//或删除该行代码。
+//自动分享事件。
+AnalysysAgent.autoShare = true
+```
+
 ### 域名配置
 
 登录支付宝开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
 
-![](../../.gitbook/assets/1575888678435%20%281%29.jpg)
+![](../../.gitbook/assets/1575888678435.jpg)
 
 {% hint style="info" %}
 支付宝小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
@@ -257,7 +256,7 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 ### 启动事件接口
 
-启动事件 appStart\(options\),支付宝SDK启动事件需要手动调用，而且只能调用一次。
+启动事件 appStart\(options\),字节跳动SDK启动事件需要手动调用，而且只能调用一次。
 
 ```javascript
 //标准示例
@@ -333,6 +332,36 @@ var eventInfo = {
     "count":1
 }
 AnalysysAgent.track("buy", eventInfo);
+```
+
+### 
+
+
+
+### 采集分享按钮点击事件
+
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
+
+```javascript
+AnalysysAgent.share(properties);
+```
+
+* properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+
+示例：
+
+```javascript
+// 采集分享按钮点击事件
+Page({
+    onShareAppMessage:function(){
+        let shareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        let AnsShareProperties = AnalysysAgent.share(shareProperties);
+        return AnsShareProperties
+    }
+})
 ```
 
 ### 注册页面事件通用属性

@@ -104,6 +104,7 @@
     * [微信小程序插件版](integration/sdk/wx/wxsdkplugin.md)
     * [微信小程序通用框架版](integration/sdk/wx/wxsdkcustom.md)
   * [支付宝小程序 SDK](integration/sdk/alipay.md)
+  * [字节跳动小程序 SDK](integration/sdk/zi-jie-tiao-dong-xiao-cheng-xu-sdk.md)
   * [百度小程序 SDK](integration/sdk/baidu.md)
   * [Java SDK](integration/sdk/java.md)
   * [Python SDK](integration/sdk/python.md)
