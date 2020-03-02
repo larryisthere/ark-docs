@@ -34,7 +34,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 ```java
 private const string APP_KEY = "APPKEY";
 private const string ANALYSYS_SERVICE_URL = @"http://host:port";
-AnalysysDotNetSdk analysys = new AnalysysDotNetSdk(new SyncCollecter(ANALYSYS_SERVICE_URL), APP_KEY);;
+AnalysysDotNetSdk analysys = new AnalysysDotNetSdk(new SyncCollecter(ANALYSYS_SERVICE_URL), APP_KEY);;;
 ```
 
 * APPKEY：网站获取的 Key
@@ -311,7 +311,7 @@ public void profileAppend(string distinctId, bool isLogin, Dictionary<string, ob
 ```csharp
 String registerId = "ABCDEF123456789";
 boolean isLogin = true;
-    String platform = "DotNet";
+String platform = "DotNet";
 Map<String,Object> profile = new HashMap<>();
 List<String> interestList = new ArrayList<String>();
 interestList.add("户外活动");
@@ -322,7 +322,7 @@ analysys.profileAppend(registerId, isLogin, profile, platform);
 
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileAppend(registerId, isLogin, profile, platform, myxWhen);;
+analysys.profileAppend(registerId, isLogin, profile, platform, myxWhen);
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -367,7 +367,7 @@ analysys.profileDelete(registerId, isLogin, platform);
 
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileDelete(registerId, isLogin, platform, myxWhen);;
+analysys.profileDelete(registerId, isLogin, platform, myxWhen);
 ```
 
 ### 4.2 通用属性
