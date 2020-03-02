@@ -4,10 +4,12 @@ description: 'C# SDK 主要用于服务端或客户端 C# 应用。'
 
 # C\# SDK
 
+
+
 {% hint style="info" %}
 SDK Releases包下载：  
 Github地址\(推荐\)：[https://github.com/analysys/ans-DotNet-sdk/releases](https://github.com/analysys/ans-DotNet-sdk/releases)  
-Gitee地址：[https://gitee.com/Analysys/ans-ans-DotNet-sdk/releases](https://gitee.com/Analysys/ans-ans-DotNet-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-DotNet-sdk/releases](https://gitee.com/Analysys/ans-DotNet-sdk/releases)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
