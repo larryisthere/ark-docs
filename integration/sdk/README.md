@@ -6,7 +6,7 @@
 
 ## SDK 相关文档
 
-**移动端 SDK**
+**平台版 SDK**
 
 {% page-ref page="android/" %}
 
