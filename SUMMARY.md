@@ -110,6 +110,7 @@
   * [Python SDK](integration/sdk/python.md)
   * [PHP SDK](integration/sdk/php.md)
   * [C++ SDK](integration/sdk/c++.md)
+  * [C\# SDK](integration/sdk/dotnet.md)
   * [Node JS SDK](integration/sdk/node-sdk.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
 * [数据验证](integration/data-verification/README.md)
