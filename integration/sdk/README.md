@@ -6,7 +6,7 @@
 
 ## SDK 相关文档
 
-**客户端SDK**
+**移动端 SDK**
 
 {% page-ref page="android/" %}
 
@@ -24,7 +24,7 @@
 
 
 
-**服务端SDK**
+**语言版 SDK**
 
 {% page-ref page="java.md" %}
 
