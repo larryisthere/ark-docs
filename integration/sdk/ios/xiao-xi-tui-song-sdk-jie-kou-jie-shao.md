@@ -2,7 +2,7 @@
 description: 以下接口生效依赖于推送模块，需集成推送相关AnalysysPush.framework文件，请正确集成。
 ---
 
-# 消息推送SDK接口介绍
+# 消息推送模块
 
 ## 简介
 

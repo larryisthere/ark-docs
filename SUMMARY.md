@@ -95,7 +95,7 @@
   * [iOS SDK](integration/sdk/ios/README.md)
     * [全埋点介绍](integration/sdk/ios/quan-mai-dian-jie-shao.md)
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
-    * [消息推送SDK接口介绍](integration/sdk/ios/xiao-xi-tui-song-sdk-jie-kou-jie-shao.md)
+    * [消息推送模块](integration/sdk/ios/xiao-xi-tui-song-sdk-jie-kou-jie-shao.md)
   * [JS SDK](integration/sdk/js/README.md)
     * [JS SDK标准版](integration/sdk/js/js.md)
     * [JS SDK插件](integration/sdk/js/plus.md)
