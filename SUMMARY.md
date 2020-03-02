@@ -88,7 +88,7 @@
   * [分平台上报数据 vs 跨平台打通](integration/prepare/cross-platform.md)
 * [SDK 指南](integration/sdk/README.md)
   * [Android SDK](integration/sdk/android/README.md)
-    * [全埋点介绍](integration/sdk/android/quan-mai-dian-jie-shao.md)
+    * [全埋点模块](integration/sdk/android/quan-mai-dian-jie-shao.md)
     * [消息推送模块](integration/sdk/android/xiao-xi-tui-song-mo-kuai.md)
     * [Android Hybrid模式](integration/sdk/android/hybrid-android.md)
     * [SDK Gradle集成方式](integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi.md)
