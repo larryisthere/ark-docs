@@ -7,7 +7,10 @@ description: Node SDK 主要用于服务端 Node 应用，如 Node Web 应用的
 Node JS SDK 集成前请先下载 SDK
 
 {% hint style="info" %}
-[Releases包下载及更新说明](https://github.com/analysys/ans-node-sdk/releases)
+SDK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-node-sdk/releases](https://github.com/analysys/ans-node-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-node-sdk/releases](https://gitee.com/Analysys/ans-node-sdk/releases)  
+Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | 文件名 | 功能描述 | 是否必须 |
@@ -19,20 +22,38 @@ Node JS SDK 集成前请先下载 SDK
 
 注意：请您根据自身业务需求来引用相关的SDK。
 
-## 1. 集成 SDK
+## 集成 SDK
 
-SDK目前提供了两个版本 非es6（cjs） 和 es6 两个版本
+SDK目前提供了以下方集成方式
 
-### **1.1代码引入**
+### **NPM引入**
+
+**使用NPM方式引入 ，安装 ans-node-sdk**
 
 ```javascript
-// es6 方法引入
-  import AnalysysAgent from './sdk/AnalysysAgent_NodeJS_SDK.es6.js';
-  import LogCollector from './sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.es6.js';
+npm install ans-node-sdk --save
 
-// cjs 方法引入
-  let AnalysysAgent = require('./sdk/AnalysysAgent_NodeJS_SDK.cjs.js');
-  let LogCollector = require('./sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
+  // es6 
+  import AnalysysAgent from "ans-node-sdk"
+  import LogCollector  from 'ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js.js';
+
+  // 非es6 
+  var AnalysysAgent = require("ans-node-sdk");
+  var LogCollector = require('ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
+```
+
+###  **手动引入**
+
+**SDK目前提供了两个版本 非es6（cjs） 和 es6 两个版本**
+
+```javascript
+  // es6 
+  import AnalysysAgent from "ans-node-sdk"
+  import LogCollector  from 'ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js';
+
+  // 非es6 
+  var AnalysysAgent = require("ans-node-sdk");
+  var LogCollector = require('ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
 ```
 
 ## 2. SDK 初始化
@@ -471,7 +492,7 @@ analysys.clearSuperProperties();
 
 ```cpp
 getSuperProperty(key);
-getSuperProperties();;
+getSuperProperties();
 ```
 
 * Key：属性名称
