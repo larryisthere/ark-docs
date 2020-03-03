@@ -33,15 +33,15 @@ SDK目前提供了以下方集成方式
 ```javascript
 npm install ans-node-sdk --save
 
-  // es6 
-  import AnalysysAgent from "ans-node-sdk"
-  // 落文件功能，不需要则不用引入
-  import LogCollector  from 'ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js';
+// es6 
+import AnalysysAgent from "ans-node-sdk"
+// 落文件功能，不需要则不用引入
+import LogCollector  from 'ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js';
 
-  // 非es6 
-  var AnalysysAgent = require("ans-node-sdk");
-  // 落文件功能，不需要则不用引入
-  var LogCollector = require('ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
+// 非es6 
+var AnalysysAgent = require("ans-node-sdk");
+// 落文件功能，不需要则不用引入
+var LogCollector = require('ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
 ```
 
 ###  **手动引入**
@@ -49,16 +49,15 @@ npm install ans-node-sdk --save
 **SDK目前提供了两个版本 非es6（cjs） 和 es6 两个版本**
 
 ```javascript
-  // es6 
-  import AnalysysAgent from "./sdk/AnalysysAgent_NodeJS_SDK.es6.js"
-  // 落文件功能，不需要则不用引入
-  import LogCollector  from './sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.es6.js';
+// es6 
+import AnalysysAgent from "./sdk/AnalysysAgent_NodeJS_SDK.es6.js"
+// 落文件功能，不需要则不用引入
+import LogCollector  from './sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.es6.js';
 
-
-  // 非es6 
-  var AnalysysAgent = require("./sdk/AnalysysAgent_NodeJS_SDK.cjs.js");
-  // 落文件功能，不需要则不用引入
-  var LogCollector = require('./sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
+// 非es6 
+var AnalysysAgent = require("./sdk/AnalysysAgent_NodeJS_SDK.cjs.js");
+// 落文件功能，不需要则不用引入
+var LogCollector = require('./sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js');
 ```
 
 ## 2. SDK 初始化
