@@ -36,7 +36,7 @@ npm install ans-node-sdk --save
   // es6 
   import AnalysysAgent from "ans-node-sdk"
   // 落文件功能，不需要则不用引入
-  import LogCollector  from 'ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js.js';
+  import LogCollector  from 'ans-node-sdk/sdk/AnalysysAgent_NodeJS_SDK_LogCollecter.cjs.js';
 
   // 非es6 
   var AnalysysAgent = require("ans-node-sdk");
