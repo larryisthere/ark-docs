@@ -57,9 +57,39 @@ description: 微信小程序插件版（Frame）
 
 ## 集成配置
 
-### 集成 SDK
+### NPM**集成**
 
-将 AnalysysAgent\_WX\_SDK.cunstom.min.js或AnalysysAgent\_WX\_SDK.cunstom.es6.min.js 文件放到小程序的目录下
+使用NPM方式集成SDK，参考一下代码：
+
+```javascript
+npm install ans-wechat-sdk --save
+
+// 非es6 
+var AnalysysAgent = require("ans-wechat-sdk");
+// 小程序提供了加密模块 根据自己需要引入
+var AnalysysEncryption = require('ans-wechat-sdk/sdk/AnalysysAgent_encryption.min.js');
+// sdk 与 加密模块关联
+AnalysysAgent.encrypt = AnalysysEncryption;
+
+// es6 
+import AnalysysAgent from "ans-wechat-sdk"
+import AnalysysEncryption  from 'ans-wechat-sdk/sdk/AnalysysAgent_encryption.min.js';
+AnalysysAgent.encrypt = AnalysysEncryption;
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+App({
+    onShow : function( options ){
+        //设置微信小程序启动事件,并传输UTM等参数
+        AnalysysAgent.appStart(options)
+    }
+});
+```
+
+### 源代码集成
+
+使用源文件方式集成，将 AnalysysAgent\_WX\_SDK.cunstom.min.js或AnalysysAgent\_WX\_SDK.cunstom.es6.min.js 文件放到小程序的目录下
+
+
 
 ![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614101827.png)
 

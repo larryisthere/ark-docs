@@ -22,13 +22,9 @@ HTTP\(S\)，POST方式
 http(s)://host:port/up
 ```
 
-### 请求参数
+### 请求数据
 
-| 英文名称 | 中文名称 | 参数类型 | 可选标志 | 参数说明 |
-| :--- | :--- | :--- | :--- | :--- |
-| data | 上报数据 | 字符串 | 必填 | 数据明文为JsonArray的形式，上报时需要做压缩和编码处理，具体为：先gzip，然后base64 |
-
-上报的data明文如下：
+请求的 Body 体里面存放具体要上报的数据，数据明文为 JsonArray 的形式。上报的数据明文示例如下：
 
 ```javascript
 [{
@@ -52,45 +48,72 @@ http(s)://host:port/up
 }]
 ```
 
+### 数据编码
+
+请使用 UTF-8 编码。上报数据可以使用明文上报，也可以对数据进行压缩/编码处理后进行上报。压缩/编码过程具体为：先进行Gzip压缩，然后进行Base64编码，最后把编码后的数据直接放到Body体里面上报即可。
+
 ### 应答格式
 
-上报成功：{"code":200}
+* 上报成功：{"code":200}
+* 上报失败：{"code":500}
+* 上报数据格式错误：{"code":xxx, "msg":"xxxxx"}，返回的应答消息中包含"msg"字段，内容为具体的异常信息。
 
-上报失败：{"code":500}
+API调用参考示例
 
-格式错误：{"code":400, "msg":"xxxxx"}
+```text
+  String uploadUrl = "http://ip:port/up";
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("[{");
+        buffer.append("\"appid\":\"demo\",");
+        buffer.append("\"xwho\":\"8c0eebf0-2383-44bc-b8ba-a5c719fc6194\",");
+        buffer.append("\"xwhat\":\"confirmOrder\",");
+        buffer.append("\"xwhen\":1532514947857,");
+        buffer.append("\"xcontext\":{");
+        buffer.append("\"$channel\":\"豌豆荚\",");
+        buffer.append("\"$app_version\":\"4.0.4.001\",");
+        buffer.append("\"$model\":\"MI6X\",");
+        buffer.append("\"$os\":\"Android\",");
+        buffer.append("\"$os_version\":\"8.1.0\",");
+        buffer.append("\"$lib\":\"Android\",");
+        buffer.append("\"$platform\":\"Android\",");
+        buffer.append("\"$is_login\":false,");
+        buffer.append("\"$lib_version\":\"4.0.4\",");
+        buffer.append("\"$debug\":2,");
+        buffer.append("\"$importFlag\":1");
+        buffer.append("}");
+        buffer.append("}]");
+        String uploadJsonData = buffer.toString();
+        
+        /*// 对数据进行压缩/编码(可选)
+        String gzipUploadJsonData = GZIPInputStreamUtil.encode(uploadJsonData); // GZIP压缩
+        String base64UploadJsonData = Base64Util.encode(gzipUploadJsonData);    // Base64编码
+        uploadJsonData = base64UploadJsonData;*/
+        
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        try {
+            HttpPost httpPost = new HttpPost(uploadUrl);
+            StringEntity req = new StringEntity(uploadJsonData);
+            req.setContentEncoding("UTF-8");
+            httpPost.setEntity(req);
+            httpclient.execute(httpPost);
+        } catch (Exception e) {
+            exceptionHandle(e);
+        } finally {
+            try {
+                httpclient.close();
+            } catch (IOException e) {
+                logger.errot(e);
+            }
+        }
+```
 
-### **应答参数**
+{% hint style="info" %}
+没有特殊需求的情况下，不建议使用该API直接上报数据。推荐使用SDK进行数据上报，SDK有完善的数据校验等功能，更安全可靠。
+{% endhint %}
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center">&#x82F1;&#x6587;&#x540D;&#x79F0;</th>
-      <th style="text-align:center">&#x4E2D;&#x6587;&#x540D;&#x79F0;</th>
-      <th style="text-align:center">&#x53C2;&#x6570;&#x7C7B;&#x578B;</th>
-      <th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:center"><b>code</b>
-      </td>
-      <td style="text-align:center">&#x54CD;&#x5E94;&#x7801;</td>
-      <td style="text-align:center">String</td>
-      <td style="text-align:center">
-        <p>500&#xFF1A;&#x5931;&#x8D25;</p>
-        <p>200&#xFF1A;&#x6210;&#x529F;</p>
-        <p>400&#xFF1A;&#x4E0A;&#x4F20;&#x62A5;&#x6587;&#x683C;&#x5F0F;&#x9519;&#x8BEF;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>## 数据格式及约束
+## 数据格式及约束
 
 数据上报需要符合一定的格式以及规范。服务器会对上报的数据做有效性校验，不符合规范的数据会返回给调用方错误信息。
-
-### 编码
-
-请使用 UTF-8 编码。然后顺序进行 Gzip（可选）、Base64及UrlEncode。
 
 ### 字段说明
 
