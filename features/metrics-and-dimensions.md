@@ -64,7 +64,7 @@
 
 UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。对于网站而言，根据cookie生成的ID为判断标准，如果访客更换浏览器或清除cookie，会计为新的UV。
 
-![](../.gitbook/assets/image%20%28242%29.png)
+![](../.gitbook/assets/image%20%28243%29.png)
 
 ### APP 活跃用户数
 
@@ -149,7 +149,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月每天支付成功的用户数，当同一个用户在同一天里多次购买成功支付时，在这一天里这个用户只会被记1。
 
-![](../.gitbook/assets/image%20%28215%29.png)
+![](../.gitbook/assets/image%20%28216%29.png)
 
 ### 事件 X 的触发次数
 
@@ -198,7 +198,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的订单的平均金额，即订单金额总和/订单数。
 
-![](../.gitbook/assets/image%20%28264%29.png)
+![](../.gitbook/assets/image%20%28265%29.png)
 
 ### 事件 X 的属性 Y 的最大值
 
@@ -214,7 +214,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的最小订单金额。
 
-![](../.gitbook/assets/image%20%28251%29.png)
+![](../.gitbook/assets/image%20%28252%29.png)
 
 ### 事件 X 的属性 Y 的人均值
 
@@ -232,11 +232,11 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 支持加、减、乘、除、括号及常数的四则运算
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28243%29.png)
+![](../.gitbook/assets/image%20%28244%29.png)
 
 比如通过支付订单金额总和 - 退货金额总和 即可创建出实际完成订单金额的指标，如下图表示过去7天实际完成订单金额的趋势，可以增加额外指标对比分析。
 
-![](../.gitbook/assets/image%20%28259%29.png)
+![](../.gitbook/assets/image%20%28260%29.png)
 
 更多使用详见
 
@@ -496,7 +496,7 @@ e.g. 对于电商的运营，可以定义【 初始行为 = 支付订单，回�
 
 如下图，表示过去7日，启动小于3次、3～5次、5～10次、10～20次、20～50次、50～100次、100次以上的用户数
 
-![](../.gitbook/assets/image%20%28246%29.png)
+![](../.gitbook/assets/image%20%28247%29.png)
 
 ### 事件 X 的发生时段分布
 
