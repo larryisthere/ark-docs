@@ -61,41 +61,41 @@ http(s)://host:port/up
 API调用参考示例
 
 ```text
-  String uploadUrl = "http://ip:port/up";
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("\"appid\":\"demo\",");
-        buffer.append("\"xwho\":\"8c0eebf0-2383-44bc-b8ba-a5c719fc6194\",");
-        buffer.append("\"xwhat\":\"confirmOrder\",");
-        buffer.append("\"xwhen\":1532514947857,");
-        buffer.append("\"xcontext\":{");
-        buffer.append("\"$channel\":\"豌豆荚\",");
-        buffer.append("\"$app_version\":\"4.0.4.001\",");
-        buffer.append("\"$model\":\"MI6X\",");
-        buffer.append("\"$os\":\"Android\",");
-        buffer.append("\"$os_version\":\"8.1.0\",");
-        buffer.append("\"$lib\":\"Android\",");
-        buffer.append("\"$platform\":\"Android\",");
-        buffer.append("\"$is_login\":false,");
-        buffer.append("\"$lib_version\":\"4.0.4\",");
-        buffer.append("\"$debug\":2,");
-        buffer.append("\"$importFlag\":1");
-        buffer.append("}");
-        buffer.append("}]");
-        String uploadJsonData = buffer.toString();
-        
-        /*// 对数据进行压缩/编码(可选)
-        String gzipUploadJsonData = GZIPInputStreamUtil.encode(uploadJsonData); // GZIP压缩
-        String base64UploadJsonData = Base64Util.encode(gzipUploadJsonData);    // Base64编码
-        uploadJsonData = base64UploadJsonData;*/
-        
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-        try {
-            HttpPost httpPost = new HttpPost(uploadUrl);
-            StringEntity req = new StringEntity(uploadJsonData);
-            req.setContentEncoding("UTF-8");
-            httpPost.setEntity(req);
-            httpclient.execute(httpPost);
+String uploadUrl = "http://ip:port/up";
+StringBuffer buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("\"appid\":\"demo\",");
+buffer.append("\"xwho\":\"8c0eebf0-2383-44bc-b8ba-a5c719fc6194\",");
+buffer.append("\"xwhat\":\"confirmOrder\",");
+buffer.append("\"xwhen\":1532514947857,");
+buffer.append("\"xcontext\":{");
+buffer.append("\"$channel\":\"豌豆荚\",");
+buffer.append("\"$app_version\":\"4.0.4.001\",");
+buffer.append("\"$model\":\"MI6X\",");
+buffer.append("\"$os\":\"Android\",");
+buffer.append("\"$os_version\":\"8.1.0\",");
+buffer.append("\"$lib\":\"Android\",");
+buffer.append("\"$platform\":\"Android\",");
+buffer.append("\"$is_login\":false,");
+buffer.append("\"$lib_version\":\"4.0.4\",");
+buffer.append("\"$debug\":2,");
+buffer.append("\"$importFlag\":1");
+buffer.append("}");
+buffer.append("}]");
+String uploadJsonData = buffer.toString();
+
+/*// 对数据进行压缩/编码(可选)
+String gzipUploadJsonData = GZIPInputStreamUtil.encode(uploadJsonData); // GZIP压缩
+String base64UploadJsonData = Base64Util.encode(gzipUploadJsonData);    // Base64编码
+uploadJsonData = base64UploadJsonData;*/
+
+CloseableHttpClient httpclient = HttpClients.createDefault();
+    try {
+        HttpPost httpPost = new HttpPost(uploadUrl);
+        StringEntity req = new StringEntity(uploadJsonData);
+        req.setContentEncoding("UTF-8");
+        httpPost.setEntity(req);
+        httpclient.execute(httpPost);
         } catch (Exception e) {
             exceptionHandle(e);
         } finally {
@@ -394,152 +394,147 @@ $pageview：浏览页面，打开页面时触发
 
 ```java
 String appid = "1234";
-        String service_url = "http://host:port/up;
-        String distinctId = "1234567890987654321"; //用户匿名ID
-        //浏览商品
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + distinctId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"ViewProduct\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"$ip\":\"112.112.112.112\",");
-        buffer.append("       \"productName\":[\"Thinking in Java\"],");
-        buffer.append("       \"productType\":\"Java书籍\",");
-        buffer.append("       \"producePrice\":80,");
-        buffer.append("       \"shop\":\"xx网上书城\",");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":false,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
+String service_url = "http://host:port/up;
+String distinctId = "1234567890987654321"; //用户匿名ID
+//浏览商品
+StringBuffer buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + distinctId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"ViewProduct\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"$ip\":\"112.112.112.112\",");
+buffer.append("       \"productName\":[\"Thinking in Java\"],");
+buffer.append("       \"productType\":\"Java书籍\",");
+buffer.append("       \"producePrice\":80,");
+buffer.append("       \"shop\":\"xx网上书城\",");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":false,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
+//用户注册登录
+buffer = new StringBuffer();
+String registerId = "ABCDEF123456789";
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + registerId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"$alias\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":true,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0,");
+buffer.append("       \"$original_id\":\"" + distinctId + "\"");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
+//用户信息
+buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + registerId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"$profile_set\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":true,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0,");
+buffer.append("       \"nickName\":\"昵称123\",");
+buffer.append("       \"userLevel\":0,");
+buffer.append("       \"userPoint\":0,");
+buffer.append("       \"interest\":[\"户外活动\",\"足球赛事\",\"游戏\"]");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
+//用户注册时间
+buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + registerId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"$profile_set_once\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":true,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0,");
+buffer.append("       \"registerTime\":\"20180101101010\"");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
 
-        //用户注册登录
-        buffer = new StringBuffer();
-        String registerId = "ABCDEF123456789";
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + registerId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"$alias\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":true,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0,");
-        buffer.append("       \"$original_id\":\"" + distinctId + "\"");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
-
-        //用户信息
-        buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + registerId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"$profile_set\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":true,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0,");
-        buffer.append("       \"nickName\":\"昵称123\",");
-        buffer.append("       \"userLevel\":0,");
-        buffer.append("       \"userPoint\":0,");
-        buffer.append("       \"interest\":[\"户外活动\",\"足球赛事\",\"游戏\"]");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
-
-        //用户注册时间
-        buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + registerId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"$profile_set_once\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":true,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0,");
-        buffer.append("       \"registerTime\":\"20180101101010\"");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
-
-        //再次浏览商品
-        buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + registerId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"ViewProduct\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"$ip\":\"112.112.112.112\",");
-        buffer.append("       \"productName\":[\"Thinking in Java\"],");
-        buffer.append("       \"productType\":\"Java书籍\",");
-        buffer.append("       \"producePrice\":80,");
-        buffer.append("       \"shop\":\"xx网上书城\",");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":true,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
-
-        //订单信息
-        buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + registerId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"Order\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"orderId\":\"ORDER_12345\",");
-        buffer.append("       \"price\":80,");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":true,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
-
-        //购买商品
-        buffer = new StringBuffer();
-        buffer.append("[{");
-        buffer.append("   \"xwho\":\"" + registerId + "\",");
-        buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
-        buffer.append("   \"xwhat\":\"Payment\",");
-        buffer.append("   \"appid\":\"" + appid + "\",");
-        buffer.append("   \"xcontext\":{");
-        buffer.append("       \"orderId\":\"ORDER_12345\",");
-        buffer.append("       \"price\":80,");
-        buffer.append("       \"productNumber\":\"AliPay\",");
-        buffer.append("       \"paymentMethod\":80,");
-        buffer.append("       \"productName\":[\"Thinking in Java\"],");
-        buffer.append("       \"productType\":\"Java书籍\",");
-        buffer.append("       \"producePrice\":80,");
-        buffer.append("       \"$platform\":\"Android\",");
-        buffer.append("       \"$lib\":\"Android\",");
-        buffer.append("       \"$is_login\":true,");
-        buffer.append("       \"$lib_version\":\"0.1.0\",");
-        buffer.append("       \"$debug\":0");
-        buffer.append("   }");
-        buffer.append("}]");
-        postDataToServer(service_url, buffer.toString());
+//再次浏览商品
+buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + registerId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"ViewProduct\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"$ip\":\"112.112.112.112\",");
+buffer.append("       \"productName\":[\"Thinking in Java\"],");
+buffer.append("       \"productType\":\"Java书籍\",");
+buffer.append("       \"producePrice\":80,");
+buffer.append("       \"shop\":\"xx网上书城\",");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":true,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
+//订单信息
+buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + registerId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"Order\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"orderId\":\"ORDER_12345\",");
+buffer.append("       \"price\":80,");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":true,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
+//购买商品
+buffer = new StringBuffer();
+buffer.append("[{");
+buffer.append("   \"xwho\":\"" + registerId + "\",");
+buffer.append("   \"xwhen\":\"" + System.currentTimeMillis() + "\",");
+buffer.append("   \"xwhat\":\"Payment\",");
+buffer.append("   \"appid\":\"" + appid + "\",");
+buffer.append("   \"xcontext\":{");
+buffer.append("       \"orderId\":\"ORDER_12345\",");
+buffer.append("       \"price\":80,");
+buffer.append("       \"productNumber\":\"AliPay\",");
+buffer.append("       \"paymentMethod\":80,");
+buffer.append("       \"productName\":[\"Thinking in Java\"],");
+buffer.append("       \"productType\":\"Java书籍\",");
+buffer.append("       \"producePrice\":80,");
+buffer.append("       \"$platform\":\"Android\",");
+buffer.append("       \"$lib\":\"Android\",");
+buffer.append("       \"$is_login\":true,");
+buffer.append("       \"$lib_version\":\"0.1.0\",");
+buffer.append("       \"$debug\":0");
+buffer.append("   }");
+buffer.append("}]");
+postDataToServer(service_url, buffer.toString());
 ```
 
 以上各个流程对应的上报的JSON明文如下：
