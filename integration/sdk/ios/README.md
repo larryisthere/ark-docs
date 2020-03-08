@@ -1,11 +1,16 @@
+---
+description: iOS SDK 适用于 iOS 原生 App，集成前请先下载 SDK
+---
+
 # iOS SDK
 
 ## iOS SDK 使用说明
 
-iOS SDK 适用于 iOS 原生 App，集成前请先下载 SDK
-
 {% hint style="info" %}
-[Releases包下载及更新说明](https://github.com/analysys/ans-ios-sdk/releases)
+SDK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-ios-sdk/releases](https://github.com/analysys/ans-ios-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-ios-sdk/releases](https://gitee.com/Analysys/ans-ios-sdk/releases)  
+Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | framework | 功能描述 | 是否必选 | 服务端版本 |
@@ -370,33 +375,6 @@ Swift代码示例:
 
 ```swift
 AnalysysAgent.setPageViewBlackListByPages(["packageName.NextViewController"]);
-```
-
-#### 
-
-#### 忽略部分页面自动采集
-
-开发者可以设置某些页面不被自动采集，设置后自动采集时将会忽略这些页面。接口如下:
-
-```objectivec
-+ (void)setIgnoredAutomaticCollectionControllers:(NSArray<NSString *> *)controllers;
-```
-
-* controllers：需要忽略的控制器名称，字符串数组。
-
-示例：
-
-```objectivec
-//  忽略页面'NextViewController'自动采集
-[AnalysysAgent setIgnoredAutomaticCollectionControllers:@[@"NextViewController"]];
-```
-
-Swift代码示例:
-
-必须使用 `包名.类名`
-
-```swift
-AnalysysAgent.setIgnoredAutomaticCollectionControllers(["packageName.NextViewController"]);
 ```
 
 #### 自动采集添加自定义信息
@@ -1004,6 +982,61 @@ Swift代码示例:
 
 ```swift
 AnalysysAgent.flush()
+```
+
+**清理本地缓存**
+
+将本地数据库缓存数据全部清除。请谨慎使用该接口。接口如下：
+
+```objectivec
++ (void)cleanDBCache;
+```
+
+示例：
+
+```objectivec
+[AnalysysAgent cleanDBCache];
+```
+
+Swift代码示例:
+
+```swift
+AnalysysAgent.cleanDBCache()    
+```
+
+**数据网络上传策略**
+
+控制某种网络情况下上传数据，接口如下：
+
+```objectivec
+/**
+ 允许数据上传的网络类型
+ 
+ - AnalysysNetworkNONE: 不允许上传
+ - AnalysysNetworkWWAN: 移动网络
+ - AnalysysNetworkWIFI: WIFI网络
+ - AnalysysNetworkALL: 有网络即可
+ */
+typedef NS_ENUM(NSInteger, AnalysysNetworkType) {
+    AnalysysNetworkNONE = 1<<0,
+    AnalysysNetworkWWAN = 1<<1,
+    AnalysysNetworkWIFI = 1<<2,
+    AnalysysNetworkALL = 0xFF
+};
+
++ (void)setUploadNetworkType:(AnalysysNetworkType)networkType;
+```
+
+示例：仅WIFI下数据上传，可直接调用
+
+```objectivec
+[AnalysysAgent setUploadNetworkType:AnalysysNetworkWIFI];
+```
+
+Swift代码示例:
+
+```swift
+AnalysysAgent.setUploadNetworkType(.WIFI)
 ```
 
 ### 获取预置属性
