@@ -497,7 +497,7 @@ AnalysysAgent.setPushProvider(.jiGuang, pushID: "191e35f7e01617e5181")
 #endif
 ```
 
-信鸽推送
+### 信鸽推送
 
 ```objectivec
 - (void)xgPushDidReceiveRemoteNotification:(id)notification withCompletionHandler:(void (^)(NSUInteger))completionHandler {
