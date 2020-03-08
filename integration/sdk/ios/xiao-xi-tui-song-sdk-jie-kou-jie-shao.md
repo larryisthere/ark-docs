@@ -158,9 +158,6 @@ AnalysysAgent.setPushProvider(.jiGuang, pushID: "191e35f7e01617e5181")
 @interface AppDelegate () <UIApplicationDelegate, GeTuiSdkDelegate, UNUserNotificationCenterDelegate>
 
 @end
-```
-
-```objectivec
 #import <AnalysysAgent/AnalysysAgent.h>
 //  获取 APNS Token 值
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -174,6 +171,54 @@ AnalysysAgent.setPushProvider(.jiGuang, pushID: "191e35f7e01617e5181")
 - (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
     //  回传
     [AnalysysAgent setPushProvider:AnalysysPushGeTui pushID:clientId];
+}
+```
+
+
+
+### 阿里云推送
+
+请下载最新的阿里云推送SDK，并根据[《iOS SDK配置》](https://help.aliyun.com/document_detail/30072.html?spm=a2c4g.11186623.2.11.28ad120dG5Nj8n)正确集成至App中。
+
+注册方舟推送标识：注册阿里云推送成功后，会返回 `DeviceId`，将此 `DeviceId` 回传方舟SDK即可。
+
+```objectivec
+#import <AnalysysAgent/AnalysysAgent.h>
+
+@interface AppDelegate () <UIApplicationDelegate, UNUserNotificationCenterDelegate>
+
+@end
+
+//  获取 APNS Token 值
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+   [CloudPushSDK asyncInit:@"*****" appSecret:@"*****" callback:^(CloudPushCallbackResult *res) {
+        if (res.success) {
+            //   回传方舟阿里云推送标识
+            [AnalysysAgent setPushProvider:AnalysysPushALi pushID:[CloudPushSDK getDeviceId]];
+        } else {
+            NSLog(@"Push SDK init failed, error: %@", res.error);
+        }
+    }];
+}
+
+```
+
+### 信鸽推送
+
+请下载最新的腾讯信鸽推送SDK，并根据[《iOS集成接入指南》](https://xg.qq.com/docs/ios_access/ios_access_guide.html)正确集成至App中。
+
+注册方舟推送标识：注册信鸽推送成功后，会返回 `deviceToken`，将此 `deviceToken` 回传方舟SDK即可。
+
+```objectivec
+@interface AppDelegate () <XGPushDelegate>
+
+@end
+
+- (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken error:(nullable NSError *)error {
+    NSLog(@"deviceToken：%@ error:%@", deviceToken, error.description);
+    //  回传方舟推送设备标识
+    [AnalysysAgent setPushProvider:AnalysysPushXinGe pushID:deviceToken];
 }
 ```
 
@@ -399,7 +444,89 @@ AnalysysAgent.setPushProvider(.jiGuang, pushID: "191e35f7e01617e5181")
 }
 ```
 
-注：iOS 10.0以下回调方法统一调用的方法：
+### 
+
+### 阿里云推送
+
+```objectivec
+#pragma mark - UIApplicationDelegate
+
+// 收到通知 >= iOS 7 <iOS 10
+//  默认前台
+//  后台通知需设置Capabilities 开启Remote notifications
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+     //  方舟SDK推送处理（方法见文档尾部）
+     [self handleRemoteNotificationWithApplication:application userInfo:userInfo];
+     
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+//  iOS 10: App在前台获取到通知
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler  API_AVAILABLE(ios(10.0)){
+
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //  方舟SDK推送处理
+        //  收到推送消息，追踪"App 消息推送"事件
+        [AnalysysAgent trackCampaign:userInfo isClick:NO userCallback:^(id campaignInfo) {
+            NSLog(@"campaignInfo:%@", campaignInfo);
+        }];
+    }
+    
+    completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+}
+
+//  iOS 10: 点击通知进入App时触发
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler API_AVAILABLE(ios(10.0)){
+
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //  方舟SDK推送处理
+        //  点击通知栏打开消息，记录"App 点击通知"事件
+        [AnalysysAgent trackCampaign:userInfo isClick:YES userCallback:^(id campaignInfo) {
+            NSLog(@"campaignInfo:%@", campaignInfo);
+        }];
+    }
+    
+    completionHandler();
+}
+#endif
+```
+
+信鸽推送
+
+```objectivec
+- (void)xgPushDidReceiveRemoteNotification:(id)notification withCompletionHandler:(void (^)(NSUInteger))completionHandler {
+    
+    if (@available(iOS 10.0, *)) {
+        if ([notification isKindOfClass:[UNNotification class]]) {
+            UNNotification *not = (UNNotification *)notification;
+            //  方舟SDK推送处理
+            [AnalysysAgent trackCampaign:not.request.content.userInfo isClick:NO userCallback:^(id campaignInfo) {
+                NSLog(@"信鸽：receive campaignInfo：%@", campaignInfo);
+            }];
+            
+            [[XGPush defaultManager] reportXGNotificationInfo:((UNNotification *)notification).request.content.userInfo];
+            completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+        }
+    } else {
+        if ([notification isKindOfClass:[NSDictionary class]]) {
+        
+           //  方舟SDK推送处理（方法见文档尾部）
+            [self handleRemoteNotificationWithApplication:[UIApplication sharedApplication] userInfo:notification];
+            
+            [[XGPush defaultManager] reportXGNotificationInfo:(NSDictionary *)notification];
+            completionHandler(UIBackgroundFetchResultNewData);
+        }
+    }
+}
+```
+
+### iOS 10.0以下回调方法统一调用的方法：
 
 ```objectivec
 //  <iOS 10 版本统一处理通知回调方法
