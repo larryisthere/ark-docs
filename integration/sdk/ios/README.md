@@ -134,6 +134,7 @@ end
 > * channel：应用下发渠道
 > * autoProfile：设置是否追踪新用户的首次属性。默认：`YES`
 > * autoInstallation：是否开启渠道追踪功能。默认值：`NO`
+> * autoTrackDeviceId：是否上报设备标识。默认值：`NO`
 > * encryptType：设置数据上传时的加密方式，目前只支持 AES 加密，AES 加密分为AnalysysEncryptAES（128位密钥，ECB 加密模式）和 AnalysysEncryptAESCBC128（128位密钥，CBC 加密模式）；如不设置此参数，数据上传不加密。
 > * allowTimeCheck：是否允许时间校准，默认值：`NO`
 > * autoTrackCrash：是否允许崩溃追踪，默认值：`NO`
@@ -146,18 +147,6 @@ end
 #import <AnalysysAgent/AnalysysAgent.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    //  4.3.0版本后部分设置在SDK初始化前设置
-
-    #ifdef DEBUG
-        [AnalysysAgent setDebugMode:AnalysysDebugButTrack];
-    #else
-        [AnalysysAgent setDebugMode:AnalysysDebugOff];
-    #endif
-
-    //  设置上传地址
-    [AnalysysAgent setUploadURL:@"https://url:port"];
-
     //  设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
     //  AnalysysAgent 配置信息
     AnalysysConfig.appKey = @"77a52s552c892bn442v721";
@@ -169,16 +158,27 @@ end
     //  AnalysysConfig.encryptType = AnalysysEncryptAES;
     //  设置渠道追踪
     //  AnalysysConfig.autoInstallation = YES;
+    //  是否上报设备标识
+    //  AnalysysConfig.autoTrackDeviceId = YES;
     //  设置服务器时间校验
     //  AnalysysConfig.allowTimeCheck = YES;
     //  设置时间最大允许偏差为5分钟
     //  AnalysysConfig.maxDiffTimeInterval = 5 * 60;
     //  使用配置初始化SDK
     [AnalysysAgent startWithConfig:AnalysysConfig];
+    
+    //  4.4.5之后需要将以下设置放置到初始化后，否则可能无法正常上报
+    #ifdef DEBUG
+        [AnalysysAgent setDebugMode:AnalysysDebugButTrack];
+    #else
+        [AnalysysAgent setDebugMode:AnalysysDebugOff];
+    #endif
+
+    //  设置上传地址
+    [AnalysysAgent setUploadURL:@"https://url:port"];
 
     return YES;
 }
-
 
 ```
 
@@ -192,28 +192,25 @@ end
 import AnalysysAgent
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-    //  4.3.0版本后部分设置在SDK初始化前设置
-
-    #if DEBUG
-        AnalysysAgent.setDebugMode(.butTrack)
-    #else
-        AnalysysAgent.setDebugMode(.off)
-    #endif
-
-    //  设置上传地址
-    AnalysysAgent.setUploadURL("https://url:port")
-
     //  AnalysysAgent 配置信息
-        AnalysysAgentConfig.shareInstance()?.appKey = "sdktest201907"
+        AnalysysAgentConfig.shareInstance()?.appKey = "77a52s552c892bn442v721"
         AnalysysAgentConfig.shareInstance()?.channel = "App Store"
-        AnalysysAgentConfig.shareInstance()?.autoProfile = true
-//        AnalysysAgentConfig.shareInstance()?.autoInstallation = true
-//        AnalysysAgentConfig.shareInstance()?.allowTimeCheck = true
-//        AnalysysAgentConfig.shareInstance()?.maxDiffTimeInterval = 5 * 60
-
+        //AnalysysAgentConfig.shareInstance()?.autoProfile = true
+        //AnalysysAgentConfig.shareInstance()?.autoInstallation = true
+        //AnalysysAgentConfig.shareInstance()?.autoTrackDeviceId = true
+        //AnalysysAgentConfig.shareInstance()?.allowTimeCheck = true
+        //AnalysysAgentConfig.shareInstance()?.maxDiffTimeInterval = 5 * 60
         //  使用配置信息初始化SDK
         AnalysysAgent.start(with: AnalysysAgentConfig.shareInstance())
+        
+        //  4.4.5之后需要将以下设置放置到初始化后，否则可能无法正常上报
+        #if DEBUG
+        AnalysysAgent.setDebugMode(.butTrack)
+        #else
+        AnalysysAgent.setDebugMode(.off)
+        #endif
+        
+        AnalysysAgent.setUploadURL("https://url:port")
 
 }
 ```
