@@ -154,4 +154,5 @@
   * [页面停留如何获取时间？](faq/sdk/page-duration.md)
 * [产品试用及采购](faq/trialversion.md)
 * [参与贡献](faq/gong-xian-zhe-ming-lu.md)
+* [Newpage](newpage.md)
 
