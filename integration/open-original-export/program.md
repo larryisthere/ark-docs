@@ -16,10 +16,10 @@ description: >-
 
 | 字段 | 信息 |
 | :--- | :--- |
-| jdbc url | jdbc:presto://ark2.analysys.xyz:8285/hive/default |
+| jdbc url | jdbc:presto://ark2.analysys.xyz:4285/hive/default |
 | driver | com.facebook.presto.jdbc.PrestoDriver |
-| username | streaming |
-| password | \(初始密码为空\) |
+| username | daxiang |
+| password | 编辑 /etc/presto/presto-auth.properties 文件查看 |
 
 presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201](https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201)
 
@@ -42,7 +42,7 @@ presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.faceboo
 ```bash
 #presto必须使用isuhadoop用户来连接
 su - isuhadoop
-bin/presto-cli --server ark2:8285
+bin/presto-cli --server ark2:4285
 ```
 
 ### 查询用户信息数据
@@ -82,8 +82,8 @@ select * from hive.db_appid.event_vd limit 10
 #### 导出不包含表头的CSV格式的文件
 
 ```bash
-presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV > dataFile.CSV
-presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV > dataFile.CSV
+presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV > dataFile.CSV
+presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV > dataFile.CSV
 ```
 
 {appid}为要查询项目的appid
@@ -93,8 +93,8 @@ dataFile.CSV为导出的文件路径
 #### 导出包含表头的CSV格式的文件 
 
 ```bash
-presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV_HEADER > dataFile.CSV_HEADER
-presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV_HEADER > dataFile. CSV_HEADER
+presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV_HEADER > dataFile.CSV_HEADER
+presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV_HEADER > dataFile. CSV_HEADER
 ```
 
 {appid}为要查询项目的appid
@@ -106,8 +106,8 @@ dataFile.CSV为导出的文件路径
 #### 导出不包含表头的TSV格式的文件–没有表头
 
 ```bash
-presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV > dataFile.TSV
-presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV > dataFile. TSV
+presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV > dataFile.TSV
+presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV > dataFile. TSV
 ```
 
 {appid}为要查询项目的appid
@@ -119,8 +119,8 @@ dataFile.CSV为导出的文件路径
 #### 导出包含表头的TSV格式的文件
 
 ```bash
-presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
-presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
+presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
+presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
 ```
 
 {appid}为要查询项目的appid
@@ -171,7 +171,7 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 >
 > Host: \(方舟 Presto 的服务器IP，一般为内网IP\)
 >
-> Port: 8285\(不需要修改\)
+> Port: 4285\(不需要修改\)
 >
 > Database Name: hive\(全小写\)
 >
