@@ -142,7 +142,7 @@ import prestodb
 conn=prestodb.dbapi.connect(
         host='ip address of ark2',
         port=4285,
-        user='streaming',
+        user='daxiang',
         catalog='hive',
         schema='db_{appkey}',
 )
@@ -175,7 +175,9 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 >
 > Database Name: hive\(全小写\)
 >
-> Database password: \(默认为空\)
+> Database username: daxiang
+>
+> Database password: \(上方舟服务器，编辑 /etc/presto/presto-auth.properties 文件查看\)
 
 下方的三个开关保持默认即可。点击底部的确认按钮后，如果没有看到数据表，请关闭 Metabase 重新进入。
 
