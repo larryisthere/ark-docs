@@ -467,10 +467,20 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">$user_agent</td>
       <td style="text-align:left">UA</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">UA</td>
+      <td style="text-align:left">UA&#x8BBE;&#x5907;--S</td>
       <td style="text-align:center">-</td>
       <td style="text-align:center">-</td>
       <td style="text-align:center">Y</td>
+      <td style="text-align:center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">$device_id</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;ID</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;IDS</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">-</td>
       <td style="text-align:center">-</td>
     </tr>
   </tbody>
@@ -488,6 +498,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 **$device\_type：**通过 UA 解析
 {% endhint %}
 
+\*\*\*\*
+
 {% hint style="info" %}
 **部分自动采集的属性不会作为独立的属性用于分析**
 
@@ -499,7 +511,13 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 **$session\_id：**标识一次会话
 
-**$user\_agent：**UA，用于解析设备类型、浏览器、浏览器版本、操作系统、操作系统版本
+**$user\_agent：**UA，用于解析设备类型、浏览器、浏览器版本、操作系统、操作系统版本  
+  
+**$device\_id：系统唯一标识，默认不采集\(4.4.5版本新增\)**
+
+Andorid采集规则：advertising id &gt; android id &gt; uuid，按照先后顺序获取
+
+iOS采集规则：idfa&gt;idfv&gt;uuid，按照先后顺序获取
 {% endhint %}
 
 ### 2. 部分 Event 事件自身属性
@@ -651,7 +669,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g.11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
 | $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
-| $original\_id | 设备id | 字符串 | 上一个id | Y | Y | Y | Y |
+| $original\_id | 临时id | 字符串 | 系统生产的临时ID | Y | Y | Y | Y |
 
 **$profile\_set**
 
