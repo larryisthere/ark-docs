@@ -33,6 +33,8 @@
 | $web\_click | Web点击事件 | Web热图点击事件 | - | - | N | - |
 | $user\_click | 用户点击事件 | 用户点击可触控行为 | Y | Y | Y | Y |
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
+| $campaign\_track | 渠道监测事件 | APP渠道监测 | N | N | - | - |
+| $first\_installation | 首次安装事件 | APP首次安装事件 | N | N | - | - |
 
 {% hint style="info" %}
 其中 `$webstay`  用于记录用户停留在可视区域，分析浏览深度线，`$app_click`、`$web_click` 用于记录点击网页/APP页面，用于分析点击位置热图、点击元素热图，所以这三个事件不会作为单独的事件去分析，即不会出现在分析模型中事件的选项中，也不会计入任意事件的计算。
