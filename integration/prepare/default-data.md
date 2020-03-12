@@ -33,7 +33,7 @@
 | $web\_click | Web点击事件 | Web热图点击事件 | - | - | N | - |
 | $user\_click | 用户点击事件 | 用户点击可触控行为 | Y | Y | Y | Y |
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
-| $campaign\_track | 渠道监测事件 | APP渠道监测 | N | N | - | - |
+| $campaign\_track | 渠道监测事件 | APP渠道监测 | - | - | - | - |
 | $first\_installation | 首次安装事件 | APP首次安装事件 | N | N | - | - |
 
 {% hint style="info" %}
