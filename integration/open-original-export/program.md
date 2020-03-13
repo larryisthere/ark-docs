@@ -18,8 +18,11 @@ description: >-
 | :--- | :--- |
 | jdbc url | jdbc:presto://ark2.analysys.xyz:4285/hive/default |
 | driver | com.facebook.presto.jdbc.PrestoDriver |
-| username | daxiang |
+| user | daxiang |
+| SSL | true |
 | password | 编辑 /etc/presto/presto-auth.properties 文件查看 |
+| SSLKeyStorePath | presto.jks文件的路径，一般是/etc/presto/presto.jks |
+| SSLKeyStorePassword | 值可以在单机环境的ark1,集群环境的ark2的/etc/presto/config.properties文件中找到，对应http-server.https.keystore.key的值 |
 
 presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201](https://jar-download.com/artifacts/com.facebook.presto/presto-jdbc/0.201)
 
@@ -33,6 +36,26 @@ presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.faceboo
 </dependency>
 ```
 
+```python
+示例代码：
+Properties properties = new Properties();
+properties.setProperty("user" , Config.prestoUsername);
+properties.setProperty("password" , Config.prestoPassword);
+properties.setProperty("SSL" , "true");
+System.out.println(Config.class.getClassLoader().getResource("presto.jks").getPath());
+properties.setProperty("SSLKeyStorePath" , Config.class.getClassLoader().getResource("presto.jks").getPath());
+properties.setProperty("SSLKeyStorePassword" , Config.prestoSSLKeyStorePassword);
+Connection conn = null;
+try {
+   Class.forName(driver);
+} catch (ClassNotFoundException e) {
+   logger.error(ExceptionUtil.getMessage(e));
+ throw new RuntimeException("找不到jdbc驱动类", e);
+}
+conn = DriverManager.getConnection(url, parameter);
+return conn;
+```
+
 ## presto-shell
 
 除了直接使用 JDBC 接口之外，也可以直接适用 presto-shell 工具进行查询。
@@ -41,8 +64,13 @@ presto-jdbc.jar的下载地址：[https://jar-download.com/artifacts/com.faceboo
 
 ```bash
 #presto必须使用isuhadoop用户来连接
+#集群环境
 su - isuhadoop
-bin/presto-cli --server ark2:4285
+bin/presto-cli --server ark2:8285
+
+#单机环境
+su - isuhadoop
+bin/presto-cli --server ark1:8285
 ```
 
 ### 查询用户信息数据
@@ -50,13 +78,13 @@ bin/presto-cli --server ark2:4285
 #### 查看用户信息表的表结构
 
 ```bash
-desc chbase.db_appid.profile
+show create view hive.db_appid.profile_vd
 ```
 
 #### 查询用户信息数据
 
 ```bash
-select * from chbase.db_appid.profile limit 10
+select * from hive.db_appid.profile_vd limit 10
 ```
 
 其中{appid}为要查询的appid
@@ -82,8 +110,13 @@ select * from hive.db_appid.event_vd limit 10
 #### 导出不包含表头的CSV格式的文件
 
 ```bash
-presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV > dataFile.CSV
-presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV > dataFile.CSV
+#集群环境
+presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV > dataFile.CSV
+presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV > dataFile.CSV
+
+#单机环境
+presto-cli --server ark1:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV > dataFile.CSV
+presto-cli --server ark1:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV > dataFile.CSV
 ```
 
 {appid}为要查询项目的appid
@@ -93,8 +126,14 @@ dataFile.CSV为导出的文件路径
 #### 导出包含表头的CSV格式的文件 
 
 ```bash
-presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV_HEADER > dataFile.CSV_HEADER
-presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV_HEADER > dataFile. CSV_HEADER
+#集群环境
+presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV_HEADER > dataFile.CSV_HEADER
+presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV_HEADER > dataFile. CSV_HEADER
+
+#单机环境
+presto-cli --server ark1:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format CSV_HEADER > dataFile.CSV_HEADER
+presto-cli --server ark1:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format CSV_HEADER > dataFile. CSV_HEADER
+
 ```
 
 {appid}为要查询项目的appid
@@ -106,8 +145,8 @@ dataFile.CSV为导出的文件路径
 #### 导出不包含表头的TSV格式的文件–没有表头
 
 ```bash
-presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV > dataFile.TSV
-presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV > dataFile. TSV
+presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV > dataFile.TSV
+presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV > dataFile. TSV
 ```
 
 {appid}为要查询项目的appid
@@ -119,8 +158,8 @@ dataFile.CSV为导出的文件路径
 #### 导出包含表头的TSV格式的文件
 
 ```bash
-presto-cli --server ark2:4285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
-presto-cli --server ark2:4285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
+presto-cli --server ark2:8285 --execute 'select * from hive.db_{appid}.event_vd limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
+presto-cli --server ark2:8285 --execute 'select * from chbase.db_{appid}.profile limit 10' --output-format TSV_HEADER > dataFile.TSV_HEADER
 ```
 
 {appid}为要查询项目的appid
@@ -144,6 +183,8 @@ conn=prestodb.dbapi.connect(
         port=4285,
         user='daxiang',
         catalog='hive',
+        password="参数jar代码",
+        ... 参考ava代码
         schema='db_{appkey}',
 )
 cur = conn.cursor()
