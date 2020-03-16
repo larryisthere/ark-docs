@@ -894,6 +894,48 @@ public static void reset(Context context);
 AnalysysAgent.reset(mContext);
 ```
 
+### 清空本地数据库缓存的所有事件
+
+```java
+AnalysysAgent.cleanDBCache();
+```
+
+### 采集的数据是否上报
+
+通过设置setUploadNetworkType接口来允许数据上报的网络类型
+
+网络上报网络类型分类：
+
+```java
+    /**
+     * 网络发送策略
+     */
+    public interface AnalysysNetworkType {
+
+        //不允许上传
+        int AnalysysNetworkNONE = 0;
+
+        //允许移动网络上传
+        int AnalysysNetworkWWAN = 1 << 1;
+
+        //允许wifi网络
+        int AnalysysNetworkWIFI = 1 << 2;
+
+        //允许所有网络
+        int AnalysysNetworkALL = 0xFF;
+    }
+```
+
+网络上报接口控制开关：
+
+```java
+//关闭SDK上报功能
+AnalysysAgent.setUploadNetworkType(AnalysysAgent.AnalysysNetworkType.AnalysysNetworkNONE);
+
+//恢复SDK上报功能
+AnalysysAgent.setUploadNetworkType(AnalysysAgent.AnalysysNetworkType.AnalysysNetworkALL);
+```
+
 ## 可视化热图SDK接口
 
 以下接口生效依赖于可视化热图模块，需集成可视化热图SDK相关analysys\_visual\_xxx.jar文件，请正确集成。
