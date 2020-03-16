@@ -11,7 +11,7 @@ description: 此功能基于SDK建议使4.4.0及以后版本，适用方舟V4.6.
 第一步：在项目根目录project目录的build.gradle文件中添加全埋点依赖插件  
 classpath classpath 'cn.com.analysys:analysys-allgro-plugin:x.x.x' \(x.x.x版本号\)  
   
-示例: classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.0'
+示例: classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.2'
 
 ```text
 buildscript {
@@ -21,7 +21,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         //添加易观全埋点 analysys-allgro-plugin 插件依赖
-        classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.1' 
+        classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.2' 
     }
 }
 
