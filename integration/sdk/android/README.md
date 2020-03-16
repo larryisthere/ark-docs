@@ -70,7 +70,7 @@ Android SDK 用于 Android 原生 App，集成前请先下载 SDK
      ****`dependencies  
 {  
     //添加 analysys-arkanalysys SDK 依赖  
-    compile('cn.com.analysys:analysys-arkanalysys:4.4.4')  
+    compile('cn.com.analysys:analysys-arkanalysys:4.4.5')  
 }`
 {% endtab %}
 
@@ -183,6 +183,7 @@ public static void init(Context context, AnalysysConfig config);
 
 * context ：应用上下文对象
 * config ：为自定义实体 bean，用于设置初始化属性值，目前config支持的属性有：
+
   1. AppKey：在网站获取的 AppKey
   2. channel：应用下发的渠道
   3. autoProfile ：设置是否追踪新用户的首次属性，false：不追踪新用户的首次属性，true：追踪新用户的首次属性\(默认\)
@@ -194,7 +195,8 @@ public static void init(Context context, AnalysysConfig config);
   9. setAutoTrackPageView ：pageView自动上报开关，默认值：`true`
   10. setAutoTrackFragmentPageView：是否开启全埋点fragment页面自动上报， 默认值：`false`
   11. setAutoTrackClick：是否开启全埋点点击事件， 默认值：`false`
-  12. setEnableException：是否允许崩溃追踪，默认值：`false`
+  12. setAutoTrackCrash：是否允许崩溃追踪，默认值：`false`
+  13. setAutoTrackDeviceId: 是否允许采集device\_id，默认值false
 
 {% hint style="info" %}
 EncryptEnum.AES\_CBC模式适用方舟V4.2.7及以上版本
