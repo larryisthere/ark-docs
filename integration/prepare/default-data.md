@@ -544,7 +544,7 @@ iOS采集规则：idfa&gt;idfv&gt;uuid，按照先后顺序获取
 | $url | 页面URL\(含参\) | 字符串 | 页面完整路径 | Y | Y | Y | Y |
 | $url\_domain | 页面URL  | 字符串 | 去参的页面URL | - | - | N | - |
 | $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | - |
-| $referrer | 页面来源 | 字符串 | 页面来源 | - | - | Y | Y |
+| $referrer | 页面来源 | 字符串 | 页面来源 | Y | Y | Y | Y |
 | $referrer\_domain | 页面来源域名 | 字符串 | 页面来源域名 | - | - | Y | - |
 | $traffic\_source\_type | 流量来源类型 | 字符串 | 流量来源类型，数据处理 | - | - | N | - |
 | $search\_engine | 搜索引擎 | 字符串 | 标识搜索引擎来源 | - | - | N | - |
