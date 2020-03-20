@@ -406,7 +406,7 @@ AnalysysAgent.setPageViewBlackListByPages(pages);
 
 #### 自动采集添加自定义信息
 
-若用户开启页面自动采集功能，可将自定义页面信息添加至`$pageview`事件中。SDK对外提供一个接口`ANSAutoPageTracker`供继承至`Activity`的类使用，若类遵循该协议，则须实现`registerPageProperties`方法，并将自定义参数返回，SDK会将此部分信息添加至`$pageview`事件的自定义参数中，且自定义参数优先级高于自动采集参数（即：相同key情况下，用户key会覆盖自动采集key）。
+若用户开启页面自动采集功能，可将自定义页面信息添加至`$pageview`事件中。SDK对外提供一个接口`ANSAutoPageTracker`供继承至`Activity或Fragment`的类使用，若类遵循该协议，则须实现`registerPageProperties`方法，并将自定义参数返回，SDK会将此部分信息添加至`$pageview`事件的自定义参数中，且自定义参数优先级高于自动采集参数（即：相同key情况下，用户key会覆盖自动采集key）。
 
 {% hint style="info" %}
 前提：页面自动采集功能未手动关闭  
@@ -444,6 +444,35 @@ public class MainActivity extends AppCompatActivity implements ANSAutoPageTracke
         properties.put("$title", "详情页");
         return properties;
     }
+    @Override
+    public String registerPageUrl() {
+        // 页面$url字段，将覆盖SDK默认字段
+        return "HomePage";
+    }
+}
+```
+
+```java
+public class FragmentOne extends Fragment implements ANSAutoPageTracker {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_one, null);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public Map<String, Object> registerPageProperties() {
+        //  $title为自动采集使用key，用户可覆盖
+        Map<String, Object> properties = new HashMap<String, Object>();
+        properties.put("$title", "详情页");
+        return properties;
+    }
+
     @Override
     public String registerPageUrl() {
         // 页面$url字段，将覆盖SDK默认字段
