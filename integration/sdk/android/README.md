@@ -70,7 +70,7 @@ Android SDK 用于 Android 原生 App，集成前请先下载 SDK
      ****`dependencies  
 {  
     //添加 analysys-arkanalysys SDK 依赖  
-    compile('cn.com.analysys:analysys-arkanalysys:4.4.5')  
+    compile('cn.com.analysys:analysys-arkanalysys:4.4.6')  
 }`
 {% endtab %}
 
