@@ -22,6 +22,8 @@
 
 {% page-ref page="bytedance.md" %}
 
+{% page-ref page="dingtalk.md" %}
+
 
 
 **语言版 SDK**

@@ -108,7 +108,7 @@
   * [支付宝小程序 SDK](integration/sdk/alipay.md)
   * [字节跳动小程序 SDK](integration/sdk/bytedance.md)
   * [百度小程序 SDK](integration/sdk/baidu.md)
-  * [钉钉小程序](integration/sdk/ding-ding-xiao-cheng-xu.md)
+  * [钉钉小程序](integration/sdk/dingtalk.md)
   * [Java SDK](integration/sdk/java.md)
   * [Python SDK](integration/sdk/python.md)
   * [PHP SDK](integration/sdk/php.md)
