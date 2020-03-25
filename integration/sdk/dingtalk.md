@@ -353,6 +353,32 @@ var properties ={
 AnalysysAgent.appProperty(properties);
 ```
 
+### 采集分享按钮点击事件
+
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
+
+```javascript
+AnalysysAgent.share(properties);
+```
+
+* properties：分享内容，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+
+示例：
+
+```javascript
+// 采集分享按钮点击事件
+Page({
+    onShareAppMessage:function(){
+        let shareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        let AnsShareProperties = AnalysysAgent.share(shareProperties);
+        return AnsShareProperties
+    }
+})
+```
+
 ### 匿名ID与用户关联
 
 用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
