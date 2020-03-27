@@ -47,7 +47,9 @@ Request Headers
     xtoken: {$SUPER_TOKEN}
 ```
 
-**$SUPER\_TOKEN** 为级超级授权码，通过联系运维获取。
+**$SUPER\_TOKEN** 为企业级接口授权码。在【4.5.3版本】此之前版本联系运维获取，4.5.3版本可在方舟中【企业平台管理】 - 【企业概览】模块中获取，截图如下：
+
+![&#x4F01;&#x4E1A;&#x6982;&#x89C8;](../../.gitbook/assets/image%20%2828%29.png)
 
 ## 3.调用示例
 
@@ -144,7 +146,7 @@ API调用是否成功都是通过HTTP状态码来识别，接口直接返回结�
 | HttpStatus | HttpMessage | 描述 |
 | :--- | :--- | :--- |
 | 200 | OK | 接口调用成功 |
-| 400 | Bad Request | 请求失败，如参数为空，参数值错误，对象不存在 |
+| 400 | Bad Request | 请求失败，如参数为空 |
 | 401 | Unauthorized | 认证失败，如token/appKey错误 |
 | 404 | Not Found | 接口不存在 |
 | 415 | Unsupported Media Type | HTTP协议的错误，如Content-Type |
@@ -160,7 +162,7 @@ HttpStatus=400时，会返回详细的错误内容（data），data中会罗列�
 
 以下是Postman调用结果示例：
 
-![API&#x8C03;&#x7528;&#x72B6;&#x6001;&#x793A;&#x4F8B;](../../.gitbook/assets/image%20%2868%29.png)
+![API&#x8C03;&#x7528;&#x72B6;&#x6001;&#x793A;&#x4F8B;](../../.gitbook/assets/image%20%2869%29.png)
 
 在HttpStatus=501时，可根据接口返回的code区分具体的错误信息，如下：
 
@@ -169,4 +171,6 @@ HttpStatus=400时，会返回详细的错误内容（data），data中会罗列�
 | 501 | 501 | 资源超出业务限制，如项目个数超出限额，分群个数超出限额 |
 | 501 | 50101 | 对象已存在，如注册用户邮箱重复、分群名称重复 |
 | 501 | 50102 | 对象已存在，但是已被禁用 |
+| 501 | 50103 | PRESTO 资源不足，调用接口前可以通过接口获取当前presto使用情况 |
+| 501 | 50104 | 查询并发数达到上限 |
 

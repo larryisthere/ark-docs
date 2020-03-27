@@ -87,7 +87,9 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
         //备注，描述事件的作用
         "remark":"APP启动 / 打开网站",
       	//【4.5.0中新增】是否预置事件 1为预置事件 0为自定义事件
-      	"preset": 1
+      	"preset": 1,
+        //【4.6中新增】回数平台，多个值之间逗号隔开
+        "platform": "Android,iOS,JS"
     },
     {
         "id":"$end",
@@ -95,7 +97,8 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
       	//禁用
         "enable":0,
         "remark":"APP关闭 / 关闭网页",
-      	"preset": 1
+      	"preset": 1,
+        "platform": "Android,iOS"
     },
   	{
         "id": "login",
@@ -103,7 +106,8 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
         "enable": 1,
         "remark": null,
       	//自定义事件
-        "preset": 0
+        "preset": 0,
+        "platform": "Android"
     }
 ]
 ```
