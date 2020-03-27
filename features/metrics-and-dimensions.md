@@ -198,7 +198,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的订单的平均金额，即订单金额总和/订单数。
 
-![](../.gitbook/assets/image%20%28266%29.png)
+![](../.gitbook/assets/image%20%28267%29.png)
 
 ### 事件 X 的属性 Y 的最大值
 
@@ -214,7 +214,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的最小订单金额。
 
-![](../.gitbook/assets/image%20%28253%29.png)
+![](../.gitbook/assets/image%20%28254%29.png)
 
 ### 事件 X 的属性 Y 的人均值
 
@@ -236,7 +236,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 比如通过支付订单金额总和 - 退货金额总和 即可创建出实际完成订单金额的指标，如下图表示过去7天实际完成订单金额的趋势，可以增加额外指标对比分析。
 
-![](../.gitbook/assets/image%20%28261%29.png)
+![](../.gitbook/assets/image%20%28262%29.png)
 
 更多使用详见
 
