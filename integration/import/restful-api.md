@@ -8,7 +8,7 @@ description: 通过 Restful API 可以将历史数据通过网络上报到易观
 
 ### 功能描述
 
-调用该接口，把符合特定格式的数据以POST的方式上报至数据接收服务器。接收服务器对上报的数据进行校验，不符合格式的返回相应的错误提示。易观SDK就是通过该进行进行数据上报。
+调用该接口，把符合特定格式的数据以POST的方式上报至数据接收服务器。接收服务器对上报的数据进行校验，不符合格式的返回相应的错误提示。易观SDK就是通过该API进行数据上报。
 
 上报后的数据会先暂存在 Kafka 中，流处理引擎大约会以3000条/秒的速度将数据落库并可用于查询，该过程性能受服务器影响，但偏差一般不会太大。
 
@@ -43,7 +43,7 @@ http(s)://host:port/up
         "$is_login": false,
         "$lib_version": "4.0.4",
         "$debug": 2,
-        "$importFlag": 1
+        "$importFlag": 1     //说明：$importFlag字段是专门用作导数
     }
 }]
 ```
@@ -135,7 +135,7 @@ $importFlag：数值型，值为1，必填。用于告诉方舟该条数据是�
 
 $lib：字符串，SDK类型，选项有:Java、Python、JS、Node、PHP、Wechat、Andorid、iOS。
 
-$platform：字符串，平台信息，和lib相同
+$platform：字符串，平台信息，和lib相同；也可自定义添加平台信息。
 
 $lib\_version：字符串，SDK版本号
 
