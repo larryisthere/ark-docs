@@ -65,11 +65,11 @@ requirejs('./AnalysysAgent_GBK.min.js)
 
 ## 可视化埋点介绍
 
-### 接入 JS SDK 可视化模块
+### 接入可视化模块
 
 将 `AnalysysAgent_JS_SDK_VISUAL.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中。或通过：`SDKFileDirectory`接口指定SDK目录。
 
-### SDK集成
+### 集成方式
 
 该方式集成需要手动配置可视化模块`AnalysysAgent_JS_SDK_VISUAL.min.js`文件访问路径并将可视化模块js文件放到可通过url访问的目录中。
 
@@ -155,6 +155,33 @@ if(self !== window.top){
 ## 热图模块介绍
 
 将 `AnalysysAgent_JS_SDK_HEATMAP.min.js` 放到与 JS SDK`AnalysysAgent_JS_SDK.min.js` 文件存放的同一文件目录中，展示热图的时会自动调用。或通过：`SDKFileDirectory`接口指定SDK目录。
+
+```javascript
+//1.异步或同步集成
+//在AnalysysAgent.initApi中，配置加载热图模块文件目录访问地址
+{
+    SDKFileDirectory:"/*设置为实际地址*/"//可通过url访问该目录中的该热图模块js文件。
+}
+//以Vue.js为例，将AnalysysAgent_JS_SDK_HEATMAP.min.js放到public/js/sdk目录中。
+//配置加载热图模块文件目录访问地址
+{
+    SDKFileDirectory:"./js/sdk/"//Vue.js中public目录中内容，构建时会copy至dist目录中。所以该设置时没有public这一层目录。
+}
+//RequireJS为例，将AnalysysAgent_JS_SDK_HEATMAP.min.js放到require.js同一目录中。
+//配置加载热图模块文件目录访问地址
+{
+    SDKFileDirectory:"./js/lib/"//RequireJS中require.js的访问目录为./js/lib/。
+}
+
+//2.npm获取SDK集成
+//需将ans-javascript-sdk/SDK/AnalysysAgent_JS_SDK_HEATMAP.min.js复制到可通过url访问的目录
+//也可通过url访问该文件来验证热图模块是否可以使用
+{
+//可通过url访问该目录中的该热图模块js文件。
+//例如：所放文件目录为"./js/sdk/",热图模块js文件访问地址为：http://localhost:8080/js/sdk/AnalysysAgent_JS_SDK_HEATMAP.min.js
+    SDKFileDirectory:"/*设置为实际地址*/"
+}
+```
 
 ## 页面访问时长模块介绍
 
