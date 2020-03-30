@@ -22,6 +22,8 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 | AnalysysAgent\_Encrypt.es6.min.js | 加密模块SDK | ES6可选 | 全部 |
 | AnalysysAgent\_GBK.min.js | GBK转码模块SDK | 非ES6可选 | 全部 |
 | AnalysysAgent\_GBK.es6.min.js | GBK转码模块SDK | ES6可选 | 全部 |
+| AnalysysAgent\_PageViewStayTime.min.js | 页面访问时长模块SDK | 非ES6可选 | 4.4.1及以上 |
+| AnalysysAgent\_PageViewStayTime.es6.min.js | 页面访问时长模块SDK | ES6可选 | 4.4.1及以上 |
 
 ### 快速集成
 
@@ -66,7 +68,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 
 {% tabs %}
 {% tab title="异步集成（推荐）" %}
-将以下JS代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
+将以下JS代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。只要保证在以下代码之下即可。无需等待`window.onload`之后再执行。
 
 ```javascript
 <script>
@@ -111,7 +113,7 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 {% endtab %}
 
 {% tab title="同步集成" %}
-将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
+将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。无需等待`window.onload`之后再执行。
 
 ```javascript
 <script>
@@ -150,15 +152,52 @@ JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请�
 {% endtab %}
 
 {% tab title="ES6方式集成" %}
-以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。
+从 npm 获取 SDK ， npm install ans-javascript-sdk。也可以自行下载SDK。
 
 ```javascript
-import AnalysysAgent from '/*设置为JS SDK ES6模块实际存放地址*/'
+// 从 npm 获取 sdk
+
+import  AnalysysAgent from 'ans-javascript-sdk/SDK/AnalysysAgent_JS_SDK.es6.js'
+
+//自行下载SDK
+
+//import AnalysysAgent from '/*设置为JS SDK ES6模块实际存放地址*/'
 
 AnalysysAgent.init({
-    appkey:'/*设置为实际APPKEY*/',//APPKEY
-    uploadURL: '/*设置为实际地址*/'//上传数据的地址
+    appkey: '/*设置为实际APPKEY*/',//APPKEY
+    uploadURL: '/*设置为实际地址*/',//上传数据的地址
+    SDKFileDirectory: '/*设置为可视化与热图模块SDK实际存放目录*/'//可视化与热图模块SDK存放目录。
 })
+
+
+```
+{% endtab %}
+
+{% tab title="CommonJS 规范集成" %}
+从 npm 获取 sdk ， `npm install ans-javascript-sdk`
+
+```javascript
+var AnalysysAgent = require('ans-javascript-sdk')
+AnalysysAgent.init({
+    appkey: '/*设置为实际APPKEY*/',//APPKEY
+    uploadURL: '/*设置为实际地址*/',//上传数据的地址
+    SDKFileDirectory: '/*设置为可视化与热图模块SDK实际存放目录*/'//可视化与热图模块SDK存放目录。
+})
+
+```
+{% endtab %}
+
+{% tab title="AMD 规范集成（以 RequireJS 为例）" %}
+自行下载SDK。获取AnalysysAgent\_JS\_SDK.min.js，假设该文件放到与 require.js 同一目录中
+
+```javascript
+requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
+           AnalysysAgent.init({
+                appkey: '/*设置为实际APPKEY*/',//APPKEY
+                uploadURL: '/*设置为实际地址*/',//上传数据的地址
+                SDKFileDirectory: '/*设置为可视化与热图模块SDK实际存放目录*/'//可视化与热图模块SDK存放目录。
+            })
+        });
 
 ```
 {% endtab %}
@@ -178,7 +217,7 @@ AnalysysAgent.init({
 * _auto_ 设置自动采集页面打开事件：false - 关闭自动采集；true - 开启自动采集\(默认\)
 * _autoTrack_ 设置是否启用全埋点功能：false - 不启用全埋点功能\(默认\)；true - 启用全埋点功能（SDK 版本 4.4.0 及以后支持）
 * _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
-* _autoWebstay_ 设置是否追踪页面滚动行为：false - 不追踪页面滚动行为\(默认\)；true - 追踪页面滚动行为
+* autoWebstay 在开启热图功能\(autoHeatmap设置为true\)时，设置是否追踪页面滚动行为：false - 在开启热图功能\(autoHeatmap设置为true\)时，不追踪页面滚动行为；true - 在开启热图功能\(autoHeatmap设置为true\)时，追踪页面滚动行为\(默认\)
 * _hash_ 设置检测 url hash 变化：false - 关闭监测url hash变化；true - 开启监测url hash变化\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
@@ -188,6 +227,7 @@ AnalysysAgent.init({
 * autoClickBlackList 设置全埋点统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
 * SDKFileDirectory 设置可视化模块SDK与热图模块SDK存放目录。类型：String；（SDK 版本 4.4.0 及以后支持）
 * _sendType_ 设置上传日志方式。'img' - 使用image标签的图片链接地址上传日志\(默认\)；'post'-使用Ajax中的post请求上传日志
+* _webstayDuration_ 设置追踪页面滚动行为时，最大停留时长。默认值：5小时。类型：Number。单位：毫秒
 
 \_\_
 
@@ -575,6 +615,21 @@ sendType 为设置日志上传方式。可根据自身需要进行增加。
 注意：img类型支持需要方舟4.2.2版本支持，如您使用的方舟版本低于4.2.2版本请更换发送方式
 {% endhint %}
 
+#### webstayDuration
+
+webstayDuration 为设置追踪页面滚动行为时，最大停留时长。可根据自身需要进行增加。默认值：5小时
+
+* 类型：Number
+* 单位：毫秒
+
+```javascript
+//设置追踪页面滚动行为时，最大停留时长。
+{
+    webstayDuration:50000 //设置追踪页面滚动行为时，最大停留时长为50秒
+}
+
+```
+
 ## 基础模块介绍
 
 ### 统计页面接口介绍
@@ -583,11 +638,14 @@ sendType 为设置日志上传方式。可根据自身需要进行增加。
 
 ```javascript
 AnalysysAgent.pageView(pageName);
+AnalysysAgent.pageView(pageName, callback);
 AnalysysAgent.pageView(pageName, properties);
+AnalysysAgent.pageView(pageName, properties, callback);    
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符
 * properties：页面信息，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/JSON/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
@@ -600,9 +658,28 @@ AnalysysAgent.pageView("活动页");
 // 访问手机活动页面，活动页面内容为优惠出售iPhone手机，手机价格为5000元
 var properties ={
     "commodityName": "iPhone",
-    "commodityPrice": 8000
+    "commodityPrice": 8000,
+    "commodityType": function(){
+        return 'phone';
+    }
 }
 
+AnalysysAgent.pageView("商品页", properties);
+
+......
+
+// 访问手机活动页面，活动页面内容为优惠出售iPhone手机，手机价格为5000元，并返回数据发送完毕状态
+var properties ={
+    "commodityName": "iPhone",
+    "commodityPrice": 8000,
+    "commodityType": function(){
+        return 'phone';
+    }
+}
+
+var callback = function(){
+    console.log('数据发送完毕')
+}
 AnalysysAgent.pageView("商品页", properties);
 ```
 
@@ -611,28 +688,57 @@ AnalysysAgent.pageView("商品页", properties);
 用户行为追踪，可以设置自定义属性。接口如下：
 
 ```javascript
-AnalysysAgent.track(eventName, properties)
+AnalysysAgent.track(eventName);
+AnalysysAgent.track(eventName, eventInfo);
+AnalysysAgent.track(eventName, eventInfo, callback);
 ```
 
 * eventName：事件ID，以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符
 * properties：自定义属性，用于对事件描述。properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/JSON/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function() {
+    console.log('数据发送完毕')
+}
 // 添加事件
 AnalysysAgent.track("back");
 
 ......
 
+// 添加事件，并返回数据发送完毕
+AnalysysAgent.track("back", callback);
+
+......
+
 // 用户购买手机
-var properties = {
+var eventInfo = {
     "type":"Phone",
     "name":"Apple iPhone8",
     "money":4000,
-    "count":1
+    "count":1,
+    "userID": function(){
+        return '123456'
+    }
 }
-AnalysysAgent.track("buy", properties);
+AnalysysAgent.track("buy", eventInfo);
+
+......
+
+// 用户购买手机，并返回数据发送完毕
+var eventInfo = {
+    "type":"Phone",
+    "name":"Apple iPhone8",
+    "money":4000,
+    "count":1,
+    "userID": function(){
+        return '123456'
+    }
+}
+
+AnalysysAgent.track("buy", eventInfo, callback);
 ```
 
 ### 匿名ID与用户关联
@@ -641,15 +747,23 @@ AnalysysAgent.track("buy", properties);
 
 ```javascript
 AnalysysAgent.alias(aliasId);
+AnalysysAgent.alias(aliasId, callback);
 ```
 
 * aliasId：需要关联的用户ID。 取值长度 1 - 255字符,支持类型：String
+* callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
 // 登陆账号时调用，只设置当前登陆账号即可和之前行为打通
 AnalysysAgent.alias("sanbo");
+
+// 登陆账号时调用，只设置当前登陆账号即可和之前行为打通, 并返回数据发送完毕
+var callback = function() {
+    console.log('数据发送完毕')
+}
+AnalysysAgent.alias("sanbo", callback);
 ```
 
 ### 用户属性设置
@@ -676,26 +790,40 @@ AnalysysAgent.alias("sanbo");
 
 ```javascript
 AnalysysAgent.profileSetOnce(propertyName, propertyValue);
-
+AnalysysAgent.profileSetOnce(propertyName, propertyValue, callbck);
 AnalysysAgent.profileSetOnce(property);
+AnalysysAgent.profileSetOnce(property, callbck);
 ```
 
 * propertyName ：属性名称，约束见[属性名称](js.md#1.1)
 * propertyValue ：属性值，约束见[属性值](js.md#2.1)
 * property ： 属性列表，约束见[属性名称](js.md#1.1)，[属性值](js.md#2.1)
+* callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function(){
+    console.log('数据上报完毕')
+}
 // 设置用户激活时间
-AnalysysAgent.profileSetOnce("activationTime",1521280551929);
+AnalysysAgent.profileSetOnce("activationTime", 1521280551929);
+
+// 设置用户激活时间，并返回数据发送完毕
+AnalysysAgent.profileSetOnce("activationTime", 1521280551929, callback);
 
 // 设置用户性别和出生时间
 var setOnceProfile = {
     "birth": 548798705000,
-    "sex": "male"
+    "sex": "male",
+    "userID": function(){
+        return '123456'
+    }
 }
 AnalysysAgent.profileSetOnce(setOnceProfile);
+
+// 设置用户性别和出生时间，并返回数据发送完毕
+AnalysysAgent.profileSetOnce(setOnceProfile, callback);
 ```
 
 #### 设置用户属性
@@ -705,28 +833,43 @@ AnalysysAgent.profileSetOnce(setOnceProfile);
 ```javascript
 //设置单个用户属性
 AnalysysAgent.profileSet(propertyName, propertyValue);
+AnalysysAgent.profileSet(propertyName, propertyValue, callback);
+
 //设置多个用户属性
 AnalysysAgent.profileSet(property);
+AnalysysAgent.profileSet(property, callback);
 ```
 
 * propertyName ：属性名称，约束见[属性名称](js.md#1.1)
 * propertyValue ：属性值，约束见[属性值](js.md#2.1)
 * property ：属性列表，约束见[属性名称](js.md#1.1)，[属性值](js.md#2.1)
+* callback ：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function(){
+    console.log('数据上报完毕')
+}
 //设置用户的邮箱地址为yonghu@163.com
 AnalysysAgent.profileSet("Email", "yonghu@163.com");
+
+//设置用户的邮箱地址为yonghu@163.com，并返回数据发送完毕
+AnalysysAgent.profileSet("Email", "yonghu@163.com", callback);
 
 ......
 
 // 设置用户的邮箱和微信
 var property = {
     "Email" : "yonghu@163.com",
-    "WeChatID" : "weixinhao"
+    "WeChatID" : "weixinhao",
+    "userID": function(){
+        return '123456'
+    }
 }
 AnalysysAgent.profileSet(property);
+// 设置用户的邮箱和微信，并返回数据发送完毕
+AnalysysAgent.profileSet(property, callback);
 ```
 
 #### 设置用户属性相对变化值
@@ -735,28 +878,40 @@ AnalysysAgent.profileSet(property);
 
 ```javascript
 AnalysysAgent.profileIncrement(propertyName, propertyNumber)
-
+AnalysysAgent.profileIncrement(propertyName, propertyNumber, callback)
 AnalysysAgent.profileIncrement(property);
+AnalysysAgent.profileIncrement(property, callback);
 ```
 
 * propertyName：属性名称，约束见[属性名称](js.md#1.1)
 * propertyValue：属性值，约束见[属性值](js.md#2.1)
 * property：属性列表，约束见[属性名称](js.md#1.1)，[属性值](js.md#2.1)
+* callback ：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function(){
+    console.log('数据上报完毕')
+}
 //用户增加一岁
-AnalysysAgent.profileIncrement("age",1);
+AnalysysAgent.profileIncrement("age", 1);
 
+//用户增加一岁，并返回数据发送完毕
+AnalysysAgent.profileIncrement("age", 1, callback);
 ......
 
-//用户玩某个游戏时间增加一年，游戏等级增加2
+//用户玩某个游戏时间增加一年，游戏等级增加2,游戏金币加1000
 var incrementProfile = {
     "gameAge":1,
-    "gameRating":2
+    "gameRating":2,
+    "gageMoney": function(){
+        return 1000
+    }
 }
 AnalysysAgent.profileIncrement(incrementProfile);
+//用户玩某个游戏时间增加一年，游戏等级增加2，并返回数据发送完毕
+AnalysysAgent.profileIncrement(incrementProfile, callback);
 ```
 
 #### 增加列表类型的属性
@@ -764,8 +919,9 @@ AnalysysAgent.profileIncrement(incrementProfile);
 用户列表属性增加元素。接口如下：
 
 ```javascript
-//增加列表类型的属性
+//增加多个属性
 AnalysysAgent.profileAppend(propertyName, propertyValue);
+AnalysysAgent.profileAppend(propertyName, propertyValue, callback);
 ```
 
 * propertyName：属性名称，约束见[属性名称](js.md#1.1)
@@ -776,7 +932,17 @@ AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```javascript
 //增加多个用户爱好
 var list = ["PlayBasketball", "music"];
+// var list = function(){
+//     return ["PlayBasketball", "music"];
+// }
 AnalysysAgent.profileAppend("hobby", list);
+
+//增加多个用户爱好，并返回数据发送完毕
+var callback = function(){
+    console.log('数据上报完毕')
+}
+
+AnalysysAgent.profileAppend("hobby", list, callback);
 ```
 
 #### 删除设置的属性值
@@ -784,20 +950,35 @@ AnalysysAgent.profileAppend("hobby", list);
 删除已设置的用户属性值。接口如下：
 
 ```javascript
+//  删除当前用户单个属性值
 AnalysysAgent.profileUnset(propertyName);
+AnalysysAgent.profileUnset(propertyName, callback);
+
+//  删除当前用户所有属性值
 AnalysysAgent.profileDelete();
+AnalysysAgent.profileDelete(callback);
 ```
 
 * propertyName：属性名称，约束见[属性名称](js.md#1.1)
+* callback ：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
-//  删除当前用户单个属性值
+var callback = function(){
+    console.log('数据上报完毕')
+}
+// 删除单个用户属性
 AnalysysAgent.profileUnset( "age");
 
-//  删除当前用户所有属性值
+// 删除单个用户属性，并返回数据发送完毕
+AnalysysAgent.profileUnset( "age", callback);
+
+// 清除所有属性
 AnalysysAgent.profileDelete();
+
+// 清除所有属性，并返回数据发送完毕
+AnalysysAgent.profileDelete(callback);
 ```
 
 ### 匿名ID设置
@@ -806,15 +987,23 @@ AnalysysAgent.profileDelete();
 
 ```javascript
 AnalysysAgent.identify(distinctId);
+AnalysysAgent.identify(distinctId, callback);
 ```
 
 * distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例:
 
 ```javascript
-// 设置匿名ID为`fangke009901`,注意此方法需要在初始化之后优先调用
+var callback = function(){
+    console.log('数据处理完毕')
+}
+// 设置匿名ID为`fangke009901`,注意此方法需要在初始化中调用
 AnalysysAgent.identify("fangke009901");
+
+// 设置匿名ID为`fangke009901`,注意此方法需要在初始化中调用，并返回数据处理完毕
+AnalysysAgent.identify("fangke009901", callback);
 ```
 
 ### 匿名ID获取
@@ -825,13 +1014,25 @@ AnalysysAgent.identify("fangke009901");
 
 ```javascript
 AnalysysAgent.getDistinctId();
+AnalysysAgent.getDistinctId(callback);
 ```
+
+
+
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例:
 
 ```javascript
 // 获取匿名id
 var distinctId = AnalysysAgent.getDistinctId();
+
+// 获取匿名id，并返回数据处理完毕
+var callback = function(id){
+    console.log('数据处理完毕，匿名id:' + id)
+}
+
+AnalysysAgent.getDistinctId(callback);
 ```
 
 
@@ -859,20 +1060,31 @@ var distinctId = AnalysysAgent.getDistinctId();
 某一个体，在固定范围内，持续拥有的属性，每次数据上传都会携带。接口如下:
 
 ```javascript
-AnalysysAgent.registerSuperProperty(superPropertyName , superPropertyValue );
-
+AnalysysAgent.registerSuperProperty(superPropertyName, superPropertyValue );
+AnalysysAgent.registerSuperProperty(superPropertyName, superPropertyValue, callback );
 AnalysysAgent.registerSuperProperties(superProperty);
+AnalysysAgent.registerSuperProperties(superProperty, callback);
 ```
 
 * superPropertyName：属性名称，约束见[属性名称](js.md#1)
 * superPropertyValue：属性值，约束见[属性值](js.md#2)
 * superProperty：属性列表，约束见[属性名称](js.md#1)，[属性值](js.md#2)
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function(id){
+    console.log('数据处理完毕，匿名id:' + id)
+}
+
 // 在某视频平台，购买一年会员，该年内只需设置一次即可
 AnalysysAgent.registerSuperProperty("member","VIP");
+
+......
+
+// 在某视频平台，购买一年会员，该年内只需设置一次即可，并返回数据处理完毕
+AnalysysAgent.registerSuperProperty("member", "VIP", callback);
 
 ......
 
@@ -881,9 +1093,17 @@ var property = {
     "platform":"TX",
     "age":"20",
     "member":"VIP",
-    "user":"xiaoming"
+    "user":"xiaoming",
+    "userID": function(){
+        return '123456'
+    }
 }
 AnalysysAgent.registerSuperProperties(property);
+
+......
+
+// 小明在20岁的时候，购买了一年腾讯会员，并返回数据处理完毕
+AnalysysAgent.registerSuperProperties(property, callback);
 ```
 
 #### 删除通用属性
@@ -893,22 +1113,39 @@ AnalysysAgent.registerSuperProperties(property);
 ```javascript
 //删除单个通用属性
 AnalysysAgent.unRegisterSuperProperty(superPropertyName);
+AnalysysAgent.unRegisterSuperProperty(superPropertyName, callback);
+
 //清除所有通用属性
 AnalysysAgent.clearSuperProperties();
+AnalysysAgent.clearSuperProperties(callback);
 ```
 
 * superPropertyName：属性名称，约束见[属性名称](js.md#1)
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function(){
+    console.log('数据处理完毕')
+}
 // 删除已经设置的用户年龄属性
 AnalysysAgent.unRegisterSuperProperty("age");
 
 ......
 
+// 删除已经设置的用户年龄属性，并返回数据处理完毕
+AnalysysAgent.unRegisterSuperProperty("age", callback);
+
+......
+
 // 清除所有已经设置的通用属性
 AnalysysAgent.clearSuperProperties();
+
+......
+
+// 清除所有已经设置的通用属性，并返回数据处理完毕
+AnalysysAgent.clearSuperProperties(callback);
 ```
 
 #### 获取通用属性
@@ -918,22 +1155,39 @@ AnalysysAgent.clearSuperProperties();
 ```javascript
 // 获取单个通用属性
 AnalysysAgent.getSuperProperty(superPropertyName);
+AnalysysAgent.getSuperProperty(superPropertyName, callback);
+
 // 获取所有的通用属性
 AnalysysAgent.getSuperProperties();
+AnalysysAgent.getSuperProperties(callback);
 ```
 
 * superPropertyName：属性名称，约束见[属性名称](js.md#1)
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
 
 ```javascript
+var callback = function(value){
+    console.log('数据处理完毕, 获取到的通用属性：', value)
+}
 // 查看已经设置的"member"的通用属性
 AnalysysAgent.getSuperProperty("member");
 
 ......
 
+// 查看已经设置的"member"的通用属性，并返回数据处理完毕
+AnalysysAgent.getSuperProperty("member", callback);
+
+......
+
 // 查看所有已经设置的通用属性
 AnalysysAgent.getSuperProperties();
+......
+
+// 查看所有已经设置的通用属性，并返回数据处理完毕
+AnalysysAgent.getSuperProperties(callback);
+
 ```
 
 ### 获取预置属性
@@ -942,15 +1196,25 @@ AnalysysAgent.getSuperProperties();
 
 ```javascript
 AnalysysAgent.getPresetProperties();
+AnalysysAgent.getPresetProperties(callback);
 ```
+
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：获取预置属性
 
 ```javascript
+var callback = function(value){
+    console.log('数据处理完毕, 获取到的预置属性：', value)
+}
+
 // 获取预置属性
 var presetProperties = AnalysysAgent.getPresetProperties();
 
 console.log('预置属性:', presetProperties)
+
+// 获取预置属性，并返回数据处理完毕
+AnalysysAgent.getPresetProperties(callback);
 ```
 
 ### 清除本地设置
@@ -959,13 +1223,23 @@ console.log('预置属性:', presetProperties)
 
 ```javascript
 AnalysysAgent.reset();
+AnalysysAgent.reset(callback);
 ```
+
+* callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：清除本地现有的设置，包括id和通用属性
 
 ```javascript
 // 删除设置的id和通用属性
 AnalysysAgent.reset();
+
+// 删除设置的id和通用属性，并返回数据处理完毕
+var callback = function(){
+    console.log('数据处理完毕')
+}
+AnalysysAgent.reset(callback);
+
 ```
 
 
