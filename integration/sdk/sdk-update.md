@@ -1,6 +1,10 @@
 # SDK更新日志
 
-## Android SDK
+易观方舟SDK已全部开源，详见：[Github上的易观方舟SDK](https://github.com/analysys)
+
+同步更新内容已经迁移到Github上，请根据需求对查看每个SDK的更新日志。
+
+## Android SDK\(历史版本\)
 
 <table>
   <thead>
@@ -134,7 +138,7 @@
   </tbody>
 </table>
 
-## iOS SDK
+## iOS SDK\(历史版本\)
 
 <table>
   <thead>
@@ -254,7 +258,7 @@
         />7.&#x53EF;&#x89C6;&#x5316;&#x7AEF;&#x53E3;&#x4E3A;&#xFF08;&#x9ED8;&#x8BA4;wss&#xFF09;&#xFF1A;4091&#x3002;</td>
     </tr>
   </tbody>
-</table>## JS SDK
+</table>## JS SDK\(历史版本\)
 
 <table>
   <thead>
@@ -380,7 +384,7 @@
         <br />6.debugModel &#x4E3A;1 &#x4E0E; 2&#x65F6;&#x7684; log &#x8F93;&#x51FA;&#x89C4;&#x8303;&#x5316;&#x3002;</td>
     </tr>
   </tbody>
-</table>## 小程序 SDK
+</table>## 小程序 SDK\(历史版本\)
 
 <table>
   <thead>
@@ -470,7 +474,7 @@
   </tbody>
 </table>
 
-## Java SDK
+## Java SDK\(历史版本\)
 
 | 更新日期 | 版本号 | 更新内容 |
 | :---: | :---: | :--- |
@@ -478,7 +482,7 @@
 | 2019/05/20 | V4.0.9 | 1.代码重构 |
 | 2018/09/18 | V4.0.7 | 1.代码结构优化 2.完善异常处理 3.上报地址格式校验 4.优化属性值为NULL的校验 |
 
-## PHP SDK
+## PHP SDK\(历史版本\)
 
 <table>
   <thead>
@@ -508,7 +512,7 @@
       <td style="text-align:left">1.&#x5B8C;&#x6210;PHP SDK</td>
     </tr>
   </tbody>
-</table>## Node JS SDK
+</table>## Node JS SDK\(历史版本\)
 
 | 更新日期 | 版本号 | 更新内容 |
 | :---: | :---: | :--- |
