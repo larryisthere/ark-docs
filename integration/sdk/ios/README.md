@@ -278,6 +278,14 @@ AnalysysAgent.setDebugMode(.off)
 * delegate：遵循UIApplicationDelegate的对象，iOS默认为AppDelegate类
 * launchOptions：启动参数
 
+| 参数 | 说明 |
+| :--- | :--- |
+| icon | 点击图标启动 |
+| msg | 点击通知 |
+| url | URL唤醒 |
+| 3D | 3D touch |
+| 0（默认） | 其他，如home键切换、后台热启动 |
+
 示例：
 
 ```objectivec
