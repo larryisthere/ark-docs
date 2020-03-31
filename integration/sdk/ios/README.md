@@ -374,7 +374,7 @@ Swift代码示例:
 AnalysysAgent.setPageViewBlackListByPages(["packageName.NextViewController"]);
 ```
 
-#### 自动采集添加自定义信息
+### 页面自动采集添加自定义信息
 
 若用户开启页面自动采集功能，可将自定义页面信息添加至`$pageview`事件中。SDK对外提供一个协议`<ANSAutoPageTracker>`供继承至`UIViewController`的类使用，若类遵循该协议，则须实现`registerPageProperties`方法，并将自定义参数返回，SDK会将此部分信息添加至`$pageview`事件的自定义参数中，且自定义参数优先级高于自动采集参数（即：相同key情况下，用户key会覆盖自动采集key）。
 
