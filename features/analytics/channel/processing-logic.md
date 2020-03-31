@@ -19,7 +19,7 @@
 
 详细识别规则如下： 
 
-![](../../../.gitbook/assets/image%20%2881%29.png)
+![](../../../.gitbook/assets/image%20%2885%29.png)
 
 {% hint style="info" %}
 示例说明

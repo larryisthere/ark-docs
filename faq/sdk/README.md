@@ -4,7 +4,7 @@
 
 在SDK集成或开发中遇到问题，欢迎来到Argo社区，我们会协助你定位及解决问题。
 
-![&#x52A0;&#x5FAE;&#x4FE1;&#x540E;&#xFF0C;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../../.gitbook/assets/image%20%2898%29.png)
+![&#x52A0;&#x5FAE;&#x4FE1;&#x540E;&#xFF0C;&#x7533;&#x8BF7;&#x5165;&#x7FA4;](../../.gitbook/assets/image%20%28102%29.png)
 
 ## 易观方舟 SDK FAQ
 
