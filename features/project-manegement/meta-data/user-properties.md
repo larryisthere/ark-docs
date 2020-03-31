@@ -6,7 +6,7 @@
 
 ## 1 编辑用户属性
 
-![](../../../.gitbook/assets/image%20%28220%29.png)
+![](../../../.gitbook/assets/image%20%28221%29.png)
 
 A 处可以修改属性显示名称
 

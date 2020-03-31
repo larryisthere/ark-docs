@@ -8,7 +8,7 @@
 
 {% page-ref page="../../../integration/data-verification/data\_debug.md" %}
 
-![](../../../.gitbook/assets/image%20%28123%29.png)
+![](../../../.gitbook/assets/image%20%28124%29.png)
 
 也可以在客户端直接查看上报情况：
 
