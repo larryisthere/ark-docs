@@ -24,7 +24,7 @@
     * [来源识别规则](features/analytics/channel/processing-logic.md)
     * [搜索引擎](features/analytics/channel/processing-search-engine.md)
     * [社交媒体](features/analytics/channel/processing-social-media.md)
-    * [小程序场景](features/analytics/channel/processing-scene.md)
+    * [小程序场景值](features/analytics/channel/processing-scene.md)
     * [Session 规则](features/analytics/channel/session.md)
   * [事件分析](features/analytics/event.md)
   * [Session 分析](features/analytics/session.md)
