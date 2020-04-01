@@ -9,7 +9,10 @@ description: 标准版本适用方舟4.3.3以上版本
 JS SDK 用于由 HTML 、 Css 及 Javascript 制作成的网站，集成前请先下载 SDK
 
 {% hint style="info" %}
-[Releases包下载及更新说明](https://github.com/analysys/ans-javascript-sdk/releases)
+SDK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-javascript-sdk/releases](https://github.com/analysys/ans-javascript-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-javascript-sdk/releases](https://gitee.com/Analysys/ans-javascript-sdk/releases)  
+Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 | 服务端版本 |
