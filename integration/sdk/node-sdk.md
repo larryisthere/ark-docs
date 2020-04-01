@@ -172,7 +172,7 @@ track(distinctId, isLogin, eventName, properties,platform,upLoadTime);
 * isLogin 用户 ID 是否是登录 ID
 * eventName 事件名称,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * properties 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符。没有请设置`null`。
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 ```cpp
@@ -206,7 +206,7 @@ alias(aliasId, distinctId,platform,upLoadTime);
 
 * aliasId：用户注册 ID，长度大于 0，且小于 255字符
 * distinctId：用户匿名ID，长度大于 0，且小于 255字符
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime：用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：匿名用户浏览商品到注册会员
@@ -250,7 +250,7 @@ profileSet(distinctId, isLogin, properties, platform,upLoadTime)
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性，没有请设置`null`。
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册后设置用户的注册信息属性
@@ -291,7 +291,7 @@ profileSetOnce(distinctId, isLogin, properties,platform,upLoadTime);
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性，没有请设置`null`。
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：要统计用户注册时间
@@ -322,7 +322,7 @@ profileIncrement(distinctId, isLogin, properties,platform,upLoadTime);
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性，没有请设置`null`。
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册初始积分为0，在用户购买商品后，用户的积分增加20，则调用该接口，用户的积分变为0+20=20了：
@@ -352,7 +352,7 @@ profileAppend(distinctId, isLogin, properties,platform, upLoadTime);
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性，没有请设置`null`。
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户初始填写的兴趣爱好为\["sports"，"football"，"game"\]，调用该接口追加\["study"，"BodyBuilding"\]，则用户的爱好变为\["sports"，"football"，"game"，"study"，"BodyBuilding"\]
@@ -385,7 +385,7 @@ profileDelete(distinctId, isLogin, platform,upLoadTime);
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * property：事件属性
-* platfrom: 平台类型,内容范围：JS、WeChat、Android、iOS
+* platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 ```cpp

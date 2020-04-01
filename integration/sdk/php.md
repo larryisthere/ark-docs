@@ -121,7 +121,7 @@ $analysys_agent->alias($registerId, $distinctId, $platform, $xwhen);
 
 * `$registerId`：用户注册 ID，长度大于 0，且小于 255字符
 * `$distinctId`：用户匿名ID，长度大于 0，且小于 255字符，一般**从 Cookies 的 ARK\_ID 中获取**
-* `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：匿名用户浏览商品到注册会员
@@ -158,7 +158,7 @@ $analysys_agent->track($distinctId, $isLogin, $eventName, $properties, $platform
 * `$isLogin`：用户 ID 是否是登录 ID。若用户已登录则为 true，未登录则为 false。
 * `$eventName`：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * `$properties`: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
-* `$platform`：平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户浏览商品
@@ -206,7 +206,7 @@ $analysys_agent->profileSet($registerId,$isLogin,$properties,$platform, $xwhen);
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 用户属性
-* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 其中，$properties 是一个标准的K-V结构，K和V均有相应的约束条件，如不符合则丢弃该次操作。 参数约束：
@@ -255,7 +255,7 @@ $analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform, $
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
-* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：要统计用户注册时间
@@ -289,7 +289,7 @@ $analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform,
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
-* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户注册初始积分为0，在用户购买商品后，用户的积分增加20，则调用该接口，用户的积分变为0+20=20了：
@@ -323,7 +323,7 @@ $analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform, $x
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$properties`: 事件属性
-* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例：用户初始填写的兴趣爱好为\["户外活动"，"足球赛事"，"游戏"\]，调用该接口追加\["学习"，"健身"\]，则用户的爱好变为\["户外活动"，"足球赛事"，"游戏"，"学习"，"健身"\]
@@ -362,7 +362,7 @@ $analysys_agent->profileDelete($registerId, $isLogin, $platform, $xwhen);
 * `$registerId`: 用户ID,长度大于0且小于255字符
 * `$isLogin`: 用户ID是否是登录 ID
 * `$propertie`: 事件属性
-* `$platform`: 平台类型,内容范围：JS、WeChat、Android、iOS
+* `$platform`: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * `$xwhen`: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
 示例1： 要删除已经设置的用户昵称这一用户属性的值
