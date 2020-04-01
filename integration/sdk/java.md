@@ -110,7 +110,7 @@ public LogCollecter(String logFolder, GeneralRule rule, boolean async, int batch
 * batchSec： 批量保存等待时间\(秒\)，默认值：10秒
 
 至此 SDK初始化完成，调用 SDK 提供的接口已可正常采集用户数据了。需要注意：在多线程环境中时，推荐使用单例模式初始化 AnalysysJavaSdk，开发者可以在不同的线程间重复使用 AnalysysJavaSdk 实例用于记录数据。  
-说明：程序结束前需要调用 `flush()` 接口，该接口可以把本地缓存的尚未发送至数据接收服务器的数据发送到数据接收服务器。
+说明：程序结束前需要调用 `flush()` 接口，该接口可以把本地缓存的尚未发送至数据接收服务器或未写入本地的数据发送到数据接收服务器或写入本地文件。
 
 ## 3. 基础接口介绍
 
