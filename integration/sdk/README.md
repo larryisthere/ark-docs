@@ -40,6 +40,8 @@
 
 {% page-ref page="dotnet.md" %}
 
+{% page-ref page="lua-sdk.md" %}
+
 
 
 **数据导入**
