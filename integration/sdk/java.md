@@ -249,7 +249,7 @@ analysys.profileSet(registerId, isLogin, profiles, platform);
 
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileSet(registerId, isLogin, profiles, platform, myxWhen);;
+analysys.profileSet(registerId, isLogin, profiles, platform, myxWhen);
 ```
 
 ## 4. 更多接口
@@ -347,7 +347,7 @@ analysys.profileAppend(registerId, isLogin, profile, platform);
 
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileAppend(registerId, isLogin, profile, platform, myxWhen);;
+analysys.profileAppend(registerId, isLogin, profile, platform, myxWhen);
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -392,7 +392,7 @@ analysys.profileDelete(registerId, isLogin, platform);
 
 // 或者也可以使用自定义的时间戳
 String myxWhen = "1569859200000";
-analysys.profileDelete(registerId, isLogin, platform, myxWhen);;
+analysys.profileDelete(registerId, isLogin, platform, myxWhen);
 ```
 
 ### 4.2 通用属性

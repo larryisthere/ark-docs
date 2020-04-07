@@ -115,6 +115,7 @@
   * [C++ SDK](integration/sdk/c++.md)
   * [C\# SDK](integration/sdk/dotnet.md)
   * [Node JS SDK](integration/sdk/node-sdk.md)
+  * [Lua SDK](integration/sdk/lua-sdk.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
 * [数据验证](integration/data-verification/README.md)
   * [客户端埋点验证](integration/data-verification/sdk-verification.md)
