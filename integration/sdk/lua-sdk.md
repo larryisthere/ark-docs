@@ -63,7 +63,7 @@ SyncCollecter = function(serverUrl)
 用户触发上传，该收集器将先缓存数据，直到数量达到用户设置的阈值或者用户设置的等待时间，才会触发真正的上传：
 
 ```lua
-SyncCollecter = function(serverUrl, batchNum)
+BatchCollecter = function(serverUrl, batchNum)
 ```
 
 * serverUrl：数据接收地址
