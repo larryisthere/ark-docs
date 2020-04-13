@@ -36,7 +36,7 @@
     * [Web/H5 热图](features/analytics/heatmap/web.md)
     * [APP 热图](features/analytics/heatmap/app.md)
   * [分布分析](features/analytics/distribution.md)
-  * [间隔分析](features/analytics/jinterval.md)
+  * [间隔分析](features/analytics/interval.md)
   * [属性分析](features/analytics/user-attribute.md)
   * [自定义查询](features/analytics/sql.md)
 * [用户](features/segmentation/README.md)

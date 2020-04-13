@@ -190,7 +190,7 @@
 * **分析**模块新增了四大分析模型和自定义查询
   * \_\_[热图分析](features/analytics/heatmap/)，支持分析 Web/H5 页面、APP 的点击位置、点击元素热度分析
   * [分布分析](features/analytics/distribution.md)，分析某事件在不同节点上分布，比如洞察用户什么时间更愿意购买商品
-  * [间隔分析](features/analytics/jinterval.md)，分析两个事件的时间间隔等
+  * [间隔分析](features/analytics/interval.md)，分析两个事件的时间间隔等
   * [属性分析](features/analytics/user-attribute.md)，可以根据用户的属性进行分析
   * [自定义查询](features/analytics/sql.md)，支持用户完全自定义查询满足现有分析模型无法支持的分析需求
 * **分群**模块新增了分群的导出，支持将用户明细导出，再导入广告系统、CRM 系统等再次使用
