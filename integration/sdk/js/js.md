@@ -160,7 +160,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 ```javascript
 // 从 npm 获取 sdk
 
-import  AnalysysAgent from 'ans-javascript-sdk/SDK/AnalysysAgent_JS_SDK.es6.js'
+import  AnalysysAgent from 'ans-javascript-sdk/SDK/AnalysysAgent_JS_SDK.es6.min.js'
 
 //自行下载SDK
 
