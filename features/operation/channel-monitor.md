@@ -16,8 +16,6 @@ App 推广监测是通过系统生成二维码或链接，将生成带参数的�
 
 需要 SDK 升级到 v4.3.6 及以上，开启渠道追踪功能，详见 [《Android SDK 集成指南》](https://docs.analysys.cn/ark/integration/sdk/android#chu-shi-hua-jie-kou) 和 [《iOS SDK 集成指南》](https://docs.analysys.cn/ark/integration/sdk/ios#chu-shi-hua-jie-kou)
 
-## 1. 连接 APP 查看热图
-
 ## 功能说明
 
 ![](../../.gitbook/assets/image%20%2815%29.png)
