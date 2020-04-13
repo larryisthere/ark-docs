@@ -170,7 +170,7 @@ analysys.track(distinctId, isLogin, eventName, trackPropertie, platform, myxWhen
 
 ### 3.3 用户关联
 
-用户 ID 关联接口。将 aliasId 和 distinctId 关联，计算时会认为是一个用户的行为。该接口是在 distinctId 发生变化的时候调用，来告诉 SDK distinctId 变化前后的 ID 对应关系。该场景一般应用在用户注册/登录的过程中。比如：一个匿名用户浏览商品，系统为其分配的distinctId = "1234567890987654321"，随后该匿名用户进行注册，系统为其分配了新的注册 ID，aliasId = "ABCDEF123456789"，此时就需要调用 alias 接口对两个 ID 进行关联。接口如下：
+用户关联的主要作用是打通用户登录前后的行为，以及多屏登录后的行为。做过用户关联的用户在登录前后的行为在方舟系统里面会被认为是一个用户。方舟系统目前支持 一台设备只能绑定一个用户 ID，一个用户 ID 只能绑定一台设备。设备和用户 ID 绑定后，就无法再和其他用户或者设备进行绑定。例如一个用户的设备 ID 是 ABC 用户的登录 ID 是 123，绑定成功后会对应同一个 ID，这样在统计或者分析时会被认为是一个用户。**如果注册成功或者登录事件在后端触发，后端 alias 接口的 distinctId 需要从前端获取匿名 ID 传给后端。**建议埋点时观看下 [方舟 SDK 接入视频](https://ark.analysys.cn/video-list.html) 接口描述如下：
 
 ```java
 public void alias(String aliasId, String distinctId, String platform) throws AnalysysException;
