@@ -559,6 +559,8 @@ iOS采集规则：idfa&gt;idfv&gt;uuid，按照先后顺序获取
 | $share\_id | 分享者ID | 字符串 | 分享者ID | - | - | - | N |
 | $share\_level | 转发层级 | 整数型 | 转发层级 | - | - | - | N |
 | $share\_path | 转发地址 | 字符串 | 转发页面来源 | -- | - | - | N |
+| $page\_width  | 页面宽度  | 浮点型  | 页面宽度 | N | N | N | N |
+| $page\_height  | 页面高度   | 浮点型 | 页面高度 | N | N | N | N |
 
 {% hint style="info" %}
 **其中 $startup\_time  仅用于数据校准，不会出现在分析模型中**
