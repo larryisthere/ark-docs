@@ -47,9 +47,9 @@ Argo 用户：在方舟官网 [获取License页面](https://ark.analysys.cn/lice
 
 若已经到期或擅自扩展部署节点，则系统无法继续使用，需要在弹窗中输入新的License来续期/扩容
 
-![&#x6388;&#x6743;&#x5230;&#x671F;](../.gitbook/assets/image%20%28271%29.png)
+![&#x6388;&#x6743;&#x5230;&#x671F;](../.gitbook/assets/image%20%28272%29.png)
 
-![&#x8282;&#x70B9;&#x8D85;&#x9650;](../.gitbook/assets/image%20%28260%29.png)
+![&#x8282;&#x70B9;&#x8D85;&#x9650;](../.gitbook/assets/image%20%28261%29.png)
 
 ### 事件用量超限后扩容
 

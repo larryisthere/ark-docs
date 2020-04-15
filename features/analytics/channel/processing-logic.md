@@ -19,7 +19,7 @@
 
 详细识别规则如下： 
 
-![](../../../.gitbook/assets/image%20%2885%29.png)
+![](../../../.gitbook/assets/qu-dao-lai-yuan-yong-yu-wen-dang-1.png)
 
 {% hint style="info" %}
 示例说明

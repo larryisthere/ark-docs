@@ -19,7 +19,7 @@ v4.4.0 及以上
 
 Session，即会话，是指在指定的时间段内在您的网站/H5/小程序/APP上发生的一系列用户行为的集合。例如，一次会话可以包含多个页面浏览、交互事件等。Session 是具备时间属性的，根据不同的切割规则，可以生成不同长度的 Session，关于方舟的 Session 的默认规则为“系统预置规则”，具体请参考：[Session 规则](channel/session.md)。其他自定义切割规则可以在管理-元事件管理-[Session管理](https://docs.analysys.cn/ark/features/project-manegement/yuan-shu-ju-guan-li/session)中创建新的session切割规则或修改原有session切割规则。
 
-![](../../.gitbook/assets/image%20%28281%29.png)
+![](../../.gitbook/assets/image%20%28282%29.png)
 
 
 
