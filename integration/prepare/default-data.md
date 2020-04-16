@@ -489,7 +489,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 </table>{% hint style="info" %}
 **非自动采集的属性，会根据相应字段自动解析**
 
-**$ip ：**通过服务端自动解析获取
+**$ip ：**方舟的收数服务会自动记录上报的数据来源 IP，根据 IP 解析为国家、省份、城市三个字段
 
 **$county：**通过 IP 解析
 
@@ -499,8 +499,6 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 **$device\_type：**通过 UA 解析
 {% endhint %}
-
-\*\*\*\*
 
 {% hint style="info" %}
 **部分自动采集的属性不会作为独立的属性用于分析**
@@ -517,9 +515,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
   
 **$device\_id：系统唯一标识，默认不采集\(4.4.5版本新增\)**
 
-Andorid采集规则：advertising id &gt; android id &gt; uuid，按照先后顺序获取
+**Andorid 采集规则：**advertising id &gt; android id &gt; uuid，按照先后顺序获取
 
-iOS采集规则：idfa&gt;idfv&gt;uuid，按照先后顺序获取
+**iOS 采集规则：**idfa&gt;idfv&gt;uuid，按照先后顺序获取
 {% endhint %}
 
 ### 2. 部分 Event 事件自身属性
