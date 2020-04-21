@@ -261,14 +261,14 @@ AnalysysAgent.ProfileSet(registerId, isLogin, profiles,platform,currentTime);
 只在首次设置时有效的属性。如：用户的注册时间。如果被设置的用户属性已存在，则这条记录会被忽略而不会覆盖已有数据，如果属性不存在则会自动创建。接口如下：
 
 ```java
-ProfileSetOnce(distinctId, isLogin, properties,platform,upLoadTime);
+ProfileSetOnce(distinctId string, isLogin bool, properties map[string]interface{},platform string,upLoadTime int);
 ```
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
-* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
 
 示例：要统计用户注册时间
 
@@ -295,7 +295,7 @@ ProfileIncrement(distinctId string, isLogin string, properties map[string]int,pl
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
-* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
 
 示例：用户注册初始积分为0，在用户购买商品后，用户的积分增加20，则调用该接口，用户的积分变为0+20=20了：
 
@@ -322,7 +322,7 @@ ProfileAppend(distinctId string, isLogin string, properties map[string]interface
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
-* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
 
 示例：用户初始填写的兴趣爱好为\["户外活动"，"足球赛事"，"游戏"\]，调用该接口追加\["学习"，"健身"\]，则用户的爱好变为\["户外活动"，"足球赛事"，"游戏"，"学习"，"健身"\]
 
@@ -349,9 +349,9 @@ ProfileDelete(distinctId string, isLogin bool , platform string,upLoadTime int);
 
 * distinctId: 用户ID,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
-* propertie: 事件属性
+* property: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
-* xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
+* upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
 
 示例：
 
@@ -477,82 +477,87 @@ AnalysysAgent.Flush();
 ## 5. SDK 使用样例
 
 ```lua
-import (
-    "ans"
-)
-appId := "1234"
-upLoadURL := "https://arksdk.analysys.cn:4089"
-postNumber := 2
-debugMode := 2
-timestr := strconv.FormatInt(time.Now().UnixNano()/1e6, 10)
-currentTime, _ := strconv.Atoi(timestr)
-batchCollector := ans.InitBatchCollector(upLoadURL, postNumber)
-AnalysysAgent := ans.InitAnalysysAgent(batchCollector, appId, debugMode)
-// 初始化完成
-distinctId := "1234567890987654321"
-platform := "Android"
-//浏览商品
-trackPropertie := map[string]interface{}{
-    "$ip": "112.112.112.112", //IP地址
-}
-bookList := []string{"Go语言编程"}
-trackPropertie["productName"] = bookList //商品列表
-trackPropertie["productType"] = "Go书籍"   //商品类别
-trackPropertie["producePrice"] = 80      //商品价格
-trackPropertie["shop"] = "xx网上书城"        //店铺名称
-AnalysysAgent.Track(distinctId, true, "ViewProduct", trackPropertie, platform, currentTime)
-//用户注册登录
-registerId := "ABCDEF123456789"
-AnalysysAgent.Alias(registerId, distinctId, platform, currentTime) //设置公共属性
-superPropertie := map[string]interface{}{
-    "sex": "male", //性别
-    "age": 23,     //年龄
-}
-AnalysysAgent.RegisterSuperProperties(superPropertie) //用户信息
-profiles := map[string]interface{}{
-    "$city":     "北京",    //城市
-    "$province": "北京",    //省份
-    "nickName":  "昵称123", //昵称
-    "userLevel": 0,       //用户级别
-    "userPoint": 0,       //用户积分
-}
-interestList := []string{"户外活动", "足球赛事", "游戏"}
-profiles["interest"] = interestList                                         //用户兴趣爱好
-AnalysysAgent.ProfileSet(registerId, true, profiles, platform, currentTime) //用户注册时间
-profile_age := map[string]interface{}{
-    "registerTime": "20180101101010",
-}
-AnalysysAgent.ProfileSetOnce(registerId, true, profile_age, platform, currentTime)
-//重新设置公共属性
-AnalysysAgent.ClearSuperProperties()
+package main
 
-superPropertie = map[string]interface{}{
-    "userLevel": 0, //用户级别
-    "userPoint": 0, //用户积分
+import (
+    ans "github.com/analysys/ans-go-sdk"
+)
+
+func main() {
+    // 初始化 AnalysysAgent
+    appId := "1234"
+    upLoadURL := "https://arksdk.analysys.cn:4089"
+    postNumber := 2
+    debugMode := 2
+    batchCollector := ans.InitBatchCollector(upLoadURL, postNumber)
+    AnalysysAgent := ans.InitAnalysysAgent(batchCollector, appId, debugMode)
+    // 初始化完成
+    distinctId := "1234567890987654321"
+    platform := "Android"
+    //浏览商品
+    trackPropertie := map[string]interface{}{
+        "$ip": "112.112.112.112", //IP地址
+    }
+    bookList := []string{"Go语言编程"}
+    trackPropertie["productName"] = bookList //商品列表
+    trackPropertie["productType"] = "Go书籍"   //商品类别
+    trackPropertie["producePrice"] = 80      //商品价格
+    trackPropertie["shop"] = "xx网上书城"        //店铺名称
+    AnalysysAgent.Track(distinctId, true, "ViewProduct", trackPropertie, platform, ans.CurrentTime())
+    //用户注册登录
+    registerId := "ABCDEF123456789"
+    AnalysysAgent.Alias(registerId, distinctId, platform, ans.CurrentTime()) //设置公共属性
+    superPropertie := map[string]interface{}{
+        "sex": "male", //性别
+        "age": 23,     //年龄
+    }
+    AnalysysAgent.RegisterSuperProperties(superPropertie) //用户信息
+    profiles := map[string]interface{}{
+        "$city":     "北京",    //城市
+        "$province": "北京",    //省份
+        "nickName":  "昵称123", //昵称
+        "userLevel": 0,       //用户级别
+        "userPoint": 0,       //用户积分
+    }
+    interestList := []string{"户外活动", "足球赛事", "游戏"}
+    profiles["interest"] = interestList                                               //用户兴趣爱好
+    AnalysysAgent.ProfileSet(registerId, true, profiles, platform, ans.CurrentTime()) //用户注册时间
+    profile_age := map[string]interface{}{
+        "registerTime": "20180101101010",
+    }
+    AnalysysAgent.ProfileSetOnce(registerId, true, profile_age, platform, ans.CurrentTime())
+    //重新设置公共属性
+    AnalysysAgent.ClearSuperProperties()
+
+    superPropertie = map[string]interface{}{
+        "userLevel": 0, //用户级别
+        "userPoint": 0, //用户积分
+    }
+    AnalysysAgent.RegisterSuperProperties(superPropertie)
+    //再次浏览商品
+    trackPropertie["$ip"] = "112.112.112.112" //IP地址
+    bookList = []string{"Go语言编程"}
+    trackPropertie["productName"] = bookList //商品列表
+    trackPropertie["productType"] = "Go书籍"   //商品类别
+    trackPropertie["producePrice"] = 80      //商品价格
+    trackPropertie["shop"] = "xx网上书城"        //店铺名称
+    AnalysysAgent.Track(registerId, true, "ViewProduct", trackPropertie, platform, ans.CurrentTime())
+    //订单信息
+    trackPropertie["orderId"] = "ORDER_12345"
+    trackPropertie["price"] = 80
+    AnalysysAgent.Track(registerId, true, "Order", trackPropertie, platform, ans.CurrentTime())
+    //支付信息
+    trackPropertie["orderId"] = "ORDER_12345"
+    trackPropertie["productName"] = "Go语言编程"
+    trackPropertie["productType"] = "Go书籍"
+    trackPropertie["producePrice"] = 8
+    trackPropertie["shop"] = "xx网上书城"
+    trackPropertie["productNumber"] = 1
+    trackPropertie["price"] = 80
+    trackPropertie["paymentMethod"] = "AliPay"
+    AnalysysAgent.Track(registerId, true, "Payment", trackPropertie, platform, ans.CurrentTime())
+    AnalysysAgent.Flush()
+
 }
-AnalysysAgent.RegisterSuperProperties(superPropertie)
-//再次浏览商品
-trackPropertie["$ip"] = "112.112.112.112" //IP地址
-bookList = []string{"Go语言编程"}
-trackPropertie["productName"] = bookList //商品列表
-trackPropertie["productType"] = "Go书籍"   //商品类别
-trackPropertie["producePrice"] = 80      //商品价格
-trackPropertie["shop"] = "xx网上书城"        //店铺名称
-AnalysysAgent.Track(registerId, true, "ViewProduct", trackPropertie, platform, currentTime)
-//订单信息
-trackPropertie["orderId"] = "ORDER_12345"
-trackPropertie["price"] = 80
-AnalysysAgent.Track(registerId, true, "Order", trackPropertie, platform, currentTime)
-//支付信息
-trackPropertie["orderId"] = "ORDER_12345"
-trackPropertie["productName"] = "Go语言编程"
-trackPropertie["productType"] = "Go书籍"
-trackPropertie["producePrice"] = 8
-trackPropertie["shop"] = "xx网上书城"
-trackPropertie["productNumber"] = 1
-trackPropertie["price"] = 80
-trackPropertie["paymentMethod"] = "AliPay"
-AnalysysAgent.Track(registerId, true, "Payment", trackPropertie, platform, currentTime)
-AnalysysAgent.Flush()
 ```
 
