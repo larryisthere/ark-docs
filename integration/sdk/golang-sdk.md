@@ -42,7 +42,7 @@ import ans "github.com/analysys/ans-go-sdk"
 
 ### 2.2 初始化接口
 
-在程序/模块启动时初始化 Lua SDK 实例。如下：
+在程序/模块启动时初始化实例。如下：
 
 ```go
 ans.InitAnalysysAgent(Collector lib.Collector, appid string, debugMode int)
