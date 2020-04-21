@@ -42,6 +42,8 @@
 
 {% page-ref page="lua-sdk.md" %}
 
+{% page-ref page="golang-sdk.md" %}
+
 
 
 **数据导入**
