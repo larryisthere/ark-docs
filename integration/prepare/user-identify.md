@@ -102,17 +102,23 @@ void identify(Context context, String xwho)
 
 正确集成SDK，遵循接口的调用顺序，否则可能会导致部分用户标识异常，影响数据统计的正确性。
 
-在 SDK 初始化完成之后，方舟的 SDK 会自动生成一个 UUID 作为匿名用户标识，记录在 `xwho` 中（这一步也可以调用 **identify** 接口设置匿名 ID），之后 SDK 采集上报的数据中 `$is_login` 属性为 false，来表示这是 匿名 ID 。
+在 SDK 初始化完成之后，SDK 会自动生成一个 UUID 作为匿名用户标识，记录在 `xwho` 中，之后 SDK 采集上报的数据中 `$is_login` 属性为 `false`，来表示这是 匿名 ID 。
+
+{% hint style="warning" %}
+如果因业务要求需要对SDK生成的UUID进行调整,可以通过调用接口 **`identify`** 进行修改，接口使用方式请查看SDK指南。
+{% endhint %}
 
 当用户进行登录 / 注册 / 完善个人资料等会使得用户有 注册 ID 时的操作时，调用 `alias` 接口，上传匿名ID 和注册 ID 的关联关系。
 
 **alias**接口格式如下：
 
 ```java
-void alias(Context context, String aliasId, String originalId)
+//Andorid SDK 示例，其中aliasId为您业务系统的ID
+void alias(Context context, String aliasId)
+
 ```
 
-当调用**alias**接口之后，接下来事件数据的 `$is_login` 属性都会被自动设置为`1`，表示事件是由一个注册 ID 触发的，后续行为事件中 `xwho` 都会是注册 ID。
+当调用**alias**接口之后，接下来事件数据的 `$is_login` 属性都会被自动设置为`true`，表示事件是由一个注册 ID 触发的，后续行为事件中 `xwho` 都会是注册 ID。
 
 在用户退出登录或者注销帐号时，如果想让匿名期间的行为归属到上一个登录用户时，可以不调用任何接口；反之，不想让匿名记录归属到上一个登录用户时，需要调用 **reset** 接口，之后方舟的 SDK 会自动生成一个 UUID 作为用户标识，上传到服务器时，会根据新生成一个distinct\_id：
 
@@ -122,10 +128,11 @@ void alias(Context context, String aliasId, String originalId)
 **reset**接口格式如下：
 
 ```java
+//Andorid SDK 示例 
 void reset(Context context)
 ```
 
-当调用**reset**接口之后，接下来事件数据的 `$is_login` 属性都会被自动设置为 `0`，表示事件是由一个匿名 ID 触发的。
+当调用**reset**接口之后，接下来事件数据的 `$is_login` 属性都会被自动设置为 `false`，表示事件是由一个匿名 ID 触发的。
 
 ## 5. 方案缺点
 
