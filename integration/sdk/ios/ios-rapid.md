@@ -174,8 +174,6 @@ AnalysysAgent.track("pay", properties: properties)
 {% endtab %}
 {% endtabs %}
 
-
-
 ## 账号关联
 
 用户关联的主要作用是打通用户登录前后的行为，做过用户关联的用户在登录前后的行为在方舟系统里面会被认为是一个用户。**建议在用户注册成功或者登录成功后客户端需要调用 alias 接口。**
