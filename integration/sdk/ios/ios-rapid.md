@@ -101,7 +101,6 @@ Debug 接口主要用于开发者测试。可以开/关日志，查看tag为`[an
     AnalysysConfig.appKey = @"77a52s552c892bn442v721";
     // 设置渠道
     AnalysysConfig.channel = @"App Store";
-  
     //  使用配置初始化SDK
     [AnalysysAgent startWithConfig:AnalysysConfig];
     
@@ -113,10 +112,9 @@ Debug 接口主要用于开发者测试。可以开/关日志，查看tag为`[an
         [AnalysysAgent setDebugMode:AnalysysDebugOff];
     #endif
 
-    //  设置上传地址，需包含协议头如HTTP或者HTTPS，URL可以为IP或者域名、Port
-    //为上报的端口
+    //  设置上传地址，http://example.com为您上报地址
 
-    [AnalysysAgent setUploadURL:@"https://url:port"];
+    [AnalysysAgent setUploadURL:@"htts://example.com"];
      // 开启全埋点
     [AnalysysAgent setAutoTrackClick:YES];
 
@@ -139,6 +137,8 @@ Debug 接口主要用于开发者测试。可以开/关日志，查看tag为`[an
 
 代码示例：
 
+{% tabs %}
+{% tab title="objective-c" %}
 ```objectivec
 //  收藏事件
 [AnalysysAgent track:@"collect"];
@@ -152,14 +152,21 @@ properties[@"name"] = @"iPhone XS Max";
 properties[@"money"] = [NSNumber numberWithFloat:9599.0];
 properties[@"count"] = @1;
 [AnalysysAgent track:@"pay" properties:properties];
+```
+{% endtab %}
 
-//Swift代码示例:
+{% tab title="Swift" %}
+```objectivec
 let properties = ["type": "Phone",
                   "name": "iPhone XS Max",
                  "money": 9599.0,
                  "count": 1] as [String: Any]
 AnalysysAgent.track("pay", properties: properties)
 ```
+{% endtab %}
+{% endtabs %}
+
+
 
 ## 账号关联
 
@@ -175,15 +182,21 @@ AnalysysAgent.track("pay", properties: properties)
 
 代码示例：
 
+{% tabs %}
+{% tab title="objective-c" %}
 ```objectivec
-//OC示例代码
 //登陆账号时调用，只设置当前登陆账号即可和之前行为打通
 [AnalysysAgent alias:@"sanbo"];
+```
+{% endtab %}
 
-//Swift代码示例：
+{% tab title="Swift" %}
+```objectivec
 //登陆账号时调用，只设置当前登陆账号即可和之前行为打通
 AnalysysAgent.alias("zhangsan")
 ```
+{% endtab %}
+{% endtabs %}
 
 ## 设置用户属性
 
@@ -201,18 +214,26 @@ AnalysysAgent.alias("zhangsan")
 
 代码示例：
 
+{% tabs %}
+{% tab title="objective-c" %}
 ```objectivec
 // 设置用户的 `Job` 是 `Engineer`
 [AnalysysAgent profileSet:@"Job" propertyValue:@"Engineer"];
+```
+{% endtab %}
 
-...
-
+{% tab title="Swift" %}
+```
 // 统计用户昵称和爱好信息
 NSDictionary *properties = @{@"nickName":@"小叮当",@"hobby":@[@"Singing", @"Dancing"]};
 [AnalysysAgent profileSet:properties];
 //Swift代码示例：
 AnalysysAgent.profileSet(["nickName": "小叮当", "hobby": ["Singing", "Dancing"]])
 ```
+{% endtab %}
+{% endtabs %}
+
+
 
 ### 验证数据
 
