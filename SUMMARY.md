@@ -94,6 +94,7 @@
     * [SDK Gradle集成方式](integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi.md)
     * [多渠道打包](integration/sdk/android/channel-packing.md)
   * [iOS SDK](integration/sdk/ios/README.md)
+    * [快速集成](integration/sdk/ios/kuai-su-shang-shou.md)
     * [全埋点介绍](integration/sdk/ios/quan-mai-dian-jie-shao.md)
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
     * [消息推送模块](integration/sdk/ios/ios-push.md)
