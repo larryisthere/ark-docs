@@ -99,6 +99,7 @@
     * [iOS Hybrid模式](integration/sdk/ios/hybrid-ios.md)
     * [消息推送模块](integration/sdk/ios/ios-push.md)
   * [JS SDK](integration/sdk/js/README.md)
+    * [快速集成](integration/sdk/js/kuai-su-ji-cheng.md)
     * [JS SDK标准版](integration/sdk/js/js.md)
     * [JS SDK插件](integration/sdk/js/plus.md)
     * [JS SDK历史版](integration/sdk/js/js-sdk-history.md)

@@ -12,7 +12,7 @@ Session，即会话，是指在指定的时间段内在您的网站/H5/小程序
 
 但因为不同的应用有不同的分析场景，如果使用统一的标准，会无法满足，所以方舟支持自定义Session口径，通过事件、跨天等等来进行切割，同时能够满足传统的定义方法。
 
-![](../../../.gitbook/assets/image%20%2893%29.png)
+![](../../../.gitbook/assets/image%20%2894%29.png)
 
 Session管理功能，用来创建Session口径和管理已完成创建的Session口径。
 
@@ -58,7 +58,7 @@ Session 结束的方式分为以下3种：
 
 创建好 Session 规则后，就可以在分析过程中，使用不同的规则，分析指标了，详见使用说明阅读[《Session 分析》](../../analytics/session.md)
 
-![](../../../.gitbook/assets/image%20%28276%29.png)
+![](../../../.gitbook/assets/image%20%28277%29.png)
 
 
 
