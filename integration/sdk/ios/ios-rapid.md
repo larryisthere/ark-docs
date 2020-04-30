@@ -107,8 +107,8 @@ Debug 接口主要用于开发者测试。可以开/关日志，查看tag为`[an
     //  AnalysysAgent 配置信息
     //  设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
     AnalysysConfig.appKey = @"77a52s552c892bn442v721";
-    // 设置渠道
-    AnalysysConfig.channel = @"App Store";
+    // 设置渠道默认App Store
+    //AnalysysConfig.channel = @"App Store";
     //  使用配置初始化SDK
     [AnalysysAgent startWithConfig:AnalysysConfig];
     
