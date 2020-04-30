@@ -215,10 +215,11 @@ requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
         n.parentNode.insertBefore(c, n);
     })({
     //设置APPKEY，
-        appkey: '/*设置为实际APPKEY*/', 
-    //设置数据上报地址
-        uploadURL: '/*设置为实际地址*/'//上传数据的地址
-    //开启Debug模式，上线时请设置0或关闭
+    //  设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
+        appkey: '77a52s552c892bn442v721', 
+    //设置数据上报地址，请替换http://example.com为您上报地址
+        uploadURL: 'htts://example.com'//上传数据的地址
+    //开启Debug模式，上线时请设置0或删除代码
         debugMode:2 
     //开启全埋点
         autoTrack:true
