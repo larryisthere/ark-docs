@@ -235,8 +235,8 @@ requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
 
 ```javascript
 AnalysysAgent.track(eventName);
-AnalysysAgent.track(eventName, eventInfo);
-AnalysysAgent.track(eventName, eventInfo, callback);
+AnalysysAgent.track(eventName, properties);
+AnalysysAgent.track(eventName, properties, callback);
 ```
 
 * eventName：事件ID，以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符
@@ -284,7 +284,7 @@ var eventInfo = {
     }
 }
 
-AnalysysAgent.track("buy", eventInfo, callback);
+AnalysysAgent.track("buy", properties, callback);
 ```
 
 ## 账号关联
