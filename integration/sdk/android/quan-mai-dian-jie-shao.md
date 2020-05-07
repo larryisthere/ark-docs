@@ -30,7 +30,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.analysys.android.plugin'
 
 dependencies {
-   //易观SDK依赖，当前是使用的全埋点版本号为1.0.2
+   //易观SDK依赖，当前是使用的版本号为4.4.9
    implementation 'cn.com.analysys:analysys-arkanalysys:4.4.9'
 }
 ```
