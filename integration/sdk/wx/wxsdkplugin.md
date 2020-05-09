@@ -126,8 +126,9 @@ Page({
 * _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
+* autoTrack 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click 事件,不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
-![](../../../.gitbook/assets/image%20%28269%29.png)
+![](../../../.gitbook/assets/image%20%28272%29.png)
 
 #### appkey
 
@@ -253,6 +254,20 @@ maxDiffTimeInterval 为设置不校准时间的最大时间差值。当客户端
 //设置最大允许时间
 AnalysysAgent.maxDiffTimeInterval = 20 
 //当服务端和客户端的时间差超过 20s 将进行时间校准 
+```
+
+#### **autoTrack**
+
+autoTrack 为设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click 事件,不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
+
+* false 关闭全埋点采集\(默认\)。类型：Boolean。
+* true 开启全埋点采集。类型：Boolean。
+
+```javascript
+//关闭全埋点
+AnalysysAgent.autoTrack = false //或删除该行代码。
+//开启全埋点
+AnalysysAgent.autoTrack = true
 ```
 
 ### 域名配置

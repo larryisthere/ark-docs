@@ -61,7 +61,8 @@ description: 微信小程序标准版
 
 ```javascript
 let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.min.js")
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+//设置您的APPKEY
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" 
 ```
 
 如需要加密模块
@@ -78,6 +79,75 @@ import AnalysysAgent from  './build/AnalysysAgent_WX_SDK.es6.min.js';
 import AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
 AnalysysAgent.encrypt = AnalysysEncryption;
 ```
+
+基础版本开启全埋点接入方式:
+
+目前全埋点支持taro、uniapp、mpvue、wepy
+
+Chameleon暂不支持
+
+{% tabs %}
+{% tab title="微信原生接入" %}
+```javascript
+//标准版本开启全埋点接入方式示例：
+// app.js
+import AnalysysAgent from  './build/AnalysysAgent_WX_SDK.es6.min.js';
+//设置您的APPKEY
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" 
+//设置您的上报地址
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+
+{% tab title="taro 框架接入" %}
+```javascript
+//框架（taro）开启全埋点接入方式示例：
+//app.jsx
+let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.min.js")
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+
+{% tab title="uniapp 框架接入" %}
+```javascript
+//框架（uniapp）开启全埋点接入方式示例：
+// main.js
+import AnalysysAgent from './sdk/AnalysysAgent_WX_SDK.es6.min.js';
+import Vue from 'vue'
+import App from './App'
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true//框架（mpvue）开启全埋点接入方式示例：
+```
+{% endtab %}
+
+{% tab title="mpvue 框架接入" %}
+```javascript
+//main.js
+import AnalysysAgent from './sdk/AnalysysAgent_WX_SDK.es6.min.js';
+import Vue from 'vue'
+import App from './App'
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true//框架（wepy）开启全埋点接入方式示例：
+```
+{% endtab %}
+
+{% tab title="mpvue 框架接入" %}
+```javascript
+// app.wpy
+import AnalysysAgent from  './sdk/AnalysysAgent_WX_SDK.min.js';
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+{% endtabs %}
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
 
@@ -104,6 +174,7 @@ let AnalysysAgent = wx.AnalysysAgent;
 * _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
+* autoTrack 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click 事件,不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
 #### appkey
 
@@ -227,6 +298,20 @@ maxDiffTimeInterval 为设置不校准时间的最大时间差值。当客户端
 //设置最大允许时间
 AnalysysAgent.maxDiffTimeInterval = 20 
 //当服务端和客户端的时间差超过 20s 将进行时间校准 
+```
+
+#### **autoTrack**
+
+autoTrack 为设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click 事件,不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
+
+* false 关闭全埋点采集\(默认\)。类型：Boolean。
+* true 开启全埋点采集。类型：Boolean。
+
+```javascript
+//关闭全埋点
+AnalysysAgent.autoTrack = false //或删除该行代码。
+//开启全埋点
+AnalysysAgent.autoTrack = true
 ```
 
 ### 域名配置
