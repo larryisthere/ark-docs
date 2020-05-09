@@ -126,7 +126,7 @@ Page({
 * _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
-* autoTrack 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click 事件,不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
+* _autoTrack_ 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的`$element_content`、data-type为采集的`$element_type`、data-name为采集的`$element_name`、id为采集的`$element_id`。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
 ![](../../../.gitbook/assets/image%20%28272%29.png)
 
@@ -258,7 +258,7 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 #### **autoTrack**
 
-autoTrack 为设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click 事件,不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
+开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的`$element_content`、data-type为采集的`$element_type`、data-name为采集的`$element_name`、id为采集的`$element_id`。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到
 
 * false 关闭全埋点采集\(默认\)。类型：Boolean。
 * true 开启全埋点采集。类型：Boolean。
@@ -363,25 +363,39 @@ AnalysysAgent.appProperty(properties);
 
 ### 采集分享按钮点击事件
 
-采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。方法返回对象（toShareProperties）。接口如下：
 
 ```javascript
-AnalysysAgent.share(properties);
+AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
-* properties：分享内容，properties 最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用微信默认。 
+* trackProperties（可选），发送share 方法上报的属性。最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
 ```javascript
-// 采集分享按钮点击事件
+// 自动采集，设置autoShare为true和分享属性即可
 Page({
     onShareAppMessage:function(){
-        let shareProperties = {
+        let toShareProperties = {
           title: '自定义转发标题',
           path: '/page/user?id=123'
         }
-        return shareProperties
+        return toShareProperties
+    }
+})
+// 手动采集，需要关闭自动，设置autoShare 为 false
+Page({
+    onShareAppMessage:function(){
+        let toShareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        let trackProperties = {
+            custom:'weChat'
+        }
+        return AnalysysAgent.share(toShareProperties,trackProperties);
     }
 })
 ```
