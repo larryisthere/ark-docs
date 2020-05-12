@@ -129,7 +129,7 @@ AnalysysAgent.autoTrack = true//框架（uniapp）开启全埋点接入方式示
 ```
 {% endtab %}
 
-{% tab title="wepy 框架接入" %}
+{% tab title="mpvue 框架接入" %}
 ```javascript
 //main.js
 import AnalysysAgent from './sdk/AnalysysAgent_WX_SDK.es6.min.js';
@@ -138,11 +138,11 @@ import App from './App'
 
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
-AnalysysAgent.autoTrack = true//框架（wepy）开启全埋点接入方式示例：
+AnalysysAgent.autoTrack = true//框架（mpvue）开启全埋点接入方式示例：
 ```
 {% endtab %}
 
-{% tab title="mpvue 框架接入" %}
+{% tab title="wepy 框架接入" %}
 ```javascript
 // app.wpy
 import AnalysysAgent from  './sdk/AnalysysAgent_WX_SDK.min.js';
