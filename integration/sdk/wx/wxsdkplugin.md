@@ -262,7 +262,11 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 #### **autoTrack**
 
-开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的`$element_content`、data-type为采集的`$element_type`、data-name为采集的`$element_name`、id为采集的`$element_id`。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到
+开启全埋点后会自动采集可触控元素\(支持：tab类型、longtab类型、longpress类型\),并上报`$user_click`事件。
+
+自动采集时需要设置Data类型属性，若不设置Data属性会导致无法采集预制属性，设置data-content为采集的`$element_content`、data-type为采集的`$element_type`、data-name为采集的`$element_name`、id为采集的`$element_id`。
+
+不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
 * false 关闭全埋点采集\(默认\)。类型：Boolean。
 * true 开启全埋点采集。类型：Boolean。
@@ -374,7 +378,7 @@ AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
 * toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用微信默认。 
-* trackProperties（可选），发送share 方法上报的属性。最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* trackProperties（可选），分享事件自定义属性。最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 

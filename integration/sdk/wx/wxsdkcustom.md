@@ -384,7 +384,7 @@ AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
 * toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用微信默认。 
-* trackProperties（可选），发送share 方法上报的属性。最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
+* trackProperties（可选），分享事件自定义属性。最多包含 100条，且 key 以字母或 `$` 开头，包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件/属性，不支持乱码和中文，取值长度 1 - 99字符，value 支持类型：String/Number/boolean/内部元素为String的Array，若为字符串，取值长度 1 - 255字符
 
 示例：
 
