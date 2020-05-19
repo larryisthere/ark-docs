@@ -27,11 +27,13 @@
 
 ## 执行检测
 
-sh check.sh（[点击下载检测程序](https://github.com/analysys/argo-installer/blob/master/check.sh)）
+sh check.sh 
+
+[点击下载脚本](http://install.ark.analysys.cn:8080/ark/check.sh)
 
 ## 查看检测结果
 
-cat ./log/HostDailyCheck-192-168-10-127-20190116.txt
+./log/InstallCheck-xxxxx-2020xxxx.txt
 
 {% hint style="info" %}
 以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
