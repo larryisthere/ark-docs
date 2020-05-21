@@ -20,19 +20,19 @@ com.analysys.tools.YGToolKit.install\(this\);
 
 ### app信息查看
 
-![](../../../.gitbook/assets/image%20%28294%29.png)
+![](../../../.gitbook/assets/1%20%281%29.png)
 
 ### sdk信息查看
 
-![](../../../.gitbook/assets/image%20%28291%29.png)
+![](../../../.gitbook/assets/image%20%28297%29.png)
 
 ### sdk事件自测
 
-![](../../../.gitbook/assets/image%20%28293%29.png)
+![](../../../.gitbook/assets/image%20%28298%29.png)
 
 ### 日志查看和分享
 
-![](../../../.gitbook/assets/image%20%28292%29.png)
+![](../../../.gitbook/assets/image%20%28291%29.png)
 
 
 
