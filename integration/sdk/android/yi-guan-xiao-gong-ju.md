@@ -16,6 +16,12 @@ com.analysys.tools.YGToolKit.install\(this\);
 
 
 
+注意：
+
+暂只支持方舟android sdk的版本4.4.10及以上。
+
+
+
 ## 易观小工具使用说明
 
 ### app信息查看
