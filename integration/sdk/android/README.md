@@ -137,6 +137,8 @@ AndroidManifest.xml文件需要配置内容包括权限、provider、AppKey、Ch
 * READ\_PHONE\_STATE（必须）获取用户设备 IMEI，使用 IMEI 和 MAC 地址做设备唯一标识
 * ACCESS\_WIFI\_STATE（必须）获取用户设备 MAC 地址，用做设备唯一标识
 
+注意：由于[android限制](https://developer.android.com/guide/topics/manifest/meta-data-element)在AndroidManifest.xml配置的android:value值只支持String、Int、Boolean、Float，不支持其他类型，因此配置其他类型需要使用转义字符\\来标记为String类型
+
 ### 混淆设置
 
 如果您的应用使用了代码混淆，请添加如下配置，以避免错误混淆导致SDK不可用。
