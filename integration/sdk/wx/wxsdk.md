@@ -400,7 +400,7 @@ AnalysysAgent.track("buy", eventInfo);
 AnalysysAgent.appProperty(properties)
 ```
 
-* properties：页面信息，properties 最多包含 100条，最多包含100条，且`key`是以字母开头的字符串,**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，K-V键值对，最多包含100条，且`key`是以字母开头的字符串,**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -422,7 +422,7 @@ AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
 * toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用微信默认。 
-* trackProperties\(可选\)，分享事件自定义属性。最多包含 100条，且`key`是以字母开头的字符串,**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* trackProperties\(可选\)，分享事件自定义属性。K-V键值对，最多包含 100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
