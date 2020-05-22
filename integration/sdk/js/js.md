@@ -643,7 +643,7 @@ AnalysysAgent.pageView(pageName, properties, callback);
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符。
-* properties：页面信息，为K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符。value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，为K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符。value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 * callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
