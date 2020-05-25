@@ -991,7 +991,7 @@ AnalysysAgent.identify(distinctId);
 AnalysysAgent.identify(distinctId, callback);
 ```
 
-* distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String
+* distinctId：自定义设备身份标识，取值长度 1 - 255字符,支持类型：String
 * callback ：数据处理完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例:

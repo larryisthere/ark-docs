@@ -546,7 +546,7 @@ public static void identify(Context context, String distinctId);
 ```
 
 * context：应用上下文对象
-* distinctId：唯一身份标识，取值长度 1 - 255 字符
+* distinctId：自定义设备身份标识，取值长度 1 - 255 字符
 
 示例:
 

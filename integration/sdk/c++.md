@@ -88,7 +88,7 @@ void setDebugMode(int debug);
 void track(const std::string& strDistinctId, bool bIsLogin, const std::string& strEventName, const JObject& jAttributes, const std::string& strPlatform);
 ```
 
-\* strDistinctId 用户 ID,长度大于 0 且小于 255字符
+\* strDistinctId 自定义设备身份标识,长度大于 0 且小于 255字符
 
 \* bIsLogin 用户 ID 是否是登录 ID
 
@@ -119,7 +119,7 @@ void alias(const std::string& strAliasId, const std::string& strDistinctId, cons
 
 \* strAliasId：用户注册 ID，长度大于 0，且小于 255字符
 
-\* strDistinctId：用户匿名ID，长度大于 0，且小于 255字符
+\* strDistinctId：自定义设备身份标识，长度大于 0，且小于 255字符
 
 \* strPlatform：平台类型,内容范围：JS、WeChat、Android、iOS
 
@@ -150,7 +150,7 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 void profileSet(const std::string& strDistinctId, bool bIsLogin, const JObject& jAttributes, const std::string& strPlatform);
 ```
 
-\* strDistinctId: 用户ID,长度大于0且小于255字符
+\* strDistinctId: 自定义设备身份标识,长度大于0且小于255字符
 
 \* bIsLogin: 用户ID是否是登录 ID
 
@@ -183,7 +183,7 @@ analysys.profileSet(registerId, true, profiles, "JS");
 void profileSetOnce(const std::string& strDistinctId, bool bIsLogin, const JObject& jAttributes, const std::string& strPlatform);
 ```
 
-\* strDistinctId: 用户ID,长度大于0且小于255字符
+\* strDistinctId: 自定义设备身份标识,长度大于0且小于255字符
 
 \* bIsLogin: 用户ID是否是登录 ID
 
@@ -208,7 +208,7 @@ analysys.profileSetOnce(registerId, true, profile_age, "JS");
 void profileIncrement(const std::string& strDistinctId, bool bIsLogin, const JObject& proAttributes, const std::string& strPlatform);
 ```
 
-\* strDistinctId: 用户ID,长度大于0且小于255字符
+\* strDistinctId: 自定义设备身份标识,长度大于0且小于255字符
 
 \* bIsLogin: 用户ID是否是登录 ID
 
@@ -235,7 +235,7 @@ analysys.profileIncrement(registerId, isLogin, jProfile, platform);
 void profileAppend(const std::string& strDistinctId, bool bIsLogin, const JObject& proAttributes, const std::string& strPlatform);
 ```
 
-\* strDistinctId: 用户ID,长度大于0且小于255字符
+\* strDistinctId: 自定义设备身份标识,长度大于0且小于255字符
 
 \* bIsLogin: 用户ID是否是登录 ID
 
@@ -266,7 +266,7 @@ void profileUnSet(const std::string& strDistinctId, bool bIsLogin, const std::st
 void profileDelete(const std::string& strDistinctId, bool bIsLogin, const std::string& strPlatform) ;
 ```
 
-\* strDistinctId: 用户ID,长度大于0且小于255字符
+\* strDistinctId: 自定义设备身份标识,长度大于0且小于255字符
 
 \* bIsLogin: 用户ID是否是登录 ID
 

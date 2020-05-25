@@ -123,7 +123,7 @@ public void Track(string distinctId, bool isLogin, string eventName, Dictionary<
 public void Track(string distinctId, bool isLogin, string eventName, Dictionary<string, object> properties, string platform, string xwhen);
 ```
 
-* distinctId：用户 ID,长度大于 0 且小于 255字符
+* distinctId：自定义设备身份标识,长度大于 0 且小于 255字符
 * isLogin：用户 ID 是否是登录 ID
 * eventName：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * properties: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
@@ -159,7 +159,7 @@ public void Alias(string AliasId, string distinctId, string platform, string xwh
 ```
 
 * aliasId：用户注册 ID，长度大于 0，且小于 255字符
-* distinctId：用户匿名ID，长度大于 0，且小于 255字符
+* distinctId：自定义设备身份标识，长度大于 0，且小于 255字符
 * platform：平台类型,内容范围：JS、WeChat、Android、iOS
 * xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -202,7 +202,7 @@ public void ProfileSet(string distinctId, bool isLogin, Dictionary<string, objec
 public void ProfileSet(string distinctId, bool isLogin, Dictionary<string, object> properties, string platform, string xwhen);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -239,7 +239,7 @@ public void ProfileSetOnce(string distinctId, bool isLogin, Dictionary<string, o
 public void ProfileSetOnce(string distinctId, bool isLogin, Dictionary<string, object> properties, string platform, string xwhen);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -270,7 +270,7 @@ public void profileIncrement(string distinctId, bool isLogin, Dictionary<string,
 public void profileIncrement(string distinctId, bool isLogin, Dictionary<string, object> properties, string platform, string xwhen);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -300,7 +300,7 @@ public void profileAppend(string distinctId, bool isLogin, Dictionary<string, ob
 public void profileAppend(string distinctId, bool isLogin, Dictionary<string, object> properties, string platform, string xwhen);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS
@@ -336,7 +336,7 @@ public void ProfileDelete(string distinctId,bool isLogin, string platform);
 public void ProfileDelete(string distinctId,bool isLogin, string platform, string xwhen)
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * propertie: 事件属性
 * platform: 平台类型,内容范围：JS、WeChat、Android、iOS

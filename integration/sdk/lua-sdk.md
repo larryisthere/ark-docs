@@ -117,7 +117,7 @@ analysys:setDebugMode(analysys.DEBUG.CLOSE) --设置debug模式
 function track(distinctId,isLogin,eventName,properties,platform,xwhen)
 ```
 
-* distinctId：用户 ID,长度大于 0 且小于 255字符
+* distinctId：自定义设备身份标识,长度大于 0 且小于 255字符
 * isLogin：用户 ID 是否是登录 ID
 * eventName：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * properties: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
@@ -153,7 +153,7 @@ function alias(aliasId,distinctId,platform,xwhen)
 ```
 
 * aliasId：用户注册 ID，长度大于 0，且小于 255字符
-* distinctId：用户匿名ID，长度大于 0，且小于 255字符
+* distinctId：自定义设备身份标识，长度大于 0，且小于 255字符
 * platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
@@ -196,7 +196,7 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 function profileSet(distinctId,isLogin,properties,platform,xwhen)
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -236,7 +236,7 @@ analysys:profileSet(registerId, true, profiles, platForm, myxWhen)
 function profileSetOnce(distinctId,isLogin,properties,platform,xwhen)
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -265,7 +265,7 @@ analysys:profileSetOnce(registerId, isLogin, profile_age, platform, myxWhen)
 function profileIncrement(distinctId,isLogin,properties,platform,xwhen)
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -295,7 +295,7 @@ analysys:profileIncrement(registerId, isLogin, profile, platform, myxWhen)
 function profileAppend(distinctId,isLogin,properties,platform,xwhen)
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -325,7 +325,7 @@ function profileUnSet(distinctId,isLogin,propertie,platform,xwhen)
 function profileDelete(distinctId,isLogin,platform,xwhen)
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * propertie: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义

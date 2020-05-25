@@ -127,7 +127,7 @@ eguan.setDebugMode(1)
 def track(self,distinct_id,event_name,event_properties,data_platform="python",is_login=False,xwhen=_current_time()):
 ```
 
-* distinct\_id：用户 ID,长度大于 0 且小于 255字符
+* distinct\_id：自定义设备身份标识,长度大于 0 且小于 255字符
 * event\_name：事件ID,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * event\_properties: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度99字符,不支持乱码和中文，value 类型约束\(String/Number/boolean/List\)，若为字符串,最大长度255字符
 * data\_platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -168,7 +168,7 @@ def alias(self,alias_id,distinct_id,data_platform="python",alias_properties=None
 ```
 
 * alias\_id：用户注册 ID，长度大于 0，且小于 255字符
-* distinct\_id：用户匿名ID，长度大于 0，且小于 255字符
+* distinct\_id：自定义设备身份标识，长度大于 0，且小于 255字符
 * data\_platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * alias\_properties:关联属性，默认为空。
 * xwhen:用户自定义数据产生时间\(单位:毫秒,即13位时间戳\) 注:xwhen自定义用于用户上传历史数据
@@ -207,7 +207,7 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 def profile_set(self,distinct_id,profile_properties,data_platform="python",is_login=False,xwhen=_current_time()):
 ```
 
-* distinct\_id: 用户ID,长度大于0且小于255字符
+* distinct\_id: 自定义设备身份标识,长度大于0且小于255字符
 * profile\_properties: 用户属性
 * data\_platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * is\_login: 用户ID是否是登录 ID
@@ -241,7 +241,7 @@ eguan.profile_set(alias_id,profile_properties,python_sdk_platform,is_login=True)
 def profile_set_once(self,distinct_id,profile_properties,data_platform="python",is_login=False,xwhen=_current_time()):
 ```
 
-* distinct\_id: 用户ID,长度大于0且小于255字符
+* distinct\_id: 自定义设备身份标识,长度大于0且小于255字符
 * profile\_properties: 用户属性
 * data\_platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * is\_login: 用户ID是否是登录 ID
@@ -267,7 +267,7 @@ eguan.profile_set_once(alias_id,properties,python_sdk_platform,is_login=True)
 def profile_increment(self,distinct_id,profile_properties,data_platform="python",is_login=False,xwhen=_current_time()):
 ```
 
-* distinct\_id: 用户ID,长度大于0且小于255字符
+* distinct\_id: 自定义设备身份标识,长度大于0且小于255字符
 * profile\_properties: 用户属性
 * data\_platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * is\_login: 用户ID是否是登录 ID
@@ -292,7 +292,7 @@ eguan.profile_increment(alias_id,properties,python_sdk_platform,is_login=True)
 def profile_append(self,distinct_id,profile_properties,data_platform="python",is_login=False,xwhen=_current_time()):
 ```
 
-* distinct\_id: 用户ID,长度大于0且小于255字符
+* distinct\_id: 自定义设备身份标识,长度大于0且小于255字符
 * profile\_properties: 用户属性
 * data\_platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * is\_login: 用户ID是否是登录 ID
@@ -317,7 +317,7 @@ def profile_unset(self,distinct_id,profile_properties_keys,data_platform="python
 def profile_delete(self,distinct_id,data_platform="python",is_login=False,xwhen=_current_time()):
 ```
 
-* distinct\_id: 用户ID,长度大于0且小于255字符
+* distinct\_id: 自定义设备身份标识,长度大于0且小于255字符
 * profile\_properties\_keys: 需删除的用户属性key，list类型
 * data\_platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * is\_login: 用户ID是否是登录 ID

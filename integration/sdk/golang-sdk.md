@@ -154,7 +154,7 @@ AnalysysAgent := ans.InitAnalysysAgent(batchLogCollector, appid, debugMode)
 Track(distinctId string, isLogin bool , eventName string, properties map[string]interface{},platform string,upLoadTime int);
 ```
 
-* distinctId：用户 ID,长度大于 0 且小于 255字符
+* distinctId：自定义设备身份标识,长度大于 0 且小于 255字符
 * isLogin：用户ID 是否是登录 ID
 * eventName：事件名称,以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$`开头为预置事件,不支持乱码和中文,最大长度 99字符
 * properties: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度 99字符,不支持乱码和中文,value 类型约束\(String/Int/Bool/slice\[\]string\)，若为字符串,最大长度255字符
@@ -190,7 +190,7 @@ Alias(aliasId string, distinctId string,platform string, upLoadTime int);
 ```
 
 * aliasId：用户注册 ID，长度大于 0，且小于 255字符
-* distinctId：用户匿名ID，长度大于 0，且小于 255字符
+* distinctId：自定义设备身份标识，长度大于 0，且小于 255字符
 * platfrom: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * upLoadTime: 用户自定义时间戳\(带毫秒的13位时间戳\),如要使用当前时间，传入ans.CurrentTime\(\)即可
 
@@ -226,7 +226,7 @@ SDK提供以下接口供用户设置用户的属性，比如用户的年龄/性�
 ProfileSet(distinctId string, isLogin bool, properties map[string]interface{},platform string, upLoadTime int);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platfrom: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -264,7 +264,7 @@ AnalysysAgent.ProfileSet(registerId, isLogin, profiles,platform,currentTime);
 ProfileSetOnce(distinctId string, isLogin bool, properties map[string]interface{},platform string,upLoadTime int);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -291,7 +291,7 @@ AnalysysAgent.ProfileSetOnce(registerId,isLogin,profileAge,platform,uploadTime);
 ProfileIncrement(distinctId string, isLogin string, properties map[string]int,platform string,upLoadTime int);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -318,7 +318,7 @@ AnalysysAgent.ProfileIncrement(registerId, isLogin, profile,platform,uploadTime)
 ProfileAppend(distinctId string, isLogin string, properties map[string]interface{},platform string, upLoadTime int);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * properties: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
@@ -347,7 +347,7 @@ ProfileUnSet(distinctId string, isLogin bool, property string,platform string, u
 ProfileDelete(distinctId string, isLogin bool , platform string,upLoadTime int);
 ```
 
-* distinctId: 用户ID,长度大于0且小于255字符
+* distinctId: 自定义设备身份标识,长度大于0且小于255字符
 * isLogin: 用户ID是否是登录 ID
 * property: 事件属性
 * platform: 平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义

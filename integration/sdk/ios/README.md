@@ -533,7 +533,7 @@ AnalysysAgent.alias("zhangsan")
 + (void)identify:(NSString *)distinctId;
 ```
 
-* distinctId：唯一身份标识，取值长度为1-255个字符
+* distinctId：自定义设备身份标识，取值长度 1 - 255 字符
 
 示例：
 

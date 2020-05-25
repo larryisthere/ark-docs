@@ -429,7 +429,7 @@ AnalysysAgent.alias("sanbo");
 AnalysysAgent.identify(distinctId);
 ```
 
-* distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String
+* distinctId：自定义设备身份标识，取值长度 1 - 255字符,支持类型：String
 
 示例:
 
