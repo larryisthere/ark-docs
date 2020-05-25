@@ -142,7 +142,7 @@ public void track(String distinctId, boolean isLogin, String eventName, Map<Stri
 * distinctId：自定义设备身份标识,长度大于 0 且小于 255字符
 * isLogin：用户 ID 是否是登录 ID
 * eventName：自定义事件ID标识，以字母开头的字符串，**必须由**字母、数字、下划线组成，$ 开头为预置事件/属性，**不支持**乱码、中文、空格等，长度范围1-99字符
-* properties: 事件属性,最多包含 100条,且 key 以字母或 `$` 开头，可包含字母、数字、下划线和 `$`，字母不区分大小写，`$` 开头为预置事件属性,最大长度99字符,不支持乱码和中文,value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
+* properties: 自定义事件属性,最多包含 100条，且key是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；value 类型约束\(String/Number/boolean/list/数组\)，若为字符串,最大长度255字符
 * platform：平台类型,建议内容范围：JS、WeChat、Android、iOS, 并且支持自定义
 * xwhen: 用户自定义时间戳\(带毫秒的13位时间戳\)
 
