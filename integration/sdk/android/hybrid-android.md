@@ -43,15 +43,18 @@ public class WebViewDemo extends AppCompatActivity {
     setContentView(R.layout.activity_main_webview_demo);
     mWebView = (WebView) findViewById(R.id.wv_main);
     mWebView.loadUrl("file:///android_asset/index.html");
-    mWebView.setWebViewClient(new MyWebviewClient());
     mWebView.getSettings().setJavaScriptEnabled(true);
     // 设置UserAgent
     AnalysysAgent.setHybridModel(this, mWebView);
+    // 设置WebViewClient
+    mWebView.setWebViewClient(new MyWebviewClient());
   }
 }
 ```
 
-### 2.2 SDK监听拦截URL
+{% hint style="info" %}
+若项目中已经设置WebViewClient且不能被替换和修改，要启用Hybrid模式必须先调用setHybridModel，然后设置新的WebViewClient，如示例代码
+{% endhint %}
 
 当调用`设置UserAgent`后，H5 页面触发事件时，会把事件发往 App 端，App SDK 端接收到数据后保存并上报。 接口如下：
 

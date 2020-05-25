@@ -132,7 +132,7 @@ Page({
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 * _autoTrack_ 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的`$element_content`、data-type为采集的`$element_type`、data-name为采集的`$element_name`、id为采集的`$element_id`。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
-![](../../../.gitbook/assets/image%20%28272%29.png)
+![](../../../.gitbook/assets/image%20%28269%29.png)
 
 #### appkey
 

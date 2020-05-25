@@ -245,7 +245,7 @@ AnalysysAgent.profileSet(["nickName": "小叮当", "hobby": ["Singing", "Dancing
 
 开启Debug模式后，用户可以通过Xcode的控制台中查看tag为`[analysys]`的Log日志
 
-![Xcode&#x4E2D;&#x7684;&#x65E5;&#x5FD7;](../../../.gitbook/assets/image%20%28284%29.png)
+![Xcode&#x4E2D;&#x7684;&#x65E5;&#x5FD7;](../../../.gitbook/assets/image%20%28281%29.png)
 
 * 检查上报地址是否正确
 * 检查是否发送成功
