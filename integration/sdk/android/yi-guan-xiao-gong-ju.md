@@ -6,7 +6,7 @@
 
 主项目build.gradle中加入依赖
 
-compile\('[cn.com](http://cn.com).analysys:analysys-arkanalysys:1.0.0'\) 
+compile\('cn.com.analysys:analysys-tools:1.0.1'\) 
 
 ### 初始化
 
