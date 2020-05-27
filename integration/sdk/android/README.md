@@ -74,7 +74,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
      ****`dependencies  
 {  
     //添加 analysys-arkanalysys SDK 依赖  
-    compile('cn.com.analysys:analysys-arkanalysys:4.4.10')  
+    compile('cn.com.analysys:analysys-arkanalysys:4.4.11')  
 }`
 {% endtab %}
 
