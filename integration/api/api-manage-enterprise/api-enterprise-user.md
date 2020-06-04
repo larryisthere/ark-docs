@@ -122,7 +122,9 @@ curl -H "Content-Type:application/json" -H "xtoken:9CF0444E9DFD9E3D9CAE49B79F939
         </td>
     </tr>
   </tbody>
-</table>### 2.3 返回结果示例
+</table>
+
+### 2.3 返回结果示例
 
 ```java
 {

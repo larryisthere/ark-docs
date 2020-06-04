@@ -8,8 +8,8 @@ Golang SDK 主要用于服务端 Golang 应用.
 
 {% hint style="info" %}
 SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-lua-sdk/releases](https://github.com/analysys/ans-go-sdk/releases)   
-Gitee地址：[https://gitee.com/Analysys/ans-lua-sdk/releases/](https://gitee.com/Analysys/ans-go-sdk/releases/)  
+Github地址\(推荐\)：[https://github.com/analysys/ans-go-sdk/releases](https://github.com/analysys/ans-go-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-go-sdk/releases/](https://gitee.com/Analysys/ans-go-sdk/releases/)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 

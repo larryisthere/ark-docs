@@ -70,7 +70,9 @@
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>#### 1.2.2 创建规则说明
+</table>
+
+#### 1.2.2 创建规则说明
 
 分群规则是多层嵌套的结构，以下针对于分群规则详情说明。
 
@@ -318,7 +320,9 @@ curl -H "Content-Type:application/json" -H "token:4113c9cad1c301113783f433e25488
       </td>
     </tr>
   </tbody>
-</table>### 2.3 返回结果示例
+</table>
+
+### 2.3 返回结果示例
 
 ```java
 {
@@ -420,7 +424,9 @@ curl -H "token:1b554f363d56238bf33a201620f2e9a9" -H "appKey:31abd9593e9983ec" ht
       </td>
     </tr>
   </tbody>
-</table>### 3.3 返回结果示例
+</table>
+
+### 3.3 返回结果示例
 
 ```java
 [

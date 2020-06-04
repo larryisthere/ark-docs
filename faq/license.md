@@ -116,7 +116,9 @@ Argo 用户：登录易观官网，进入**个人中心 - 我的 License** 中�
         <td style="text-align:left">4.6&#x53CA;&#x4EE5;&#x4E0A;</td>
     </tr>
   </tbody>
-</table>## 为什么我的License无效？
+</table>
+
+## 为什么我的License无效？
 
 License中会包含机器码，如果与部署环境的机器码不一致，则License无效，所以请务必使用当前系统的机器码来生成License。
 

@@ -486,7 +486,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:center">-</td>
     </tr>
   </tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 **非自动采集的属性，会根据相应字段自动解析**
 
 **$ip ：**方舟的收数服务会自动记录上报的数据来源 IP，根据 IP 解析为国家、省份、城市三个字段
