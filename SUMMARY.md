@@ -122,6 +122,7 @@
   * [Node JS SDK](integration/sdk/node-sdk.md)
   * [Lua SDK](integration/sdk/lua-sdk.md)
   * [Golang SDK](integration/sdk/golang-sdk.md)
+  * [PhoneGap SDK](integration/sdk/phonegap-sdk.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
 * [数据验证](integration/data-verification/README.md)
   * [客户端埋点验证](integration/data-verification/sdk-verification.md)
