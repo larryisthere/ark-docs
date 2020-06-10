@@ -23,25 +23,23 @@
 
 ```javascript
 <script>
-    (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || [];
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
-
-        function factory(b) {
-            return function () {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.AnalysysAgent.push(a);
-                return window.AnalysysAgent;
-            }
-        };
-        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
-            var key = window.AnalysysAgent.methods[i];
-            AnalysysAgent[key] = factory(key);
+    (function() {
+        window.AnalysysAgent = window.AnalysysAgent || {}
+        var a = window.AnalysysAgent || {}
+        var ans = ['identify', 'alias', 'reset', 'track', 'profileSet', 'profileSetOnce', 'profileIncrement', 'profileAppend', 'profileUnset', 'profileDelete', 'registerSuperProperty', 'registerSuperProperties', 'unRegisterSuperProperty', 'clearSuperProperties', 'getSuperProperty', 'getSuperProperties', 'pageView', 'getDistinctId']
+        a['config'] = c
+        a['param'] = []
+        function factory (b) {
+          return function () {
+            a['param'].push([b, arguments])
+            return window.AnalysysAgent
+          }
         }
-        for (var key in config) {
-            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
-            AnalysysAgent[key](config[key]);
+        for (var i = 0; i < ans.length; i++) {
+          a[ans[i]] = factory(ans[i])
+        }
+        if (c.name) {
+          window[c.name] = a
         }
         var date = new Date();
         var time = new String(date.getFullYear()) + new String(date.getMonth() + 1) + new String(date.getDate());
@@ -67,38 +65,15 @@
 将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。无需等待`window.onload`之后再执行。
 
 ```javascript
-<script>
-    (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || [];
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
-
-        function factory(b) {
-            return function () {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.AnalysysAgent.push(a);
-                return window.AnalysysAgent;
-            }
-        };
-        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
-            var key = window.AnalysysAgent.methods[i];
-            AnalysysAgent[key] = factory(key);
-        }
-        for (var key in config) {
-            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
-            AnalysysAgent[key](config[key]);
-        }
-    })({
-        appkey: '/*设置为实际APPKEY*/', //APPKEY
-        uploadURL: '/*设置为实际地址*/'//上传数据的地址
-    })
-</script>
-
-//引用JS SDK文件的script标签必须在初始化代码之下
-
 //建议在script标签设置id为ARK_SDK,该ID用来引导可视化模块与热图模块的加载
 <script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
-
+//初始化JS SDK
+<script>
+window.AnalysysAgent.init({
+    appkey: '/*设置为实际APPKEY*/', //APPKEY
+    uploadURL: '/*设置为实际地址*/'//上传数据的地址
+})
+</script>
 ```
 {% endtab %}
 
@@ -142,7 +117,7 @@ AnalysysAgent.init({
 自行下载SDK。获取AnalysysAgent\_JS\_SDK.min.js，假设该文件放到与 require.js 同一目录中
 
 ```javascript
-requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
+requirejs(["./AnalysysAgent_JS_SDK.amd.min"], function(AnalysysAgent) {
            AnalysysAgent.init({
                 appkey: '/*设置为实际APPKEY*/',//APPKEY
                 uploadURL: '/*设置为实际地址*/',//上传数据的地址
@@ -182,24 +157,22 @@ requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
 ```javascript
 <script>
     (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || [];
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
-
-        function factory(b) {
-            return function () {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.AnalysysAgent.push(a);
-                return window.AnalysysAgent;
-            }
-        };
-        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
-            var key = window.AnalysysAgent.methods[i];
-            AnalysysAgent[key] = factory(key);
+        window.AnalysysAgent = window.AnalysysAgent || {}
+        var a = window.AnalysysAgent || {}
+        var ans = ['identify', 'alias', 'reset', 'track', 'profileSet', 'profileSetOnce', 'profileIncrement', 'profileAppend', 'profileUnset', 'profileDelete', 'registerSuperProperty', 'registerSuperProperties', 'unRegisterSuperProperty', 'clearSuperProperties', 'getSuperProperty', 'getSuperProperties', 'pageView', 'getDistinctId']
+        a['config'] = c
+        a['param'] = []
+        function factory (b) {
+          return function () {
+            a['param'].push([b, arguments])
+            return window.AnalysysAgent
+          }
         }
-        for (var key in config) {
-            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
-            AnalysysAgent[key](config[key]);
+        for (var i = 0; i < ans.length; i++) {
+          a[ans[i]] = factory(ans[i])
+        }
+        if (c.name) {
+          window[c.name] = a
         }
         var date = new Date();
         var time = new String(date.getFullYear()) + new String(date.getMonth() + 1) + new String(date.getDate());
@@ -210,7 +183,7 @@ requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
         c.type = 'text/javascript';
         c.async = true;
         c.id = 'ARK_SDK';
-    //首先您需要下载SDk，替换其中的地址为您本地目录绝对路径或者相对路径
+        //首先您需要下载SDk，替换其中的地址为您本地目录绝对路径或者相对路径
         c.src = '/*设置为JS SDK实际存放地址*/' +'?v=' +time; //JS SDK存放地址
         n.parentNode.insertBefore(c, n);
     })({

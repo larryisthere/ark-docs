@@ -19,14 +19,18 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 | :---: | :---: | :---: | :--- |
 | AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 非ES6必须 | 全部 |
 | AnalysysAgent\_JS\_SDK.es6.min.js | 基础模块SDK | ES6必须 | 全部 |
+| AnalysysAgent\_JS\_SDK.amd.min.js | 基础模块SDK | AMD必须 | 全部 |
 | AnalysysAgent\_JS\_SDK\_VISUAL.min.js | 可视化模块SDK | 可选 | 全部 |
 | AnalysysAgent\_JS\_SDK\_HEATMAP.min.js | 热图模块SDK | 可选 | 4.3.0及以上 |
 | AnalysysAgent\_Encrypt.min.js | 加密模块SDK | 非ES6可选 | 全部 |
 | AnalysysAgent\_Encrypt.es6.min.js | 加密模块SDK | ES6可选 | 全部 |
+| AnalysysAgent\_Encrypt.amd.min.js | 加密模块SDK | AMD可选 | 全部 |
 | AnalysysAgent\_GBK.min.js | GBK转码模块SDK | 非ES6可选 | 全部 |
 | AnalysysAgent\_GBK.es6.min.js | GBK转码模块SDK | ES6可选 | 全部 |
+| AnalysysAgent\_GBK.amd.min.js | GBK转码模块SDK | AMD可选 | 全部 |
 | AnalysysAgent\_PageViewStayTime.min.js | 页面访问时长模块SDK | 非ES6可选 | 4.4.1及以上 |
 | AnalysysAgent\_PageViewStayTime.es6.min.js | 页面访问时长模块SDK | ES6可选 | 4.4.1及以上 |
+| AnalysysAgent\_PageViewStayTime.amd.min.js | 页面访问时长模块SDK | AMD可选 | 4.4.1及以上 |
 
 ### 快速集成
 
@@ -76,24 +80,22 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 ```javascript
 <script>
     (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || [];
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
-
-        function factory(b) {
-            return function () {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.AnalysysAgent.push(a);
-                return window.AnalysysAgent;
-            }
-        };
-        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
-            var key = window.AnalysysAgent.methods[i];
-            AnalysysAgent[key] = factory(key);
+        window.AnalysysAgent = window.AnalysysAgent || {}
+        var a = window.AnalysysAgent || {}
+        var ans = ['identify', 'alias', 'reset', 'track', 'profileSet', 'profileSetOnce', 'profileIncrement', 'profileAppend', 'profileUnset', 'profileDelete', 'registerSuperProperty', 'registerSuperProperties', 'unRegisterSuperProperty', 'clearSuperProperties', 'getSuperProperty', 'getSuperProperties', 'pageView', 'getDistinctId']
+        a['config'] = c
+        a['param'] = []
+        function factory (b) {
+          return function () {
+            a['param'].push([b, arguments])
+            return window.AnalysysAgent
+          }
         }
-        for (var key in config) {
-            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
-            AnalysysAgent[key](config[key]);
+        for (var i = 0; i < ans.length; i++) {
+          a[ans[i]] = factory(ans[i])
+        }
+        if (c.name) {
+          window[c.name] = a
         }
         var date = new Date();
         var time = new String(date.getFullYear()) + new String(date.getMonth() + 1) + new String(date.getDate());
@@ -119,38 +121,15 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 将以下 JS 代码复制到您所需分析页面中的`<head>`和`</head>`标签之间。无需等待`window.onload`之后再执行。
 
 ```javascript
-<script>
-    (function(config) {
-        window.AnalysysAgent = window.AnalysysAgent || [];
-        window.AnalysysAgent.methods = 'identify alias reset track profileSet profileSetOnce profileIncrement profileAppend profileUnset profileDelete registerSuperProperty registerSuperProperties unRegisterSuperProperty clearSuperProperties getSuperProperty getSuperProperties pageView getDistinctId getPresetProperties'.split(' ');
-
-        function factory(b) {
-            return function () {
-                var a = Array.prototype.slice.call(arguments);
-                a.unshift(b);
-                window.AnalysysAgent.push(a);
-                return window.AnalysysAgent;
-            }
-        };
-        for (var i = 0; i < AnalysysAgent.methods.length; i++) {
-            var key = window.AnalysysAgent.methods[i];
-            AnalysysAgent[key] = factory(key);
-        }
-        for (var key in config) {
-            if (!AnalysysAgent[key]) AnalysysAgent[key] = factory(key);
-            AnalysysAgent[key](config[key]);
-        }
-    })({
-        appkey: '/*设置为实际APPKEY*/', //APPKEY
-        uploadURL: '/*设置为实际地址*/'//上传数据的地址
-    })
-</script>
-
-//引用JS SDK文件的script标签必须在初始化代码之下
-
 //建议在script标签设置id为ARK_SDK,该ID用来引导可视化模块与热图模块的加载
 <script type="text/javascript" id="ARK_SDK" src="/*设置为JS SDK实际存放地址*/"></script>
-
+//初始化JS SDK
+<script>
+window.AnalysysAgent.init({
+    appkey: '/*设置为实际APPKEY*/', //APPKEY
+    uploadURL: '/*设置为实际地址*/'//上传数据的地址
+})
+</script>
 ```
 {% endtab %}
 
@@ -191,10 +170,10 @@ AnalysysAgent.init({
 {% endtab %}
 
 {% tab title="AMD 规范集成（以 RequireJS 为例）" %}
-自行下载SDK。获取AnalysysAgent\_JS\_SDK.min.js，假设该文件放到与 require.js 同一目录中
+自行下载SDK。获取AnalysysAgent\_JS\_SDK.amd.min.js，假设该文件放到与 require.js 同一目录中
 
 ```javascript
-requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
+requirejs(["./AnalysysAgent_JS_SDK.amd.min"], function(AnalysysAgent) {
            AnalysysAgent.init({
                 appkey: '/*设置为实际APPKEY*/',//APPKEY
                 uploadURL: '/*设置为实际地址*/',//上传数据的地址
@@ -231,6 +210,7 @@ requirejs(["./AnalysysAgent_JS_SDK.min"], function(AnalysysAgent) {
 * SDKFileDirectory 设置可视化模块SDK与热图模块SDK存放目录。类型：String；（SDK 版本 4.4.0 及以后支持）
 * _sendType_ 设置上传日志方式。'img' - 使用image标签的图片链接地址上传日志\(默认\)；'post'-使用Ajax中的post请求上传日志
 * _webstayDuration_ 设置追踪页面滚动行为时，最大停留时长。默认值：5小时。类型：Number。单位：毫秒
+* _cross\_subdomain 设置在二级域名下存储cookie：false - 在自身域名下存储cookie；true - 在二级域名下存储cookie\(默认\)_
 
 #### appkey
 
@@ -625,6 +605,24 @@ webstayDuration 为设置追踪页面滚动行为时，最大停留时长。可�
 //设置追踪页面滚动行为时，最大停留时长。
 {
     webstayDuration:50000 //设置追踪页面滚动行为时，最大停留时长为50秒
+}
+
+```
+
+#### cross\_subdomain
+
+cross\_subdomain 为_设置在二级域名下存储cookie：false - 在自身域名下存储cookie；true - 在二级域名下存储cookie\(默认\)。例如：一个用户在_同一浏览器中访问_a.analysys.cn与b.analysys.cn两个域，_cross\_subdomain为true时，该用户为一个用户。cross\_subdomain为false时，该用户为两个用户。
+
+* 类型：Boolean
+
+```javascript
+//在自身域名下存储cookie。
+{
+    cross_subdomain:false//或删除autoWebstay参数。
+}
+//在二级域名下存储cookie。
+{
+    cross_subdomain:true//或删除cross_subdomain参数。
 }
 
 ```

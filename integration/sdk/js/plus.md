@@ -30,8 +30,8 @@ import 'ans-javascript-sdk/SDK/AnalysysAgent_Encrypt.es6.min.js'
 require('ans-javascript-sdk/SDK/AnalysysAgent_Encrypt.es6.min.js')
 
 //4.AMD 规范集成（以 RequireJS 为例）
-//获取AnalysysAgent_Encrypt.min.js，假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
-requirejs('./AnalysysAgent_Encrypt.min.js)
+//获取AnalysysAgent_Encrypt.amd.min.js，假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
+requirejs('./AnalysysAgent_Encrypt.amd.min.js)
 ```
 
 ## GBK转码模块SDK介绍
@@ -60,7 +60,7 @@ var AnalysysAgent = require('ans-javascript-sdk/SDK/AnalysysAgent_GBK.es6.min.js
 
 //4.AMD 规范集成（以 RequireJS 为例）
 //获取AnalysysAgent_Encrypt.min.js，假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
-requirejs('./AnalysysAgent_GBK.min.js)
+requirejs('./AnalysysAgent_GBK.amd.min.js)
 ```
 
 ## 可视化埋点介绍
@@ -80,10 +80,11 @@ requirejs('./AnalysysAgent_GBK.min.js)
 {
     SDKFileDirectory:"/*设置为实际地址*/"//可通过url访问该目录中的该可视化模块js文件。
 }
-//以Vue.js为例，将AnalysysAgent_JS_SDK_VISUAL.min.js放到public/js/sdk目录中。
+//以Vue.js为例，将AnalysysAgent_JS_SDK_VISUAL.min.js放到/public/js/sdk或/static/js/sdk目录中。
 //配置加载可视化模块文件目录访问地址
 {
-    SDKFileDirectory:"./js/sdk/"//Vue.js中public目录中内容，构建时会copy至dist目录中。所以该设置时没有public这一层目录。
+    SDKFileDirectory:"./js/sdk/"//Vue.js中public或static目录中内容，
+    //构建时会copy至dist目录中。所以该设置时没有public或static这一层目录。
 }
 //RequireJS为例，将AnalysysAgent_JS_SDK_VISUAL.min.js放到require.js同一目录中。
 //配置加载可视化模块文件目录访问地址
@@ -207,11 +208,12 @@ import 'ans-javascript-sdk/SDK/AnalysysAgent_Encrypt.es6.min.js'
 
 //3.CommonJS 规范集成
 //将以下代码添加至集成JS SDK代码位置上方即可
-require('ans-javascript-sdk/SDK/AnalysysAgent_PageViewStayTime.es6.min.js')
+require('ans-javascript-sdk/SDK/AnalysysAgent_PageViewStayTime.amd.min.js')
 
 //4.AMD 规范集成（以 RequireJS 为例）
-//获取AnalysysAgent_PageViewStayTime.min.js，假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
-requirejs('./AnalysysAgent_PageViewStayTime.es6.min.js)
+//获取AnalysysAgent_PageViewStayTime.amd.min.js，
+//假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
+requirejs('./AnalysysAgent_PageViewStayTime.amd.min.js)
 ```
 
 ### 
