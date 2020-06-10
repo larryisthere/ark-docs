@@ -31,7 +31,7 @@
 | $webstay | 视区停留 | 停留在可视区域 | - | - | N | - |
 | $app\_click | App点击事件 | App热图点击事件 | N | N | - | - |
 | $web\_click | Web点击事件 | Web热图点击事件 | - | - | N | - |
-| $user\_click | 用户点击事件 | 用户点击可触控行为 | Y | Y | Y | Y |
+| $user\_click | 用户点击事件 | 用户点击可触控行为 | N | N | N | N |
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
 | $campaign\_track | 渠道监测事件 | APP渠道监测 | - | - | - | - |
 | $first\_installation | 首次安装事件 | APP首次安装事件 | N | N | - | - |
