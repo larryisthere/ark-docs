@@ -79,7 +79,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 ```javascript
 <script>
-    (function(config) {
+    (function(c) {
         window.AnalysysAgent = window.AnalysysAgent || {}
         var a = window.AnalysysAgent || {}
         var ans = ['identify', 'alias', 'reset', 'track', 'profileSet', 'profileSetOnce', 'profileIncrement', 'profileAppend', 'profileUnset', 'profileDelete', 'registerSuperProperty', 'registerSuperProperties', 'unRegisterSuperProperty', 'clearSuperProperties', 'getSuperProperty', 'getSuperProperties', 'pageView', 'getDistinctId']
