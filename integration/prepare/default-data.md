@@ -532,7 +532,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $is\_first\_time | 是否安装后首次访问 | 布尔 | 是否安装后首次访问 | Y | Y | Y | Y |
 | $is\_from\_background | 是否从后台唤醒 | 布尔 | 是否从后台唤醒恢复 | Y | Y | - | - |
-| $start\_source | 启动来源 | 字符串 | 仅再$startup事件 | Y | Y | - | - |
+| $start\_source | 启动来源 | 字符串 | 仅在$startup事件 | Y | Y | - | - |
 | $start\_source\_detail | 当启动方式来源地址 | 字符串 | 当启动方式为url唤醒时填写url，仅在$startup事件 | Y | Y | - | - |
 
 #### **$end**
