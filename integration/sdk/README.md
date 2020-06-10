@@ -44,6 +44,8 @@
 
 {% page-ref page="golang-sdk.md" %}
 
+{% page-ref page="phonegap-sdk.md" %}
+
 
 
 **数据导入**
