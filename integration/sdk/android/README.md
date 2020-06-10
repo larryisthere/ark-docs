@@ -352,7 +352,7 @@ public class BasicActivity extends AppCompatActivity {
       Uri uri = intent.getData();
       if (uri != null) {
         // 判断如果是deepLink启动，设置启动来源为 3
-        AnalysysCMB.launchSource(3);
+        AnalysysAgent.launchSource(3);
       }
     }
   }
