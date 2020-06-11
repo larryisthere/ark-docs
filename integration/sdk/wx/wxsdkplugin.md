@@ -57,7 +57,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 ### 集成 SDK
 
-将 AnalysysAgent\_WX\_SDK.plugin.min.js或AnalysysAgent\_WX\_SDK.plugines6.min.js 文件放到小程序的目录下
+将 AnalysysAgent\_WX\_SDK.plugin.min.js或AnalysysAgent\_WX\_SDK.plugin.es6.min.js 文件放到小程序的目录下
 
 ![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614101827.png)
 
