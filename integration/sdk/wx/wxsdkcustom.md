@@ -16,8 +16,8 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_WX\_SDK.cunstom.min.js | 框架版SDK | 二选一 |
-| AnalysysAgent\_WX\_SDK.cunstom.es6.min.js | 框架版ES6语法SDK | 二选一 |
+| AnalysysAgent\_WX\_SDK.custom.min.js | 框架版SDK | 二选一 |
+| AnalysysAgent\_WX\_SDK.custom.es6.min.js | 框架版ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
 | AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合框架ES6版本使用 | 非必须 |
 
@@ -91,7 +91,7 @@ App({
 
 ### 源代码集成
 
-使用源文件方式集成，将 AnalysysAgent\_WX\_SDK.cunstom.min.js或AnalysysAgent\_WX\_SDK.cunstom.es6.min.js 文件放到小程序的目录下
+使用源文件方式集成，将 AnalysysAgent\_WX\_SDK.custom.min.js或AnalysysAgent\_WX\_SDK.custom.es6.min.js 文件放到小程序的目录下
 
 
 
@@ -100,7 +100,7 @@ App({
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.cunstom.min.js")
+let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.custom.min.js")
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 App({
     onShow : function( options ){
