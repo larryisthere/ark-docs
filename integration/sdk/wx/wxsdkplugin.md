@@ -107,6 +107,14 @@ Page({
 })
 ```
 
+在组件Component 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
+
+```javascript
+let AnalysysAgent = wx.AnalysysAgent;
+```
+
+注：组件绑定的 behaviors.js 内的方法，全埋点不支持，不能上报。
+
 {% hint style="info" %}
 注意：
 
