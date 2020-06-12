@@ -23,7 +23,7 @@
 
 ```javascript
 <script>
-    (function() {
+    (function(c) {
         window.AnalysysAgent = window.AnalysysAgent || {}
         var a = window.AnalysysAgent || {}
         var ans = ['identify', 'alias', 'reset', 'track', 'profileSet', 'profileSetOnce', 'profileIncrement', 'profileAppend', 'profileUnset', 'profileDelete', 'registerSuperProperty', 'registerSuperProperties', 'unRegisterSuperProperty', 'clearSuperProperties', 'getSuperProperty', 'getSuperProperties', 'pageView', 'getDistinctId']
@@ -156,7 +156,7 @@ requirejs(["./AnalysysAgent_JS_SDK.amd.min"], function(AnalysysAgent) {
 {% tab title="异步集成初始化示例代码" %}
 ```javascript
 <script>
-    (function(config) {
+    (function(c) {
         window.AnalysysAgent = window.AnalysysAgent || {}
         var a = window.AnalysysAgent || {}
         var ans = ['identify', 'alias', 'reset', 'track', 'profileSet', 'profileSetOnce', 'profileIncrement', 'profileAppend', 'profileUnset', 'profileDelete', 'registerSuperProperty', 'registerSuperProperties', 'unRegisterSuperProperty', 'clearSuperProperties', 'getSuperProperty', 'getSuperProperties', 'pageView', 'getDistinctId']
