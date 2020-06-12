@@ -141,6 +141,12 @@ Page({
 })
 ```
 
+在组件Component 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
+
+```javascript
+let AnalysysAgent = wx.AnalysysAgent;
+```
+
 {% hint style="info" %}
 注意：
 
