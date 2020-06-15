@@ -194,17 +194,17 @@ if(self !== window.top){
 //1.同步集成
 //将以下JS代码添加到接入JS SDK代码的上方。
 //将AnalysysAgent_PageViewStayTime.min.js文件访问地址替换到script标签中的src位置
-<script type="text/javascript" src="/*设置为非ES6加密模块SDK实际存放地址*/"></script>
+<script type="text/javascript" src="/*设置为非ES页面访问时长DK实际存放地址*/"></script>
 ...
 //集成JS SDK
 
 //2.ES6集成
 //如为自行下载SDK。将以下代码添加至集成JS SDK代码位置即可。
 //将AnalysysAgent_PageViewStayTime.es6.min.js文件存放地址替换到import后的引入文件地址
-import '设置为ES6加密模块SDK实际存放地址'
+import '设置为ES6页面访问时长模块SDK实际存放地址'
 ...//其他SDK代码
 //如为npm获取SDK。将以下代码添加至集成JS SDK代码位置即可
-import 'ans-javascript-sdk/SDK/AnalysysAgent_Encrypt.es6.min.js'
+import 'ans-javascript-sdk/SDK/AnalysysAgent_PageViewStayTime.es6.min.js'
 
 //3.CommonJS 规范集成
 //将以下代码添加至集成JS SDK代码位置上方即可
