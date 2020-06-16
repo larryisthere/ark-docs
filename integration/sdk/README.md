@@ -16,7 +16,7 @@
 
 {% page-ref page="wx/" %}
 
-{% page-ref page="alipay.md" %}
+{% page-ref page="alipay/" %}
 
 {% page-ref page="baidu.md" %}
 

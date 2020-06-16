@@ -10,3 +10,5 @@
 | [插件版](https://docs.analysys.cn/ark/integration/sdk/wx/wxsdkplugin) | 如在微信中使用了插件，建议使用此版本 |
 | [框架版](https://docs.analysys.cn/ark/integration/sdk/wx/wxsdkcustom) | 使用第三方框架制作微信小程序，建议使用版本 |
 
+
+
