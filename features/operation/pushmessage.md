@@ -116,7 +116,7 @@ e.g. 发送消息通知：
 
 在使用之前，需要先通过服务配置（如何配置请阅读[《服务集成配置》](https://docs.analysys.cn/ark/features/project-manegement/integrations)），只有配置好相应通道，才可以使用
 
-![](../../.gitbook/assets/image%20%2843%29.png)
+![](../../.gitbook/assets/image%20%2844%29.png)
 
 {% hint style="warning" %}
 极光推送 iOS 推送官网要求选择生产环境还是开发环境，且只有当相应的环境在极光中完成 APNS 证书文件的验证时才可推送成功
@@ -128,7 +128,7 @@ e.g. 发送消息通知：
 
 **D3. 推送时间**
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 有立即推送、定时推送和周期性推送三种
 
@@ -147,7 +147,7 @@ e.g. 发送消息通知：
 
 编辑好的内容点击确认推送，即可开始的推送；也可以存为草稿。
 
-![](../../.gitbook/assets/image%20%28286%29.png)
+![](../../.gitbook/assets/image%20%28289%29%20%281%29.png)
 
 ### 2. 消息通知列表
 
@@ -157,7 +157,7 @@ e.g. 发送消息通知：
 
 列表当中会包含以下状态的消息： 
 
-![](../../.gitbook/assets/image%20%2880%29.png)
+![](../../.gitbook/assets/image%20%2881%29.png)
 
 * **待推送**：设置了定时或者周期性推送消息，且没有到达相应时间是，消息为待推送状态
 * **推送中**：正在推送当中的消息
