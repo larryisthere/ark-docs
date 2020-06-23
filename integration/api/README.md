@@ -66,7 +66,7 @@ Request Headers
 
 **$SUPER\_TOKEN** 为企业级接口授权码。在【4.5.3版本】此之前版本联系运维获取，4.5.3版本可在方舟中【企业平台管理】 - 【企业概览】模块中获取，截图如下：
 
-![&#x4F01;&#x4E1A;&#x6982;&#x89C8;](../../.gitbook/assets/image%20%28263%29.png)
+![&#x4F01;&#x4E1A;&#x6982;&#x89C8;](../../.gitbook/assets/image%20%28266%29.png)
 
 ## 4.调用示例
 
@@ -160,7 +160,7 @@ HttpStatus 不等于 200时，会返回json格式的结果，结果中包含code
 
 以下是Postman调用结果示例：
 
-![API&#x8C03;&#x7528;&#x72B6;&#x6001;&#x793A;&#x4F8B;](../../.gitbook/assets/image%20%2874%29.png)
+![API&#x8C03;&#x7528;&#x72B6;&#x6001;&#x793A;&#x4F8B;](../../.gitbook/assets/image%20%2875%29.png)
 
 ## 6. 指定操作用户
 

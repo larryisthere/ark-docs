@@ -131,6 +131,8 @@
   * [Golang SDK](integration/sdk/golang-sdk.md)
   * [PhoneGap SDK](integration/sdk/phonegap-sdk.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
+  * [SDK FAQ](integration/sdk/sdk-faq/README.md)
+    * [页面停留如何获取时间？](integration/sdk/sdk-faq/page-duration.md)
 * [数据验证](integration/data-verification/README.md)
   * [客户端埋点验证](integration/data-verification/sdk-verification.md)
   * [Debug 数据验证](integration/data-verification/debug-shu-ju-yan-zheng.md)
@@ -172,8 +174,6 @@
 ## 🐋 Part III 常见问题 <a id="faq"></a>
 
 * [License 许可](faq/license.md)
-* [SDK FAQ](faq/sdk/README.md)
-  * [页面停留如何获取时间？](faq/sdk/page-duration.md)
 * [产品试用及采购](faq/trialversion.md)
 * [参与贡献](faq/gong-xian-zhe-ming-lu.md)
 
