@@ -5,7 +5,7 @@
 * 项目 AppKey（创建项目后生成，用于唯一标识项目的数据）
 * 集成 [JS SDK ](../../integration/sdk/js/js.md)
 
-![](../../.gitbook/assets/image%20%2832%29.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 ## **接入后 Debug 数据验证**
 

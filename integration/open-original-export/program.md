@@ -204,7 +204,7 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 
 下载地址：[https://www.metabase.com/](https://www.metabase.com/)
 
-![&#x914D;&#x7F6E;&#x65B9;&#x6CD5;](../../.gitbook/assets/image%20%2879%29.png)
+![&#x914D;&#x7F6E;&#x65B9;&#x6CD5;](../../.gitbook/assets/image%20%2878%29.png)
 
 #### 参数说明
 

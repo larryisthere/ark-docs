@@ -60,13 +60,13 @@
 
 指 Web 页面浏览的总次数，同一页面刷新多次也会被重复计入。
 
-![](../.gitbook/assets/image%20%28145%29.png)
+![](../.gitbook/assets/image%20%28142%29.png)
 
 ### Web 访问用户数（UV）
 
 UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。对于网站而言，根据cookie生成的ID为判断标准，如果访客更换浏览器或清除cookie，会计为新的UV。
 
-![](../.gitbook/assets/image%20%28256%29.png)
+![](../.gitbook/assets/image%20%28253%29.png)
 
 ### APP 活跃用户数
 
@@ -92,13 +92,13 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 >
 > 时间粒度：按日
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../.gitbook/assets/image%20%28129%29.png)
 
 ### APP 启动次数
 
 指启动 APP 的总次数。启动多次会被累加。
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
 ### 新增用户数
 
@@ -112,7 +112,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 在图表区域选择不同的时间粒度，即按日、周、月去查询各个粒度下的新增用户数，也可以选择数值图，查看选定区间里的新增用户
 
-![](../.gitbook/assets/image%20%2889%29.png)
+![](../.gitbook/assets/image%20%2887%29.png)
 
 {% hint style="info" %}
 预置的新访问用户是根据首次访问时间是哪一天来判断用户是哪一天新增的，所以选择在所有用户下，选择启动的触发用户数，添加首次访问时间 是在启动当天  也可以得到相同的结果
@@ -120,7 +120,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 ⚠️首次访问时间是 SDK 判断用户是首次访问时调用 profile\_set\_once 上报，所以在接入阶段一定要验证是否正确集成
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28168%29.png)
 
 {% hint style="warning" %}
 1. 不建议在新访问用户分群下的基础上，选择任意事件的触发用户数保存为新增用户，因为任意事件可能包含了一些被动事件，比如消息推送成功、服务端返回的成功事件等。
@@ -139,7 +139,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 **除了上述基础指标之外， 事件分析可以基于事件、事件属性构建出任意指标，在指定分群下、指定时间范围、时间粒度下分析**
 
-![](../.gitbook/assets/image%20%28187%29.png)
+![](../.gitbook/assets/image%20%28184%29.png)
 
 {% hint style="info" %}
 **事件和属性都来自于SDK埋点上报或数据导入。**
@@ -151,7 +151,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月每天支付成功的用户数，当同一个用户在同一天里多次购买成功支付时，在这一天里这个用户只会被记1。
 
-![](../.gitbook/assets/image%20%28228%29.png)
+![](../.gitbook/assets/image%20%28225%29.png)
 
 ### 事件 X 的触发次数
 
@@ -159,7 +159,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月每天支付成功的次数，当同一个用户在同一天多次购买支付成功时，次数会被累加。
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 ### 事件 X 的人均触发次数
 
@@ -184,7 +184,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 | 食品 | 4 | 1 | 4 |
 | 虚拟商品 | 0 | 0 | 0 |
 
-![](../.gitbook/assets/image%20%28139%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
 ### 事件 X 的属性 Y 的总和
 
@@ -192,7 +192,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的订单金额总和。
 
-![](../.gitbook/assets/image%20%28212%29.png)
+![](../.gitbook/assets/image%20%28209%29.png)
 
 ### 事件 X 的属性 Y 的均值
 
@@ -200,7 +200,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的订单的平均金额，即订单金额总和/订单数。
 
-![](../.gitbook/assets/image%20%28282%29.png)
+![](../.gitbook/assets/image%20%28279%29.png)
 
 ### 事件 X 的属性 Y 的最大值
 
@@ -208,7 +208,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的最大订单金额。
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 ### 事件 X 的属性 Y 的最小值
 
@@ -216,7 +216,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天用户支付成功的最小订单金额。
 
-![](../.gitbook/assets/image%20%28268%29.png)
+![](../.gitbook/assets/image%20%28265%29.png)
 
 ### 事件 X 的属性 Y 的人均值
 
@@ -224,7 +224,7 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 
 如下图，表示本月里每天平均每个用户支付的订单金额。
 
-![](../.gitbook/assets/image%20%28166%29.png)
+![](../.gitbook/assets/image%20%28163%29.png)
 
 ### **自定义指标公式**
 
@@ -234,11 +234,11 @@ UV（Unique Visitor），通常用以表示Web端网站的去重访问用户。�
 支持加、减、乘、除、括号及常数的四则运算
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28257%29.png)
+![](../.gitbook/assets/image%20%28254%29.png)
 
 比如通过支付订单金额总和 - 退货金额总和 即可创建出实际完成订单金额的指标，如下图表示过去7天实际完成订单金额的趋势，可以增加额外指标对比分析。
 
-![](../.gitbook/assets/image%20%28277%29.png)
+![](../.gitbook/assets/image%20%28274%29.png)
 
 更多使用详见
 
@@ -406,11 +406,11 @@ Session 时长之和
 
 **移动端：** 在新访问用户下选择条件【初始行为 = 启动，回访行为 = 启动】，即可分析新用户在首次使用应用后的留存情况
 
-![](../.gitbook/assets/image%20%28213%29.png)
+![](../.gitbook/assets/image%20%28210%29.png)
 
 **H5/Web/小程序：** 在新访问用户下选择条件【初始行为 = 浏览页面，回访行为 = 浏览页面】，即可分析新用户在访问网站后的留存情况
 
-![](../.gitbook/assets/image%20%2866%29.png)
+![](../.gitbook/assets/image%20%2865%29.png)
 
 ### **活跃用户留存**
 
@@ -484,7 +484,7 @@ e.g. 对于电商的运营，可以定义【 初始行为 = 支付订单，回�
 
 通过属性分析，可以快速查看在不同属性上的用户数分布情况
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 更多使用说明详见
 
@@ -498,7 +498,7 @@ e.g. 对于电商的运营，可以定义【 初始行为 = 支付订单，回�
 
 如下图，表示过去7日，启动小于3次、3～5次、5～10次、10～20次、20～50次、50～100次、100次以上的用户数
 
-![](../.gitbook/assets/image%20%28261%29.png)
+![](../.gitbook/assets/image%20%28258%29.png)
 
 ### 事件 X 的发生时段分布
 
@@ -506,11 +506,11 @@ e.g. 对于电商的运营，可以定义【 初始行为 = 支付订单，回�
 
 如下图，表示过去7日，各个时段启动的用户分布
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28164%29.png)
 
 ### 事件 X 的属性 Y 的 Z 的分布
 
@@ -518,7 +518,7 @@ e.g. 对于电商的运营，可以定义【 初始行为 = 支付订单，回�
 
 如下图，表示过去7日支付金额总额的用户分群情况
 
-![](../.gitbook/assets/image%20%28127%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 更多使用说明详见
 

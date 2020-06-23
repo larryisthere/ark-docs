@@ -339,7 +339,7 @@ AnalysysAgent.profileSet(property, callback);
 
 开启Debug模式后，可以通过在浏览器的开发者工具中查看相应上报日志
 
-![&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x67E5;&#x770B;](../../../.gitbook/assets/image%20%2869%29.png)
+![&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x67E5;&#x770B;](../../../.gitbook/assets/image%20%2868%29.png)
 
 * 检查上报地址是否正确
 * 检查是否发送成功

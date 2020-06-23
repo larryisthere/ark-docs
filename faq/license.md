@@ -26,7 +26,7 @@ Argo 用户：在方舟官网 [获取License页面](https://ark.analysys.cn/lice
 商业版客户：部署完成后复制机器码发送给对接的项目经理，会有专人生成并发送给您采购期的License，也可以使用平台管理员帐号登录易观方舟官网，在 **个人中心-我的 License** 中获取
 {% endhint %}
 
-![&#x6FC0;&#x6D3B;&#x7A97;&#x53E3;](../.gitbook/assets/image%20%2868%29.png)
+![&#x6FC0;&#x6D3B;&#x7A97;&#x53E3;](../.gitbook/assets/image%20%2867%29.png)
 
 ### 提前续期/扩容
 
@@ -37,19 +37,19 @@ Argo 用户：在方舟官网 [获取License页面](https://ark.analysys.cn/lice
 
 系统会发出预警消息（登录后可见弹窗消息或在 消息中心 查看） 
 
-![&#x9884;&#x8B66;&#x6D88;&#x606F;](../.gitbook/assets/image%20%2842%29.png)
+![&#x9884;&#x8B66;&#x6D88;&#x606F;](../.gitbook/assets/image%20%2841%29.png)
 
 平台管理员可以登录进入企业管理后台 **企业概览-当前计划** 中查看使用时长限制、项目数、事件量、节点数限额和当前用量，根据当前使用情况来确定是否提前续期/扩容
 
-![&#x7EED;&#x671F;/&#x6269;&#x5BB9;](../.gitbook/assets/image%20%28215%29.png)
+![&#x7EED;&#x671F;/&#x6269;&#x5BB9;](../.gitbook/assets/image%20%28212%29.png)
 
 ### 到期、节点超限后续期/扩容
 
 若已经到期或擅自扩展部署节点，则系统无法继续使用，需要在弹窗中输入新的License来续期/扩容
 
-![&#x6388;&#x6743;&#x5230;&#x671F;](../.gitbook/assets/image%20%28276%29.png)
+![&#x6388;&#x6743;&#x5230;&#x671F;](../.gitbook/assets/image%20%28273%29.png)
 
-![&#x8282;&#x70B9;&#x8D85;&#x9650;](../.gitbook/assets/image%20%28265%29.png)
+![&#x8282;&#x70B9;&#x8D85;&#x9650;](../.gitbook/assets/image%20%28262%29.png)
 
 ### 事件用量超限后扩容
 
@@ -57,13 +57,13 @@ Argo 用户：在方舟官网 [获取License页面](https://ark.analysys.cn/lice
 
 若在有效期内，节点也未超限的情况下，事件量超出限额仍然可以继续使用，只是会停止新的数据处理，超出一定范围新数据将丢失，无法找回，所以避免影响使用，输入新的License来扩容
 
-![&#x4E8B;&#x4EF6;&#x91CF;&#x8D85;&#x9650;](../.gitbook/assets/image%20%28154%29.png)
+![&#x4E8B;&#x4EF6;&#x91CF;&#x8D85;&#x9650;](../.gitbook/assets/image%20%28151%29.png)
 
 ### 部署机器变更后重新认证
 
 当变更了部署机器后，可能会导致核心调度节点变更，需要使用新的机器码生成新的 License 来认证
 
-![&#x53D8;&#x66F4;&#x673A;&#x5668;](../.gitbook/assets/image%20%28126%29.png)
+![&#x53D8;&#x66F4;&#x673A;&#x5668;](../.gitbook/assets/image%20%28123%29.png)
 
 {% hint style="info" %}
 如何获取新的 License？
