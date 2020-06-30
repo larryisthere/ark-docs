@@ -132,6 +132,7 @@
   * [PhoneGap SDK](integration/sdk/phonegap-sdk.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
   * [SDK FAQ](integration/sdk/sdk-faq/README.md)
+    * [爬虫数据如何识别？](integration/sdk/sdk-faq/pa-chong-shu-ju-ru-he-shi-bie.md)
     * [页面停留如何获取时间？](integration/sdk/sdk-faq/page-duration.md)
 * [数据验证](integration/data-verification/README.md)
   * [客户端埋点验证](integration/data-verification/sdk-verification.md)
