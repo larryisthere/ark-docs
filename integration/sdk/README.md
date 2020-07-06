@@ -33,7 +33,6 @@
 | [Node JS SDK](node-sdk.md) | 用于服务端 Node 应用，如 Node Web 应用的后台服务 |
 | [Lua SDK](lua-sdk.md) | 用于服务端 Lua 应用 |
 | [Golang SDK](golang-sdk.md) | 用于服务端 Golang 应用 |
-| [PhoneGap SDK](phonegap-sdk.md) | 用于Cordova 和 PhoneGap 跨平台项目 |
 
 ### 应用场景
 
