@@ -8,7 +8,7 @@
 
 客户端 SDK 用于客户端，采集用户与应用界面产生交互的行为，这些行为只会在客户端发生，而不会传输到服务器端，常见的比如页面打开、按钮点击等。
 
-| 服务端 SDK 类型 | 适用范围 |
+| 客户端 SDK 类型 | 适用范围 |
 | :--- | :--- |
 | [Android SDK](android/) | 用于 Android 原生和 Hybrid App |
 | [iOS SDK](ios/) | 用于 iOS 原生和 Hybrid App |
