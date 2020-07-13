@@ -9,6 +9,7 @@
 
 * **Y 表示相应平台默认自动采集**
 * **N 表示相应平台不默认采集**
+* **S 标示由服务器自动根据相应规则自动处理**
 * **-  表示相应平台不支持采集该事件或属性**
 {% endhint %}
 
@@ -35,6 +36,7 @@
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
 | $campaign\_track | 渠道监测事件 | APP渠道监测 | - | - | - | - |
 | $first\_installation | 首次安装事件 | APP首次安装事件 | N | N | - | - |
+| $app\_crash | $app\_crash | 获取App异常信息 | N | N | - | - |
 
 {% hint style="info" %}
 其中 `$webstay`  用于记录用户停留在可视区域，分析浏览深度线，`$app_click`、`$web_click` 用于记录点击网页/APP页面，用于分析点击位置热图、点击元素热图，所以这三个事件不会作为单独的事件去分析，即不会出现在分析模型中事件的选项中，也不会计入任意事件的计算。
@@ -112,7 +114,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       style="text-align:center">N</td>
         <td style="text-align:center">N</td>
         <td style="text-align:center">N</td>
-        <td style="text-align:center">N</td>
+        <td style="text-align:center">S</td>
     </tr>
     <tr>
       <td style="text-align:left">$manufacturer</td>
@@ -464,14 +466,14 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
         <td style="text-align:left">true&#x3001;false</td>
         <td style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">-</td>
         <td style="text-align:center">Y</td>
     </tr>
     <tr>
       <td style="text-align:left">$user_agent</td>
       <td style="text-align:left">UA</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">UA&#x8BBE;&#x5907;--S</td>
+      <td style="text-align:left">UA&#x8BBE;&#x5907;</td>
       <td style="text-align:center">-</td>
       <td style="text-align:center">-</td>
       <td style="text-align:center">Y</td>
@@ -481,7 +483,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">$device_id</td>
       <td style="text-align:left">&#x8BBE;&#x5907;ID</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x8BBE;&#x5907;IDS</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;ID</td>
       <td style="text-align:center">N</td>
       <td style="text-align:center">N</td>
       <td style="text-align:center">-</td>
@@ -533,7 +535,6 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $is\_first\_time | 是否安装后首次访问 | 布尔 | 是否安装后首次访问 | Y | Y | Y | Y |
 | $is\_from\_background | 是否从后台唤醒 | 布尔 | 是否从后台唤醒恢复 | Y | Y | - | - |
 | $start\_source | 启动来源 | 字符串 | 仅在$startup事件 | Y | Y | - | - |
-| $start\_source\_detail | 当启动方式来源地址 | 字符串 | 当启动方式为url唤醒时填写url，仅在$startup事件 | Y | Y | - | - |
 
 #### **$end**
 
