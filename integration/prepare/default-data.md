@@ -26,15 +26,15 @@
 | $startup | 启动 | APP启动 / 打开网站 | Y | Y | Y | Y |
 | $end | 关闭 | APP关闭 | Y | Y | - | - |
 | $pageview | 浏览页面 | 浏览APP/网站页面 | Y | Y | Y | Y |
-| $push\_receiver\_success | 消息推送成功 | 设备收到推送消息时触发 | N | N | - | - |
-| $push\_click | 点击推送消息 | 设备点击了推送消息时触发 | N | N | - | - |
-| $push\_process\_success | 成功处理push消息 | 成功处理push消息 | N | N | - | - |
+| $push\_receiver\_success | 消息推送成功 | 设备收到推送消息时触发 | Y | Y | - | - |
+| $push\_click | 点击推送消息 | 设备点击了推送消息时触发 | Y | Y | - | - |
+| $push\_process\_success | 成功处理push消息 | 成功处理push消息 | Y | Y | - | - |
 | $webstay | 视区停留 | 停留在可视区域 | - | - | N | - |
 | $app\_click | App点击事件 | App热图点击事件 | N | N | - | - |
 | $web\_click | Web点击事件 | Web热图点击事件 | - | - | N | - |
 | $user\_click | 用户点击事件 | 用户点击可触控行为 | N | N | N | N |
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
-| $campaign\_track | 渠道监测事件 | APP渠道监测 | - | - | - | - |
+| $campaign\_track | 渠道监测事件 | APP渠道监测 | S | S | - | - |
 | $first\_installation | 首次安装事件 | APP首次安装事件 | N | N | - | - |
 | $app\_crash | $app\_crash | 获取App异常信息 | N | N | - | - |
 
@@ -50,7 +50,7 @@ $user\_click：只在全埋点模块生效时候触发该事件
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | $alias | 关联身份 | N | N | N | N |
 | $profile\_set | 设置用户信息，覆盖写 | N | N | N | N |
-| $profile\_set\_once | 设置用户信息，有则不进行任何操作 | N | N | N | N |
+| $profile\_set\_once | 设置用户信息，有则不进行任何操作 | Y | Y | Y | Y |
 | $profile\_increment | 增加或减少用户信息中的数字类型的属性 | N | N | N | N |
 | $profile\_delete | 删除用户信息 | N | N | N | N |
 | $profile\_append | 数组属性添加值 | N | N | N | N |
@@ -111,9 +111,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#xFF0C;e.g. PC&#x3001;&#x79FB;&#x52A8;&#x8BBE;&#x5907;</td>
       <td
-      style="text-align:center">N</td>
-        <td style="text-align:center">N</td>
-        <td style="text-align:center">N</td>
+      style="text-align:center">S</td>
+        <td style="text-align:center">S</td>
+        <td style="text-align:center">S</td>
         <td style="text-align:center">S</td>
     </tr>
     <tr>
@@ -124,8 +124,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
+        <td style="text-align:center">S</td>
+        <td style="text-align:center">S</td>
     </tr>
     <tr>
       <td style="text-align:left">$brand</td>
@@ -135,7 +135,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">S</td>
         <td style="text-align:center">Y</td>
     </tr>
     <tr>
@@ -146,7 +146,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">S</td>
         <td style="text-align:center">Y</td>
     </tr>
     <tr>
@@ -157,7 +157,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">S</td>
         <td style="text-align:center">Y</td>
     </tr>
     <tr>
@@ -168,7 +168,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">S</td>
         <td style="text-align:center">Y</td>
     </tr>
     <tr>
@@ -176,9 +176,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x540D;&#x79F0;&#xFF0C;e.g. Chrome</td>
-      <td style="text-align:center">-</td>
-      <td style="text-align:center">-</td>
       <td style="text-align:center">Y</td>
+      <td style="text-align:center">Y</td>
+      <td style="text-align:center">S</td>
       <td style="text-align:center">Y</td>
     </tr>
     <tr>
@@ -187,9 +187,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#xFF0C;e.g. Chrome 62.23.23</td>
       <td
-      style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
+      style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
+        <td style="text-align:center">S</td>
         <td style="text-align:center">Y</td>
     </tr>
     <tr>
@@ -251,10 +251,10 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">IP</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">IP&#x5730;&#x5740;</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
     </tr>
     <tr>
       <td style="text-align:left">$country</td>
@@ -264,10 +264,10 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
         <p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x6240;&#x5728;&#x56FD;&#x5BB6;&#xFF0C;</p>
         <p>e.g. &#x4E2D;&#x56FD;&#x3001;&#x7F8E;&#x56FD;</p>
       </td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
     </tr>
     <tr>
       <td style="text-align:left">$province</td>
@@ -277,10 +277,10 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
         <p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x6240;&#x5728;&#x7701;&#x4EFD;&#xFF0C;</p>
         <p>e.g. &#x5317;&#x4EAC;&#x3001;&#x4E0A;&#x6D77;&#x3001;&#x798F;&#x5EFA;</p>
       </td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
     </tr>
     <tr>
       <td style="text-align:left">$city</td>
@@ -290,10 +290,10 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
         <p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x6240;&#x5728;&#x57CE;&#x5E02;&#xFF0C;</p>
         <p>e.g. &#x5317;&#x4EAC;&#x3001;&#x53A6;&#x95E8;</p>
       </td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:center">N</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
+      <td style="text-align:center">S</td>
     </tr>
     <tr>
       <td style="text-align:left">$utm_campaign_id</td>
