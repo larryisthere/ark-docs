@@ -704,7 +704,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $baidu | 百度ID | 字符串 | 百度推送ID | N | N | - | - |
 | $xiaomi | 小米ID | 字符串 | 小米推送ID | N | N | - | - |
 | $email | 邮箱 | 字符串 | 邮箱 | N | N | N | N |
-| $platform | 最后一次使用平台 | 字符串 | 最后一次使用平台 | Y | Y | Y | Y |
+| $platform | 平台 | 字符串 | 平台 | Y | Y | Y | Y |
 | $lib | SDK类型 | 字符串 | SDK类型，e.g.  python、iOS等 | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g. 11.2.5 | Y | Y | Y | Y |
 | $country | 所在国家 | 字符串 | 用户所在国 | N | N | N | N |
