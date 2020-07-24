@@ -69,9 +69,19 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 ### 2.2 请求参数示例
 
-无。
+```java
+//【选填 5.1.0068版本新增】通过urlPath传参
+type=event&enable=1
+```
 
 > **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
+
+#### **2.2.1 入参说明**
+
+| 参数名称 | 类型 | 必填 | 说明 | 枚举 |
+| :--- | :--- | :--- | :--- | :--- |
+| type | String | N | 事件类型，可获取所有和指定类型【5.1】 | all/event/virtual |
+| enable | Integer | N | 是否回数：1为已回数 0为未回数【5.1】 | 0/1 |
 
 ### 2.3 返回结果示例
 
@@ -89,7 +99,11 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
       	//【4.5.0中新增】是否预置事件 1为预置事件 0为自定义事件
       	"preset": 1,
         //【4.6中新增】回数平台，多个值之间逗号隔开
-        "platform": "Android,iOS,JS"
+        "platform": "Android,iOS,JS",
+         //【5.1.0068中新增】事件类型
+         "type":"event",
+      		//【5.1.0068中新增】如果是虚拟事件，则会返回对应的创建虚拟事件的包含条件
+      	 "content":null
     },
     {
         "id":"$end",
@@ -98,16 +112,22 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
         "enable":0,
         "remark":"APP关闭 / 关闭网页",
       	"preset": 1,
-        "platform": "Android,iOS"
+        "platform": "Android,iOS",
+        "type":"event",
+      	"content":null
     },
   	{
         "id": "login",
         "name": null,
         "enable": 1,
         "remark": null,
-      	//自定义事件
+      	//自定义
         "preset": 0,
-        "platform": "Android"
+        "platform": "Android",
+        //虚拟事件
+        "type":"virtual",
+        //虚拟事件的包含条件
+        "content":{}
     }
 ]
 ```
