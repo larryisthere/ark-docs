@@ -70,7 +70,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 ### 2.2 请求参数示例
 
 ```java
-//【选填 5.1.0068版本新增】通过urlPath传参
+//【选填 5.1.0086版本新增】通过urlPath传参
 type=event&enable=1
 ```
 
@@ -100,9 +100,9 @@ type=event&enable=1
       	"preset": 1,
         //【4.6中新增】回数平台，多个值之间逗号隔开
         "platform": "Android,iOS,JS",
-         //【5.1.0068中新增】事件类型
+         //【5.1.0086中新增】事件类型
          "type":"event",
-      		//【5.1.0068中新增】如果是虚拟事件，则会返回对应的创建虚拟事件的包含条件
+      		//【5.1.0086中新增】如果是虚拟事件，则会返回虚拟事件的创建规则
       	 "content":null
     },
     {
@@ -126,10 +126,40 @@ type=event&enable=1
         "platform": "Android",
         //虚拟事件
         "type":"virtual",
-        //虚拟事件的包含条件
+        //虚拟事件的创建规则
         "content":{}
     }
 ]
+```
+
+如果是虚拟事件，则会返回虚拟事件的创建规则，格式如下：
+
+```java
+{
+    "events": [
+        {
+            //包含的事件
+            "expression": "event.$startup",
+            //事件需要满足的条件
+            "filter": {
+                "conditions": [
+                    {
+                        "expression": "event.$startup.$platform",
+                        "function": "EQ",
+                        "params": [
+                            "JS"
+                        ]
+                    }
+                ],
+                "relation": "AND"
+            }
+        },
+        {
+            "expression": "event.$pageview"
+        }
+    ],
+    "relation": "OR"
+}
 ```
 
 ### 2.4 接口调用示例
