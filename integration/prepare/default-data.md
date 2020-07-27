@@ -88,12 +88,12 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">$platform</td>
       <td style="text-align:left">&#x5E73;&#x53F0;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x5E94;&#x7528;&#x5E73;&#x53F0;&#xFF0C;&#x679A;&#x4E3E;&#x53D6;&#x503C;&#xFF1A;Android&#x3001;iOS&#x3001;Web/H5&#x3001;&#x5C0F;&#x7A0B;&#x5E8F;<code> </code>
-      </td>
-      <td style="text-align:center">Y</td>
-      <td style="text-align:center">Y</td>
-      <td style="text-align:center">Y</td>
-      <td style="text-align:center">Y</td>
+      <td style="text-align:left">&#x5E94;&#x7528;&#x5E73;&#x53F0;&#xFF0C;&#x679A;&#x4E3E;&#x53D6;&#x503C;&#xFF1A;JS/iOS/Android/Wechat</td>
+      <td
+      style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
+        <td style="text-align:center">Y</td>
     </tr>
     <tr>
       <td style="text-align:left">$app_version</td>
