@@ -83,7 +83,6 @@
 ## 🐵 Part II 技术文档 <a id="integration"></a>
 
 * [技术接入准备工作](integration/prepare/README.md)
-  * [私有云安装部署](integration/prepare/si-you-yun-an-zhuang-bu-shu.md)
   * [部署环境检测工具](integration/prepare/tool-script.md)
   * [数据模型](integration/prepare/data-model.md)
   * [数据格式](integration/prepare/data-type.md)
