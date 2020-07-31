@@ -48,7 +48,7 @@
 
 ![ ](../.gitbook/assets/tu-pian-10.png)
 
-### [用户分群](../features/segmentation/)
+### [用户分群](../features/user/)
 
 #### 用户分群即将用户标签化，把具有相同特征 / 行为的用户进行聚类，是精细化运营的基础。
 

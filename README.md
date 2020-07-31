@@ -24,7 +24,7 @@
 
 * [看板](features/dashboard.md)——不同角色灵活自定义看板，实时跟踪关心的指标
 * [分析](features/analytics/)——多达十二种不同类型的专业分析模型，支持多维度交叉查询分析
-* [分群](features/segmentation/)——通过多种细分维度方式细分人群，了解用户画像和人群属性
+* [分群](features/user/)——通过多种细分维度方式细分人群，了解用户画像和人群属性
 * [运营](features/operation/)——连接第三方运营服务，有效触达目标用户群，实现用户的精细化运营
 
 ![ ](https://imguserradar.analysys.cn/fangzhou/sysImg/201706141931230718.png)
