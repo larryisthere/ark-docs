@@ -364,7 +364,7 @@ autoWebstay 为设置是否追踪页面滚动行为。可根据自身需要进�
 
 #### autoTrack
 
-autoTrack 为设置是否启用全埋点功能。可根据自身需要进行更改。true 启用热图功能。类型：Boolean。
+autoTrack 为设置是否启用全埋点功能。可根据自身需要进行更改。true 启用全埋点功能。类型：Boolean。
 
 * true 启用全埋点功能。类型：Boolean。
 * false 不启用全埋点功能\(默认\)。类型：Boolean。
