@@ -17,7 +17,7 @@
 | [支付宝小程序 SDK](alipay/) | 用于支付宝小程序 |
 | [百度小程序 SDK](baidu.md) | 用于百度小程序 |
 | [字节跳动小程序 SDK](bytedance.md) | 用于字节跳动小程序 |
-| [钉钉小程序 SDK ](dingtalk.md) | 用于钉钉小程序 |
+| [钉钉小程序 SDK ](dingtalk/) | 用于钉钉小程序 |
 
 ## **服务端 SDK**
 

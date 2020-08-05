@@ -1,4 +1,8 @@
-# 钉钉小程序 SDK
+---
+description: 钉钉小程序通用框架版 SDK 使用说明
+---
+
+# 钉钉小程序通用框架版
 
 钉钉小程序SDK集成前请先下载SDK
 
@@ -11,8 +15,8 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_Dingtalk\_SDK.min.js | 基础模块SDK | 二选一 |
-| AnalysysAgent\_Dingtalk\_SDK.es6.min.js | 基础模块ES6语法SDK | 二选一 |
+| AnalysysAgent\_Dingtalk\_SDK.custom.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_Dingtalk\_SDK.custom.es6.min.js | 基础模块ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
 | AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
 
@@ -53,7 +57,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 在app.js文件中调用小程序启动事件
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Dingtalk_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_Dingtalk_SDK.custom.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 
@@ -87,7 +91,7 @@ Page({
 
 将 AnalysysAgent\_Dingtalk.custom.min.js 文件放到小程序的目录下
 
-![](../../.gitbook/assets/wechatimg736.png)
+![](../../../.gitbook/assets/wechatimg736.png)
 
 钉钉小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 
@@ -96,6 +100,12 @@ Page({
 ```javascript
 import AnalysysAgent from './util/sdk/AnalysysAgent_Dingtalk_SDK.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+App({
+    onShow : function( options ){
+        //设置小程序启动事件,并传输UTM等参数
+        AnalysysAgent.appStart(options)
+    }
+});
 ```
 
 如需要加密模块
@@ -120,6 +130,17 @@ AnalysysAgent.encrypt = AnalysysEncryption
 ```
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_Dingtalk\_SDK 全局函数:
+
+```javascript
+let AnalysysAgent = dd.AnalysysAgent;
+Page({
+    onShow : function( options ){
+        AnalysysAgent.pageView('首页')
+    }
+})
+```
+
+在组件Component 内通过以下代码获取 AnalysysAgent\_Alipay\_SDK 全局函数:
 
 ```javascript
 let AnalysysAgent = dd.AnalysysAgent;
@@ -244,7 +265,7 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 登录钉钉开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
 
-![](../../.gitbook/assets/1575888678435%20%281%29.png)
+![](../../../.gitbook/assets/1575888678435%20%281%29.png)
 
 {% hint style="info" %}
 钉钉小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
@@ -258,8 +279,17 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 ```javascript
 //标准示例
-AnalysysAgent.appStart(options);
+App({
+    onShow : function( options ){
+        //设置小程序启动事件,并传输UTM等参数
+        AnalysysAgent.appStart(options)
+    }
+});
+```
 
+options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
+
+```javascript
 //taro框架示例:
 componentDidShow () {
     const params = this.$router.params
@@ -272,11 +302,9 @@ onShow (options) {
 
 ```
 
-options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
-
 ### 统计页面接口介绍
 
-页面跟踪，钉钉SDK需要手动设置跟踪所有页面，支持自定义页面信息。接口如下：
+页面跟踪，框架版钉钉SDK需要手动设置跟踪所有页面，支持自定义页面信息。接口如下：
 
 ```javascript
 AnalysysAgent.pageView(pageName);
@@ -358,23 +386,26 @@ AnalysysAgent.appProperty(properties);
 采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
 
 ```javascript
-AnalysysAgent.share(properties);
+AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
-* properties：分享内容，K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用默认。 
+* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
 ```javascript
-// 采集分享按钮点击事件
+// 手动采集
 Page({
     onShareAppMessage:function(){
-        let shareProperties = {
+        let toShareProperties = {
           title: '自定义转发标题',
           path: '/page/user?id=123'
         }
-        let AnsShareProperties = AnalysysAgent.share(shareProperties);
-        return AnsShareProperties
+        let trackProperties = {
+            custom:'weChat'
+        }
+        return AnalysysAgent.share(toShareProperties,trackProperties);
     }
 })
 ```
