@@ -217,7 +217,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
     <tr>
       <td style="text-align:left">$screen_width</td>
       <td style="text-align:left">&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;</td>
-      <td style="text-align:left">&#x6574;&#x6570;&#x578B;</td>
+      <td style="text-align:left">&#x6570;&#x503C;</td>
       <td style="text-align:left">&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;/&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#xFF0C;e.g.
         1920</td>
       <td style="text-align:center">Y</td>
@@ -228,7 +228,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
     <tr>
       <td style="text-align:left">$screen_height</td>
       <td style="text-align:left">&#x5C4F;&#x5E55;&#x9AD8;&#x5EA6;</td>
-      <td style="text-align:left">&#x6574;&#x6570;&#x578B;</td>
+      <td style="text-align:left">&#x6570;&#x503C;</td>
       <td style="text-align:left">&#x5C4F;&#x5E55;&#x9AD8;&#x5EA6;/&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#xFF0C;e.g.
         768</td>
       <td style="text-align:center">Y</td>
@@ -440,7 +440,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
     <tr>
       <td style="text-align:left">$debug</td>
       <td style="text-align:left">Debug&#x6A21;&#x5F0F;</td>
-      <td style="text-align:left">&#x6574;&#x6570;&#x578B;</td>
+      <td style="text-align:left">&#x6570;&#x503C;</td>
       <td style="text-align:left">&#x6807;&#x8BC6;&#x6570;&#x636E;&#x5904;&#x7406;&#x65B9;&#x5F0F;</td>
       <td
       style="text-align:center">Y</td>
@@ -560,7 +560,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $scene\_type | 场景值类型 | 字符串 | 标识小程序场景值类型 | - | - | - | N |
 | $startup\_time | 启动时间 | 日期 | yyyy-MM-dd hh:mm:ss.SSS | - | - | Y | Y |
 | $share\_id | 分享者ID | 字符串 | 分享者ID | - | - | - | N |
-| $share\_level | 转发层级 | 整数型 | 转发层级 | - | - | - | N |
+| $share\_level | 转发层级 | 数值 | 转发层级 | - | - | - | N |
 | $share\_path | 转发地址 | 字符串 | 转发页面来源 | -- | - | - | N |
 
 {% hint style="info" %}
@@ -573,7 +573,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $action\_type | 操作类型 | 整数型 | 点击消息通知后的操作类型 | N | N | - | - |
+| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
 | $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
 | $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
@@ -607,14 +607,14 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $share\_id | 分享者ID | 字符串 | 分享者ID | - | - | - | N |
-| $share\_level | 转发层级 | 整数型 | 转发层级 | - | - | - | N |
+| $share\_level | 转发层级 | 数值 | 转发层级 | - | - | - | N |
 | $share\_path | 转发地址 | 字符串 | 转发页面来源 | -- | - | - | N |
 
 **$push\_click**
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $action\_type | 操作类型 | 整数型 | 点击消息通知后的操作类型 | N | N | - | - |
+| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
 | $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
 | $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
@@ -627,7 +627,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $action\_type | 操作类型 | 整数型 | 点击消息通知后的操作类型 | N | N | - | - |
+| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
 | $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 | $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
 | $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
@@ -663,7 +663,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $element\_name | 元素名称 | 字符串 | 热图元素名称 | - | Y | - | - |
 | $element\_type | 元素类型 | 字符串 | 热图元素类型 | Y | Y | Y | - |
 | $element\_content | 元素内容 | 字符串 | 热图元素的内容 | Y | Y | Y | - |
-| $element\_clickable | 是否可以点击元素 | 整数型 | 是否可以点击元素 | Y | Y | Y | - |
+| $element\_clickable | 是否可以点击元素 | 数值 | 是否可以点击元素 | Y | Y | Y | - |
 
 ### 3. Profile 系列事件属性
 
@@ -675,7 +675,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g.11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
-| $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
+| $debug | debug模式 | 数值 | debug模式 | Y | Y | Y | Y |
 | $original\_id | 临时id | 字符串 | 系统生产的临时ID | Y | Y | Y | Y |
 
 **$profile\_set**
@@ -686,7 +686,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本 e.g. 11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
-| $debug | debug模式 | 整数型 | debug模式 | Y | Y | Y | Y |
+| $debug | debug模式 | 数值 | debug模式 | Y | Y | Y | Y |
 
 ## 预置用户属性
 
