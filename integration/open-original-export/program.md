@@ -180,11 +180,9 @@ dataFile.CSV为导出的文件路径
 import prestodb
 conn=prestodb.dbapi.connect(
         host='ip address of ark2',
-        port=4285,
+        port=8285,
         user='daxiang',
         catalog='hive',
-        password="参数jar代码",
-        ... 参考ava代码
         schema='db_{appkey}',
 )
 cur = conn.cursor()
