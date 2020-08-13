@@ -131,6 +131,7 @@
   * [Lua SDK](integration/sdk/lua-sdk.md)
   * [Golang SDK](integration/sdk/golang-sdk.md)
   * [PhoneGap SDK](integration/sdk/phonegap-sdk.md)
+  * [Flutter SDK](integration/sdk/flutter-sdk.md)
   * [SDK更新日志](integration/sdk/sdk-update.md)
   * [SDK FAQ](integration/sdk/sdk-faq/README.md)
     * [爬虫数据如何识别？](integration/sdk/sdk-faq/spider.md)
