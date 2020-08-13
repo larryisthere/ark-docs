@@ -15,7 +15,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 ## 移动端iOS & Android Flutter插件使用说明
 
-flutter SDK主要对移动端iOS和Android两个平台常用接口的封装，支持常用埋点事件的统计上报。
+[flutter SDK](https://pub.dev/packages/argo_flutter_plugin)主要对移动端iOS和Android两个平台常用接口的封装，支持常用埋点事件的统计上报。
 
 ## 插件安装
 
