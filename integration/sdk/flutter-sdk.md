@@ -36,11 +36,7 @@ flutter packages get
 代码引用
 
 ```dart
-
-
-```
 import 'package:argo_flutter_plugin/argo_flutter_plugin.dart';
-```
 ```
 
 ## SDK初始化
