@@ -15,7 +15,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 ## 移动端iOS & Android Flutter插件使用说明
 
-方舟argo\_flutter\_plugin插件主要对移动端iOS和Android两个平台常用接口的封装，支持常用埋点事件的统计上报。
+flutter SDK主要对移动端iOS和Android两个平台常用接口的封装，支持常用埋点事件的统计上报。
 
 ## 插件安装
 
@@ -24,12 +24,26 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 ```text
 dependencies:
   ## 易观方舟flutter插件
-  argo_flutter_plugin: any
+  argo_flutter_plugin: ^1.0.0
+
+
+```
 
 安装插件：
 
-flutter packages get
+```dart
 
+flutter packages get
+```
+
+代码引用
+
+```dart
+
+
+```
+import 'package:argo_flutter_plugin/argo_flutter_plugin.dart';
+```
 ```
 
 ## SDK初始化
