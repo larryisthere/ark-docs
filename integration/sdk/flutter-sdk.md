@@ -25,14 +25,11 @@ flutter SDK主要对移动端iOS和Android两个平台常用接口的封装，�
 dependencies:
   ## 易观方舟flutter插件
   argo_flutter_plugin: ^1.0.0
-
-
 ```
 
 安装插件：
 
 ```dart
-
 flutter packages get
 ```
 
