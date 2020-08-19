@@ -137,7 +137,8 @@ function msectime()
 }
 $xwhen = msectime();
 
-$analysys_agent->alias($registerId,$distinctId,$platform, $xwhen);
+$ret = $analysys_agent->alias($registerId,$distinctId,$platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 ### 3.3 统计事件
@@ -186,7 +187,8 @@ function msectime()
 }
 $xwhen = msectime();
 
-$analysys_agent->track($distinctId, $isLogin, $eventName, $properties, $platform, $xwhen);
+$ret = $analysys_agent->track($distinctId, $isLogin, $eventName, $properties, $platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 ### 3.4 用户属性设置
@@ -237,7 +239,8 @@ $properties = array(
         '游戏'
     )
 );
-$analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
+$ret = $analysys_agent->profileSet($registerId, $isLogin, $properties, $platform);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 ## 4. 更多接口
@@ -275,7 +278,8 @@ function msectime()
 }
 $xwhen = msectime();
 
-$analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform, $xwhen);
+$ret = $analysys_agent->profileSetOnce($registerId, $isLogin, $properties, $platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 #### 4.1.2 设置用户属性相对变化值
@@ -309,7 +313,8 @@ function msectime()
 }
 $xwhen = msectime();
 
-$analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform, $xwhen);
+$ret = $analysys_agent->profileIncrement($registerId, $isLogin, $properties, $platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 #### 4.1.3 增加列表类型的属性
@@ -347,7 +352,8 @@ function msectime()
 }
 $xwhen = msectime();
 
-$analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform, $xwhen);
+$ret = $analysys_agent->profileAppend($registerId, $isLogin, $properties, $platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 #### 4.1.4 删除设置的属性值
@@ -378,7 +384,8 @@ function msectime()
     return (float) sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
 }
 $xwhen = msectime();
-$analysys_agent->profileUnSet($registerId, $isLogin, $propertie, $platform, $xwhen);
+$ret = $analysys_agent->profileUnSet($registerId, $isLogin, $propertie, $platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 示例2：要删除已经设置的所有用户属性
@@ -395,7 +402,8 @@ function msectime()
 }
 $xwhen = msectime();
 
-$analysys_agent->profileDelete($registerId, $isLogin, $platform, $xwhen);
+$ret = $analysys_agent->profileDelete($registerId, $isLogin, $platform, $xwhen);
+var_dump($ret); // 存储到上报日志缓存或上报日志成功返回true，否则false
 ```
 
 ### 4.2 通用属性
@@ -433,7 +441,8 @@ $properties = array(
     'userLevel'=>0,
     'userPoint'=>0
 );
-$analysys_agent->registerSuperProperties($properties);
+$ret = $analysys_agent->registerSuperProperties($properties);
+var_dump($ret); // 设置通用属性成功返回true，否则false
 ```
 
 #### 4.2.2 删除通用属性
@@ -451,14 +460,16 @@ $analysys_agent->clearSuperProperties();
 
 ```php
 // 删除单个通用属性
-$analysys_agent->unRegisterSuperProperty('userPoint');
+$ret = $analysys_agent->unRegisterSuperProperty('userPoint');
+var_dump($ret); // 删除通用属性成功返回true，否则false
 ```
 
 示例2：清除所有已经设置的通用属性
 
 ```php
 // 清除所有通用属性
-$analysys_agent->clearSuperProperties();
+$ret = $analysys_agent->clearSuperProperties();
+var_dump($ret); // 清除所有通用属性成功返回true，否则false
 ```
 
 #### 4.2.3 获取通用属性
@@ -491,7 +502,8 @@ $analysys_agent->getSuperProperties();
 立即发送所有收集的信息到服务器。
 
 ```php
-$analysys_agent.flush();
+$ret = $analysys_agent.flush();
+var_dump($ret); // 上报缓存中日志成功返回true，否则false
 ```
 
 ## 5. SDK 使用样例
