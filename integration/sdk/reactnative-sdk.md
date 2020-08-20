@@ -80,30 +80,29 @@ public class AnalysysApplication extends Application {
 
 ### 集成方舟SDK
 
-参考：[方舟集成配置](https://docs.analysys.cn/ark/integration/sdk/ios#ji-cheng-pei-zhi)
+React Native 0.60 及以上版本可以通过 CocoaPods 的方式引用 RNAnalysysAgentModule 插件及 易观方舟SDK；React Native 0.60 以下版本需要使用手动方式添加。
 
 #### 方式一：CocoaPods 集成
 
-1. 工程目录下创建Podfile文件，并添加pod 'AnalysysAgent'，示例如下：
+1. 将`npm install`下载后的文件：项目目录/node\_modules/react-native-analysys文件拷贝至ios工程下（一般为.xcodeproj同级目录），在该目录下创建Podfile文件，并配置RN插件，如下示例：
 
 ```text
 platform :ios, '8.0'
 use_frameworks!
 
 target 'YourApp' do
-    pod 'AnalysysAgent'
+    pod 'RNAnalysysAgentModule', :path => 'react-native-analysys/'
 end
 ```
 
-1. 关闭Xcode，在工程目录下执行pod install或pod install --verbose --no-repo-update，完成后打开xxx.xcworkspace工程
+1. 关闭Xcode，在工程目录下执行`pod install`或`pod install --verbose --no-repo-update`，完成后打开xxx.xcworkspace工程
 
 #### 方式二：手动引入
 
-1. 下载[方舟最新版本SDK](https://github.com/analysys/ans-ios-sdk/releases)
-2. 选择 工程 - 右键 - Add Files to "ProjectName"
-3. 选择 AnalysysAgent.framework文件
-4. 勾选 Copy items if needed、Create groups- Add 完成添加类库
-5. 添加AnalysysAgent.bundle资源文件：Targets-&gt;ProjectName -&gt; Build Phases -&gt; Copy Bundle Resources -&gt; 添加文件
+1. 下载[方舟SDK](https://github.com/analysys/ans-ios-sdk/releases)并导入iOS工程中
+2. 将`npm install`下载后的`RNAnalysysAgentModule`插件（路径：项目目录/node\_modules/react-native-analysys\_test/sdk/ios）导入工程
+3. 勾选 Copy items if needed、Create groups- Add 完成添加类库
+4. 添加依赖库:选择工程 - Targets - “项目名称” - Build Phase - Link Binary With Libraries ：`libz.tbd、libicucore.tbd、libsqlite3.tbd`
 
 ### 初始化SDK
 
