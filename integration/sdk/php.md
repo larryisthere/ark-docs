@@ -36,7 +36,7 @@ $serverUrl = 'https://arksdk.analysys.cn:4089/';
 $consumer = new SyncConsumer($serverUrl); //同步
 //$consumer = new BatchConsumer($server); // 批量
 //$consumer = new FileConsumer($file_path); // 落地文件
-$analysys_agent = new AnalysysAgent($consumer, $appid);;
+$analysys_agent = new AnalysysAgent($consumer, $appid);
 ```
 
 app\_key：网站获取的 Key

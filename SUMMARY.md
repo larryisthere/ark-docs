@@ -80,7 +80,7 @@
   * [企业设置](features/enterprise-management/enterprise.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
 
-## 🐵 Part II 技术文档 <a id="integration"></a>
+## �� Part II 技术文档 <a id="integration"></a>
 
 * [技术接入准备工作](integration/prepare/README.md)
   * [部署环境检测工具](integration/prepare/tool-script.md)
