@@ -133,9 +133,9 @@ AndroidManifest.xml文件需要配置内容包括权限、provider、AppKey、Ch
 权限说明:
 
 * INTERNET（必须）允许程序连接网络，与服务器进行数据传输
-* ACCESS\_NETWORK\_STATE（必须）检测网络类型，用于区分用户网络状态 2G/3G/4G/WIFI
-* READ\_PHONE\_STATE（必须）获取用户设备 IMEI，使用 IMEI 和 MAC 地址做设备唯一标识
-* ACCESS\_WIFI\_STATE（必须）获取用户设备 MAC 地址，用做设备唯一标识
+* ACCESS\_NETWORK\_STATE（可选配置）检测网络类型，用于区分用户网络状态 2G/3G/4G/WIFI
+* READ\_PHONE\_STATE（可选配置）获取用户设备 IMEI，使用 IMEI 和 MAC 地址做设备唯一标识
+* ACCESS\_WIFI\_STATE（可选配置）获取用户设备 MAC 地址，用做设备唯一标识
 
 注意：由于[android限制](https://developer.android.com/guide/topics/manifest/meta-data-element)在AndroidManifest.xml配置的android:value值只支持String、Int、Boolean、Float，不支持其他类型，因此配置其他类型需要使用转义字符\\来标记为String类型
 
