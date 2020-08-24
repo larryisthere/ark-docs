@@ -176,8 +176,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x540D;&#x79F0;&#xFF0C;e.g. Chrome</td>
-      <td style="text-align:center">Y</td>
-      <td style="text-align:center">Y</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">-</td>
       <td style="text-align:center">S</td>
       <td style="text-align:center">Y</td>
     </tr>
@@ -187,8 +187,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#xFF0C;e.g. Chrome 62.23.23</td>
       <td
-      style="text-align:center">Y</td>
-        <td style="text-align:center">Y</td>
+      style="text-align:center">-</td>
+        <td style="text-align:center">-</td>
         <td style="text-align:center">S</td>
         <td style="text-align:center">Y</td>
     </tr>
