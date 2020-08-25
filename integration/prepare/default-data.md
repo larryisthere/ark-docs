@@ -124,7 +124,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:center">Y</td>
         <td style="text-align:center">Y</td>
-        <td style="text-align:center">S</td>
+        <td style="text-align:center">-</td>
         <td style="text-align:center">-</td>
     </tr>
     <tr>
