@@ -465,7 +465,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       style="text-align:left">&#x5E03;&#x5C14;</td>
         <td style="text-align:left">true&#x3001;false</td>
         <td style="text-align:center">n</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">N</td>
         <td style="text-align:center">-</td>
         <td style="text-align:center">Y</td>
     </tr>
@@ -588,7 +588,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | N |
+| $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | - |
 | $page\_width  | 页面宽度  | 浮点型  | 页面宽度 | Y | Y | Y | N |
 | $page\_height  | 页面高度   | 浮点型 | 页面高度 | Y | Y | Y | N |
 | $parent\_url  | 父页面URL   | 字符串 | 面URL，为空则为顶级页 | Y | - | - | N |
