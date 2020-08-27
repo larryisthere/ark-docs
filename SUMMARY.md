@@ -12,6 +12,7 @@
   * [附：数据分析思路](quick-start-guide/analystics-method.md)
 * [产品更新日志](release-notes.md)
 * [我要反馈](https://support.qq.com/products/118522?)
+* [如遇问题？访问备用地址](https://analysys.gitbook.io/ark/)
 
 ## 🐱 Part I 产品功能说明 <a id="features"></a>
 
