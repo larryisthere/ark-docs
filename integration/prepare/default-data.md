@@ -464,10 +464,10 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
       <td
       style="text-align:left">&#x5E03;&#x5C14;</td>
         <td style="text-align:left">true&#x3001;false</td>
-        <td style="text-align:center">n</td>
+        <td style="text-align:center">N</td>
         <td style="text-align:center">N</td>
         <td style="text-align:center">-</td>
-        <td style="text-align:center">Y</td>
+        <td style="text-align:center">N</td>
     </tr>
     <tr>
       <td style="text-align:left">$user_agent</td>
