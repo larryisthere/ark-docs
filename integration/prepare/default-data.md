@@ -703,10 +703,10 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | distinct\_id | 唯一ID | 字符串 | 服务端自动生成 | S | S | S | S |
 | xwho | 用户ID | 字符串 |  | Y | Y | Y | Y |
 | xwhen | 用户属性更新时间 | 日期时间 |  | Y | Y | Y | Y |
-| $idfv | IDFV | 字符串 | IDFV | - |   | - | - |
+| $idfv | IDFV | 字符串 | IDFV | - |  N | - | - |
 | $idfa | IDFA | 字符串 | IDFA | - | N | - | - |
-| $mac | MAC | 字符串 | MAC | - | - | - | - |
-| $imei | IMEI | 字符串 | IMEI |   | - | - | - |
+| $mac | MAC | 字符串 | MAC | N | - | - | - |
+| $imei | IMEI | 字符串 | IMEI |  N | - | - | - |
 | $getui | 个推ID | 字符串 | 个推推送ID | N | N | - | - |
 | $jpush | 极光ID | 字符串 | 极光推送ID | N | N | - | - |
 | $baidu | 百度ID | 字符串 | 百度推送ID | N | N | - | - |
