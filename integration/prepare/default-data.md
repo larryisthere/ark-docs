@@ -703,7 +703,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | distinct\_id | 唯一ID | 字符串 | 服务端自动生成 | S | S | S | S |
 | xwho | 用户ID | 字符串 |  | Y | Y | Y | Y |
 | xwhen | 用户属性更新时间 | 日期时间 |  | Y | Y | Y | Y |
-| $idfv | IDFV | 字符串 | IDFV | - |     | - | - |
+| $idfv | IDFV | 字符串 | IDFV | - |    | - | - |
 | $idfa | IDFA | 字符串 | IDFA | - |   | - | - |
 | $mac | MAC | 字符串 | MAC |   | - | - | - |
 | $imei | IMEI | 字符串 | IMEI |   | - | - | - |
