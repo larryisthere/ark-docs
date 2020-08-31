@@ -2,6 +2,13 @@
 
 易观方舟react-native-analysys模块，封装了易观 Android & iOS SDK 常用 API ，使用此模块，可以在 React Native 开发的 App 中完成埋点的统计上报。
 
+{% hint style="info" %}
+SDK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-ReactNative-sdk](https://github.com/analysys/ans-ReactNative-sdk)  
+Gitee地址：[https://gitee.com/Analysys/ans-ReactNative-sdk](https://gitee.com/Analysys/ans-ReactNative-sdk)   
+Releases中含有更新说明请您阅读，接口使用请参考本文档。
+{% endhint %}
+
 ## npm模块安装
 
 ### 模块安装

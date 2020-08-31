@@ -6,8 +6,8 @@ description: 该 SDK 适用于Cordova 和 PhoneGap 跨平台项目。
 
 {% hint style="info" %}
 SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-phonegap-sdk/releases](https://github.com/analysys/ans-phonegap-sdk/releases)  
-Gitee地址：[https://gitee.com/Analysys/ans-phonegap-sdk/releases](https://gitee.com/Analysys/ans-phonegap-sdk/releases)  
+Github地址\(推荐\)：[https://github.com/analysys/ans-phonegap-sdk](https://github.com/analysys/ans-phonegap-sdk)  
+Gitee地址：[https://gitee.com/Analysys/ans-phonegap-sdk/](https://gitee.com/Analysys/ans-phonegap-sdk/)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
