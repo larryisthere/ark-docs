@@ -1,6 +1,10 @@
+---
+description: 该 SDK 适用于ReactNative 跨平台项目。
+---
+
 # ReactNative SDK
 
-易观方舟react-native-analysys模块，封装了易观 Android & iOS SDK 常用 API ，使用此模块，可以在 React Native 开发的 App 中完成埋点的统计上报。
+易观方舟react-native-analysys模块，基于智能分析平台的SDK进行封装 Android & iOS SDK 常用 API ，使用此模块，可以在 React Native 开发的 App 中完成埋点的统计上报。
 
 {% hint style="info" %}
 SDK Releases包下载：  
