@@ -21,7 +21,7 @@ android studio 开发环境。 PhoneGap 开发环境。
 
 #### android项目配置
 
-建议您接入前，先参考android的使用说明，传送门
+建议您接入前，先参考android的使用说明
 
 使用AndroidStudio打开待接入项目的/platforms/android目录。等待编译完成。
 
