@@ -199,10 +199,9 @@ public static void init(Context context, AnalysysConfig config);
   7. setMaxDiffTimeInterval ：最大允许时间误差，单位：秒，默认值：`30`秒
   8. setAutoHeatMap ：是否开启热图，默认值：`false`
   9. setAutoTrackPageView ：pageView自动上报开关，默认值：`true`
-  10. setAutoTrackFragmentPageView：是否开启全埋点fragment页面自动上报， 默认值：`false`
-  11. setAutoTrackClick：是否开启全埋点点击事件， 默认值：`false`
-  12. setAutoTrackCrash：是否允许崩溃追踪，默认值：`false`
-  13. setAutoTrackDeviceId: 是否允许采集device\_id，默认值false
+  10. setAutoTrackFragmentPageView：是否开启全埋点fragment页面自动上报， 默认值：`false`。自动采集fragment页面功能需要引入全埋点模块后才可生效 setAutoTrackClick：是否开启全埋点点击事件， 默认值：`false`。开启全埋点功能，需要引入全埋点模块后才可生效
+  11. setAutoTrackCrash：是否允许崩溃追踪，默认值：`false`
+  12. setAutoTrackDeviceId: 是否允许采集device\_id，默认值false
 
 {% hint style="info" %}
 EncryptEnum.AES\_CBC模式适用方舟V4.2.7及以上版本
