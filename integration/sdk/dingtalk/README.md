@@ -10,6 +10,6 @@ description: 钉钉小程序SDK使用说明
 
 | 版本名称 | 差异 |
 | :--- | :--- |
-| [​标准版​](ding-ding-xiao-cheng-xu-biao-zhun-ban-1.md) | ​ |
-| ​[框架版​](ding-ding-xiao-cheng-xu-tong-yong-kuang-jia-ban.md) | 使用第三方框架制作钉钉小程序，建议使用版本 |
+| ​[标准版​](ding-ding-xiao-cheng-xu-biao-zhun-ban-1.md) | ​ |
+| [​框架版​](ding-ding-xiao-cheng-xu-tong-yong-kuang-jia-ban.md) | 使用第三方框架制作钉钉小程序，建议使用版本 |
 

@@ -15,8 +15,8 @@
 | [JS SDK](js/) | 用于 Web 网站和 H5 页面 |
 | [微信小程序 SDK](wx/) | 用于微信小程序 |
 | [支付宝小程序 SDK](alipay/) | 用于支付宝小程序 |
-| [百度小程序 SDK](baidu.md) | 用于百度小程序 |
-| [字节跳动小程序 SDK](bytedance.md) | 用于字节跳动小程序 |
+| [百度小程序 SDK](baidu/) | 用于百度小程序 |
+| [字节跳动小程序 SDK](bytedance/) | 用于字节跳动小程序 |
 | [钉钉小程序 SDK ](dingtalk/) | 用于钉钉小程序 |
 | [Flutter SDK](https://docs.analysys.cn/ark/integration/sdk/flutter-sdk) | 用与Flutter开发的应用 |
 | [Reactnative SDK](https://docs.analysys.cn/ark/integration/sdk/reactnative-sdk) | 用与Reactnative开发的应用 |

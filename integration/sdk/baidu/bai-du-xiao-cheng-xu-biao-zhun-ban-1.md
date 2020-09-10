@@ -1,22 +1,21 @@
 ---
-description: 字节跳动小程序 SDK 使用说明
+description: 百度小程序标准版
 ---
 
-# 字节跳动小程序 SDK
+# 百度小程序标准版
 
-字节跳动小程序 SDK集成前请先下载SDK
+百度小程序 SDK 集成前请先下载 SDK
 
 {% hint style="info" %}
-SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-Bytedance-sdk/releases](https://github.com/analysys/ans-Bytedance-sdk/releases)  
-Gitee地址：[https://gitee.com/Analysys/ans-Bytedance-sdk/releases](https://gitee.com/Analysys/ans-Bytedance-sdk/releases)  
-Releases中含有更新说明请您阅读，接口使用请参考本文档。
+[Releases包下载及更新说明](https://github.com/analysys/ans-Baidu-sdk/releases)
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_ByteDance\_SDK.min.js | 基础模块SDK | 必须 |
+| AnalysysAgent\_\_Baidu\_SDK.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_\_Baidu\_SDK.es6.min.js | 基础模块ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
+| AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
 
 {% hint style="info" %}
 注意：请您根据自身业务需求来引用相关的SDK。
@@ -40,7 +39,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 #### 4. 配置上传地址域名
 
-登录字节跳动开放平台，将上传地址域名配置到服务器域名白名单中
+登录百度开放平台，将上传地址域名配置到服务器域名白名单中
 
 #### 5. 设置需要采集的页面或事件
 
@@ -50,84 +49,76 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 通过设置Ddebug模式，开/关 log 查看日志。
 
-#### 7.调用小程序启动事件
-
-在app.js文件中调用小程序启动事件
-
-```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-AnalysysAgent.uploadURL = "/*设置为实际地址*/"
-
-App({
-    onShow (options) {
-        AnalysysAgent.appStart(options);
-    }
-})
-
-```
-
-#### 8.调用小程序启动事件
-
-在每一个页面的入口js文件中调用小程序统计页面事件
-
-```javascript
-let AnalysysAgent = tt.AnalysysAgent
-Page({
-    onShow () {
-        AnalysysAgent.pageView('首页');//页面名称可自定义。
-    }
-})
-```
-
-通过以上步骤您即可验证SDK是否已经集成成功。更多接口说明请您查看API文档。
-
 ## 集成配置
 
 ### 集成 SDK
 
-将 AnalysysAgent\_ByteDance\_SDK.min.js 文件放到小程序的目录下
+将 AnalysysAgent\_Baidu\_SDK.min.js 文件放到小程序的目录下
 
-![](../../.gitbook/assets/1575888494726.png)
+![](../../../.gitbook/assets/222.png)
 
-字节跳动小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。负责数据将无法上报。
+百度小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。负责数据将无法上报。
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_Baidu_SDK.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
 如需要加密模块
 
 ```javascript
-import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.min.js'
+import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.es6.min.js'
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
 
-在各个 Page 内通过以下代码获取 AnalysysAgent\_ByteDance\_SDK 全局函数:
+es6版本不是每个框架都能用，不能使用es6的请如下使用
 
 ```javascript
-let AnalysysAgent = tt.AnalysysAgent;
+let AnalysysAgent = require('./util/sdk/AnalysysAgent_Baidu_SDK.min.js')
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+```
+
+如需要加密模块
+
+```javascript
+let AnalysysEncryption = require('./util/sdk/AnalysysAgent_encryption.min.js')
+AnalysysAgent.encrypt = AnalysysEncryption
+```
+
+在各个 Page 内通过以下代码获取 AnalysysAgent\_Baidu\_SDK 全局函数:
+
+```javascript
+let AnalysysAgent = swan.AnalysysAgent;
+```
+
+在组件Component 内通过以下代码获取 AnalysysAgent\_Baidu\_SDK 全局函数:
+
+```javascript
+let AnalysysAgent = swan.AnalysysAgent;
 ```
 
 {% hint style="info" %}
 请注意:  
 1.将 appkey 的值填入您具体的项目 appkey  
-2.目录为您所引入字节跳动小程序 SDK 的具体目录
+2.目录为您所引入百度小程序 SDK 的具体目录
 {% endhint %}
+
+
 
 ### 配置参数
 
 * _appkey_\(必须\) 在网站获取的 AppKey
 * _debugMode_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
 * _uploadURL_\(必须\) 自定义上传地址
+* _auto_ 设置打开/关闭自动采集页面：false - 关闭自动采集；true - 开启自动采集\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
 * _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
+* _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
-* _autoShare_ 设置是否采集分享事件：false\(默认\) - 关闭采集分享事件；true - 开启采集分享事件
+* _autoTrack_ 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的$element\_content、data-type为采集的$element\_type、data-name为采集的$element\_name、id为采集的$element\_id。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
 **appkey**
 
@@ -142,7 +133,7 @@ AnalysysAgent.appkey = "77a52s552c892bn442v721"
 
 #### debugMode
 
-debugMode 调试模式为接入 字节跳动 SDK后进行数据调试的主要手段。可实时验证字节跳动SDK数据监测的正确与否。
+debugMode 调试模式为接入SDK后进行数据调试的主要手段。可实时验证SDK数据监测的正确与否。
 
 * 0 关闭调试模式\(默认\)。类型：Number。
 * 1 开启调试模式，数据不入库。类型：Number。
@@ -169,6 +160,20 @@ uploadURL 为自定义上传地址，参数设置后，所有事件信息将上�
 ```javascript
 //设置自定义上传地址为 scheme://host + :port
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
+```
+
+**auto**
+
+auto 为设置打开/关闭自动采集页面的参数。可根据自身需要进行更改。
+
+* true 开启自动采集页面打开事件\(默认\)。类型：Boolean。
+* false 关闭自动采集页面打开事件。类型：Boolean。
+
+```javascript
+//关闭自动采集页面打开事件，关闭后可使用小程序 SDK的API中的手动发送页面打开数据方法，来发送页面打开状态的数据。
+AnalysysAgent.auto = false
+//开启自动采集页面打开事件。
+AnalysysAgent.auto = true //或删除该行代码。
 ```
 
 #### autoProfile
@@ -202,6 +207,20 @@ AnalysysAgent.encryptType = 1
 AnalysysAgent.encryptType = 2
 ```
 
+**autoShare**
+
+autoShare 为设置是否采集分享事件，只采集分享事件，不区分分享是否成功。可根据自身需要进行更改。
+
+* false 关闭采集分享事件\(默认\)。类型：Boolean。
+* true 采集分享事件。类型：Boolean。
+
+```javascript
+//关闭采集分享事件。
+AnalysysAgent.autoShare = false//或删除该行代码。
+//自动分享事件。
+AnalysysAgent.autoShare = true
+```
+
 #### allowTimeCheck
 
 allowTimeCheck 为设置是否开启时间校准，开启时间校准在debug 1或者 2 的情况下会有相关提示。
@@ -228,57 +247,35 @@ AnalysysAgent.maxDiffTimeInterval = 20
 //当服务端和客户端的时间差超过 20s 将进行时间校准 
 ```
 
-#### autoShare
+**autoTrack**
 
-autoShare 为设置是否采集分享事件，只采集分享事件，不区分分享是否成功。可根据自身需要进行更改。
+autoTrack 为设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的$element\_content、data-type为采集的$element\_type、data-name为采集的$element\_name、id为采集的$element\_id。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
-* false 关闭采集分享事件\(默认\)。类型：Boolean。
-* true 采集分享事件。类型：Boolean。
+* false 关闭全埋点采集\(默认\)。类型：Boolean。
+* true 开启全埋点采集。类型：Boolean。
 
 ```javascript
-//关闭采集分享事件。
-AnalysysAgent.autoShare = false//或删除该行代码。
-//自动分享事件。
-AnalysysAgent.autoShare = true
+//关闭全埋点
+AnalysysAgent.autoTrack = false //或删除该行代码。
+//开启全埋点
+AnalysysAgent.autoTrack = true
 ```
 
 ### 域名配置
 
-登录字节跳动开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
+登录百度开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
 
-![](../../.gitbook/assets/1575888678435.png)
+![](../../../.gitbook/assets/33.png)
 
 {% hint style="info" %}
-字节跳动小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
+百度小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 {% endhint %}
 
 ## 基础模块介绍
 
-### 启动事件接口
-
-启动事件 appStart\(options\),字节跳动SDK启动事件需要手动调用，而且只能调用一次。
-
-```javascript
-//标准示例
-AnalysysAgent.appStart(options);
-
-//taro框架示例:
-componentDidShow () {
-    const params = this.$router.params
-    AnalysysAgent.appStart(params);
-}
-//mpvue框架示例:
-onShow (options) {
-    AnalysysAgent.appStart(options);
-}
-
-```
-
-options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
-
 ### 统计页面接口介绍
 
-页面跟踪，字节跳动SDK需要手动设置跟踪所有页面，支持自定义页面信息。接口如下：
+页面跟踪，百度SDK需要手动设置跟踪所有页面，支持自定义页面信息。接口如下：
 
 ```javascript
 AnalysysAgent.pageView(pageName);
@@ -334,36 +331,6 @@ var eventInfo = {
 AnalysysAgent.track("buy", eventInfo);
 ```
 
-### 
-
-
-
-### 采集分享按钮点击事件
-
-采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
-
-```javascript
-AnalysysAgent.share(properties);
-```
-
-* properties：页面信息，K-V键值对。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
-
-示例：
-
-```javascript
-// 采集分享按钮点击事件
-Page({
-    onShareAppMessage:function(){
-        let shareProperties = {
-          title: '自定义转发标题',
-          path: '/page/user?id=123'
-        }
-        let AnsShareProperties = AnalysysAgent.share(shareProperties);
-        return AnsShareProperties
-    }
-})
-```
-
 ### 注册页面事件通用属性
 
 注册应用中所有页面通用属性，设置后当次小程序启动后所有页面都拥有该属性，直至该小程序关闭。接口如下：
@@ -383,6 +350,45 @@ var properties ={
 }
 
 AnalysysAgent.appProperty(properties);
+```
+
+### 采集分享按钮点击事件
+
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。方法返回对象（toShareProperties）。接口如下：
+
+```javascript
+AnalysysAgent.share(toShareProperties,trackProperties);
+```
+
+* toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用默认。 
+* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含 100条，且key是以字母开头的字符串，必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+
+示例：
+
+```javascript
+// 自动采集，设置autoShare为true和分享属性即可
+Page({
+    onShareAppMessage:function(){
+        let toShareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        return toShareProperties
+    }
+})
+// 手动采集
+Page({
+    onShareAppMessage:function(){
+        let toShareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        let trackProperties = {
+            custom:'DingTalk'
+        }
+        return AnalysysAgent.share(toShareProperties,trackProperties);
+    }
+})
 ```
 
 ### 匿名ID与用户关联
@@ -510,7 +516,7 @@ AnalysysAgent.profileSet("Email", "yonghu@163.com");
 // 设置用户的邮箱和微信
 var property = {
     "Email" : "yonghu@163.com",
-    "WeChatID" : "weixinhao"
+    "ID" : "baiduhao"
 }
 AnalysysAgent.profileSet(property);
 ```

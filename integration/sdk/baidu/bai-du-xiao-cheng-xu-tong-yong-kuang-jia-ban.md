@@ -1,8 +1,8 @@
 ---
-description: 百度小程序 SDK 使用说明
+description: 百度小程序通用框架版
 ---
 
-# 百度小程序 SDK
+# 百度小程序通用框架版
 
 百度小程序 SDK 集成前请先下载 SDK
 
@@ -12,8 +12,8 @@ description: 百度小程序 SDK 使用说明
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_\_Baidu\_SDK.min.js | 基础模块SDK | 二选一 |
-| AnalysysAgent\_\_Baidu\_SDK.es6.min.js | 基础模块ES6语法SDK | 二选一 |
+| AnalysysAgent\_\_Baidu\_SDK.custom.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_\_Baidu\_SDK.custom.es6.min.js | 基础模块ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
 | AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
 
@@ -54,7 +54,7 @@ description: 百度小程序 SDK 使用说明
 在app.js文件中调用小程序启动事件
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Baidu_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_Baidu_SDK.custom.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 
@@ -66,7 +66,7 @@ App({
 
 ```
 
-#### 8.调用小程序启动事件
+#### 8.调用小程序页面事件
 
 在每一个页面的入口js文件中调用小程序统计页面事件
 
@@ -87,14 +87,14 @@ Page({
 
 将 AnalysysAgent\_Baidu\_SDK.custom.min.js 文件放到小程序的目录下
 
-![](../../.gitbook/assets/222.png)
+![](../../../.gitbook/assets/222.png)
 
 百度小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。负责数据将无法上报。
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Baidu_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_Baidu_SDK.custom.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
@@ -108,7 +108,7 @@ AnalysysAgent.encrypt = AnalysysEncryption
 es6版本不是每个框架都能用，不能使用es6的请如下使用
 
 ```javascript
-let AnalysysAgent = require('./util/sdk/AnalysysAgent_Baidu_SDK.min.js')
+let AnalysysAgent = require('./util/sdk/AnalysysAgent_Baidu_SDK.custom.min.js')
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
@@ -125,11 +125,19 @@ AnalysysAgent.encrypt = AnalysysEncryption
 let AnalysysAgent = swan.AnalysysAgent;
 ```
 
+在组件Component 内通过以下代码获取 AnalysysAgent\_Baidu\_SDK 全局函数:
+
+```javascript
+let AnalysysAgent = swan.AnalysysAgent;
+```
+
 {% hint style="info" %}
 请注意:  
 1.将 appkey 的值填入您具体的项目 appkey  
 2.目录为您所引入百度小程序 SDK 的具体目录
 {% endhint %}
+
+
 
 ### 配置参数
 
@@ -244,7 +252,7 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 登录百度开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
 
-![](../../.gitbook/assets/33.png)
+![](../../../.gitbook/assets/33.png)
 
 {% hint style="info" %}
 百度小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
@@ -351,6 +359,35 @@ var properties ={
 }
 
 AnalysysAgent.appProperty(properties);
+```
+
+### 采集分享按钮点击事件
+
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。方法返回对象（toShareProperties）。接口如下：
+
+```javascript
+AnalysysAgent.share(toShareProperties,trackProperties);
+```
+
+* toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用默认。 
+* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含 100条，且key是以字母开头的字符串，必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+
+示例：
+
+```javascript
+// 手动采集
+Page({
+    onShareAppMessage:function(){
+        let toShareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        let trackProperties = {
+            custom:'DingTalk'
+        }
+        return AnalysysAgent.share(toShareProperties,trackProperties);
+    }
+})
 ```
 
 ### 匿名ID与用户关联

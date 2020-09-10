@@ -1,32 +1,25 @@
 ---
-description: 微信小程序插件版（Frame）
+description: 字节跳动小程序标准版
 ---
 
-# 微信小程序通用框架版
+# 字节跳动小程序标准版
 
-微信小程序通用框架版SDK集成前请先下载 SDK
+字节跳动小程序 SDK集成前请先下载SDK
 
 {% hint style="info" %}
-SDK Releases包下载：
-
-Github地址\(推荐\)：[https://github.com/analysys/ans-wechat-sdk/releases](https://github.com/analysys/ans-wechat-sdk/releases)  
-Gitee地址：[https://gitee.com/Analysys/ans-wechat-sdk/releases](https://gitee.com/Analysys/ans-wechat-sdk/releases)  
+SDK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-Bytedance-sdk/releases](https://github.com/analysys/ans-Bytedance-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-Bytedance-sdk/releases](https://gitee.com/Analysys/ans-Bytedance-sdk/releases)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_WX\_SDK.custom.min.js | 框架版SDK | 二选一 |
-| AnalysysAgent\_WX\_SDK.custom.es6.min.js | 框架版ES6语法SDK | 二选一 |
+| AnalysysAgent\_ByteDance\_SDK.min.js | 基础模块SDK | 必须 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
-| AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合框架ES6版本使用 | 非必须 |
 
-{% hint style="danger" %}
-由于框架的特殊性，小程序的全局方法App不允许被改写。所以启动接口需要开发人员手动调用，假如在调用启动之前，开发人员调用了pageView或者track ，此时这两个方法会生成会生成 sessionId，调用启动会生成新的sessionId。会造成切sessionId的情况。开发人员要避免此类事情的发生，以免造成统计不准确。另外启动必须调，不然像UTM等参数会采集不到。
-
-另外框架模块不包含自动采集功能，需要开发人员手动调用 pageView\(\) 进行采集。
-
-请您根据自身业务需求来引用相关的SDK。
+{% hint style="info" %}
+注意：请您根据自身业务需求来引用相关的SDK。
 {% endhint %}
 
 ### 快速集成
@@ -47,7 +40,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 #### 4. 配置上传地址域名
 
-登录微信公众平台，将上传地址域名配置到request 合法域名中。
+登录字节跳动开放平台，将上传地址域名配置到服务器域名白名单中
 
 #### 5. 设置需要采集的页面或事件
 
@@ -57,132 +50,42 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 通过设置Ddebug模式，开/关 log 查看日志。
 
-#### 7.调用小程序启动事件
-
-在app.js文件中调用小程序启动事件
-
-```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_WX_SDK.custom.es6.min.js'
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-AnalysysAgent.uploadURL = "/*设置为实际地址*/"
-
-App({
-    onShow (options) {
-        AnalysysAgent.appStart(options);
-    }
-})
-
-```
-
-#### 8.调用小程序页面事件
-
-在每一个页面的入口js文件中调用小程序统计页面事件
-
-```javascript
-let AnalysysAgent = wx.AnalysysAgent
-Page({
-    onShow () {
-        AnalysysAgent.pageView('首页');//页面名称可自定义。
-    }
-})
-```
-
 通过以上步骤您即可验证SDK是否已经集成成功。更多接口说明请您查看API文档。
 
 ## 集成配置
 
-### NPM**集成**
+### 集成 SDK
 
-使用NPM方式集成SDK，参考一下代码：
+将 AnalysysAgent\_ByteDance\_SDK.min.js 文件放到小程序的目录下
 
-```javascript
-npm install ans-wechat-sdk --save
+![](../../../.gitbook/assets/1575888494726.png)
 
-// 非es6 
-var AnalysysAgent = require("ans-wechat-sdk");
-// 小程序提供了加密模块 根据自己需要引入
-var AnalysysEncryption = require('ans-wechat-sdk/sdk/AnalysysAgent_encryption.min.js');
-// sdk 与 加密模块关联
-AnalysysAgent.encrypt = AnalysysEncryption;
-
-// es6 
-import AnalysysAgent from "ans-wechat-sdk"
-import AnalysysEncryption  from 'ans-wechat-sdk/sdk/AnalysysAgent_encryption.min.js';
-AnalysysAgent.encrypt = AnalysysEncryption;
-
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-App({
-    onShow : function( options ){
-        //设置微信小程序启动事件,并传输UTM等参数
-        AnalysysAgent.appStart(options)
-    }
-});
-```
-
-### 源代码集成
-
-使用源文件方式集成，将 AnalysysAgent\_WX\_SDK.custom.min.js或AnalysysAgent\_WX\_SDK.custom.es6.min.js 文件放到小程序的目录下
-
-
-
-![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614101827.png)
+字节跳动小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-let AnalysysAgent = require("./build/AnalysysAgent_WX_SDK.custom.min.js")
+import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-App({
-    onShow : function( options ){
-        //设置微信小程序启动事件,并传输UTM等参数
-        AnalysysAgent.appStart(options)
-    }
-});
 ```
 
 如需要加密模块
 
 ```javascript
-let AnalysysEncryption = require("./build/AnalysysAgent_encryption.min.js")
+import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.min.js'
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
 
-对于使用 es6 版本的
+在各个 Page 内通过以下代码获取 AnalysysAgent\_ByteDance\_SDK 全局函数:
 
 ```javascript
-import AnalysysAgent from  './build/build/AnalysysAgent_WX_SDK.custom.es6.min.js';
-import AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
-AnalysysAgent.encrypt = AnalysysEncryption;
-
-//es6版本不是每个框架都能用，不能使用es6的请如下 使用
-import AnalysysAgent  from "./build/AnalysysAgent_WX_SDK.custom.min.js"
-AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
-```
-
-在各个 Page 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
-
-```javascript
-let AnalysysAgent = wx.AnalysysAgent;
-Page({
-    onShow : function( options ){
-        //设置微信小程序启动事件
-        AnalysysAgent.pageView('首页')
-    }
-})
-```
-
-在组件Component 内通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
-
-```javascript
-let AnalysysAgent = wx.AnalysysAgent;
+let AnalysysAgent = tt.AnalysysAgent;
 ```
 
 {% hint style="info" %}
-注意：
-
-1.将 appkey 的值填入您具体的项目 appkey
-
-2.目录为您所引入微信小程序 SDK 的具体目录
+请注意:  
+1.将 appkey 的值填入您具体的项目 appkey  
+2.目录为您所引入字节跳动小程序 SDK 的具体目录
 {% endhint %}
 
 ### 配置参数
@@ -190,12 +93,15 @@ let AnalysysAgent = wx.AnalysysAgent;
 * _appkey_\(必须\) 在网站获取的 AppKey
 * _debugMode_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
 * _uploadURL_\(必须\) 自定义上传地址
+* _auto_ 设置打开/关闭自动采集页面：false - 关闭自动采集；true - 开启自动采集\(默认\)
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
-* encryptType 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
+* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
+* _autoShare_ 设置是否自动采集分享按钮点击事件：false\(默认\) - 关闭自动采集分享按钮点击事件；true - 开启自动采集分享按钮点击事件
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
+* _autoTrack_ 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的$element\_content、data-type为采集的$element\_type、data-name为采集的$element\_name、id为采集的$element\_id。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
 
-#### appkey
+**appkey**
 
 appkey 在网站获取的 AppKey。
 
@@ -208,7 +114,7 @@ AnalysysAgent.appkey = "77a52s552c892bn442v721"
 
 #### debugMode
 
-debugMode 调试模式为接入 JS SDK 后进行数据调试的主要手段。可实时验证 JS SDK 数据监测的正确与否。
+debugMode 调试模式为接入 字节跳动 SDK后进行数据调试的主要手段。可实时验证字节跳动SDK数据监测的正确与否。
 
 * 0 关闭调试模式\(默认\)。类型：Number。
 * 1 开启调试模式，数据不入库。类型：Number。
@@ -237,6 +143,20 @@ uploadURL 为自定义上传地址，参数设置后，所有事件信息将上�
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 ```
 
+**auto**
+
+auto 为设置打开/关闭自动采集页面的参数。可根据自身需要进行更改。
+
+* true 开启自动采集页面打开事件\(默认\)。类型：Boolean。
+* false 关闭自动采集页面打开事件。类型：Boolean。
+
+```javascript
+//关闭自动采集页面打开事件，关闭后可使用小程序 SDK的API中的手动发送页面打开数据方法，来发送页面打开状态的数据。
+AnalysysAgent.auto = false
+//开启自动采集页面打开事件。
+AnalysysAgent.auto = true //或删除该行代码。
+```
+
 #### autoProfile
 
 autoProfile 为设置是否追踪新用户的首次属性。可根据自身需要进行更改。
@@ -256,13 +176,30 @@ AnalysysAgent.autoProfile = true//或删除该行代码。
 encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密，如不设置此参数，数据上传不加密。。可根据自身需要进行更改。
 
 * 0 对上传数据不加密\(默认\)。类型：Number。
-* 1 对上传数据 AES 加密。类型：Number。
+* 1 对上传数据进行AES 128位ECB加密。类型：Number。
+* 2 对上传数据进行AES 128位CBC加密。类型：Number。
 
 ```javascript
 //对上传数据不加密。
 AnalysysAgent.encryptType = 0//或删除该行代码。
-//对上传数据AES加密。
+//对上传数据进行AES 128位ECB加密
 AnalysysAgent.encryptType = 1
+// 对上传数据进行AES 128位CBC加密
+AnalysysAgent.encryptType = 2
+```
+
+**autoShare**
+
+autoShare 为设置是否采集分享事件，只采集分享事件，不区分分享是否成功。可根据自身需要进行更改。
+
+* false 关闭采集分享事件\(默认\)。类型：Boolean。
+* true 采集分享事件。类型：Boolean。
+
+```javascript
+//关闭采集分享事件。
+AnalysysAgent.autoShare = false//或删除该行代码。
+//自动分享事件。
+AnalysysAgent.autoShare = true
 ```
 
 #### allowTimeCheck
@@ -291,53 +228,35 @@ AnalysysAgent.maxDiffTimeInterval = 20
 //当服务端和客户端的时间差超过 20s 将进行时间校准 
 ```
 
+**autoTrack**
+
+autoTrack 为设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的$element\_content、data-type为采集的$element\_type、data-name为采集的$element\_name、id为采集的$element\_id。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
+
+* false 关闭全埋点采集\(默认\)。类型：Boolean。
+* true 开启全埋点采集。类型：Boolean。
+
+```javascript
+//关闭全埋点
+AnalysysAgent.autoTrack = false //或删除该行代码。
+//开启全埋点
+AnalysysAgent.autoTrack = true
+```
+
 ### 域名配置
 
-登录微信公众平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
+登录字节跳动开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
 
-![ ](http://imguserradar.analysys.cn/fangzhou/img/2018/09/201809191614109548.jpg)
+![](../../../.gitbook/assets/1575888678435.png)
 
 {% hint style="info" %}
-微信小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
+字节跳动小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 {% endhint %}
 
 ## 基础模块介绍
 
-### 启动事件接口
+### 统计页面接口介绍
 
-启动事件 appStart\(options\),框架版本SDK启动事件需要手动调用，而且只能调用一次。
-
-```javascript
-App({
-    onShow : function( options ){
-        //设置小程序启动事件,并传输UTM等参数
-        AnalysysAgent.appStart(options)
-    }
-});
-```
-
-* options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
-
-示例：
-
-```javascript
-//框架taro:
-
-    componentDidShow () {
-        const params = this.$router.params
-        AnalysysAgent.appStart(params);
-    }
-
-//框架mpvue:
-
-    onLaunch (options) {
-        AnalysysAgent.appStart(options);
-    },
-```
-
-### 统计页面接口
-
-页面跟踪，SDK 默认设置跟踪所有页面，支持自定义页面信息。接口如下：
+页面跟踪，字节跳动SDK需要手动设置跟踪所有页面，支持自定义页面信息。接口如下：
 
 ```javascript
 AnalysysAgent.pageView(pageName);
@@ -345,7 +264,7 @@ AnalysysAgent.pageView(pageName, properties);
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符
-* properties：页面信息，为K-V键值对。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，K-V键值对。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -373,7 +292,7 @@ AnalysysAgent.track(eventName, eventInfo)
 ```
 
 * eventName：自定义事件ID标识，以字母开头的字符串，**必须由**字母、数字、下划线组成，$ 开头为预置事件/属性，**不支持**乱码、中文、空格等，长度范围1-99字符。
-* eventInfo：自定义属性，K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* eventInfo：自定义属性，K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -401,7 +320,7 @@ AnalysysAgent.track("buy", eventInfo);
 AnalysysAgent.appProperty(properties)
 ```
 
-* properties：页面信息，K-V键值对。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -414,23 +333,31 @@ var properties ={
 AnalysysAgent.appProperty(properties);
 ```
 
-#### 
-
 ### 采集分享按钮点击事件
 
-采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。方法返回对象（toShareProperties）。接口如下：
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
 
 ```javascript
 AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
-* toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用微信默认。 
-* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用默认。 
+* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含 100条，且key是以字母开头的字符串，必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
 ```javascript
-// 手动采集
+// 自动采集，设置autoShare为true和分享属性即可
+Page({
+    onShareAppMessage:function(){
+        let toShareProperties = {
+          title: '自定义转发标题',
+          path: '/page/user?id=123'
+        }
+        return toShareProperties
+    }
+})
+// 手动采集，需要关闭自动，设置autoShare 为 false
 Page({
     onShareAppMessage:function(){
         let toShareProperties = {
@@ -446,6 +373,8 @@ Page({
 ```
 
 ### 匿名ID与用户关联
+
+用户关联的主要作用是打通用户登录前后的行为，以及多屏登录后的行为。做过用户关联的用户在登录前后的行为在方舟系统里面会被认为是一个用户。方舟系统目前支持 一台设备只能绑定一个用户 ID，一个用户 ID 只能绑定一台设备。设备和用户 ID 绑定后，就无法再和其他用户或者设备进行绑定。例如一个用户的设备 ID 是 ABC 用户的登录 ID 是 123，绑定成功后会对应同一个 ID，这样在统计或者分析时会被认为是一个用户。**在用户注册成功或者登录成功后客户端需要调用 alias 接口**，建议埋点时观看下 [方舟 SDK 接入视频](https://ark.analysys.cn/video-list.html) 接口描述如下：
 
 用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
@@ -555,7 +484,7 @@ AnalysysAgent.profileSet(property);
 
 * propertyName ：属性名称，约束见属性名称
 * propertyValue ：属性值，约束见属性值
-* property ：属性列表，约束见属性名称，属性值
+* property ： 属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -583,9 +512,9 @@ AnalysysAgent.profileIncrement(propertyName, propertyNumber)
 AnalysysAgent.profileIncrement(property);
 ```
 
-* propertyName：属性名称，约束见属性名称
-* propertyValue：属性值，约束见属性值
-* property：属性列表，约束见属性名称，属性值
+* propertyName ：属性名称，约束见属性名称
+* propertyValue ：属性值，约束见属性值
+* property ： 属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -616,8 +545,8 @@ AnalysysAgent.profileAppend(propertyValue);
 AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```
 
-* propertyName：属性名称，约束见属性名称
-* propertyValue：属性值，约束见属性值
+* propertyName ：属性名称，约束见属性名称
+* propertyValue ：属性值，约束见属性值
 
 示例：
 
@@ -646,7 +575,7 @@ AnalysysAgent.profileUnset(propertyName);
 AnalysysAgent.profileDelete();
 ```
 
-* propertyName：属性名称，约束见属性名称
+* propertyName ：属性名称，约束见属性名称
 
 示例：
 
