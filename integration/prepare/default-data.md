@@ -564,9 +564,9 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $share\_path | 转发地址 | 字符串 | 转发页面来源 | -- | - | - | N |
 
 {% hint style="info" %}
-**其中 $startup\_time  仅用于数据校准，不会出现在分析模型中**
-
-**$url\_domain, $traffic\_source\_type, $search\_engine 等非自动采集的属性，系统会根据url 和 referer 自动解析**
+* **$referrer 字段在App中手动调用pageview接口，默认不采集**
+* **其中 $startup\_time  仅用于数据校准，不会出现在分析模型中**
+* **$url\_domain, $traffic\_source\_type, $search\_engine 等非自动采集的属性，系统会根据url 和 referer 自动解析**
 {% endhint %}
 
 **$push\_receiver\_success**
