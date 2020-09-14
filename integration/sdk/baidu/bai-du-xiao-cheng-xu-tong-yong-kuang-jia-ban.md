@@ -7,13 +7,16 @@ description: 百度小程序通用框架版
 百度小程序 SDK 集成前请先下载 SDK
 
 {% hint style="info" %}
-[Releases包下载及更新说明](https://github.com/analysys/ans-Baidu-sdk/releases)
+DK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-Baidu-sdk/releases](https://github.com/analysys/ans-Baidu-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-baidu-sdk/releases](https://gitee.com/Analysys/ans-baidu-sdk/releases)  
+Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_\_Baidu\_SDK.custom.min.js | 基础模块SDK | 二选一 |
-| AnalysysAgent\_\_Baidu\_SDK.custom.es6.min.js | 基础模块ES6语法SDK | 二选一 |
+| AnalysysAgent\_Baidu\_SDK.custom.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_Baidu\_SDK.custom.es6.min.js | 基础模块ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
 | AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
 

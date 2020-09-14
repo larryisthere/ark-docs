@@ -7,13 +7,16 @@ description: 百度小程序标准版
 百度小程序 SDK 集成前请先下载 SDK
 
 {% hint style="info" %}
-[Releases包下载及更新说明](https://github.com/analysys/ans-Baidu-sdk/releases)
+SDK Releases包下载：  
+Github地址\(推荐\)：[https://github.com/analysys/ans-Baidu-sdk/releases](https://github.com/analysys/ans-Baidu-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-baidu-sdk/releases](https://gitee.com/Analysys/ans-baidu-sdk/releases)  
+Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_\_Baidu\_SDK.min.js | 基础模块SDK | 二选一 |
-| AnalysysAgent\_\_Baidu\_SDK.es6.min.js | 基础模块ES6语法SDK | 二选一 |
+| AnalysysAgent\_Baidu\_SDK.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_Baidu\_SDK.es6.min.js | 基础模块ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
 | AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
 
@@ -86,6 +89,65 @@ AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 let AnalysysEncryption = require('./util/sdk/AnalysysAgent_encryption.min.js')
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
+
+基础版本开启全埋点接入方式:
+
+目前全埋点支持taro、uniapp、mpvue
+
+Chameleon暂不支持
+
+{% tabs %}
+{% tab title="百度原生接入" %}
+```javascript
+//标准版本开启全埋点接入方式示例：
+// app.js
+import AnalysysAgent from  './build/AnalysysAgent_Baidu_SDK.es6.min.js';
+//设置您的APPKEY
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" 
+//设置您的上报地址
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+
+{% tab title="taro 框架接入" %}
+```
+//框架（taro）开启全埋点接入方式示例：
+//app.jsx
+let AnalysysAgent = require("./build/AnalysysAgent_Baidu_SDK.min.js")
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+
+{% tab title="uniapp 框架接入" %}
+```
+//框架（uniapp）开启全埋点接入方式示例：
+// main.js
+import AnalysysAgent from './sdk/AnalysysAgent_Baidu_SDK.es6.min.js';
+import Vue from 'vue'
+import App from './App'
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true//框架（uniapp）开启全埋点接入方式示例：
+```
+{% endtab %}
+
+{% tab title="mpvue 框架接入" %}
+```
+//main.js
+import AnalysysAgent from './sdk/AnalysysAgent_Baidu_SDK.es6.min.js';
+import Vue from 'vue'
+import App from './App'
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true//框架（mpvue）开启全埋点接入方式示例：
+```
+{% endtab %}
+{% endtabs %}
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_Baidu\_SDK 全局函数:
 

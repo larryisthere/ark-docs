@@ -15,8 +15,10 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_ByteDance\_SDK.custom.min.js | 基础模块SDK | 必须 |
+| AnalysysAgent\_ByteDance\_SDK.custom.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_ByteDance\_SDK.custom.es6.min.js | 基础模块SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
+| AnalysysAgent\_encryption.es6.min.js | 加密模块 | 非必须 |
 
 {% hint style="info" %}
 注意：请您根据自身业务需求来引用相关的SDK。
@@ -55,7 +57,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 在app.js文件中调用小程序启动事件
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.custom.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 

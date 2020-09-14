@@ -61,7 +61,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 在app.js文件中调用小程序启动事件
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.custom.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 
@@ -101,7 +101,7 @@ Page({
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_Alipay_SDK.custom.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 App({
     onShow : function( options ){
@@ -121,7 +121,7 @@ AnalysysAgent.encrypt = AnalysysEncryption
 es6版本不是每个框架都能用，不能使用es6的请如下使用
 
 ```javascript
-let AnalysysAgent = require('./util/sdk/AnalysysAgent_Alipay_SDK.min.js')
+let AnalysysAgent = require('./util/sdk/AnalysysAgent_Alipay_SDK.custom.min.js')
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 

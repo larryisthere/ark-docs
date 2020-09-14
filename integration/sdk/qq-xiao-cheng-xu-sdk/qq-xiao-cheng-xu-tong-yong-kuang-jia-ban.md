@@ -1,54 +1,50 @@
 ---
-description: 钉钉小程序通用框架版 SDK 使用说明
+description: QQ小程序通用框架版
 ---
 
-# 钉钉小程序通用框架版
+# QQ小程序通用框架版
 
-钉钉小程序SDK集成前请先下载SDK
+QQ小程序 SDK 集成前请先下载SDK
 
 {% hint style="info" %}
 SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-DingTalk-sdk/releases/](https://github.com/analysys/ans-DingTalk-sdk/releases/)  
-Gitee地址：[https://gitee.com/Analysys/ans-DingTalk-sdk/releases](https://gitee.com/Analysys/ans-DingTalk-sdk/releases)  
+Github地址\(推荐\)：[https://github.com/analysys/ans-QQ-sdk/releases](https://github.com/analysys/ans-QQ-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-qq-sdk/releases](https://gitee.com/Analysys/ans-qq-sdk/releases)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_Dingtalk\_SDK.custom.min.js | 基础模块SDK | 二选一 |
-| AnalysysAgent\_Dingtalk\_SDK.custom.es6.min.js | 基础模块ES6语法SDK | 二选一 |
+| AnalysysAgent\_QQ\_SDK.custom.min.js | 框架版SDK | 二选一 |
+| AnalysysAgent\_QQ\_SDK.custom.es6.min.js | 框架版ES6语法SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
-| AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合标准版ES6版本使用 | 非必须 |
+| AnalysysAgent\_encryption.es6.min.js | 加密模块ES6语法配合框架ES6版本使用 | 非必须 |
 
-{% hint style="info" %}
-注意：请您根据自身业务需求来引用相关的SDK。
-{% endhint %}
-
-### 快速集成
+#### 快速集成
 
 如果您是第一次使用易观方舟产品，可以通过阅读本文快速了解此产品
 
-#### 1. 集成 SDK
+**1. 集成 SDK**
 
 在app.js文件的顶部引入SDK。
 
-#### 2. 设置初始化接口
+**2. 设置初始化接口**
 
 通过初始化代码的配置参数配置您的AppKey。
 
-#### 3. 设置上传地址
+**3. 设置上传地址**
 
 通过初始化代码的配置参数uploadURL设置您上传数据的地址。
 
-#### 4. 配置上传地址域名
+**4. 配置上传地址域名**
 
-登录钉钉开放平台，将上传地址域名配置到服务器域名白名单中
+登录微信公众平台，将上传地址域名配置到request 合法域名中。
 
-#### 5. 设置需要采集的页面或事件
+**5. 设置需要采集的页面或事件**
 
 通过手动埋点，设置需要采集的页面或事件。
 
-#### 6. 打开 Debug 模式查看日志
+**6. 打开 Debug 模式查看日志**
 
 通过设置Ddebug模式，开/关 log 查看日志。
 
@@ -57,7 +53,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 在app.js文件中调用小程序启动事件
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Dingtalk_SDK.custom.es6.min.js'
+import AnalysysAgent from './util/sdk/AnalysysAgent_QQ_SDK.custom.es6.min.js'
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 
@@ -67,7 +63,6 @@ App({
     }
 })
 
-
 ```
 
 #### 8.调用小程序页面事件
@@ -75,7 +70,7 @@ App({
 在每一个页面的入口js文件中调用小程序统计页面事件
 
 ```javascript
-let AnalysysAgent = dd.AnalysysAgent
+let AnalysysAgent = my.AnalysysAgent
 Page({
     onShow () {
         AnalysysAgent.pageView('首页');//页面名称可自定义。
@@ -89,20 +84,18 @@ Page({
 
 ### 集成 SDK
 
-将 AnalysysAgent\_Dingtalk.custom.min.js 文件放到小程序的目录下
+**代码引入 将 AnalysysAgent\_QQ\_SDK.custom.min.js或AnalysysAgent\_QQ\_SDK.custom.es6.min.js 文件放到小程序的目录下**
 
-![](../../../.gitbook/assets/wechatimg736.png)
-
-钉钉小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
+![](../../../.gitbook/assets/qqsdk%20%281%29.jpeg)
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
 ```javascript
-import AnalysysAgent from './util/sdk/AnalysysAgent_Dingtalk_SDK.custom.es6.min.js'
+let AnalysysAgent = require("./build/AnalysysAgent_QQ_SDK.custom.min.js")
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 App({
     onShow : function( options ){
-        //设置小程序启动事件,并传输UTM等参数
+        //设置微信小程序启动事件,并传输UTM等参数
         AnalysysAgent.appStart(options)
     }
 });
@@ -111,45 +104,46 @@ App({
 如需要加密模块
 
 ```javascript
-import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.es6.min.js'
+let AnalysysEncryption = require("./build/AnalysysAgent_encryption.min.js")
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
 
-es6版本不是每个框架都能用，不能使用es6的请如下使用
+对于使用 es6 版本的
 
 ```javascript
-let AnalysysAgent = require('./util/sdk/AnalysysAgent_Dingtalk_SDK.min.js')
+import AnalysysAgent from  './build/AnalysysAgent_QQ_SDK.custom.es6.min.js';
+import AnalysysEncryption from  './build/AnalysysAgent_encryption.es6.min.js';
+AnalysysAgent.encrypt = AnalysysEncryption;
+
+//es6版本不是每个框架都能用，不能使用es6的请如下 使用
+import AnalysysAgent  from "./build/AnalysysAgent_QQ_SDK.custom.min.js"
 AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 ```
 
-如需要加密模块
+在各个 Page 内通过以下代码获取 AnalysysAgent\_QQ\_SDK 全局函数:
 
 ```javascript
-let AnalysysEncryption = require('./util/sdk/AnalysysAgent_encryption.min.js')
-AnalysysAgent.encrypt = AnalysysEncryption
-```
-
-在各个 Page 内通过以下代码获取 AnalysysAgent\_Dingtalk\_SDK 全局函数:
-
-```javascript
-let AnalysysAgent = dd.AnalysysAgent;
+let AnalysysAgent = qq.AnalysysAgent;
 Page({
     onShow : function( options ){
+        //设置微信小程序启动事件
         AnalysysAgent.pageView('首页')
     }
 })
 ```
 
-在组件Component 内通过以下代码获取 AnalysysAgent\_Alipay\_SDK 全局函数:
+在组件Component 内通过以下代码获取 AnalysysAgent\_QQ\_SDK 全局函数:
 
 ```javascript
-let AnalysysAgent = dd.AnalysysAgent;
+let AnalysysAgent = qq.AnalysysAgent;
 ```
 
 {% hint style="info" %}
-请注意:  
-1.将 appkey 的值填入您具体的项目 appkey  
-2.目录为您所引入钉钉小程序 SDK 的具体目录
+注意：
+
+1.将 appkey 的值填入您具体的项目 appkey
+
+2.目录为您所引入QQ小程序 SDK 的具体目录
 {% endhint %}
 
 ### 配置参数
@@ -158,7 +152,7 @@ let AnalysysAgent = dd.AnalysysAgent;
 * _debugMode_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
 * _uploadURL_\(必须\) 自定义上传地址
 * _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
-* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
+* encryptType 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 
@@ -173,9 +167,9 @@ appkey 在网站获取的 AppKey。
 AnalysysAgent.appkey = "77a52s552c892bn442v721"
 ```
 
-#### debugMode
+**debugMode**
 
-debugMode 调试模式为接入 钉钉 SDK后进行数据调试的主要手段。可实时验证 钉钉 SDK数据监测的正确与否。
+debugMode 调试模式为接入 QQ SDK 后进行数据调试的主要手段。可实时验证 QQ SDK 数据监测的正确与否。
 
 * 0 关闭调试模式\(默认\)。类型：Number。
 * 1 开启调试模式，数据不入库。类型：Number。
@@ -193,7 +187,7 @@ AnalysysAgent.debugMode = 0
 
 或删除 debugMode 参数。
 
-#### uploadURL
+**uploadURL**
 
 uploadURL 为自定义上传地址，参数设置后，所有事件信息将上传到该地址。
 
@@ -204,7 +198,7 @@ uploadURL 为自定义上传地址，参数设置后，所有事件信息将上�
 AnalysysAgent.uploadURL = "/*设置为实际地址*/"
 ```
 
-#### autoProfile
+**autoProfile**
 
 autoProfile 为设置是否追踪新用户的首次属性。可根据自身需要进行更改。
 
@@ -218,24 +212,21 @@ AnalysysAgent.autoProfile = false
 AnalysysAgent.autoProfile = true//或删除该行代码。
 ```
 
-#### encryptType
+**encryptType**
 
 encryptType 为设置数据上传时的加密方式,目前只支持 AES 加密，如不设置此参数，数据上传不加密。。可根据自身需要进行更改。
 
 * 0 对上传数据不加密\(默认\)。类型：Number。
-* 1 对上传数据进行AES 128位ECB加密。类型：Number。
-* 2 对上传数据进行AES 128位CBC加密。类型：Number。
+* 1 对上传数据 AES 加密。类型：Number。
 
 ```javascript
 //对上传数据不加密。
 AnalysysAgent.encryptType = 0//或删除该行代码。
-//对上传数据进行AES 128位ECB加密
+//对上传数据AES加密。
 AnalysysAgent.encryptType = 1
-// 对上传数据进行AES 128位CBC加密
-AnalysysAgent.encryptType = 2
 ```
 
-#### allowTimeCheck
+**allowTimeCheck**
 
 allowTimeCheck 为设置是否开启时间校准，开启时间校准在debug 1或者 2 的情况下会有相关提示。
 
@@ -249,7 +240,7 @@ AnalysysAgent.allowTimeCheck = false//或删除该行代码。
 AnalysysAgent.allowTimeCheck = true
 ```
 
-#### maxDiffTimeInterval
+**maxDiffTimeInterval**
 
 maxDiffTimeInterval 为设置不校准时间的最大时间差值。当客户端时间和服务端时间相差在此区间内，将不进行时间校准，否则将进行时间校准。
 
@@ -258,39 +249,35 @@ maxDiffTimeInterval 为设置不校准时间的最大时间差值。当客户端
 ```javascript
 //设置最大允许时间
 AnalysysAgent.maxDiffTimeInterval = 20 
-//当服务端和客户端的时间差超过 20s 将进行时间校准 
+//当服务端和客户端的时间差超过 20s 将进行时间校准
 ```
 
 ### 域名配置
 
-登录钉钉开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
+登录微信公众平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
 
-![](../../../.gitbook/assets/1575888678435%20%281%29.png)
+![](../../../.gitbook/assets/qqrequest%20%281%29.jpeg)
 
 {% hint style="info" %}
-钉钉小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
+QQ小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 {% endhint %}
 
 ## 基础模块介绍
 
 ### 启动事件接口
 
-启动事件 appStart\(options\),钉钉SDK启动事件需要手动调用，而且只能调用一次。
+启动事件 appStart\(options\),框架版本SDK启动事件需要手动调用，而且只能调用一次。
 
 ```javascript
-//标准示例
-App({
-    onShow : function( options ){
-        //设置小程序启动事件,并传输UTM等参数
-        AnalysysAgent.appStart(options)
-    }
-});
+AnalysysAgent.appStart(options);
 ```
 
-options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
+* options：options为小程序 onShow\(options\)获取到的参数，包括query、url等,不同框架，不同方式获取，请开发者根据使用的框架获取。
+
+示例：
 
 ```javascript
-//taro框架示例:
+///taro框架示例:
 componentDidShow () {
     const params = this.$router.params
     AnalysysAgent.appStart(params);
@@ -302,9 +289,9 @@ onShow (options) {
 
 ```
 
-### 统计页面接口介绍
+### 统计页面接口
 
-页面跟踪，框架版钉钉SDK需要手动设置跟踪所有页面，支持自定义页面信息。接口如下：
+页面跟踪，SDK 默认设置跟踪所有页面，支持自定义页面信息。接口如下：
 
 ```javascript
 AnalysysAgent.pageView(pageName);
@@ -312,7 +299,7 @@ AnalysysAgent.pageView(pageName, properties);
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符
-* properties：页面信息，K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，为K-V键值对，最多包含 100条，且key是以字母开头的字符串，必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -339,8 +326,8 @@ AnalysysAgent.pageView("商品页", properties);
 AnalysysAgent.track(eventName, eventInfo)
 ```
 
-* eventName：自定义事件ID标识，以字母开头的字符串，**必须由**字母、数字、下划线组成，$ 开头为预置事件/属性，**不支持**乱码、中文、空格等，长度范围1-99字符。
-* eventInfo：自定义属性，K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* eventName：自定义事件ID标识，以字母开头的字符串,必须由字母、数字、下划线组成，$ 开头为预置事件/属性，不支持乱码、中文、空格等，长度范围1-99字符。
+* eventInfo：自定义属性，K-V键值对，用于对事件的描述。最多包含100条，且key是以字母开头的字符串，必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -368,7 +355,7 @@ AnalysysAgent.track("buy", eventInfo);
 AnalysysAgent.appProperty(properties)
 ```
 
-* properties：页面信息，K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，K-V键值对，最多包含100条，且key是以字母开头的字符串,必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
@@ -383,19 +370,18 @@ AnalysysAgent.appProperty(properties);
 
 ### 采集分享按钮点击事件
 
-采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。接口如下：
+采集分享按钮点击事件，只采集分享按钮的点击事件，不区分分享是否成功。方法返回对象（toShareProperties）。接口如下：
 
 ```javascript
 AnalysysAgent.share(toShareProperties,trackProperties);
 ```
 
 * toShareProperties\(可选\)，分享属性，包括自定义title等，不写将全部用默认。 
-* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* trackProperties（可选），分享事件自定义属性。K-V键值对，最多包含 100条，且key是以字母开头的字符串，必须由 字母、数字、下划线组成，字母不区分大小写，不支持 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
 ```javascript
-// 手动采集
 Page({
     onShareAppMessage:function(){
         let toShareProperties = {
@@ -411,8 +397,6 @@ Page({
 ```
 
 ### 匿名ID与用户关联
-
-用户关联的主要作用是打通用户登录前后的行为，以及多屏登录后的行为。做过用户关联的用户在登录前后的行为在方舟系统里面会被认为是一个用户。方舟系统目前支持 一台设备只能绑定一个用户 ID，一个用户 ID 只能绑定一台设备。设备和用户 ID 绑定后，就无法再和其他用户或者设备进行绑定。例如一个用户的设备 ID 是 ABC 用户的登录 ID 是 123，绑定成功后会对应同一个 ID，这样在统计或者分析时会被认为是一个用户。**在用户注册成功或者登录成功后客户端需要调用 alias 接口**，建议埋点时观看下 [方舟 SDK 接入视频](https://ark.analysys.cn/video-list.html) 接口描述如下：
 
 用户 id 关联接口。将需要绑定的用户ID 和匿名ID进行关联，计算时会认为是一个用户的行为。接口如下：
 
@@ -437,7 +421,7 @@ AnalysysAgent.alias("sanbo");
 AnalysysAgent.identify(distinctId);
 ```
 
-* distinctId：自定义设备身份标识，取值长度 1 - 255字符,支持类型：String
+* distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String
 
 示例:
 
@@ -481,7 +465,7 @@ var distinctId = AnalysysAgent.getDistinctId();
 支持部分类型：String/Number/Boolean/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
 ```
 
-#### 设置用户固有属性
+#### **设置用户固有属性**
 
 设置用户的固有属性，只在首次设置时有效的属性。 如：应用的激活时间、首次登录时间等。如果被设置的用户属性已存在，则这条记录会被忽略而不会覆盖已有数据，如果属性不存在则会自动创建。接口如下：
 
@@ -509,7 +493,7 @@ var setOnceProfile = {
 AnalysysAgent.profileSetOnce(setOnceProfile);
 ```
 
-#### 设置用户属性
+#### **设置用户属性**
 
 给用户设置单个或多个属性，如果之前不存在，则新建，否则覆盖。接口如下：
 
@@ -522,7 +506,7 @@ AnalysysAgent.profileSet(property);
 
 * propertyName ：属性名称，约束见属性名称
 * propertyValue ：属性值，约束见属性值
-* property ： 属性列表，约束见属性名称，属性值
+* property ：属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -540,7 +524,7 @@ var property = {
 AnalysysAgent.profileSet(property);
 ```
 
-#### 设置用户属性相对变化值
+#### **设置用户属性相对变化值**
 
 设置用户属性的相对变化值\(相对增加，减少\)，只能对数值型属性进行操作，如果这个 Profile之前不存在，则初始值为0。接口如下：
 
@@ -550,9 +534,9 @@ AnalysysAgent.profileIncrement(propertyName, propertyNumber)
 AnalysysAgent.profileIncrement(property);
 ```
 
-* propertyName ：属性名称，约束见属性名称
-* propertyValue ：属性值，约束见属性值
-* property ： 属性列表，约束见属性名称，属性值
+* propertyName：属性名称，约束见属性名称
+* propertyValue：属性值，约束见属性值
+* property：属性列表，约束见属性名称，属性值
 
 示例：
 
@@ -570,7 +554,7 @@ var incrementProfile = {
 AnalysysAgent.profileIncrement(incrementProfile);
 ```
 
-#### 增加列表类型的属性
+#### **增加列表类型的属性**
 
 用户列表属性增加元素。接口如下：
 
@@ -583,8 +567,8 @@ AnalysysAgent.profileAppend(propertyValue);
 AnalysysAgent.profileAppend(propertyName, propertyValue);
 ```
 
-* propertyName ：属性名称，约束见属性名称
-* propertyValue ：属性值，约束见属性值
+* propertyName：属性名称，约束见属性名称
+* propertyValue：属性值，约束见属性值
 
 示例：
 
@@ -604,7 +588,7 @@ var list = ["PlayBasketball", "music"];
 AnalysysAgent.profileAppend("hobby", list);
 ```
 
-#### 删除设置的属性值
+#### **删除设置的属性值**
 
 删除已设置的用户属性值。接口如下：
 
@@ -613,7 +597,7 @@ AnalysysAgent.profileUnset(propertyName);
 AnalysysAgent.profileDelete();
 ```
 
-* propertyName ：属性名称，约束见属性名称
+* propertyName：属性名称，约束见属性名称
 
 示例：
 
@@ -640,10 +624,10 @@ AnalysysAgent.profileDelete();
 > **属性值**
 
 ```text
-支持部分类型：String/Number/boolean/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON,则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+支持部分类型：String/Number/Boolean/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
 ```
 
-#### 注册通用属性
+#### **注册通用属性**
 
 某一个体，在固定范围内，持续拥有的属性，每次数据上传都会携带。接口如下:
 
@@ -675,7 +659,7 @@ var property = {
 AnalysysAgent.registerSuperProperties(property);
 ```
 
-#### 删除通用属性
+#### **删除通用属性**
 
 根据属性名称，删除已设置过的通用属性。接口如下：
 
@@ -700,7 +684,7 @@ AnalysysAgent.unRegisterSuperProperty("age");
 AnalysysAgent.clearSuperProperties();
 ```
 
-#### 获取通用属性
+#### **获取通用属性**
 
 查询获取通用属性。接口如下：
 

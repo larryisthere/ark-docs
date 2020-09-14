@@ -15,8 +15,10 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 | js文件 | 功能描述 | 是否必须 |
 | :---: | :---: | :---: |
-| AnalysysAgent\_ByteDance\_SDK.min.js | 基础模块SDK | 必须 |
+| AnalysysAgent\_ByteDance\_SDK.min.js | 基础模块SDK | 二选一 |
+| AnalysysAgent\_ByteDance\_SDK.es6.min.js | 基础模块SDK | 二选一 |
 | AnalysysAgent\_encryption.min.js | 加密模块 | 非必须 |
+| AnalysysAgent\_encryption.es6.min.js | 加密模块 | 非必须 |
 
 {% hint style="info" %}
 注意：请您根据自身业务需求来引用相关的SDK。
@@ -75,6 +77,64 @@ AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
 import AnalysysEncryption from './util/sdk/AnalysysAgent_encryption.min.js'
 AnalysysAgent.encrypt = AnalysysEncryption
 ```
+
+基础版本开启全埋点接入方式:
+
+目前全埋点支持taro、uniapp、mpvue
+
+{% tabs %}
+{% tab title="字节跳动原生接入" %}
+```javascript
+//标准版本开启全埋点接入方式示例：
+// app.js
+import AnalysysAgent from './util/sdk/AnalysysAgent_ByteDance_SDK.min.js'
+
+//设置您的APPKEY
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" 
+//设置您的上报地址
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+
+{% tab title="taro框架接入" %}
+```
+//框架（taro）开启全埋点接入方式示例：
+//app.jsx
+let AnalysysAgent = require("./build/AnalysysAgent_ByteDance_SDK.min.js")
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true
+```
+{% endtab %}
+
+{% tab title="uniapp框架接入" %}
+```
+//框架（uniapp）开启全埋点接入方式示例：
+// main.js
+import AnalysysAgent from './sdk/AnalysysAgent_ByteDance_SDK.es6.min.js';
+import Vue from 'vue'
+import App from './App'
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true//框架（uniapp）开启全埋点接入方式示例：
+```
+{% endtab %}
+
+{% tab title="mpvue框架接入" %}
+```
+//main.js
+import AnalysysAgent from './sdk/AnalysysAgent_ByteDance_SDK.es6.min.js';
+import Vue from 'vue'
+import App from './App'
+
+AnalysysAgent.appkey = "/*设置为实际APPKEY*/" //APPKEY
+AnalysysAgent.uploadURL = '/*设置为方舟项目上报的地址*/'
+AnalysysAgent.autoTrack = true//框架（mpvue）开启全埋点接入方式示例：
+```
+{% endtab %}
+{% endtabs %}
 
 在各个 Page 内通过以下代码获取 AnalysysAgent\_ByteDance\_SDK 全局函数:
 
