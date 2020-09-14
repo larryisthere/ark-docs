@@ -129,7 +129,7 @@ AnalysysAgent.autoTrack = true
 let AnalysysAgent = qq.AnalysysAgent;
 ```
 
-由于组件方法是局部的，所以在组件内需要 通过以下代码获取 AnalysysAgent\_WX\_SDK 全局函数:
+在组件Component 内通过以下代码获取 AnalysysAgent\_QQ\_SDK 全局函数:
 
 ```javascript
 let AnalysysAgent = qq.AnalysysAgent;
