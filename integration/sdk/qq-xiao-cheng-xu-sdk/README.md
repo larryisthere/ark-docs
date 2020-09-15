@@ -10,6 +10,6 @@ description: QQ小程序SDK 使用说明
 
 | 版本名称 | 差异 |
 | :--- | :--- |
-| [​标准版​](qq-xiao-cheng-xu-biao-zhun-ban.md) | ​ |
-| ​[框架版​](qq-xiao-cheng-xu-tong-yong-kuang-jia-ban.md) | 使用第三方框架制作QQ小程序，建议使用版本 |
+| [​标准版​](qqsdk.md) | ​ |
+| ​[框架版​](qqsdkcustom.md) | 使用第三方框架制作QQ小程序，建议使用版本 |
 

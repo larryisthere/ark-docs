@@ -10,8 +10,8 @@ description: 百度小程序 SDK 使用说明
 
 | 版本名称 | 差异 |
 | :--- | :--- |
-| [​标准版​](bai-du-xiao-cheng-xu-biao-zhun-ban-1.md) | ​ |
-| ​[框架版​](bai-du-xiao-cheng-xu-tong-yong-kuang-jia-ban.md) | 使用第三方框架制作百度小程序，建议使用版本 |
+| [​标准版​](baidusdk.md) | ​ |
+| ​[框架版​](baidusdkcustom.md) | 使用第三方框架制作百度小程序，建议使用版本 |
 
 #### 
 

@@ -10,6 +10,6 @@ description: 字节跳动小程序 SDK 使用说明
 
 | 版本名称 | 差异 |
 | :--- | :--- |
-| ​[标准版​](zi-jie-tiao-dong-xiao-cheng-xu-biao-zhun-ban-1.md) | ​ |
-| ​[框架版​](zi-jie-tiao-dong-xiao-cheng-xu-tong-yong-kuang-jia-ban.md) | 使用第三方框架制作字节跳动小程序，建议使用版本 |
+| ​[标准版​](bytedance.md) | ​ |
+| ​[框架版​](bytedancecustom.md) | 使用第三方框架制作字节跳动小程序，建议使用版本 |
 
