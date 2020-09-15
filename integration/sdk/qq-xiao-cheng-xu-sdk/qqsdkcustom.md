@@ -86,7 +86,7 @@ Page({
 
 **代码引入 将 AnalysysAgent\_QQ\_SDK.custom.min.js或AnalysysAgent\_QQ\_SDK.custom.es6.min.js 文件放到小程序的目录下**
 
-![](../../../.gitbook/assets/qqsdk%20%281%29.jpeg)
+![](../../../.gitbook/assets/qqcustom.png)
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
@@ -256,7 +256,7 @@ AnalysysAgent.maxDiffTimeInterval = 20
 
 登录微信公众平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
 
-![](../../../.gitbook/assets/qqrequest%20%281%29.jpeg)
+![](../../../.gitbook/assets/qqrequest%20%281%29.png)
 
 {% hint style="info" %}
 QQ小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。

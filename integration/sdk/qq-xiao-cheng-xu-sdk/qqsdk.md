@@ -58,7 +58,7 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
 
 将 AnalysysAgent\_QQ\_SDK.min.js 文件放到小程序的目录下
 
-![](../../../.gitbook/assets/qqsdk.jpeg)
+![](../../../.gitbook/assets/qq.png)
 
 在小程序的 app.js 文件中的第一行加入以下代码:
 
@@ -300,7 +300,7 @@ AnalysysAgent.autoTrack = true
 
 登录QQ小程序平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
 
-![](../../../.gitbook/assets/qqrequest.jpeg)
+![](../../../.gitbook/assets/qqrequest.png)
 
 QQ小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
 
