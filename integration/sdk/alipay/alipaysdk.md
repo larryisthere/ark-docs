@@ -328,7 +328,7 @@ AnalysysAgent.autoTrack = true
 
 登录支付宝开放平台，设置&gt;开发设置&gt;服务器域名白名单，加入您所配置的 `https` 域名：`example.com`
 
-![](../../../.gitbook/assets/1575888678435%20%281%29.jpg)
+![](../../../.gitbook/assets/1575888678435%20%282%29.png)
 
 {% hint style="info" %}
 支付宝小程序只容许https默认端口（443）进行数据访问，请注意方舟上报端口为默认端口。否则数据将无法上报。
