@@ -532,11 +532,11 @@ AnalysysAgent.profileSetOnce(property);
 
 ```javascript
 // 设置用户激活时间
-AnalysysAgent.profileSetOnce("activationTime",1521280551929);
+AnalysysAgent.profileSetOnce("activationTime", "2018-06-18 18:18:18.188");
 
 // 设置用户性别和出生时间
 var setOnceProfile = {
-    "birth": 548798705000,
+    "birth": "2018-06-18 18:18:18.188",
     "sex": "male"
 }
 AnalysysAgent.profileSetOnce(setOnceProfile);
