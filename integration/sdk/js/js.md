@@ -806,14 +806,14 @@ var callback = function(){
     console.log('数据上报完毕')
 }
 // 设置用户激活时间
-AnalysysAgent.profileSetOnce("activationTime", 1521280551929);
+AnalysysAgent.profileSetOnce("activationTime", "2018-06-18 18:18:18.188");
 
 // 设置用户激活时间，并返回数据发送完毕
-AnalysysAgent.profileSetOnce("activationTime", 1521280551929, callback);
+AnalysysAgent.profileSetOnce("activationTime", "2018-06-18 18:18:18.188", callback);
 
 // 设置用户性别和出生时间
 var setOnceProfile = {
-    "birth": 548798705000,
+    "birth": "2018-06-18 18:18:18.188",
     "sex": "male",
     "userID": function(){
         return '123456'
