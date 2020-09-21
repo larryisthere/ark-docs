@@ -2,13 +2,13 @@
 description: 快应用小程序 框架版 SDK 使用说明
 ---
 
-# 快应用SDK
+# 快应用 SDK
 
 快应用小程序SDK集成前请先下载SDK
 
 {% hint style="info" %}
 SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-QuickApp-sdk](https://github.com/analysys/ans-QuickApp-sdk)  
+Github地址\(推荐\)：[https://github.com/analysys/ans-QuickApp-sdk/releases](https://github.com/analysys/ans-QuickApp-sdk/releases)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 

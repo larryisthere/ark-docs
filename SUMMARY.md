@@ -130,7 +130,7 @@
   * [QQ小程序 SDK](integration/sdk/qq-xiao-cheng-xu-sdk/README.md)
     * [QQ小程序标准版](integration/sdk/qq-xiao-cheng-xu-sdk/qqsdk.md)
     * [QQ小程序通用框架版](integration/sdk/qq-xiao-cheng-xu-sdk/qqsdkcustom.md)
-  * [快应用SDK](integration/sdk/kuai-ying-yong-sdk.md)
+  * [快应用 SDK](integration/sdk/kuai-ying-yong-sdk.md)
   * [PhoneGap SDK](integration/sdk/phonegap-sdk.md)
   * [ReactNative SDK](integration/sdk/reactnative-sdk.md)
   * [Flutter SDK](integration/sdk/flutter-sdk.md)
