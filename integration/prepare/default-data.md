@@ -36,7 +36,7 @@
 | $share | 分享事件 | 小程序分享事件 | - | - | - | N |
 | $campaign\_track | 渠道监测事件 | APP渠道监测 | S | S | - | - |
 | $first\_installation | 首次安装事件 | APP首次安装事件 | N | N | - | - |
-| $app\_crash | $app\_crash | 获取App异常信息 | N | N | - | - |
+| $app\_crash | APP奔溃 | APP奔溃信息 | N | N | - | - |
 
 {% hint style="info" %}
 其中 `$webstay`  用于记录用户停留在可视区域，分析浏览深度线，`$app_click`、`$web_click` 用于记录点击网页/APP页面，用于分析点击位置热图、点击元素热图，所以这三个事件不会作为单独的事件去分析，即不会出现在分析模型中事件的选项中，也不会计入任意事件的计算。
@@ -565,32 +565,16 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 
 {% hint style="info" %}
 * **$referrer 字段在App中手动调用pageview接口，默认不采集**
-* **其中 $startup\_time  仅用于数据校准，不会出现在分析模型中**
-* **$url\_domain, $traffic\_source\_type, $search\_engine 等非自动采集的属性，系统会根据url 和 referer 自动解析**
+* **$url\_domain, $traffic\_source\_type, $search\_engine 等非自动采集的属性，系统会根据$url 和 $referrer 自动解析**
 {% endhint %}
 
-**$push\_receiver\_success**
-
-| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
-| $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
-| $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
-| $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
-| $utm\_medium | 活动/广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
-| $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
-| $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
-| $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
-
-
-
-**$user\_click**
+#### **$user\_click**
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | $title | 页面标题 | 字符串 | 页面标题 | Y | Y | Y | - |
-| $page\_width  | 页面宽度  | 浮点型  | 页面宽度 | Y | Y | Y | N |
-| $page\_height  | 页面高度   | 浮点型 | 页面高度 | Y | Y | Y | N |
+| ~~$page\_width~~  | ~~页面宽度~~  | ~~浮点型~~  | ~~页面宽度~~ | ~~Y~~ | ~~Y~~ | ~~Y~~ | ~~N~~ |
+| ~~$page\_height~~  | ~~页面高度~~   | ~~浮点型~~ | ~~页面高度~~ | ~~Y~~ | ~~Y~~ | ~~Y~~ | ~~N~~ |
 | $parent\_url  | 父页面URL   | 字符串 | 面URL，为空则为顶级页 | Y | - | - | N |
 | $url    | 页面URL | 字符串 | 页面URL | Y | Y | Y | N |
 | $element\_path    | 元素路径 | 字符串 | APP 为元素唯一标识；JS 为元素路径 | Y | Y | Y | N |
@@ -609,32 +593,6 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $share\_id | 分享者ID | 字符串 | 分享者ID | - | - | - | N |
 | $share\_level | 转发层级 | 数值 | 转发层级 | - | - | - | N |
 | $share\_path | 转发地址 | 字符串 | 转发页面来源 | - | - | - | N |
-
-**$push\_click**
-
-| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
-| $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
-| $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
-| $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
-| $utm\_medium | 活动/广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
-| $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
-| $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
-| $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
-
-**$push\_process\_success**
-
-| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
-| $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
-| $utm\_campaign\_id | 活动ID | 字符串 | 根据添加的内容自动生成，标识一次活动 | N | N | - | - |
-| $utm\_campaign | 活动/广告名称 | 字符串 | 特定的推广活动，e.g. 双11推广 | N | N | - | - |
-| $utm\_medium | 活动/广告媒介 | 字符串 | 推广类型，e.g. SEM，cpc | N | N | - | - |
-| $utm\_source | 活动/广告来源 | 字符串 | 推广来源，e.g. 今日头条 | N | N | - | - |
-| $utm\_content | 活动/广告内容 | 字符串 | 广告内容，e.g. 优惠信息 | N | N | - | - |
-| $utm\_term | 活动/广告关键字 | 字符串 | 广告关键字，e.g. 用户画像 | N | N | - | - |
 
 **$webstay**
 
@@ -665,13 +623,32 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $element\_content | 元素内容 | 字符串 | 热图元素的内容 | Y | Y | Y | - |
 | $element\_clickable | 是否可以点击元素 | 数值 | 是否可以点击元素 | Y | Y | Y | - |
 
-
-
 #### $app\_crash
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $crash\_data | 崩溃的堆栈信息 | 字符串 | 崩溃的堆栈信息 | Y | Y | - | - |
+| $crash\_data | 崩溃原因 | 字符串 | 崩溃的堆栈信息 | Y | Y | - | - |
+
+**$push\_receiver\_success**
+
+| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
+| $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
+
+**$push\_process\_success**
+
+| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
+| $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
+
+**$push\_click**
+
+| 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| $action\_type | 操作类型 | 数值 | 点击消息通知后的操作类型 | N | N | - | - |
+| $action | 操作 | 字符串 | 点击消息通知后的操作 | N | N | - | - |
 
 ### 3. Profile 系列事件属性
 
@@ -683,8 +660,8 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本，e.g.11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
-| $debug | debug模式 | 数值 | debug模式 | Y | Y | Y | Y |
-| $original\_id | 临时id | 字符串 | 系统生产的临时ID | Y | Y | Y | Y |
+| $debug | Debug模式 | 数值 | Debug模式 | Y | Y | Y | Y |
+| $original\_id | 临时ID | 字符串 | 系统生产的临时ID | Y | Y | Y | Y |
 
 **$profile\_set**
 
@@ -694,7 +671,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $is\_login | 是否是注册用户 | 布尔 | true/false | Y | Y | Y | Y |
 | $lib\_version | SDK版本 | 字符串 | SDK版本 e.g. 11.2.5 | Y | Y | Y | Y |
 | $platform | 平台 | 字符串 | JS/iOS/Android/Wechat | Y | Y | Y | Y |
-| $debug | debug模式 | 数值 | debug模式 | Y | Y | Y | Y |
+| $debug | Debug模式 | 数值 | Debug模式 | Y | Y | Y | Y |
 
 ## 预置用户属性
 
@@ -721,7 +698,7 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
 | $is\_login | 是否是注册用户 | 布尔值 | true，false | Y | Y | Y | Y |
 | $signup\_time | 注册时间 | 日期时间 | 格式为：yyyy-MM-dd hh:mm:ss.SSS | N | N | N | N |
 | $first\_visit\_time | 首次访问时间 | 日期时间 | 首次访问时间 | Y | Y | Y | Y |
-| $time\_zone | 用户时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
+| $time\_zone | 首次访问用户时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
 | $first\_visit\_language | 首次访问语言 | 字符串 | zh-cn | Y | Y | Y | Y |
 
 {% hint style="info" %}
