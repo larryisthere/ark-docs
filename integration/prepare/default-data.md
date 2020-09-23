@@ -460,14 +460,13 @@ Profile 系列的事件用户上报用户属性，所以同样不会作为单独
     </tr>
     <tr>
       <td style="text-align:left">$is_time_calibrated</td>
-      <td style="text-align:left">&#x662F;&#x5426;&#x4E0E;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x65F6;&#x95F4;&#x6821;&#x51C6;</td>
-      <td
-      style="text-align:left">&#x5E03;&#x5C14;</td>
-        <td style="text-align:left">true&#x3001;false</td>
-        <td style="text-align:center">N</td>
-        <td style="text-align:center">N</td>
-        <td style="text-align:center">-</td>
-        <td style="text-align:center">N</td>
+      <td style="text-align:left">&#x65F6;&#x95F4;&#x6821;&#x51C6;</td>
+      <td style="text-align:left">&#x5E03;&#x5C14;</td>
+      <td style="text-align:left">true&#x3001;false</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">N</td>
+      <td style="text-align:center">-</td>
+      <td style="text-align:center">N</td>
     </tr>
     <tr>
       <td style="text-align:left">$user_agent</td>
