@@ -227,3 +227,126 @@ eventId=?
 curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" http://127.0.0.1:4005/uba/api/meta/eventProperties?eventId=%24startup
 ```
 
+## 4. 创建虚拟属性
+
+上报的元事件无法直接满足分析需求，组要组合使用事件时，可以使用虚拟事件。虚拟事件可以组合多个元事件，每个元事件下也可以设置过滤条件，事件之间关系为或。在 5.1.0221 版本中新增。
+
+### 4.1 接口地址
+
+> 【POST】 /uba/api/meta/event/virtual
+
+### 4.2 请求参数示例
+
+```java
+{
+    //【必填】虚拟事件ID，唯一，并且不能和元事件ID重名，由字母、数字和下划线组成，不能以数字开头，总长度不超过100个字符
+    "id":"vactive",
+    //虚拟事件名称，长度不能超过 50
+    "name":"活跃用户",
+    //虚拟事件说明，长度不能超过 100
+    "remark":"使用过APP或者浏览过web网站的用户",
+    //【必填】虚拟事件包含的元事件
+    "events":[
+        {
+            //包含的元事件 不含条件
+            "expression":"event.$startup"
+        },
+        {
+            //包含的元事件 含条件
+            "expression":"event.$pageview",
+            //事件需要满足的条件（平台=JS的页面浏览事件）
+            "filter":{
+                "conditions":[
+                    {
+                        //条件表达式
+                        "expression":"event.$pageview.$platform",
+                        "function":"EQ",
+                        "params":[
+                            "JS"
+                        ]
+                    }
+                ],
+                "relation":"AND"
+            }
+        }
+    ]
+}
+```
+
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
+
+### 4.3 返回结果示例
+
+```javascript
+{"success":0}
+```
+
+### 4.4 接口调用示例
+
+```haskell
+curl -H "Content-Type:application/json" -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" -X POST --data '{
+    "id":"$vactive",
+    "name":"活跃用户",
+    "remark":"使用过APP或者浏览过web网站的用户",
+    "events":[
+        {
+            "expression":"event.$startup"
+        },
+        {
+            "expression":"event.$pageview"
+        }
+    ]
+}' http://127.0.0.1:4005/uba/api/meta/event/virtual
+```
+
+## 5. 修改虚拟属性
+
+支持修改虚拟事件的名称、描述、规则内容。在 5.1.0221 版本中新增。
+
+虚拟事件修改规则是只能修改自己创建的虚拟事件，如果API不带loginUser参数只能修改通过API创建并且未带loginUser的虚拟事件。如果带loginUser参数，就能修改对应用户创建的虚拟事件。
+
+### 5.1 接口地址
+
+> 【PUT】 /uba/api/meta/event/virtual
+
+### 5.2 请求参数示例
+
+```java
+{
+    //【必填】虚拟事件ID，因为事件ID不允许修改，所以ID会作为修改条件
+    "id":"vactive",
+    //虚拟事件名称，长度不能超过 50，如果不需要修改名称，可以不传此列
+    "name":"活跃用户",
+    //虚拟事件说明，长度不能超过 100，如果不需要修改描述，可以不传此列
+    "remark":"使用过APP或者浏览过web网站的用户",
+    //虚拟事件包含的元事件，如果规则不需要发生改变，可以不传
+    "events":[
+        {
+            //包含的元事件 不含条件
+            "expression":"event.$startup"
+        },
+        {
+            //包含的元事件 含条件
+            "expression":"event.$pageview"
+        }
+    ]
+}
+```
+
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
+
+### 5.3 返回结果示例
+
+```java
+{"success":0}
+```
+
+### 5.4 接口调用示例
+
+```java
+curl -H "Content-Type:application/json" -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" -X PUT --data '{
+    "id":"$vactive",
+    "name":"活跃用户"
+}' http://127.0.0.1:4005/uba/api/meta/event/virtual
+```
+
