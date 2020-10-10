@@ -72,7 +72,7 @@ let AgentConfig ={
         postNumber:上传条数的设置,
         postTime:自动上传间隔时间,
         logCollector:new LogCollector({   //落文件功能增加的参数
-            gerFold:落地文件存放的路径,
+            gerFolder:落地文件存放的路径,
             gerRule:落地文件存放的格式
         })
     }
@@ -125,13 +125,13 @@ batchSec：批量发送等待时间\(毫秒\)，默认值：0 毫秒
         postNumber:上传条数的设置（批量写入的条数设置）,
         postTime:自动上传间隔时间 （批量写入的时间间隔）,
         logCollector:new LogCollector({   //落文件功能增加的参数
-            gerFold:落地文件存放的路径,
+            gerFolder:落地文件存放的路径,
             gerRule:落地文件存放的格式
         })
     }
 ```
 
-gerFold：数据保存的目录  
+gerFolder：数据保存的目录  
 gerRule：文件切分规则，（可选 "H" 和 "D" ）默认 H，按小时切割，D 按天切割。
 
 假如启用了落地文件收集器，配置中的uploadURL将不再生效。
