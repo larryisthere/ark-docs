@@ -98,6 +98,6 @@
 如果导出未成功或者数据丢失，可以进入通过查看 **logs/error.log** 文件查看失败的原因。
 
 {% hint style="info" %}
-以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
 {% endhint %}
 

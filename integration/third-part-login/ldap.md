@@ -104,3 +104,7 @@ arkweb.ldap.emailSuffix=@analysys.com.cn
 | arkweb.ldap.searchFilter | N | 在 LDAP 中查找用户时是否按照指定的 filter 进行筛选 |
 | arkweb.ldap.emailSuffix | Y | 登录后的用户名添加邮箱后缀。方舟中用户邮箱是必须要求的 |
 
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
+{% endhint %}
+

@@ -18,6 +18,6 @@ eguan.profile_set_once(alias_id, properties, python_sdk_platform, is_login=True)
 ```
 
 {% hint style="info" %}
-以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
 {% endhint %}
 

@@ -107,3 +107,7 @@ security.oauth2.client.user-authorization-uri=https://github.com/login/oauth/aut
 | security.oauth2.client.access-token-uri | N | OAuth 2.0 获取 Access Token 的地址 |
 | security.oauth2.client.user-authorization-uri | N | OAuth 2.0 的授权地址 |
 
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
+{% endhint %}
+

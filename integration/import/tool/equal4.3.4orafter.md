@@ -289,3 +289,7 @@ exit 退出
 
 **profile/profileErrorData.log：**用户数据导入过程中解析错误的数据。
 
+{% hint style="info" %}
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
+{% endhint %}
+

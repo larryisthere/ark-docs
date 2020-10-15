@@ -221,6 +221,6 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 下方的三个开关保持默认即可。点击底部的确认按钮后，如果没有看到数据表，请关闭 Metabase 重新进入。
 
 {% hint style="info" %}
-以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
 {% endhint %}
 
