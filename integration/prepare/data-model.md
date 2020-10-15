@@ -81,6 +81,6 @@ xcontext 是一个比较广泛的概念，除了包括 xwhat 中提到的事件�
 和某个行为的结果相关的属性应该上报到事件属性；而会对用户有长期影响并且很可能不可修改及逆转的则应该上报到用户属性。
 
 {% hint style="info" %}
-以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
 {% endhint %}
 

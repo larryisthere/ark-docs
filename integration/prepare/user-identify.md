@@ -151,6 +151,6 @@ void reset(Context context)
 但匿名 X 到底是 xiaoming 还是 dawang ，或者是其他人都有可能，但是目前的方案还不能对全部场景做出准确判断。
 
 {% hint style="info" %}
-以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
 {% endhint %}
 

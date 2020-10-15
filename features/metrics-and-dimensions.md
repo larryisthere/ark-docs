@@ -527,6 +527,6 @@ e.g. 对于电商的运营，可以定义【 初始行为 = 支付订单，回�
 
 
 {% hint style="info" %}
-以上内容没有解答我的问题？[点击我来反馈](https://support.qq.com/products/118522/) 🚀
+以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
 {% endhint %}
 
