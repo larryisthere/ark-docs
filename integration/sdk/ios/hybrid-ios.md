@@ -12,82 +12,102 @@ iOS App 中如需加载 H5 页面，需要同时集成iOS SDK与JS SDK。
 
 集成方式查看[JS SDK 使用说明](https://docs.analysys.cn/ark/integration/sdk/js)
 
+{% hint style="info" %}
+版本提醒：需使用 iOS SDK 4.5.2及 JS SDK 4.5.1以版本
+{% endhint %}
+
 ## 2. 代码集成
 
-### 2.1 SDK监听拦截URL
+### 2.1 SDK配置WKWebViewConfiguration接口
 
-H5 页面触发事件时，会把事件发往 iOS App 端，App SDK 端接收到数据后保存并上报。 接口如下：
+初始化WKWebView的configuration对象时，会注入Hybrid方法并配置相关信息。 接口如下：
 
 ```objectivec
-+ (BOOL)setHybridModel:(id)webView request:(NSURLRequest *)request;
++ (void)setAnalysysAgentHybrid:(WKWebViewConfiguration *)config scriptMessageHandler:(id)handler;
 ```
 
-* webView: `UIWebView`或`WKWebView`对象
-* request: `NSURLRequest`请求对象
-* return: 若 js 触发的是 AnalysysAgent 的事件，则`setHybridModel:request:`方法会返回 YES，完成统计；否则返回 NO，不处理。
-
-{% hint style="info" %}
-注意:若项目中需要设置`UserAgent，`则需要使用追加方式，请勿覆盖调用setHybridMode接口设置的"**AnalysysAgent/Hybrid**"标识
-{% endhint %}
+* config: `WKWebViewConfiguration`对象
+* id: `script message handler`对象
 
 代码参考：
 
 ```text
-// 获取已有 UserAgent
-NSString *userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-userAgent = [userAgent stringByAppendingString:@"追加信息"];
-//  注册到NSUserDefaults
-[[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent": userAgent}];
+#import <WebKit/WebKit.h>
+
+@interface WeakScriptMessageDelegate : NSObject
+
+@property (nonatomic, weak) id scriptDelegate;
+
+- (instancetype)initWithDelegate:(id)scriptDelegate;
+
+@end
+
+@implementation WeakScriptMessageDelegate
+
+- (instancetype)initWithDelegate:(id)scriptDelegate {
+    self = [super init];
+    if (self) {
+        _scriptDelegate = scriptDelegate;
+    }
+    return self;
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    [self.scriptDelegate userContentController:userContentController didReceiveScriptMessage:message];
+}
+
+@end
+
+@interface ANSWKWebViewController ()<WKNavigationDelegate,WKUIDelegate, WKScriptMessageHandler>
+
+@property (nonatomic,strong) WeakScriptMessageDelegate *scriptMessage;
+
+@end
+
+@implementation ANSWKWebViewController
+
+- (WKWebViewConfiguration *)configuration {
+    if (!_configuration) {
+        _configuration = [[WKWebViewConfiguration alloc] init];
+        [AnalysysAgent setAnalysysAgentHybrid:_configuration scriptMessageHandler:self.scriptMessage];
+    }
+    return _configuration;
+}
+
+@end
+```
+
+### 2.2 监听JS消息
+
+在`WKWebView 回调的协议方法监听回调。接口如下:`
+
+```text
++ (void)setAnalysysAgentHybridScriptMessage:(WKScriptMessage *)scriptMessage;
 ```
 
 示例：
 
-#### 2.1.1 UIWebView
+```text
+#pragma mark - WKScriptMessageHandler
 
-实现`UIWebView`的`UIWebViewDelegate`方法，并调用统计接口。
-
-```objectivec
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-
-    if ([AnalysysAgent setHybridModel:webView request:request]) {
-        NSLog(@"AnalysysAgent 统计完成");
-        return NO;
-    }
-
-    return YES;
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    [AnalysysAgent setAnalysysAgentHybridScriptMessage:message];
 }
 ```
 
-#### 2.1.2 WKWebView
+### 2.3 注销JS消息监听
 
-实现`WKWebView`的`WKNavigationDelegate`代理方法，并调用统计接口。
-
-```objectivec
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-
-    if ([AnalysysAgent setHybridModel:webView request:navigationAction.request]) {
-        NSLog(@"AnalysysAgent 统计完成");
-        decisionHandler(WKNavigationActionPolicyCancel);
-        return;
-    }
-
-    decisionHandler(WKNavigationActionPolicyAllow);
-}
-```
-
-### 2.2 重置UserAgent
-
-在`UIWebView`/`WKWebView`结束使用、置为nil或加载`UIWebView`/`WKWebView`的页面`dealloc`时调用。 接口如下：
+在`WKWebView`结束使用、置为nil或加载`WKWebView`的页面`dealloc`时调用。 接口如下：
 
 ```objectivec
-+ (void)resetHybridModel;
++ (void)resetAnalysysAgentHybrid:(WKWebViewConfiguration *)config;
 ```
 
 示例：
 
 ```objectivec
--(void)dealloc {
-    [AnalysysAgent resetHybridModel];
+- (void)dealloc {
+    [AnalysysAgent resetAnalysysAgentHybrid:self.configuration];
 }
 ```
 
