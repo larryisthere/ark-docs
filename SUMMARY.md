@@ -70,7 +70,7 @@
     * [用户属性](features/project-manegement/meta-data/user-properties.md)
     * [Session 管理](features/project-manegement/meta-data/session.md)
     * [页面组管理](features/project-manegement/meta-data/pagegroup.md)
-    * [维度表](features/project-manegement/meta-data/wei-du-biao.md)
+    * [维度表](features/project-manegement/meta-data/dimension-table.md)
   * [服务集成配置](features/project-manegement/integrations.md)
   * [监控告警](features/project-manegement/monitoring/README.md)
     * [智能监控](features/project-manegement/monitoring/intelligent-monitoring.md)
