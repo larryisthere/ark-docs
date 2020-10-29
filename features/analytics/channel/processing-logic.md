@@ -8,14 +8,14 @@
 
 | 渠道来源类型 | 预定义的识别规则 |
 | :--- | :--- |
-| 消息通知 | $utm\_campaign\_id 不为空  $utm\_medium = push\_notification |
+| 消息通知 | $utm\_campaign\_id 不为空 $utm\_medium = push\_notification |
 | 电子邮件 | $utm\_campaign\_id 不为空  $utm\_medium = email |
 | 系统预定义的XXX | $utm\_campaign\_id 不为空  $utm\_medium = xxx |
-| 指定广告跟踪 | $utm\_source 不为空  $utm\_campaign 不为空  $utm\_medium ≠ push\_notification,email,xxx |
-| 搜索引擎 | $utm\_campaign 为空  $utm\_medium = search |
-| 社交媒体 | $utm\_campaign 为空  $utm\_medium = social |
-| 外部链接 | $utm\_campaign 为空  $utm\_medium = referral |
-| 直接访问 | $utm\_campaign 为空  $utm\_medium = direct |
+| 指定广告跟踪 | $utm\_source 不为空  $utm\_campaign 不为空 $utm\_medium ≠ push\_notification,email,xxx |
+| 搜索引擎 | $utm\_campaign 为空 $utm\_medium = search |
+| 社交媒体 | $utm\_campaign 为空 $utm\_medium = social |
+| 外部链接 | $utm\_campaign 为空 $utm\_medium = referral |
+| 直接访问 | $utm\_campaign 为空 $utm\_medium = direct |
 
 {% hint style="info" %}
 [点这里查看详细识别规则](https://www.processon.com/embed/5c3eea0ae4b0641c83de6544)
