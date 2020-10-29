@@ -18,7 +18,7 @@
 | 直接访问 | $utm\_campaign 为空  $utm\_medium = direct |
 
 {% hint style="info" %}
-详细识别规则访问如下地址：[https://www.processon.com/embed/5c3eea0ae4b0641c83de6544](https://www.processon.com/embed/5c3eea0ae4b0641c83de6544)
+[点这里查看详细识别规则](https://www.processon.com/embed/5c3eea0ae4b0641c83de6544)
 {% endhint %}
 
 示例说明
