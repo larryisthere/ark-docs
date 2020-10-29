@@ -59,7 +59,7 @@ description: 5.1 版本对可视化模块进行了升级，业内首家支持圈
 若进入该页面前已经打开了应用，请杀掉进程，重新打开。
 {% endhint %}
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808121327371463.gif)
+![](../../../.gitbook/assets/image%20%28502%29.png)
 
 ### 2. 选取设备
 
@@ -74,7 +74,7 @@ description: 5.1 版本对可视化模块进行了升级，业内首家支持圈
 * 当从 A 页面上点击断开连接时，B页面上也变灰，如需使用，需要重新连接。
 {% endhint %}
 
-![ ](https://imguserradar.analysys.cn/fangzhou/img/2018/08/201808121328515454.png)
+![](../../../.gitbook/assets/image%20%28501%29.png)
 
 ### 3-1. 可视化配置 （V5.1 以下版本）
 
