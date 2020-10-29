@@ -17,13 +17,13 @@
 | 外部链接 | $utm\_campaign 为空  $utm\_medium = referral |
 | 直接访问 | $utm\_campaign 为空  $utm\_medium = direct |
 
-详细识别规则如下： 
-
-![](../../../.gitbook/assets/qu-dao-lai-yuan-yong-yu-wen-dang-1.png)
-
 {% hint style="info" %}
+详细识别规则访问如下地址：[https://www.processon.com/embed/5c3eea0ae4b0641c83de6544](https://www.processon.com/embed/5c3eea0ae4b0641c83de6544)
+{% endhint %}
+
 示例说明
 
+{% hint style="info" %}
 1. 小鸣打开了google，通过 Q 这个搜索词，找到了您的网站，那我们会根据点击网站时上报日志中的referrerdomain识别出来是谷歌，谷歌的域名被识别为搜索引擎，那么本次访问的所有事件都会加上 utm\_medium = search 的来源，归为搜索引擎的来源类型，并进一步解析搜索词 
 
 2. 小鱼通过知乎中的链接进入到您的网站，我们会根据访问记录中的referrerdomain识别出它是知乎，知乎属于社交媒体，那么本次访问会标记为来源知乎，渠道来源类型属于社交媒体 
