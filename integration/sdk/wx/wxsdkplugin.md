@@ -139,6 +139,7 @@ let AnalysysAgent = wx.AnalysysAgent;
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
 * _autoTrack_ 设置是否开启全埋点,false - 不开启全埋点\(默认\)；true - 开启全埋点；开启全埋点将会上报所有绑定（支持tab、longtab、longpress）事件,并上报$user\_click事件,设置data-content为采集的`$element_content`、data-type为采集的`$element_type`、data-name为采集的`$element_name`、id为采集的`$element_id`。若不设置Data属性会导致无法采集预制属性。不支持系统方法包括生命周期事件的上报，如果要采集tabbar切换，务必在注册Page的时候注册OnTabItemTap方法，否则采集不到。
+* _autoCompleteURL_ 设置是否采集完整URL,true - 采集URL包括参数\(默认\)；false - 采集URL不包括参数;
 
 #### appkey
 
@@ -284,6 +285,20 @@ AnalysysAgent.autoTrack = false //或删除该行代码。
 AnalysysAgent.autoTrack = true
 ```
 
+**autoCompleteURL**
+
+autoCompleteURL 设置是否采集完整URL,true - 采集URL包括参数\(默认\)；false - 采集URL不包括参数;
+
+* true 开启采集URL包括参数\(默认\)
+* false 开启采集URL不包括参数
+
+```javascript
+//开启采集完整URL
+AnalysysAgent.autoCompleteURL = true //或删除该行代码。
+//关闭采集完整URL
+AnalysysAgent.autoCompleteURL = false
+```
+
 ### 域名配置
 
 登录微信公众平台，设置&gt;开发设置&gt;服务器域名&gt;request 合法域名，加入您所配置的 `https` 域名：`https://xxx.xxx.xxx`
@@ -354,25 +369,28 @@ var eventInfo = {
 AnalysysAgent.track("buy", eventInfo);
 ```
 
-### 注册页面事件通用属性
+### 注册页面自动采集自定义属性
 
-注册应用中所有页面通用属性，设置后当次小程序启动后所有页面都拥有该属性，直至该小程序关闭。接口如下：
+注册页面自动采集自定义属性，建议在页面的生命周期 onShow 中注册（保证每次页面打开都注册生效，自动采集也是在页面的 onShow 中调用的），或者根据需要在自动采集上报之前注册，否则当前页面的自动采集不会携带注册的属性，会携带在下次自动采集上面。
 
 ```javascript
-AnalysysAgent.appProperty(properties)
+AnalysysAgent.pageProperty(properties)
 ```
 
-* properties：页面信息，K-V键值对。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，K-V键值对，最多包含100条，且`key`是以字母开头的字符串,**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符；value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
 
 示例：
 
 ```javascript
-// 设置被分享页面所属分享群ID
-var properties ={
-    openGId:'123456789'
-}
-
-AnalysysAgent.appProperty(properties);
+Page({
+    onShow:function(){
+        // 为当前自动采集的页面添加页面标题
+        var properties ={
+            $title:'详情页'
+        }
+        AnalysysAgent.pageProperty(properties);
+    }
+})
 ```
 
 ### 采集分享按钮点击事件

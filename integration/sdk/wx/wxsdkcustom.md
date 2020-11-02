@@ -194,6 +194,7 @@ let AnalysysAgent = wx.AnalysysAgent;
 * encryptType 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
 * _allowTimeCheck_ 设置是否开启时间校准：false\(默认\) - 关闭时间校准；true - 开启时间校准
 * _maxDiffTimeInterval_ 设置最大时间校准分为：30s\(默认\) ，当设置的时间差值小于他，将不开启校准。否则将会进行时间校准。假如设置成为负值，将默认为 30s。
+* _autoCompleteURL_ 设置是否采集完整URL,true - 采集URL包括参数\(默认\)；false - 采集URL不包括参数;
 
 #### appkey
 
@@ -289,6 +290,20 @@ maxDiffTimeInterval 为设置不校准时间的最大时间差值。当客户端
 //设置最大允许时间
 AnalysysAgent.maxDiffTimeInterval = 20 
 //当服务端和客户端的时间差超过 20s 将进行时间校准 
+```
+
+**autoCompleteURL**
+
+autoCompleteURL 设置是否采集完整URL,true - 采集URL包括参数\(默认\)；false - 采集URL不包括参数;
+
+* true 开启采集URL包括参数\(默认\)
+* false 开启采集URL不包括参数
+
+```javascript
+//开启采集完整URL
+AnalysysAgent.autoCompleteURL = true //或删除该行代码。
+//关闭采集完整URL
+AnalysysAgent.autoCompleteURL = false
 ```
 
 ### 域名配置
@@ -392,29 +407,6 @@ var eventInfo = {
 }
 AnalysysAgent.track("buy", eventInfo);
 ```
-
-### 注册页面事件通用属性
-
-注册应用中所有页面通用属性，设置后当次小程序启动后所有页面都拥有该属性，直至该小程序关闭。接口如下：
-
-```javascript
-AnalysysAgent.appProperty(properties)
-```
-
-* properties：页面信息，K-V键值对。最多包含100条，且`key`是以字母开头的字符串，**必须由**字母、数字、下划线组成，字母不区分大小写，**不支持**乱码、中文、空格等，长度范围1-99字符；`value`支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
-
-示例：
-
-```javascript
-// 设置被分享页面所属分享群ID
-var properties ={
-    openGId:'123456789'
-}
-
-AnalysysAgent.appProperty(properties);
-```
-
-#### 
 
 ### 采集分享按钮点击事件
 
