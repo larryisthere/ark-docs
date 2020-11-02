@@ -15,22 +15,181 @@ Gitee地址：[https://gitee.com/Analysys/ans-javascript-sdk/releases](https://g
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
-| js文件 | 功能描述 | 是否必须 | 服务端版本 |
-| :---: | :---: | :---: | :--- |
-| AnalysysAgent\_JS\_SDK.min.js | 基础模块SDK | 非ES6必须 | 全部 |
-| AnalysysAgent\_JS\_SDK.es6.min.js | 基础模块SDK | ES6必须 | 全部 |
-| AnalysysAgent\_JS\_SDK.amd.min.js | 基础模块SDK | AMD必须 | 全部 |
-| AnalysysAgent\_JS\_SDK\_VISUAL.min.js | 可视化模块SDK | 可选 | 全部 |
-| AnalysysAgent\_JS\_SDK\_HEATMAP.min.js | 热图模块SDK | 可选 | 4.3.0及以上 |
-| AnalysysAgent\_Encrypt.min.js | 加密模块SDK | 非ES6可选 | 全部 |
-| AnalysysAgent\_Encrypt.es6.min.js | 加密模块SDK | ES6可选 | 全部 |
-| AnalysysAgent\_Encrypt.amd.min.js | 加密模块SDK | AMD可选 | 全部 |
-| AnalysysAgent\_GBK.min.js | GBK转码模块SDK | 非ES6可选 | 全部 |
-| AnalysysAgent\_GBK.es6.min.js | GBK转码模块SDK | ES6可选 | 全部 |
-| AnalysysAgent\_GBK.amd.min.js | GBK转码模块SDK | AMD可选 | 全部 |
-| AnalysysAgent\_PageViewStayTime.min.js | 页面访问时长模块SDK | 非ES6可选 | 4.4.1及以上 |
-| AnalysysAgent\_PageViewStayTime.es6.min.js | 页面访问时长模块SDK | ES6可选 | 4.4.1及以上 |
-| AnalysysAgent\_PageViewStayTime.amd.min.js | 页面访问时长模块SDK | AMD可选 | 4.4.1及以上 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">js&#x6587;&#x4EF6;</th>
+      <th style="text-align:center">&#x529F;&#x80FD;&#x63CF;&#x8FF0;</th>
+      <th style="text-align:center">&#x662F;&#x5426;&#x5FC5;&#x987B;</th>
+      <th style="text-align:left">&#x670D;&#x52A1;&#x7AEF;&#x7248;&#x672C;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_JS_SDK.min.js</td>
+      <td style="text-align:center">&#x57FA;&#x7840;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">&#x975E;ES6&#x5FC5;&#x987B;</td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_JS_SDK.es6.min.js</td>
+      <td style="text-align:center">&#x57FA;&#x7840;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">ES6&#x5FC5;&#x987B;</td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_JS_SDK.amd.min.js</td>
+      <td style="text-align:center">&#x57FA;&#x7840;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">AMD&#x5FC5;&#x987B;</td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_JS_SDK_VISUAL.min.js</td>
+      <td style="text-align:center">&#x53EF;&#x89C6;&#x5316;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#ke-shi-hua-mai-dian-jie-shao">&#x53EF;&#x89C6;&#x5316;&#x57CB;&#x70B9;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_JS_SDK_HEATMAP.min.js</td>
+      <td style="text-align:center">&#x70ED;&#x56FE;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#re-tu-mo-kuai-jie-shao">&#x70ED;&#x56FE;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">4.3.0&#x53CA;&#x4EE5;&#x4E0A;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_Encrypt.min.js</td>
+      <td style="text-align:center">&#x52A0;&#x5BC6;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#jia-mi-mo-kuai-jie-shao">&#x52A0;&#x5BC6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_Encrypt.es6.min.js</td>
+      <td style="text-align:center">&#x52A0;&#x5BC6;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#jia-mi-mo-kuai-jie-shao">&#x52A0;&#x5BC6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_Encrypt.amd.min.js</td>
+      <td style="text-align:center">&#x52A0;&#x5BC6;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#jia-mi-mo-kuai-jie-shao">&#x52A0;&#x5BC6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_GBK.min.js</td>
+      <td style="text-align:center">GBK&#x8F6C;&#x7801;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#gbk-zhuan-ma-mo-kuai-sdk-jie-shao">GBK&#x8F6C;&#x7801;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_GBK.es6.min.js</td>
+      <td style="text-align:center">GBK&#x8F6C;&#x7801;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#gbk-zhuan-ma-mo-kuai-sdk-jie-shao">GBK&#x8F6C;&#x7801;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_GBK.amd.min.js</td>
+      <td style="text-align:center">GBK&#x8F6C;&#x7801;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#gbk-zhuan-ma-mo-kuai-sdk-jie-shao">GBK&#x8F6C;&#x7801;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_PageViewStayTime.min.js</td>
+      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
+      <td
+      style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#ye-mian-fang-wen-shi-chang-mo-kuai-jie-shao">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+        </td>
+        <td style="text-align:left">4.4.1&#x53CA;&#x4EE5;&#x4E0A;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_PageViewStayTime.es6.min.js</td>
+      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
+      <td
+      style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#ye-mian-fang-wen-shi-chang-mo-kuai-jie-shao">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+        </td>
+        <td style="text-align:left">4.4.1&#x53CA;&#x4EE5;&#x4E0A;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_PageViewStayTime.amd.min.js</td>
+      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
+      <td
+      style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#ye-mian-fang-wen-shi-chang-mo-kuai-jie-shao">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+        </td>
+        <td style="text-align:left">4.4.1&#x53CA;&#x4EE5;&#x4E0A;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_ExposurePoint.min.js</td>
+      <td style="text-align:center">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#bao-guang-dian-cai-ji-mo-kuai-jie-shao">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_ExposurePoint.es6.min.js</td>
+      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
+      <td
+      style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#bao-guang-dian-cai-ji-mo-kuai-jie-shao">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+        </td>
+        <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_ExposurePoint.amd.min.js</td>
+      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
+      <td
+      style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#bao-guang-dian-cai-ji-mo-kuai-jie-shao">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
+        </p>
+        </td>
+        <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 快速集成
 
@@ -191,26 +350,30 @@ requirejs(["./AnalysysAgent_JS_SDK.amd.min"], function(AnalysysAgent) {
 
 ### 配置参数
 
-* _appkey_\(必须\) 在网站获取的 AppKey
-* _debugMode_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
-* _uploadURL_\(必须\) 设置上传数据接口
-* _visitorConfigURL_\(如使用可视化埋点，则必须\) 设置可视化配置获取接口
-* _name_ 设置 JS SDK 全局对象别名
-* _auto_ 设置自动采集页面打开事件：false - 关闭自动采集；true - 开启自动采集\(默认\)
-* _autoTrack_ 设置是否启用全埋点功能：false - 不启用全埋点功能\(默认\)；true - 启用全埋点功能（SDK 版本 4.4.0 及以后支持）
-* _autoHeatmap_ 设置是否启用热图功能：false - 不启用热图功能\(默认\)；true - 启用热图功能
-* autoWebstay 在开启热图功能\(autoHeatmap设置为true\)时，设置是否追踪页面滚动行为：false - 在开启热图功能\(autoHeatmap设置为true\)时，不追踪页面滚动行为；true - 在开启热图功能\(autoHeatmap设置为true\)时，追踪页面滚动行为\(默认\)
-* _hash_ 设置检测 url hash 变化：false - 关闭监测url hash变化；true - 开启监测url hash变化\(默认\)
-* _autoProfile_ 设置是否追踪新用户的首次属性：false - 不追踪新用户的首次属性；true - 追踪新用户的首次属性\(默认\)
-* _encryptType_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
-* pageProperty 设置自动采集时页面自定义属性；类型：Object
-* pageViewBlackList 设置页面统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
-* heatMapBlackList 设置热图统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
-* autoClickBlackList 设置全埋点统计黑名单；类型：String/内部元素为String或Function的Array/Function；（SDK 版本 4.4.0 及以后支持）
-* SDKFileDirectory 设置可视化模块SDK与热图模块SDK存放目录。类型：String；（SDK 版本 4.4.0 及以后支持）
-* _sendType_ 设置上传日志方式。'img' - 使用image标签的图片链接地址上传日志\(默认\)；'post'-使用Ajax中的post请求上传日志
-* _webstayDuration_ 设置追踪页面滚动行为时，最大停留时长。默认值：5小时。类型：Number。单位：毫秒
-* _cross\_subdomain 设置在二级域名下存储cookie：false - 在自身域名下存储cookie；true - 在二级域名下存储cookie\(默认\)_
+* _`appkey`_\(必须\) 在网站获取的 AppKey
+* _`debugMode`_ 设置调试模式：0 - 关闭调试模式\(默认\)；1 - 开启调试模式，数据不入库；2 - 开启调试模式，数据入库
+* _`uploadURL`_\(必须\) 设置上传数据接口
+* _`visitorConfigURL`_\(如使用可视化埋点，则必须\) 设置可视化配置获取接口
+* _`name`_ 设置 JS SDK 全局对象别名
+* _`auto`_ 设置自动采集页面打开事件：`false` - 关闭自动采集；`true` - 开启自动采集\(默认\)
+* _`autoTrack`_ 设置是否启用全埋点功能：`false` - 不启用全埋点功能\(默认\)；`true` - 启用全埋点功能（SDK 版本 4.4.0 及以后支持）
+* _`autoHeatmap`_ 设置是否启用热图功能：`false` - 不启用热图功能\(默认\)；`true` - 启用热图功能
+* `autoWebstay` 在开启热图功能\(`autoHeatmap`设置为`true`\)时，设置是否追踪页面滚动行为：false - 在开启热图功能\(`autoHeatmap`设置为`true`\)时，不追踪页面滚动行为；`true` - 在开启热图功能\(`autoHeatmap`设置为true\)时，追踪页面滚动行为\(默认\)
+* _`hash`_ 设置检测 url hash 变化：`false` - 关闭监测url hash变化；`true` - 开启监测url hash变化\(默认\)
+* _`autoProfile`_ 设置是否追踪新用户的首次属性：`false` - 不追踪新用户的首次属性；`true` - 追踪新用户的首次属性\(默认\)
+* _`encryptType`_ 设置是否对上传数据加密：0 - 对上传数据不加密\(默认\)；1 - 对上传数据进行AES 128位ECB加密；2 对上传数据进行AES 128位CBC加密
+* `pageProperty` 设置自动采集时页面自定义属性；类型：`JSON`
+* `pageViewBlackList` 设置页面统计黑名单；类型：`String`/`内部元素为String或Function的Array`/`Function`；（SDK 版本 4.4.0 及以后支持）
+* `heatMapBlackList` 设置热图统计黑名单；类型：`String`/`内部元素为String或Function的Array/Function`；（SDK 版本 4.4.0 及以后支持）
+* `autoClickBlackList` 设置全埋点统计黑名单；类型：`String`/`内部元素为String或Function的Array/Function`；（SDK 版本 4.4.0 及以后支持）
+* `SDKFileDirectory` 设置可视化模块SDK与热图模块SDK存放目录。类型：`String`；（SDK 版本 4.4.0 及以后支持）
+* _`sendType`_ 设置上传日志方式。`img`- 使用image标签的图片链接地址上传日志\(默认\)；`post`-使用Ajax中的post请求上传日志
+* _`webstayDuration`_ 设置追踪页面滚动行为时，最大停留时长。默认值：5小时。类型：`Number`。单位：毫秒
+* _`cross_subdomain` 设置在二级域名下存储cookie：`false` - 在自身域名下存储cookie；`true` - 在二级域名下存储cookie\(默认\)_
+* `sendDataTimeout`设置上报日志超时时间 。默认：`10000`。单位：毫秒。类型：`Number` （SDK 版本 4.5.1 及以后支持）
+* `getDataTimeout`设置获取可视化埋点列表的超时时间。默认：`10000`。单位：毫秒。 类型：`Number` （SDK 版本 4.5.1 及以后支持）
+* `trackList` 设置除默认可输出元素外的可触控元素列表。类型：`Array`/`String（同元素选择器，例如：div、div.className、div#id等）`/ `Function（返回值为Boolean）`（SDK 版本 4.5.1 及以后支持）
+* `user_click_property` 设置全部或某个全埋点元素自定义属性。类型：`JSON(属性值为返回该元素自定义属性值的Function)`/`Function（返回值为该元素的自定义属性的JSON）`（SDK 版本 4.5.1 及以后支持）
 
 #### appkey
 
@@ -591,7 +754,7 @@ sendType 为设置日志上传方式。可根据自身需要进行增加。
 ```
 
 {% hint style="info" %}
-注意：img类型支持需要方舟4.2.2版本支持，如您使用的方舟版本低于4.2.2版本请更换发送方式
+：img类型支持需要方舟4.2.2版本支持，如您使用的方舟版本低于4.2.2版本请更换发送方式
 {% endhint %}
 
 #### webstayDuration
@@ -624,7 +787,95 @@ cross\_subdomain 为_设置在二级域名下存储cookie：false - 在自身域
 {
     cross_subdomain:true//或删除cross_subdomain参数。
 }
+```
 
+#### sendDataTimeout
+
+sendDataTimeout 设置上报日志超时时间 。默认：`10000`。单位：毫秒。类型：`Number` 可根据自身需要进行增加。（SDK 版本 4.5.1 及以后支持）
+
+* 类型：`Number`
+
+```javascript
+
+//设置为设置上报日志超时时间为500毫秒
+{
+    sendDataTimeout:500
+}
+```
+
+#### getDataTimeout
+
+getDataTimeout设置获取可视化埋点列表的超时时间。默认：`10000`。单位：毫秒。 类型：`Number` （SDK 版本 4.5.1 及以后支持）
+
+* 类型：`Number`
+
+```javascript
+
+//设置获取可视化埋点列表的超时时间为500毫秒
+{
+    getDataTimeout:500
+}
+```
+
+#### trackList
+
+trackList 设置除默认可输出元素外的可触控元素列表。类型：（SDK 版本 4.5.1 及以后支持）
+
+* 类型：`Array`/`String（同元素选择器，例如：div、div.className、div#id等）`/ `Function（返回值为Boolean）`
+
+```javascript
+//设置已可获取id为banner的元素为可触控元素
+{
+    trackList:[document.getElementById('banner')]
+}
+//设置元素选择器为#banner的元素为可触控元素
+{
+    trackList:'#banner'
+}
+//设置当前点击元素的id为banner为可触控元素
+{
+    trackList:function(ele){
+        if(ele.id === 'banner'){
+            return true
+        }
+        return false
+    }
+}
+```
+
+#### user\_click\_property
+
+user\_click\_property 设置全部或某个全埋点元素自定义属性。（SDK 版本 4.5.1 及以后支持）
+
+* 类型：`JSON(属性值为返回该元素自定义属性值的Function)`/`Function（返回值为该元素的自定义属性的JSON）`
+
+```javascript
+//设置所有全埋点元素的自定义属性为{'isClickEle':true}
+{
+    user_click_property:{'isClickEle':true}
+}
+//设置id为banner全埋点元素的自定义属性为{'isClickEle':true}
+// 其他全埋点元素自定义属性为{'isClickEle':false}
+{
+    user_click_property:{'isClickEle':function(ele){
+            if(ele.id === 'banner'){
+                return true
+            }
+            return false
+        }
+    }
+}
+
+//设置id为banner全埋点元素的自定义属性为{'isClickEle':true}
+// 其他全埋点元素不设置自定义属性
+{
+    user_click_property:function(ele){
+        if(ele.id === 'banner'){
+            return {'isClickEle':true}
+        }
+        return {}
+    }
+}
 ```
 
 ## 基础模块介绍
