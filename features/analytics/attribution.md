@@ -72,7 +72,7 @@
 
 * 细分维度：
 
-通过细分维度，将不同维度值的触点事件视为更细粒度的用户触点
+通过细分维度，将不同维度值的触点事件视为更细粒度的用户触点。
 
 ### **3. 归因模型**
 
@@ -121,21 +121,21 @@
     <tr>
       <td style="text-align:left">&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6B21;&#x6570;</td>
       <td
-      style="text-align:left">&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6B21;&#x6570;&#x3002;</td>
+      style="text-align:left">&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6B21;&#x6570;</td>
     </tr>
     <tr>
       <td style="text-align:left">&#x6709;&#x6548;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6B21;&#x6570;</td>
       <td
-      style="text-align:left">&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5E26;&#x6765;&#x8F6C;&#x5316;&#x7684;&#x89E6;&#x70B9;&#x5373;&#x4E3A;&#x6709;&#x6548;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x3002;</td>
+      style="text-align:left">&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5E26;&#x6765;&#x8F6C;&#x5316;&#x7684;&#x89E6;&#x70B9;&#x5373;&#x4E3A;&#x6709;&#x6548;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;</td>
     </tr>
     <tr>
       <td style="text-align:left">&#x8F6C;&#x5316;&#x8D21;&#x732E;&#x5EA6;</td>
-      <td style="text-align:left">&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x5BF9;&#x603B;&#x8F6C;&#x5316;&#x91CF;&#x6307;&#x6807;&#x7684;&#x8D21;&#x732E;&#x5EA6;&#x3002;</td>
+      <td style="text-align:left">&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x5BF9;&#x603B;&#x8F6C;&#x5316;&#x91CF;&#x6307;&#x6807;&#x7684;&#x8D21;&#x732E;&#x5EA6;</td>
     </tr>
     <tr>
       <td style="text-align:left">&#x8F6C;&#x5316;&#x8D21;&#x732E;&#x91CF;</td>
       <td style="text-align:left">
-        <p>&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x5BF9;&#x603B;&#x8F6C;&#x5316;&#x6307;&#x6807;&#xFF08;&#x5982;&#x76EE;&#x6807;&#x4E8B;&#x4EF6;&#x603B;&#x6B21;&#x6570;&#xFF09;&#x7684;&#x8D21;&#x732E;&#x91CF;&#xFF1B;</p>
+        <p>&#x7EDF;&#x8BA1;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x89E6;&#x70B9;&#x4E8B;&#x4EF6;&#x5BF9;&#x603B;&#x8F6C;&#x5316;&#x6307;&#x6807;&#xFF08;&#x5982;&#x76EE;&#x6807;&#x4E8B;&#x4EF6;&#x603B;&#x6B21;&#x6570;&#xFF09;&#x7684;&#x8D21;&#x732E;&#x91CF;</p>
         <p>&#x8F6C;&#x5316;&#x8D21;&#x732E;&#x91CF;=&#x603B;&#x4F53;&#x8F6C;&#x5316;&#x91CF;*&#x8F6C;&#x5316;&#x8D21;&#x732E;&#x5EA6;</p>
       </td>
     </tr>
