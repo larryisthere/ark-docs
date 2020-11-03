@@ -13,7 +13,7 @@ Android App 中如需加载 H5 页面，需要同时集成Android SDK与JS SDK�
 集成方式查看[JS SDK 使用说明](https://docs.analysys.cn/ark/integration/sdk/js)
 
 {% hint style="info" %}
-版本提醒：需使用 Android SDK 4.5.2及 JS SDK 4.5.1以版本
+版本提醒：需使用 Android SDK 4.5.2及 JS SDK 4.5.1以上版本
 {% endhint %}
 
 ## 2. 代码集成
