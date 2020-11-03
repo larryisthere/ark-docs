@@ -34,15 +34,21 @@
 
 ![](../../.gitbook/assets/capto_capture-2020-11-03_16-10-11_.jpg)
 
+![](../../.gitbook/assets/capto_capture-2020-11-03_16-10-11_.jpg)
+
 ### 1. **目标事件定义**
 
 * 目标事件：
 
 ![](../../.gitbook/assets/image%20%28510%29.png)
 
+![](../../.gitbook/assets/image%20%28510%29.png)
+
 标志用户完成一次转化的事件，如“支付订单”**；**支持选择任一元事件作为目标事件。
 
 * 目标事件的前向关联事件：
+
+![](../../.gitbook/assets/image%20%28507%29.png)
 
 ![](../../.gitbook/assets/image%20%28507%29.png)
 
@@ -56,9 +62,13 @@
 
 ![](../../.gitbook/assets/capto_capture-2020-11-03_15-58-53_.jpg)
 
+![](../../.gitbook/assets/capto_capture-2020-11-03_15-58-53_.jpg)
+
 通过”关联属性“，能够更加精确地限定前向关联事件的生效条件：当前向关联事件与目标事件的某一共有属性值相等时，该前向关联事件的定义才生效。
 
 ### 2. **触点事件定义**
+
+![](../../.gitbook/assets/image%20%28505%29.png)
 
 ![](../../.gitbook/assets/image%20%28505%29.png)
 
@@ -80,6 +90,8 @@
 
 ![](../../.gitbook/assets/image%20%28504%29.png)
 
+![](../../.gitbook/assets/image%20%28504%29.png)
+
 目前，方舟提供了5种归因模型供您选择，模型说明详见下表：
 
 | 模型 | 模型说明 |
@@ -94,15 +106,21 @@
 
 ![](../../.gitbook/assets/image%20%28509%29.png)
 
+![](../../.gitbook/assets/image%20%28509%29.png)
+
 所谓窗口期，即为从触发触点事件开始，到触发目标事件，完成一次目标转化的时间限制。
 
 ### 5. **查询时间范围**
 
 ![](../../.gitbook/assets/image%20%28503%29.png)
 
+![](../../.gitbook/assets/image%20%28503%29.png)
+
 查询时间范围，为目标事件的发生时间范围。
 
 ## **查询结果说明**
+
+![](../../.gitbook/assets/capto_capture-2020-11-03_16-08-08_.jpg)
 
 ![](../../.gitbook/assets/capto_capture-2020-11-03_16-08-08_.jpg)
 
@@ -143,6 +161,8 @@
 </table>
 
 通过切换“转化目标”，可以查看触点对不同指标的贡献度。
+
+![](../../.gitbook/assets/image%20%28506%29.png)
 
 ![](../../.gitbook/assets/image%20%28506%29.png)
 
