@@ -129,12 +129,10 @@
 {% hint style="warning" %}
 请注意：
 
-维度表数据文件，必须遵循一定的格式规范；详细规范请参考《维度表数据文件规范》。
+维度表数据文件，必须遵循一定的格式规范；详细规范请参考[《维度表数据文件规范》](https://www.analysysdata.com//file/202011/33050611342020.pdf	)。
 
 创建和编辑文件时，建议尽量使用纯文本编辑器；避免使用Microsoft Excel 和 WPS 表格这类电子表格软件，容易导致数据文件错误。
 {% endhint %}
-
-{% file src="../../../.gitbook/assets/wei-du-biao-shu-ju-wen-jian-gui-fan-.pdf" %}
 
 **第二步：创建维度表并导入数据**
 
