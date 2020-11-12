@@ -10,7 +10,8 @@
     * [3. 创建分析模型](quick-start-guide/getting-started/analystics.md)
   * [附：埋点方案设计](quick-start-guide/tracking-plan.md)
   * [附：数据分析思路](quick-start-guide/analystics-method.md)
-* [产品更新日志](release-notes.md)
+* [产品更新日志](release-notes/README.md)
+  * [V5.1 升级可视化埋点、增强权限控制……](release-notes/v5.1.md)
 * [我要反馈](https://www.analysysdata.com/forum/index)
 * [⁉️ 文档访问遇到了问题？](docs-faq.md)
 
