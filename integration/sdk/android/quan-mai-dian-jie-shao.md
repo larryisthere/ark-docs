@@ -16,7 +16,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         //添加易观全埋点插件依赖，当前是使用的全埋点版本号为1.0.2
-        classpath 'cn.com.analysys:analysys-allgro-plugin:1.0.2' 
+        classpath 'cn.com.analysys:analysys-allgro-plugin:1.1.2' 
     }
     ...
 }
@@ -31,7 +31,7 @@ apply plugin: 'com.analysys.android.plugin'
 
 dependencies {
    //易观SDK依赖，当前是使用的版本号为4.4.9
-   implementation 'cn.com.analysys:analysys-arkanalysys:4.4.9'
+   implementation 'cn.com.analysys:analysys-arkanalysys:4.5.2'
 }
 ```
 {% endtab %}
