@@ -168,25 +168,23 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
     </tr>
     <tr>
       <td style="text-align:center">AnalysysAgent_ExposurePoint.es6.min.js</td>
-      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
-      <td
-      style="text-align:center">
+      <td style="text-align:center">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
         <p>&#x53EF;&#x9009;</p>
         <p><a href="plus.md#bao-guang-dian-cai-ji-mo-kuai-jie-shao">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
         </p>
-        </td>
-        <td style="text-align:left">&#x5168;&#x90E8;</td>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
     </tr>
     <tr>
       <td style="text-align:center">AnalysysAgent_ExposurePoint.amd.min.js</td>
-      <td style="text-align:center">&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x65F6;&#x957F;&#x6A21;&#x5757;SDK</td>
-      <td
-      style="text-align:center">
+      <td style="text-align:center">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
         <p>&#x53EF;&#x9009;</p>
         <p><a href="plus.md#bao-guang-dian-cai-ji-mo-kuai-jie-shao">&#x66DD;&#x5149;&#x70B9;&#x91C7;&#x96C6;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</a>
         </p>
-        </td>
-        <td style="text-align:left">&#x5168;&#x90E8;</td>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
     </tr>
   </tbody>
 </table>
