@@ -7,10 +7,10 @@
 {% hint style="success" %}
 开发者如果想要更及时的获取到SDK更新日志，可以按下面步骤订阅：
 
-1. 选择自己关注的SDK
-2. 点击关注Watch
+1. 选择自己关注的 SDK
+2. 点击关注 Watch
 3. 自定义通知
-4. 选择Releases
+4. 选择 Releases
 
 即可在有更新时，收到系统邮件。
 {% endhint %}
