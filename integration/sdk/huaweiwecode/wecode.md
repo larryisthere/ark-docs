@@ -8,8 +8,8 @@ description: 华为WeCode小程序 SDK 标准版
 
 {% hint style="info" %}
 SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-weCode-sdk/releases](https://github.com/analysys/ans-weCode-sdk/releases)  
-Gitee地址：[https://gitee.com/Analysys/ans-weCode-sdk/releases](https://gitee.com/Analysys/ans-weCode-sdk/releases)  
+Github地址\(推荐\)：[https://github.com/analysys/ans-wecode-sdk/releases](https://github.com/analysys/ans-wecode-sdk/releases)  
+Gitee地址：[https://gitee.com/Analysys/ans-wecode-sdk/releases](https://gitee.com/Analysys/ans-wecode-sdk/releases)  
 Releases中含有更新说明请您阅读，接口使用请参考本文档。
 {% endhint %}
 
