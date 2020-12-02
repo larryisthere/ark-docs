@@ -20,7 +20,7 @@
 | [钉钉小程序 SDK ](dingtalk/) | 用于钉钉小程序 |
 | [QQ小程序 SDK](qq-xiao-cheng-xu-sdk/) | 用于QQ小程序 |
 | [快应用 SDK](kuai-ying-yong-sdk.md) | 用于快应用联盟小程序 |
-|  |  |
+| 华为WeCode小程序 | 用于华为WeCode小程序 |
 | [Flutter SDK](https://docs.analysys.cn/ark/integration/sdk/flutter-sdk) | 用与Flutter开发的应用 |
 | [Reactnative SDK](https://docs.analysys.cn/ark/integration/sdk/reactnative-sdk) | 用与Reactnative开发的应用 |
 
