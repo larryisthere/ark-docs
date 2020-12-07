@@ -208,6 +208,7 @@ requirejs(["./AnalysysAgent_JS_SDK.amd.min"], function(AnalysysAgent) {
 
 ```javascript
 AnalysysAgent.track(eventName);
+AnalysysAgent.track(eventName, callback);
 AnalysysAgent.track(eventName, properties);
 AnalysysAgent.track(eventName, properties, callback);
 ```

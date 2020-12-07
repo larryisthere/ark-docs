@@ -933,7 +933,14 @@ AnalysysAgent.pageView(pageName, properties, callback);
 ```
 
 * pageName：页面标识，为字符串，取值长度 1 - 255字符。
-* properties：页面信息，为K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符。value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：页面信息，为K-V键值对，最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符。
+  * value支持类型：
+    * String，长度范围1-255字符
+    * Number
+    * Boolean
+    * JSON
+    * 内部元素为String的Array
+    * 返回值String/Number/Boolean/的Function\(需SDK版本4.4.1及以后支持\)
 * callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
@@ -978,12 +985,20 @@ AnalysysAgent.pageView("商品页", properties);
 
 ```javascript
 AnalysysAgent.track(eventName);
+AnalysysAgent.track(eventName, callback);
 AnalysysAgent.track(eventName, eventInfo);
 AnalysysAgent.track(eventName, eventInfo, callback);
 ```
 
 * eventName：自定义事件ID标识，以字母开头的字符串，**必须由**字母、数字、下划线组成，`$` 开头为预置事件/属性，**不支持**乱码、中文、空格等，长度范围1-99字符。
-* properties：自定义属性，K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符。value支持类型：String/Number/Boolean/JSON/内部元素为String的Array，若为字符串，长度范围1-255字符。
+* properties：自定义属性，K-V键值对，用于对事件的描述。最多包含100条，且`key`是以字母开头的字符串，**必须由** 字母、数字、下划线组成，字母不区分大小写，**不支持** 乱码、中文、空格等，长度范围1-99字符。
+  * value支持类型：
+    * String，长度范围1-255字符
+    * Number
+    * Boolean
+    * JSON
+    * 内部元素为String的Array
+    * 返回值String/Number/Boolean/的Function\(需SDK版本4.4.1及以后支持\)
 * callback：数据发送完毕后的回调函数，支持类型：Function\(需SDK版本4.4.1及以后支持\)
 
 示例：
@@ -1072,7 +1087,10 @@ AnalysysAgent.alias("sanbo", callback);
 > **属性值**
 
 ```text
-支持部分类型：String/Number/Boolean/JSON/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+支持部分类型：String/Number/Boolean/JSON/内部元素为String的Array/Function；
+若为字符串，则取值长度 1 - 255字符；
+若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+若为 Function，则需有返回值，且返回值类型为String/Number/Boolean。(需SDK版本4.4.1及以后支持)
 ```
 
 #### 设置用户固有属性
@@ -1339,7 +1357,10 @@ AnalysysAgent.getDistinctId(callback);
 > **属性值**
 
 ```text
-支持部分类型：String/Number/boolean/JSON/内部元素为String的Array；若为字符串，则取值长度 1 - 255字符；若为 Array 或 JSON,则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+支持部分类型：String/Number/Boolean/JSON/内部元素为String的Array/Function；
+若为字符串，则取值长度 1 - 255字符；
+若为 Array 或 JSON，则最多包含 100条，且 key 约束条件与属性名称一致，value 取值长度 1 - 255字符
+若为 Function，则需有返回值，且返回值类型为String/Number/Boolean。(需SDK版本4.4.1及以后支持)
 ```
 
 #### 注册通用属性
