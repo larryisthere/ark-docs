@@ -37,7 +37,7 @@
 
 3）填写LDAP 参数配置项，保存修改好的参数
 
-下滑页面，在`Advanced ark-web-app-api-server`的类别下找到`arkweb.ldap` 开头的参数，按照LDAP服务情况填写正确的LDAP接入配置，确保配置无误后，点击右上角 `Save`按钮进行保存。操作步骤如下：
+下滑页面，在`Advanced ark-web-app-api-server`的类别下找到`arkweb.ldap` 开头的参数，按照LDAP服务情况填写正确的LDAP接入配置（如果参数中包含中文，那么需要提前对该项参数进行ascii 转码），确保配置无误后，点击右上角 `Save`按钮进行保存。操作步骤如下：
 
 ![](../../.gitbook/assets/image%20%28362%29.png)
 
