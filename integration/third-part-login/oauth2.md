@@ -98,14 +98,14 @@ security.oauth2.client.user-authorization-uri=https://github.com/login/oauth/aut
 | **参数** | 是否必填 | 参数说明 |
 | :--- | :--- | :--- |
 | arkweb.oauth2.enable | Y | 是否开启OAuth2认证，开启则需要设置为true，默认为false |
-| arkweb.oauth2.url.base\_url | N | 方舟产品主页的 根域名 |
+| arkweb.oauth2.url.base\_url | Y | 方舟产品主页的 根域名 |
 | arkweb.oauth2.user\_info.name\_key | N | 在获取用户信息中，使用哪个属性作为方舟用户必需username。 默认为：preferred\_username |
 | security.oauth2.client.scope | Y | 获取用户信息需要的权限列表 |
 | security.oauth2.client.client\_id | Y | OAuth 2.0 服务端为方舟授权登录配置的客户端ID |
 | security.oauth2.client.client\_secret | Y | OAuth 2.0 服务端为方舟授权登录配置的客户端密钥 |
-| security.oauth2.resource.user-info-uri | N | OAuth 2.0 获取该用户信息的接口地址 |
-| security.oauth2.client.access-token-uri | N | OAuth 2.0 获取 Access Token 的地址 |
-| security.oauth2.client.user-authorization-uri | N | OAuth 2.0 的授权地址 |
+| security.oauth2.resource.user-info-uri | Y | OAuth 2.0 获取该用户信息的接口地址 |
+| security.oauth2.client.access-token-uri | Y | OAuth 2.0 获取 Access Token 的地址 |
+| security.oauth2.client.user-authorization-uri | Y | OAuth 2.0 的授权地址 |
 
 {% hint style="info" %}
 以上内容没有解答我的问题？[点击我进入方舟论坛去反馈](https://www.analysysdata.com/forum/index) 🚀
