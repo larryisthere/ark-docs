@@ -745,7 +745,7 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 
 | 属性ID | 属性显示名称 | 数据类型 | 属性说明 | Android | iOS | JS | 小程序 |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| $original\_id | 临时ID | 字符串 | 系统生产的临时ID | Y | Y | Y | Y |
+| $original\_id | 匿名ID | 字符串 | 实名绑定前的匿名ID | Y | Y | Y | Y |
 
 ### APP 推广监测预置事件
 
@@ -803,11 +803,11 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 
 | 属性ID | 属性名称 | 属性值数据类型 | 属性说明 | Android 自动采集 | iOS 自动采集 | JS 自动采集 | 小程序 自动采集 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| distinct\_id | 唯一ID | 数值 | 服务器端生成 | S | S | S | S |
-| xwho | 用户ID | 字符串 |  | Y | Y | Y | Y |
-| xwhen | 用户属性更新时间 | 日期时间 |  | Y | Y | Y | Y |
-| $original\_id | 设备ID | 字符串 | 绑定的上一个设备ID | S | S | S | S |
-| $original\_id\_list | 设备ID列表 | 字符串 | 所有绑定过的ID列表 | S | S | S | S |
+| distinct\_id | 唯一ID | 数值 | 方舟系统生成的用户唯一ID | S | S | S | S |
+| xwho | 用户ID | 字符串 | 行为主体 | Y | Y | Y | Y |
+| xwhen | 用户属性更新时间 | 日期时间 | 用户属性更新时间 | Y | Y | Y | Y |
+| $original\_id | 匿名ID | 字符串 | 实名绑定前的匿名ID | S | S | S | S |
+| $original\_id\_list | 匿名ID列表 | 字符串 | 实名绑定过的匿名ID列表 | S | S | S | S |
 | $idfv | IDFV | 字符串 | IDFV | - | N | - | - |
 | $idfa | IDFA | 字符串 | IDFA | - | N | - | - |
 | $mac | MAC | 字符串 | MAC | Y | - | - | - |
