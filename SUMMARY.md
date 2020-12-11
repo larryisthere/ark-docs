@@ -35,7 +35,7 @@
   * [留存分析](features/analytics/retention.md)
   * [转化漏斗](features/analytics/funnel.md)
   * [智能路径](features/analytics/pathfinder.md)
-  * [归因分析](features/analytics/attribution.md)
+  * [归因分析（Beta）](features/analytics/attribution.md)
   * [热图分析](features/analytics/heatmap/README.md)
     * [Web/H5 热图](features/analytics/heatmap/web.md)
     * [APP 热图](features/analytics/heatmap/app.md)
