@@ -104,7 +104,7 @@
     * [SDK Gradle集成方式](integration/sdk/android/fang-zhou-gradle-ji-cheng-fang-shi.md)
     * [多渠道打包](integration/sdk/android/channel-packing.md)
     * [易观小工具](integration/sdk/android/yi-guan-xiao-gong-ju.md)
-    * [合规相关](integration/sdk/android/he-gui-xiang-guan.md)
+    * [合规相关](integration/sdk/android/comp.md)
   * [iOS SDK](integration/sdk/ios/README.md)
     * [快速集成](integration/sdk/ios/ios-quick.md)
     * [全埋点介绍](integration/sdk/ios/quan-mai-dian-jie-shao.md)
