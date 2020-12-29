@@ -186,6 +186,36 @@ Releases中含有更新说明请您阅读，接口使用请参考本文档。
       </td>
       <td style="text-align:left">&#x5168;&#x90E8;</td>
     </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_MPAAS.min.js</td>
+      <td style="text-align:center">mPaas&#x901A;&#x4FE1;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#mpaas-mo-kuai-jie-shao">mPaas&#x901A;&#x4FE1;&#x6A21;&#x5757;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_MPAAS.es6.min.js</td>
+      <td style="text-align:center">mPaas&#x901A;&#x4FE1;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#mpaas-mo-kuai-jie-shao">mPaas&#x901A;&#x4FE1;&#x6A21;&#x5757;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">AnalysysAgent_MPAAS.amd.min.js</td>
+      <td style="text-align:center">mPaas&#x901A;&#x4FE1;&#x6A21;&#x5757;SDK</td>
+      <td style="text-align:center">
+        <p>&#x53EF;&#x9009;</p>
+        <p><a href="plus.md#mpaas-mo-kuai-jie-shao">mPaas&#x901A;&#x4FE1;&#x6A21;&#x5757;</a>
+        </p>
+      </td>
+      <td style="text-align:left">&#x5168;&#x90E8;</td>
+    </tr>
   </tbody>
 </table>
 
@@ -380,7 +410,7 @@ requirejs(["./AnalysysAgent_JS_SDK.amd.min"], function(AnalysysAgent) {
   * 2 对上传数据进行AES 128位CBC加密
 * `pageProperty` 设置自动采集时页面自定义属性
   * 类型：JSON
-* `pageViewBlackList` 设置页面统计黑名单
+* `pageViewBlackList` 设置自动采集页面统计黑名单
   * 类型：String/内部元素为String或Function的Array/Function
   * SDK 版本 4.4.0 及以后支持
 * `heatMapBlackList` 设置热图统计黑名单
@@ -643,7 +673,7 @@ pageProperty 为设置自动采集时页面自定义属性。可根据自身需�
 
 #### pageViewBlackList
 
-pageViewBlackList 为设置页面统计黑名单。根据设置不在采集设置中的页面内所有的页面事件，包含用户手动调用pageView API。（SDK 版本 4.4.0 及以后支持） 可根据自身需要进行增加。
+pageViewBlackList 为设置自动采集页面统计黑名单。根据设置不在采集设置中的页面内自动采集的页面事件，不包含用户手动调用pageView API。（SDK 版本 4.4.0 及以后支持） 可根据自身需要进行增加。
 
 * 类型：String/内部元素为String或Function的Array/Function。
 

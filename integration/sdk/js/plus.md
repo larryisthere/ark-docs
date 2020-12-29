@@ -192,7 +192,7 @@ if(self !== window.top){
 //1.同步集成
 //将以下JS代码添加到接入JS SDK代码的上方。
 //将AnalysysAgent_PageViewStayTime.min.js文件访问地址替换到script标签中的src位置
-<script type="text/javascript" src="/*设置为非ES页面访问时长DK实际存放地址*/"></script>
+<script type="text/javascript" src="/*设置为非ES6页面访问时长SDK实际存放地址*/"></script>
 ...
 //集成JS SDK
 
@@ -274,7 +274,7 @@ requirejs('./AnalysysAgent_PageViewStayTime.amd.min.js')
 //1.同步集成
 //将以下JS代码添加到接入JS SDK代码的上方。
 //将AnalysysAgent_ExposurePoint.min.js文件访问地址替换到script标签中的src位置
-<script type="text/javascript" src="/*设置为非ES页面访问时长DK实际存放地址*/"></script>
+<script type="text/javascript" src="/*设置为非ES6页面访问时长SDK实际存放地址*/"></script>
 ...
 //集成JS SDK
 
@@ -294,5 +294,37 @@ require('ans-javascript-sdk/sdk/AnalysysAgent_ExposurePoint.amd.min.js')
 //获取AAnalysysAgent_ExposurePoint.amd.min.js，
 //假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
 requirejs('./AnalysysAgent_ExposurePoint.amd.min.js')
+```
+
+## mPaas模块介绍
+
+mPaas通信模块SDK，为iOS端使用mPaas框架H5容器且使用Hybrid模式时，通过自定义 JSAPI方式进行JS SDK与iOS SDK之间通信。H5页面中需集成JS SDK与该插件。Android端H5容器内H5页面无需集成该插件。
+
+### 集成方式
+
+```javascript
+//1.同步集成
+//将以下JS代码添加到接入JS SDK代码的上方。
+//将AnalysysAgent_MPAAS.min.js文件访问地址替换到script标签中的src位置
+<script type="text/javascript" src="/*设置为非ES6mPaas通信模块SDK实际存放地址*/"></script>
+...
+//集成JS SDK
+
+//2.ES6集成
+//如为自行下载SDK。将以下代码添加至集成JS SDK代码位置即可。
+//将AnalysysAgent_MPAAS.es6.min.js文件存放地址替换到import后的引入文件地址
+import '设置为ES6mPaas通信模块SDK实际存放地址'
+...//其他SDK代码
+//如为npm获取SDK。将以下代码添加至集成JS SDK代码位置即可
+import 'ans-javascript-sdk/sdk/AnalysysAgent_MPAAS.es6.min.js'
+
+//3.CommonJS 规范集成
+//将以下代码添加至集成JS SDK代码位置上方即可
+require('ans-javascript-sdk/sdk/AnalysysAgent_MPAAS.amd.min.js')
+
+//4.AMD 规范集成（以 RequireJS 为例）
+//获取AnalysysAgent_MPAAS.amd.min.js，
+//假设该文件放到与 require.js 同一目录中将以下代码添加至集成JS SDK代码位置上方即可
+requirejs('./AnalysysAgent_MPAAS.amd.min.js')
 ```
 
