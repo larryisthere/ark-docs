@@ -352,7 +352,7 @@ App({
 
 ### 统计页面接口
 
-页面跟踪，SDK 默认设置跟踪所有页面，支持自定义页面信息。接口如下：
+页面跟踪，支持自定义页面信息。接口如下：
 
 ```javascript
 AnalysysAgent.pageView(pageName);
