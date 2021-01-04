@@ -534,7 +534,7 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
       <td style="text-align:left">xwhen</td>
       <td style="text-align:left">&#x89E6;&#x53D1;&#x65F6;&#x95F4;</td>
       <td style="text-align:left">&#x65E5;&#x671F;</td>
-      <td style="text-align:left">&#x53D1;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x65F6;&#x95F4;</td>
+      <td style="text-align:left">&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x7684;&#x65F6;&#x95F4;</td>
       <td style="text-align:center">Y</td>
       <td style="text-align:center">Y</td>
       <td style="text-align:center">Y</td>
