@@ -3,7 +3,7 @@
 C++ SDK 主要用于服务端 C++ （也称CPP、C plus plus）应用，如 C++ 应用的后台服务。集成前请先登录[Github下载源码](https://github.com/analysys/argo-sdk-cpp)
 
 {% hint style="info" %}
-C++ 版本需要standand 11及以上。SDK字符串编码请使用UTF-8编码,如果需要使用https协议请参考HttpSender.cpp 276行
+C++ 版本需要STL 11及以上。SDK字符串编码请使用UTF-8编码,如果需要使用https协议请参考HttpSender.cpp 276行
 {% endhint %}
 
 ## 1. 第三方开源库
