@@ -4,7 +4,7 @@
 
 | 事件ID | 属性ID | 数据类型 | 事件显示名称 | 事件说明 |
 | :--- | :--- | :--- | :--- | :--- |
-| $startup |  |  | 启动 | APP启动 / 打开网站 |
+| $startup |  |  | 启动 | 打开网站 |
 |  | $is\_first\_time | 布尔 | 是否安装后首次访问 | 是否安装后首次访问 |
 |  | $预制属性 |  |  | 其他预制通用属性 |
 | $pageview |  |  | 浏览页面 | 浏览APP/网站页面 |
@@ -85,55 +85,43 @@
       <td style="text-align:left">$manufacturer</td>
       <td style="text-align:left">&#x8BBE;&#x5907;&#x5236;&#x9020;&#x5546;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x5236;&#x9020;&#x5382;&#x5546;&#xFF0C; e.g. &#x5C0F;&#x7C73;</td>
+      <td style="text-align:left">&#x5236;&#x9020;&#x5382;&#x5546;&#xFF0C; e.g. &#x5C0F;&#x7C73;&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$brand</td>
       <td style="text-align:left">&#x8BBE;&#x5907;&#x54C1;&#x724C;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x8BBE;&#x5907;&#x54C1;&#x724C;&#xFF0C;e.g. &#x534E;&#x4E3A;&#x8363;&#x8000;</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x54C1;&#x724C;&#xFF0C;e.g. &#x534E;&#x4E3A;&#x8363;&#x8000;&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$model</td>
       <td style="text-align:left">&#x8BBE;&#x5907;&#x578B;&#x53F7;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x8BBE;&#x5907;&#x578B;&#x53F7;&#xFF0C;e.g. iPhone8&#x3001;&#x5C0F;&#x7C73;4</td>
+      <td style="text-align:left">&#x8BBE;&#x5907;&#x578B;&#x53F7;&#xFF0C;e.g. iPhone8&#x3001;&#x5C0F;&#x7C73;4&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$os</td>
       <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;e.g.Window&#x3001;MacOS</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;e.g.Window&#x3001;MacOS&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$os_version</td>
       <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#xFF0C;e.g.Windows 10</td>
+      <td style="text-align:left">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#xFF0C;e.g.Windows 10&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$browser</td>
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x540D;&#x79F0;&#xFF0C;e.g. Chrome</td>
+      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x540D;&#x79F0;&#xFF0C;e.g. Chrome&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$browser_version</td>
       <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#xFF0C;e.g. Chrome 62.23.23</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">$network</td>
-      <td style="text-align:left">&#x7F51;&#x7EDC;&#x7C7B;&#x578B;</td>
-      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x7F51;&#x7EDC;&#x7C7B;&#x578B;&#xFF0C;e.g. WIFI&#x3001;2G&#x3001;3G&#x3001;4G</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">$carrier_name</td>
-      <td style="text-align:left">&#x8FD0;&#x8425;&#x5546;</td>
-      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x63A5;&#x5165;&#x8FD0;&#x8425;&#x5546;&#x540D;&#x79F0;&#xFF0C;e.g. &#x4E2D;&#x56FD;&#x8054;&#x901A;</td>
+      <td style="text-align:left">&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#xFF0C;e.g. Chrome 62.23.23&#xFF08;&#x901A;&#x8FC7;UA&#x89E3;&#x6790;&#xFF09;</td>
     </tr>
     <tr>
       <td style="text-align:left">$screen_width</td>
@@ -230,14 +218,6 @@
         <td style="text-align:left">&#x662F;&#x5426;&#x5B89;&#x88C5;&#x540E;&#x9996;&#x65E5;&#x8BBF;&#x95EE;</td>
     </tr>
     <tr>
-      <td style="text-align:left">$channel</td>
-      <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;</td>
-      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x4E0B;&#x8F7D;&#x6E20;&#x9053;&#xFF0C;SDK &#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F20;&#x5165;&#x3002;&#x4EC5;
-        Android &#x901A;&#x8FC7;&#x6E20;&#x9053;&#x5305;&#x5206;&#x53D1;&#x65F6;&#x624D;&#x6709;&#x610F;&#x4E49;&#xFF0C;iOS
-        &#x4F1A;&#x7EDF;&#x4E00;&#x4E3A;&#x201C;App Store&#x201D;</td>
-    </tr>
-    <tr>
       <td style="text-align:left">$lib</td>
       <td style="text-align:left">SDK&#x7C7B;&#x578B;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
@@ -268,6 +248,12 @@
       <td style="text-align:left">&#x7528;&#x6237;&#x65F6;&#x533A;&#xFF0C;e.g.GMT+08:00</td>
     </tr>
     <tr>
+      <td style="text-align:left">$user_agent</td>
+      <td style="text-align:left">UA</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
+      <td style="text-align:left">UA</td>
+    </tr>
+    <tr>
       <td style="text-align:left">$web_crawler</td>
       <td style="text-align:left">&#x662F;&#x5426;&#x662F;&#x722C;&#x866B;</td>
       <td style="text-align:left">&#x5E03;&#x5C14;</td>
@@ -279,12 +265,6 @@
       <td
       style="text-align:left">&#x5E03;&#x5C14;</td>
         <td style="text-align:left">&#x662F;&#x5426;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x65F6;&#x95F4;&#x6821;&#x51C6;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">$device_id</td>
-      <td style="text-align:left">&#x8BBE;&#x5907;ID</td>
-      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x8BBE;&#x5907;ID&#xFF0C;idfa/oaid &gt; idfv/androidid &gt; uuid</td>
     </tr>
     <tr>
       <td style="text-align:left">$debug</td>
@@ -301,10 +281,6 @@
 | 属性ID | 属性名称 | 属性值数据类型 | 属性说明 |
 | :--- | :--- | :--- | :--- |
 | $original\_id | 匿名ID | 字符串 | 实名绑定前的匿名ID |
-| $idfv | IDFV | 字符串 | IDFV（iOS独有） |
-| $idfa | IDFA | 字符串 | IDFA（iOS独有） |
-| $mac | MAC | 字符串 | MAC（Andorid独有） |
-| $imei | IMEI | 字符串 | IMEI（Andorid独有） |
 | $phone | 手机号 | 字符串 | 非自动采集，需要用户上传 |
 | $email | 邮箱 | 字符串 | 非自动采集，需要用户上传 |
 | $platform | 最后一次使用平台 | 字符串 | 最后一次使用平台 |
