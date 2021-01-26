@@ -13,10 +13,6 @@
 |  | $title | 字符串 | 页面标题 | 页面标题 |
 |  | $referrer | 字符串 | 页面来源 | 页面来源（$referrer 字段在 App 中手动调用 pageview 接口，默认不采集） |
 |  | $referrer\_domain | 字符串 | 页面来源域名 | 页面来源域名 |
-|  | $search\_engine | 字符串 | 搜索引擎 | 标识搜索引擎来源，e.g. 百度（通过UTM解析） |
-|  | $search\_keyword | 字符串 | 搜索关键词 | 标识搜索词来源，e.g. 易观方舟（通过UTM解析） |
-|  | $social\_media | 字符串 | 社交媒体 | 标识社交媒体来源，e.g. 微博（通过UTM解析） |
-|  | $social\_share\_from | 字符串 | 社交媒体分享来源 | 标识微信来源，e.g. 微信朋友圈、微信群（通过UTM解析） |
 |  | $预制属性 |  |  | 其他预制通用属性 |
 | $user\_click |  |  | 点击元素 | 全埋点自动采集元素点击行为 |
 |  | $title | 字符串 | 页面标题 | 页面标题 |
@@ -74,12 +70,6 @@
       <td style="text-align:left">&#x5E73;&#x53F0;</td>
       <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
       <td style="text-align:left">&#x5E94;&#x7528;&#x5E73;&#x53F0;&#xFF0C;&#x679A;&#x4E3E;&#x53D6;&#x503C;&#xFF1A;JS/iOS/Android/Wechat</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">$app_version</td>
-      <td style="text-align:left">&#x5E94;&#x7528;&#x7248;&#x672C;</td>
-      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;</td>
-      <td style="text-align:left">&#x5E94;&#x7528;&#x7248;&#x672C;&#xFF0C;e.g. V1.0</td>
     </tr>
     <tr>
       <td style="text-align:left">$manufacturer</td>
