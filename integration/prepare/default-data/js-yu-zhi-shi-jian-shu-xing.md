@@ -1,4 +1,4 @@
-# App预制事件/属性
+# JS 预制事件/属性
 
 ### **基础预置事件**
 
@@ -6,44 +6,54 @@
 | :--- | :--- | :--- | :--- | :--- |
 | $startup |  |  | 启动 | APP启动 / 打开网站 |
 |  | $is\_first\_time | 布尔 | 是否安装后首次访问 | 是否安装后首次访问 |
-|  | $is\_from\_background | 布尔 | 是否从后台唤醒 | 是否从后台唤醒恢复 |
-|  | $start\_source | 字符串 | 启动来源 | 标识APP的启动来源，e.g. 通过点击图标启动、点击通知、URL唤醒、3D touch等 |
-|  | $预制属性 |  |  | 其他预制通用属性 |
-| $end |  |  | 关闭 | APP关闭 |
-|  | $duration | 数值 | 使用时长 | 从启动到关闭的使用时长 单位：毫秒 |
 |  | $预制属性 |  |  | 其他预制通用属性 |
 | $pageview |  |  | 浏览页面 | 浏览APP/网站页面 |
 |  | $url | 字符串 | 页面URL\(含参\) | 页面完整路径 |
+|  | $url\_domain | 字符串 | 页面URL（去参） | 去参的页面URL |
 |  | $title | 字符串 | 页面标题 | 页面标题 |
 |  | $referrer | 字符串 | 页面来源 | 页面来源（$referrer 字段在 App 中手动调用 pageview 接口，默认不采集） |
+|  | $referrer\_domain | 字符串 | 页面来源域名 | 页面来源域名 |
+|  | $search\_engine | 字符串 | 搜索引擎 | 标识搜索引擎来源，e.g. 百度（通过UTM解析） |
+|  | $search\_keyword | 字符串 | 搜索关键词 | 标识搜索词来源，e.g. 易观方舟（通过UTM解析） |
+|  | $social\_media | 字符串 | 社交媒体 | 标识社交媒体来源，e.g. 微博（通过UTM解析） |
+|  | $social\_share\_from | 字符串 | 社交媒体分享来源 | 标识微信来源，e.g. 微信朋友圈、微信群（通过UTM解析） |
 |  | $预制属性 |  |  | 其他预制通用属性 |
 | $user\_click |  |  | 点击元素 | 全埋点自动采集元素点击行为 |
 |  | $title | 字符串 | 页面标题 | 页面标题 |
-|  | $parent\_url  | 字符串 | 父页面URL   | 页面URL，为空则为顶级页\(Andorid独有\) |
 |  | $url | 字符串 | 页面URL | 页面URL |
+|  | $url\_path | 字符串 | 页面地址（不含参） | 页面地址（不含参） |
 |  | $element\_path | 字符串 | 元素路径 | APP 为元素唯一标识；JS 为元素路径 |
+|  | $element\_class\_name | 字符串 | 元素样式的类 | 元素样式的类 |
+|  | $element\_target\_url    | 字符串 | 元素链接地址 | 元素链接地址 |
 |  | $element\_id  | 字符串 | 元素ID | 元素ID |
+|  | $element\_name  | 字符串 | 元素名称 | 元素名称  |
 |  | $element\_type | 字符串 | 元素类型 | 元素类型 |
 |  | $element\_position | 字符串 | 列表控件位置  | 列表控件位置 （可选） |
 |  | $element\_content  | 字符串 | 元素内容 | 元素的内容优先级：内容&gt;描述&gt;空 |
 |  | $预制属性 |  |  | 其他预制通用属性 |
-| $app\_click |  |  | App点击 | App热图点击事件（用于热图分析） |
+| $webstay |  |  | 视区停留 | 停留在可视区域（用于分析网页浏览深度 |
+|  | $url | 字符串 | 页面URL | 页面URL/页面完整路径 |
+|  | $title | 字符串 | 页面标题 | 页面标题 |
+|  | $referrer | 字符串 | 页面来源 | 页面来源 |
+|  | $referrer\_domain | 字符串 | 页面来源域名 | 页面来源域名 |
+|  | $viewport\_width | 字符串 | 视区宽度 | 视区宽度 |
+|  | $viewport\_position | 数值 | 视区距顶部的位置 | 视区距顶部的位置 |
+|  | $viewport\_height | 数值 | 视区高度 | 视区高度 |
+|  | $event\_duration | 数值 | 视区停留时间 | 视区停留时间 |
+| $web\_click |  |  | App点击 | Web热图点击事件（用于热图分析） |
 |  | $page\_width | 数值 | 页面宽度 | 热图页面宽度 |
 |  | $page\_height | 数值 | 页面高度 | 热图页面高度 |
-|  | $screen\_dpi | 数值 | 屏幕DPI | Android独有 |
-|  | $screen\_scale | 数值 | 屏幕缩放比 | Android独有 |
 |  | $click\_x | 数值 | 点击X坐标 | 热图点击X坐标 |
 |  | $click\_y | 数值 | 点击Y坐标 | 热图点击Y坐标 |
 |  | $url | 字符串 | 页面URL | 点击热图时页面URL |
 |  | $element\_x | 数值 | 元素X坐标 | 点击元素X坐标 |
 |  | $element\_y | 数值 | 元素Y坐标 | 点击元素Y坐标 |
 |  | $element\_path | 字符串 | 元素路径 | 热图元素路径 |
+|  | $element\_name | 字符串 | 元素名称 | 热图元素名称 |
 |  | $element\_type | 字符串 | 元素类型 | 热图元素类型 |
 |  | $element\_content | 字符串 | 元素内容 | 热图元素的内容 |
 |  | $element\_clickable | 数值 | 是否可以点击元素 | 是否可以点击元素 |
 |  | $预制属性 |  |  | 其他预制通用属性 |
-| $app\_crash |  |  | APP崩溃 | APP崩溃信息 |
-|  | $crash\_data | 字符串 | 崩溃原因 | 崩溃的堆栈信息 |
 | $alias |  |  |  |  |
 |  | $original\_id | 字符串 | 匿名ID | 实名绑定前的匿名ID |
 
