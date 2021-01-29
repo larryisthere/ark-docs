@@ -6,7 +6,7 @@ description: JS SDK 中使用对其他模块介绍
 
 ## 加密模块介绍
 
-加密模块SDK，根据用户初始化SDK时参数encryptType的值对上报日志进行对应加密。  
+加密模块，根据用户初始化SDK时参数`encryptType`的值对上报日志进行对应加密。  
 使用加密模块SDK时，需确保证该插件在基础SDK文件前引入
 
 ```javascript
@@ -36,7 +36,7 @@ requirejs('./AnalysysAgent_Encrypt.amd.min.js')
 
 ## GBK转码模块介绍
 
-GBK转码模块SDK，针对符合UTM的参数值如为GBK/GB2312编码格式，进行UTF-8编码转换。  
+GBK转码模块，针对符合UTM的参数值如为GBK/GB2312编码格式，进行UTF-8编码转换。  
 使用加密模块SDK时，需确保证该插件在基础SDK文件前引入
 
 ```javascript
@@ -184,7 +184,7 @@ if(self !== window.top){
 
 ## 页面访问时长模块介绍
 
-页面访问时长模块SDK，在页面关闭/手动调用页面统计事件`pageView`时，自动上报页面关闭事件`page_close`。自动采集页面停留时间`pageStayTime`（单位：毫秒）、页面地址`$url`和页面标题`$title`。
+页面访问时长模块，当开启自动采集功能或手动调用页面统计功能，页面关闭时自动上报页面关闭事件`page_close`。包含以下属性，页面停留时间`pageStayTime`（单位：毫秒）、页面地址`$url`和页面标题`$title`。
 
 ### 集成方式
 
@@ -216,7 +216,7 @@ requirejs('./AnalysysAgent_PageViewStayTime.amd.min.js')
 
 ## 曝光点采集模块介绍
 
-曝光点采集模块SDK，在JS SDK初始化时设置曝光点元素列表或在页面元素标签中标记该元素为曝光点元素，在该元素出现到可视界面时，采集当前可视界面的符合统计标准的元素曝光事件`exposure_points`。自动采集曝光点ID`exposure_id`、曝光点内容`exposure_content`、页面地址`$url`和页面标题`$title`。
+曝光点采集模块，在JS SDK初始化时设置曝光点元素列表或在页面元素标签中标记该元素为曝光点元素，在该元素出现到可视界面时，采集当前可视界面的符合统计标准的元素曝光事件`exposure_points`。自动采集曝光点ID`exposure_id`、曝光点内容`exposure_content`、页面地址`$url`和页面标题`$title`。
 
 设置采集曝光点元素点击行为，可通过初始化设置或曝光点元素标签中标记该元素为采集曝光点点击行为。在曝光点元素被点击时，采集当前元素的曝光点点击事件`exposure_click` 。采集曝光点ID`exposure_id`、曝光点内容`exposure_content`、页面地址`$url`和页面标题`$title`。
 
@@ -298,7 +298,7 @@ requirejs('./AnalysysAgent_ExposurePoint.amd.min.js')
 
 ## mPaas模块介绍
 
-mPaas通信模块SDK，为iOS端使用mPaas框架H5容器且使用Hybrid模式时，通过自定义 JSAPI方式进行JS SDK与iOS SDK之间通信。H5页面中需集成JS SDK与该插件。Android端H5容器内H5页面无需集成该插件。
+mPaas通信模块，为iOS端使用mPaas框架H5容器且使用Hybrid模式时，通过自定义 JSAPI方式进行JS SDK与iOS SDK之间通信。H5页面中需集成JS SDK与该插件。Android端H5容器内H5页面无需集成该插件。
 
 ### 集成方式
 
