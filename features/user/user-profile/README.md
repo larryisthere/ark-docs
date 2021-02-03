@@ -4,6 +4,8 @@ description: User_persona
 
 # 用户标签
 
+
+
 {% hint style="info" %}
 用户标签功能为方舟智能画像产品功能，非方舟分析标配功能，如有需求请联系易观。
 {% endhint %}
