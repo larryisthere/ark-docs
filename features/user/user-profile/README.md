@@ -28,5 +28,11 @@ description: User_persona
 
 {% page-ref page="tag-customize/" %}
 
+{% page-ref page="taglifecycle.md" %}
+
+{% page-ref page="tagstatics.md" %}
+
+
+
 
 
