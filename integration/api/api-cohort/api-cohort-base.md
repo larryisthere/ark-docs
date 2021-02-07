@@ -556,3 +556,102 @@ curl -H "token:1b554f363d56238bf33a201620f2e9a9" -H "appKey:31abd9593e9983ec" -X
 curl -H "token:1b554f363d56238bf33a201620f2e9a9" -H "appKey:31abd9593e9983ec" -X DELETE http://127.0.0.1:4005/uba/api/cohort/2
 ```
 
+## 6. 上传用户属性创建分群
+
+通过上传某一个用户属性的数据文件，用文件中的数据作为对应属性的条件去筛选，将符合条件的用户保存为为一个用户群。在 5.2 版本中新增。‌
+
+### **6.1 接口地址**
+
+> 【POST】 /uba/api/cohort/byfile
+
+### 6.2 请求参数示例\*\*
+
+form-data传参
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+      <th style="text-align:left">&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x5FC5;&#x586B;</th>
+      <th style="text-align:left">&#x8BF4;&#x660E;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">name</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#x5206;&#x7FA4;&#x540D;&#x79F0;&#xFF0C;&#x4E0D;&#x80FD;&#x91CD;&#x590D;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">file</td>
+      <td style="text-align:left">file</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p>&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EA;&#x652F;&#x6301;excel&#x683C;&#x5F0F;&#xFF0C;</p>
+        <p>&#x8F93;&#x5165;&#x4E00;&#x5217;&#x503C;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;10M</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">property</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#x6587;&#x4EF6;&#x4E2D;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;xwho&#xFF0C;&#x53EA;&#x652F;&#x6301;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7684;&#x7528;&#x6237;&#x5C5E;&#x6027;</td>
+    </tr>
+  </tbody>
+</table>
+
+> **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](https://app.gitbook.com/@analysys/s/ark/~/drafts/-LoxLQTQwGY5HTZzArUH/primary/integration/api#21-xiang-mu-jie-kou-ren-zheng)。
+>
+> **操作用户**：通过API创建的分群默认为API所有，不属于任何用户，如果想让某个用户在页面上对此分群进行操作，需要在URL上带loginUser参数，详情见 [操作用户](../#51-cao-zuo-yong-hu)。
+
+### 6.3 返回结果示例
+
+```text
+{
+    "id": 2,
+    "code": "arkfq_2",
+    "name": "广告投放成功用户",
+    "dynamic": 0,
+    "createTime": "2019-09-12 11:53:24"
+}
+```
+
+### 6.4 接口调用示例
+
+```java
+public void createCohortByFile() throws IOException {
+        CloseableHttpClient client = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(API_HOST + "/uba/api/cohort/byfile");
+        httpPost.setHeader("appKey", APP_KEY);
+        httpPost.setHeader("token", APP_TOKEN);
+​
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        //设置请求的编码格式
+        builder.setContentType(ContentType.MULTIPART_FORM_DATA);
+​
+        //输入分群名称
+        StringBody nameBody = new StringBody("99活动激活", ContentType.create("text/plain", Consts.UTF_8));
+        builder.addPart("name", nameBody);
+        //对应属性值
+        builder.addBinaryBody("file", new File("/Users/yuan/Documents/data/ark/file/99激活用户ID.xlsx"));
+        //指定属性列
+        builder.addTextBody("property", "xwho");
+        httpPost.setEntity(builder.build());
+​
+        //设置超时时间
+        RequestConfig reqConfig = RequestConfig.custom().setSocketTimeout(30*60*1000).setConnectTimeout(60*1000).build();
+        httpPost.setConfig(reqConfig);
+​
+        CloseableHttpResponse response = client.execute(httpPost);
+        //获取响应状态
+        int httpStatus = response.getStatusLine().getStatusCode();
+        //获取响应内容
+        HttpEntity responseEntity = response.getEntity();
+        String reponseContent = EntityUtils.toString(responseEntity);
+​
+        EntityUtils.consume(responseEntity);
+    }
+```
+

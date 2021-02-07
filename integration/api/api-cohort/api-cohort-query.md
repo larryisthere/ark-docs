@@ -64,6 +64,32 @@
 >
 > **认证参数**：接口必传token和appKey两个参数，详情见 [项目接口认证](../#21-xiang-mu-jie-kou-ren-zheng)。
 {% endtab %}
+
+{% tab title="5.2版本" %}
+5.2可支持获取用户的标签属性
+
+```haskell
+{
+    // 【必填】分群code
+    "cohortCode":"arkfq_3",
+    //需要获取的用户条数
+    "limit":2,
+    //【选填】指定需要查询的用户属性列，传用户属性ID
+    "properties":["xwho", "distinct_id", "$imei", "$first_visit_language", "$signup_time"],
+  	//【4.6中新增】【选填】当前页，从1开始，不需要分页则不用传值
+  	"page":1
+    //【4.6中新增】【选填】每页大小，和page配合使用，值不能大于limit
+  	"pageSize"：1000，
+    //【选填】5.2版本新增，要获取的标签code，如果不指定则不获取任何标签内容
+  	"tags":[
+      	//标签参数包含code和version两个部分，version可以不指定，不指定时默认获取最新标签
+        {"code":"tag_3"},
+        {"code":"tag_4"},
+        {"code":"tag_6"}
+    ]
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### 1.3 返回结果示例
@@ -90,7 +116,9 @@
             "$first_visit_language":"zh-cn",
             "distinct_id":-4635244755532264000,
             "$signup_time":null,
-            "xwho":"JS1c6d11e3e67bf0dc02030d3fd393310b1c6d"
+            "xwho":"JS1c6d11e3e67bf0dc02030d3fd393310b1c6d",
+            //tag.开头的为标签数据，指定标签code才会查询
+            "tag.tag_3":"高消费"
         }
     ]
 }

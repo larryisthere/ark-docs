@@ -188,6 +188,7 @@
     * [属性分析](integration/api/api-analytics/api-user-attribute.md)
     * [Session分析](integration/api/api-analytics/api-session.md)
     * [渠道分析](integration/api/api-analytics/api-channel.md)
+    * [分布分析](integration/api/api-analytics/api-distribution.md)
     * [自定义查询](integration/api/api-analytics/api_sql_query.md)
   * [用户API](integration/api/api-cohort/README.md)
     * [分群查询](integration/api/api-cohort/api-cohort-query.md)
