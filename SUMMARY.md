@@ -82,12 +82,12 @@
     * [智能监控](features/project-manegement/monitoring/intelligent-monitoring.md)
     * [自定义监控](features/project-manegement/monitoring/monitoring.md)
 * [平台管理](features/enterprise-management/README.md)
-  * [日志管理](features/enterprise-management/ri-zhi-guan-li.md)
   * [企业概览](features/enterprise-management/overview.md)
   * [项目管理](features/enterprise-management/project-management.md)
   * [成员管理](features/enterprise-management/member.md)
   * [安全设置](features/enterprise-management/an-quan-she-zhi.md)
   * [企业设置](features/enterprise-management/enterprise.md)
+  * [日志管理](features/enterprise-management/enterprise_log.md)
   * [帐号设置](features/enterprise-management/accountsetting.md)
 
 ## 🐵 Part II 技术文档 <a id="integration"></a>
