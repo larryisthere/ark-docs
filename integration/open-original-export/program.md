@@ -218,8 +218,6 @@ Metabase 是类似 HUE（自定义查询） 的开源查询界面，如果你想
 
 **Database username：** streaming （固定值）
 
-**Database password：** 登录方舟服务器，在 cat /etc/presto/presto-auth.properties \| grep streaming 中查看\)
-
 下方的三个开关保持默认，点击底部的确认按钮即可完成连接配置。
 
 {% hint style="warning" %}

@@ -1,8 +1,10 @@
 # JAVA工具包
 
-## 1.介绍说明
+使用工具导出的文件内容格式和方舟定义的标准 [数据格式](../../prepare/data-type.md) 一致，可直接用于数据导出 。
 
-        工具集将数据导入、数据导出等查询功能集成在一起，不需要安装多个程序完成不同的需求，提升了用户体验。
+## 1. 介绍说明
+
+ 工具集将数据导入、数据导出等查询功能集成在一起，不需要安装多个程序完成不同的需求，提升了用户体验。
 
 {% hint style="info" %}
 1、提供统一的用户界面，用户能用规范统一的命令调用工具集中的工具
@@ -14,7 +16,7 @@
 
 ### 2.1.安装
 
-下载地址：
+工具包下载地址：
 
 ```text
 http://install.ark.analysys.cn:8080/download/temp/ark_tools-1.0.7-1.el7.noarch.rpm
@@ -26,7 +28,7 @@ linux服务器下载工具包命令：
 wget http://install.ark.analysys.cn:8080/download/temp/ark_tools-1.0.7-1.el7.noarch.rpm
 ```
 
-通过外网下载或者上传工具集ark\_tools-1.0.7-1.el7.noarch.rpm到ark1、ark2、ark3任意一台服务器上。
+上传工具集ark\_tools-1.0.7-1.el7.noarch.rpm到ark1、ark2、ark3任意一台服务器上。
 
 在linux环境中将路径切换到工具集ark\_tools-1.0.7-1.el7.noarch.rpm所在目录，执行以下命令： 
 
