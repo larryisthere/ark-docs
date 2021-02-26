@@ -139,6 +139,7 @@ end
 > * allowTimeCheck：是否允许时间校准，默认值：`NO`
 > * autoTrackCrash：是否允许崩溃追踪，默认值：`NO`
 > * maxDiffTimeInterval：最大允许时间误差，单位：秒，默认值：30秒
+> * autoPageViewDuration：是否自动采集页面时长
 
 示例：
 

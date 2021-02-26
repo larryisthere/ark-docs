@@ -166,6 +166,7 @@
     * [代码埋点和无埋点有什么区别](integration/sdk/sdk-faq/embedding.md)
     * [Web页面中发现丢失某一个事件](integration/sdk/sdk-faq/web-lose.md)
     * [自研 SDK 注意事项](integration/sdk/sdk-faq/research-sdk.md)
+    * [页面时长统计功能](integration/sdk/sdk-faq/page_close.md)
 * [数据验证](integration/data-verification/README.md)
   * [客户端埋点验证](integration/data-verification/sdk-verification.md)
   * [Debug 数据验证](integration/data-verification/debug-shu-ju-yan-zheng.md)
