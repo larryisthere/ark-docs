@@ -19,13 +19,13 @@
 工具包下载地址：
 
 ```text
-http://install.ark.analysys.cn:8080/download/temp/ark_tools-1.0.7-1.el7.noarch.rpm
+https://www.analysysdata.com/tool/ark_tools-1.0.7-1.el7.noarch.rpm
 ```
 
 linux服务器下载工具包命令： 
 
 ```text
-wget http://install.ark.analysys.cn:8080/download/temp/ark_tools-1.0.7-1.el7.noarch.rpm
+wget https://www.analysysdata.com/tool/ark_tools-1.0.7-1.el7.noarch.rpm
 ```
 
 上传工具集ark\_tools-1.0.7-1.el7.noarch.rpm到ark1、ark2、ark3任意一台服务器上。
