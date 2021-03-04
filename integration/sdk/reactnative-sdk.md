@@ -4,88 +4,69 @@ description: 该 SDK 适用于ReactNative 跨平台项目。
 
 # ReactNative SDK
 
-易观方舟react-native-analysys模块，基于智能分析平台的SDK进行封装 Android & iOS SDK 常用 API ，使用此模块，可以在 React Native 开发的 App 中完成埋点的统计上报。
+## 集成RN模块
 
-{% hint style="info" %}
-SDK Releases包下载：  
-Github地址\(推荐\)：[https://github.com/analysys/ans-ReactNative-sdk](https://github.com/analysys/ans-ReactNative-sdk)  
-Gitee地址：[https://gitee.com/Analysys/ans-ReactNative-sdk](https://gitee.com/Analysys/ans-ReactNative-sdk)   
-Releases中含有更新说明请您阅读，接口使用请参考本文档。
-{% endhint %}
+### 1、安装SDK RN模块
 
-## npm模块安装
-
-### 模块安装
+通过npm集成SDK RN模块
 
 ```text
 npm install react-native-analysys
 ```
 
-### 模块link
+### 2、链接SDK RN模块
+
+{% hint style="info" %}
+React Native 0.60 及以上版本会 autolinking，不需要执行下边的 react-native link 命令。
+{% endhint %}
 
 ```text
 react-native link react-native-analysys
 ```
 
-{% hint style="info" %}
-注意：React Native 0.60 及以上版本会 autolinking，不需要执行下边的 react-native link 命令。
-{% endhint %}
+### 3、配置 package.json
 
-## Android端
-
-### SDK远程引入
+在 React Native 项目里的 package.json 文件的 script 模块里增加如下配置
 
 ```text
-dependencies
- { 
-			//默认使用最新版本SDK，如需要使用特别版本请指定版本号 
-			implementation('cn.com.analysys:analysys-arkanalysys:latest.release')') 
+"scripts": {
+      "postinstall": "node node_modules/react-native-analysys/ansHook.js -run"
 }
 ```
 
-### SDK初始化
+### 4、执行 npm  命令 <a id="id-.ReactNativev1.15-&#x6267;&#x884C;npm&#x547D;&#x4EE4;"></a>
 
 ```text
-public class AnalysysApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        
-        //  设置 打开 debug 模式，上线时请屏蔽
-        AnalysysAgent.setDebugMode(this, 2);
-        //  对SDK开始初始化
-        AnalysysConfig config = new AnalysysConfig();
-        // 设置key，77a52s552c892bn442v721为样例数据，请根据实际情况替换相应内容
-        config.setAppKey("77a52s552c892bn442v721");
-        // 设置渠道
-        config.setChannel("豌豆荚");
-        // 设置控件点击自动上报总开关
-        config.setAutoTrackClick(true);
-        // 调用SDK初始接口
-        AnalysysAgent.init(this, config);
-        //  设置上传地址，http://example.com:port为您上报地址
-        AnalysysAgent.setUploadURL(mContext,"http://example.com:port");
-
-    }
-}
+npm install
 ```
 
-### RNAnalysysAgentPackage添加
+## 集成Android端
+
+### 1、初始化sdk，版本要求4.5.7及以上，参考官方文档[https://docs.analysys.cn/integration/sdk/android](https://docs.analysys.cn/integration/sdk/android)
+
+### 2、设置接口相关Module
 
 ```text
-    public class AnalysysApplication extends Application implements ReactApplication {
-...
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-            new RNAnalysysAgentPackage()
-      );
-    }
-...
+public class MainApplication extends Application implements ReactApplication {
+
+  private final ReactNativeHost mReactNativeHost =
+      new ReactNativeHost(this) {
+        ...
+        @Override
+        protected List<ReactPackage> getPackages() {
+          List<ReactPackage> packages = new PackageList(this).getPackages();
+          packages.add(new RNAnalysysAgentPackage());
+          return packages;
+        }
+        ...
+      };
+
+  @Override
+  public ReactNativeHost getReactNativeHost() {
+    return mReactNativeHost;
+  }
 }
 ```
-
-
 
 ## iOS端
 
@@ -159,9 +140,7 @@ end
 
 ```text
 //  易观统计模块
-import { NativeModules } from "react-native";
-
-const RNAnalysysAgentModule = NativeModules.RNAnalysysAgentModule;
+import AnalysysAgent from "react-native-analysys";
 ```
 
 ### 接口调用
@@ -174,6 +153,6 @@ var properties = {
     'ptype': 'iPhone',
     'model': 'Apple iPhoneX'
 }
-RNAnalysysAgentModule.track('buy',properties)
+AnalysysAgent.track('buy',properties)
 ```
 
