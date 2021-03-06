@@ -42,7 +42,16 @@ npm install
 
 ## 集成Android端
 
-### 1、初始化sdk，版本要求4.5.7及以上，参考官方文档[https://docs.analysys.cn/integration/sdk/android](https://docs.analysys.cn/integration/sdk/android)
+### 1、集成sdk，版本要求4.5.7及以上，参考官方文档[https://docs.analysys.cn/integration/sdk/android](https://docs.analysys.cn/integration/sdk/android)
+
+### 集成React Native支持模块：
+
+```text
+// 方舟sdk
+implementation('cn.com.analysys:analysys-arkanalysys:4.5.7')
+// React Native支持模块
+implementation('cn.com.analysys:analysys-react-native:4.5.7')
+```
 
 ### 2、设置接口相关Module
 
