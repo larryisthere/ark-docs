@@ -1,8 +1,8 @@
 ---
-description: 标准版本适用方舟4.3.3以上版本
+description: 基础版本适用方舟4.3.3以上版本
 ---
 
-# JS SDK标准版
+# JS SDK基础版
 
 ## JS SDK 使用说明
 
