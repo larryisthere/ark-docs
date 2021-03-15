@@ -29,8 +29,8 @@ iOS App 中如需加载 H5 页面，需要同时集成iOS SDK与JS SDK。
 代码参考：
 
 ```text
-WKWebViewConfiguration _configuration = [[WKWebViewConfiguration alloc] init];
-[AnalysysAgent setAnalysysAgentHybrid:_configuration];
+WKWebViewConfiguration config = [[WKWebViewConfiguration alloc] init];
+[AnalysysAgent setAnalysysAgentHybrid:config];
 ```
 
 ### 2.2 注销JS消息监听
