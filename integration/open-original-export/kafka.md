@@ -15,12 +15,30 @@ description: >-
 1. 启动消费的机器需与部署方舟的机器在同一个内网，且必须可以解析方舟服务器的 host。
 2. 请选用兼容的 Kafka 客户端版本，高版本服务端兼容低版本客户端，反之则可能存在兼容性问题。方舟 Kafka 服务端版本为0.8.7，具体情况可在服务器上查看。
 
+## 数据源topic版本说明
+
+方舟5.2版本数据接入模块做了架构调整，默认情况下使用老的架构，我们会根据用户的数据情况在升级时切换到新的架构，并且在升级到5.3之前一定会切换到新的架构下。所以会出现5.2版本有些用户使用的是老架构，有些使用的是新架构的情况。具体可以通过Ambari上下面这个参数来判断：如果is.new.process=true，说明是新架构，如果没有该参数或者is.new.process=false，说明是老架构。
+
+![](../../.gitbook/assets/image%20%28665%29.png)
+
+新架构和老架构原始数据保存在kafka中的topic不同。老架构profile数据保存在profile\__${appid}中，event数据保存在event\__${_appid_}中。而新架构下原始数据都保存在pre\_${_appid_}中，消费pre\_${_appid_}中的数据需要通过xwhat的值来判断是profile数据还是event数据，如果xwhat属于下面六个值中的一个，则说明是profile事件（用户数据），具体可参考[https://arkdocs.analysys.cn/integration/prepare/data-model](https://arkdocs.analysys.cn/integration/prepare/data-model) 中的Profile部分的说明。如果xwhat不属于下面六个值，那说明是Event事件数据。
+
+profile事件名：
+
+* $profile\_set
+* $profile\_set\_once
+* $profile\_unset
+* $profile\_increment
+* $profile\_append
+* $profile\_delete
+
 ## 消费参数
 
 | 参数名称 | 参数值 |
 | :--- | :--- |
-| topic | event_{appid}/profile_{appid}\(其中{appid}表示项目的appid\) |
-| partition | partitionid\(从0开始，至少3个partition） |
+| topic | **老架构：**event\_$_{appid}/profile\_$_{appid}\(其中{appid}表示项目的appid\) |
+|  | **新架构：**pre\_${appid} |
+| partition | 不同的用户可能不一样，以实际情况为准 |
 | zookeeper | ark1:2181,ark2:2181,ark3:2181 |
 | broker | ark1:9092,ark2:9092, ark3:9092 |
 
@@ -34,7 +52,7 @@ description: >-
 
 * 可以使用 Kafka 自带的 Kafka Console Consumer 通过命令行方式消费，例如从最新数据开始消费：
 
-  `bin/kafka-console-consumer.sh --zookeeper ark1:2181 --topic event_topic`
+  `bin/kafka-console-consumer.sh --zookeeper ark1:2181 --topic topicname(根据需要输入想消费的topic名)`
 
 * 可以将 stdout 输出到文件或作为其他数据处理进程的输入数据。
 
