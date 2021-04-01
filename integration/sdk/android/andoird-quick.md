@@ -13,7 +13,7 @@
 **远程aar配置**  
      `dependencies  
  {   
-//默认使用最新版本SDK，如需要使用特别版本请指定版本号 implementation('cn.com.analysys:analysys-arkanalysys:latest.release')')   
+//默认使用最新版本SDK，如需要使用特别版本请指定版本号 implementation('cn.com.analysys:analysys-arkanalysys:latest.release')  
 }`
 {% endtab %}
 
