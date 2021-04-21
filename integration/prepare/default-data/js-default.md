@@ -49,6 +49,7 @@
 |  | $element\_type | 字符串 | 元素类型 | 热图元素类型 |
 |  | $element\_content | 字符串 | 元素内容 | 热图元素的内容 |
 |  | $element\_clickable | 数值 | 是否可以点击元素 | 是否可以点击元素 |
+|  | $element\_target\_url    | 字符串 | 元素链接地址 | 元素链接地址 |
 |  | $预制属性 |  |  | 其他预制通用属性 |
 | $alias |  |  |  |  |
 |  | $original\_id | 字符串 | 匿名ID | 实名绑定前的匿名ID |
