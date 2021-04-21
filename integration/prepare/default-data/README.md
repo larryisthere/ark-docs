@@ -726,6 +726,7 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 | $element\_type | 元素类型 | 字符串 | 热图元素类型 | Y | Y | Y | - |
 | $element\_content | 元素内容 | 字符串 | 热图元素的内容 | Y | Y | Y | - |
 | $element\_clickable | 是否可以点击元素 | 数值 | 是否可以点击元素 | Y | Y | Y | - |
+| $element\_target\_url    | 元素链接地址 | 字符串 | 仅 JS 有效 | - | - | Y | - |
 
 ### **$share**
 
