@@ -11,7 +11,7 @@
   * [附：埋点方案设计](quick-start-guide/tracking-plan.md)
   * [附：数据分析思路](quick-start-guide/analystics-method.md)
 * [产品更新日志](release-notes/README.md)
-  * [V5.3.3 UI 升级、分布分析重构、维度表动态更新、细节优化等](release-notes/v5.3.md)
+  * [V5.3.3 UI 升级、分布分析重构、维度表动态更新、细节优化等](release-notes/v5.3.3.md)
   * [V5.2.0 新增归因分析、消息中心、重构埋点方案、优化看数据体验……](release-notes/v5.2.0.md)
   * [V5.1.0317 体验优化& Bug修复](release-notes/v5.1.0317.md)
   * [V5.1.0 升级可视化埋点、增强权限控制……](release-notes/v5.1.md)
