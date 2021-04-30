@@ -16,7 +16,6 @@
   * [V5.1.0317 体验优化& Bug修复](release-notes/v5.1.0317.md)
   * [V5.1.0 升级可视化埋点、增强权限控制……](release-notes/v5.1.md)
 * [我要反馈](https://www.analysysdata.com/forum/index)
-* [⁉️ 文档访问遇到了问题？](docs-faq.md)
 
 ## 🐱 Part I 产品功能说明 <a id="features"></a>
 
