@@ -202,6 +202,8 @@
     * [元数据管理](integration/api/api-manage-project/api-meta.md)
     * [埋点方案管理](integration/api/api-manage-project/mai-dian-fang-an-guan-li.md)
     * [维度表管理](integration/api/api-manage-project/api-dimension.md)
+  * [运营API](integration/api/api-operation/README.md)
+    * [广告跟踪](integration/api/api-operation/api-ad-tracking.md)
   * [平台管理API](integration/api/api-manage-enterprise/README.md)
     * [项目管理](integration/api/api-manage-enterprise/api-enterprise-project.md)
     * [成员管理](integration/api/api-manage-enterprise/api-enterprise-user.md)
