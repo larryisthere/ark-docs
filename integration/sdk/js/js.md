@@ -1325,8 +1325,8 @@ AnalysysAgent.profileDelete(callback);
 唯一匿名ID标识设置，接口如下：
 
 ```javascript
-AnalysysAgent.identify(distinctId);
-AnalysysAgent.identify(distinctId, callback);
+AnalysysAgent.identify(xwho);
+AnalysysAgent.identify(xwho, callback);
 ```
 
 * distinctId：自定义设备身份标识，取值长度 1 - 255字符,支持类型：String

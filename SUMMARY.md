@@ -212,7 +212,7 @@
   * [LDAP登录](integration/third-part-login/ldap.md)
 * [GDPR 合规](integration/gdpr.md)
 
-## 🐋 Part III 常见问题 <a id="faq"></a>
+## �� Part III 常见问题 <a id="faq"></a>
 
 * [License 许可](faq/license.md)
 * [产品试用及采购](faq/trialversion.md)

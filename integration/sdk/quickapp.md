@@ -438,7 +438,7 @@ AnalysysAgent.alias("sanbo");
 唯一设备ID标识设置，接口如下：
 
 ```javascript
-AnalysysAgent.identify(distinctId);
+AnalysysAgent.identify(xwho);
 ```
 
 * distinctId：唯一身份标识，取值长度 1 - 255字符,支持类型：String

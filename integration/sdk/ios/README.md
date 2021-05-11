@@ -558,7 +558,7 @@ AnalysysAgent.alias("zhangsan")
 唯一匿名ID标识设置，接口如下：
 
 ```objectivec
-+ (void)identify:(NSString *)distinctId;
++ (void)identify:(NSString *)xwho;
 ```
 
 * distinctId：自定义设备身份标识，取值长度 1 - 255 字符

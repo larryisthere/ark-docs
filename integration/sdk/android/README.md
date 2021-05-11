@@ -541,7 +541,7 @@ AnalysysAgent.alias(mContext,"sanbo");
 接口如下：
 
 ```java
-public static void identify(Context context, String distinctId);
+public static void identify(Context context, String xwho);
 ```
 
 * context：应用上下文对象
