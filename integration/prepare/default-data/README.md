@@ -696,7 +696,7 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 | $parent\_url  | 父页面URL   | 字符串 | 页面URL，为空则为顶级页 | Y | - | - | - |
 | $url    | 页面URL | 字符串 | 页面URL | Y | Y | Y | Y |
 | $url\_path | 页面地址（不含参） | 字符串 | 页面地址（不含参） | - | - | Y | - |
-| $element\_path    | 元素路径 | 字符串 | APP 为元素唯一标识；JS 为元素路径 | Y | Y | Y | N |
+| $element\_path    | 元素路径 | 字符串 | APP 为元素唯一标识；JS 为元素路径 | Y | Y | Y | - |
 | $element\_class\_name    | 元素样式的类 | 字符串 | 仅 JS 有效 | - | - | Y | - |
 | $element\_target\_url    | 元素链接地址 | 字符串 | 仅 JS 有效 | - | - | Y | - |
 | $element\_id  | 元素ID |  字符串 | 元素ID | Y | Y | Y | N |
