@@ -673,7 +673,7 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 | $element\_id  | 元素ID |  字符串 | 元素ID | Y | Y | Y | N |
 | $element\_name  | 元素名称  | 字符串 | 仅 JS 有效 | - | - | Y | N |
 | $element\_type | 元素类型 | 字符串 | 元素类型 | Y | Y | Y | N |
-| $element\_position  |  列表控件位置 （可选） | 字符串 | 列表控件位置 （可选） | Y | Y | Y | N |
+| $element\_position  |  列表控件位置 （可选） | 字符串 | 列表控件位置 （可选） | Y | Y | - | - |
 | $element\_content  | 元素内容 | 字符串 | 元素的内容（优先级：内容&gt;描述&gt;空） | Y | Y | Y | N |
 
 ### **$webstay**
