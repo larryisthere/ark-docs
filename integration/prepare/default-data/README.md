@@ -852,7 +852,7 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 | $original\_id\_list | 匿名ID列表 | 字符串 | 实名绑定过的匿名ID列表 | S | S | S | S |
 | $idfv | IDFV | 字符串 | IDFV | - | N | - | - |
 | $idfa | IDFA | 字符串 | IDFA | - | N | - | - |
-| $mac | MAC | 字符串 | MAC | Y | - | - | - |
+| $mac | MAC | 字符串 | MAC | N | - | - | - |
 | $imei | IMEI | 字符串 | IMEI | N | - | - | - |
 | $wechatopenid | 微信OpenID | 字符串 | 微信OpenID | - | - | - | N |
 | $phone | 手机号 | 字符串 | 手机号 | N | N | N | N |
