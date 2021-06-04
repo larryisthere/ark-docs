@@ -6,6 +6,10 @@
 AnalysysAgent.setDataCollectEnable(false);
 ```
 
+您务必告知用户您选择易观方舟SDK服务，请在《隐私政策》中增加如下参考条款：
+
+**“我们的产品集成易观方舟SDK，易观方舟SDK可能需要收集您的设备Mac地址、唯一设备识别码（IMEI、android ID、IMSI 等信息）以提供统计分析服务”**
+
 {% hint style="info" %}
 1、sdk版本需要4.5.4以上
 
@@ -31,4 +35,6 @@ if(privacyPolicyAllowed) {
     AnalysysAgent.setDataCollectEnable(true);
 }
 ```
+
+
 
