@@ -154,7 +154,7 @@ AnalysysAgent.trackCampaign(context,bundle.getString(JPushInterface.EXTRA_EXTRA)
 <service android:name="Your service" />
 ```
 
-在继承自 GTIntentService 的 Service 中复写回调方法,在 onReceiveClientId回调中调用 setPushID，将他保存在方舟分析的用户信息中;在 onReceiveMessageData 回调接口中，调用 trackCampaign 接口设置用户点击通知后事件追踪。
+在继承自 GTIntentService 的 Service 中复写回调方法,在 onReceiveClientId回调中调用 setPushID，将他保存在方舟分析的用户信息中；在onNotificationMessageArrived回调接口中调用 trackCampaign 接口设置通知展现追踪；在onNotificationMessageClicked回调接口中调用 trackCampaign 接口设置通知点击追踪；在 onReceiveMessageData 回调接口中调用 trackCampaign 接口设置透传消息追踪。
 
 ```java
 @Override
@@ -164,11 +164,27 @@ public void onReceiveClientId(Context context, String clientid) {
 }
 
 @Override
+public void onNotificationMessageArrived(Context context, GTNotificationMessage
+        gtNotificationMessage) {
+    Log.e(TAG, "onNotificationMessageArrived -> " + "msg:" + gtNotificationMessage.toString());
+    String data = gtNotificationMessage.getContent();
+    AnalysysAgent.trackCampaign(context, data, false, listener);
+}
+
+@Override
+public void onNotificationMessageClicked(Context context,
+                                         GTNotificationMessage gtNotificationMessage) {
+    Log.e(TAG, "onNotificationMessageClicked -> " + "msg:" + gtNotificationMessage.toString());
+    String data = gtNotificationMessage.getContent();
+    AnalysysAgent.trackCampaign(context, data, true, listener);
+}
+
+@Override
 public void onReceiveMessageData(Context context, GTTransmitMessage gtTransmitMessage) {
     Log.e(TAG,"onReceiveMessageData -> " + "msg:" + gtTransmitMessage.toString());
     byte[] payload = gtTransmitMessage.getPayload();
     String data = new String(payload);
-    AnalysysAgent.trackCampaign(context,data,true);
+    AnalysysAgent.trackCampaign(context,data,false);
 }
 ```
 
