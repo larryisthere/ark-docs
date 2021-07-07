@@ -867,8 +867,8 @@ $alias 事件之外的Profile 系列的事件用于上报用户属性，所以�
 | $is\_login | 是否是注册帐号 | 布尔值 | 是否是注册帐号 | Y | Y | Y | Y |
 | $signup\_time | 注册时间 | 日期时间 | 注册时间 | N | N | N | N |
 | $first\_visit\_time | 首次访问时间 | 日期时间 | 首次访问时间 | Y | Y | Y | Y |
-| $first\_visit\_language | 语言 | 字符串 | 设备语言 | Y | Y | Y | Y |
-| $time\_zone | 首次访问时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
+| $first\_visit\_language | 首次访问语言 | 字符串 | 设备语言 | Y | Y | Y | Y |
+| $time\_zone | 时区 | 字符串 | GMT+08:00 | Y | Y | Y | Y |
 
 ### **推送相关用户属性**
 
