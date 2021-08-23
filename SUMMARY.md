@@ -94,7 +94,7 @@
 
 * [技术接入准备工作](integration/prepare/README.md)
   * [部署环境检测工具](integration/prepare/tool-script.md)
-  * [数据模型](integration/prepare/data-model.md)
+  * [数据模型](integration/prepare/data-model-1.md)
   * [数据格式](integration/prepare/data-type.md)
   * [预置事件和属性](integration/prepare/default-data/README.md)
     * [App预置事件/属性](integration/prepare/default-data/app-default.md)
