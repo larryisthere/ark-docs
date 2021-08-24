@@ -69,6 +69,7 @@
     * [可视化埋点](features/project-manegement/data-integration/virtualizer.md)
     * [集成SDK接入数据](features/project-manegement/data-integration/sdks.md)
     * [数据验证](features/project-manegement/data-integration/validation.md)
+    * [用户数据导入](features/project-manegement/data-integration/import-profile.md)
   * [元数据管理](features/project-manegement/meta-data/README.md)
     * [元事件](features/project-manegement/meta-data/meta-events.md)
     * [虚拟事件](features/project-manegement/meta-data/merged-events.md)
