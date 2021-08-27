@@ -71,7 +71,7 @@ curl -H "token:4113c9cad1c301113783f433e254888c" -H "appKey:31abd9593e9983ec" ht
 
 ### 2.1 接口地址
 
-> 【POST】 /uba/api/dimensions/update
+> 【POST】 /uba/api/project/dimensions/update
 
 ### 2.2 请求参数示例
 
@@ -155,7 +155,7 @@ curl -H "Content-Type:application/json" -H "token:4113c9cad1c301113783f433e25488
             "price":2699
         }
     ]
-}' http://127.0.0.1:4005/uba/api/dimensions/update
+}' http://127.0.0.1:4005/uba/api/project/dimensions/update
 ```
 
 ## 3 创建维度表‌
